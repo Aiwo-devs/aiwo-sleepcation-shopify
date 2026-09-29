@@ -1,0 +1,526 @@
+{% doc %}
+  @prompt
+    Create statistics showcase section (white background):
+    
+    Heading: "Backed by 10,000+ Scientific Studies"
+    Subtitle about research extent
+    4-column stat cards (orange gradient backgrounds):
+    
+    "10,000+" - Published Research Studies
+    "8+hrs" - Sustained Blood Retention
+    "<1%" - Standard Curcumin Absorption
+    "7x" - Better with BCM-95®
+    
+    
+    Below: Light peach box with "Notable Research Findings" heading
+    2-column grid of 4 bullet points with orange circle bullets
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-stats-showcase-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 20px;
+    width: 100%;
+  }
+
+  .ai-stats-showcase-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-stats-showcase-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ai-stats-showcase-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 12px 0;
+    font-weight: 700;
+  }
+
+  .ai-stats-showcase-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+  }
+
+  .ai-stats-showcase-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .ai-stats-showcase-card-{{ ai_gen_id }} {
+    background: {{ block.settings.card_gradient_start }};
+    background: linear-gradient(135deg, {{ block.settings.card_gradient_start }} 0%, {{ block.settings.card_gradient_end }} 100%);
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .ai-stats-showcase-stat-number-{{ ai_gen_id }} {
+    font-size: {{ block.settings.stat_number_size }}px;
+    color: {{ block.settings.stat_number_color }};
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+  }
+
+  .ai-stats-showcase-stat-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.stat_label_size }}px;
+    color: {{ block.settings.stat_label_color }};
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .ai-stats-showcase-findings-{{ ai_gen_id }} {
+    background-color: {{ block.settings.findings_bg_color }};
+    border-radius: {{ block.settings.findings_border_radius }}px;
+    padding: 30px;
+  }
+
+  .ai-stats-showcase-findings-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.findings_heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 24px 0;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .ai-stats-showcase-findings-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .ai-stats-showcase-finding-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ai-stats-showcase-bullet-{{ ai_gen_id }} {
+    width: {{ block.settings.bullet_size }}px;
+    height: {{ block.settings.bullet_size }}px;
+    background-color: {{ block.settings.bullet_color }};
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .ai-stats-showcase-finding-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.finding_text_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-stats-showcase-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-stats-showcase-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding | times: 0.7 }}px 16px;
+    }
+
+    .ai-stats-showcase-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .ai-stats-showcase-findings-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-stats-showcase-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-stats-showcase-stat-number-{{ ai_gen_id }} {
+      font-size: {{ block.settings.stat_number_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-stats-showcase-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-stats-showcase-container-{{ ai_gen_id }}">
+    <div class="ai-stats-showcase-header-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-stats-showcase-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+      {% if block.settings.subtitle != blank %}
+        <div class="ai-stats-showcase-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</div>
+      {% endif %}
+    </div>
+
+    <div class="ai-stats-showcase-grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign stat_number_key = 'stat_' | append: i | append: '_number'
+          assign stat_label_key = 'stat_' | append: i | append: '_label'
+          assign stat_number = block.settings[stat_number_key]
+          assign stat_label = block.settings[stat_label_key]
+        %}
+        {% if stat_number != blank or stat_label != blank %}
+          <div class="ai-stats-showcase-card-{{ ai_gen_id }}">
+            {% if stat_number != blank %}
+              <div class="ai-stats-showcase-stat-number-{{ ai_gen_id }}">{{ stat_number }}</div>
+            {% endif %}
+            {% if stat_label != blank %}
+              <div class="ai-stats-showcase-stat-label-{{ ai_gen_id }}">{{ stat_label }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="ai-stats-showcase-findings-{{ ai_gen_id }}">
+      {% if block.settings.findings_heading != blank %}
+        <h3 class="ai-stats-showcase-findings-heading-{{ ai_gen_id }}">{{ block.settings.findings_heading }}</h3>
+      {% endif %}
+      <div class="ai-stats-showcase-findings-grid-{{ ai_gen_id }}">
+        {% for i in (1..4) %}
+          {% liquid
+            assign finding_key = 'finding_' | append: i
+            assign finding = block.settings[finding_key]
+          %}
+          {% if finding != blank %}
+            <div class="ai-stats-showcase-finding-item-{{ ai_gen_id }}">
+              <div class="ai-stats-showcase-bullet-{{ ai_gen_id }}"></div>
+              <div class="ai-stats-showcase-finding-text-{{ ai_gen_id }}">{{ finding }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Statistics showcase",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Backed by 10,000+ Scientific Studies"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Extensive research validates the effectiveness of our formulation"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#525151"
+    },
+    {
+      "type": "header",
+      "content": "Stat cards"
+    },
+    {
+      "type": "color",
+      "id": "card_gradient_start",
+      "label": "Gradient start color",
+      "default": "#FB8500"
+    },
+    {
+      "type": "color",
+      "id": "card_gradient_end",
+      "label": "Gradient end color",
+      "default": "#FF9E1B"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "stat_number_size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Number size",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "stat_label_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "stat_number_color",
+      "label": "Number color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "stat_label_color",
+      "label": "Label color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Stat 1"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "stat_1_number",
+      "label": "Number",
+      "default": "10,000+"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "stat_1_label",
+      "label": "Label",
+      "default": "Published Research Studies"
+    },
+    {
+      "type": "header",
+      "content": "Stat 2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "stat_2_number",
+      "label": "Number",
+      "default": "8+hrs"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "stat_2_label",
+      "label": "Label",
+      "default": "Sustained Blood Retention"
+    },
+    {
+      "type": "header",
+      "content": "Stat 3"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "stat_3_number",
+      "label": "Number",
+      "default": "<1%"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "stat_3_label",
+      "label": "Label",
+      "default": "Standard Curcumin Absorption"
+    },
+    {
+      "type": "header",
+      "content": "Stat 4"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "stat_4_number",
+      "label": "Number",
+      "default": "7x"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "stat_4_label",
+      "label": "Label",
+      "default": "Better with BCM-95®"
+    },
+    {
+      "type": "header",
+      "content": "Research findings"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "findings_heading",
+      "label": "Heading",
+      "default": "Notable Research Findings"
+    },
+    {
+      "type": "range",
+      "id": "findings_heading_size",
+      "min": 18,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "findings_bg_color",
+      "label": "Background color",
+      "default": "#FFE8D6"
+    },
+    {
+      "type": "range",
+      "id": "findings_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "bullet_size",
+      "min": 6,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "label": "Bullet size",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "bullet_color",
+      "label": "Bullet color",
+      "default": "#FB8500"
+    },
+    {
+      "type": "range",
+      "id": "finding_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Finding 1"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "finding_1",
+      "label": "Text",
+      "default": "Clinically proven to reduce inflammation markers by up to 65%"
+    },
+    {
+      "type": "header",
+      "content": "Finding 2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "finding_2",
+      "label": "Text",
+      "default": "Superior bioavailability compared to standard curcumin extracts"
+    },
+    {
+      "type": "header",
+      "content": "Finding 3"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "finding_3",
+      "label": "Text",
+      "default": "Demonstrated effectiveness in over 50 clinical trials worldwide"
+    },
+    {
+      "type": "header",
+      "content": "Finding 4"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "finding_4",
+      "label": "Text",
+      "default": "Sustained release formula ensures maximum therapeutic benefit"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Statistics showcase"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

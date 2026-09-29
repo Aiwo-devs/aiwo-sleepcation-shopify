@@ -1,0 +1,768 @@
+{%- style -%}
+  /* ============================================================
+     AIWO EVOO v3 — AIWO Difference Section
+     Scoped to: #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3
+     File: sections/aiwo-evoo-v3-aiwo-difference.liquid
+     DO NOT modify shared theme files.
+  ============================================================ */
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-v3 {
+    position: relative;
+    background: linear-gradient(180deg, #F6F3EF 0%, #F6F6F6 100%);
+    padding: 48px 20px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-v3__bg-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-v3__bg-desktop { display: block; }
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-v3__bg-mobile { display: none; }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-v3__inner {
+    position: relative;
+    z-index: 10;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* HEADING */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-heading {
+    color: #0C0C0D;
+    font-family: 'Outfit', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-align: center;
+    margin: 0 0 40px 0;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-heading__italic {
+    color: #7A7A85;
+    font-family: 'Newsreader', serif;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 120%;
+  }
+
+  /* TAGLINE WRAPPER */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tagline-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-pill {
+    display: inline-flex;
+    padding: 5px 12px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    border: 1px solid #645452;
+    background: linear-gradient(90deg, #FBFBFB 0%, #F3F1F1 100%);
+    color: #0C0C0D;
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    white-space: nowrap;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tagline-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #1A1A1A;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 120%;
+    letter-spacing: 0.64px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tagline-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* STATS GRID */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stats-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex: 1 0 0;
+    border-right: 2px solid #E6E6E6;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stat-item:last-child {
+    border-right: none;
+  }
+
+  /* CIRCLE */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-circle-wrap {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-circle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-circle-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stat-val {
+    color: #0C0C0D;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stat-sub-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: -4px;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stat-sub {
+    color: #1A1A1A;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stat-label {
+    color: #0C0C0D;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 0 10px;
+  }
+
+  /* TOOLTIP */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tooltip-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tooltip-trigger {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tooltip {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 320px;
+    max-width: 320px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    white-space: pre-line;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tooltip__arrow {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 6px;
+    background: #FFF;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tooltip__title {
+    color: #0C0C0D;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    margin: 0 0 4px 0;
+    text-transform: none;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tooltip__desc {
+    color: #666666;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+    text-transform: none;
+  }
+
+  /* DARK CARD */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-dark-card {
+    display: flex;
+    width: 100%;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #1A1A1A 0%, #383636 100%);
+    margin-bottom: 8px;
+    box-sizing: border-box;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-card-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: #FFF;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-card-head__gold {
+    color: #A1895E;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+    margin-left: 4px;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-card-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-card-list {
+    margin: 0;
+    padding: 0 0 0 20px;
+    color: #FFF;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-card-list li {
+    margin-bottom: 4px;
+  }
+
+  /* DISCLAIMER */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-disclaimer {
+    color: #0C0C0D;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-top: 8px;
+    align-self: flex-start;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* MOBILE */
+  @media (max-width: 767px) {
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-v3 {
+      padding: 24px 16px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-v3__bg-desktop { display: none; }
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-v3__bg-mobile { display: block; }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-heading {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-heading__italic {
+      font-size: 28px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tagline-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+      gap: 8px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-pill {
+      font-size: 18px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tagline-item {
+      font-size: 14px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stats-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 32px;
+      column-gap: 16px;
+      justify-items: center;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stat-item {
+      border-right: none !important;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stat-val {
+      font-size: 44px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-stat-label {
+      font-size: 16px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-dark-card {
+      padding: 20px 16px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-card-head,
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-card-head__gold {
+      font-size: 16px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-card-list {
+      font-size: 14px;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tooltip {
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      width: 320px !important;
+      max-width: calc(100vw - 32px) !important;
+      z-index: 999 !important;
+    }
+
+    #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-cs-tooltip__arrow {
+      display: none !important;
+    }
+  }
+{%- endstyle -%}
+
+<script>
+  (function () {
+    if (document.querySelector('link[href*="Newsreader"]')) return;
+    var pc1 = document.createElement('link');
+    pc1.rel = 'preconnect';
+    pc1.href = 'https://fonts.googleapis.com';
+    document.head.appendChild(pc1);
+    var pc2 = document.createElement('link');
+    pc2.rel = 'preconnect';
+    pc2.href = 'https://fonts.gstatic.com';
+    pc2.crossOrigin = 'anonymous';
+    document.head.appendChild(pc2);
+    var sheet = document.createElement('link');
+    sheet.rel = 'stylesheet';
+    sheet.href = 'https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,600&display=swap';
+    document.head.appendChild(sheet);
+  })();
+</script>
+
+<section class="aiwo-cs-v3" id="aiwo-cs-{{ section.id }}">
+
+  {%- if section.settings.bg_desktop != blank -%}
+    {{ section.settings.bg_desktop | image_url: width: 2000 | image_tag:
+      class: 'aiwo-cs-v3__bg-decor aiwo-cs-v3__bg-desktop',
+      alt: '',
+      loading: 'lazy',
+      width: 2000,
+      height: 800
+    }}
+  {%- endif -%}
+
+  {%- if section.settings.bg_mobile != blank -%}
+    {{ section.settings.bg_mobile | image_url: width: 800 | image_tag:
+      class: 'aiwo-cs-v3__bg-decor aiwo-cs-v3__bg-mobile',
+      alt: '',
+      loading: 'lazy',
+      width: 800,
+      height: 800
+    }}
+  {%- endif -%}
+
+  <div class="aiwo-cs-v3__inner">
+
+    {%- if section.settings.heading != blank or section.settings.heading_italic != blank -%}
+      <h2 class="aiwo-cs-heading">
+        {{ section.settings.heading }}
+        {%- if section.settings.heading_italic != blank -%}
+          <span class="aiwo-cs-heading__italic">{{ section.settings.heading_italic }}</span>
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
+
+    <div class="aiwo-cs-tagline-wrapper">
+      {%- if section.settings.main_tag != blank -%}
+        <div class="aiwo-cs-pill">{{ section.settings.main_tag }}</div>
+      {%- endif -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'tagline_sub' -%}
+          <div class="aiwo-cs-tagline-item" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              {{ block.settings.icon | image_url: width: 48 | image_tag:
+                class: 'aiwo-cs-tagline-icon',
+                alt: '',
+                loading: 'lazy',
+                width: 24,
+                height: 24
+              }}
+            {%- endif -%}
+            {{ block.settings.text }}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="aiwo-cs-stats-container">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'stat_circle' -%}
+          <div class="aiwo-cs-stat-item" {{ block.shopify_attributes }}>
+            <div class="aiwo-cs-circle-wrap">
+              {%- if block.settings.circle_img != blank -%}
+                {{ block.settings.circle_img | image_url: width: 300 | image_tag:
+                  class: 'aiwo-cs-circle-bg',
+                  alt: '',
+                  loading: 'lazy',
+                  width: 140,
+                  height: 140
+                }}
+              {%- endif -%}
+              <div class="aiwo-cs-circle-content">
+                <div class="aiwo-cs-stat-val">{{ block.settings.stat_val }}</div>
+                <div class="aiwo-cs-stat-sub-wrap">
+                  {%- if block.settings.tooltip_title != blank or block.settings.tooltip_desc != blank -%}
+                    <div class="aiwo-cs-tooltip-wrap"
+                      x-data="{ open: false }"
+                      @mouseenter="open = true"
+                      @mouseleave="open = false"
+                      @click.outside="open = false">
+                      <button class="aiwo-cs-tooltip-trigger"
+                        aria-label="More info"
+                        @click="open = !open">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                          <circle cx="7" cy="7" r="6.5" stroke="#645452"/>
+                          <text x="7" y="11" text-anchor="middle" font-size="9" fill="#645452">i</text>
+                        </svg>
+                      </button>
+                      <div class="aiwo-cs-tooltip"
+                        x-show="open"
+                        style="display:none"
+                        role="tooltip">
+                        <div class="aiwo-cs-tooltip__arrow"></div>
+                        {%- if block.settings.tooltip_title != blank -%}
+                          <p class="aiwo-cs-tooltip__title">{{ block.settings.tooltip_title }}</p>
+                        {%- endif -%}
+                        {%- if block.settings.tooltip_desc != blank -%}
+                          <p class="aiwo-cs-tooltip__desc">{{ block.settings.tooltip_desc }}</p>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.stat_sub != blank -%}
+                    <span class="aiwo-cs-stat-sub">{{ block.settings.stat_sub }}</span>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+            {%- if block.settings.bottom_label != blank -%}
+              <div class="aiwo-cs-stat-label">{{ block.settings.bottom_label }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="aiwo-cs-dark-card">
+      <div class="aiwo-cs-card-head">
+        {%- if section.settings.card_heading_white != blank -%}
+          {{ section.settings.card_heading_white }}
+        {%- endif -%}
+        {%- if section.settings.card_heading_gold != blank -%}
+          <span class="aiwo-cs-card-head__gold">{{ section.settings.card_heading_gold }}</span>
+        {%- endif -%}
+        {%- if section.settings.card_icon != blank -%}
+          {{ section.settings.card_icon | image_url: width: 40 | image_tag:
+            class: 'aiwo-cs-card-icon',
+            alt: '',
+            loading: 'lazy',
+            width: 20,
+            height: 20
+          }}
+        {%- endif -%}
+      </div>
+      {%- assign has_bullets = false -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'card_bullet' -%}
+          {%- assign has_bullets = true -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if has_bullets -%}
+        <ul class="aiwo-cs-card-list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'card_bullet' -%}
+              <li {{ block.shopify_attributes }}>{{ block.settings.bullet_text }}</li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.disclaimer != blank -%}
+      <div class="aiwo-cs-disclaimer">{{ section.settings.disclaimer }}</div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EVOO v3 - AIWO Difference",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_desktop",
+      "label": "Desktop Decorative Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_mobile",
+      "label": "Mobile Decorative Image"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Regular Text",
+      "default": "Not All Olive Oil"
+    },
+    {
+      "type": "text",
+      "id": "heading_italic",
+      "label": "Heading Italic Text",
+      "default": "Is The Same"
+    },
+    {
+      "type": "header",
+      "content": "Tagline"
+    },
+    {
+      "type": "text",
+      "id": "main_tag",
+      "label": "Pill Tag Text",
+      "default": "Olive Aura"
+    },
+    {
+      "type": "header",
+      "content": "Dark Card"
+    },
+    {
+      "type": "text",
+      "id": "card_heading_white",
+      "label": "Card Heading White Text",
+      "default": "DELIVERING"
+    },
+    {
+      "type": "text",
+      "id": "card_heading_gold",
+      "label": "Card Heading Gold Text",
+      "default": "MAX POTENCY"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_icon",
+      "label": "Card Icon"
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "text",
+      "id": "disclaimer",
+      "label": "Disclaimer Text",
+      "default": "*Based on clinical studies. Individual results may vary."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tagline_sub",
+      "name": "Tagline Feature Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (24x24)"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "PREMIUM GRADE"
+        }
+      ]
+    },
+    {
+      "type": "stat_circle",
+      "name": "Stat Circle",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "circle_img",
+          "label": "Circle Background Image"
+        },
+        {
+          "type": "text",
+          "id": "stat_val",
+          "label": "Stat Value",
+          "default": "68%"
+        },
+        {
+          "type": "text",
+          "id": "stat_sub",
+          "label": "Sub Label (e.g. RCTs, Protein)",
+          "info": "Leave blank to hide"
+        },
+        {
+          "type": "text",
+          "id": "tooltip_title",
+          "label": "Tooltip Title",
+          "info": "Leave blank to hide tooltip icon"
+        },
+        {
+          "type": "textarea",
+          "id": "tooltip_desc",
+          "label": "Tooltip Description",
+          "info": "Leave blank to hide tooltip"
+        },
+        {
+          "type": "text",
+          "id": "bottom_label",
+          "label": "Label Below Circle",
+          "default": "Heart Support"
+        }
+      ]
+    },
+    {
+      "type": "card_bullet",
+      "name": "Dark Card Bullet",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "bullet_text",
+          "label": "Bullet Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "EVOO v3 - AIWO Difference",
+      "blocks": [
+        { "type": "tagline_sub" },
+        { "type": "tagline_sub" },
+        { "type": "stat_circle" },
+        { "type": "stat_circle" },
+        { "type": "stat_circle" },
+        { "type": "stat_circle" },
+        { "type": "card_bullet" },
+        { "type": "card_bullet" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,189 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_7aXUzX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pBrcqM": {
+          "type": "heading",
+          "settings": {
+            "heading": "Book a Wellness Consultation",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_9kYWtW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>30-min sessions, MRC Nagar, Chennai, Mon-Sat from 9.30 AM.</p>",
+            "number_of_lines_shown": "medium",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "text_YN8hAN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Doctor Consultations  ·  Physiotherapy  ·  Aesthetics  ·  Spa Therapy  ·  Mental Wellness  ·  I.V. Therapy</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pBrcqM",
+        "text_9kYWtW",
+        "text_YN8hAN"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "custom_liquid_KU4q7m": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<!-- Cal inline embed code begins -->\n<div class=\"booking-iframe-wrapper\">\n<iframe\n    src=\"https://clinic.aiwohealth.com/service/booking\"\n    id=\"booking-iframe\"\n    style=\"width: 100%; border: none; display: block;\"\n    loading=\"lazy\"\n    title=\"Part Booking\">\n</iframe>\n</div>\n \n<style>\n  .booking-iframe-wrapper {\n    width: 100%;\n    max-width: 100%;\n  }\n  #booking-iframe {\n    height: 860px;\n  }\n</style>\n \n<script>\n  window.addEventListener('message', function(event) {\n    if (event.data && event.data.type === 'booking-app-height') {\n      var iframe = document.getElementById('booking-iframe');\n      if (iframe) iframe.style.height = event.data.height + 'px';\n    }\n  });\n</script>\n<!-- Cal inline embed code ends -->",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "contact_form_mcVUBF": {
+      "type": "contact-form",
+      "blocks": {
+        "name_N3aPfa": {
+          "type": "name",
+          "settings": {
+            "heading": "Name",
+            "mark_as_required": false
+          }
+        },
+        "email_J9PU3t": {
+          "type": "email",
+          "settings": {
+            "heading": "Email"
+          }
+        },
+        "phone_BD94Qd": {
+          "type": "phone",
+          "settings": {
+            "heading": "Phone number",
+            "mark_as_required": false
+          }
+        },
+        "message_bFYDxR": {
+          "type": "message",
+          "settings": {
+            "heading": "Please mention the service you are interested in",
+            "mark_as_required": false
+          }
+        }
+      },
+      "block_order": [
+        "name_N3aPfa",
+        "email_J9PU3t",
+        "phone_BD94Qd",
+        "message_bFYDxR"
+      ],
+      "disabled": true,
+      "name": "t:sections.contact-form.name",
+      "settings": {
+        "heading": "Enter your details to receive a callback",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "button_label": "Request Call-back",
+        "button_alignment": "center",
+        "success_message": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "show_content": "none",
+        "form_alignment": "left",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "contact_heading": "Contact infomation",
+        "highlight_type_1": "underline",
+        "heading_tag_2": "h2",
+        "infomation": "",
+        "address": "75 9th Ave, New York, NY 10011-7006",
+        "phone_nummber": "+1234567890",
+        "email_address": "info@yourstore.com",
+        "contact_text": "<p>Opening hours</p></br><p>Mon - Fri, 8:30am - 10:30pm,</br>Saturday, 8:30am - 10:30pm,</br>Sunday, 8:30am - 10:30pm</p>",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_7aXUzX",
+    "custom_liquid_KU4q7m",
+    "contact_form_mcVUBF"
+  ]
+}

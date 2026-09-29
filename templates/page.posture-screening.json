@@ -1,0 +1,1676 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_jUxE9U": {
+      "type": "rich-text",
+      "blocks": {
+        "media_8LYGWz": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/landing_page_posture_4.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "media_size": 100
+          }
+        },
+        "heading_xqVMde": {
+          "type": "heading",
+          "settings": {
+            "heading": "Know The Truth We're All Living With",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_pKxL4i": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Something happened to us over the past few years. Maybe you've noticed it too – that dull ache between your shoulder blades at the end of a long day, the way your neck feels stiff when you wake up, or how you catch yourself slouching in video calls.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "text_txhgVx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We're not broken. We're just human beings trying to adapt to a world that changed faster than our bodies could keep up with.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_zFHQcL": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get My Posture Assessment",
+            "button_link": "shopify://products/aiwo-ai-powered-posture-screening-service",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "#211e1e",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "#000000",
+            "color_text_button_hover": "#ffffff",
+            "color_button_secondary": "#e9e9e9",
+            "secondary_button_text": "#000000",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "media_8LYGWz",
+        "heading_xqVMde",
+        "text_pKxL4i",
+        "text_txhgVx",
+        "button_zFHQcL"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "slideshow_ViwBJK": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_ARzYez": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/landing_page_posture_5.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 50,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "enable_bakground": false,
+            "subheading": "",
+            "subheading_size": 100,
+            "heading": "",
+            "highlight_type": "underline",
+            "heading_size": 150,
+            "heading_tag": "h2",
+            "text": "<p><strong>Your head weighs average around 5kg, but with forward posture, your spine feels 23kg. That’s like carrying a toddler on your neck all day. <br/>No wonder you’re in pain.</strong></p>",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "text_product": "Check out our products:",
+            "list_products": [],
+            "show_rating": false,
+            "open_new_window_product": false,
+            "content_background_color": "rgba(0,0,0,0)",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "color_product_card_background": "rgba(0,0,0,0)",
+            "color_product_card_text": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_ARzYez"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "pause_hover": true,
+        "slider_visual": "none",
+        "show_arrow": true,
+        "image_pagination_background": "rgba(0,0,0,0)",
+        "image_pagination_text": "rgba(0,0,0,0)",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "adapt_corners_desktop": true,
+        "rounded_corner_image": false,
+        "desktop_height": "450",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "adapt_corners_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "show_content_below_image": false,
+        "mobile_height": "500",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_7H4GjR": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Nx8nXw": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/chest.png",
+            "custom_icon": "",
+            "title": "Muscle Adaptation",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 120,
+            "text": "<p>When we spend hours looking down at screens, our bodies adapt. The muscles in the front of our chest tighten, while the ones between our shoulder blades get weak and stretched. It's not laziness – it's biology responding to repetition.</p>"
+          }
+        },
+        "column_xmXDMK": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/weight_bc0d3e0b-2a2e-4c68-80d3-77bcdcbb97f4.png",
+            "custom_icon": "",
+            "title": "Weight Multiplication",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 120,
+            "text": "<p>When your head moves forward just a few inches, it can double the weight your neck muscles have to support. Imagine carrying a bowling ball all day instead of a tennis ball. That's what's happening to your neck and shoulders.</p>"
+          }
+        },
+        "column_k8Hrpk": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/mental-disability.png",
+            "custom_icon": "",
+            "title": "Generational Impact",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 120,
+            "text": "<p>Children mirror what they see. If we're always looking down, shoulders rolled forward, that becomes their normal. The habits we form today become their foundation tomorrow.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_Nx8nXw",
+        "column_xmXDMK",
+        "column_k8Hrpk"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "What's Really Happening to Your Body",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "none",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 100,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "multicolumn_hNQPLx": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_gbmB68": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/chest.png",
+            "custom_icon": "",
+            "title": "Breathing gets shallow",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 120,
+            "text": "<p>Your chest can't expand fully when your shoulders roll forward.</p>"
+          }
+        },
+        "column_HwJmtR": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/weight_bc0d3e0b-2a2e-4c68-80d3-77bcdcbb97f4.png",
+            "custom_icon": "",
+            "title": "Sleep becomes restless",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 120,
+            "text": "<p>Neck tension follows us to bed.</p>"
+          }
+        },
+        "column_heg7cW": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/mental-disability.png",
+            "custom_icon": "",
+            "title": "Long-term dreams feel distant",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 120,
+            "text": "<p>When your body hurts, everything else feels harder.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_gbmB68",
+        "column_HwJmtR",
+        "column_heg7cW"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "none",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 100,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "image_with_text_jCfpqN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tKAbBY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Your Daily Habits Are Silently Destroying Your Health",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_Wydx3a": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "📱 Tech Neck Epidemic",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p>Every hour hunched over screens adds 10-40 pounds of pressure on your cervical spine, causing permanent deformation.</p>",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_8YfEBB": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "💺 Desk Job Damage",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p>8+ hours of sitting creates muscle imbalances, forward head posture, and compressed blood vessels to your brain.</p>",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_cfEqVC": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "🧠 Cognitive Decline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p>Poor posture reduces blood flow to your brain by up to 30%, causing fatigue, brain fog, and reduced productivity.</p>",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_dXfcRU": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Book Your Test Now",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#211e1e",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tKAbBY",
+        "columns_Wydx3a",
+        "columns_8YfEBB",
+        "columns_cfEqVC",
+        "button_dXfcRU"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/posturescreening1.jpg",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "left",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_R7Ndrh": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_46G7LU": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "heading": "Your Daily Habits Are Silently Destroying Your Health",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_NnJ7je": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "🫁 Breathing Problems",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p>Forward posture compresses your chest, reducing lung capacity and oxygen intake, leaving you constantly tired.</p>",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_6pkAnE": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "😔 Confidence Killer",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p>Slouched shoulders and forward head posture make you appear shorter, older, and less confident in every interaction.</p>",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_KH78yj": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "⚡ Energy Drain",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p>Poor alignment forces your muscles to work overtime, causing chronic fatigue and reducing your overall vitality.</p>",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_p4kG4J": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Book Your Test Now",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#211e1e",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_46G7LU",
+        "columns_NnJ7je",
+        "columns_6pkAnE",
+        "columns_KH78yj",
+        "button_p4kG4J"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/pexels-kindelmedia-7298867.jpg",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "left",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "multicolumn_t96MA7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_U7akqh": {
+          "type": "column",
+          "settings": {
+            "icon": "fire",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Chronic pain that affects daily activities",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_VT63Tp": {
+          "type": "column",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Breathing problems from compressed chest muscles",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_iNwK6z": {
+          "type": "column",
+          "settings": {
+            "icon": "eye",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Sleep issues from persistent neck tension",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_wRzRdU": {
+          "type": "column",
+          "settings": {
+            "icon": "activity",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Loss of mobility and independence as we age",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_U7akqh",
+        "column_VT63Tp",
+        "column_iNwK6z",
+        "column_wRzRdU"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "The Reality of Ignoring It",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "none",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/4",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_RmQYzj": {
+      "type": "rich-text",
+      "blocks": {
+        "button_zXrFYr": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get My Posture Checked Before Its Too Late",
+            "button_link": "shopify://products/aiwo-ai-powered-posture-screening-service",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": true,
+            "show_button_style_2": "primary",
+            "color_button": "#000000",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "#181818",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "heading_ELPjmR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our AI-Powered Solution: Precise 25-Point Postural Assessment",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_t9d7ex": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our advanced AI analyzes 25+ specific body alignment points to create your complete postural blueprint</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "media_qa4tN3": {
+          "type": "media",
+          "settings": {
+            "video": "shopify://files/videos/3d posture 2.mp4",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "media_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "button_zXrFYr",
+        "heading_ELPjmR",
+        "text_t9d7ex",
+        "media_qa4tN3"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_4i94dF": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_tRBngD": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Front View Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Shoulder Joint Alignment (3 points)</p><p>Mid-Thoracic Position (2 points)</p><p>ASIS Hip Alignment (2 points)</p><p>Ankle Joint Position</p>"
+          }
+        },
+        "column_yDraWE": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Side View Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Forward Head Posture (Mid-ear)</p><p>Shoulder Joint Alignment</p><p>Hip Joint Position</p><p>Knee & Ankle Alignment</p>"
+          }
+        },
+        "column_H8hbKP": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Back View Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Spinal Alignment (C7, T4, T8, T12, L3)</p><p>AC Joint Position (2 points)</p><p>PSIS Hip Alignment (2 points)</p><p>Achilles Tendon Alignment</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_tRBngD",
+        "column_yDraWE",
+        "column_H8hbKP"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "Complete Body Analysis Coverage",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "none",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/4",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_NaUapn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_7gemwF": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Spinal Alignment Detection",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Precise measurement of cervical, thoracic, and lumbar spine positioning to identify subtle misalignments before they become painful.</p>"
+          }
+        },
+        "column_AwiMiY": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Functional Movement Screening",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Hamstring stiffness, pelvic tilt analysis, and knee deformity assessment reveal compensation patterns affecting daily activities.</p>"
+          }
+        },
+        "column_7yfyBa": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Muscle Imbalance Identification",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Computer vision detects asymmetries in shoulder height, hip alignment, and joint positioning with millimeter precision.</p>"
+          }
+        },
+        "column_WbptrJ": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Biomechanical Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Advanced algorithms calculate load distribution, joint stress patterns, and movement efficiency scores for comprehensive assessment.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_7gemwF",
+        "column_AwiMiY",
+        "column_7yfyBa",
+        "column_WbptrJ"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "Advanced Analysis Features",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "line_vertical",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/4",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_nkXKKT": {
+      "type": "rich-text",
+      "blocks": {
+        "button_DwBgEa": {
+          "type": "button",
+          "settings": {
+            "button_label": "Experience AI Precision Analysis",
+            "button_link": "shopify://products/aiwo-ai-powered-posture-screening-service",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": true,
+            "show_button_style_2": "primary",
+            "color_button": "#181818",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "#000000",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "button_DwBgEa"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "multicolumn_jggGnD": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Nzmyc6": {
+          "type": "column",
+          "settings": {
+            "icon": "check-mark",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Early Detection & Prevention",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Computer vision AI identifies postural deviations up to<strong>70% earlier</strong>than traditional methods, preventing chronic conditions before they develop.</p>"
+          }
+        },
+        "column_aMEwKq": {
+          "type": "column",
+          "settings": {
+            "icon": "activity",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Trusted Process",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Correcting forward head posture increases blood flow to the brain by up to<strong>30%</strong>, improving focus, memory, and mental clarity.</p>"
+          }
+        },
+        "column_KNiiqP": {
+          "type": "column",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Optimized Breathing Capacity",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Proper thoracic alignment increases lung capacity by<strong>15-25%</strong>, enhancing oxygen intake and reducing fatigue.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_Nzmyc6",
+        "column_aMEwKq",
+        "column_KNiiqP"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "Scientific Benefits of Our Precision Posture Analysis",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "none",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "multicolumn_nB7Dbr": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_QKUbHb": {
+          "type": "column",
+          "settings": {
+            "icon": "star",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Increased Energy & Vitality",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Balanced alignment reduces muscular effort by<strong>40%</strong>, freeing energy for daily activities and improving overall stamina.</p>"
+          }
+        },
+        "column_9MyrKE": {
+          "type": "column",
+          "settings": {
+            "icon": "another_icon",
+            "another_icon": "health",
+            "custom_icon": "",
+            "title": "Injury Prevention",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Identifying compensation patterns reduces injury risk by<strong>60%</strong>during sports and daily activities through improved biomechanics.</p>"
+          }
+        },
+        "column_jV9xnw": {
+          "type": "column",
+          "settings": {
+            "icon": "rulers",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Measurable Progress Tracking",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Objective data shows exact improvements over time, with visual proof of your postural transformation journey.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_QKUbHb",
+        "column_9MyrKE",
+        "column_jV9xnw"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "none",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "testimonials_bPAxbw": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_J4KxCC": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Priya Sharma, Marketing Director, Bangalore",
+            "text": "<p><em>I had no idea how much my posture was affecting my presence in meetings. After getting my AI assessment and following the recommendations for just 3 weeks, my colleagues started commenting on how much more confident I looked. The neck pain that plagued me for 2 years is completely gone.</em></p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_mDNQRF": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Amit Singh, Finance Manager, Delhi",
+            "text": "<p><em>The detailed visual report showed me exactly what was wrong and how to fix it. Six months later, I'm pain-free and more energetic than I've been in years.</em></p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_BYX7YM": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Kavitha Reddy, Teacher, Hyderabad",
+            "text": "<p><em>15 years of chronic upper back pain disappeared in 8 weeks. The AI identified muscle imbalances my previous doctors never caught. The precision of their analysis is incredible - they measure things down to millimeters.</em></p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_YqTdmw": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Rajesh Kumar, Software Engineer, Pune",
+            "text": "<p><em>The brain fog was killing my work performance. Within a month of correcting my forward head posture using their precise recommendations, my focus improved dramatically. I feel energized throughout the day.</em></p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_38rzhh": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Suresh Patel, Business Owner, Ahmedabad",
+            "text": "<p><em>When I started working on my posture, my 12-year-old daughter noticed and asked for her assessment too. Now our whole family stands taller and feels better. We've made it a family health priority thanks to their detailed reports</em>.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_J4KxCC",
+        "testimonial_mDNQRF",
+        "testimonial_BYX7YM",
+        "testimonial_YqTdmw",
+        "testimonial_38rzhh"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "heading": "Testimonials",
+        "subheading": "",
+        "heading_alignment": "center",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "text_alignment": "center",
+        "testimonial_items_view": "single",
+        "show_arrow": false,
+        "show_pagination": false,
+        "auto_play": true,
+        "change_slides_speed": 7,
+        "show_author_image": false,
+        "author_image": "top",
+        "image_ratio": "round",
+        "desktop_height": 300,
+        "background_color_light": "#ffffff",
+        "item_background_color_light": "#ffffff",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#ffffff",
+        "item_background_color_dark": "#ffffff",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 28,
+        "bottom_padding": 28,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 20
+      }
+    },
+    "image_with_text_cbmqke": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_kYKCfY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "Limited Time Price: ₹1000",
+            "heading": "Take Action Today",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>The longer you wait, the harder and more expensive it becomes to fix. Every day of poor posture is another day of damage accumulating in your spine.<br/><br/><strong>What You Get:</strong></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_KAmYyY": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "✅ Complete 25-point AI posture analysis",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_kXQHUH": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "✅ Detailed report with visual breakdown",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_JMwagj": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "✅ Personalized correction recommendations",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_nqLjF7": {
+          "type": "button",
+          "settings": {
+            "button_label": "BOOK MY POSTURE ASSESSMENT NOW",
+            "button_link": "shopify://products/aiwo-ai-powered-posture-screening-service",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#211e1e",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kYKCfY",
+        "columns_KAmYyY",
+        "columns_kXQHUH",
+        "columns_JMwagj",
+        "button_nqLjF7"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/shutterstock_2300629277_2_1.jpg",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "left",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_ajb9qg": {
+      "type": "rich-text",
+      "blocks": {
+        "text_gJR6M9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_RHbmm4": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "caption_4DwHwC": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "uppercase",
+            "text_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_gJR6M9",
+        "button_RHbmm4",
+        "caption_4DwHwC"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "rich_text_jUxE9U",
+    "slideshow_ViwBJK",
+    "multicolumn_7H4GjR",
+    "multicolumn_hNQPLx",
+    "image_with_text_jCfpqN",
+    "image_with_text_R7Ndrh",
+    "multicolumn_t96MA7",
+    "rich_text_RmQYzj",
+    "main",
+    "multicolumn_4i94dF",
+    "multicolumn_NaUapn",
+    "rich_text_nkXKKT",
+    "multicolumn_jggGnD",
+    "multicolumn_nB7Dbr",
+    "testimonials_bPAxbw",
+    "image_with_text_cbmqke",
+    "rich_text_ajb9qg"
+  ]
+}

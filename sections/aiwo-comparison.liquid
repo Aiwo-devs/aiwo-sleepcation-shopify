@@ -1,0 +1,404 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+
+{% style %}
+  /* Reset box-sizing */
+  .aiwo-comp-section, .aiwo-comp-section * {
+    box-sizing: border-box;
+  }
+
+  .aiwo-comp-section {
+    background: linear-gradient(180deg, #FEFEFE 0%, #F6F3EF 50%, #FEFEFE 100%);
+    padding: 48px 20px;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    color: #0C0C0D;
+    overflow-x: hidden;
+  }
+
+  .aiwo-tagline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #C0C0CC;
+    border-radius: 4px;
+    padding: 2px 8px;
+    background: linear-gradient(90deg, #FBFBFB 0%, #F3F1F1 100%);
+    color: #645452;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #645452;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(100, 84, 82, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(100, 84, 82, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(100, 84, 82, 0); }
+  }
+
+  /* Desktop (Base) */
+  .aiwo-main-heading {
+    font-size: 48px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    margin: 10px 0 40px 0 !important;
+    color: #0C0C0D !important;
+  }
+
+  .aiwo-main-heading span {
+    font-family: 'Newsreader', serif !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    color: #7A7A85 !important;
+  }
+
+  .aiwo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 48px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: stretch; 
+  }
+
+  .aiwo-col {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .aiwo-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 12px; /* Small gap strictly between image and its title */
+    width: 100%;
+  }
+
+  .aiwo-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .aiwo-col-title {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin: 0; /* Gap completely removed */
+    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .aiwo-features-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px 32px; 
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+  }
+
+  .aiwo-icon {
+    position: absolute;
+    top: -32px;
+    right: -32px;
+    width: 64px;
+    height: 64px;
+    z-index: 2;
+  }
+
+  .aiwo-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .aiwo-features-list li {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0C0C0D;
+    padding: 12px 0;
+    border-bottom: 1px solid #C0C0CC;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .aiwo-features-list li:last-child {
+    border-bottom: none;
+  }
+
+  .aiwo-btn {
+    display: block;
+    width: 100%;
+    background: #0C0C0D;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 14px 0;
+    border-radius: 4px;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: opacity 0.3s ease;
+  }
+
+  .aiwo-btn:hover {
+    opacity: 0.85;
+  }
+
+  /* --- Tablet Responsive Overrides --- */
+  @media (max-width: 1024px) {
+    .aiwo-main-heading {
+      font-size: 32px !important;
+    }
+  }
+
+  /* --- Mobile Responsive Best Practices --- */
+  @media (max-width: 767px) {
+    .aiwo-comp-section {
+      padding: 32px 10px; 
+    }
+
+    .aiwo-tagline {
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .aiwo-main-heading {
+      font-size: 28px !important;
+      margin: 10px 0 20px 0 !important;
+    }
+
+    .aiwo-grid {
+      gap: 12px; 
+    }
+
+    .aiwo-col-title {
+      font-size: 16px; 
+      margin: 0; /* Gap completely removed on mobile */
+    }
+
+    .aiwo-features-card {
+      padding: 16px 8px; 
+    }
+
+    .aiwo-icon {
+      width: 36px;
+      height: 36px;
+      top: -18px;
+      right: -8px; 
+    }
+
+    .aiwo-features-list li {
+      font-size: 13px; 
+      padding: 10px 0;
+    }
+
+    .aiwo-btn {
+      font-size: 16px;
+      padding: 12px 0;
+    }
+  }
+{% endstyle %}
+
+<section class="aiwo-comp-section">
+  <div class="aiwo-tagline">
+    <span class="pulse-dot"></span> {{ section.settings.tagline }}
+  </div>
+  
+  <h2 class="aiwo-main-heading">
+    {{ section.settings.heading }} <span>{{ section.settings.heading_italic }}</span>
+  </h2>
+
+  <div class="aiwo-grid">
+    <div class="aiwo-col">
+      <div class="aiwo-img-wrapper">
+        {% if section.settings.left_image != blank %}
+          {{ section.settings.left_image | image_url: width: 800 | image_tag: class: 'aiwo-img', alt: section.settings.left_title }}
+        {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'aiwo-img' }}
+        {% endif %}
+      </div>
+      <h3 class="aiwo-col-title">{{ section.settings.left_title }}</h3>
+      
+      <div class="aiwo-features-card">
+        {% if section.settings.icon_check != blank %}
+          {{ section.settings.icon_check | image_url: width: 128 | image_tag: class: 'aiwo-icon', alt: 'Check Icon' }}
+        {% endif %}
+        
+        <ul class="aiwo-features-list">
+          {% for block in section.blocks %}
+            {% if block.settings.left_feature != blank %}
+              <li>{{ block.settings.left_feature }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        
+        {% if section.settings.btn_text != blank %}
+          <a href="{{ section.settings.btn_link | default: '#' }}" class="aiwo-btn">
+            {{ section.settings.btn_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="aiwo-col">
+      <div class="aiwo-img-wrapper">
+        {% if section.settings.right_image != blank %}
+          {{ section.settings.right_image | image_url: width: 800 | image_tag: class: 'aiwo-img', alt: section.settings.right_title }}
+        {% else %}
+          {{ 'product-2' | placeholder_svg_tag: 'aiwo-img' }}
+        {% endif %}
+      </div>
+      <h3 class="aiwo-col-title">{{ section.settings.right_title }}</h3>
+      
+      <div class="aiwo-features-card">
+        {% if section.settings.icon_cross != blank %}
+          {{ section.settings.icon_cross | image_url: width: 128 | image_tag: class: 'aiwo-icon', alt: 'Cross Icon' }}
+        {% endif %}
+        
+        <ul class="aiwo-features-list">
+          {% for block in section.blocks %}
+            {% if block.settings.right_feature != blank %}
+              <li>{{ block.settings.right_feature }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Comparison Table",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline Text",
+      "default": "WHY AIWO"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "AIWO Dark Cocoa Powder vs."
+    },
+    {
+      "type": "text",
+      "id": "heading_italic",
+      "label": "Heading Italic Word",
+      "default": "Others"
+    },
+    {
+      "type": "header",
+      "content": "Left Column (AIWO)"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Product Image"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left Column Title",
+      "default": "A I W O"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_check",
+      "label": "Check Icon (SVG Support)",
+      "info": "Upload the green checkmark SVG here."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Right Column (Others)"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Product Image"
+    },
+    {
+      "type": "text",
+      "id": "right_title",
+      "label": "Right Column Title",
+      "default": "Regular Cocoa Powder"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_cross",
+      "label": "Cross Icon (SVG Support)",
+      "info": "Upload the red cross SVG here."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_row",
+      "name": "Comparison Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "left_feature",
+          "label": "Left Item (AIWO)",
+          "default": "No Added Sugar"
+        },
+        {
+          "type": "text",
+          "id": "right_feature",
+          "label": "Right Item (Others)",
+          "default": "Often contain sugar blends"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AIWO Comparison Table",
+      "blocks": [
+        { "type": "comparison_row" },
+        { "type": "comparison_row" },
+        { "type": "comparison_row" },
+        { "type": "comparison_row" },
+        { "type": "comparison_row" },
+        { "type": "comparison_row" }
+      ]
+    }
+  ]
+}
+{% endschema %}

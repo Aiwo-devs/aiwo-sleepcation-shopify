@@ -1,0 +1,254 @@
+{% comment %}
+  ============================================================
+  Section  : AIWO EVOO v3 — Global Styles
+  Template : product.extra-virgin-olive-oil-v3 ONLY
+  ============================================================
+  All typography values are driven by {% schema %} settings
+  and surfaced in the Shopify theme editor customizer panel
+  under "EVOO v3 Typography".
+
+  CSS strategy:
+  · Font families  → override theme's --font-*-family vars
+  · Heading colour → override theme's --colors-heading var
+                     (stored as R,G,B to match rgba(var()) usage)
+  · Body colour    → override theme's --colors-text var
+  · Sizes / weights / line-heights → new --evoo-* custom props,
+    applied directly to element selectors so both the vars
+    and the element styles stay in sync.
+
+  Section-specific overrides (e.g. #kb-<id> in EVOO-key-benefits)
+  carry ID-level specificity and naturally win over these rules.
+  ============================================================
+{% endcomment %}
+
+<script>
+  /* Inject Outfit only if no existing <link> already requests it */
+  (function () {
+    if (document.querySelector('link[href*="Outfit"]')) return;
+
+    var pc1 = document.createElement('link');
+    pc1.rel  = 'preconnect';
+    pc1.href = 'https://fonts.googleapis.com';
+    document.head.appendChild(pc1);
+
+    var pc2 = document.createElement('link');
+    pc2.rel         = 'preconnect';
+    pc2.href        = 'https://fonts.gstatic.com';
+    pc2.crossOrigin = 'anonymous';
+    document.head.appendChild(pc2);
+
+    var sheet = document.createElement('link');
+    sheet.rel  = 'stylesheet';
+    sheet.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap';
+    document.head.appendChild(sheet);
+  })();
+</script>
+
+<style>
+  :root {
+    /* ── Font families ───────────────────────────────────────
+       Overrides the theme's Shopify-CDN font vars so every
+       component using var(--font-*-family) picks up Outfit.   */
+    --font-body-family:    'Outfit', sans-serif;
+    --font-heading-family: 'Outfit', sans-serif;
+    --font-button:         'Outfit', sans-serif;
+    --font-menu:           'Outfit', sans-serif;
+
+    /* ── Heading tokens ──────────────────────────────────────
+       --colors-heading uses raw R,G,B (no rgb() wrapper)
+       to match the theme's  rgba(var(--colors-heading))  usage. */
+    --evoo-heading-size:        {{ section.settings.heading_font_size }}px;
+    --evoo-heading-weight:      {{ section.settings.heading_font_weight }};
+    --evoo-heading-line-height: {{ section.settings.heading_line_height }};
+    --colors-heading:           {{ section.settings.heading_color.red }}, {{ section.settings.heading_color.green }}, {{ section.settings.heading_color.blue }};
+
+    /* ── Body tokens ─────────────────────────────────────────
+       --colors-text uses raw R,G,B for the same reason.        */
+    --evoo-body-size:        {{ section.settings.body_font_size }}px;
+    --evoo-body-weight:      {{ section.settings.body_font_weight }};
+    --evoo-body-line-height: {{ section.settings.body_line_height }};
+    --colors-text:           {{ section.settings.body_color.red }}, {{ section.settings.body_color.green }}, {{ section.settings.body_color.blue }};
+
+    /* ── Button tokens ───────────────────────────────────────  */
+    --evoo-button-size:   {{ section.settings.button_font_size }}px;
+    --evoo-button-weight: {{ section.settings.button_font_weight }};
+  }
+
+  /* Scoped to this template only via #MainContent class */
+
+  /* Outfit on all text inside the template content area */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 * {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  /* Heading tokens */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 h1,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 h2:not(.ai-hero-heading-aennftkttl0jowunywaigenblock009ce11pnkbhh),
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 h3,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 h4,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 h5,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 h6,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .h1,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .h2,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .h3,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .h4,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .h5,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .h6 {
+    font-size:   var(--evoo-heading-size);
+    font-weight: var(--evoo-heading-weight);
+    line-height: var(--evoo-heading-line-height);
+  }
+
+  /* Body tokens */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 {
+    font-size:   var(--evoo-body-size);
+    font-weight: var(--evoo-body-weight);
+    line-height: var(--evoo-body-line-height);
+  }
+
+  /* Button tokens */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 button,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .button,
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 [type="button"],
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 [type="submit"] {
+    font-size:   var(--evoo-button-size);
+    font-weight: var(--evoo-button-weight);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "EVOO v3 Typography",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Font Size",
+      "min": 12,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "Font Weight",
+      "options": [
+        { "value": "300", "label": "Light — 300" },
+        { "value": "400", "label": "Regular — 400" },
+        { "value": "500", "label": "Medium — 500" },
+        { "value": "600", "label": "Semi Bold — 600" },
+        { "value": "700", "label": "Bold — 700" },
+        { "value": "800", "label": "Extra Bold — 800" }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "select",
+      "id": "heading_line_height",
+      "label": "Line Height",
+      "options": [
+        { "value": "1.0", "label": "1.0" },
+        { "value": "1.1", "label": "1.1" },
+        { "value": "1.2", "label": "1.2" },
+        { "value": "1.3", "label": "1.3" },
+        { "value": "1.4", "label": "1.4" },
+        { "value": "1.5", "label": "1.5" },
+        { "value": "1.6", "label": "1.6" },
+        { "value": "1.7", "label": "1.7" },
+        { "value": "1.8", "label": "1.8" }
+      ],
+      "default": "1.2"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#0C0C0D"
+    },
+    {
+      "type": "header",
+      "content": "Body"
+    },
+    {
+      "type": "range",
+      "id": "body_font_size",
+      "label": "Font Size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "body_font_weight",
+      "label": "Font Weight",
+      "options": [
+        { "value": "300", "label": "Light — 300" },
+        { "value": "400", "label": "Regular — 400" },
+        { "value": "500", "label": "Medium — 500" },
+        { "value": "600", "label": "Semi Bold — 600" },
+        { "value": "700", "label": "Bold — 700" }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "select",
+      "id": "body_line_height",
+      "label": "Line Height",
+      "options": [
+        { "value": "1.2", "label": "1.2" },
+        { "value": "1.3", "label": "1.3" },
+        { "value": "1.4", "label": "1.4" },
+        { "value": "1.5", "label": "1.5" },
+        { "value": "1.6", "label": "1.6" },
+        { "value": "1.7", "label": "1.7" },
+        { "value": "1.8", "label": "1.8" },
+        { "value": "2.0", "label": "2.0" }
+      ],
+      "default": "1.6"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font Size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Font Weight",
+      "options": [
+        { "value": "300", "label": "Light — 300" },
+        { "value": "400", "label": "Regular — 400" },
+        { "value": "500", "label": "Medium — 500" },
+        { "value": "600", "label": "Semi Bold — 600" },
+        { "value": "700", "label": "Bold — 700" },
+        { "value": "800", "label": "Extra Bold — 800" }
+      ],
+      "default": "600"
+    }
+  ]
+}
+{% endschema %}

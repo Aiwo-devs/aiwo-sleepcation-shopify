@@ -1,0 +1,1481 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_W69rxc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PzeFjR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Know your [rate of ageing] to spot potential health risks and improve overall well-being.",
+            "highlight_type": "font_highlight",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PzeFjR"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "slideshow_fedi3C": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_L4KkXk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/live-the-life-you-only-dreamed-about-2025-04-06-11-59-25-utc_1_909bf24b-1b7e-4a13-a4bc-06b6c472d123.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "show_sound_control": false,
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "enable_bakground": false,
+            "subheading": "",
+            "subheading_size": 100,
+            "heading": "",
+            "highlight_type": "underline",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "text_product": "Check out our products:",
+            "list_products": [],
+            "show_rating": false,
+            "open_new_window_product": false,
+            "content_background_color": "rgba(0,0,0,0)",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "color_product_card_background": "rgba(0,0,0,0)",
+            "color_product_card_text": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_L4KkXk"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "pause_hover": true,
+        "slider_visual": "bars",
+        "show_arrow": true,
+        "image_pagination_background": "rgba(0,0,0,0)",
+        "image_pagination_text": "rgba(0,0,0,0)",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "adapt_corners_desktop": true,
+        "rounded_corner_image": false,
+        "desktop_height": "650",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "adapt_corners_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "show_content_below_image": false,
+        "mobile_height": "250",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_zHTrTY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BqeBFT": {
+          "type": "heading",
+          "settings": {
+            "heading": "What is Rate of Ageing?",
+            "highlight_type": "font_highlight",
+            "heading_size": 80,
+            "heading_tag": "h2"
+          }
+        },
+        "text_wEU9NM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>It is the rate at which the functioning of your body ages over time.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "text_CPtPrj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If it is more than 1, your body is ageing faster than your actual age.<br/>If it is less than 1, you are ageing better and slower.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_wBqfUf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Register For An Epigenetic Age Test Now",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BqeBFT",
+        "text_wEU9NM",
+        "text_CPtPrj",
+        "button_wBqfUf"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 16,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "multicolumn_aQGNFH": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Rc9r77": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/blood-sample.png",
+            "custom_icon": "",
+            "title": "Sample Collection",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Non-invasive blood sample collection.</p>"
+          }
+        },
+        "column_axRet8": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/dna_1.png",
+            "custom_icon": "",
+            "title": "DNA Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Analyzing DNA methylation patterns.</p>"
+          }
+        },
+        "column_nDctng": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/age-group.png",
+            "custom_icon": "",
+            "title": "Age Determination",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Determining biological age from DNA methylation.</p>"
+          }
+        },
+        "column_3ine4x": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/health_1.png",
+            "custom_icon": "",
+            "title": "Health Status Overview",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Comprehensive view of health status based on biological age.</p>"
+          }
+        },
+        "column_GC3UhR": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/system-integration.png",
+            "custom_icon": "",
+            "title": "Integration with AIWO Services",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Incorporating results into AIWO's wellness programs.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_Rc9r77",
+        "column_axRet8",
+        "column_nDctng",
+        "column_3ine4x",
+        "column_GC3UhR"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "Find out your rate of ageing",
+        "highlight_type": "underline",
+        "heading_size": 80,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "line_vertical",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 100,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/5",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_pRU94H": {
+      "type": "rich-text",
+      "blocks": {
+        "button_PqHBnm": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book A Consultation",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "button_PqHBnm"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_axwjCN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TPdbAA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Partnered with the world's leading epigenetic testing company",
+            "highlight_type": "underline",
+            "heading_size": 70,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TPdbAA"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "image_with_text_jCfpqN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tKAbBY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "Understand the science behind epigenetics and its impact on your health.",
+            "heading": "Your Epigenetic Age Test Report Includes:",
+            "highlight_type": "underline",
+            "heading_base_size": 60,
+            "heading_tag": "h1",
+            "text": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_Wydx3a": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Personalized Analysis",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 70,
+            "text": "",
+            "wide_desktop": 2,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_YPMQNN": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Detailed Age Metrics",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 70,
+            "text": "",
+            "wide_desktop": 2,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_pahHEf": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Your Biological Age vs Chronological Age",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 70,
+            "text": "",
+            "wide_desktop": 2,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_4LrJry": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Factors influencing your biological age",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 70,
+            "text": "",
+            "wide_desktop": 2,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_HAn9kw": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Comprehensive Health Insights",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 70,
+            "text": "",
+            "wide_desktop": 2,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_MGeAMG": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Breakdown of various health markers",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 70,
+            "text": "",
+            "wide_desktop": 2,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_GhjmHz": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Interpretation of results in an easy-to-understand format",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 70,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_dXfcRU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book Your Test Now",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#211e1e",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tKAbBY",
+        "columns_Wydx3a",
+        "columns_YPMQNN",
+        "columns_pahHEf",
+        "columns_4LrJry",
+        "columns_HAn9kw",
+        "columns_MGeAMG",
+        "columns_GhjmHz",
+        "button_dXfcRU"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/Add_a_heading_1_1_53560eed-8515-4214-a7ba-cd9d0e1423d7.png",
+        "desktop_height": "450px",
+        "mobile_height": "250px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "image_comparison_P7Vdj4": {
+      "type": "image-comparison",
+      "blocks": {
+        "heading_6yw78M": {
+          "type": "heading",
+          "settings": {
+            "subheading": "Understand the difference between your biological and chronological ages.",
+            "heading": "Personalised Health Insights",
+            "highlight_type": "underline",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<ul><li><strong>Preventive Health Approach: </strong>Gain foresight into potential health risks and take proactive steps towards prevention.</li><li><strong>Tailored Wellness Recommendations: </strong>Use your epigenetic data to customise your wellness programs at AIWO.</li><li><strong>Track Progress: </strong>Monitor how lifestyle changes positively impact your biological age over time.</li></ul>",
+            "heading_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6yw78M"
+      ],
+      "name": "t:sections.image-comparison.name",
+      "settings": {
+        "heading": "Benefits",
+        "highlight_type": "underline",
+        "heading_base_size": 100,
+        "heading_tag": "h2",
+        "layout_comparison": "horizontal",
+        "desktop_height": "450px",
+        "mobile_height": "400px",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "label_edges_type": "square",
+        "image": "shopify://shop_images/pexels-uiliamnornberg-30767572DD.jpg",
+        "heading_before_image": "Chronological Age",
+        "heading_base_size_before_image": 60,
+        "heading_before_image_position": "bottom",
+        "image_after": "shopify://shop_images/pexels-uiliamnornberg-30767572DDAF.jpg",
+        "heading_after_image": "Biological Age",
+        "heading_base_size_after_image": 60,
+        "heading_after_image_position": "bottom",
+        "default_scroll_position": 50,
+        "text_position": "start",
+        "text_alignment": "start",
+        "heading_color": "#000000",
+        "background_color": "#FFFFFF",
+        "text_background_light": "#ffffff",
+        "heading_color_dark": "#000000",
+        "background_color_dark": "#FFFFFF",
+        "text_background_dark": "rgba(0,0,0,0)",
+        "image_alignment": "md:flex-row",
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "flex-col",
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "multicolumn_RwnMbH": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_8mpJz9": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/access-control.png",
+            "custom_icon": "",
+            "title": "Access Anytime, Anywhere",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Online Portal: View and track your lab results and health records seamlessly.</p>"
+          }
+        },
+        "column_xGXERb": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/veracity_1.png",
+            "custom_icon": "",
+            "title": "Precision and Reliability",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>99%+ Test Reproducibility with consistent and reliable results.</p>"
+          }
+        },
+        "column_MRCwQH": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/location.png",
+            "custom_icon": "",
+            "title": "Location:",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Performed in TruDiagnostic’s In-House Laboratory, USA</p>"
+          }
+        },
+        "column_hpgFQw": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/schedule.png",
+            "custom_icon": "",
+            "title": "Turnaround Time:",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>3-6 weeks.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_8mpJz9",
+        "column_xGXERb",
+        "column_MRCwQH",
+        "column_hpgFQw"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "full_border",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 100,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/4",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 16,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_PJAK9T": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_x74qBk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Embark on Your Unique Wellness Journey",
+            "highlight_type": "underline",
+            "heading_size": 80,
+            "heading_tag": "h2"
+          }
+        },
+        "heading_fm4wB3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Customised Nutrition and Fitness Plans tailored to your epigenetic profile.",
+            "highlight_type": "underline",
+            "heading_size": 50,
+            "heading_tag": "h2"
+          }
+        },
+        "text_UpDN64": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get a detailed 30+ page report, comprehensively analyzing each factor of your biological age.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_gCfHFM": {
+          "type": "button",
+          "settings": {
+            "button_label": "DOWNLOAD SAMPLE REPORT",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_x74qBk",
+        "heading_fm4wB3",
+        "text_UpDN64",
+        "button_gCfHFM"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "testimonials_QTcD8t": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_fhRDey": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "Rola Tassabehji (Yoga Instructor)",
+            "text": "<p>As a yoga instructor and lifelong wellness enthusiast, I was drawn to AIWO's offerings, using the latest science-backed deep diagnostics for preventive care. I discovered a number of health issues that needed to be addressed and went unnoticed during my regular annual health check. Thank you AlWO team.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_mNFfMr": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "Khaled Awad (CEO)",
+            "text": "<p>The comprehensive diagnosis at AIWO revealed disappointing facts and identified medical issues which I would have never found with the routine checkups I used to do. Since then, I have been following the holistic treatment philosophy suggested by AIWO and I feel I am on track for the reversal of the diagnosed problems. The empathy and attention I received by all AIWO staff make me feel \"safe\" health wise and in the hands of people who sincerely care about my health.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_eRDBAN": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "Ayad Tassabehji (General Manager)",
+            "text": "<p>The AIWO experience was a true eye opener to the state of my health. The diagnostics and care provided were beyond what I expected, and I especially enjoyed the physio and spa-like services in the comfort of a five star hotel. It felt more like a holiday retreat with lasting benefits.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_BczqwB": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "quote",
+            "custom_icon": "",
+            "title": "Bonno FOK",
+            "text": "<p>I had one week program with AIWO. The experience is just amazing. They have all you need. From overall body checks, exercises, massages, recommended foods and drinks. This place is nothing but improving your health, live healthy, live happy and live longer. THANK YOU AIWO.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_fhRDey",
+        "testimonial_mNFfMr",
+        "testimonial_eRDBAN",
+        "testimonial_BczqwB"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "heading": "Hear from Our Clients",
+        "subheading": "",
+        "heading_alignment": "center",
+        "highlight_type": "underline",
+        "heading_size": 80,
+        "heading_tag": "h2",
+        "text_alignment": "center",
+        "testimonial_items_view": "single",
+        "show_arrow": true,
+        "show_pagination": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "show_author_image": false,
+        "author_image": "top",
+        "image_ratio": "round",
+        "desktop_height": 200,
+        "background_color_light": "#ffffff",
+        "item_background_color_light": "#ffffff",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "item_background_color_dark": "rgba(0,0,0,0)",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 28,
+        "bottom_padding": 28,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 20
+      }
+    },
+    "faq_4JhpGN": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_EP64mk": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "What is Epigenetic Age Testing?",
+            "row_content": "<p>Epigenetic Age Testing is a groundbreaking approach to assess your biological age, which may differ from your chronological age. This test analyses DNA methylation patterns to provide insights into your overall health and wellness.</p>"
+          }
+        },
+        "frequently_asked_question_mK4jQW": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "How is this test different from other health tests?",
+            "row_content": "<p>Unlike traditional tests that focus on specific health markers or conditions, Epigenetic Age Testing offers a comprehensive view of your overall health and ageing process. It helps in understanding the impact of lifestyle choices on your biological age.</p>"
+          }
+        },
+        "frequently_asked_question_6d9PWy": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "How do I prepare for the test?",
+            "row_content": "<p>There are no special preparations required for the test. It involves a simple collection of blood, depending on the testing method used.</p>"
+          }
+        },
+        "frequently_asked_question_q6cWXm": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Is the test painful or invasive?",
+            "row_content": "<p>No, the test is non-invasive and painless. It typically involves providing a simple blood draw.</p>"
+          }
+        },
+        "frequently_asked_question_xrTpVV": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "How long does it take to get the results?",
+            "row_content": "<p>Results are typically available within 3-6 weeks after your sample is received in the laboratory.</p>"
+          }
+        },
+        "frequently_asked_question_PwHBUR": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "How can I use the results of this test?",
+            "row_content": "<p>The results can guide you in making informed decisions about your lifestyle, diet, and wellness routines. They can also be integrated with AIWO's personalised health programs for a holistic approach to your well-being.</p>"
+          }
+        },
+        "frequently_asked_question_WGBEQg": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Is my genetic information kept confidential?",
+            "row_content": "<p>Absolutely. We adhere to strict privacy policies and ensure that your genetic information is kept confidential and used only for the purposes of your health assessment.</p>"
+          }
+        },
+        "frequently_asked_question_9cG6Qd": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Can this test predict future health conditions?",
+            "row_content": "<p>While the test provides valuable insights into your current health and biological age, it is not designed to predict specific future health conditions. Instead, it helps in understanding potential risk factors and guiding lifestyle choices.</p>"
+          }
+        },
+        "frequently_asked_question_EehnCp": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Who should consider taking this test?",
+            "row_content": "<p>Anyone interested in gaining a deeper understanding of their health and ageing process can benefit from this test. It is particularly useful for individuals looking to tailor their health and wellness strategies based on their biological age.</p>"
+          }
+        },
+        "frequently_asked_question_mDpRa7": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "How often should I repeat this test?",
+            "row_content": "<p>The frequency of testing can vary depending on individual health goals and circumstances. It is generally recommended to repeat the test annually or biennially to track changes and progress.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_EP64mk",
+        "frequently_asked_question_mK4jQW",
+        "frequently_asked_question_6d9PWy",
+        "frequently_asked_question_q6cWXm",
+        "frequently_asked_question_xrTpVV",
+        "frequently_asked_question_PwHBUR",
+        "frequently_asked_question_WGBEQg",
+        "frequently_asked_question_9cG6Qd",
+        "frequently_asked_question_EehnCp",
+        "frequently_asked_question_mDpRa7"
+      ],
+      "name": "t:sections.question_and_answer.name",
+      "settings": {
+        "heading": "[Frequently Asked Questions]",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "show_border": false,
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "contact_form_f9c3md": {
+      "type": "contact-form",
+      "blocks": {
+        "name_BdDbDD": {
+          "type": "name",
+          "settings": {
+            "heading": "Name",
+            "mark_as_required": false
+          }
+        },
+        "email_9ECGp8": {
+          "type": "email",
+          "settings": {
+            "heading": "Email"
+          }
+        },
+        "phone_DqwQRy": {
+          "type": "phone",
+          "settings": {
+            "heading": "Phone number",
+            "mark_as_required": false
+          }
+        },
+        "message_G4rmFa": {
+          "type": "message",
+          "settings": {
+            "heading": "Message",
+            "mark_as_required": false
+          }
+        }
+      },
+      "block_order": [
+        "name_BdDbDD",
+        "email_9ECGp8",
+        "phone_DqwQRy",
+        "message_G4rmFa"
+      ],
+      "name": "t:sections.contact-form.name",
+      "settings": {
+        "heading": "Ready for proactive care and preventive cure?",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "button_label": "Book Your Epigenetic Age Testing Now",
+        "button_alignment": "center",
+        "success_message": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "show_content": "none",
+        "form_alignment": "left",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "contact_heading": "Contact infomation",
+        "highlight_type_1": "underline",
+        "heading_tag_2": "h2",
+        "infomation": "",
+        "address": "75 9th Ave, New York, NY 10011-7006",
+        "phone_nummber": "+1234567890",
+        "email_address": "info@yourstore.com",
+        "contact_text": "<p>Opening hours</p><p>Mon - Fri, 8:30am - 10:30pm,<br/>Saturday, 8:30am - 10:30pm,<br/>Sunday, 8:30am - 10:30pm</p>",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "comparison_table_4LkDY4": {
+      "type": "comparison-table",
+      "blocks": {
+        "criterion_Q6hdYB": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Total biomarkers screened",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "181+\n100\n77\n40"
+          }
+        },
+        "criterion_Bptdxj": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Advanced cardiac markers (hs-CRP, ApoB, Lp(a))",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nyes\nLimited\nNo"
+          }
+        },
+        "criterion_zWjeGP": {
+          "type": "criterion",
+          "settings": {
+            "heading": "In-depth hormones & insulin",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nyes\nLimited\nNo"
+          }
+        },
+        "criterion_KxcrJr": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Micronutrients & amino-acids",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nLimited\nNo\nNo"
+          }
+        },
+        "criterion_Ddnp8J": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Doctor-interpreted longevity plan",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nyes\nyes\nNo"
+          }
+        },
+        "criterion_MKxXgD": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Price (INR)",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "18,000\n10,000\n7,500 \n5,000+"
+          }
+        }
+      },
+      "block_order": [
+        "criterion_Q6hdYB",
+        "criterion_Bptdxj",
+        "criterion_zWjeGP",
+        "criterion_KxcrJr",
+        "criterion_Ddnp8J",
+        "criterion_MKxXgD"
+      ],
+      "disabled": true,
+      "name": "t:sections.comparision-table.name",
+      "settings": {
+        "heading": "Which Blood Panel is right for you?",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "description": "<p>Add further details to describe your comparison table</p>",
+        "product": "",
+        "alternative_text": "AIWO blood Panels vs Outside Tests",
+        "external_item_labels": "AIWO 181\nAIWO 100\nAIWO 77\nOutside tests",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "column_highlight_light": "rgba(0,0,0,0)",
+        "line_border": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "column_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_3ar7XE": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Gd7CYH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_Pqd4JP": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "caption_mjGcY6": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "uppercase",
+            "text_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_Gd7CYH",
+        "button_Pqd4JP",
+        "caption_mjGcY6"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_ajb9qg": {
+      "type": "rich-text",
+      "blocks": {
+        "text_gJR6M9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_RHbmm4": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "caption_4DwHwC": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "uppercase",
+            "text_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_gJR6M9",
+        "button_RHbmm4",
+        "caption_4DwHwC"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "rich_text_W69rxc",
+    "slideshow_fedi3C",
+    "rich_text_zHTrTY",
+    "multicolumn_aQGNFH",
+    "rich_text_pRU94H",
+    "rich_text_axwjCN",
+    "image_with_text_jCfpqN",
+    "main",
+    "image_comparison_P7Vdj4",
+    "multicolumn_RwnMbH",
+    "rich_text_PJAK9T",
+    "testimonials_QTcD8t",
+    "faq_4JhpGN",
+    "contact_form_f9c3md",
+    "comparison_table_4LkDY4",
+    "rich_text_3ar7XE",
+    "rich_text_ajb9qg"
+  ]
+}

@@ -1,0 +1,571 @@
+{% comment %}
+  FAQ Accordion Section
+  Dark Theme - Tighter Letter Spacing
+  Updates: Gold color changed to #919FA8
+{% endcomment %}
+
+<style>
+/* ==========================================================================
+   CSS VARIABLES
+   ========================================================================== */
+:root {
+  --faq-bg: #0C0C0D;
+  --faq-accordion-bg: #1A1A1A;
+  --faq-text: #FEFEFE;
+  /* Updated Gold/Accent Color */
+  --faq-gold: #919FA8;
+  --faq-radius: 16px;
+  --faq-gap: 80px;
+  --faq-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   SECTION
+   ========================================================================== */
+.section_faq {
+  width: 100%;
+  padding: 80px 60px;
+  background-color: var(--faq-bg);
+}
+
+.faq_container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   TWO COLUMN LAYOUT - 40/60 SPLIT
+   ========================================================================== */
+.faq_content {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  gap: var(--faq-gap);
+  align-items: start;
+}
+
+/* ==========================================================================
+   LEFT COLUMN - HEADING
+   ========================================================================== */
+.faq_header {
+  position: sticky;
+  top: 100px;
+}
+
+.faq_eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--faq-text);
+  padding: 4px 12px;
+  margin-bottom: 24px;
+  /* Updated Gradient to match #919FA8 (RGB: 145, 159, 168) */
+  background: linear-gradient(90deg, rgba(145, 159, 168, 0.24), rgba(145, 159, 168, 0.06));
+  border-radius: 2px;
+}
+
+.faq_heading {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--faq-text);
+  margin: 0;
+}
+
+.faq_heading-gold {
+  color: var(--faq-gold);
+}
+
+/* ==========================================================================
+   RIGHT COLUMN - ACCORDION LIST
+   ========================================================================== */
+.faq_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   ACCORDION ITEM
+   ========================================================================== */
+.faq_item {
+  background-color: var(--faq-accordion-bg);
+  border-radius: var(--faq-radius);
+  overflow: hidden;
+  transition: background-color var(--faq-transition);
+}
+
+.faq_item:hover {
+  background-color: rgba(26, 26, 26, 0.8);
+}
+
+/* Question Button - TIGHTER LETTER SPACING */
+.faq_question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 64px 20px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--faq-text);
+  transition: all var(--faq-transition);
+}
+
+.faq_question:hover {
+  opacity: 0.9;
+}
+
+/* Toggle Icon */
+.faq_toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform var(--faq-transition);
+}
+
+.faq_toggle svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.faq_item.is-open .faq_toggle {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Answer Panel */
+.faq_answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--faq-transition);
+}
+
+.faq_item.is-open .faq_answer {
+  max-height: 1000px;
+}
+
+.faq_answer-content {
+  padding: 0 24px 20px 24px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--faq-text);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity var(--faq-transition), transform var(--faq-transition);
+}
+
+.faq_item.is-open .faq_answer-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+/* ==========================================================================
+   RESPONSIVE - TABLET
+   ========================================================================== */
+@media (max-width: 991px) {
+  .section_faq {
+    padding: 64px 40px;
+  }
+  
+  .faq_content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .faq_header {
+    position: static;
+  }
+  
+  .faq_heading {
+    font-size: 40px;
+  }
+  
+  .faq_question {
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    padding-right: 56px;
+  }
+  
+  .faq_answer-content {
+    font-size: 16px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE
+   ========================================================================== */
+@media (max-width: 767px) {
+  .section_faq {
+    padding: 48px 24px;
+  }
+  
+  .faq_content {
+    gap: 40px;
+  }
+  
+  .faq_heading {
+    font-size: 32px;
+  }
+  
+  .faq_eyebrow {
+    font-size: 12px;
+  }
+  
+  .faq_list {
+    gap: 12px;
+  }
+  
+  .faq_question {
+    font-size: 17px;
+    letter-spacing: -0.3px;
+    padding: 16px 52px 16px 20px;
+  }
+  
+  .faq_toggle {
+    right: 16px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .faq_answer-content {
+    padding: 0 20px 16px 20px;
+    font-size: 15px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE PORTRAIT
+   ========================================================================== */
+@media (max-width: 479px) {
+  .section_faq {
+    padding: 40px 20px;
+  }
+  
+  .faq_heading {
+    font-size: 28px;
+  }
+  
+  .faq_eyebrow {
+    font-size: 11px;
+  }
+  
+  .faq_question {
+    font-size: 16px;
+    letter-spacing: -0.3px;
+  }
+  
+  .faq_answer-content {
+    font-size: 14px;
+  }
+}
+</style>
+
+<div class="section_faq">
+  <div class="faq_container">
+    
+    <div class="faq_content">
+      
+      <div class="faq_header">
+        <span class="faq_eyebrow">{{ section.settings.eyebrow }}</span>
+        <h2 class="faq_heading">
+          {{ section.settings.heading_white }} <span class="faq_heading-gold">{{ section.settings.heading_gold }}</span> {{ section.settings.heading_white_2 }}
+        </h2>
+      </div>
+      
+      <div class="faq_list">
+        {%- for i in (1..10) -%}
+          {%- assign question = 'question_' | append: i -%}
+          {%- assign answer = 'answer_' | append: i -%}
+          
+          {%- if section.settings[question] != blank -%}
+            <div class="faq_item {% if i == 1 %}is-open{% endif %}" data-faq-item>
+              <button class="faq_question" aria-expanded="{% if i == 1 %}true{% else %}false{% endif %}" data-faq-trigger>
+                <span>{{ section.settings[question] }}</span>
+                <span class="faq_toggle">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M5 12H19" stroke="#FEFEFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+              <div class="faq_answer" data-faq-panel>
+                <div class="faq_answer-content">
+                  {{ section.settings[answer] }}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Initialize FAQ Accordion
+  function initFAQ() {
+    const faqItems = document.querySelectorAll('[data-faq-item]');
+    
+    if (!faqItems.length) return;
+    
+    faqItems.forEach(function(item) {
+      const trigger = item.querySelector('[data-faq-trigger]');
+      
+      if (!trigger) return;
+      
+      trigger.addEventListener('click', function() {
+        const isOpen = item.classList.contains('is-open');
+        
+        // Close all items
+        faqItems.forEach(function(otherItem) {
+          if (otherItem !== item) {
+            otherItem.classList.remove('is-open');
+            const otherTrigger = otherItem.querySelector('[data-faq-trigger]');
+            if (otherTrigger) {
+              otherTrigger.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+        
+        // Toggle current item
+        if (isOpen) {
+          item.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+      
+      // Keyboard support
+      trigger.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          trigger.click();
+        }
+      });
+    });
+  }
+  
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQ);
+  } else {
+    initFAQ();
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ Accordion",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Questions Answered"
+    },
+    {
+      "type": "text",
+      "id": "heading_white",
+      "label": "Heading (White Part 1)",
+      "default": "Everything You"
+    },
+    {
+      "type": "text",
+      "id": "heading_gold",
+      "label": "Heading (Accent Part)",
+      "default": "Need"
+    },
+    {
+      "type": "text",
+      "id": "heading_white_2",
+      "label": "Heading (White Part 2)",
+      "default": "to Know"
+    },
+    {
+      "type": "header",
+      "content": "Question 1"
+    },
+    {
+      "type": "text",
+      "id": "question_1",
+      "label": "Question",
+      "default": "How do AIWO Fast Bars support intermittent fasting?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_1",
+      "label": "Answer",
+      "default": "AIWO Fast Bars are designed with a carefully balanced macronutrient profile that provides essential nutrition during your eating window without disrupting the metabolic state achieved during fasting. With only 200 calories and ingredients that don't interfere with ketogenesis, they help you maintain nutritional adequacy while practicing time-restricted eating."
+    },
+    {
+      "type": "header",
+      "content": "Question 2"
+    },
+    {
+      "type": "text",
+      "id": "question_2",
+      "label": "Question",
+      "default": "What makes these bars different from regular protein bars?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_2",
+      "label": "Answer",
+      "default": "Unlike many commercial bars loaded with added sugars, artificial flavors, and fillers, AIWO Fast Bars use clean, whole-food ingredients: premium nuts (almonds, cashews, pecans), seeds, natural sweeteners (brown rice syrup, honey), and functional additions like chicory powder for prebiotic fiber. Our formulation is informed by research on fasting physiology."
+    },
+    {
+      "type": "header",
+      "content": "Question 3"
+    },
+    {
+      "type": "text",
+      "id": "question_3",
+      "label": "Question",
+      "default": "How many bars should I eat per day?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_3",
+      "label": "Answer",
+      "default": "For most individuals practicing intermittent fasting, 1-2 bars per day is appropriate, consumed during your eating window. Common usage patterns include breaking your fast with one bar, pre/post-workout nutrition, or as a convenient meal option during busy days. Always consume as part of a balanced, varied diet."
+    },
+    {
+      "type": "header",
+      "content": "Question 4"
+    },
+    {
+      "type": "text",
+      "id": "question_4",
+      "label": "Question",
+      "default": "Are AIWO Fast Bars safe for everyone?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_4",
+      "label": "Answer",
+      "default": "AIWO Fast Bars are made from food-grade ingredients and are generally well-tolerated. However, they contain tree nuts (almonds, cashews, pecans), milk, and soy. Not recommended for children under 5 years. If you're pregnant, nursing, have a medical condition, or take medications, consult your healthcare provider before use."
+    },
+    {
+      "type": "header",
+      "content": "Question 5"
+    },
+    {
+      "type": "text",
+      "id": "question_5",
+      "label": "Question",
+      "default": "Can I eat these bars if I'm not fasting?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_5",
+      "label": "Answer",
+      "default": "Absolutely! While formulated with intermittent fasting in mind, AIWO Fast Bars are versatile nutrition bars suitable for anyone seeking convenient, wholesome nutrition. They work well as breakfast replacements, pre/post-workout snacks, office nutrition, or travel food."
+    },
+    {
+      "type": "header",
+      "content": "Question 6"
+    },
+    {
+      "type": "text",
+      "id": "question_6",
+      "label": "Question",
+      "default": "How should I store my Fast Bars?"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_6",
+      "label": "Answer",
+      "default": "Store in a cool, dry place away from direct sunlight and heat (ideally below 25°C). After opening the package, reseal it properly for optimal freshness and quality. Proper storage prevents moisture absorption and maintains the texture and flavor of the nuts and dark chocolate drizzle."
+    },
+    {
+      "type": "header",
+      "content": "Question 7"
+    },
+    {
+      "type": "text",
+      "id": "question_7",
+      "label": "Question"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_7",
+      "label": "Answer"
+    },
+    {
+      "type": "header",
+      "content": "Question 8"
+    },
+    {
+      "type": "text",
+      "id": "question_8",
+      "label": "Question"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_8",
+      "label": "Answer"
+    },
+    {
+      "type": "header",
+      "content": "Question 9"
+    },
+    {
+      "type": "text",
+      "id": "question_9",
+      "label": "Question"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_9",
+      "label": "Answer"
+    },
+    {
+      "type": "header",
+      "content": "Question 10"
+    },
+    {
+      "type": "text",
+      "id": "question_10",
+      "label": "Question"
+    },
+    {
+      "type": "textarea",
+      "id": "answer_10",
+      "label": "Answer"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Accordion"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,853 @@
+{% doc %}
+  @prompt
+    Design a premium hero section for a luxury olive oil brand named AIWO Olive Aura — positioned as an elite, scientifically tested Extra Virgin Olive Oil crafted in Australia.
+    
+    Layout:
+    
+    Split layout with text content on the left and product image on the right.
+    
+    Light gradient background (cream to pale olive tones).
+    
+    Rounded edges and soft shadows for an elegant, high-end aesthetic.
+    
+    Top Badge:
+    
+    Small pill-shaped badge with gold icon and text:
+    “🌿 Australian Crafted Excellence”
+    
+    Light gold background (#FFF4D4) and soft border.
+    
+    Left Side (Text Content):
+    
+    Brand title in bold, large olive-green font:
+    “AIWO Olive Aura”
+    
+    Subtitle below: “Extra Virgin Olive Oil” in muted olive-gray.
+    
+    Supporting tagline in medium weight:
+    “Freshness you can measure. Purity you can trust.”
+    
+    Body text:
+    “The elite choice in EVOO—crafted in Australia, chosen by connoisseurs. Ultra-low oxidation, lab-clean, and protected to the last drop. Taste the bright, clean, peppery finish—and know exactly why it’s better.”
+    
+    Italicized line below in lighter tone:
+    “Olives harvested and cold-extracted within 3 hours to lock in aroma, vitality, and that signature peppery tickle.”
+    
+    Buttons Section:
+    
+    Primary button (gold): “Add to cart”
+    
+    Secondary button (olive green): “Start Elite Subscription”
+    
+    Tertiary button (white): “View Lab Report”
+    
+    All buttons rounded, bold text, and subtle shadow.
+    
+    Right Side (Image Section):
+    
+    High-quality image of a dark green olive oil bottle with gold cap surrounded by fresh olives and branches on a warm golden background.
+    
+    Rounded corners and slight depth shadow.
+    
+    Overlay card (bottom-left corner of image):
+    
+    Rounded white card with subtle shadow.
+    
+    Bold metric text: “0.16%”
+    
+    Label below: “Free Acidity”
+    
+    Subtext in gold: “80% below limit”
+    
+    add to cart button should add the product to the cart
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-olive-{{ ai_gen_id }} {
+    background: linear-gradient(135deg, {{ block.settings.gradient_start }} 0%, {{ block.settings.gradient_end }} 100%);
+    border-radius: {{ block.settings.border_radius }}px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    padding: {{ block.settings.section_padding }}px;
+  }
+
+  .ai-hero-olive-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .ai-hero-olive-badge-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: {{ block.settings.badge_bg_color }};
+    border: 1px solid {{ block.settings.badge_border_color }};
+    border-radius: 50px;
+    padding: 8px 16px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: {{ block.settings.badge_text_color }};
+    font-weight: 500;
+  }
+
+  .ai-hero-olive-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-hero-olive-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+  }
+
+  .ai-hero-olive-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0 0 20px 0;
+    font-weight: 400;
+  }
+
+  .ai-hero-olive-tagline-{{ ai_gen_id }} {
+    font-size: {{ block.settings.tagline_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 16px 0;
+    font-weight: 500;
+  }
+
+  .ai-hero-olive-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+  }
+
+  .ai-hero-olive-italic-{{ ai_gen_id }} {
+    font-size: {{ block.settings.italic_size }}px;
+    color: {{ block.settings.italic_color }};
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 0 32px 0;
+  }
+
+  .ai-hero-olive-buttons-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .ai-hero-olive-btn-{{ ai_gen_id }} {
+    padding: 14px 28px;
+    border-radius: {{ block.settings.button_radius }}px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+  }
+
+  .ai-hero-olive-btn-primary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.primary_btn_bg }};
+    color: {{ block.settings.primary_btn_color }};
+  }
+
+  .ai-hero-olive-btn-primary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.primary_btn_hover }};
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-hero-olive-btn-secondary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.secondary_btn_bg }};
+    color: {{ block.settings.secondary_btn_color }};
+  }
+
+  .ai-hero-olive-btn-secondary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.secondary_btn_hover }};
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-hero-olive-btn-tertiary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.tertiary_btn_bg }};
+    color: {{ block.settings.tertiary_btn_color }};
+    border: 2px solid {{ block.settings.tertiary_btn_border }};
+  }
+
+  .ai-hero-olive-btn-tertiary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.tertiary_btn_hover }};
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-hero-olive-image-section-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-hero-olive-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    border-radius: {{ block.settings.image_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .ai-hero-olive-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-hero-olive-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-hero-olive-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  .ai-hero-olive-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-hero-olive-metric-card-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: {{ block.settings.card_bg_color }};
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    min-width: 140px;
+  }
+
+  .ai-hero-olive-metric-value-{{ ai_gen_id }} {
+    font-size: 32px;
+    font-weight: 700;
+    color: {{ block.settings.metric_value_color }};
+    margin: 0 0 4px 0;
+    line-height: 1;
+  }
+
+  .ai-hero-olive-metric-label-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.metric_label_color }};
+    margin: 0 0 4px 0;
+    font-weight: 500;
+  }
+
+  .ai-hero-olive-metric-subtext-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: {{ block.settings.metric_subtext_color }};
+    font-weight: 600;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-hero-olive-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-hero-olive-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.7);
+    }
+
+    .ai-hero-olive-subtitle-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subtitle_size }}px * 0.85);
+    }
+
+    .ai-hero-olive-buttons-{{ ai_gen_id }} {
+      flex-direction: column;
+    }
+
+    .ai-hero-olive-btn-{{ ai_gen_id }} {
+      width: 100%;
+      text-align: center;
+    }
+  }
+{% endstyle %}
+
+<olive-hero-{{ ai_gen_id }} class="ai-hero-olive-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hero-olive-container-{{ ai_gen_id }}">
+    <div class="ai-hero-olive-content-{{ ai_gen_id }}">
+      {% if block.settings.show_badge %}
+        <div class="ai-hero-olive-badge-{{ ai_gen_id }}">
+          <span>{{ block.settings.badge_icon }}</span>
+          <span>{{ block.settings.badge_text }}</span>
+        </div>
+      {% endif %}
+
+      {% if block.settings.brand_title != blank %}
+        <h1 class="ai-hero-olive-title-{{ ai_gen_id }}">{{ block.settings.brand_title }}</h1>
+      {% endif %}
+
+      {% if block.settings.subtitle != blank %}
+        <p class="ai-hero-olive-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+      {% endif %}
+
+      {% if block.settings.tagline != blank %}
+        <p class="ai-hero-olive-tagline-{{ ai_gen_id }}">{{ block.settings.tagline }}</p>
+      {% endif %}
+
+      {% if block.settings.description != blank %}
+        <div class="ai-hero-olive-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+      {% endif %}
+
+      {% if block.settings.italic_text != blank %}
+        <p class="ai-hero-olive-italic-{{ ai_gen_id }}">{{ block.settings.italic_text }}</p>
+      {% endif %}
+
+      <div class="ai-hero-olive-buttons-{{ ai_gen_id }}">
+        {% if block.settings.show_primary_btn %}
+          <button
+            class="ai-hero-olive-btn-{{ ai_gen_id }} ai-hero-olive-btn-primary-{{ ai_gen_id }}"
+            data-product-id="{{ product.id }}"
+            data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+          >
+            {{ block.settings.primary_btn_label }}
+          </button>
+        {% endif %}
+
+        {% if block.settings.show_secondary_btn and block.settings.secondary_btn_link != blank %}
+          <a
+            href="{{ block.settings.secondary_btn_link }}"
+            class="ai-hero-olive-btn-{{ ai_gen_id }} ai-hero-olive-btn-secondary-{{ ai_gen_id }}"
+          >
+            {{ block.settings.secondary_btn_label }}
+          </a>
+        {% endif %}
+
+        {% if block.settings.show_tertiary_btn and block.settings.tertiary_btn_link != blank %}
+          <a
+            href="{{ block.settings.tertiary_btn_link }}"
+            class="ai-hero-olive-btn-{{ ai_gen_id }} ai-hero-olive-btn-tertiary-{{ ai_gen_id }}"
+          >
+            {{ block.settings.tertiary_btn_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-hero-olive-image-section-{{ ai_gen_id }}">
+      <div class="ai-hero-olive-image-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.product_image %}
+          <img
+            src="{{ block.settings.product_image | image_url: width: 1200 }}"
+            alt="{{ block.settings.product_image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.product_image.width }}"
+            height="{{ block.settings.product_image.height }}"
+            class="ai-hero-olive-image-{{ ai_gen_id }}"
+          >
+        {% else %}
+          <div class="ai-hero-olive-image-placeholder-{{ ai_gen_id }}">
+            {{ 'product-1' | placeholder_svg_tag }}
+            <div class="ai-hero-olive-empty-state-{{ ai_gen_id }}">
+              Next, add a product image
+            </div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.show_metric_card %}
+          <div class="ai-hero-olive-metric-card-{{ ai_gen_id }}">
+            <div class="ai-hero-olive-metric-value-{{ ai_gen_id }}">{{ block.settings.metric_value }}</div>
+            <div class="ai-hero-olive-metric-label-{{ ai_gen_id }}">{{ block.settings.metric_label }}</div>
+            <div class="ai-hero-olive-metric-subtext-{{ ai_gen_id }}">{{ block.settings.metric_subtext }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</olive-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class OliveHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.addToCartButton = this.querySelector('.ai-hero-olive-btn-primary-{{ ai_gen_id }}');
+        if (this.addToCartButton) {
+          this.addToCartButton.addEventListener('click', this.handleAddToCart.bind(this));
+        }
+      }
+
+      handleAddToCart(event) {
+        event.preventDefault();
+        const button = event.currentTarget;
+        const variantId = button.dataset.variantId;
+
+        if (!variantId) {
+          console.error('No variant ID found');
+          return;
+        }
+
+        const originalText = button.textContent;
+        button.textContent = 'Adding...';
+        button.disabled = true;
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            items: [{
+              id: variantId,
+              quantity: 1
+            }]
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          button.textContent = 'Added!';
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+          }, 2000);
+
+          window.dispatchEvent(new CustomEvent('cart:refresh'));
+
+          if (window.theme && window.theme.cart) {
+            window.theme.cart.refresh();
+          }
+        })
+        .catch(error => {
+          console.error('Error adding to cart:', error);
+          button.textContent = 'Error - Try again';
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+          }, 2000);
+        });
+      }
+    }
+
+    customElements.define('olive-hero-{{ ai_gen_id }}', OliveHero{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Premium olive oil hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Gradient start",
+      "default": "#FFF9F0"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient end",
+      "default": "#F5F0E8"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_icon",
+      "label": "Badge icon",
+      "default": "🌿"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Australian Crafted Excellence"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Background",
+      "default": "#FFF4D4"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Border",
+      "default": "#E8D9A8"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text",
+      "default": "#8B7355"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "brand_title",
+      "label": "Brand title",
+      "default": "AIWO Olive Aura"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#556B2F"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 56
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Extra Virgin Olive Oil"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#7A8A5C"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Freshness you can measure. Purity you can trust."
+    },
+    {
+      "type": "range",
+      "id": "tagline_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Tagline size",
+      "default": 18
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>The elite choice in EVOO—crafted in Australia, chosen by connoisseurs. Ultra-low oxidation, lab-clean, and protected to the last drop. Taste the bright, clean, peppery finish—and know exactly why it's better.</p>"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Body text size",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "italic_text",
+      "label": "Italic text",
+      "default": "Olives harvested and cold-extracted within 3 hours to lock in aroma, vitality, and that signature peppery tickle."
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#4A4A4A"
+    },
+    {
+      "type": "color",
+      "id": "italic_color",
+      "label": "Italic text color",
+      "default": "#6B6B6B"
+    },
+    {
+      "type": "range",
+      "id": "italic_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Italic text size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_primary_btn",
+      "label": "Show button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "primary_btn_label",
+      "label": "Button label",
+      "default": "Add to cart"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_bg",
+      "label": "Background",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_color",
+      "label": "Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_hover",
+      "label": "Hover background",
+      "default": "#C19B2A"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_btn",
+      "label": "Show button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "secondary_btn_label",
+      "label": "Button label",
+      "default": "Start Elite Subscription"
+    },
+    {
+      "type": "url",
+      "id": "secondary_btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_bg",
+      "label": "Background",
+      "default": "#556B2F"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_color",
+      "label": "Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_hover",
+      "label": "Hover background",
+      "default": "#445522"
+    },
+    {
+      "type": "header",
+      "content": "Tertiary button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tertiary_btn",
+      "label": "Show button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tertiary_btn_label",
+      "label": "Button label",
+      "default": "View Lab Report"
+    },
+    {
+      "type": "url",
+      "id": "tertiary_btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "tertiary_btn_bg",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "tertiary_btn_color",
+      "label": "Text",
+      "default": "#556B2F"
+    },
+    {
+      "type": "color",
+      "id": "tertiary_btn_border",
+      "label": "Border",
+      "default": "#556B2F"
+    },
+    {
+      "type": "color",
+      "id": "tertiary_btn_hover",
+      "label": "Hover background",
+      "default": "#F5F5F5"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Button radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Product image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Image radius",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Metric card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_metric_card",
+      "label": "Show metric card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "metric_value",
+      "label": "Metric value",
+      "default": "0.16%"
+    },
+    {
+      "type": "text",
+      "id": "metric_label",
+      "label": "Metric label",
+      "default": "Free Acidity"
+    },
+    {
+      "type": "text",
+      "id": "metric_subtext",
+      "label": "Metric subtext",
+      "default": "80% below limit"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "metric_value_color",
+      "label": "Value color",
+      "default": "#556B2F"
+    },
+    {
+      "type": "color",
+      "id": "metric_label_color",
+      "label": "Label color",
+      "default": "#4A4A4A"
+    },
+    {
+      "type": "color",
+      "id": "metric_subtext_color",
+      "label": "Subtext color",
+      "default": "#D4AF37"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium olive oil hero"
+    }
+  ]
+}
+{% endschema %}

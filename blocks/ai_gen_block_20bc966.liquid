@@ -1,0 +1,927 @@
+{% doc %}
+  @prompt
+    Design a premium product page hero section for AIWO Ultimate Omega 3 fish oil supplement.
+    Layout:
+    Split layout: Product gallery left (40%), product details right (60%). Light blue-to-white gradient background.
+    Left Side - Product Gallery:
+    
+    Main image: Two dark blue bottles with silver caps, floating golden softgels, white rounded background with shadow
+    5 thumbnail images below: front view (selected), supplement facts, back label, side view, certificate
+    Thumbnails 60x60px, rounded corners, horizontal row
+    
+    Right Side - Product Details:
+    Header:
+    
+    "AIWO ULTIMATE OMEGA 3" (bold black)
+    "Triple Strength 1000mg" (bold blue #1E40AF)
+    ⭐⭐⭐⭐⭐ 4.8 (2,847 reviews)
+    
+    Description:
+    "Premium fish oil with 1000mg Omega-3 fatty acids featuring 46% EPA and 38% DHA. Advanced Enteric Coating and Molecularly Distilled technology for maximum absorption without burping or foul taste."
+    Benefits Grid (2x2):
+    
+    ❤️ Cardio Protection (red heart + pulse) | "Vasodilation & anti-arrhythmic effects"
+    🧠 Brain Function (purple brain + sparkle) | "DHA supports cognitive health"
+    🛡️ Anti-Inflammatory (coral shield + check) | "Reduces inflammation naturally"
+    ⚡ Antioxidant Power (gold starburst) | "Protects against oxidative stress"
+    
+    Each has circular icon background, bold heading, supporting text, white card with border.
+    Pricing Card:
+    
+    "60 Soft Gel Capsules" + yellow "BEST VALUE" badge
+    "1 Month Supply"
+    ₹2100 (blue, large) | ₹3200 | Red "34% OFF" badge
+    
+    Purchase:
+    
+    Quantity selector: [-] [1] [+]
+    Blue button: "Buy Now - ₹2100" (full width)
+    
+    Trust Badges (3 columns):
+    "Globally Sourced" | "Clinically Proven" | "100% Pure"
+    Functionality: Thumbnails change main image, quantity adjusts price, Buy Now adds to cart and goes to checkout.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-omega-hero-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #E0F2FE 0%, #FFFFFF 100%);
+    padding: 60px 20px;
+  }
+
+  .ai-omega-hero-container-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .ai-omega-gallery-{{ ai_gen_id }} {
+    position: sticky;
+    top: 20px;
+  }
+
+  .ai-omega-main-image-{{ ai_gen_id }} {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-omega-main-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-omega-main-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-omega-main-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-omega-thumbnails-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .ai-omega-thumbnail-{{ ai_gen_id }} {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .ai-omega-thumbnail-{{ ai_gen_id }}.active {
+    border-color: #1E40AF;
+  }
+
+  .ai-omega-thumbnail-{{ ai_gen_id }}:hover {
+    border-color: #60A5FA;
+  }
+
+  .ai-omega-thumbnail-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-omega-thumbnail-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background: #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-omega-thumbnail-placeholder-{{ ai_gen_id }} svg {
+    width: 30px;
+    height: 30px;
+    opacity: 0.4;
+  }
+
+  .ai-omega-details-{{ ai_gen_id }} {
+    padding: 20px 0;
+  }
+
+  .ai-omega-header-{{ ai_gen_id }} {
+    margin-bottom: 24px;
+  }
+
+  .ai-omega-brand-{{ ai_gen_id }} {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-omega-subtitle-{{ ai_gen_id }} {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1E40AF;
+    margin: 0 0 16px 0;
+  }
+
+  .ai-omega-rating-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #64748B;
+  }
+
+  .ai-omega-stars-{{ ai_gen_id }} {
+    color: #FFA422;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .ai-omega-description-{{ ai_gen_id }} {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 32px;
+  }
+
+  .ai-omega-benefits-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .ai-omega-benefit-{{ ai_gen_id }} {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .ai-omega-benefit-{{ ai_gen_id }}:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .ai-omega-benefit-icon-{{ ai_gen_id }} {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 24px;
+  }
+
+  .ai-omega-benefit-title-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1E293B;
+    margin: 0 0 6px 0;
+  }
+
+  .ai-omega-benefit-text-{{ ai_gen_id }} {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .ai-omega-pricing-card-{{ ai_gen_id }} {
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  .ai-omega-pack-info-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .ai-omega-pack-size-{{ ai_gen_id }} {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1E293B;
+  }
+
+  .ai-omega-badge-{{ ai_gen_id }} {
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .ai-omega-supply-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: #64748B;
+    margin-bottom: 16px;
+  }
+
+  .ai-omega-price-row-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .ai-omega-current-price-{{ ai_gen_id }} {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1E40AF;
+  }
+
+  .ai-omega-original-price-{{ ai_gen_id }} {
+    font-size: 20px;
+    color: #94A3B8;
+    text-decoration: line-through;
+  }
+
+  .ai-omega-discount-badge-{{ ai_gen_id }} {
+    background: #DC2626;
+    color: #FFFFFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .ai-omega-quantity-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .ai-omega-quantity-label-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+  }
+
+  .ai-omega-quantity-selector-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ai-omega-qty-btn-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    background: #F8FAFC;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #475569;
+    transition: all 0.2s ease;
+  }
+
+  .ai-omega-qty-btn-{{ ai_gen_id }}:hover {
+    background: #E2E8F0;
+  }
+
+  .ai-omega-qty-input-{{ ai_gen_id }} {
+    width: 60px;
+    height: 40px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1E293B;
+  }
+
+  .ai-omega-buy-btn-{{ ai_gen_id }} {
+    width: 100%;
+    background: #1E40AF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ai-omega-buy-btn-{{ ai_gen_id }}:hover {
+    background: #1E3A8A;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+  }
+
+  .ai-omega-trust-badges-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .ai-omega-trust-badge-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 16px;
+    background: #F8FAFC;
+    border-radius: 8px;
+  }
+
+  .ai-omega-trust-icon-{{ ai_gen_id }} {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  .ai-omega-trust-text-{{ ai_gen_id }} {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-omega-hero-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-omega-gallery-{{ ai_gen_id }} {
+      position: relative;
+      top: 0;
+    }
+
+    .ai-omega-benefits-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-omega-trust-badges-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-omega-hero-{{ ai_gen_id }} {
+      padding: 40px 16px;
+    }
+
+    .ai-omega-brand-{{ ai_gen_id }} {
+      font-size: 24px;
+    }
+
+    .ai-omega-subtitle-{{ ai_gen_id }} {
+      font-size: 20px;
+    }
+
+    .ai-omega-current-price-{{ ai_gen_id }} {
+      font-size: 28px;
+    }
+  }
+{% endstyle %}
+
+<omega-hero-{{ ai_gen_id }} class="ai-omega-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-omega-hero-container-{{ ai_gen_id }}">
+    <div class="ai-omega-gallery-{{ ai_gen_id }}">
+      <div class="ai-omega-main-image-{{ ai_gen_id }}">
+        {% if block.settings.main_image %}
+          <img
+            src="{{ block.settings.main_image | image_url: width: 800 }}"
+            alt="{{ block.settings.main_image.alt | escape }}"
+            width="800"
+            height="800"
+            loading="lazy"
+            data-main-image
+          >
+        {% else %}
+          <div class="ai-omega-main-image-placeholder-{{ ai_gen_id }}">
+            {{ 'product-1' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-omega-thumbnails-{{ ai_gen_id }}">
+        {% for i in (1..5) %}
+          {% assign thumb_key = 'thumbnail_' | append: i %}
+          {% assign thumb_image = block.settings[thumb_key] %}
+          <div class="ai-omega-thumbnail-{{ ai_gen_id }} {% if i == 1 %}active{% endif %}" data-thumbnail="{{ i }}">
+            {% if thumb_image %}
+              <img
+                src="{{ thumb_image | image_url: width: 120 }}"
+                alt="{{ thumb_image.alt | escape }}"
+                width="60"
+                height="60"
+                loading="lazy"
+              >
+            {% else %}
+              <div class="ai-omega-thumbnail-placeholder-{{ ai_gen_id }}">
+                {{ 'product-1' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="ai-omega-details-{{ ai_gen_id }}">
+      <div class="ai-omega-header-{{ ai_gen_id }}">
+        <h1 class="ai-omega-brand-{{ ai_gen_id }}">{{ block.settings.brand_name }}</h1>
+        <h2 class="ai-omega-subtitle-{{ ai_gen_id }}">{{ block.settings.product_subtitle }}</h2>
+        <div class="ai-omega-rating-{{ ai_gen_id }}">
+          <span class="ai-omega-stars-{{ ai_gen_id }}">{{ block.settings.rating_stars }}</span>
+          <span>{{ block.settings.rating_score }} ({{ block.settings.review_count }} reviews)</span>
+        </div>
+      </div>
+
+      <div class="ai-omega-description-{{ ai_gen_id }}">
+        {{ block.settings.product_description }}
+      </div>
+
+      <div class="ai-omega-benefits-{{ ai_gen_id }}">
+        <div class="ai-omega-benefit-{{ ai_gen_id }}">
+          <div class="ai-omega-benefit-icon-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_1_bg }};">
+            {{ block.settings.benefit_1_icon }}
+          </div>
+          <h3 class="ai-omega-benefit-title-{{ ai_gen_id }}">{{ block.settings.benefit_1_title }}</h3>
+          <p class="ai-omega-benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_1_text }}</p>
+        </div>
+
+        <div class="ai-omega-benefit-{{ ai_gen_id }}">
+          <div class="ai-omega-benefit-icon-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_2_bg }};">
+            {{ block.settings.benefit_2_icon }}
+          </div>
+          <h3 class="ai-omega-benefit-title-{{ ai_gen_id }}">{{ block.settings.benefit_2_title }}</h3>
+          <p class="ai-omega-benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_2_text }}</p>
+        </div>
+
+        <div class="ai-omega-benefit-{{ ai_gen_id }}">
+          <div class="ai-omega-benefit-icon-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_3_bg }};">
+            {{ block.settings.benefit_3_icon }}
+          </div>
+          <h3 class="ai-omega-benefit-title-{{ ai_gen_id }}">{{ block.settings.benefit_3_title }}</h3>
+          <p class="ai-omega-benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_3_text }}</p>
+        </div>
+
+        <div class="ai-omega-benefit-{{ ai_gen_id }}">
+          <div class="ai-omega-benefit-icon-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_4_bg }};">
+            {{ block.settings.benefit_4_icon }}
+          </div>
+          <h3 class="ai-omega-benefit-title-{{ ai_gen_id }}">{{ block.settings.benefit_4_title }}</h3>
+          <p class="ai-omega-benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_4_text }}</p>
+        </div>
+      </div>
+
+      <div class="ai-omega-pricing-card-{{ ai_gen_id }}">
+        <div class="ai-omega-pack-info-{{ ai_gen_id }}">
+          <span class="ai-omega-pack-size-{{ ai_gen_id }}">{{ block.settings.pack_size }}</span>
+          <span class="ai-omega-badge-{{ ai_gen_id }}">{{ block.settings.value_badge }}</span>
+        </div>
+        <div class="ai-omega-supply-{{ ai_gen_id }}">{{ block.settings.supply_duration }}</div>
+        
+        <div class="ai-omega-price-row-{{ ai_gen_id }}">
+          <span class="ai-omega-current-price-{{ ai_gen_id }}" data-current-price data-base-price="{{ block.settings.current_price }}">₹{{ block.settings.current_price }}</span>
+          <span class="ai-omega-original-price-{{ ai_gen_id }}">₹{{ block.settings.original_price }}</span>
+          <span class="ai-omega-discount-badge-{{ ai_gen_id }}">{{ block.settings.discount_percentage }}</span>
+        </div>
+
+        <div class="ai-omega-quantity-{{ ai_gen_id }}">
+          <span class="ai-omega-quantity-label-{{ ai_gen_id }}">Quantity:</span>
+          <div class="ai-omega-quantity-selector-{{ ai_gen_id }}">
+            <button class="ai-omega-qty-btn-{{ ai_gen_id }}" data-qty-decrease aria-label="Decrease quantity">−</button>
+            <input type="number" class="ai-omega-qty-input-{{ ai_gen_id }}" value="1" min="1" max="99" data-qty-input aria-label="Quantity">
+            <button class="ai-omega-qty-btn-{{ ai_gen_id }}" data-qty-increase aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <button class="ai-omega-buy-btn-{{ ai_gen_id }}" data-buy-btn>
+          Buy Now - <span data-total-price>₹{{ block.settings.current_price }}</span>
+        </button>
+      </div>
+
+      <div class="ai-omega-trust-badges-{{ ai_gen_id }}">
+        <div class="ai-omega-trust-badge-{{ ai_gen_id }}">
+          <div class="ai-omega-trust-icon-{{ ai_gen_id }}">{{ block.settings.trust_1_icon }}</div>
+          <p class="ai-omega-trust-text-{{ ai_gen_id }}">{{ block.settings.trust_1_text }}</p>
+        </div>
+        <div class="ai-omega-trust-badge-{{ ai_gen_id }}">
+          <div class="ai-omega-trust-icon-{{ ai_gen_id }}">{{ block.settings.trust_2_icon }}</div>
+          <p class="ai-omega-trust-text-{{ ai_gen_id }}">{{ block.settings.trust_2_text }}</p>
+        </div>
+        <div class="ai-omega-trust-badge-{{ ai_gen_id }}">
+          <div class="ai-omega-trust-icon-{{ ai_gen_id }}">{{ block.settings.trust_3_icon }}</div>
+          <p class="ai-omega-trust-text-{{ ai_gen_id }}">{{ block.settings.trust_3_text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</omega-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class OmegaHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.thumbnails = this.querySelectorAll('[data-thumbnail]');
+        this.mainImage = this.querySelector('[data-main-image]');
+        this.qtyInput = this.querySelector('[data-qty-input]');
+        this.qtyDecrease = this.querySelector('[data-qty-decrease]');
+        this.qtyIncrease = this.querySelector('[data-qty-increase]');
+        this.buyBtn = this.querySelector('[data-buy-btn]');
+        this.currentPriceEl = this.querySelector('[data-current-price]');
+        this.totalPriceEl = this.querySelector('[data-total-price]');
+        this.basePrice = parseFloat(this.currentPriceEl.dataset.basePrice);
+
+        this.setupThumbnails();
+        this.setupQuantity();
+        this.setupBuyButton();
+      }
+
+      setupThumbnails() {
+        this.thumbnails.forEach((thumb, index) => {
+          thumb.addEventListener('click', () => {
+            this.thumbnails.forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+            
+            const thumbImg = thumb.querySelector('img');
+            if (thumbImg && this.mainImage) {
+              this.mainImage.src = thumbImg.src.replace('width=120', 'width=800');
+              this.mainImage.alt = thumbImg.alt;
+            }
+          });
+        });
+      }
+
+      setupQuantity() {
+        this.qtyDecrease.addEventListener('click', () => {
+          const currentValue = parseInt(this.qtyInput.value);
+          if (currentValue > 1) {
+            this.qtyInput.value = currentValue - 1;
+            this.updatePrice();
+          }
+        });
+
+        this.qtyIncrease.addEventListener('click', () => {
+          const currentValue = parseInt(this.qtyInput.value);
+          if (currentValue < 99) {
+            this.qtyInput.value = currentValue + 1;
+            this.updatePrice();
+          }
+        });
+
+        this.qtyInput.addEventListener('change', () => {
+          let value = parseInt(this.qtyInput.value);
+          if (isNaN(value) || value < 1) {
+            this.qtyInput.value = 1;
+          } else if (value > 99) {
+            this.qtyInput.value = 99;
+          }
+          this.updatePrice();
+        });
+      }
+
+      updatePrice() {
+        const quantity = parseInt(this.qtyInput.value);
+        const totalPrice = this.basePrice * quantity;
+        this.totalPriceEl.textContent = '₹' + totalPrice.toLocaleString('en-IN');
+      }
+
+      setupBuyButton() {
+        this.buyBtn.addEventListener('click', () => {
+          const quantity = parseInt(this.qtyInput.value);
+          console.log('Add to cart:', quantity, 'items');
+        });
+      }
+    }
+
+    customElements.define('omega-hero-{{ ai_gen_id }}', OmegaHero{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Omega 3 product hero",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product gallery"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main product image"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_1",
+      "label": "Thumbnail 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_2",
+      "label": "Thumbnail 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_3",
+      "label": "Thumbnail 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_4",
+      "label": "Thumbnail 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_5",
+      "label": "Thumbnail 5"
+    },
+    {
+      "type": "header",
+      "content": "Product information"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand name",
+      "default": "AIWO ULTIMATE OMEGA 3"
+    },
+    {
+      "type": "text",
+      "id": "product_subtitle",
+      "label": "Product subtitle",
+      "default": "Triple Strength 1000mg"
+    },
+    {
+      "type": "text",
+      "id": "rating_stars",
+      "label": "Rating stars",
+      "default": "⭐⭐⭐⭐⭐"
+    },
+    {
+      "type": "text",
+      "id": "rating_score",
+      "label": "Rating score",
+      "default": "4.8"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review count",
+      "default": "2,847"
+    },
+    {
+      "type": "richtext",
+      "id": "product_description",
+      "label": "Product description",
+      "default": "<p>Premium fish oil with 1000mg Omega-3 fatty acids featuring 46% EPA and 38% DHA. Advanced Enteric Coating and Molecularly Distilled technology for maximum absorption without burping or foul taste.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 1"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_icon",
+      "label": "Icon",
+      "default": "❤️"
+    },
+    {
+      "type": "color",
+      "id": "benefit_1_bg",
+      "label": "Background color",
+      "default": "#FEE2E2"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_title",
+      "label": "Title",
+      "default": "Cardio Protection"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_text",
+      "label": "Description",
+      "default": "Vasodilation & anti-arrhythmic effects"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 2"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_icon",
+      "label": "Icon",
+      "default": "🧠"
+    },
+    {
+      "type": "color",
+      "id": "benefit_2_bg",
+      "label": "Background color",
+      "default": "#E9D5FF"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_title",
+      "label": "Title",
+      "default": "Brain Function"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_text",
+      "label": "Description",
+      "default": "DHA supports cognitive health"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 3"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_icon",
+      "label": "Icon",
+      "default": "🛡️"
+    },
+    {
+      "type": "color",
+      "id": "benefit_3_bg",
+      "label": "Background color",
+      "default": "#FED7AA"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_title",
+      "label": "Title",
+      "default": "Anti-Inflammatory"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_text",
+      "label": "Description",
+      "default": "Reduces inflammation naturally"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 4"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_icon",
+      "label": "Icon",
+      "default": "⚡"
+    },
+    {
+      "type": "color",
+      "id": "benefit_4_bg",
+      "label": "Background color",
+      "default": "#FEF3C7"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_title",
+      "label": "Title",
+      "default": "Antioxidant Power"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_text",
+      "label": "Description",
+      "default": "Protects against oxidative stress"
+    },
+    {
+      "type": "header",
+      "content": "Pricing"
+    },
+    {
+      "type": "text",
+      "id": "pack_size",
+      "label": "Pack size",
+      "default": "60 Soft Gel Capsules"
+    },
+    {
+      "type": "text",
+      "id": "value_badge",
+      "label": "Value badge",
+      "default": "BEST VALUE"
+    },
+    {
+      "type": "text",
+      "id": "supply_duration",
+      "label": "Supply duration",
+      "default": "1 Month Supply"
+    },
+    {
+      "type": "text",
+      "id": "current_price",
+      "label": "Current price",
+      "default": "2100"
+    },
+    {
+      "type": "text",
+      "id": "original_price",
+      "label": "Original price",
+      "default": "3200"
+    },
+    {
+      "type": "text",
+      "id": "discount_percentage",
+      "label": "Discount percentage",
+      "default": "34% OFF"
+    },
+    {
+      "type": "header",
+      "content": "Trust badges"
+    },
+    {
+      "type": "text",
+      "id": "trust_1_icon",
+      "label": "Badge 1 icon",
+      "default": "🌍"
+    },
+    {
+      "type": "text",
+      "id": "trust_1_text",
+      "label": "Badge 1 text",
+      "default": "Globally Sourced"
+    },
+    {
+      "type": "text",
+      "id": "trust_2_icon",
+      "label": "Badge 2 icon",
+      "default": "🔬"
+    },
+    {
+      "type": "text",
+      "id": "trust_2_text",
+      "label": "Badge 2 text",
+      "default": "Clinically Proven"
+    },
+    {
+      "type": "text",
+      "id": "trust_3_icon",
+      "label": "Badge 3 icon",
+      "default": "✓"
+    },
+    {
+      "type": "text",
+      "id": "trust_3_text",
+      "label": "Badge 3 text",
+      "default": "100% Pure"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Omega 3 product hero"
+    }
+  ]
+}
+{% endschema %}

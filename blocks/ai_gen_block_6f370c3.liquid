@@ -1,0 +1,384 @@
+{% doc %}
+  @prompt
+    Design a "Quick Reference Guide" banner section for AIWO Ultimate Omega 3.
+    Layout:
+    Full-width banner with deep navy blue background (#0A1F5C), white text, rounded corners, generous padding (40px vertical, 60px horizontal).
+    Header:
+    
+    Centered bold white heading (large): "Quick Reference Guide"
+    Positioned at top of banner with spacing below
+    
+    Quick Reference Stats (3 columns, equal width):
+    Column 1:
+    
+    Large bold white number: "1-2"
+    Label below in white: "Capsules Daily"
+    
+    Column 2:
+    
+    Large bold white text: "With Food"
+    Label below in white: "For Best Absorption"
+    
+    Column 3:
+    
+    Large bold white number: "8-12"
+    Label below in white: "Weeks for Full Benefits"
+    
+    Styling:
+    
+    All content centered within columns
+    Numbers/main text in extra-large bold font (48-56px)
+    Labels in regular weight, smaller font (16-18px)
+    Equal spacing between columns
+    Adequate vertical spacing between main text and labels (12px)
+    White text with high contrast against navy background
+    
+    Responsive: 3 columns on desktop, 3 columns on tablet, 1 column (stacked vertically) on mobile. Padding reduces on smaller screens (24px vertical).
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-quick-reference-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    box-sizing: border-box;
+  }
+
+  .ai-quick-reference-heading-{{ ai_gen_id }} {
+    text-align: center;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    margin: 0 0 {{ block.settings.heading_spacing }}px 0;
+  }
+
+  .ai-quick-reference-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.column_gap }}px;
+    max-width: 100%;
+  }
+
+  .ai-quick-reference-column-{{ ai_gen_id }} {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .ai-quick-reference-value-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.value_size }}px;
+    font-weight: 700;
+    margin: 0 0 {{ block.settings.label_spacing }}px 0;
+    line-height: 1.2;
+  }
+
+  .ai-quick-reference-label-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.label_size }}px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-quick-reference-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_vertical_mobile }}px {{ block.settings.padding_horizontal_mobile }}px;
+    }
+
+    .ai-quick-reference-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.column_gap_mobile }}px;
+    }
+
+    .ai-quick-reference-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-quick-reference-value-{{ ai_gen_id }} {
+      font-size: {{ block.settings.value_size | times: 0.7 }}px;
+    }
+
+    .ai-quick-reference-label-{{ ai_gen_id }} {
+      font-size: {{ block.settings.label_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<quick-reference-guide-{{ ai_gen_id }} class="ai-quick-reference-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.heading != blank %}
+    <h2 class="ai-quick-reference-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="ai-quick-reference-grid-{{ ai_gen_id }}">
+    <div class="ai-quick-reference-column-{{ ai_gen_id }}">
+      {% if block.settings.column_1_value != blank %}
+        <div class="ai-quick-reference-value-{{ ai_gen_id }}">{{ block.settings.column_1_value }}</div>
+      {% endif %}
+      {% if block.settings.column_1_label != blank %}
+        <div class="ai-quick-reference-label-{{ ai_gen_id }}">{{ block.settings.column_1_label }}</div>
+      {% endif %}
+    </div>
+
+    <div class="ai-quick-reference-column-{{ ai_gen_id }}">
+      {% if block.settings.column_2_value != blank %}
+        <div class="ai-quick-reference-value-{{ ai_gen_id }}">{{ block.settings.column_2_value }}</div>
+      {% endif %}
+      {% if block.settings.column_2_label != blank %}
+        <div class="ai-quick-reference-label-{{ ai_gen_id }}">{{ block.settings.column_2_label }}</div>
+      {% endif %}
+    </div>
+
+    <div class="ai-quick-reference-column-{{ ai_gen_id }}">
+      {% if block.settings.column_3_value != blank %}
+        <div class="ai-quick-reference-value-{{ ai_gen_id }}">{{ block.settings.column_3_value }}</div>
+      {% endif %}
+      {% if block.settings.column_3_label != blank %}
+        <div class="ai-quick-reference-label-{{ ai_gen_id }}">{{ block.settings.column_3_label }}</div>
+      {% endif %}
+    </div>
+  </div>
+</quick-reference-guide-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class QuickReferenceGuide{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+    }
+
+    customElements.define('quick-reference-guide-{{ ai_gen_id }}', QuickReferenceGuide{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Quick reference guide",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Quick Reference Guide"
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_1_value",
+      "label": "Value",
+      "default": "1-2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_1_label",
+      "label": "Label",
+      "default": "Capsules Daily"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_2_value",
+      "label": "Value",
+      "default": "With Food"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_2_label",
+      "label": "Label",
+      "default": "For Best Absorption"
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_3_value",
+      "label": "Value",
+      "default": "8-12"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "column_3_label",
+      "label": "Label",
+      "default": "Weeks for Full Benefits"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#0A1F5C"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "value_size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Value size",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 17
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical_mobile",
+      "min": 15,
+      "max": 60,
+      "step": 3,
+      "unit": "px",
+      "label": "Vertical padding (mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "min": 15,
+      "max": 60,
+      "step": 3,
+      "unit": "px",
+      "label": "Horizontal padding (mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 15,
+      "max": 60,
+      "step": 3,
+      "unit": "px",
+      "label": "Heading bottom spacing",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "label_spacing",
+      "min": 6,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Value to label spacing",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Column gap (desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Column gap (mobile)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quick reference guide"
+    }
+  ]
+}
+{% endschema %}

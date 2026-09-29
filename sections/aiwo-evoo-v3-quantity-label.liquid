@@ -1,0 +1,31 @@
+{% comment %}
+  AIWO EVOO v3 — Quantity Selector Label
+  Scope: product.extra-virgin-olive-oil-v3 template ONLY
+
+  Renders the label text via Liquid output tag so it is configurable
+  in the Theme Editor. JS (aiwo-evoo-v3-gallery.js) moves this element
+  into position inside the wrapper beside the quantity selector.
+  CSS controls visibility: hidden on desktop/tablet, shown on mobile.
+{% endcomment %}
+
+<span
+  id="aiwo-evoo-v3-qty-label-source"
+  class="aiwo-evoo-v3-qty-label-injected"
+  aria-hidden="true"
+  style="display:none"
+>{{ section.settings.mobile_quantity_label | escape }}</span>
+
+{% schema %}
+{
+  "name": "EVOO v3 — Quantity Label",
+  "settings": [
+    {
+      "type": "text",
+      "id": "mobile_quantity_label",
+      "label": "Mobile Quantity Label",
+      "default": "Add Quantity",
+      "info": "Shown to the left of the quantity selector on mobile. Hidden on desktop and tablet."
+    }
+  ]
+}
+{% endschema %}

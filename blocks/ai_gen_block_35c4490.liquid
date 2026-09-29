@@ -1,0 +1,641 @@
+{% doc %}
+  @prompt
+    Design an "Important Guidelines" section for AIWO Ultimate Omega 3.
+    Layout:
+    Full-width section, white background, centered content with max-width container, generous padding.
+    Header:
+    
+    Centered heading with blue background badge: "Important Guidelines"
+    Bold white text on blue (#1E40AF) background, rounded corners, inline padding
+    
+    Guideline Cards (3 cards stacked vertically, full width):
+    Card 1 - Safe for Long-term Use:
+    
+    Light mint green background (#F0FDF4) with green border (#BBF7D0)
+    Green checkmark circle icon on left
+    Bold heading: "Safe for Long-term Use"
+    Gray description text: "Our enteric-coated formula is designed for daily, long-term consumption with no fishy aftertaste."
+    Rounded corners, generous padding (20px), flex layout with icon and text
+    
+    Card 2 - Consultation Recommended:
+    
+    Light yellow background (#FEFCE8) with yellow border (#FEF08A)
+    Yellow alert/warning circle icon on left
+    Bold heading: "Consultation Recommended"
+    Gray description text: "Consult your healthcare provider before starting if you're on blood-thinning medications or have any medical conditions."
+    Rounded corners, generous padding (20px), flex layout with icon and text
+    
+    Card 3 - Storage Instructions:
+    
+    Light blue/lavender background (#EEF2FF) with blue border (#C7D2FE)
+    Blue droplet/temperature icon on left
+    Bold heading: "Storage Instructions"
+    Gray description text: "Store in a cool, dry place away from direct sunlight. Keep bottle tightly closed to maintain freshness."
+    Rounded corners, generous padding (20px), flex layout with icon and text
+    
+    Card Styling:
+    
+    Each card has icon (30x30px) in circular background matching card theme color
+    Icon positioned left, text content positioned right with proper spacing
+    Vertical gap between cards (16px)
+    Heading in bold black, description in medium gray
+    All content left-aligned within cards
+    Subtle shadow on hover (optional)
+    
+    Responsive: Cards maintain full width on all screens, stack vertically, padding adjusts for mobile (reduce to 16px)., with editable icon
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-guidelines-section-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.section_background }};
+    padding: {{ block.settings.section_padding_desktop }}px 20px;
+  }
+
+  .ai-guidelines-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-guidelines-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-guidelines-badge-{{ ai_gen_id }} {
+    display: inline-block;
+    background-color: {{ block.settings.badge_background }};
+    color: {{ block.settings.badge_text_color }};
+    padding: {{ block.settings.badge_padding_vertical }}px {{ block.settings.badge_padding_horizontal }}px;
+    border-radius: {{ block.settings.badge_border_radius }}px;
+    font-size: {{ block.settings.badge_font_size }}px;
+    font-weight: 700;
+  }
+
+  .ai-guidelines-cards-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.card_gap }}px;
+  }
+
+  .ai-guidelines-card-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: {{ block.settings.card_content_gap }}px;
+    padding: {{ block.settings.card_padding }}px;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    border: 2px solid;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .ai-guidelines-card-{{ ai_gen_id }}:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-guidelines-card-{{ ai_gen_id }}--safe {
+    background-color: {{ block.settings.card_1_background }};
+    border-color: {{ block.settings.card_1_border }};
+  }
+
+  .ai-guidelines-card-{{ ai_gen_id }}--consult {
+    background-color: {{ block.settings.card_2_background }};
+    border-color: {{ block.settings.card_2_border }};
+  }
+
+  .ai-guidelines-card-{{ ai_gen_id }}--storage {
+    background-color: {{ block.settings.card_3_background }};
+    border-color: {{ block.settings.card_3_border }};
+  }
+
+  .ai-guidelines-icon-wrapper-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-guidelines-icon-wrapper-{{ ai_gen_id }}--safe {
+    background-color: {{ block.settings.icon_1_background }};
+  }
+
+  .ai-guidelines-icon-wrapper-{{ ai_gen_id }}--consult {
+    background-color: {{ block.settings.icon_2_background }};
+  }
+
+  .ai-guidelines-icon-wrapper-{{ ai_gen_id }}--storage {
+    background-color: {{ block.settings.icon_3_background }};
+  }
+
+  .ai-guidelines-icon-{{ ai_gen_id }} {
+    width: calc({{ block.settings.icon_size }}px * 0.6);
+    height: calc({{ block.settings.icon_size }}px * 0.6);
+  }
+
+  .ai-guidelines-icon-{{ ai_gen_id }}--safe {
+    color: {{ block.settings.icon_1_color }};
+    fill: {{ block.settings.icon_1_color }};
+  }
+
+  .ai-guidelines-icon-{{ ai_gen_id }}--consult {
+    color: {{ block.settings.icon_2_color }};
+    fill: {{ block.settings.icon_2_color }};
+  }
+
+  .ai-guidelines-icon-{{ ai_gen_id }}--storage {
+    color: {{ block.settings.icon_3_color }};
+    fill: {{ block.settings.icon_3_color }};
+  }
+
+  .ai-guidelines-content-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .ai-guidelines-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_heading_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.card_heading_color }};
+    margin: 0 0 {{ block.settings.heading_spacing }}px 0;
+  }
+
+  .ai-guidelines-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_description_size }}px;
+    color: {{ block.settings.card_description_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-guidelines-section-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_mobile }}px 16px;
+    }
+
+    .ai-guidelines-card-{{ ai_gen_id }} {
+      padding: {{ block.settings.card_padding_mobile }}px;
+    }
+
+    .ai-guidelines-badge-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.badge_font_size }}px * 0.9);
+    }
+
+    .ai-guidelines-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.card_heading_size }}px * 0.9);
+    }
+
+    .ai-guidelines-description-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.card_description_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<important-guidelines-{{ ai_gen_id }} class="ai-guidelines-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-guidelines-container-{{ ai_gen_id }}">
+    <div class="ai-guidelines-header-{{ ai_gen_id }}">
+      <span class="ai-guidelines-badge-{{ ai_gen_id }}">{{ block.settings.header_text }}</span>
+    </div>
+
+    <div class="ai-guidelines-cards-{{ ai_gen_id }}">
+      <div class="ai-guidelines-card-{{ ai_gen_id }} ai-guidelines-card-{{ ai_gen_id }}--safe">
+        <div class="ai-guidelines-icon-wrapper-{{ ai_gen_id }} ai-guidelines-icon-wrapper-{{ ai_gen_id }}--safe">
+          {% if block.settings.icon_1_custom != blank %}
+            <div class="ai-guidelines-icon-{{ ai_gen_id }} ai-guidelines-icon-{{ ai_gen_id }}--safe">
+              {{ block.settings.icon_1_custom }}
+            </div>
+          {% else %}
+            <svg class="ai-guidelines-icon-{{ ai_gen_id }} ai-guidelines-icon-{{ ai_gen_id }}--safe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          {% endif %}
+        </div>
+        <div class="ai-guidelines-content-{{ ai_gen_id }}">
+          <h3 class="ai-guidelines-heading-{{ ai_gen_id }}">{{ block.settings.card_1_heading }}</h3>
+          <p class="ai-guidelines-description-{{ ai_gen_id }}">{{ block.settings.card_1_description }}</p>
+        </div>
+      </div>
+
+      <div class="ai-guidelines-card-{{ ai_gen_id }} ai-guidelines-card-{{ ai_gen_id }}--consult">
+        <div class="ai-guidelines-icon-wrapper-{{ ai_gen_id }} ai-guidelines-icon-wrapper-{{ ai_gen_id }}--consult">
+          {% if block.settings.icon_2_custom != blank %}
+            <div class="ai-guidelines-icon-{{ ai_gen_id }} ai-guidelines-icon-{{ ai_gen_id }}--consult">
+              {{ block.settings.icon_2_custom }}
+            </div>
+          {% else %}
+            <svg class="ai-guidelines-icon-{{ ai_gen_id }} ai-guidelines-icon-{{ ai_gen_id }}--consult" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          {% endif %}
+        </div>
+        <div class="ai-guidelines-content-{{ ai_gen_id }}">
+          <h3 class="ai-guidelines-heading-{{ ai_gen_id }}">{{ block.settings.card_2_heading }}</h3>
+          <p class="ai-guidelines-description-{{ ai_gen_id }}">{{ block.settings.card_2_description }}</p>
+        </div>
+      </div>
+
+      <div class="ai-guidelines-card-{{ ai_gen_id }} ai-guidelines-card-{{ ai_gen_id }}--storage">
+        <div class="ai-guidelines-icon-wrapper-{{ ai_gen_id }} ai-guidelines-icon-wrapper-{{ ai_gen_id }}--storage">
+          {% if block.settings.icon_3_custom != blank %}
+            <div class="ai-guidelines-icon-{{ ai_gen_id }} ai-guidelines-icon-{{ ai_gen_id }}--storage">
+              {{ block.settings.icon_3_custom }}
+            </div>
+          {% else %}
+            <svg class="ai-guidelines-icon-{{ ai_gen_id }} ai-guidelines-icon-{{ ai_gen_id }}--storage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+          {% endif %}
+        </div>
+        <div class="ai-guidelines-content-{{ ai_gen_id }}">
+          <h3 class="ai-guidelines-heading-{{ ai_gen_id }}">{{ block.settings.card_3_heading }}</h3>
+          <p class="ai-guidelines-description-{{ ai_gen_id }}">{{ block.settings.card_3_description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</important-guidelines-{{ ai_gen_id }}>
+
+<script>
+(function() {
+  class ImportantGuidelines{{ ai_gen_id }} extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.cards = this.querySelectorAll('.ai-guidelines-card-{{ ai_gen_id }}');
+    }
+  }
+
+  customElements.define('important-guidelines-{{ ai_gen_id }}', ImportantGuidelines{{ ai_gen_id }});
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Important guidelines",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 1000
+    },
+    {
+      "type": "range",
+      "id": "section_padding_desktop",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Desktop padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_mobile",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Header badge"
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Header text",
+      "default": "Important Guidelines"
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Background color",
+      "default": "#1E40AF"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "badge_padding_vertical",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "badge_padding_horizontal",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "badge_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Spacing below header",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap between cards",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_content_gap",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon to text gap",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 24,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "card_heading_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading font size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_description_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Description font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 4,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading bottom spacing",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "card_description_color",
+      "label": "Description color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "header",
+      "content": "Card 1 - Safe for long-term use"
+    },
+    {
+      "type": "text",
+      "id": "card_1_heading",
+      "label": "Heading",
+      "default": "Safe for Long-term Use"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_description",
+      "label": "Description",
+      "default": "Our enteric-coated formula is designed for daily, long-term consumption with no fishy aftertaste."
+    },
+    {
+      "type": "html",
+      "id": "icon_1_custom",
+      "label": "Custom icon SVG"
+    },
+    {
+      "type": "color",
+      "id": "card_1_background",
+      "label": "Background color",
+      "default": "#F0FDF4"
+    },
+    {
+      "type": "color",
+      "id": "card_1_border",
+      "label": "Border color",
+      "default": "#BBF7D0"
+    },
+    {
+      "type": "color",
+      "id": "icon_1_background",
+      "label": "Icon background",
+      "default": "#BBF7D0"
+    },
+    {
+      "type": "color",
+      "id": "icon_1_color",
+      "label": "Icon color",
+      "default": "#16A34A"
+    },
+    {
+      "type": "header",
+      "content": "Card 2 - Consultation recommended"
+    },
+    {
+      "type": "text",
+      "id": "card_2_heading",
+      "label": "Heading",
+      "default": "Consultation Recommended"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_description",
+      "label": "Description",
+      "default": "Consult your healthcare provider before starting if you're on blood-thinning medications or have any medical conditions."
+    },
+    {
+      "type": "html",
+      "id": "icon_2_custom",
+      "label": "Custom icon SVG"
+    },
+    {
+      "type": "color",
+      "id": "card_2_background",
+      "label": "Background color",
+      "default": "#FEFCE8"
+    },
+    {
+      "type": "color",
+      "id": "card_2_border",
+      "label": "Border color",
+      "default": "#FEF08A"
+    },
+    {
+      "type": "color",
+      "id": "icon_2_background",
+      "label": "Icon background",
+      "default": "#FEF08A"
+    },
+    {
+      "type": "color",
+      "id": "icon_2_color",
+      "label": "Icon color",
+      "default": "#CA8A04"
+    },
+    {
+      "type": "header",
+      "content": "Card 3 - Storage instructions"
+    },
+    {
+      "type": "text",
+      "id": "card_3_heading",
+      "label": "Heading",
+      "default": "Storage Instructions"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_description",
+      "label": "Description",
+      "default": "Store in a cool, dry place away from direct sunlight. Keep bottle tightly closed to maintain freshness."
+    },
+    {
+      "type": "html",
+      "id": "icon_3_custom",
+      "label": "Custom icon SVG"
+    },
+    {
+      "type": "color",
+      "id": "card_3_background",
+      "label": "Background color",
+      "default": "#EEF2FF"
+    },
+    {
+      "type": "color",
+      "id": "card_3_border",
+      "label": "Border color",
+      "default": "#C7D2FE"
+    },
+    {
+      "type": "color",
+      "id": "icon_3_background",
+      "label": "Icon background",
+      "default": "#C7D2FE"
+    },
+    {
+      "type": "color",
+      "id": "icon_3_color",
+      "label": "Icon color",
+      "default": "#4F46E5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Important guidelines"
+    }
+  ]
+}
+{% endschema %}

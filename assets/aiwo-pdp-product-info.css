@@ -1,0 +1,116 @@
+/* =================================================================
+   AIWO PDP — EPA supplement overrides
+   Context: sections/aiwo-pdp-product-info.liquid stamps
+   theme-template-suffix-extra-virgin-olive-oil-v3 onto #MainContent
+   so aiwo-evoo-v3-gallery.css already handles badges, benefits,
+   PHB, marquee, title, price, tagline, sticky ATC button styles,
+   and mobile dots via aiwo-evoo-v3-gallery.js.
+   This file contains ONLY rules that gallery.css does not cover
+   or that need to be overridden specifically for EPA.
+   ================================================================= */
+
+/* ── OVERFLOW FIX (tooltip + sticky positioning) ── */
+#MainContent.theme-template-suffix-epa-500mg-v3 .product-info,
+#MainContent.theme-template-suffix-epa-500mg-v3 .product-content-container { overflow: visible !important; }
+
+/* ── PROTOCOL TOOLTIP: centred, no extra top margin ── */
+.aiwo-evoo-v3-protocol-tooltip { margin-top: 0; margin-bottom: 8px; display: flex; justify-content: center; width: 100%; }
+.aiwo-evoo-v3-protocol-tooltip__trigger {
+  position: relative; display: inline-flex; align-items: center; gap: 6px;
+  cursor: pointer; color: #0C0C0D; font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-weight: 500; line-height: 1.4; user-select: none;
+}
+.aiwo-evoo-v3-protocol-tooltip__bubble {
+  position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+  width: 280px; max-width: calc(100vw - 32px); padding: 12px; background: #fff;
+  border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,.12); text-align: left;
+  white-space: normal; z-index: 60; opacity: 0; pointer-events: none; transition: opacity .2s ease;
+}
+.aiwo-evoo-v3-protocol-tooltip__bubble.is-active { opacity: 1; pointer-events: auto; }
+.aiwo-evoo-v3-protocol-tooltip__arrow { position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #fff; }
+.aiwo-evoo-v3-protocol-tooltip__title { color: #0C0C0D; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; line-height: 150%; margin: 0 0 4px; }
+.aiwo-evoo-v3-protocol-tooltip__desc  { color: #666;    font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 400; line-height: 150%; margin: 0; }
+
+/* ── STICKY ATC: tooltip stacks above action row, select contained ── */
+.sticky_add_to_cart .aiwo-evoo-v3-sticky-buttons-area {
+  display: flex !important; flex-direction: column !important;
+  align-items: stretch !important; width: 100% !important;
+}
+.sticky_add_to_cart .select { flex-shrink: 0; min-width: 80px; max-width: 120px; }
+
+/* ── THUMBNAIL ACTIVE BORDER (unscoped — works regardless of template class) ── */
+.x-thumbnail.is-active { border: 1.5px solid #0C0C0D !important; border-radius: 0 !important; opacity: 1 !important; }
+
+/* ══════════════════════════════════════════════════════════
+   SEAL SUBSCRIPTION UI — targeted overrides only
+   Scope: .sealsubs-container / .sls-* / .seal-*
+   Zero conflict: no other selectors touched.
+   ══════════════════════════════════════════════════════════ */
+
+/* 1 — Full width: #MainContent specificity (1,1,0) beats snippet's inline (0,1,0) !important */
+#MainContent .x-evoo-v3-container { max-width: 100% !important; }
+.sealsubs-container { width: 100% !important; }
+.sealsubs-container .sls-option-container { width: 100% !important; }
+
+/* 2 — No border on unselected row, only radius */
+.sls-option-container {
+  border: none !important;
+  border-radius: 4px !important;
+}
+
+/* 3 — Active/selected row: black border, same 4px radius */
+.sls-option-container.sls-active,
+.sealsubs-container .sls-option-container.sls-active {
+  border: 1px solid #1a1a1a !important;
+  border-radius: 4px !important;
+}
+
+/* 4 — Label text: 500 weight, 18px — both rows */
+.sls-label-container.seal-col .seal-row label,
+.sls-label-container.seal-col label,
+.sls-option-container .sls-label-container.seal-col {
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+
+/* 5 — Radio button: black */
+.sls-option-container input[type="radio"] {
+  accent-color: #1a1a1a !important;
+  cursor: pointer;
+}
+
+/* 6 — Description / sub-text inside seal-table rows */
+.sls-option-container.seal-table p,
+.sls-option-container.seal-table span:not(.seal-col),
+.sls-option-container.seal-table div:not(.sls-label-container) {
+  color: #666666 !important;
+  font-size: 14px !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.50 !important;
+}
+
+/* ── STICKY ATC BUTTON TYPOGRAPHY (premium design tokens) ── */
+.sticky_add_to_cart .add_to_cart_button,
+body .sticky_add_to_cart .add_to_cart_button {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Sticky ATC layout is handled entirely by the theme's native responsive
+   flex classes (md:flex-row, md:!flex, grow, etc.) from the snippet.
+   No overrides here — let the theme engine own this. */
+
+/* ── STICKY ATC: bottom-align column 1 (product info + plan selector) ── */
+@media (min-width: 768px) {
+  .sticky_add_to_cart .grow { align-items: flex-end !important; }
+}
+
+@media (min-width: 768px) {
+  .section-product-info .sticky_add_to_cart .x-pgw.md\:items-center {
+    align-items: flex-end !important;
+  }
+}

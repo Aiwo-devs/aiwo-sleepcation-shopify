@@ -1,0 +1,609 @@
+{% doc %}
+  @prompt
+    Design a "Premium Quality Features" section for AIWO Ultimate Omega 3.
+    Layout:
+    Full-width section, white background, centered content with max-width container, generous padding.
+    Header:
+    
+    Centered heading (bold, large black): "Premium Quality Features"
+    
+    Features Grid (3 columns):
+    Column 1:
+    
+    ✅ Blends with Benefits - Premium formulation
+    ✅ Hypoallergenic formula
+    ✅ 1000mg Omega-3 fatty acids per serving
+    ✅ Enteric Coating prevents burping & foul taste
+    ✅ HALAL certified
+    ✅ Gluten-free formula
+    
+    Column 2:
+    
+    ✅ Globally Sourced Ingredients
+    ✅ 100% Pesticide/Herbicide Free
+    ✅ 46% EPA (Eicosapentaenoic Acid)
+    ✅ Molecularly Distilled for purity
+    ✅ GMP & FSSAI certified
+    
+    Column 3:
+    
+    ✅ Clinically Proven Ingredients
+    ✅ No Added Sugar & Preservatives
+    ✅ 38% DHA (Docosahexaenoic Acid)
+    ✅ 60 soft gel capsules per bottle
+    ✅ ISO certified facility
+    
+    Styling:
+    
+    Each feature has green circle checkmark icon on left
+    Feature text in medium-weight black font, aligned left
+    Equal spacing between features (vertical gap)
+    Columns have equal width with proper spacing
+    Clean, minimal design with breathing room
+    
+    Responsive: 3 columns on desktop, 2 columns on tablet, 1 column on mobile. Features maintain left alignment with icons.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-premium-features-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_top }}px 20px {{ block.settings.padding_bottom }}px;
+    display: block;
+  }
+
+  .ai-premium-features__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-premium-features__heading-{{ ai_gen_id }} {
+    text-align: center;
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.heading_spacing }}px;
+  }
+
+  .ai-premium-features__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.column_gap }}px;
+  }
+
+  .ai-premium-features__column-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.feature_gap }}px;
+  }
+
+  .ai-premium-features__feature-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: {{ block.settings.icon_text_gap }}px;
+  }
+
+  .ai-premium-features__icon-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: 50%;
+    background-color: {{ block.settings.icon_bg_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .ai-premium-features__icon-{{ ai_gen_id }} svg {
+    width: calc({{ block.settings.icon_size }}px * 0.6);
+    height: calc({{ block.settings.icon_size }}px * 0.6);
+    stroke: {{ block.settings.icon_color }};
+  }
+
+  .ai-premium-features__text-{{ ai_gen_id }} {
+    flex: 1;
+    font-size: {{ block.settings.text_size }}px;
+    font-weight: {{ block.settings.text_weight }};
+    color: {{ block.settings.text_color }};
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-premium-features__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-premium-features-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top | times: 0.7 }}px 16px {{ block.settings.padding_bottom | times: 0.7 }}px;
+    }
+
+    .ai-premium-features__heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+      margin-bottom: {{ block.settings.heading_spacing | times: 0.8 }}px;
+    }
+
+    .ai-premium-features__grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.column_gap | times: 0.7 }}px;
+    }
+
+    .ai-premium-features__text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-premium-features-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-premium-features__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-premium-features__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="ai-premium-features__grid-{{ ai_gen_id }}">
+      <div class="ai-premium-features__column-{{ ai_gen_id }}">
+        {% if block.settings.feature_1 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_1 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_2 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_2 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_3 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_3 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_4 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_4 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_5 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_5 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_6 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_6 }}</div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-premium-features__column-{{ ai_gen_id }}">
+        {% if block.settings.feature_7 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_7 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_8 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_8 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_9 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_9 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_10 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_10 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_11 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_11 }}</div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-premium-features__column-{{ ai_gen_id }}">
+        {% if block.settings.feature_12 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_12 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_13 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_13 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_14 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_14 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_15 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_15 }}</div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_16 != blank %}
+          <div class="ai-premium-features__feature-{{ ai_gen_id }}">
+            <div class="ai-premium-features__icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-premium-features__text-{{ ai_gen_id }}">{{ block.settings.feature_16 }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Premium quality features",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Premium Quality Features"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing below heading",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "Feature 1",
+      "default": "Blends with Benefits - Premium formulation"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "Feature 2",
+      "default": "Hypoallergenic formula"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "Feature 3",
+      "default": "1000mg Omega-3 fatty acids per serving"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "Feature 4",
+      "default": "Enteric Coating prevents burping & foul taste"
+    },
+    {
+      "type": "text",
+      "id": "feature_5",
+      "label": "Feature 5",
+      "default": "HALAL certified"
+    },
+    {
+      "type": "text",
+      "id": "feature_6",
+      "label": "Feature 6",
+      "default": "Gluten-free formula"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_7",
+      "label": "Feature 7",
+      "default": "Globally Sourced Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "feature_8",
+      "label": "Feature 8",
+      "default": "100% Pesticide/Herbicide Free"
+    },
+    {
+      "type": "text",
+      "id": "feature_9",
+      "label": "Feature 9",
+      "default": "46% EPA (Eicosapentaenoic Acid)"
+    },
+    {
+      "type": "text",
+      "id": "feature_10",
+      "label": "Feature 10",
+      "default": "Molecularly Distilled for purity"
+    },
+    {
+      "type": "text",
+      "id": "feature_11",
+      "label": "Feature 11",
+      "default": "GMP & FSSAI certified"
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_12",
+      "label": "Feature 12",
+      "default": "Clinically Proven Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "feature_13",
+      "label": "Feature 13",
+      "default": "No Added Sugar & Preservatives"
+    },
+    {
+      "type": "text",
+      "id": "feature_14",
+      "label": "Feature 14",
+      "default": "38% DHA (Docosahexaenoic Acid)"
+    },
+    {
+      "type": "text",
+      "id": "feature_15",
+      "label": "Feature 15",
+      "default": "60 soft gel capsules per bottle"
+    },
+    {
+      "type": "text",
+      "id": "feature_16",
+      "label": "Feature 16",
+      "default": "ISO certified facility"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "label": "Container max width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "feature_gap",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Feature gap",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 16,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "icon_bg_color",
+      "label": "Icon background color",
+      "default": "#10B981"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "icon_text_gap",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon to text gap",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_weight",
+      "min": 400,
+      "max": 700,
+      "step": 100,
+      "label": "Text weight",
+      "default": 500
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium quality features"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1362 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_qqczei": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CH8cHh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Optimize How You Live,",
+            "highlight_type": "underline",
+            "heading_size": 130,
+            "heading_tag": "h1"
+          }
+        },
+        "heading_UVKWjy": {
+          "type": "heading",
+          "settings": {
+            "heading": "Perform and Reverse Your Age",
+            "highlight_type": "underline",
+            "heading_size": 130,
+            "heading_tag": "h1"
+          }
+        },
+        "text_aiRrPG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A one-day advanced 360<strong>° </strong>diagnostic experience to gain an in-depth grasp of yourself and clarity on how to reach your mental, physical, and metabolic goals.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_8NGbEg": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book Your 360 Assessment - ₹ 1,30,000",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "#211e1e",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "media_AgNhtJ": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/20250721_0959_Futuristic_Wellness_Scan_simple_compose_01k0nkv1ahen3rxf5pwmtmtn0c_1.png",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "media_size": 65
+          }
+        }
+      },
+      "block_order": [
+        "heading_CH8cHh",
+        "heading_UVKWjy",
+        "text_aiRrPG",
+        "button_8NGbEg",
+        "media_AgNhtJ"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_BPJWEL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_r3Cnqj": {
+          "type": "heading",
+          "settings": {
+            "heading": "If you are someone who:",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_r3Cnqj"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "image_with_text_CEQw4k": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_WDe9pG": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "highlight_type": "underline",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<ul><li>Wants to feel more energized, focused, and in control</li><li>Strives for long-term vitality, not just quick fixes</li><li>Believes in upgrading your mind and body with precision</li><li>Seeks clarity to fuel your performance and lifestyle goals</li></ul>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_TyN3f3": {
+          "type": "columns",
+          "settings": {
+            "icon": "trending-up",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "AIWO 360° helps you align your health with the life you truly want to live.",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 120,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_GxQNYX": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WDe9pG",
+        "columns_TyN3f3",
+        "button_GxQNYX"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": false,
+        "image": "shopify://shop_images/pexels-ketut-subiyanto-4962602.jpg",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "flow_LCbC6R": {
+      "type": "flow",
+      "blocks": {
+        "media_HLkFfd": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/01-AIWO181.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "Full-Body Diagnostic & Internal Health Screening",
+            "heading": "AIWO 181",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>A comprehensive analysis of 181+ biomarkers to uncover insights into your liver, kidney, heart, hormones, nutrients, and inflammation levels.</p>",
+            "button_text": "",
+            "button_link": "shopify://pages/aiwo-181-blood-test",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_9yQNKF": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-pixabay-263194.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Electrocardiogram (ECG)",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Measures your heart’s electrical activity to detect rhythm, rate, and potential cardiac risks.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_8EDfB4": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-cristian-rojas-8460227.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Echocardiogram (ECHO)",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Ultrasound imaging of the heart to assess its structure, function, and blood flow.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_yVCLfm": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-mart-production-7089013.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Coronary Artery Calcification Score",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>A non-invasive CT scan that quantifies plaque buildup in coronary arteries — a key predictor of heart attack risk.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_NpUHyt": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/12-Omega3.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Omega 3 / Omega 6 Test",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Analyzes your essential fatty acid balance to assess inflammation and recovery capacity.</p>",
+            "button_text": "",
+            "button_link": "shopify://products/omega-3-lab-test",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_NeTJYy": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-mediocrememories-954585.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Aminoacid profile",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Evaluates essential amino acids linked to energy, mood, muscle repair, and immune strength.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_UkCpLh": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-tima-miroshnichenko-6234614.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Ultrasound Screening – Abdomen & Pelvis",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Visualizes internal organs such as liver, kidneys, pancreas, and reproductive organs to detect abnormalities.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_dTwgUf": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-shvetsa-4226257.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Chest X-ray",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Provides a quick overview of lung and heart health, spotting infections or structural issues.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_wJkenb": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/06-Dexascan.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "DEXA Scan",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Gold-standard scan for bone density, fat distribution, and lean muscle mass analysis.</p>",
+            "button_text": "",
+            "button_link": "shopify://products/dexa-scan",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_XLd4Nd": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/07-Gutmicrobiome.webp",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Gut Microbiome Test",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Analyzes your gut bacteria to reveal digestive, metabolic, and immune health insights.</p>",
+            "button_text": "",
+            "button_link": "shopify://products/gut-microbiome-test",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_UKFkrB": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/03-Foodintolerance.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Food Intolerance Test",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Identifies food sensitivities causing hidden inflammation or fatigue.</p>",
+            "button_text": "",
+            "button_link": "shopify://products/food-intolerance",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_eMzAqm": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/09-Vo2maxtesting.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "VO2 Max and RMR Test",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>VO2 Max (aerobic fitness) and RMR (resting metabolic rate) to understand energy efficiency and fat-burning capacity.</p>",
+            "button_text": "",
+            "button_link": "shopify://products/vo2-max",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "media_HLkFfd",
+        "media_9yQNKF",
+        "media_8EDfB4",
+        "media_yVCLfm",
+        "media_NpUHyt",
+        "media_NeTJYy",
+        "media_UkCpLh",
+        "media_dTwgUf",
+        "media_wJkenb",
+        "media_XLd4Nd",
+        "media_UKFkrB",
+        "media_eMzAqm"
+      ],
+      "custom_css": [],
+      "name": "t:sections.flow.name",
+      "settings": {
+        "heading": "What It Includes",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "content_position": "middle",
+        "content_alignment": "left",
+        "select_motion": "hover",
+        "open_first_tab": true,
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "auto_play": false,
+        "change_steps_speed": 5,
+        "pause_hover": true,
+        "background_color": "#ffffff",
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background_color_dark": "#ffffff",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "image_position": "second",
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "desktop_height": "650px",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_position_mobile": "second",
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "mobile_height": "400px",
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "flow_nHePp4": {
+      "type": "flow",
+      "blocks": {
+        "media_cjYqwm": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/Posture-Screening--3_1.png",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "Functional Wellness, Posture & Expert Guidance",
+            "heading": "Posture Assessment & Correction",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Detects imbalances in alignment and offers corrective strategies for long-term mobility and comfort.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_i9BUrP": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-cottonbro-4100669.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Psychological Assessment & Counseling",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Evaluates emotional wellbeing and provides expert guidance for mental clarity, focus, and stress management.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_ExmjWG": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-cottonbro-7580250.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Doctor Consultation",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>One-on-one consultation to interpret your full report and set a personalized health strategy.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_WcFpWr": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-verolova-33009985_f8df78c5-5a11-41b2-9465-72ffebbd54d5.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Nutritionist Session",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Review of dietary habits and nutrient gaps with tailored food and supplement guidance.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        },
+        "media_iDicEL": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-elevate-1267320_2.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Healthy Breakfast & Lunch",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<p>Gourmet, clean meals served onsite to support energy and recovery during your experience.</p>",
+            "button_text": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "media_cjYqwm",
+        "media_i9BUrP",
+        "media_ExmjWG",
+        "media_WcFpWr",
+        "media_iDicEL"
+      ],
+      "name": "t:sections.flow.name",
+      "settings": {
+        "heading": "What It Includes",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "content_position": "middle",
+        "content_alignment": "left",
+        "select_motion": "hover",
+        "open_first_tab": true,
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "auto_play": false,
+        "change_steps_speed": 5,
+        "pause_hover": true,
+        "background_color": "#ffffff",
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background_color_dark": "#ffffff",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "image_position": "second",
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "desktop_height": "650px",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_position_mobile": "second",
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "mobile_height": "400px",
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "multicolumn_cgnTxA": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_jfdngk": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/number-1_1.png",
+            "custom_icon": "",
+            "title": "Book Your Personalized Day",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_NnHQzE": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/number-2.png",
+            "custom_icon": "",
+            "title": "Complete All Diagnostics With Guided Care",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_f6AGHT": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/number-3_1.png",
+            "custom_icon": "",
+            "title": "Receive Your Personalized Report and Strategy",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_jfdngk",
+        "column_NnHQzE",
+        "column_f6AGHT"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "We value your time and optimize every moment.",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "line_vertical",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_FkQA4M": {
+      "type": "rich-text",
+      "blocks": {
+        "media_DVNJPm": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-07-19_161741.png",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "media_size": 50
+          }
+        }
+      },
+      "block_order": [
+        "media_DVNJPm"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_Lkdqzc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_m3pqa3": {
+          "type": "heading",
+          "settings": {
+            "heading": "[Complete Test Panel Overview]",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "media_bi7UeF": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/AIWO_360_poster.webp",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "media_size": 100
+          }
+        },
+        "button_8hAm88": {
+          "type": "button",
+          "settings": {
+            "button_label": "Price - ₹ 1,30,000",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_m3pqa3",
+        "media_bi7UeF",
+        "button_8hAm88"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "contact_form_f9c3md": {
+      "type": "contact-form",
+      "blocks": {
+        "name_BdDbDD": {
+          "type": "name",
+          "settings": {
+            "heading": "Name",
+            "mark_as_required": false
+          }
+        },
+        "email_9ECGp8": {
+          "type": "email",
+          "settings": {
+            "heading": "Email"
+          }
+        },
+        "phone_DqwQRy": {
+          "type": "phone",
+          "settings": {
+            "heading": "Phone number",
+            "mark_as_required": false
+          }
+        },
+        "message_G4rmFa": {
+          "type": "message",
+          "settings": {
+            "heading": "Message",
+            "mark_as_required": false
+          }
+        }
+      },
+      "block_order": [
+        "name_BdDbDD",
+        "email_9ECGp8",
+        "phone_DqwQRy",
+        "message_G4rmFa"
+      ],
+      "name": "t:sections.contact-form.name",
+      "settings": {
+        "heading": "Book Yours Today",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "button_label": "Book My 360 Assessment",
+        "button_alignment": "center",
+        "success_message": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "show_content": "none",
+        "form_alignment": "left",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "contact_heading": "Contact infomation",
+        "highlight_type_1": "underline",
+        "heading_tag_2": "h2",
+        "infomation": "",
+        "address": "75 9th Ave, New York, NY 10011-7006",
+        "phone_nummber": "+1234567890",
+        "email_address": "info@yourstore.com",
+        "contact_text": "<p>Opening hours</p><p>Mon - Fri, 8:30am - 10:30pm,<br/>Saturday, 8:30am - 10:30pm,<br/>Sunday, 8:30am - 10:30pm</p>",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "timeline_zH4BL4": {
+      "type": "timeline",
+      "blocks": {
+        "milestone_PdJeNK": {
+          "type": "milestone",
+          "settings": {
+            "image": "shopify://shop_images/pexels-yankrukov-7792816.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "navigation_label": "",
+            "subheading": "Step 1",
+            "heading": "Book & Schedule",
+            "description": "<p>Book your test online in minutes. Our team will coordinate a convenient time for at-home sample collection.<br/><br/></p>",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "button_style": "primary"
+          }
+        },
+        "milestone_NDX6Dw": {
+          "type": "milestone",
+          "settings": {
+            "image": "shopify://shop_images/pexels-gustavo-fring-6050137.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "navigation_label": "",
+            "subheading": "Step 2",
+            "heading": "Convenient At-Home Collection",
+            "description": "<p>A certified and trained phlebotomist will visit you to collect your sample hygienically and professionally. No lab visits, no hassle.</p>",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "button_style": "primary"
+          }
+        },
+        "milestone_EJRYcz": {
+          "type": "milestone",
+          "settings": {
+            "image": "shopify://shop_images/pexels-rdne-7845382_1_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "navigation_label": "",
+            "subheading": "Step 3",
+            "heading": "Unlock Your Smart Report",
+            "description": "<p>Within a few days, you'll receive your comprehensive 56-page AIWO Smart Report and schedule your expert consultations.</p>",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window_button": false,
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "milestone_PdJeNK",
+        "milestone_NDX6Dw",
+        "milestone_EJRYcz"
+      ],
+      "disabled": true,
+      "name": "t:sections.timeline.name",
+      "settings": {
+        "heading": "Your Journey to Optimal Health in 3 Simple Steps",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "content_position": "center",
+        "text_align": "left",
+        "subheading": "",
+        "text": "",
+        "media_ratio": "16/9",
+        "change_milestone_every": 3,
+        "pause_hover": true,
+        "show_arrow": true,
+        "background_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)",
+        "heading_highlight_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "line_and_border_color": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "heading_highlight_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_and_border_color_dark": "rgba(0,0,0,0)",
+        "primary_button_color": "rgba(0,0,0,0)",
+        "primary_button_text_color": "rgba(0,0,0,0)",
+        "primary_button_hover_color": "rgba(0,0,0,0)",
+        "primary_button_hover_text_color": "rgba(0,0,0,0)",
+        "secondary_button_color": "rgba(0,0,0,0)",
+        "secondary_button_text_color": "rgba(0,0,0,0)",
+        "text_link_color": "rgba(0,0,0,0)",
+        "primary_button_color_dark": "rgba(0,0,0,0)",
+        "primary_button_text_color_dark": "rgba(0,0,0,0)",
+        "primary_button_hover_color_dark": "rgba(0,0,0,0)",
+        "primary_button_hover_text_color_dark": "rgba(0,0,0,0)",
+        "secondary_button_color_dark": "rgba(0,0,0,0)",
+        "secondary_button_text_color_dark": "rgba(0,0,0,0)",
+        "text_link_color_dark": "rgba(0,0,0,0)",
+        "media_position": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "media_width_desktop": "medium",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "media_position_mobile": "first",
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "testimonials_bPAxbw": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_J4KxCC": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Ananya Krishnan",
+            "text": "<p>I walked in for 360° optimization. What I got was insight, structure, and a new level of energy within weeks. AIWO has become my health headquarters.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_mDNQRF": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Vishal Arora",
+            "text": "<p>From posture to gut to hormones — I now know exactly how to train, eat, and recover.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_BYX7YM": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Reema Nair",
+            "text": "<p>As an NRI visiting India, I was blown away by the AIWO experience. It’s world-class. I’ve already booked a 360° for my parents next trip.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_YqTdmw": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Rohit Mehra",
+            "text": "<p>The clarity I got in one day at AIWO was unmatched. I’ve done dozens of tests in the past, but this was the first time everything came together into a clear plan.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_38rzhh": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Karan Dev",
+            "text": "<p>I came in with curiosity. I left with a blueprint. The psychological session alone helped me reconnect with clarity I hadn’t felt in years.</p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_J4KxCC",
+        "testimonial_mDNQRF",
+        "testimonial_BYX7YM",
+        "testimonial_YqTdmw",
+        "testimonial_38rzhh"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "heading": "Testimonials",
+        "subheading": "",
+        "heading_alignment": "center",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "text_alignment": "center",
+        "testimonial_items_view": "multiple",
+        "show_arrow": false,
+        "show_pagination": false,
+        "auto_play": true,
+        "change_slides_speed": 7,
+        "show_author_image": false,
+        "author_image": "top",
+        "image_ratio": "round",
+        "desktop_height": 300,
+        "background_color_light": "#ffffff",
+        "item_background_color_light": "#ffffff",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "item_background_color_dark": "rgba(0,0,0,0)",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 28,
+        "bottom_padding": 28,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 20
+      }
+    },
+    "rich_text_3ar7XE": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Gd7CYH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_Pqd4JP": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "caption_mjGcY6": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "uppercase",
+            "text_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_Gd7CYH",
+        "button_Pqd4JP",
+        "caption_mjGcY6"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_ajb9qg": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QFM8bR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Take the step today.",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "caption_baXGrj": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Takethe step today.",
+            "text_style": "uppercase",
+            "text_size": 100
+          }
+        },
+        "button_RHbmm4": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book Your AIWO 360° Assessment Now",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QFM8bR",
+        "caption_baXGrj",
+        "button_RHbmm4"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "rich_text_qqczei",
+    "rich_text_BPJWEL",
+    "image_with_text_CEQw4k",
+    "main",
+    "flow_LCbC6R",
+    "flow_nHePp4",
+    "multicolumn_cgnTxA",
+    "rich_text_FkQA4M",
+    "rich_text_Lkdqzc",
+    "contact_form_f9c3md",
+    "timeline_zH4BL4",
+    "testimonials_bPAxbw",
+    "rich_text_3ar7XE",
+    "rich_text_ajb9qg"
+  ]
+}

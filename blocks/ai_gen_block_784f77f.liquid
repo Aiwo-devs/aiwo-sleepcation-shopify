@@ -1,0 +1,1397 @@
+{% doc %}
+  @prompt
+    Create a full-height hero section contained in laptop screen width (max-width 1400px):
+    Section Spacing: Top padding {{top_space}}px [EDITABLE: 40-120px], Bottom padding {{bottom_space}}px [EDITABLE: 40-120px]
+    Background: Gradient (light ocean blue to cream) with two large blurred decorative circles (ocean top-right, gold left-center)
+    
+    Two-Column Layout (Left: Image, Right: Content)
+    LEFT COLUMN - Product Visual
+    Main Product Image:
+    
+    Large product image with float animation (up/down)
+    Large glowing ocean blue blur circle behind
+    Image swap functionality via thumbnail gallery
+    
+    Image Gallery (below main):
+    
+    Horizontal row of 3-5 thumbnail images [REPEATABLE]
+    Click thumbnail to swap main image (smooth fade)
+    Active thumbnail has border highlight
+    
+    Trust Badge Bar (below gallery):
+    
+    Horizontal centered row of 5 pill badges [REPEATABLE, EDITABLE]
+    White bg, light border, small shadow
+    Default: "FSSAI Certified", "GMP Approved", "ISO Certified", "HALAL", "Gluten Free"
+    Fade-in animation, staggered delays
+    Wrap on smaller screens
+    
+    Floating Icon Badges (around image):
+    
+    4 white rounded cards with icons, wave animation [ALL EDITABLE]
+    Top-left: Heart ❤️ (red)
+    Top-right: Brain 🧠 (ocean blue)
+    Bottom-left: Eye 👁️ (light blue)
+    Bottom-right: Shield 🛡️ (green)
+    
+    Column Spacing: Left padding {{left_space}}px, Right padding {{right_space}}px [EDITABLE: 20-60px]
+    
+    RIGHT COLUMN - Product Content
+    Badge: Green pill with sparkle icon + "{{badge_text}}" [EDITABLE]
+    Heading: "{{brand}}" (dark) + "{{highlight}}" (ocean gradient) + "{{product}}" [ALL EDITABLE, default: "Aiwo Ultimate Omega 3"]
+    Description: Two text blocks - main (18px) and feature (14px) [BOTH EDITABLE RICH TEXT]
+    Stats Grid: 3 white cards showing:
+    
+    "{{stat_1}}" (ocean blue) - {{label_1}} [EDITABLE]
+    "{{stat_2}}" (gold) - {{label_2}} [EDITABLE]
+    Dynamic capsule count (green) - Soft Gels
+    
+    Variant Selection: Label + 2-column grid
+    
+    30s Card: Price, subtext, per-day, radio select [ALL EDITABLE]
+    60s Card: Price, subtext, per-day, "BEST VALUE" badg, Add Quantity selector, variables for 30s & 60s and also need to set a individual price for each variations & give a separate shop link for each variables
+    
+    and button name as Buy now
+    
+    and also change 2 soft gel (Stats) section can change when customer click variations
+    
+    icons are selected from media library, Give 2 different image option when customer click 30s shows one image & click60s shows different image, the selected supply value shown be a blue border outline
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-{{ ai_gen_id }} {
+    display: block;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-top: {{ block.settings.top_space }}px;
+    padding-bottom: {{ block.settings.bottom_space }}px;
+    background: linear-gradient(135deg, {{ block.settings.gradient_color_1 }} 0%, {{ block.settings.gradient_color_2 }} 100%);
+  }
+
+  .ai-hero-container-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .ai-hero-blur-circle-1-{{ ai_gen_id }} {
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: {{ block.settings.blur_circle_1_color }};
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.4;
+    z-index: 1;
+  }
+
+  .ai-hero-blur-circle-2-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: -250px;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: {{ block.settings.blur_circle_2_color }};
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  .ai-hero-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  .ai-hero-left-{{ ai_gen_id }} {
+    padding-left: {{ block.settings.left_space }}px;
+    position: relative;
+  }
+
+  .ai-hero-right-{{ ai_gen_id }} {
+    padding-right: {{ block.settings.right_space }}px;
+  }
+
+  .ai-hero-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .ai-hero-main-image-container-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 3;
+  }
+
+  .ai-hero-main-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    animation: ai-hero-float-{{ ai_gen_id }} 3s ease-in-out infinite;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-hero-main-image-{{ ai_gen_id }}.hidden {
+    display: none;
+  }
+
+  .ai-hero-image-blur-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: {{ block.settings.image_blur_color }};
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  @keyframes ai-hero-float-{{ ai_gen_id }} {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .ai-hero-thumbnails-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .ai-hero-thumbnail-{{ ai_gen_id }} {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .ai-hero-thumbnail-{{ ai_gen_id }}:hover {
+    border-color: {{ block.settings.image_blur_color }};
+  }
+
+  .ai-hero-thumbnail-{{ ai_gen_id }}.active {
+    border-color: {{ block.settings.image_blur_color }};
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-hero-thumbnail-{{ ai_gen_id }}.hidden {
+    display: none;
+  }
+
+  .ai-hero-thumbnail-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-hero-trust-badges-{{ ai_gen_id }} {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .ai-hero-badge-{{ ai_gen_id }} {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    animation: ai-hero-fade-in-{{ ai_gen_id }} 0.6s ease forwards;
+  }
+
+  .ai-hero-badge-{{ ai_gen_id }}:nth-child(1) { animation-delay: 0.1s; }
+  .ai-hero-badge-{{ ai_gen_id }}:nth-child(2) { animation-delay: 0.2s; }
+  .ai-hero-badge-{{ ai_gen_id }}:nth-child(3) { animation-delay: 0.3s; }
+  .ai-hero-badge-{{ ai_gen_id }}:nth-child(4) { animation-delay: 0.4s; }
+  .ai-hero-badge-{{ ai_gen_id }}:nth-child(5) { animation-delay: 0.5s; }
+
+  @keyframes ai-hero-fade-in-{{ ai_gen_id }} {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .ai-hero-floating-icon-{{ ai_gen_id }} {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 4;
+    animation: ai-hero-wave-{{ ai_gen_id }} 2s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-floating-icon-{{ ai_gen_id }} img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  .ai-hero-floating-icon-1-{{ ai_gen_id }} {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+  }
+
+  .ai-hero-floating-icon-2-{{ ai_gen_id }} {
+    top: 10%;
+    right: 5%;
+    animation-delay: 0.5s;
+  }
+
+  .ai-hero-floating-icon-3-{{ ai_gen_id }} {
+    bottom: 30%;
+    left: 0;
+    animation-delay: 1s;
+  }
+
+  .ai-hero-floating-icon-4-{{ ai_gen_id }} {
+    bottom: 30%;
+    right: 0;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes ai-hero-wave-{{ ai_gen_id }} {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .ai-hero-content-badge-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .ai-hero-heading-{{ ai_gen_id }} {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-hero-heading-brand-{{ ai_gen_id }} {
+    display: block;
+  }
+
+  .ai-hero-heading-highlight-{{ ai_gen_id }} {
+    background: linear-gradient(135deg, {{ block.settings.highlight_gradient_1 }} 0%, {{ block.settings.highlight_gradient_2 }} 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .ai-hero-description-{{ ai_gen_id }} {
+    font-size: 18px;
+    line-height: 1.6;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 12px;
+  }
+
+  .ai-hero-feature-text-{{ ai_gen_id }} {
+    font-size: 14px;
+    line-height: 1.6;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 24px;
+  }
+
+  .ai-hero-stats-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .ai-hero-stat-card-{{ ai_gen_id }} {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-hero-stat-value-{{ ai_gen_id }} {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .ai-hero-stat-value-1-{{ ai_gen_id }} {
+    color: {{ block.settings.stat_1_color }};
+  }
+
+  .ai-hero-stat-value-2-{{ ai_gen_id }} {
+    color: {{ block.settings.stat_2_color }};
+  }
+
+  .ai-hero-stat-value-3-{{ ai_gen_id }} {
+    color: {{ block.settings.stat_3_color }};
+  }
+
+  .ai-hero-stat-label-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-hero-variant-section-{{ ai_gen_id }} {
+    margin-bottom: 24px;
+  }
+
+  .ai-hero-variant-label-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color }};
+    margin-bottom: 16px;
+  }
+
+  .ai-hero-variant-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .ai-hero-variant-card-{{ ai_gen_id }} {
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .ai-hero-variant-card-{{ ai_gen_id }}:hover {
+    border-color: {{ block.settings.selected_border_color }};
+  }
+
+  .ai-hero-variant-card-{{ ai_gen_id }}.selected {
+    border-color: {{ block.settings.selected_border_color }};
+    border-width: 3px;
+    background: #ffffff;
+  }
+
+  .ai-hero-variant-radio-{{ ai_gen_id }} {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .ai-hero-variant-card-{{ ai_gen_id }}.selected .ai-hero-variant-radio-{{ ai_gen_id }} {
+    border-color: {{ block.settings.selected_border_color }};
+    background: {{ block.settings.selected_border_color }};
+    box-shadow: inset 0 0 0 4px #ffffff;
+  }
+
+  .ai-hero-variant-best-{{ ai_gen_id }} {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: {{ block.settings.best_value_bg }};
+    color: {{ block.settings.best_value_text_color }};
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .ai-hero-variant-price-{{ ai_gen_id }} {
+    font-size: 32px;
+    font-weight: 700;
+    color: {{ block.settings.heading_color }};
+    margin-bottom: 8px;
+  }
+
+  .ai-hero-variant-subtext-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 4px;
+  }
+
+  .ai-hero-variant-perday-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .ai-hero-quantity-section-{{ ai_gen_id }} {
+    margin-bottom: 24px;
+  }
+
+  .ai-hero-quantity-label-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color }};
+    margin-bottom: 12px;
+  }
+
+  .ai-hero-quantity-selector-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 12px 20px;
+    width: fit-content;
+  }
+
+  .ai-hero-quantity-btn-{{ ai_gen_id }} {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: {{ block.settings.image_blur_color }};
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-quantity-btn-{{ ai_gen_id }}:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+
+  .ai-hero-quantity-btn-{{ ai_gen_id }}:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: scale(1);
+  }
+
+  .ai-hero-quantity-value-{{ ai_gen_id }} {
+    font-size: 20px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color }};
+    min-width: 40px;
+    text-align: center;
+  }
+
+  .ai-hero-cta-button-{{ ai_gen_id }} {
+    width: 100%;
+    background: {{ block.settings.cta_bg_color }};
+    color: {{ block.settings.cta_text_color }};
+    border: none;
+    border-radius: 12px;
+    padding: 18px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+
+  .ai-hero-cta-button-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.cta_hover_bg }};
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-hero-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: 36px;
+    }
+
+    .ai-hero-left-{{ ai_gen_id }},
+    .ai-hero-right-{{ ai_gen_id }} {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .ai-hero-stats-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-hero-floating-icon-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-hero-variant-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
+<product-hero-{{ ai_gen_id }} class="ai-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hero-blur-circle-1-{{ ai_gen_id }}"></div>
+  <div class="ai-hero-blur-circle-2-{{ ai_gen_id }}"></div>
+
+  <div class="ai-hero-container-{{ ai_gen_id }}">
+    <div class="ai-hero-grid-{{ ai_gen_id }}">
+      <div class="ai-hero-left-{{ ai_gen_id }}">
+        <div class="ai-hero-image-wrapper-{{ ai_gen_id }}">
+          <div class="ai-hero-image-blur-{{ ai_gen_id }}"></div>
+          
+          <div class="ai-hero-main-image-container-{{ ai_gen_id }}">
+            {% if block.settings.variant_30_main_image %}
+              <img
+                src="{{ block.settings.variant_30_main_image | image_url: width: 600 }}"
+                alt="{{ block.settings.variant_30_main_image.alt | escape }}"
+                class="ai-hero-main-image-{{ ai_gen_id }} hidden"
+                data-variant-image="30"
+                width="600"
+                height="600"
+                loading="eager"
+              >
+            {% endif %}
+
+            {% if block.settings.variant_60_main_image %}
+              <img
+                src="{{ block.settings.variant_60_main_image | image_url: width: 600 }}"
+                alt="{{ block.settings.variant_60_main_image.alt | escape }}"
+                class="ai-hero-main-image-{{ ai_gen_id }}"
+                data-variant-image="60"
+                width="600"
+                height="600"
+                loading="eager"
+              >
+            {% endif %}
+          </div>
+
+          {% for i in (1..4) %}
+            {% assign icon_key = 'icon_' | append: i %}
+            
+            {% if block.settings[icon_key] %}
+              <div class="ai-hero-floating-icon-{{ ai_gen_id }} ai-hero-floating-icon-{{ i }}-{{ ai_gen_id }}">
+                <img src="{{ block.settings[icon_key] | image_url: width: 64 }}" alt="Icon {{ i }}" width="32" height="32">
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="ai-hero-thumbnails-{{ ai_gen_id }}">
+          {% if block.settings.variant_30_main_image %}
+            <div class="ai-hero-thumbnail-{{ ai_gen_id }} hidden" data-thumbnail data-variant="30" data-image-url="{{ block.settings.variant_30_main_image | image_url: width: 600 }}">
+              <img src="{{ block.settings.variant_30_main_image | image_url: width: 100 }}" alt="30s Main" width="100" height="100">
+            </div>
+          {% endif %}
+          
+          {% for i in (1..4) %}
+            {% assign thumb_30_key = 'variant_30_thumbnail_' | append: i %}
+            {% if block.settings[thumb_30_key] %}
+              <div class="ai-hero-thumbnail-{{ ai_gen_id }} hidden" data-thumbnail data-variant="30" data-image-url="{{ block.settings[thumb_30_key] | image_url: width: 600 }}">
+                <img src="{{ block.settings[thumb_30_key] | image_url: width: 100 }}" alt="30s Thumbnail {{ i }}" width="100" height="100">
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          {% if block.settings.variant_60_main_image %}
+            <div class="ai-hero-thumbnail-{{ ai_gen_id }} active" data-thumbnail data-variant="60" data-image-url="{{ block.settings.variant_60_main_image | image_url: width: 600 }}">
+              <img src="{{ block.settings.variant_60_main_image | image_url: width: 100 }}" alt="60s Main" width="100" height="100">
+            </div>
+          {% endif %}
+          
+          {% for i in (1..4) %}
+            {% assign thumb_60_key = 'variant_60_thumbnail_' | append: i %}
+            {% if block.settings[thumb_60_key] %}
+              <div class="ai-hero-thumbnail-{{ ai_gen_id }}" data-thumbnail data-variant="60" data-image-url="{{ block.settings[thumb_60_key] | image_url: width: 600 }}">
+                <img src="{{ block.settings[thumb_60_key] | image_url: width: 100 }}" alt="60s Thumbnail {{ i }}" width="100" height="100">
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="ai-hero-trust-badges-{{ ai_gen_id }}">
+          {% for i in (1..5) %}
+            {% assign badge_key = 'badge_' | append: i %}
+            {% if block.settings[badge_key] != blank %}
+              <div class="ai-hero-badge-{{ ai_gen_id }}">{{ block.settings[badge_key] }}</div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="ai-hero-right-{{ ai_gen_id }}">
+        {% if block.settings.badge_text != blank %}
+          <div class="ai-hero-content-badge-{{ ai_gen_id }}">
+            <span>✨</span>
+            <span>{{ block.settings.badge_text }}</span>
+          </div>
+        {% endif %}
+
+        <h1 class="ai-hero-heading-{{ ai_gen_id }}">
+          {% if block.settings.brand != blank %}
+            <span class="ai-hero-heading-brand-{{ ai_gen_id }}">{{ block.settings.brand }}</span>
+          {% endif %}
+          {% if block.settings.highlight != blank %}
+            <span class="ai-hero-heading-highlight-{{ ai_gen_id }}">{{ block.settings.highlight }}</span>
+          {% endif %}
+          {% if block.settings.product_name != blank %}
+            {{ block.settings.product_name }}
+          {% endif %}
+        </h1>
+
+        {% if block.settings.description != blank %}
+          <div class="ai-hero-description-{{ ai_gen_id }}">
+            {{ block.settings.description }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_text != blank %}
+          <div class="ai-hero-feature-text-{{ ai_gen_id }}">
+            {{ block.settings.feature_text }}
+          </div>
+        {% endif %}
+
+        <div class="ai-hero-stats-{{ ai_gen_id }}">
+          <div class="ai-hero-stat-card-{{ ai_gen_id }}">
+            <div class="ai-hero-stat-value-{{ ai_gen_id }} ai-hero-stat-value-1-{{ ai_gen_id }}">{{ block.settings.stat_1 }}</div>
+            <div class="ai-hero-stat-label-{{ ai_gen_id }}">{{ block.settings.stat_1_label }}</div>
+          </div>
+          <div class="ai-hero-stat-card-{{ ai_gen_id }}">
+            <div class="ai-hero-stat-value-{{ ai_gen_id }} ai-hero-stat-value-2-{{ ai_gen_id }}">{{ block.settings.stat_2 }}</div>
+            <div class="ai-hero-stat-label-{{ ai_gen_id }}">{{ block.settings.stat_2_label }}</div>
+          </div>
+          <div class="ai-hero-stat-card-{{ ai_gen_id }}">
+            <div class="ai-hero-stat-value-{{ ai_gen_id }} ai-hero-stat-value-3-{{ ai_gen_id }}" data-soft-gels>{{ block.settings.variant_60_soft_gels }}</div>
+            <div class="ai-hero-stat-label-{{ ai_gen_id }}">Soft Gels</div>
+          </div>
+        </div>
+
+        <div class="ai-hero-variant-section-{{ ai_gen_id }}">
+          <div class="ai-hero-variant-label-{{ ai_gen_id }}">{{ block.settings.variant_label }}</div>
+          <div class="ai-hero-variant-grid-{{ ai_gen_id }}">
+            <div 
+              class="ai-hero-variant-card-{{ ai_gen_id }}" 
+              data-variant="30"
+              data-price="{{ block.settings.variant_30_price }}"
+              data-soft-gels="{{ block.settings.variant_30_soft_gels }}"
+            >
+              <div class="ai-hero-variant-radio-{{ ai_gen_id }}"></div>
+              <div class="ai-hero-variant-price-{{ ai_gen_id }}">{{ block.settings.variant_30_price }}</div>
+              <div class="ai-hero-variant-subtext-{{ ai_gen_id }}">{{ block.settings.variant_30_subtext }}</div>
+              <div class="ai-hero-variant-perday-{{ ai_gen_id }}">{{ block.settings.variant_30_perday }}</div>
+            </div>
+
+            <div 
+              class="ai-hero-variant-card-{{ ai_gen_id }} selected" 
+              data-variant="60"
+              data-price="{{ block.settings.variant_60_price }}"
+              data-soft-gels="{{ block.settings.variant_60_soft_gels }}"
+            >
+              {% if block.settings.show_best_value %}
+                <div class="ai-hero-variant-best-{{ ai_gen_id }}">{{ block.settings.best_value_label }}</div>
+              {% endif %}
+              <div class="ai-hero-variant-radio-{{ ai_gen_id }}"></div>
+              <div class="ai-hero-variant-price-{{ ai_gen_id }}">{{ block.settings.variant_60_price }}</div>
+              <div class="ai-hero-variant-subtext-{{ ai_gen_id }}">{{ block.settings.variant_60_subtext }}</div>
+              <div class="ai-hero-variant-perday-{{ ai_gen_id }}">{{ block.settings.variant_60_perday }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-hero-quantity-section-{{ ai_gen_id }}">
+          <div class="ai-hero-quantity-label-{{ ai_gen_id }}">{{ block.settings.quantity_label }}</div>
+          <div class="ai-hero-quantity-selector-{{ ai_gen_id }}">
+            <button class="ai-hero-quantity-btn-{{ ai_gen_id }}" data-quantity-decrease aria-label="Decrease quantity">−</button>
+            <span class="ai-hero-quantity-value-{{ ai_gen_id }}" data-quantity-value>1</span>
+            <button class="ai-hero-quantity-btn-{{ ai_gen_id }}" data-quantity-increase aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <a href="{{ block.settings.variant_60_link }}" class="ai-hero-cta-button-{{ ai_gen_id }}" data-cta-link>
+          {{ block.settings.cta_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+</product-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.quantity = 1;
+        this.selectedVariant = '60';
+      }
+
+      connectedCallback() {
+        this.setupThumbnails();
+        this.setupVariantSelection();
+        this.setupQuantitySelector();
+      }
+
+      setupThumbnails() {
+        const thumbnails = this.querySelectorAll('[data-thumbnail]');
+        const mainImages = this.querySelectorAll('[data-variant-image]');
+
+        thumbnails.forEach(thumbnail => {
+          thumbnail.addEventListener('click', () => {
+            const variant = thumbnail.dataset.variant;
+            
+            thumbnails.forEach(t => {
+              if (t.dataset.variant === variant) {
+                t.classList.remove('active');
+              }
+            });
+            thumbnail.classList.add('active');
+
+            const newImageUrl = thumbnail.dataset.imageUrl;
+            const currentMainImage = this.querySelector(`[data-variant-image="${variant}"]`);
+            
+            if (currentMainImage) {
+              currentMainImage.style.opacity = '0';
+              
+              setTimeout(() => {
+                currentMainImage.src = newImageUrl;
+                currentMainImage.style.opacity = '1';
+              }, 200);
+            }
+          });
+        });
+      }
+
+      setupVariantSelection() {
+        const variantCards = this.querySelectorAll('[data-variant]');
+        const softGelsDisplay = this.querySelector('[data-soft-gels]');
+        const ctaLink = this.querySelector('[data-cta-link]');
+        const variant30Link = '{{ block.settings.variant_30_link }}';
+        const variant60Link = '{{ block.settings.variant_60_link }}';
+        const mainImages = this.querySelectorAll('[data-variant-image]');
+        const thumbnails = this.querySelectorAll('[data-thumbnail]');
+
+        variantCards.forEach(card => {
+          card.addEventListener('click', () => {
+            variantCards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+
+            this.selectedVariant = card.dataset.variant;
+            const softGels = card.dataset.softGels;
+
+            if (softGelsDisplay && softGels) {
+              softGelsDisplay.textContent = softGels;
+            }
+
+            if (ctaLink) {
+              if (this.selectedVariant === '30') {
+                ctaLink.href = variant30Link;
+              } else {
+                ctaLink.href = variant60Link;
+              }
+            }
+
+            mainImages.forEach(img => {
+              if (img.dataset.variantImage === this.selectedVariant) {
+                img.classList.remove('hidden');
+              } else {
+                img.classList.add('hidden');
+              }
+            });
+
+            thumbnails.forEach(thumb => {
+              if (thumb.dataset.variant === this.selectedVariant) {
+                thumb.classList.remove('hidden');
+              } else {
+                thumb.classList.add('hidden');
+                thumb.classList.remove('active');
+              }
+            });
+
+            const firstVisibleThumb = this.querySelector(`[data-thumbnail][data-variant="${this.selectedVariant}"]`);
+            if (firstVisibleThumb) {
+              firstVisibleThumb.classList.add('active');
+            }
+          });
+        });
+      }
+
+      setupQuantitySelector() {
+        const decreaseBtn = this.querySelector('[data-quantity-decrease]');
+        const increaseBtn = this.querySelector('[data-quantity-increase]');
+        const quantityValue = this.querySelector('[data-quantity-value]');
+
+        if (!decreaseBtn || !increaseBtn || !quantityValue) return;
+
+        decreaseBtn.addEventListener('click', () => {
+          if (this.quantity > 1) {
+            this.quantity--;
+            quantityValue.textContent = this.quantity;
+            this.updateButtonStates();
+          }
+        });
+
+        increaseBtn.addEventListener('click', () => {
+          if (this.quantity < 99) {
+            this.quantity++;
+            quantityValue.textContent = this.quantity;
+            this.updateButtonStates();
+          }
+        });
+
+        this.updateButtonStates();
+      }
+
+      updateButtonStates() {
+        const decreaseBtn = this.querySelector('[data-quantity-decrease]');
+        const increaseBtn = this.querySelector('[data-quantity-increase]');
+
+        if (decreaseBtn) {
+          decreaseBtn.disabled = this.quantity <= 1;
+        }
+
+        if (increaseBtn) {
+          increaseBtn.disabled = this.quantity >= 99;
+        }
+      }
+    }
+
+    customElements.define('product-hero-{{ ai_gen_id }}', ProductHero{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product hero",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "range",
+      "id": "top_space",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "bottom_space",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient start",
+      "default": "#E0F4FF"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient end",
+      "default": "#FFF8E7"
+    },
+    {
+      "type": "color",
+      "id": "blur_circle_1_color",
+      "label": "Blur circle 1",
+      "default": "#007BFF"
+    },
+    {
+      "type": "color",
+      "id": "blur_circle_2_color",
+      "label": "Blur circle 2",
+      "default": "#FFD700"
+    },
+    {
+      "type": "header",
+      "content": "Column spacing"
+    },
+    {
+      "type": "range",
+      "id": "left_space",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Left padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "right_space",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Right padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "30 capsules images"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_30_main_image",
+      "label": "Main image"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_30_thumbnail_1",
+      "label": "Thumbnail 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_30_thumbnail_2",
+      "label": "Thumbnail 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_30_thumbnail_3",
+      "label": "Thumbnail 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_30_thumbnail_4",
+      "label": "Thumbnail 4"
+    },
+    {
+      "type": "header",
+      "content": "60 capsules images"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_60_main_image",
+      "label": "Main image"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_60_thumbnail_1",
+      "label": "Thumbnail 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_60_thumbnail_2",
+      "label": "Thumbnail 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_60_thumbnail_3",
+      "label": "Thumbnail 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "variant_60_thumbnail_4",
+      "label": "Thumbnail 4"
+    },
+    {
+      "type": "header",
+      "content": "Image style"
+    },
+    {
+      "type": "color",
+      "id": "image_blur_color",
+      "label": "Image glow color",
+      "default": "#007BFF"
+    },
+    {
+      "type": "header",
+      "content": "Trust badges"
+    },
+    {
+      "type": "text",
+      "id": "badge_1",
+      "label": "Badge 1",
+      "default": "FSSAI Certified"
+    },
+    {
+      "type": "text",
+      "id": "badge_2",
+      "label": "Badge 2",
+      "default": "GMP Approved"
+    },
+    {
+      "type": "text",
+      "id": "badge_3",
+      "label": "Badge 3",
+      "default": "ISO Certified"
+    },
+    {
+      "type": "text",
+      "id": "badge_4",
+      "label": "Badge 4",
+      "default": "HALAL"
+    },
+    {
+      "type": "text",
+      "id": "badge_5",
+      "label": "Badge 5",
+      "default": "Gluten Free"
+    },
+    {
+      "type": "header",
+      "content": "Floating icons"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_1",
+      "label": "Icon 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_2",
+      "label": "Icon 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_3",
+      "label": "Icon 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_4",
+      "label": "Icon 4"
+    },
+    {
+      "type": "header",
+      "content": "Content badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Premium Quality"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Background",
+      "default": "#00C853"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "brand",
+      "label": "Brand",
+      "default": "Aiwo"
+    },
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Highlight text",
+      "default": "Ultimate"
+    },
+    {
+      "type": "text",
+      "id": "product_name",
+      "label": "Product name",
+      "default": "Omega 3"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "highlight_gradient_1",
+      "label": "Highlight gradient start",
+      "default": "#007BFF"
+    },
+    {
+      "type": "color",
+      "id": "highlight_gradient_2",
+      "label": "Highlight gradient end",
+      "default": "#00BFFF"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Main description",
+      "default": "<p>Premium Omega-3 fish oil with high EPA and DHA content for optimal heart, brain, and joint health.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "feature_text",
+      "label": "Feature text",
+      "default": "<p>Molecularly distilled for purity. Third-party tested. No fishy aftertaste.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Stats"
+    },
+    {
+      "type": "text",
+      "id": "stat_1",
+      "label": "Stat 1 value",
+      "default": "2000mg"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 label",
+      "default": "EPA + DHA"
+    },
+    {
+      "type": "color",
+      "id": "stat_1_color",
+      "label": "Stat 1 color",
+      "default": "#007BFF"
+    },
+    {
+      "type": "text",
+      "id": "stat_2",
+      "label": "Stat 2 value",
+      "default": "99%"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 label",
+      "default": "Pure"
+    },
+    {
+      "type": "color",
+      "id": "stat_2_color",
+      "label": "Stat 2 color",
+      "default": "#FFD700"
+    },
+    {
+      "type": "color",
+      "id": "stat_3_color",
+      "label": "Stat 3 color",
+      "default": "#00C853"
+    },
+    {
+      "type": "header",
+      "content": "Variant 30 capsules"
+    },
+    {
+      "type": "text",
+      "id": "variant_30_price",
+      "label": "Price",
+      "default": "₹999"
+    },
+    {
+      "type": "text",
+      "id": "variant_30_subtext",
+      "label": "Subtext",
+      "default": "1 month supply"
+    },
+    {
+      "type": "text",
+      "id": "variant_30_perday",
+      "label": "Per day price",
+      "default": "₹33.30 per day"
+    },
+    {
+      "type": "text",
+      "id": "variant_30_soft_gels",
+      "label": "Soft gels count",
+      "default": "30"
+    },
+    {
+      "type": "url",
+      "id": "variant_30_link",
+      "label": "Shop link"
+    },
+    {
+      "type": "header",
+      "content": "Variant 60 capsules"
+    },
+    {
+      "type": "text",
+      "id": "variant_60_price",
+      "label": "Price",
+      "default": "₹1799"
+    },
+    {
+      "type": "text",
+      "id": "variant_60_subtext",
+      "label": "Subtext",
+      "default": "2 month supply"
+    },
+    {
+      "type": "text",
+      "id": "variant_60_perday",
+      "label": "Per day price",
+      "default": "₹29.98 per day"
+    },
+    {
+      "type": "text",
+      "id": "variant_60_soft_gels",
+      "label": "Soft gels count",
+      "default": "60"
+    },
+    {
+      "type": "url",
+      "id": "variant_60_link",
+      "label": "Shop link"
+    },
+    {
+      "type": "header",
+      "content": "Variant settings"
+    },
+    {
+      "type": "text",
+      "id": "variant_label",
+      "label": "Variant label",
+      "default": "Choose your supply"
+    },
+    {
+      "type": "color",
+      "id": "selected_border_color",
+      "label": "Selected border color",
+      "default": "#007BFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_best_value",
+      "label": "Show best value badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "best_value_label",
+      "label": "Best value text",
+      "default": "BEST VALUE"
+    },
+    {
+      "type": "color",
+      "id": "best_value_bg",
+      "label": "Best value background",
+      "default": "#FFD700"
+    },
+    {
+      "type": "color",
+      "id": "best_value_text_color",
+      "label": "Best value text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Quantity selector"
+    },
+    {
+      "type": "text",
+      "id": "quantity_label",
+      "label": "Quantity label",
+      "default": "Quantity"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg_color",
+      "label": "Button background",
+      "default": "#007BFF"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "Button text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_bg",
+      "label": "Button hover background",
+      "default": "#0056b3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product hero"
+    }
+  ]
+}
+{% endschema %}

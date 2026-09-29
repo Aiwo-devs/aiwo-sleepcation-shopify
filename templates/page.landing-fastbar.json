@@ -1,0 +1,385 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_fastbar_hero_faG4Lb": {
+      "type": "aiwo-fastbar-hero",
+      "blocks": {
+        "feature_nYxKCH": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/Protein.svg",
+            "label": "5g Protein per Bar"
+          }
+        },
+        "feature_79ceCw": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/Glutten.svg",
+            "label": "Gluten Free"
+          }
+        },
+        "feature_tLGGkf": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/Hot_Meal.svg",
+            "label": "Ideal Snack Replacement"
+          }
+        },
+        "feature_UJMqw3": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/Frame-2_0e6ee58d-a6cd-40d1-bc63-1e01e74621f0.svg",
+            "label": "Rich in Fibre & Nutrients"
+          }
+        },
+        "feature_VWDpam": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/Frame_273c5fd0-0f8c-4bc5-ab5f-93201ee9c876.svg",
+            "label": "Clean Energy Boost"
+          }
+        },
+        "feature_EJGDcr": {
+          "type": "feature",
+          "settings": {
+            "icon_image": "shopify://shop_images/Frame-1_bc8cdc4b-54b2-4878-b68b-986044f1625f.svg",
+            "label": "Pre/Post Workout Bar"
+          }
+        }
+      },
+      "block_order": [
+        "feature_nYxKCH",
+        "feature_79ceCw",
+        "feature_tLGGkf",
+        "feature_UJMqw3",
+        "feature_VWDpam",
+        "feature_EJGDcr"
+      ],
+      "name": "Fast Bar Hero",
+      "settings": {
+        "bg_image": "shopify://shop_images/Hero_Header_abea6cae-ca3a-4dde-8bf9-cd54a387b953.svg",
+        "bg_image_mobile": "shopify://shop_images/Mobile_Bg_8944019a-ea97-42e7-a496-5a7e3173d0da.svg",
+        "physician_badge_icon": "shopify://shop_images/Frame_9acd0c6e-97a7-40b8-8b9a-b647ef0da8af.svg",
+        "physician_badge_text": "Nutritionist Recommended",
+        "heading": "AIWO Fast Bar",
+        "description": "AIWO Fast Bars are 40 grams of nut bars with 5 grams of protein, free from artificial flavors and gluten.",
+        "best_seller_label": "Best Seller",
+        "pack_label": "Pack of 10",
+        "sale_price": "Rs. 1,000",
+        "original_price": "",
+        "save_badge": "",
+        "fasting_icon_image": "shopify://shop_images/Frame_b158ba4e-ec8d-4d38-be4c-4cf651d5abef.svg",
+        "fasting_highlight": "100%",
+        "fasting_text": "Formulated for intermittent fasting",
+        "cta_label": "Buy Now",
+        "cta_url": "https://aiwo.com/checkouts/cn/hWN8vxJBGJWw1GqRAcFXMt0e/en-in/information?_r=AQABsxsuLlMph6cFqCUisp218d54xc5FZG5J5jYESlrGq7U&cart_link_id=4SAYALc3&channel=buy_button&preview_theme_id=144180019382",
+        "hero_image": "shopify://shop_images/Hero_placeholder.png"
+      }
+    },
+    "aiwo_certifications_bar_MQTYdE": {
+      "type": "aiwo-certifications-bar",
+      "blocks": {
+        "certification_dty99y": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_c39b7167-7b22-4031-bab5-a88dad408fd6.svg",
+            "label": "Vegetarian"
+          }
+        },
+        "certification_Bbg9wM": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/Group_6.svg",
+            "label": "Premium Ingredients"
+          }
+        },
+        "certification_9tY4ey": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/FSSAI_Licensed.png",
+            "label": "FSSAI Licensed"
+          }
+        },
+        "certification_mA6mVD": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/GMP_Certified.png",
+            "label": "GMP Certified"
+          }
+        },
+        "certification_wabkxd": {
+          "type": "certification",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/Lab_Tested.png",
+            "label": "Lab Tested"
+          }
+        }
+      },
+      "block_order": [
+        "certification_dty99y",
+        "certification_Bbg9wM",
+        "certification_9tY4ey",
+        "certification_mA6mVD",
+        "certification_wabkxd"
+      ],
+      "name": "Certifications Bar",
+      "settings": {}
+    },
+    "silent_struggle_WakFqd": {
+      "type": "silent-struggle",
+      "name": "Silent Struggle",
+      "settings": {
+        "eyebrow": "THE SILENT STRUGGLE",
+        "heading": "Your Fasting Journey Is Harder Than It Should Be",
+        "paragraph_1": "<p>You've committed to intermittent fasting. You've seen the research. You know it works. But somewhere between hour 14 and your eating window, willpower gives way to desperation, and that \"healthy\" granola bar in your desk drawer starts calling your name.</p>",
+        "paragraph_2": "<p>The problem? Most \"energy bars\" are nutritional landmines. Hidden sugars spike your insulin. Artificial ingredients disrupt your metabolism. And just like that, your carefully maintained fast is broken before you even realize it.</p>",
+        "image": "shopify://shop_images/white-alarm-clock-healthy-food-diet-intermittent-fasting-concept-generative-ai.jpg"
+      }
+    },
+    "the_breakthrough_jDJ6yt": {
+      "type": "the-breakthrough",
+      "name": "The Breakthrough",
+      "settings": {
+        "image": "shopify://shop_images/the_breakthrough.png",
+        "eyebrow": "The Breakthrough",
+        "heading": "What If You Could Eat During Your Fast Without Breaking It?",
+        "paragraph": "<p>AIWO Fast Bar uses a proprietary blend of premium nuts, seeds, and natural ingredients that doesn't trigger your body's nutrient-sensing pathways. Your body stays in its fasting state while you fuel up.</p>",
+        "stat_1_value": "5g",
+        "stat_1_label": "Protein",
+        "stat_2_value": "Rich",
+        "stat_2_label": "Fiber",
+        "stat_3_value": "Premium",
+        "stat_3_label": "Healthy Fats",
+        "stat_4_value": "A, C, K",
+        "stat_4_label": "Vitamins"
+      }
+    },
+    "clean_label_promise_fWP4kV": {
+      "type": "Clean-Label-Promise",
+      "name": "Clean Label Promise",
+      "settings": {
+        "eyebrow": "CLEAN LABEL PROMISE",
+        "heading_gold": "Premium Ingredients.",
+        "heading_black": "Complete Transparency.",
+        "product_image": "shopify://shop_images/Nutrition_Label_42d936bf-bfc0-42cb-a6a4-3df3b9becfda.png",
+        "product_title": "AIWO Fast Bar",
+        "ingredient_1_name": "Almonds",
+        "ingredient_1_icon": "shopify://shop_images/Asset_1_585d8ccb-e196-4f45-b80e-edbe2fe2cfa0.svg",
+        "ingredient_2_name": "Cashews",
+        "ingredient_2_icon": "shopify://shop_images/Asset_2_03a3b17f-8528-41a0-b18f-69c6466acd6c.svg",
+        "ingredient_3_name": "Pecans",
+        "ingredient_3_icon": "shopify://shop_images/Asset_4_d1acf38f-ce16-4460-9bf6-6c27b1b62970.svg",
+        "ingredient_4_name": "Sunflower Seeds",
+        "ingredient_4_icon": "shopify://shop_images/Asset_6_13e14162-d667-4c90-9622-b0e71ac95046.svg",
+        "ingredient_5_name": "Dark Chocolate",
+        "ingredient_5_icon": "shopify://shop_images/Asset_3_4e194d32-d886-4bd1-8dcc-096a58cadee0.svg",
+        "ingredient_6_name": "Honey",
+        "ingredient_6_icon": "shopify://shop_images/Asset_7_ec6b1c89-9d21-4bd1-b8ea-2afcff56d876.svg",
+        "ingredient_7_name": "Iodised Salt",
+        "ingredient_7_icon": "shopify://shop_images/Asset_8_0a63fd3b-5d26-46a0-9fe8-52273c21d025.svg",
+        "ingredient_8_name": "Chicory Powder",
+        "ingredient_8_icon": "shopify://shop_images/Asset_5_9ed52c36-f7af-430f-8611-541a7d7f8fb3.svg",
+        "benefits_title": "What's Inside Every Bar",
+        "benefits_intro": "We believe you should know exactly what you're eating. Every ingredient in AIWO Fast Bar serves a specific purpose from the premium nut blend providing heart-healthy fats to the chicory powder feeding your beneficial gut bacteria.",
+        "benefit_1_title": "Premium Nut Blend",
+        "benefit_1_description": "Almonds, cashews, pecans heart-healthy fats, Vitamin E, magnesium",
+        "benefit_1_icon": "shopify://shop_images/Asset_1_585d8ccb-e196-4f45-b80e-edbe2fe2cfa0.svg",
+        "benefit_2_title": "Dark Chocolate Drizzle",
+        "benefit_2_description": "Rich in polyphenols and flavonoids for antioxidant protection",
+        "benefit_2_icon": "shopify://shop_images/Asset_9_450e400b-8efd-48d6-8310-3ed630d1e0d7.svg",
+        "benefit_3_title": "Prebiotic Chicory Fibre",
+        "benefit_3_description": "Natural inulin to nourish beneficial gut bacteria",
+        "benefit_3_icon": "shopify://shop_images/Asset_10_145fe3f4-8b67-428c-a388-3240f5134336.svg",
+        "benefit_4_title": "Iodised Salt",
+        "benefit_4_description": "Essential minerals for electrolyte balance during fasting",
+        "benefit_4_icon": "shopify://shop_images/Asset_8_0a63fd3b-5d26-46a0-9fe8-52273c21d025.svg"
+      }
+    },
+    "why_choose_aiwo_kkKFQA": {
+      "type": "why-choose-aiwo",
+      "name": "Why Choose AIWO",
+      "settings": {
+        "eyebrow": "WHY CHOOSE AIWO",
+        "heading_gold": "6 Reasons",
+        "heading_black": "Your Body Will Thank You",
+        "card_1_title": "Kick-Starts Metabolic Energy",
+        "card_1_description": "Provides a quick boost to your metabolic energy, making it ideal for starting your day or as a pre-workout snack without breaking your fast.",
+        "card_1_image": "shopify://shop_images/beautiful-portrait-woman-hand-gesture-heart-shape-belly-girl-wearing-sport-clothing-with-exercising-isolated-white_1.png",
+        "card_2_title": "Keeps Feeling Full",
+        "card_2_description": "High fibre and protein content contribute to satiety, aiding in appetite control and portion management during your eating window.",
+        "card_3_title": "Ideal Snack Replacement",
+        "card_3_description": "Replaces processed snacks with clean, balanced nutrition aligned with intermittent fasting and structured eating windows.",
+        "card_3_image": "shopify://shop_images/assortment-food-that-can-cause-allergic-reaction-people_1_1_3369bd11-a3c1-4329-bfb6-874991245882.png",
+        "card_4_title": "Convenient Protein & Fibre",
+        "card_4_description": "Contains 5g of protein and is rich in fibre, helping to support muscle health and digestive wellness throughout your fasting journey.",
+        "card_4_image": "shopify://shop_images/assortment-food-that-can-cause-allergic-reaction-people_1_1_b47ac9a8-be91-4de3-9ea5-b54a55f0ea90.png",
+        "card_5_title": "Pre & Post-Workout Support",
+        "card_5_description": "Offers valuable nutritional support before and after workouts, helping with energy replenishment and muscle recovery.",
+        "card_6_title": "Improves Nutrient Status",
+        "card_6_description": "Packed with unsaturated fats, phytonutrients, Vitamin C (62% RDA), iron, potassium, and calcium for enhanced nutritional support.",
+        "card_6_image": "shopify://shop_images/beautiful-portrait-woman-hand-gesture-heart-shape-belly-girl-wearing-sport-clothing-with-exercising-isolated-white_1_296c54f0-ded7-4918-b113-8b29d479e816.png"
+      }
+    },
+    "11_pillars_fastbar_3pYEae": {
+      "type": "11-pillars-fastbar",
+      "name": "11 Pillars of Longevity",
+      "settings": {
+        "eyebrow": "The Breakthrough",
+        "heading_white": "Supporting Your",
+        "heading_gold": "11 Pillars of Longevity",
+        "description": "AIWO Fast Bar uses a proprietary blend of premium nuts, seeds, and natural ingredients that doesn't trigger your body's nutrient-sensing pathways. Your body stays in its fasting state while you fuel up.",
+        "video_url": "",
+        "image": "shopify://shop_images/11_Pillars_b8ca4514-1a9f-41d7-b0b3-51a1bcfe4275.png"
+      }
+    },
+    "nutrition_facts_bAVwyq": {
+      "type": "nutrition-facts",
+      "name": "Nutrition Facts",
+      "settings": {
+        "eyebrow": "NUTRITION FACTS",
+        "heading_black": "Everything",
+        "heading_gold": "Your Body Needs.",
+        "heading_black_2": "Nothing It Doesn't.",
+        "table_title": "Nutrition Information",
+        "serving_size": "Per 40g Bar",
+        "item_1_label": "Energy",
+        "item_1_value": "168.8 kcal",
+        "item_1_rda": "",
+        "item_2_label": "Protein",
+        "item_2_value": "5g",
+        "item_2_rda": "",
+        "item_3_label": "Carbohydrates",
+        "item_3_value": "28.028g",
+        "item_3_rda": "",
+        "item_4_label": "Total Sugars",
+        "item_4_value": "5.544g",
+        "item_4_rda": "",
+        "item_5_label": "Vitamin A",
+        "item_5_value": "4",
+        "item_5_rda": "0.44% RDA",
+        "item_6_label": "Vitamin C",
+        "item_6_value": "56.0 mg",
+        "item_6_rda": "62.22% RDA",
+        "item_7_label": "Potassium",
+        "item_7_value": "177.4",
+        "item_7_rda": "3.77% RDA",
+        "item_8_label": "Iron",
+        "item_8_value": "2.43",
+        "item_8_rda": "13.50% RDA",
+        "cert_1_label": "Gluten Free",
+        "cert_1_icon": "shopify://shop_images/Frame.svg",
+        "cert_2_label": "No Artificial Flavors",
+        "cert_2_icon": "shopify://shop_images/Asset_12_f14298d5-49a8-4fdc-a6a1-09ac8490755d.svg",
+        "cert_3_label": "No Preservatives",
+        "cert_3_icon": "shopify://shop_images/Asset_11_fefa54b0-b0e6-4214-87ef-586cd9db55d9.svg",
+        "cert_4_label": "Vegetarian",
+        "cert_4_icon": "shopify://shop_images/Frame-2_5898356b-1b67-40c0-be94-69be5c54ee4d.svg",
+        "cert_5_label": "FSSAI Licensed",
+        "cert_5_icon": "shopify://shop_images/Frame_4619c00b-dd11-4839-89f9-a9707304f38c.svg",
+        "cert_6_label": "GMP Certified",
+        "cert_6_icon": "shopify://shop_images/Asset_9_450e400b-8efd-48d6-8310-3ed630d1e0d7.svg",
+        "clean_title": "Clean Nutrition,",
+        "clean_subtitle": "No Compromises",
+        "clean_description": "Every AIWO Fast Bar is manufactured in an FSSAI-licensed facility under strict GMP standards. No artificial flavors, no hidden ingredients just honest nutrition that supports your fasting goals."
+      }
+    },
+    "questions_answered_QRpy8g": {
+      "type": "questions_answered",
+      "name": "FAQ Accordion",
+      "settings": {
+        "eyebrow": "Questions Answered",
+        "heading_white": "Everything You",
+        "heading_gold": "Need",
+        "heading_white_2": "to Know",
+        "question_1": "How do AIWO Fast Bars support intermittent fasting?",
+        "answer_1": "AIWO Fast Bars are designed with a carefully balanced macronutrient profile that provides essential nutrition during your eating window without disrupting the metabolic state achieved during fasting. With only 200 calories and ingredients that don't interfere with ketogenesis, they help you maintain nutritional adequacy while practicing time-restricted eating.",
+        "question_2": "What makes these bars different from regular protein bars?",
+        "answer_2": "Unlike many commercial bars loaded with added sugars, artificial flavors, and fillers, AIWO Fast Bars use whole-food ingredients: premium nuts (almonds, cashews, pecans), seeds, natural sweeteners (brown rice syrup, honey), and functional additions like chicory powder for prebiotic fibre. Our formulation is informed by research on fasting physiology.",
+        "question_3": "How many bars should I eat per day?",
+        "answer_3": "For most individuals practicing intermittent fasting, 1-2 bars per day is appropriate, consumed during your eating window. Common usage patterns include breaking your fast with one bar, pre/post-workout nutrition, or as a convenient snack option during busy days. Always consume as part of a balanced, varied diet.",
+        "question_4": "",
+        "answer_4": "",
+        "question_5": "Can I eat these bars if I'm not fasting?",
+        "answer_5": "Absolutely! While formulated with intermittent fasting in mind, AIWO Fast Bars are versatile nutrition bars suitable for anyone seeking convenient, wholesome nutrition. They work well as on the go snack replacements, pre/post-workout snacks, office nutrition, or travel food.",
+        "question_6": "How should I store my Fast Bars?",
+        "answer_6": "Store in a cool, dry place away from direct sunlight and heat (ideally below 25°C). After opening the package, reseal it properly for optimal freshness and quality. Proper storage prevents moisture absorption and maintains the texture and flavor of the nuts and dark chocolate drizzle.",
+        "question_7": "",
+        "answer_7": "",
+        "question_8": "",
+        "answer_8": "",
+        "question_9": "",
+        "answer_9": "",
+        "question_10": "",
+        "answer_10": ""
+      }
+    },
+    "campaign_cta_T69iJ8": {
+      "type": "campaign-cta",
+      "name": "CTA Hero",
+      "settings": {
+        "background_image": "shopify://shop_images/CTA.png",
+        "heading": "Ready to Transform Your Fasting Journey?",
+        "description": "Join thousands of health-conscious Indians who have made AIWO Fast Bar their trusted companion. Whether you're new to intermittent fasting or a seasoned practitioner, start experiencing the difference today.",
+        "price": "₹1,000/",
+        "price_label": "Pack of 10 Bars",
+        "badge_1_icon": "shopify://shop_images/Frame_40af9c31-aa0d-4e8e-b616-94e97640f598.svg",
+        "badge_1_text": "10 Days Supply",
+        "badge_2_icon": "shopify://shop_images/Frame-1.svg",
+        "badge_2_text": "Free Shipping",
+        "badge_3_icon": "shopify://shop_images/Frame-2.svg",
+        "badge_3_text": "₹100 per bar",
+        "badge_4_icon": "shopify://shop_images/Frame-3.svg",
+        "badge_4_text": "FSSAI Certified",
+        "button_text": "Buy Now",
+        "button_link": "https://aiwo.com/checkouts/cn/hWN8vxJBGJWw1GqRAcFXMt0e/en-in/information?_r=AQABsxsuLlMph6cFqCUisp218d54xc5FZG5J5jYESlrGq7U&cart_link_id=4SAYALc3&channel=buy_button&preview_theme_id=144180019382"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "aiwo_fastbar_hero_faG4Lb",
+    "aiwo_certifications_bar_MQTYdE",
+    "silent_struggle_WakFqd",
+    "the_breakthrough_jDJ6yt",
+    "clean_label_promise_fWP4kV",
+    "why_choose_aiwo_kkKFQA",
+    "11_pillars_fastbar_3pYEae",
+    "nutrition_facts_bAVwyq",
+    "questions_answered_QRpy8g",
+    "campaign_cta_T69iJ8"
+  ]
+}

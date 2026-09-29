@@ -1,0 +1,592 @@
+{% doc %}
+  @prompt
+    Create LONGEVIS MATRIX section showcasing AIWO's 11-pillar longevity framework.
+    
+    BACKGROUND: #F5F2ED (warm cream/beige)
+    CONTENT: Centered, max-width 1200px
+    PADDING: 64px vertical, 20px horizontal
+    
+    Main Heading (centered):
+    "Supporting Your 11 Pillars of Longevity"
+    - Font: Poppins SemiBold, 42px desktop / 28px mobile
+    - Color: #211E1E
+    - IMPORTANT: Style "11 Pillars" in italic + #D68641
+    - Margin bottom: 20px
+    
+    Subheading (centered):
+    "Fast Bar + EVOO combo supports 8 out of 11 pillars in the LONGEVIS MATRIX framework: Nutrition, Fasting, Inflammation, Metabolism, Gut Health, Brain Health, Cellular Health, Sleep Quality"
+    - Font: Lato Regular, 16px
+    - Color: #545252
+    - Line height: 1.7
+    - Max-width: 900px, centered
+    - Margin bottom: 48px
+    
+    PILLAR ICONS VISUAL:
+    11 circular icons in elegant layout
+    - Arrangement: Single row or 4-3-4 pattern
+    - Icon size: 64x64px, clean minimal line icons
+    - Active pillars (8 supported): Full color #5B2E28
+    - Inactive pillars (3): Greyed out #CCCCCC, 50% opacity
+    - Icon labels below each: Lato Regular 13px
+    - Spacing: Equal distribution, 24px gap
+    
+    11 PILLARS (mark 8 as active, 3 as inactive):
+    Active: Nutrition, Fasting, Inflammation, Metabolism, Gut Health, Brain Health, Cellular Health, Sleep Quality
+    Inactive: (choose 3 that Fast Bar doesn't directly support)
+    
+    Bottom Link:
+    "Explore Full Matrix →"
+    - Font: Lato Regular 16px
+    - Color: #D68641
+    - Underline on hover
+    - Center aligned
+    
+    MOBILE:
+    - Icons: 3 columns layout
+    - Icon size: 48x48px
+    - Text: 12px
+    
+    AESTHETIC: Scientific credibility, clean infographic style, health-tech brand, premium wellness positioning, clear visual hierarchy
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-longevis-matrix-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    width: 100%;
+  }
+
+  .ai-longevis-matrix-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-longevis-matrix-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size_desktop }}px;
+    color: {{ block.settings.heading_color }};
+    text-align: center;
+    margin: 0 0 {{ block.settings.heading_margin_bottom }}px;
+    line-height: 1.2;
+  }
+
+  .ai-longevis-matrix-heading-{{ ai_gen_id }} .ai-longevis-matrix-highlight-{{ ai_gen_id }} {
+    font-style: italic;
+    color: {{ block.settings.highlight_color }};
+  }
+
+  .ai-longevis-matrix-subheading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.subheading_color }};
+    text-align: center;
+    line-height: 1.7;
+    max-width: {{ block.settings.subheading_max_width }}px;
+    margin: 0 auto {{ block.settings.subheading_margin_bottom }}px;
+  }
+
+  .ai-longevis-matrix-pillars-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: {{ block.settings.pillar_gap }}px;
+    margin-bottom: {{ block.settings.pillars_margin_bottom }}px;
+  }
+
+  .ai-longevis-matrix-pillar-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+  }
+
+  .ai-longevis-matrix-icon-wrapper-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: {{ block.settings.icon_background }};
+    transition: transform 0.3s ease;
+  }
+
+  .ai-longevis-matrix-pillar-{{ ai_gen_id }}.active .ai-longevis-matrix-icon-wrapper-{{ ai_gen_id }} {
+    background-color: {{ block.settings.active_icon_background }};
+  }
+
+  .ai-longevis-matrix-pillar-{{ ai_gen_id }}:hover .ai-longevis-matrix-icon-wrapper-{{ ai_gen_id }} {
+    transform: scale(1.1);
+  }
+
+  .ai-longevis-matrix-icon-wrapper-{{ ai_gen_id }} svg {
+    width: calc({{ block.settings.icon_size }}px * 0.6);
+    height: calc({{ block.settings.icon_size }}px * 0.6);
+    stroke: {{ block.settings.active_icon_color }};
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .ai-longevis-matrix-pillar-{{ ai_gen_id }}.inactive .ai-longevis-matrix-icon-wrapper-{{ ai_gen_id }} svg {
+    stroke: {{ block.settings.inactive_icon_color }};
+    opacity: {{ block.settings.inactive_opacity }};
+  }
+
+  .ai-longevis-matrix-pillar-label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.label_size }}px;
+    color: {{ block.settings.heading_color }};
+    text-align: center;
+    max-width: 100px;
+  }
+
+  .ai-longevis-matrix-pillar-{{ ai_gen_id }}.inactive .ai-longevis-matrix-pillar-label-{{ ai_gen_id }} {
+    color: {{ block.settings.inactive_icon_color }};
+    opacity: {{ block.settings.inactive_opacity }};
+  }
+
+  .ai-longevis-matrix-link-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.link_size }}px;
+    color: {{ block.settings.highlight_color }};
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: text-decoration 0.3s ease;
+  }
+
+  .ai-longevis-matrix-link-{{ ai_gen_id }}:hover {
+    text-decoration: underline;
+  }
+
+  .ai-longevis-matrix-link-wrapper-{{ ai_gen_id }} {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-longevis-matrix-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+
+    .ai-longevis-matrix-pillars-{{ ai_gen_id }} {
+      gap: {{ block.settings.pillar_gap_mobile }}px;
+    }
+
+    .ai-longevis-matrix-icon-wrapper-{{ ai_gen_id }} {
+      width: {{ block.settings.icon_size_mobile }}px;
+      height: {{ block.settings.icon_size_mobile }}px;
+    }
+
+    .ai-longevis-matrix-icon-wrapper-{{ ai_gen_id }} svg {
+      width: calc({{ block.settings.icon_size_mobile }}px * 0.6);
+      height: calc({{ block.settings.icon_size_mobile }}px * 0.6);
+    }
+
+    .ai-longevis-matrix-pillar-label-{{ ai_gen_id }} {
+      font-size: {{ block.settings.label_size_mobile }}px;
+      max-width: 80px;
+    }
+
+    .ai-longevis-matrix-pillar-{{ ai_gen_id }} {
+      flex: 0 0 calc(33.333% - {{ block.settings.pillar_gap_mobile }}px);
+      max-width: calc(33.333% - {{ block.settings.pillar_gap_mobile }}px);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-longevis-matrix-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-longevis-matrix-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-longevis-matrix-heading-{{ ai_gen_id }}">
+        {{ block.settings.heading_part_1 }} <span class="ai-longevis-matrix-highlight-{{ ai_gen_id }}">{{ block.settings.heading_highlight }}</span> {{ block.settings.heading_part_2 }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.subheading != blank %}
+      <div class="ai-longevis-matrix-subheading-{{ ai_gen_id }}">
+        {{ block.settings.subheading }}
+      </div>
+    {% endif %}
+
+    <div class="ai-longevis-matrix-pillars-{{ ai_gen_id }}">
+      {% assign pillars = 'Nutrition|nutrition,Fasting|fasting,Inflammation|inflammation,Metabolism|metabolism,Gut Health|gut,Brain Health|brain,Cellular Health|cellular,Sleep Quality|sleep,Exercise|exercise,Stress Management|stress,Social Connection|social' | split: ',' %}
+      {% assign active_pillars = block.settings.active_pillars | split: ',' %}
+
+      {% for pillar_data in pillars %}
+        {% assign pillar_parts = pillar_data | split: '|' %}
+        {% assign pillar_name = pillar_parts[0] %}
+        {% assign pillar_key = pillar_parts[1] %}
+        {% assign is_active = false %}
+
+        {% for active in active_pillars %}
+          {% assign active_trimmed = active | strip %}
+          {% if active_trimmed == pillar_key %}
+            {% assign is_active = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        <div class="ai-longevis-matrix-pillar-{{ ai_gen_id }} {% if is_active %}active{% else %}inactive{% endif %}">
+          <div class="ai-longevis-matrix-icon-wrapper-{{ ai_gen_id }}">
+            {% case pillar_key %}
+              {% when 'nutrition' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3"/></svg>
+              {% when 'fasting' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              {% when 'inflammation' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+              {% when 'metabolism' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+              {% when 'gut' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 10c-1 0-2 1-2 2v8c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v4c0 1 1 2 2 2"/></svg>
+              {% when 'brain' %}
+                <svg xmlns="http://www.w3.org/2000/24 24" viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 0 7 4.5v15A2.5 2.5 0 0 0 9.5 22h5a2.5 2.5 0 0 0 2.5-2.5v-15A2.5 2.5 0 0 0 14.5 2h-5z"/><path d="M12 6v12M9 9h6M9 15h6"/></svg>
+              {% when 'cellular' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              {% when 'sleep' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              {% when 'exercise' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 12L2 9v6l4.5-3zM17.5 12L22 15V9l-4.5 3z"/><rect x="9" y="4" width="6" height="16" rx="1"/></svg>
+              {% when 'stress' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/></svg>
+              {% when 'social' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            {% endcase %}
+          </div>
+          <div class="ai-longevis-matrix-pillar-label-{{ ai_gen_id }}">{{ pillar_name }}</div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if block.settings.link_text != blank and block.settings.link_url != blank %}
+      <div class="ai-longevis-matrix-link-wrapper-{{ ai_gen_id }}">
+        <a href="{{ block.settings.link_url }}" class="ai-longevis-matrix-link-{{ ai_gen_id }}">
+          {{ block.settings.link_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "LONGEVIS MATRIX",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F5F2ED"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_part_1",
+      "label": "Heading part 1",
+      "default": "Supporting Your"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Heading highlight",
+      "default": "11 Pillars"
+    },
+    {
+      "type": "text",
+      "id": "heading_part_2",
+      "label": "Heading part 2",
+      "default": "of Longevity"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size mobile",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#211E1E"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight color",
+      "default": "#D68641"
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "label": "Heading bottom margin",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Subheading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading text",
+      "default": "Fast Bar + EVOO combo supports 8 out of 11 pillars in the LONGEVIS MATRIX framework: Nutrition, Fasting, Inflammation, Metabolism, Gut Health, Brain Health, Cellular Health, Sleep Quality"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#545252"
+    },
+    {
+      "type": "range",
+      "id": "subheading_max_width",
+      "label": "Subheading max width",
+      "min": 600,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "subheading_margin_bottom",
+      "label": "Subheading bottom margin",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Pillars"
+    },
+    {
+      "type": "textarea",
+      "id": "active_pillars",
+      "label": "Active pillars",
+      "default": "nutrition,fasting,inflammation,metabolism,gut,brain,cellular,sleep",
+      "info": "Enter pillar keys separated by commas. Available: nutrition, fasting, inflammation, metabolism, gut, brain, cellular, sleep, exercise, stress, social"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size desktop",
+      "min": 40,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "label": "Icon size mobile",
+      "min": 32,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "active_icon_color",
+      "label": "Active icon color",
+      "default": "#5B2E28"
+    },
+    {
+      "type": "color",
+      "id": "active_icon_background",
+      "label": "Active icon background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "inactive_icon_color",
+      "label": "Inactive icon color",
+      "default": "#CCCCCC"
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Icon background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "inactive_opacity",
+      "label": "Inactive opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.5
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size desktop",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "label_size_mobile",
+      "label": "Label size mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "pillar_gap",
+      "label": "Pillar gap desktop",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "pillar_gap_mobile",
+      "label": "Pillar gap mobile",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "pillars_margin_bottom",
+      "label": "Pillars bottom margin",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Bottom link"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text",
+      "default": "Explore Full Matrix →"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "range",
+      "id": "link_size",
+      "label": "Link size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "LONGEVIS MATRIX"
+    }
+  ]
+}
+{% endschema %}

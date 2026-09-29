@@ -1,0 +1,539 @@
+{% doc %}
+  @prompt
+    Design a final CTA (Call-to-Action) section for AIWO Ultimate Omega 3.
+    Layout:
+    Full-width banner section with deep navy blue background (#0A2472), white text, centered content, generous padding (80px vertical).
+    Header:
+    
+    Large bold white heading (48-56px): "Experience Triple Strength Omega-3 Today"
+    Centered alignment with proper line height
+    
+    Description:
+    
+    White text (18px, medium weight): "Join thousands of satisfied customers who trust AIWO ULTIMATE OMEGA 3 with advanced enteric coating technology for their daily wellness routine."
+    Centered, max-width constraint for readability (700px)
+    Spacing below heading (24px)
+    
+    CTA Button:
+    
+    Large button with bright yellow/gold background (#FDB813)
+    Bold black text: "Order Now - Premium Quality"
+    Rounded corners (8px), generous padding (16px vertical, 48px horizontal)
+    Hover effect: slightly darker yellow, subtle lift/shadow
+    Centered, prominent positioning
+    Button functionality: Links to product purchase page/cart
+    Editable link: Button href should be easily customizable in code
+    
+    Trust Indicators Row 1 (3 items with checkmarks):
+    
+    White checkmark icons followed by text
+    ✓ Globally sourced ingredients
+    ✓ Clinically proven
+    ✓ Premium quality
+    Inline display with spacing (32px gap between items)
+    Positioned below button (32px gap)
+    
+    Trust Indicators Row 2 (certification line):
+    
+    Smaller white text (14px): "Over 2,847 verified reviews • HALAL certified • GMP certified • Clinically proven ingredients"
+    Bullet points (•) as separators
+    Centered, light opacity (80%)
+    Positioned below first trust row (16px gap)
+    
+    Styling:
+    
+    All text centered alignment
+    Adequate vertical spacing between elements
+    High contrast white text on blue background
+    Professional, trustworthy appearance
+    
+    Responsive:
+    
+    Heading font size reduces on mobile (32-36px)
+    Button becomes full-width on mobile with side padding
+    Trust indicators stack vertically on mobile
+    Vertical padding reduces to 48px on mobile
+    
+    Button Link: Should be editable variable (e.g., buttonLink = "/checkout" or buttonLin
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-omega-cta-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_desktop }}px 20px;
+  }
+
+  .ai-omega-cta-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ai-omega-cta-heading-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size_desktop }}px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 {{ block.settings.heading_spacing }}px;
+  }
+
+  .ai-omega-cta-description-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto {{ block.settings.description_spacing }}px;
+  }
+
+  .ai-omega-cta-button-{{ ai_gen_id }} {
+    display: inline-block;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 700;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-bottom: {{ block.settings.button_spacing }}px;
+  }
+
+  .ai-omega-cta-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-omega-cta-trust-row-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: {{ block.settings.trust_row_spacing }}px;
+  }
+
+  .ai-omega-cta-trust-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: {{ block.settings.trust_text_color }};
+    font-size: {{ block.settings.trust_text_size }}px;
+    font-weight: 500;
+  }
+
+  .ai-omega-cta-checkmark-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .ai-omega-cta-certifications-{{ ai_gen_id }} {
+    color: {{ block.settings.cert_text_color }};
+    font-size: {{ block.settings.cert_text_size }}px;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-omega-cta-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_mobile }}px 20px;
+    }
+
+    .ai-omega-cta-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+
+    .ai-omega-cta-button-{{ ai_gen_id }} {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .ai-omega-cta-trust-row-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-omega-cta-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-omega-cta-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-omega-cta-heading-{{ ai_gen_id }}">
+        {{ block.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="ai-omega-cta-description-{{ ai_gen_id }}">
+        {{ block.settings.description }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.button_text != blank %}
+      <a 
+        href="{{ block.settings.button_link }}" 
+        class="ai-omega-cta-button-{{ ai_gen_id }}"
+      >
+        {{ block.settings.button_text }}
+      </a>
+    {% endif %}
+
+    {% if block.settings.show_trust_indicators %}
+      <div class="ai-omega-cta-trust-row-{{ ai_gen_id }}">
+        {% if block.settings.trust_item_1 != blank %}
+          <div class="ai-omega-cta-trust-item-{{ ai_gen_id }}">
+            <svg class="ai-omega-cta-checkmark-{{ ai_gen_id }}" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="10" fill="{{ block.settings.checkmark_color }}"/>
+              <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.checkmark_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{{ block.settings.trust_item_1 }}</span>
+          </div>
+        {% endif %}
+
+        {% if block.settings.trust_item_2 != blank %}
+          <div class="ai-omega-cta-trust-item-{{ ai_gen_id }}">
+            <svg class="ai-omega-cta-checkmark-{{ ai_gen_id }}" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="10" fill="{{ block.settings.checkmark_color }}"/>
+              <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.checkmark_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{{ block.settings.trust_item_2 }}</span>
+          </div>
+        {% endif %}
+
+        {% if block.settings.trust_item_3 != blank %}
+          <div class="ai-omega-cta-trust-item-{{ ai_gen_id }}">
+            <svg class="ai-omega-cta-checkmark-{{ ai_gen_id }}" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="10" fill="{{ block.settings.checkmark_color }}"/>
+              <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.checkmark_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{{ block.settings.trust_item_3 }}</span>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.certifications != blank %}
+      <div class="ai-omega-cta-certifications-{{ ai_gen_id }}">
+        {{ block.settings.certifications }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Omega 3 CTA section",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Experience Triple Strength Omega-3 Today"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop heading size",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile heading size",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing below heading",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "Join thousands of satisfied customers who trust AIWO ULTIMATE OMEGA 3 with advanced enteric coating technology for their daily wellness routine."
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "description_spacing",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing below description",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Order Now - Premium Quality"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#FDB813"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#E5A610"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_spacing",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing below button",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Trust indicators"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_indicators",
+      "label": "Show trust indicators",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "trust_item_1",
+      "label": "Trust item 1",
+      "default": "Globally sourced ingredients"
+    },
+    {
+      "type": "text",
+      "id": "trust_item_2",
+      "label": "Trust item 2",
+      "default": "Clinically proven"
+    },
+    {
+      "type": "text",
+      "id": "trust_item_3",
+      "label": "Trust item 3",
+      "default": "Premium quality"
+    },
+    {
+      "type": "range",
+      "id": "trust_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "trust_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "checkmark_color",
+      "label": "Checkmark background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "checkmark_icon_color",
+      "label": "Checkmark icon color",
+      "default": "#0A2472"
+    },
+    {
+      "type": "range",
+      "id": "trust_row_spacing",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing below trust row",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Certifications"
+    },
+    {
+      "type": "text",
+      "id": "certifications",
+      "label": "Certification text",
+      "default": "Over 2,847 verified reviews • HALAL certified • GMP certified • Clinically proven ingredients"
+    },
+    {
+      "type": "range",
+      "id": "cert_text_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "cert_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#0A2472"
+    },
+    {
+      "type": "range",
+      "id": "padding_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "label": "Desktop padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_mobile",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Mobile padding",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Omega 3 CTA section"
+    }
+  ]
+}
+{% endschema %}

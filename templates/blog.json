@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "heading_tag": "h1",
+        "show_all_tags": false,
+        "post_per_page": "",
+        "columns_desktop": 3,
+        "columns_first_row": 3,
+        "pagination": "pagination",
+        "paginate_type": "circle",
+        "subtext": "",
+        "alignment": "left",
+        "full_width": true,
+        "full_width_mobile": true,
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": false,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_image": true,
+        "columns_mobile": "1",
+        "image_ratio": "75",
+        "item_secondary_background": false,
+        "show_author": true,
+        "show_name": true,
+        "show_date": true,
+        "show_excerpt": true,
+        "show_tag": true,
+        "show_comment_counts": true,
+        "show_read_more": false,
+        "button_read_more_label": "READ NOW",
+        "spacing_col": 28,
+        "spacing_row": 64,
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "spacing_row_mobile": 32,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

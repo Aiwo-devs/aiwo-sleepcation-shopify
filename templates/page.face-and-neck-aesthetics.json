@@ -1,0 +1,1447 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_mrFq3J": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tMQn9V": {
+          "type": "heading",
+          "settings": {
+            "heading": "Look And Feel [Younger]",
+            "highlight_type": "font_highlight",
+            "heading_size": 130,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tMQn9V"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "slideshow_TEMc63": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_LcAymn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/beautiful-woman-receiving-facial-microcurrent-proc-2025-04-01-20-39-02-utc_1.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "enable_bakground": false,
+            "subheading": "",
+            "subheading_size": 100,
+            "heading": "",
+            "highlight_type": "underline",
+            "heading_size": 170,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-center",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "text_product": "Check out our products:",
+            "list_products": [],
+            "show_rating": false,
+            "open_new_window_product": false,
+            "content_background_color": "rgba(0,0,0,0)",
+            "color_text": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "color_product_card_background": "rgba(0,0,0,0)",
+            "color_product_card_text": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_LcAymn"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "pause_hover": true,
+        "slider_visual": "bars",
+        "show_arrow": true,
+        "image_pagination_background": "rgba(0,0,0,0)",
+        "image_pagination_text": "rgba(0,0,0,0)",
+        "transition_style": "fade",
+        "full_width": true,
+        "padding_full_width": false,
+        "adapt_corners_desktop": true,
+        "rounded_corner_image": false,
+        "desktop_height": "550",
+        "padding_top": 0,
+        "padding_bottom": 4,
+        "full_width_mobile": true,
+        "adapt_corners_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "show_content_below_image": false,
+        "mobile_height": "300",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 12
+      }
+    },
+    "rich_text_LyBabi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4DqcYa": {
+          "type": "heading",
+          "settings": {
+            "heading": "Rediscover The Youthful Structure That's Uniquely Yours",
+            "highlight_type": "font_highlight",
+            "heading_size": 70,
+            "heading_tag": "h2"
+          }
+        },
+        "heading_QDq8Y7": {
+          "type": "heading",
+          "settings": {
+            "heading": "[Facial Skin Analysis]",
+            "highlight_type": "font_highlight",
+            "heading_size": 90,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4DqcYa",
+        "heading_QDq8Y7"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "image_with_text_jCfpqN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tKAbBY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Facial Skin Analysis",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>Undergo a thorough skin analysis by our skilled beauty therapist, using AI technology to identify skin types and issues. Receive personalised treatment recommendations for at-home care.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_dXfcRU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book A Consultation",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#d68641",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tKAbBY",
+        "button_dXfcRU"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/046.jpg",
+        "desktop_height": "550px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_Tgp3gp": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_RYLCP3": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Hydrafacial",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>Indulge in the rejuvenating experience of a Hydra Facial, a multi-step treatment that cleanses, exfoliates, and hydrates, leaving your skin with a radiant glow.</p><p><strong>Optimal for:</strong></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_3XRyhy": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Cleansing",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_iVFJU6": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Exfoliation",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_NrgKnA": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Hydration",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_zMp37z": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book A Consultation",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#d68641",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RYLCP3",
+        "columns_3XRyhy",
+        "columns_iVFJU6",
+        "columns_NrgKnA",
+        "button_zMp37z"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/Section_F3_-_rsz.webp",
+        "desktop_height": "450px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_HLGxgb": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_MGMDDe": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Photon Light Therapy",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>Revel in the rejuvenating effects of Photon Light Therapy—a non-invasive treatment promoting collagen production and skin revitalization. Whether addressing full-body de-tan, dark spots, or pigmentation, Photon Light Therapy serves as the illuminating solution to brighten and enhance your skin.</p><p><strong>Optimal For:</strong></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_X6dDkL": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Collagen Production",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_kCGTij": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Skin Revitalization",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_HD6GMU": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Full-Body De-tan, Dark Spots, and Pigmentation",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_jiNPNe": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book A Consultation",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#d68641",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MGMDDe",
+        "columns_X6dDkL",
+        "columns_kCGTij",
+        "columns_HD6GMU",
+        "button_jiNPNe"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/Photon_Section_F4s.webp",
+        "desktop_height": "550px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_TXzChW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_jxqiMn": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Carbon laser",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>Unveil a revitalized complexion with the Carbon Laser Peel Facial. This skin resurfacing procedure is designed to enhance skin texture, target acne, and minimize enlarged pores effectively. Ideal for individuals with oily and acne-prone skin, this treatment offers a non-invasive solution to achieve a smoother and clearer complexion.</p><p><br/><strong>Optimal for:</strong></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_7jkbpD": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Minimizing enlarged pores",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_4ta9eQ": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Evens out skin tone",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_XUwgwK": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Targets acne-causing bacteria",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_B7PxHY": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Clears impurities and oil buildup",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_rEnzcg": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Promotes a smoother complexion",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_AaxCLn": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book A Consultation",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#d68641",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jxqiMn",
+        "columns_7jkbpD",
+        "columns_4ta9eQ",
+        "columns_XUwgwK",
+        "columns_B7PxHY",
+        "columns_rEnzcg",
+        "button_AaxCLn"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/laser-carbon-peeling-facial-treatment-for-skin-rej-2025-07-23-18-45-28-utc_1_a07b1206-03d8-4c86-ad91-0dc7feb18f92.jpg",
+        "desktop_height": "550px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_MVzGhW": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_LG67CA": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Facial Skin Tightening",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>Reclaim skin firmness and enhance your natural shapes with our advanced skin tightening and slimming treatments, personalised for a confident you. Utilising parallel RF application technology and high cooling technology seamlessly integrated into each treatment, experience a transformative journey that focuses on skin firming and remodelling, promoting confidence and well-being.</p><p><strong>Optimal for:</strong></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_rVk8fE": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Skin Firmness",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_iAEjQU": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Anti-ageing",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_JGeaGB": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "RF Facial rejuvenation",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_g7hHwi": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Skin Tightening",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_z7mRHD": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book A Consultation",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#d68641",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LG67CA",
+        "columns_rVk8fE",
+        "columns_iAEjQU",
+        "columns_JGeaGB",
+        "columns_g7hHwi",
+        "button_z7mRHD"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/Section_F5_1_4a970677-f480-4e7e-9f98-554923bd7063.webp",
+        "desktop_height": "550px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_Ykfcfy": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_GkAVMY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Face contouring",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>Achieve smoother, younger-looking skin with our advanced Face Contouring treatment, which transforms your face in just 30 minutes. Using synchronized RF and HIFS technology, this painless, non-surgical procedure targets wrinkles, fine lines, and double chin while rejuvenating facial muscles for a natural lift—no needles required. Face Contouring makes effortless lifting of the forehead, eyebrows, and cheeks a reality.<br/><br/><strong>Optimal for:</strong></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_PnhAK9": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Forehead lifting",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_GN9JkP": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Cheeks lifting",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_HrApAT": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Eyebrow lifting",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_ijFzbt": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Reduces Eye bags",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_wRJXRM": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Reduces Double-chin",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_WJpQTP": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book A Consultation",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#d68641",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GkAVMY",
+        "columns_PnhAK9",
+        "columns_GN9JkP",
+        "columns_HrApAT",
+        "columns_ijFzbt",
+        "columns_wRJXRM",
+        "button_WJpQTP"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/Section_F10_2.png",
+        "desktop_height": "550px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_39fixd": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_U4YxdR": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Other Masks",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>Discover a collection of specialised masks, each designed to address specific skincare concerns, providing a personalised touch to your beauty regimen.</p><p><strong>Optimal for:</strong></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_bKRPen": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Specific Skincare Concerns",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_jncHxL": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Personalized Beauty Regimen",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_CHd7UU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book A Consultation",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#d68641",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_U4YxdR",
+        "columns_bKRPen",
+        "columns_jncHxL",
+        "button_CHd7UU"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/Section_F6.webp",
+        "desktop_height": "550px",
+        "mobile_height": "300px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "center",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_hGtHqF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6J7439": {
+          "type": "heading",
+          "settings": {
+            "heading": "Personalized, scientifically-grounded aesthetic care that resonates with your unique beauty standards.",
+            "highlight_type": "underline",
+            "heading_size": 70,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6J7439"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "contact_form_f9c3md": {
+      "type": "contact-form",
+      "blocks": {
+        "name_BdDbDD": {
+          "type": "name",
+          "settings": {
+            "heading": "Name",
+            "mark_as_required": false
+          }
+        },
+        "email_9ECGp8": {
+          "type": "email",
+          "settings": {
+            "heading": "Email"
+          }
+        },
+        "phone_DqwQRy": {
+          "type": "phone",
+          "settings": {
+            "heading": "Phone number",
+            "mark_as_required": false
+          }
+        },
+        "message_G4rmFa": {
+          "type": "message",
+          "settings": {
+            "heading": "Message",
+            "mark_as_required": false
+          }
+        }
+      },
+      "block_order": [
+        "name_BdDbDD",
+        "email_9ECGp8",
+        "phone_DqwQRy",
+        "message_G4rmFa"
+      ],
+      "name": "t:sections.contact-form.name",
+      "settings": {
+        "heading": "Book Yours Today",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "button_label": "Request a call-back",
+        "button_alignment": "center",
+        "success_message": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "show_content": "none",
+        "form_alignment": "left",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "contact_heading": "Contact infomation",
+        "highlight_type_1": "underline",
+        "heading_tag_2": "h2",
+        "infomation": "",
+        "address": "75 9th Ave, New York, NY 10011-7006",
+        "phone_nummber": "+1234567890",
+        "email_address": "info@yourstore.com",
+        "contact_text": "<p>Opening hours</p><p>Mon - Fri, 8:30am - 10:30pm,<br/>Saturday, 8:30am - 10:30pm,<br/>Sunday, 8:30am - 10:30pm</p>",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "comparison_table_4LkDY4": {
+      "type": "comparison-table",
+      "blocks": {
+        "criterion_Q6hdYB": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Total biomarkers screened",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "181+\n100\n77\n40"
+          }
+        },
+        "criterion_Bptdxj": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Advanced cardiac markers (hs-CRP, ApoB, Lp(a))",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nyes\nLimited\nNo"
+          }
+        },
+        "criterion_zWjeGP": {
+          "type": "criterion",
+          "settings": {
+            "heading": "In-depth hormones & insulin",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nyes\nLimited\nNo"
+          }
+        },
+        "criterion_KxcrJr": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Micronutrients & amino-acids",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nLimited\nNo\nNo"
+          }
+        },
+        "criterion_Ddnp8J": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Doctor-interpreted longevity plan",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nyes\nyes\nNo"
+          }
+        },
+        "criterion_MKxXgD": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Price (INR)",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "18,000\n10,000\n7,500 \n5,000+"
+          }
+        }
+      },
+      "block_order": [
+        "criterion_Q6hdYB",
+        "criterion_Bptdxj",
+        "criterion_zWjeGP",
+        "criterion_KxcrJr",
+        "criterion_Ddnp8J",
+        "criterion_MKxXgD"
+      ],
+      "disabled": true,
+      "name": "t:sections.comparision-table.name",
+      "settings": {
+        "heading": "Which Blood Panel is right for you?",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "description": "<p>Add further details to describe your comparison table</p>",
+        "product": "",
+        "alternative_text": "AIWO blood Panels vs Outside Tests",
+        "external_item_labels": "AIWO 181\nAIWO 100\nAIWO 77\nOutside tests",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "column_highlight_light": "rgba(0,0,0,0)",
+        "line_border": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "column_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "rich_text_mrFq3J",
+    "slideshow_TEMc63",
+    "rich_text_LyBabi",
+    "image_with_text_jCfpqN",
+    "image_with_text_Tgp3gp",
+    "image_with_text_HLGxgb",
+    "image_with_text_TXzChW",
+    "image_with_text_MVzGhW",
+    "image_with_text_Ykfcfy",
+    "image_with_text_39fixd",
+    "main",
+    "rich_text_hGtHqF",
+    "contact_form_f9c3md",
+    "comparison_table_4LkDY4"
+  ]
+}

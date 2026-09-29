@@ -1,0 +1,858 @@
+{% doc %}
+  @prompt
+    # CTA Section - Dual Product Options (Condensed)
+    
+    ## Prompt
+    
+    Create CTA section with gradient background (light blue to cream):
+    
+    **Center-Aligned Content** (max-width 1000px):
+    
+    **Background Decorations:**
+    - Blurred ocean blue circle (top-left)
+    - Blurred gold circle (bottom-right)
+    
+    **Header:**
+    - Gold pill badge: "Limited Time Offer" [EDITABLE]
+    - Large heading: "Start Your Journey to" + "Better Health Today" (ocean gradient) [EDITABLE]
+    - Gray description paragraph [EDITABLE]
+    
+    **Features Row** (horizontal pills):
+    - 3 checkmark pills (white cards, green checks):
+      - "1000mg Double Strength Formula" [EDITABLE]
+      - "60 Enteric Coated Soft Gels" [EDITABLE]
+      - "No Fishy Burps Guaranteed" [EDITABLE]
+    
+    **Product Options** (2-column grid on desktop, stack on mobile):
+    
+    **Option 1 - 30 Capsules:**
+    - Card: Light border, rounded, white/transparent bg
+    - Heading: "30 Soft Gels" [EDITABLE]
+    - Price: Large, bold "₹{{price_30}}" [EDITABLE]
+    - Subtext: "1 Month Supply" [EDITABLE]
+    - Button: Ocean gradient "Order 30 Capsules" [EDITABLE LINK]
+    - Arrow icon on button
+    
+    **Option 2 - 60 Capsules** (Recommended):
+    - Card: Same style with "BEST VALUE" badge in corner
+    - Heading: "60 Soft Gels" [EDITABLE]
+    - Price: Large, bold "₹{{price_60}}" [EDITABLE]
+    - Subtext: "2 Month Supply - Save {{discount}}%" [EDITABLE]
+    - Button: Ocean gradient "Order 60 Capsules" [EDITABLE LINK]
+    - Arrow icon on button
+    - Optional: Show price per day calculation
+    
+    **Bottom Trust Line:**
+    - Small gray text: "Free shipping on orders above ₹999 • Secure payment • Easy returns" [EDITABLE]
+    
+    **Settings:**
+    - Pulse animation on buttons
+    - Hover: Scale + shadow increase
+    - Badge color/position editable
+    - All text, prices, links editable
+    
+    **Responsive:** Cards stack vertically on mobile, side-by-side on desktop
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-cta-dual-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, {{ block.settings.gradient_color_1 }} 0%, {{ block.settings.gradient_color_2 }} 100%);
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .ai-cta-dual-blur-circle-{{ ai_gen_id }} {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur({{ block.settings.blur_amount }}px);
+    opacity: {{ block.settings.blur_opacity }};
+    pointer-events: none;
+  }
+
+  .ai-cta-dual-blur-circle-{{ ai_gen_id }}--top-left {
+    top: -100px;
+    left: -100px;
+    width: {{ block.settings.blur_circle_size }}px;
+    height: {{ block.settings.blur_circle_size }}px;
+    background-color: {{ block.settings.blur_color_1 }};
+  }
+
+  .ai-cta-dual-blur-circle-{{ ai_gen_id }}--bottom-right {
+    bottom: -100px;
+    right: -100px;
+    width: {{ block.settings.blur_circle_size }}px;
+    height: {{ block.settings.blur_circle_size }}px;
+    background-color: {{ block.settings.blur_color_2 }};
+  }
+
+  .ai-cta-dual-container-{{ ai_gen_id }} {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .ai-cta-dual-badge-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .ai-cta-dual-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 15px;
+    color: {{ block.settings.heading_color }};
+    line-height: 1.2;
+  }
+
+  .ai-cta-dual-heading-gradient-{{ ai_gen_id }} {
+    background: linear-gradient(135deg, {{ block.settings.gradient_text_color_1 }} 0%, {{ block.settings.gradient_text_color_2 }} 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ai-cta-dual-description-{{ ai_gen_id }} {
+    text-align: center;
+    color: {{ block.settings.description_color }};
+    font-size: {{ block.settings.description_size }}px;
+    margin: 0 auto 30px;
+    max-width: 700px;
+    line-height: 1.6;
+  }
+
+  .ai-cta-dual-features-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .ai-cta-dual-feature-pill-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: {{ block.settings.feature_pill_bg }};
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    color: {{ block.settings.feature_pill_text }};
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-cta-dual-feature-check-{{ ai_gen_id }} {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: {{ block.settings.check_bg_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ai-cta-dual-feature-check-{{ ai_gen_id }} svg {
+    width: 12px;
+    height: 12px;
+    stroke: {{ block.settings.check_icon_color }};
+  }
+
+  .ai-cta-dual-products-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .ai-cta-dual-product-card-{{ ai_gen_id }} {
+    position: relative;
+    background-color: {{ block.settings.card_bg_color }};
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-cta-dual-product-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-cta-dual-best-value-{{ ai_gen_id }} {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: {{ block.settings.best_value_bg }};
+    color: {{ block.settings.best_value_text_color }};
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-cta-dual-product-heading-{{ ai_gen_id }} {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    color: {{ block.settings.card_heading_color }};
+  }
+
+  .ai-cta-dual-product-price-{{ ai_gen_id }} {
+    font-size: 42px;
+    font-weight: 800;
+    margin: 0 0 8px;
+    color: {{ block.settings.card_price_color }};
+  }
+
+  .ai-cta-dual-product-subtext-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.card_subtext_color }};
+    margin: 0 0 25px;
+  }
+
+  .ai-cta-dual-product-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, {{ block.settings.button_gradient_1 }} 0%, {{ block.settings.button_gradient_2 }} 100%);
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: ai-cta-dual-pulse-{{ ai_gen_id }} 2s infinite;
+  }
+
+  .ai-cta-dual-product-button-{{ ai_gen_id }}:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: none;
+  }
+
+  .ai-cta-dual-product-button-{{ ai_gen_id }} svg {
+    width: 18px;
+    height: 18px;
+    stroke: {{ block.settings.button_text_color }};
+  }
+
+  @keyframes ai-cta-dual-pulse-{{ ai_gen_id }} {
+    0%, 100% {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .ai-cta-dual-trust-line-{{ ai_gen_id }} {
+    text-align: center;
+    font-size: 13px;
+    color: {{ block.settings.trust_text_color }};
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-cta-dual-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.6 }}px 15px {{ block.settings.section_padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-cta-dual-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-cta-dual-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+
+    .ai-cta-dual-products-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-cta-dual-product-card-{{ ai_gen_id }} {
+      padding: 25px 20px;
+    }
+
+    .ai-cta-dual-product-price-{{ ai_gen_id }} {
+      font-size: 36px;
+    }
+
+    .ai-cta-dual-blur-circle-{{ ai_gen_id }}--top-left,
+    .ai-cta-dual-blur-circle-{{ ai_gen_id }}--bottom-right {
+      width: {{ block.settings.blur_circle_size | times: 0.6 }}px;
+      height: {{ block.settings.blur_circle_size | times: 0.6 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-cta-dual-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-cta-dual-blur-circle-{{ ai_gen_id }} ai-cta-dual-blur-circle-{{ ai_gen_id }}--top-left"></div>
+  <div class="ai-cta-dual-blur-circle-{{ ai_gen_id }} ai-cta-dual-blur-circle-{{ ai_gen_id }}--bottom-right"></div>
+
+  <div class="ai-cta-dual-container-{{ ai_gen_id }}">
+    {% if block.settings.badge_text != blank %}
+      <div style="text-align: center;">
+        <div class="ai-cta-dual-badge-{{ ai_gen_id }}">
+          {{ block.settings.badge_text }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if block.settings.heading_part_1 != blank or block.settings.heading_part_2 != blank %}
+      <h2 class="ai-cta-dual-heading-{{ ai_gen_id }}">
+        {% if block.settings.heading_part_1 != blank %}
+          {{ block.settings.heading_part_1 }}
+        {% endif %}
+        {% if block.settings.heading_part_2 != blank %}
+          <span class="ai-cta-dual-heading-gradient-{{ ai_gen_id }}">{{ block.settings.heading_part_2 }}</span>
+        {% endif %}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="ai-cta-dual-description-{{ ai_gen_id }}">
+        {{ block.settings.description }}
+      </div>
+    {% endif %}
+
+    <div class="ai-cta-dual-features-{{ ai_gen_id }}">
+      {% if block.settings.feature_1 != blank %}
+        <div class="ai-cta-dual-feature-pill-{{ ai_gen_id }}">
+          <div class="ai-cta-dual-feature-check-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+          </div>
+          {{ block.settings.feature_1 }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.feature_2 != blank %}
+        <div class="ai-cta-dual-feature-pill-{{ ai_gen_id }}">
+          <div class="ai-cta-dual-feature-check-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+          </div>
+          {{ block.settings.feature_2 }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.feature_3 != blank %}
+        <div class="ai-cta-dual-feature-pill-{{ ai_gen_id }}">
+          <div class="ai-cta-dual-feature-check-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+          </div>
+          {{ block.settings.feature_3 }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-cta-dual-products-{{ ai_gen_id }}">
+      <div class="ai-cta-dual-product-card-{{ ai_gen_id }}">
+        {% if block.settings.product_1_heading != blank %}
+          <h3 class="ai-cta-dual-product-heading-{{ ai_gen_id }}">{{ block.settings.product_1_heading }}</h3>
+        {% endif %}
+
+        {% if block.settings.product_1_price != blank %}
+          <div class="ai-cta-dual-product-price-{{ ai_gen_id }}">{{ block.settings.product_1_price }}</div>
+        {% endif %}
+
+        {% if block.settings.product_1_subtext != blank %}
+          <div class="ai-cta-dual-product-subtext-{{ ai_gen_id }}">{{ block.settings.product_1_subtext }}</div>
+        {% endif %}
+
+        {% if block.settings.product_1_button_text != blank %}
+          <a href="{{ block.settings.product_1_button_link }}" class="ai-cta-dual-product-button-{{ ai_gen_id }}">
+            {{ block.settings.product_1_button_text }}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="ai-cta-dual-product-card-{{ ai_gen_id }}">
+        {% if block.settings.show_best_value %}
+          <div class="ai-cta-dual-best-value-{{ ai_gen_id }}">{{ block.settings.best_value_label }}</div>
+        {% endif %}
+
+        {% if block.settings.product_2_heading != blank %}
+          <h3 class="ai-cta-dual-product-heading-{{ ai_gen_id }}">{{ block.settings.product_2_heading }}</h3>
+        {% endif %}
+
+        {% if block.settings.product_2_price != blank %}
+          <div class="ai-cta-dual-product-price-{{ ai_gen_id }}">{{ block.settings.product_2_price }}</div>
+        {% endif %}
+
+        {% if block.settings.product_2_subtext != blank %}
+          <div class="ai-cta-dual-product-subtext-{{ ai_gen_id }}">{{ block.settings.product_2_subtext }}</div>
+        {% endif %}
+
+        {% if block.settings.product_2_button_text != blank %}
+          <a href="{{ block.settings.product_2_button_link }}" class="ai-cta-dual-product-button-{{ ai_gen_id }}">
+            {{ block.settings.product_2_button_text }}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if block.settings.trust_line != blank %}
+      <div class="ai-cta-dual-trust-line-{{ ai_gen_id }}">
+        {{ block.settings.trust_line }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CTA dual product options",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient start",
+      "default": "#E0F2FE"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient end",
+      "default": "#FEF3C7"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Blur decorations"
+    },
+    {
+      "type": "color",
+      "id": "blur_color_1",
+      "label": "Top left circle color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "blur_color_2",
+      "label": "Bottom right circle color",
+      "default": "#F59E0B"
+    },
+    {
+      "type": "range",
+      "id": "blur_circle_size",
+      "min": 100,
+      "max": 500,
+      "step": 50,
+      "unit": "px",
+      "label": "Circle size",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "blur_amount",
+      "min": 50,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Blur amount",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "blur_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Blur opacity",
+      "default": 0.3
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Limited Time Offer"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Background color",
+      "default": "#F59E0B"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_part_1",
+      "label": "Heading part 1",
+      "default": "Start Your Journey to"
+    },
+    {
+      "type": "text",
+      "id": "heading_part_2",
+      "label": "Heading part 2 (gradient)",
+      "default": "Better Health Today"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "gradient_text_color_1",
+      "label": "Gradient text start",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "gradient_text_color_2",
+      "label": "Gradient text end",
+      "default": "#0284C7"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Experience the power of premium Omega-3 with our double strength formula. Choose the perfect option for your wellness journey."
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "header",
+      "content": "Features"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "Feature 1",
+      "default": "1000mg Double Strength Formula"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "Feature 2",
+      "default": "60 Enteric Coated Soft Gels"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "Feature 3",
+      "default": "No Fishy Burps Guaranteed"
+    },
+    {
+      "type": "color",
+      "id": "feature_pill_bg",
+      "label": "Pill background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "feature_pill_text",
+      "label": "Pill text color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "check_bg_color",
+      "label": "Check background",
+      "default": "#10B981"
+    },
+    {
+      "type": "color",
+      "id": "check_icon_color",
+      "label": "Check icon color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Product 1 (30 capsules)"
+    },
+    {
+      "type": "text",
+      "id": "product_1_heading",
+      "label": "Heading",
+      "default": "30 Soft Gels"
+    },
+    {
+      "type": "text",
+      "id": "product_1_price",
+      "label": "Price",
+      "default": "₹599"
+    },
+    {
+      "type": "text",
+      "id": "product_1_subtext",
+      "label": "Subtext",
+      "default": "1 Month Supply"
+    },
+    {
+      "type": "text",
+      "id": "product_1_button_text",
+      "label": "Button text",
+      "default": "Order 30 Capsules"
+    },
+    {
+      "type": "url",
+      "id": "product_1_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Product 2 (60 capsules)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_best_value",
+      "label": "Show best value badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "best_value_label",
+      "label": "Best value badge text",
+      "default": "BEST VALUE"
+    },
+    {
+      "type": "text",
+      "id": "product_2_heading",
+      "label": "Heading",
+      "default": "60 Soft Gels"
+    },
+    {
+      "type": "text",
+      "id": "product_2_price",
+      "label": "Price",
+      "default": "₹999"
+    },
+    {
+      "type": "text",
+      "id": "product_2_subtext",
+      "label": "Subtext",
+      "default": "2 Month Supply - Save 17%"
+    },
+    {
+      "type": "text",
+      "id": "product_2_button_text",
+      "label": "Button text",
+      "default": "Order 60 Capsules"
+    },
+    {
+      "type": "url",
+      "id": "product_2_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#E5E7EB"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Heading color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "card_price_color",
+      "label": "Price color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "card_subtext_color",
+      "label": "Subtext color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "color",
+      "id": "best_value_bg",
+      "label": "Best value background",
+      "default": "#EF4444"
+    },
+    {
+      "type": "color",
+      "id": "best_value_text_color",
+      "label": "Best value text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_gradient_1",
+      "label": "Gradient start",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "button_gradient_2",
+      "label": "Gradient end",
+      "default": "#0284C7"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Trust line"
+    },
+    {
+      "type": "text",
+      "id": "trust_line",
+      "label": "Trust line text",
+      "default": "Free shipping on orders above ₹999 • Secure payment • Easy returns"
+    },
+    {
+      "type": "color",
+      "id": "trust_text_color",
+      "label": "Text color",
+      "default": "#6B7280"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA dual product options"
+    }
+  ]
+}
+{% endschema %}

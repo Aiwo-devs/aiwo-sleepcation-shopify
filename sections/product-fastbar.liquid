@@ -1,0 +1,808 @@
+{% comment %}
+  AIWO Fast Bar - Shopify 2.0 Section
+  FINAL VERSION - All Eurus Theme Errors Fixed
+{% endcomment %}
+
+<style>
+/* ============================================
+   FASTBAR PRODUCT PAGE - COMPLETE STYLES
+   ============================================ */
+
+.physician-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: {{ section.settings.primary_color }};
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.physician-badge svg {
+  width: 20px;
+  height: 20px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #fbbf24;
+}
+
+.rating-text {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.variant-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.variant-card {
+  position: relative;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.variant-card:hover {
+  border-color: {{ section.settings.primary_color }};
+}
+
+.variant-card.selected {
+  border-color: {{ section.settings.primary_color }};
+  background-color: #f0fdf4;
+}
+
+.variant-card .badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.variant-card .save-badge {
+  background: {{ section.settings.primary_color }};
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.variant-card .pack-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.variant-card .price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.variant-card .current-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.variant-card .original-price {
+  font-size: 14px;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.benefit-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.benefit-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.benefit-icon img {
+  width: 48px;
+  height: 48px;
+}
+
+.benefit-icon span {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.show-more-benefits {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.show-more-benefits button {
+  background: none;
+  border: none;
+  color: {{ section.settings.primary_color }};
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 16px;
+  text-decoration: underline;
+}
+
+.muscle-mass-bar {
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.muscle-mass-bar img {
+  width: 64px;
+  height: 64px;
+}
+
+.muscle-mass-bar .percentage {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.muscle-mass-bar .text {
+  font-size: 16px;
+  color: #1e40af;
+  font-weight: 500;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  background: {{ section.settings.button_color }};
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: #374151;
+}
+
+.stock-delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.stock-left {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.horizontal-tabs {
+  border-top: 1px solid #e5e7eb;
+  margin: 32px 0;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 32px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tab-button.active {
+  color: #111827;
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #111827;
+}
+
+.tab-content {
+  padding: 24px 0;
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.tab-content ul li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.free-gift-banner {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.free-gift-banner img {
+  width: 48px;
+  height: 48px;
+}
+
+.free-gift-banner span {
+  font-size: 14px;
+  color: #92400e;
+}
+
+.free-gift-banner strong {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+  padding: 24px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.trust-badge img {
+  width: 64px;
+  height: 64px;
+}
+
+.trust-badge span {
+  font-size: 12px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .variant-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefit-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .trust-badges {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .tab-buttons {
+    gap: 16px;
+    overflow-x: auto;
+  }
+}
+</style>
+
+<div class="fastbar-product-section" id="fastbar-{{ section.id }}">
+  {% if section.settings.show_badge %}
+    <div class="physician-badge">
+      <svg viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+      </svg>
+      <span>{{ section.settings.badge_text }}</span>
+    </div>
+  {% endif %}
+
+  <h1 class="product-title">{{ product.title }}</h1>
+
+  {% if section.settings.show_rating %}
+    <div class="product-rating">
+      <div class="stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <span class="rating-text">{{ section.settings.rating_text }}</span>
+    </div>
+  {% endif %}
+
+  <p style="margin-bottom: 16px; color: #4b5563; line-height: 1.6;">
+    {{ product.description }}
+  </p>
+
+  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">
+    {{ section.settings.variant_title }}
+  </h3>
+
+  <div class="variant-cards">
+    {% for variant in product.variants %}
+      <div
+        class="variant-card {% if forloop.first %}selected{% endif %}"
+        data-variant-id="{{ variant.id }}"
+        onclick="selectVariant(this, {{ variant.id }})"
+      >
+        {% if forloop.first and section.settings.show_best_seller %}
+          <span class="badge">{{ section.settings.best_seller_text }}</span>
+        {% endif %}
+
+        <div class="pack-title">{{ variant.title }}</div>
+
+        <div class="price">
+          <span class="current-price">₹{{ variant.price | money_without_currency }}</span>
+
+          {% if variant.compare_at_price > variant.price %}
+            <span class="original-price">₹{{ variant.compare_at_price | money_without_currency }}</span>
+          {% endif %}
+        </div>
+
+        {% if variant.compare_at_price > variant.price %}
+          {% assign discount = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price %}
+          <span class="save-badge">Save {{ discount }}%</span>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if section.settings.show_benefits %}
+    <div class="benefit-icons" id="benefit-grid-{{ section.id }}">
+      {% for block in section.blocks %}
+        {% if block.type == 'benefit' %}
+          <div
+            class="benefit-icon {% if forloop.index > 3 %}hidden-benefit{% endif %}"
+            {% if forloop.index > 3 %}style="display: none;"{% endif %}
+          >
+            {% if block.settings.icon %}
+              {{ block.settings.icon | image_url: width: 64 | image_tag: alt: block.settings.text }}
+            {% endif %}
+
+            <span>{{ block.settings.text }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="show-more-benefits">
+      <button onclick="toggleBenefits{{ section.id }}()">Show More</button>
+    </div>
+  {% endif %}
+
+  {% if section.settings.show_muscle_bar %}
+    <div class="muscle-mass-bar">
+      {% if section.settings.muscle_icon %}
+        {{ section.settings.muscle_icon | image_url: width: 64 | image_tag: alt: "Muscle Mass" }}
+      {% endif %}
+
+      <div>
+        <span class="percentage">{{ section.settings.muscle_percentage }}%</span>
+        <span class="text">{{ section.settings.muscle_text }}</span>
+      </div>
+    </div>
+  {% endif %}
+
+  <button class="add-to-cart-btn" onclick="addToCart{{ section.id }}()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M9 2a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H9Z" fill="currentColor"/>
+      <path d="M9 2h6m-8 6V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M5 8h14l1 14H4L5 8Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    {{ section.settings.button_text }}
+  </button>
+
+  <div class="stock-delivery">
+    {% if product.selected_or_first_available_variant.inventory_quantity > 0 %}
+      <span class="stock-left">{{ product.selected_or_first_available_variant.inventory_quantity }} Stocks Left</span>
+    {% endif %}
+    <span>{{ section.settings.delivery_text }}</span>
+  </div>
+
+  {% if section.settings.show_tabs %}
+    <div class="horizontal-tabs">
+      <div class="tab-buttons">
+        <button class="tab-button active" onclick="switchTab{{ section.id }}(0)">
+          {{ section.settings.tab1_title }}
+        </button>
+        <button class="tab-button" onclick="switchTab{{ section.id }}(1)">
+          {{ section.settings.tab2_title }}
+        </button>
+        <button class="tab-button" onclick="switchTab{{ section.id }}(2)">
+          {{ section.settings.tab3_title }}
+        </button>
+      </div>
+
+      <div class="tab-content active">
+        {{ section.settings.tab1_content }}
+      </div>
+
+      <div class="tab-content">
+        {{ section.settings.tab2_content }}
+      </div>
+
+      <div class="tab-content">
+        {{ section.settings.tab3_content }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if section.settings.show_gift_banner %}
+    <div class="free-gift-banner">
+      {% if section.settings.gift_icon %}
+        {{ section.settings.gift_icon | image_url: width: 48 | image_tag: alt: "Gift" }}
+      {% endif %}
+      <span>{{ section.settings.gift_text }}</span>
+    </div>
+  {% endif %}
+
+  {% if section.settings.show_trust_badges %}
+    <div class="trust-badges">
+      {% for block in section.blocks %}
+        {% if block.type == 'trust_badge' %}
+          <div class="trust-badge">
+            {% if block.settings.image %}
+              {{ block.settings.image | image_url: width: 64 | image_tag: alt: block.settings.text }}
+            {% endif %}
+            <span>{{ block.settings.text }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+<script>
+function selectVariant(element, variantId) {
+  document.querySelectorAll('#fastbar-{{ section.id }} .variant-card').forEach(card => {
+    card.classList.remove('selected');
+  });
+  element.classList.add('selected');
+}
+
+function switchTab{{ section.id }}(index) {
+  document.querySelectorAll('#fastbar-{{ section.id }} .tab-button').forEach((btn, i) => {
+    btn.classList.toggle('active', i === index);
+  });
+  
+  document.querySelectorAll('#fastbar-{{ section.id }} .tab-content').forEach((content, i) => {
+    content.classList.toggle('active', i === index);
+  });
+}
+
+let benefitsExpanded{{ section.id }} = false;
+function toggleBenefits{{ section.id }}() {
+  const hiddenBenefits = document.querySelectorAll('#fastbar-{{ section.id }} .hidden-benefit');
+  const button = document.querySelector('#fastbar-{{ section.id }} .show-more-benefits button');
+  
+  benefitsExpanded{{ section.id }} = !benefitsExpanded{{ section.id }};
+  
+  hiddenBenefits.forEach(benefit => {
+    benefit.style.display = benefitsExpanded{{ section.id }} ? 'flex' : 'none';
+  });
+  
+  button.textContent = benefitsExpanded{{ section.id }} ? 'Show Less' : 'Show More';
+}
+
+function addToCart{{ section.id }}() {
+  const variantId = document.querySelector('#fastbar-{{ section.id }} .variant-card.selected').dataset.variantId;
+  
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      id: variantId,
+      quantity: 1
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    window.location.href = '/cart';
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Error adding to cart');
+  });
+}
+</script>
+
+{% schema %}
+{
+  "name": "Product Fastbar",
+  "class": "section-product-fastbar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Badge Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show Badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "Physician Formulated"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary Color",
+      "default": "#22c55e"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#111827"
+    },
+    {
+      "type": "header",
+      "content": "Rating"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show Rating",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "4.9/5 (Clinical Grade)"
+    },
+    {
+      "type": "header",
+      "content": "Variant Cards"
+    },
+    {
+      "type": "text",
+      "id": "variant_title",
+      "label": "Variant Section Title",
+      "default": "Select Pack Size"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_best_seller",
+      "label": "Show Best Seller Badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "best_seller_text",
+      "label": "Best Seller Text",
+      "default": "Best Seller"
+    },
+    {
+      "type": "header",
+      "content": "Benefits"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_benefits",
+      "label": "Show Benefit Icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Muscle Mass Bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_muscle_bar",
+      "label": "Show Muscle Mass Bar",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "muscle_icon",
+      "label": "Muscle Icon"
+    },
+    {
+      "type": "number",
+      "id": "muscle_percentage",
+      "label": "Percentage",
+      "default": 12
+    },
+    {
+      "type": "text",
+      "id": "muscle_text",
+      "label": "Muscle Mass Text",
+      "default": "Increase in Muscle Mass"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "text",
+      "id": "delivery_text",
+      "label": "Delivery Text",
+      "default": "Estimated delivery Feb 19 - Feb 22."
+    },
+    {
+      "type": "header",
+      "content": "Tabs"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tabs",
+      "label": "Show Tabs",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tab1_title",
+      "label": "Tab 1 Title",
+      "default": "Benefits"
+    },
+    {
+      "type": "richtext",
+      "id": "tab1_content",
+      "label": "Tab 1 Content"
+    },
+    {
+      "type": "text",
+      "id": "tab2_title",
+      "label": "Tab 2 Title",
+      "default": "How to take supplement?"
+    },
+    {
+      "type": "richtext",
+      "id": "tab2_content",
+      "label": "Tab 2 Content"
+    },
+    {
+      "type": "text",
+      "id": "tab3_title",
+      "label": "Tab 3 Title",
+      "default": "Ingredients"
+    },
+    {
+      "type": "richtext",
+      "id": "tab3_content",
+      "label": "Tab 3 Content"
+    },
+    {
+      "type": "header",
+      "content": "Free Gift Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gift_banner",
+      "label": "Show Gift Banner",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "gift_icon",
+      "label": "Gift Icon"
+    },
+    {
+      "type": "html",
+      "id": "gift_text",
+      "label": "Gift Banner Text",
+      "default": "<strong>FREE surprise gift</strong> on orders over ₹3999."
+    },
+    {
+      "type": "header",
+      "content": "Trust Badges"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_badges",
+      "label": "Show Trust Badges",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Benefit Text"
+        }
+      ]
+    },
+    {
+      "type": "trust_badge",
+      "name": "Trust Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Badge Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Badge Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Fastbar",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

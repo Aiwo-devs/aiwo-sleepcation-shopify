@@ -1,0 +1,540 @@
+{% comment %}
+  ============================================================
+  Section  : Why It's Worth It
+  Brand    : AIWO EVOO
+  Version  : 1.1.2
+  Author   : AIWO Dev Team
+  ============================================================
+  Schema Blocks : quality_point (max 6)
+  Responsive    : Desktop (1400px) → Tablet (991px) → Mobile (767px) → Portrait (479px)
+  Updates       : Changed fonts to Poppins, H2 set to SemiBold (600)
+  ============================================================
+{% endcomment %}
+
+{%- comment %} Load Poppins if not already loaded by theme {%- endcomment %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+<section
+  class="wiw"
+  id="wiw-{{ section.id }}"
+  aria-label="{{ section.settings.heading_primary }} {{ section.settings.heading_accent }}"
+>
+  <div class="wiw__container">
+
+    {%- comment %} ── SECTION HEADER ── {%- endcomment %}
+    <div class="wiw__header">
+
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="wiw__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading_primary != blank or section.settings.heading_accent != blank -%}
+        <h2 class="wiw__heading">
+          {%- if section.settings.heading_primary != blank -%}
+            <span class="wiw__heading-primary">{{ section.settings.heading_primary }}</span>
+          {%- endif -%}
+          {%- if section.settings.heading_accent != blank -%}
+            <em class="wiw__heading-accent">{{ section.settings.heading_accent }}</em>
+          {%- endif -%}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.subheading != blank -%}
+        <p class="wiw__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+
+    </div>
+    {%- comment %} ── END SECTION HEADER ── {%- endcomment %}
+
+    {%- comment %} ── CARD GRID ── {%- endcomment %}
+    {%- if section.blocks.size > 0 -%}
+      <ul class="wiw__grid" role="list">
+        {%- for block in section.blocks -%}
+          <li class="wiw__card" {{ block.shopify_attributes }}>
+
+            {%- comment %} Icon + Title Row {%- endcomment %}
+            <div class="wiw__card-header">
+              <span class="wiw__icon" aria-hidden="true">
+                {%- if section.settings.icon_image != blank -%}
+                  {{
+                    section.settings.icon_image
+                    | image_url: width: 72
+                    | image_tag:
+                      width: 36,
+                      height: 36,
+                      loading: 'lazy',
+                      class: 'wiw__icon-img',
+                      alt: ''
+                  }}
+                {%- else -%}
+                  <svg
+                    width="36"
+                    height="36"
+                    viewBox="0 0 36 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="18" cy="18" r="18" fill="#45C155"/>
+                    <path
+                      d="M10.5 18.5L15.5 23.5L25.5 13"
+                      stroke="#FFFFFF"
+                      stroke-width="2.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                {%- endif -%}
+              </span>
+              {%- if block.settings.title != blank -%}
+                <h3 class="wiw__card-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+            </div>
+
+            {%- comment %} Description {%- endcomment %}
+            {%- if block.settings.description != blank -%}
+              <p class="wiw__card-desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+
+            {%- comment %} Result Pill {%- endcomment %}
+            {%- if block.settings.result != blank -%}
+              <div class="wiw__result-pill" role="note">
+                {{ block.settings.result }}
+              </div>
+            {%- endif -%}
+
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+    {%- comment %} ── END CARD GRID ── {%- endcomment %}
+
+  </div>
+</section>
+
+<style>
+  /* ─────────────────────────────────────────────────────
+     Design Tokens — scoped to this section instance
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} {
+    --wiw-bg-from:              #F0F3F5;
+    --wiw-bg-to:                #FEFEFE;
+    --wiw-section-padding:      48px;
+    --wiw-container-max:        1400px;
+    --wiw-header-gap:           48px;
+    --wiw-grid-gap:             32px;
+
+    /* Typography */
+    --wiw-color-heading:        #211E1E;
+    --wiw-color-accent:         #919FA8;
+    --wiw-color-body:           #545252;
+    --wiw-font-family:          'Poppins', sans-serif;
+
+    /* Eyebrow */
+    --wiw-eyebrow-size:         14px;
+    --wiw-eyebrow-mb:           24px;
+
+    /* H2 */
+    --wiw-h2-size:              56px;
+
+    /* Subheading */
+    --wiw-sub-size:             18px;
+
+    /* Card Title */
+    --wiw-title-size:           24px;
+
+    /* Card Desc */
+    --wiw-desc-size:            18px;
+
+    /* Result Pill */
+    --wiw-pill-bg:              #0C0C0D;
+    --wiw-pill-color:           #FEFEFE;
+    --wiw-pill-size:            18px;
+    --wiw-pill-radius:          12px;
+    --wiw-pill-py:              5px;
+    --wiw-pill-px:              24px;
+
+    /* Check Icon */
+    --wiw-icon-size:            36px;
+    --wiw-icon-gap:             12px;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Section Wrapper
+     Applies outer spacing constraints properly
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} {
+    background: linear-gradient(180deg, var(--wiw-bg-from) 0%, var(--wiw-bg-to) 100%);
+    padding: var(--wiw-section-padding) 60px; 
+    width: 100%;
+    font-family: var(--wiw-font-family); /* Applied globally to section */
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Container
+     No horizontal padding to ensure full 1400px spread
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__container {
+    max-width: var(--wiw-container-max);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Section Header
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__header {
+    text-align: center;
+    margin-bottom: var(--wiw-header-gap);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Eyebrow
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__eyebrow {
+    display: inline-block;
+    font-size: var(--wiw-eyebrow-size);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 150%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #211E1E;
+    padding: 4px 12px;
+    margin-bottom: var(--wiw-eyebrow-mb);
+    background: linear-gradient(
+      90deg,
+      rgba(145, 159, 168, 0.24) 0%,
+      rgba(145, 159, 168, 0.06) 100%
+    );
+    border-radius: 2px;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     H2 Heading
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__heading {
+    font-size: var(--wiw-h2-size);
+    font-weight: 600; /* Set to SemiBold */
+    line-height: 110%;
+    color: var(--wiw-color-heading);
+    margin: 0 0 16px;
+    font-style: normal;
+  }
+
+  #wiw-{{ section.id }} .wiw__heading-primary {
+    font-weight: 600; /* Set to SemiBold */
+    color: var(--wiw-color-heading);
+  }
+
+  #wiw-{{ section.id }} .wiw__heading-accent {
+    font-style: italic;
+    font-weight: 600; /* Set to SemiBold */
+    color: var(--wiw-color-accent);
+    margin-left: 10px;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Subheading
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__subheading {
+    font-size: var(--wiw-sub-size);
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--wiw-color-body);
+    margin: 0;
+    max-width: 640px;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Card Grid
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--wiw-grid-gap);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Individual Card
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Card Header — Icon + Title Row
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__card-header {
+    display: flex;
+    align-items: center; /* Changed from flex-start to center */
+    gap: var(--wiw-icon-gap);
+    margin-bottom: 12px;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Check Icon
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__icon {
+    flex-shrink: 0;
+    width: var(--wiw-icon-size);
+    height: var(--wiw-icon-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 2px removed to allow perfect center alignment */
+  }
+
+  #wiw-{{ section.id }} .wiw__icon svg,
+  #wiw-{{ section.id }} .wiw__icon-img {
+    display: block;
+    width: var(--wiw-icon-size);
+    height: var(--wiw-icon-size);
+    object-fit: contain;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Card Title
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__card-title {
+    font-size: var(--wiw-title-size);
+    font-weight: 600;
+    line-height: 120%;
+    color: var(--wiw-color-heading);
+    margin: 0;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Card Description
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__card-desc {
+    font-size: var(--wiw-desc-size);
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--wiw-color-body);
+    margin: 0 0 16px;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     Result Pill
+  ───────────────────────────────────────────────────── */
+  #wiw-{{ section.id }} .wiw__result-pill {
+    background: var(--wiw-pill-bg);
+    border-radius: var(--wiw-pill-radius);
+    padding: var(--wiw-pill-py) var(--wiw-pill-px);
+    font-size: var(--wiw-pill-size);
+    font-weight: 500;
+    line-height: 150%;
+    color: var(--wiw-pill-color);
+    text-align: center;
+    margin-top: auto;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     RESPONSIVE — Tablet (max-width: 991px)
+  ───────────────────────────────────────────────────── */
+  @media screen and (max-width: 991px) {
+    #wiw-{{ section.id }} {
+      padding: 56px 40px; 
+      --wiw-h2-size:       42px;
+      --wiw-eyebrow-size:  13px;
+      --wiw-eyebrow-mb:    20px;
+      --wiw-title-size:    22px;
+      --wiw-desc-size:     16px;
+      --wiw-pill-size:     16px;
+    }
+
+    #wiw-{{ section.id }} .wiw__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────
+     RESPONSIVE — Mobile Landscape (max-width: 767px)
+  ───────────────────────────────────────────────────── */
+  @media screen and (max-width: 767px) {
+    #wiw-{{ section.id }} {
+      padding: 40px 24px; 
+      --wiw-h2-size:       34px;
+      --wiw-eyebrow-size:  12px;
+      --wiw-eyebrow-mb:    20px;
+      --wiw-title-size:    20px;
+      --wiw-desc-size:     15px;
+      --wiw-pill-size:     15px;
+      --wiw-grid-gap:      24px;
+      --wiw-header-gap:    36px;
+    }
+
+    #wiw-{{ section.id }} .wiw__grid {
+      grid-template-columns: 1fr;
+    }
+
+    #wiw-{{ section.id }} .wiw__result-pill {
+      min-height: unset;
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────
+     RESPONSIVE — Mobile Portrait (max-width: 479px)
+  ───────────────────────────────────────────────────── */
+  @media screen and (max-width: 479px) {
+    #wiw-{{ section.id }} {
+      padding: 32px 20px; 
+      --wiw-h2-size:       28px;
+      --wiw-eyebrow-size:  11px;
+      --wiw-eyebrow-mb:    16px;
+      --wiw-title-size:    18px;
+      --wiw-desc-size:     14px;
+      --wiw-pill-size:     14px;
+      --wiw-pill-px:       16px;
+      --wiw-grid-gap:      20px;
+      --wiw-header-gap:    32px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Why It's Worth It",
+  "tag": "section",
+  "class": "section-why-its-worth-it",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Check Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_image",
+      "label": "Custom Icon Image",
+      "info": "Upload an SVG or PNG (recommended: 72×72px, transparent background). Leave empty to use the default green checkmark."
+    },
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "WHY AIWO EVOO COSTS MORE."
+    },
+    {
+      "type": "text",
+      "id": "heading_primary",
+      "label": "Heading — Primary Text",
+      "info": "Displayed in bold. E.g. \"Why It's\"",
+      "default": "Why It's"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading — Italic Accent Text",
+      "info": "Displayed in italic, lighter colour. E.g. \"Worth It\"",
+      "default": "Worth It"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Scientific quality, freshness, and craftsmanship you can trust"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quality_point",
+      "name": "Quality Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "Speed Matters More Than You Think"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Card Description",
+          "default": "Most olive oils sit 6–24 hours before pressing. We crush within 3 hours—before the olives even 'know' they've been picked."
+        },
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Result Pill Text",
+          "info": "Supports HTML e.g. &#8202;O&#8322;&#8202; for subscript chemical notation.",
+          "default": "Result: Peroxide below 15 meq O₂/kg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why It's Worth It",
+      "blocks": [
+        {
+          "type": "quality_point",
+          "settings": {
+            "title": "Speed Matters More Than You Think",
+            "description": "Most olive oils sit 6–24 hours before pressing. We crush within 3 hours—before the olives even 'know' they've been picked.",
+            "result": "Result: Peroxide below 15 meq O₂/kg"
+          }
+        },
+        {
+          "type": "quality_point",
+          "settings": {
+            "title": "True Cold Extraction",
+            "description": "We maintain temperatures below 27°C throughout the process. Many 'cold-pressed' oils heat to 35–40°C—destroying delicate polyphenols and that peppery finish.",
+            "result": "Result: Exceptional freshness markers verified (88% fresher than benchmark)"
+          }
+        },
+        {
+          "type": "quality_point",
+          "settings": {
+            "title": "Triple-Verified by Independent Labs",
+            "description": "Every lot tested by NABL-accredited labs. Scan the QR and see the actual Certificate of Analysis.",
+            "result": "Result: Heavy metals conforming to FSSAI, PAH-4 &lt; 2 μg/kg"
+          }
+        },
+        {
+          "type": "quality_point",
+          "settings": {
+            "title": "Protected Until You Pour",
+            "description": "Dark-tinted bottles, cool-chain storage, nitrogen flushing—preserving what we spent months growing.",
+            "result": "Result: OSI 24.3 hours—stays fresher, longer"
+          }
+        },
+        {
+          "type": "quality_point",
+          "settings": {
+            "title": "No Blending, No Bulk",
+            "description": "Single-origin from our Australian groves. Not blended with cheaper imports. Pure fruit expression.",
+            "result": "Result: ΔK &lt; 0.01 (no refinement detected)"
+          }
+        },
+        {
+          "type": "quality_point",
+          "settings": {
+            "title": "The Fat That Loves You Back",
+            "description": "~68% MUFA—the heart-healthy fat backed by decades of research. This isn't oil; it's liquid nutrition.",
+            "result": "Result: Premium quality indicators well above industry benchmarks"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

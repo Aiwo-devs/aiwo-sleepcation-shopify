@@ -1,0 +1,181 @@
+{% comment %}
+    Renders a set of links for paginated results. Must be used within paginate tags.
+
+    Usage:
+    {% paginate results by 2 %}
+      {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+    {% endpaginate %}
+
+    Accepts:
+    - paginate: {Object}
+    - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{% endcomment %}
+{%  liquid 
+  if settings.lang_direction contains request.locale.iso_code
+    assign is_rtl = true
+  else
+    assign is_rtl = false
+  endif
+  assign count_item = paginate.current_offset | plus: products_per_page
+  if count_item > paginate.items
+    assign count_item = paginate.items
+  endif
+%}
+{%- if paginate.parts.size > 0 -%}
+  {% if pagination == 'click_to_load' %}
+    <div x-data="xPagination('{{ section.id }}')" id="btn-pagination-{{ section.id }}" class="w-full flex flex-col items-center justify-center">
+      <p class="mb-3">{{ 'general.global.showing_items' | t: item: count_item, total: paginate.items }}</p>
+      {%- if paginate.next -%}
+        <button class="button button-outline relative pl-9 pr-9 pt-3.5 pb-3.5" @click="loadData('{{ paginate.next.url }}{{ anchor }}')">
+          <span :class="loading && 'opacity-0'">{{ 'general.global.load_more' | t }}</span>
+          <div class="lg:inline-block animate-spin w-4 h-4 md:w-5 md:h-5 absolute top-[calc(50%-8px)] left-[calc(50%-8px)] md:top-[calc(50%-10px)] md:left-[calc(50%-10px)]" x-show="loading" x-cloak>
+            {% render 'icon-alls', icon: 'icon-loading' %}
+          </div>
+        </button>
+      {% endif %}
+    </div>
+    <script src="{{ 'pagination.js' | asset_url }}" defer></script>
+  {% elsif pagination == 'infinite_scroll' %}
+    <div x-data="xPagination('{{ section.id }}')" id="btn-pagination-{{ section.id }}" class="flex flex-col items-center justify-center">
+      <p class="mb-3">{{ 'general.global.showing_items' | t: item: count_item, total: paginate.items }}</p>
+      {%- if paginate.next -%}
+        <div class="lg:inline-block animate-spin w-4 h-4 md:w-5 md:h-5" x-show="loading" x-cloak>
+          {% render 'icon-alls', icon: 'icon-loading' %}
+        </div>
+        <div class="h-0.5 w-full opacity-0" x-intersect.once.margin.1000px="loadData('{{ paginate.next.url }}{{ anchor }}')"></div>
+      {% endif %}
+    </div>
+    <script src="{{ 'pagination.js' | asset_url }}" defer></script>
+  {% else %}
+    <style>
+      .aiwo-pg-wrap {
+        display: flex;
+        padding: 12px 24px 16px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 64px;
+        align-self: stretch;
+        border-radius: 8px;
+        background: #FFF;
+        box-shadow: 0 4px 8px -2px rgba(16,24,40,0.10), 0 2px 4px -2px rgba(16,24,40,0.06);
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .aiwo-pg-nav {
+        display: flex;
+        padding: 8px 14px;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        color: #0C0C0D;
+        font-family: 'Outfit', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+      .aiwo-pg-nav--off {
+        opacity: 0.35;
+        pointer-events: none;
+        cursor: default;
+      }
+      .aiwo-pg-nav img { width: 20px; height: 20px; display: block; }
+      .aiwo-pg-next-icon { transform: scaleX(-1); }
+      .aiwo-pg-pages {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .aiwo-pg-active {
+        display: flex;
+        padding: 6px 20px;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        border-radius: 4px;
+        border: 1px solid #0C0C0D;
+        background: #EBEBEB;
+        box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+        color: #0C0C0D;
+        font-family: 'Outfit', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+      .aiwo-pg-inactive {
+        display: flex;
+        padding: 6px 20px;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        color: #0C0C0D;
+        font-family: 'Outfit', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background 0.15s ease;
+      }
+      .aiwo-pg-inactive:hover { background: rgba(12,12,13,0.06); }
+      .aiwo-pg-ellipsis {
+        padding: 6px 8px;
+        color: #0C0C0D;
+        font-family: 'Outfit', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+      @media (max-width: 640px) {
+        .aiwo-pg-wrap { gap: 16px; padding: 10px 12px 14px 12px; }
+        .aiwo-pg-nav { padding: 6px 8px; font-size: 14px; gap: 4px; }
+        .aiwo-pg-nav-label { display: inline; }
+        .aiwo-pg-active, .aiwo-pg-inactive { padding: 6px 12px; font-size: 14px; }
+      }
+    </style>
+    {%- for part in paginate.parts -%}
+      {%- if part.title == 1 -%}
+        {%- assign first_part = part.url | replace: "page=1&", "" | replace: "?page=1", "" | replace: "&page=1", "" -%}
+      {%- endif -%}
+    {%- endfor -%}
+    <div class="aiwo-pg-wrap">
+      {%- if paginate.previous -%}
+        <a href="{% if paginate.current_page == 2 %}{{ paginate.previous.url | replace: "page=1&", "" | replace: "?page=1", "" | replace: "&page=1", "" }}{% else %}{{ paginate.previous.url }}{{ anchor }}{% endif %}" class="aiwo-pg-nav" aria-label="{{ 'general.pagination.previous' | t }}" data-instant-allow-query-string>
+          <img src="//aiwo.com/cdn/shop/files/pagination.svg" alt="" aria-hidden="true" loading="lazy">
+          <span class="aiwo-pg-nav-label">{{ 'general.pagination.previous' | t }}</span>
+        </a>
+      {%- else -%}
+        <span class="aiwo-pg-nav aiwo-pg-nav--off" aria-hidden="true">
+          <img src="//aiwo.com/cdn/shop/files/pagination.svg" alt="" loading="lazy">
+          <span class="aiwo-pg-nav-label">{{ 'general.pagination.previous' | t }}</span>
+        </span>
+      {%- endif -%}
+      <div class="aiwo-pg-pages" role="list">
+        {%- for part in paginate.parts -%}
+          {%- if part.is_link -%}
+            <a href="{% if part.title == 1 %}{{ first_part }}{% else %}{{ part.url }}{{ anchor }}{% endif %}" class="aiwo-pg-inactive" aria-label="{{ 'general.pagination.page' | t: number: part.title }}" data-instant-allow-query-string role="listitem">{{ part.title }}</a>
+          {%- elsif part.title == paginate.current_page -%}
+            <span class="aiwo-pg-active" aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}" role="listitem">{{ part.title }}</span>
+          {%- else -%}
+            <span class="aiwo-pg-ellipsis" role="listitem">{{ part.title }}</span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- if paginate.next -%}
+        <a href="{{ paginate.next.url }}{{ anchor }}" class="aiwo-pg-nav" aria-label="{{ 'general.pagination.next' | t }}" data-instant-allow-query-string>
+          <span class="aiwo-pg-nav-label">{{ 'general.pagination.next' | t }}</span>
+          <img src="//aiwo.com/cdn/shop/files/pagination.svg" alt="" aria-hidden="true" loading="lazy" class="aiwo-pg-next-icon">
+        </a>
+      {%- else -%}
+        <span class="aiwo-pg-nav aiwo-pg-nav--off" aria-hidden="true">
+          <span class="aiwo-pg-nav-label">{{ 'general.pagination.next' | t }}</span>
+          <img src="//aiwo.com/cdn/shop/files/pagination.svg" alt="" loading="lazy" class="aiwo-pg-next-icon">
+        </span>
+      {%- endif -%}
+    </div>
+  {% endif %}
+{%- endif -%}

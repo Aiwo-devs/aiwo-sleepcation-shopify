@@ -1,0 +1,467 @@
+{% doc %}
+  @prompt
+    Design an "Advanced Enteric Coating Technology" highlight section for AIWO Ultimate Omega 3.
+    Layout:
+    Full-width banner section with deep navy blue background (#0A1F5C), white text, rounded corners, generous padding (60px vertical).
+    Header:
+    
+    Centered bold white heading (large): "Advanced Enteric Coating Technology"
+    
+    Description:
+    
+    Centered white text (medium size): "Our molecularly distilled fish oil with enteric coating ensures complete absorption in the intestine, eliminating burping and foul taste while protecting omega-3 fatty acids from stomach acids."
+    Maximum width constraint for readability, centered alignment
+    
+    Statistics Row (3 columns, equal width):
+    Stat 1:
+    
+    Large bold white number: "46%"
+    Label below in white: "EPA Content"
+    
+    Stat 2:
+    
+    Large bold white number: "38%"
+    Label below in white: "DHA Content"
+    
+    Stat 3:
+    
+    Large bold white number: "100%"
+    Label below in white: "Enteric Coated"
+    
+    Styling:
+    
+    Statistics evenly spaced across the width
+    Numbers in extra-large bold font
+    Labels in regular weight, smaller font
+    All text centered within each column
+    Adequate spacing between description and statistics (40px gap)
+    
+    Responsive: 3 columns on desktop, 3 columns on tablet, 1 column (stacked) on mobile. Padding reduces on smaller screens.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-enteric-coating-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    text-align: center;
+  }
+
+  .ai-enteric-coating-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-enteric-coating-heading-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    margin: 0 0 {{ block.settings.spacing_after_heading }}px 0;
+    line-height: 1.2;
+  }
+
+  .ai-enteric-coating-description-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.6;
+    margin: 0 0 {{ block.settings.spacing_after_description }}px 0;
+    max-width: {{ block.settings.description_max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ai-enteric-coating-stats-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.stats_gap }}px;
+    margin-top: {{ block.settings.spacing_after_description }}px;
+  }
+
+  .ai-enteric-coating-stat-{{ ai_gen_id }} {
+    text-align: center;
+  }
+
+  .ai-enteric-coating-stat-number-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.stat_number_size }}px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 0 {{ block.settings.spacing_between_stat }}px 0;
+  }
+
+  .ai-enteric-coating-stat-label-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.stat_label_size }}px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-enteric-coating-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_vertical_mobile }}px {{ block.settings.padding_horizontal_mobile }}px;
+    }
+
+    .ai-enteric-coating-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-enteric-coating-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+
+    .ai-enteric-coating-stats-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.stats_gap_mobile }}px;
+    }
+
+    .ai-enteric-coating-stat-number-{{ ai_gen_id }} {
+      font-size: {{ block.settings.stat_number_size | times: 0.8 }}px;
+    }
+
+    .ai-enteric-coating-stat-label-{{ ai_gen_id }} {
+      font-size: {{ block.settings.stat_label_size | times: 0.9 }}px;
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .ai-enteric-coating-stats-{{ ai_gen_id }} {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+{% endstyle %}
+
+<enteric-coating-{{ ai_gen_id }} class="ai-enteric-coating-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-enteric-coating-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-enteric-coating-heading-{{ ai_gen_id }}">
+        {{ block.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="ai-enteric-coating-description-{{ ai_gen_id }}">
+        {{ block.settings.description }}
+      </div>
+    {% endif %}
+
+    <div class="ai-enteric-coating-stats-{{ ai_gen_id }}">
+      <div class="ai-enteric-coating-stat-{{ ai_gen_id }}">
+        <div class="ai-enteric-coating-stat-number-{{ ai_gen_id }}">
+          {{ block.settings.stat_1_number }}
+        </div>
+        <div class="ai-enteric-coating-stat-label-{{ ai_gen_id }}">
+          {{ block.settings.stat_1_label }}
+        </div>
+      </div>
+
+      <div class="ai-enteric-coating-stat-{{ ai_gen_id }}">
+        <div class="ai-enteric-coating-stat-number-{{ ai_gen_id }}">
+          {{ block.settings.stat_2_number }}
+        </div>
+        <div class="ai-enteric-coating-stat-label-{{ ai_gen_id }}">
+          {{ block.settings.stat_2_label }}
+        </div>
+      </div>
+
+      <div class="ai-enteric-coating-stat-{{ ai_gen_id }}">
+        <div class="ai-enteric-coating-stat-number-{{ ai_gen_id }}">
+          {{ block.settings.stat_3_number }}
+        </div>
+        <div class="ai-enteric-coating-stat-label-{{ ai_gen_id }}">
+          {{ block.settings.stat_3_label }}
+        </div>
+      </div>
+    </div>
+  </div>
+</enteric-coating-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class EntericCoating{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('enteric-coating-{{ ai_gen_id }}', EntericCoating{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Enteric coating",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Advanced Enteric Coating Technology"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Our molecularly distilled fish oil with enteric coating ensures complete absorption in the intestine, eliminating burping and foul taste while protecting omega-3 fatty acids from stomach acids.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Statistic 1"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Number",
+      "default": "46%"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Label",
+      "default": "EPA Content"
+    },
+    {
+      "type": "header",
+      "content": "Statistic 2"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Number",
+      "default": "38%"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Label",
+      "default": "DHA Content"
+    },
+    {
+      "type": "header",
+      "content": "Statistic 3"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_number",
+      "label": "Number",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Label",
+      "default": "Enteric Coated"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#0A1F5C"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 800,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 1200
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "description_max_width",
+      "min": 400,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Description max width",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "stat_number_size",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Stat number size",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "stat_label_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Stat label size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical_mobile",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Vertical padding (mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Horizontal padding (mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "spacing_after_heading",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Space after heading",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "spacing_after_description",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Space after description",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "spacing_between_stat",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Space between stat number and label",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "stats_gap",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap between stats (desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "stats_gap_mobile",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap between stats (mobile)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Enteric coating"
+    }
+  ]
+}
+{% endschema %}

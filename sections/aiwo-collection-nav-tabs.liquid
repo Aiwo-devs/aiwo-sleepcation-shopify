@@ -1,0 +1,119 @@
+{% comment %}
+  ============================================================
+  Section  : AIWO Collection — Navigation Tabs
+  Template : collection pages only
+  ============================================================
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .aiwo-col-tabs-wrapper {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  @media (max-width: 767px) {
+    .aiwo-col-tabs-wrapper { padding-left: 24px; padding-right: 24px; }
+  }
+  .aiwo-col-tabs__list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    width: 100%;
+    border-bottom: 1px solid #E5E5E5;
+  }
+
+  .aiwo-col-tabs__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aiwo-col-tabs__tab {
+    display: flex;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 6px 16px 9px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #EAECF0;
+    color: #666;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin-bottom: -1px;
+    transition: color 0.15s ease;
+  }
+
+  .aiwo-col-tabs__tab--active {
+    border-bottom: 2px solid #0C0C0D;
+    background: linear-gradient(180deg, rgba(12, 12, 13, 0.00) 0%, rgba(12, 12, 13, 0.20) 138.46%);
+    color: #0C0C0D;
+    font-weight: 500;
+  }
+
+  .aiwo-col-tabs__tab:hover:not(.aiwo-col-tabs__tab--active) {
+    color: #0C0C0D;
+  }
+
+  @media (min-width: 768px) {
+    .aiwo-col-tabs__tab {
+      padding: 8px 20px 11px 20px;
+      font-size: 20px;
+    }
+  }
+</style>
+
+{%- liquid
+  assign service_cat_active = false
+  for filter in collection.filters
+    if filter.label == 'Service Category'
+      for value in filter.values
+        if value.active
+          assign service_cat_active = true
+        endif
+      endfor
+    endif
+  endfor
+-%}
+
+<div class="aiwo-col-tabs-wrapper">
+  <div class="aiwo-col-tabs__list">
+
+    <a
+      href="{{ collection.url }}"
+      class="aiwo-col-tabs__tab{%- unless service_cat_active %} aiwo-col-tabs__tab--active{%- endunless %}"
+    >All products</a>
+
+    {%- for filter in collection.filters -%}
+      {%- if filter.label == 'Service Category' -%}
+        {%- for value in filter.values -%}
+          <a
+            href="{{ value.url_to_add }}"
+            class="aiwo-col-tabs__tab{%- if value.active %} aiwo-col-tabs__tab--active{%- endif %}"
+          >{{- value.label -}}</a>
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "AIWO Collection Tabs",
+  "settings": [],
+  "presets": [
+    {
+      "name": "AIWO Collection Tabs"
+    }
+  ]
+}
+{% endschema %}

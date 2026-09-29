@@ -1,0 +1,518 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "australian_crafted_GYjLfx": {
+      "type": "australian-crafted",
+      "name": "Australian Crafted Excellence",
+      "settings": {
+        "eyebrow": "Australian Crafted Excellence",
+        "heading": "AIWO Olive Aura Extra Virgin Olive Oil",
+        "paragraph_1": "<p>Freshness you can measure. Purity you can trust.<br/><br/>The elite choice in EVOO crafted in Australia, chosen by connoisseurs. Ultra low oxidation, lab-clean, and protected to the last drop. Taste the bright, clean, peppery finish—and know exactly why it's better.</p>",
+        "paragraph_2": "<p>Olives harvested and cold extracted within 3 hours to lock in aroma, vitality, and that signature peppery tickle.</p>",
+        "button_text": "Buy Now",
+        "button_link": "",
+        "button_icon_upload": "shopify://shop_images/icon-external.svg",
+        "button_icon_svg": "<svg viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line><polyline points=\"12 5 19 12 12 19\"></polyline></svg>",
+        "image": "shopify://shop_images/Landing_page_olive_oil_1.png"
+      }
+    },
+    "aiwo_certifications_bar_q7XtD4": {
+      "type": "aiwo-certifications-bar",
+      "blocks": {
+        "certification_FeRQcj": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/Clinically_Informed_Formula.png",
+            "label": "Clinically Informed Formula"
+          }
+        },
+        "certification_9kVcdA": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/Clean_Label_Ingredients.png",
+            "label": "Clean Label Ingredients"
+          }
+        },
+        "certification_wBmtdt": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/FSSAI_Licensed.png",
+            "label": "FSSAI Licensed"
+          }
+        },
+        "certification_7gWmmY": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/GMP_Certified.png",
+            "label": "GMP Certified"
+          }
+        },
+        "certification_DWNXKg": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/Lab_Tested.png",
+            "label": "Lab Tested"
+          }
+        }
+      },
+      "block_order": [
+        "certification_FeRQcj",
+        "certification_9kVcdA",
+        "certification_wBmtdt",
+        "certification_7gWmmY",
+        "certification_DWNXKg"
+      ],
+      "name": "Certifications Bar",
+      "settings": {}
+    },
+    "why_aiwo_evoo_KggxUF": {
+      "type": "Why-AIWO-EVOO",
+      "blocks": {
+        "quality_point_BRUwtL": {
+          "type": "quality_point",
+          "settings": {
+            "title": "Speed Matters More Than You Think",
+            "description": "Most olive oils sit 6–24 hours before pressing. We crush within 3 hours—before the olives even 'know' they've been picked.",
+            "result": "Result: Peroxide below 15 meq O₂/kg"
+          }
+        },
+        "quality_point_PUkgJx": {
+          "type": "quality_point",
+          "settings": {
+            "title": "True Cold Extraction",
+            "description": "We maintain temperatures below 27°C throughout the process. Many 'cold-pressed' oils heat to 35–40°C—destroying delicate polyphenols and that peppery finish.",
+            "result": "Result: Exceptional freshness markers verified (88% fresher than benchmark)"
+          }
+        },
+        "quality_point_q3tF7X": {
+          "type": "quality_point",
+          "settings": {
+            "title": "Triple-Verified by Independent Labs",
+            "description": "Every lot tested by NABL-accredited labs. Scan the QR and see the actual Certificate of Analysis.",
+            "result": "Result: Heavy metals conforming to FSSAI, PAH-4 &lt; 2 μg/kg"
+          }
+        },
+        "quality_point_3dYWKw": {
+          "type": "quality_point",
+          "settings": {
+            "title": "Protected Until You Pour",
+            "description": "Dark-tinted bottles, cool-chain storage, nitrogen flushing—preserving what we spent months growing.",
+            "result": "Result: OSI 24.3 hours—stays fresher, longer"
+          }
+        },
+        "quality_point_43BX83": {
+          "type": "quality_point",
+          "settings": {
+            "title": "No Blending, No Bulk",
+            "description": "Single-origin from our Australian groves. Not blended with cheaper imports. Pure fruit expression.",
+            "result": "Result: ΔK &lt; 0.01 (no refinement detected)"
+          }
+        },
+        "quality_point_7C9Nqx": {
+          "type": "quality_point",
+          "settings": {
+            "title": "The Fat That Loves You Back",
+            "description": "~68% MUFA—the heart-healthy fat backed by decades of research. This isn't oil; it's liquid nutrition.",
+            "result": "Result: Premium quality indicators well above industry benchmarks"
+          }
+        }
+      },
+      "block_order": [
+        "quality_point_BRUwtL",
+        "quality_point_PUkgJx",
+        "quality_point_q3tF7X",
+        "quality_point_3dYWKw",
+        "quality_point_43BX83",
+        "quality_point_7C9Nqx"
+      ],
+      "name": "Why It's Worth It",
+      "settings": {
+        "icon_image": "shopify://shop_images/check-mark_5290058_2.svg",
+        "eyebrow": "WHY AIWO EVOO COSTS MORE.",
+        "heading_primary": "Why It's",
+        "heading_accent": "Worth It",
+        "subheading": "Scientific quality, freshness, and craftsmanship you can trust"
+      }
+    },
+    "lab_verified_purity_pRLLJd": {
+      "type": "Lab-verified-purity",
+      "blocks": {
+        "stat_DpLrj7": {
+          "type": "stat",
+          "settings": {
+            "stat": "Ultra Low",
+            "label": "Acidity\n(80% below limit)"
+          }
+        },
+        "stat_4Rp9ha": {
+          "type": "stat",
+          "settings": {
+            "stat": "< 15 meq/kg",
+            "label": "Peroxide\n(70% below limit)"
+          }
+        },
+        "stat_zWh3dh": {
+          "type": "stat",
+          "settings": {
+            "stat": "250+",
+            "label": "Pesticides tested:\nNone detected"
+          }
+        },
+        "stat_CJmgKf": {
+          "type": "stat",
+          "settings": {
+            "stat": "23 Months",
+            "label": "Shelf life\n(lab-verified)"
+          }
+        }
+      },
+      "block_order": [
+        "stat_DpLrj7",
+        "stat_4Rp9ha",
+        "stat_zWh3dh",
+        "stat_CJmgKf"
+      ],
+      "name": "Lab-Verified Purity Stats",
+      "settings": {
+        "heading": "*Lab-Verified Purity"
+      }
+    },
+    "from_our_groves_EkAz6x": {
+      "type": "from-our-groves",
+      "blocks": {
+        "step_Nqwnwe": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-1",
+            "content": "<p><strong>Sustainably Grown, Non-GMO Groves:</strong> Pruned for health; soil and water managed for flavor-rich fruit.</p>"
+          }
+        },
+        "step_G4yGHL": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-2",
+            "content": "<p><strong>Selective Harvest:</strong> Hand precision-picked at optimal ripeness; early morning to protect aromatics.</p>"
+          }
+        },
+        "step_apULxi": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-3",
+            "content": "<p><strong>Quick Transfer to Mill:</strong> Crates, not sacks—ventilated and shaded; no fruit piling.</p>"
+          }
+        },
+        "step_YWqYV7": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-4",
+            "content": "<p><strong>Wash &amp; Sort:</strong> Leaves removed, olives rinsed; only sound fruit proceeds.</p>"
+          }
+        },
+        "step_fgqWWG": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-5",
+            "content": "<p><strong>Cold Extraction (&lt;27°C):</strong> Gentle crush → short malaxation → immediate separation to lock in aroma and polyphenols.</p>"
+          }
+        },
+        "step_47XmwD": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-6",
+            "content": "<p><strong>Clarify &amp; Polish:</strong> Decant/centrifuge to reduce moisture and solids; bright, clean profile.</p>"
+          }
+        },
+        "step_zUtANG": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-7",
+            "content": "<p><strong>Independent Lab Verification:</strong> Pesticides: Not Detected; freshness numbers recorded per lot (acidity, peroxide, PPP/DAGs).</p>"
+          }
+        },
+        "step_xtYmQf": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-8",
+            "content": "<p><strong>Bottled in Dark-Tinted Glass:</strong> Shields from light; preserves vitality to the last drop.</p>"
+          }
+        },
+        "step_rmMDWR": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-9",
+            "content": "<p><strong>Lot Coding &amp; COA QR:</strong> Radical transparency—scan to view the independent report for your bottle.</p>"
+          }
+        },
+        "step_XUkKMc": {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-10",
+            "content": "<p><strong>Cool-Chain Storage &amp; Ship:</strong> Stored away from heat and light; delivered ready to enjoy.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_Nqwnwe",
+        "step_G4yGHL",
+        "step_apULxi",
+        "step_YWqYV7",
+        "step_fgqWWG",
+        "step_47XmwD",
+        "step_zUtANG",
+        "step_xtYmQf",
+        "step_rmMDWR",
+        "step_XUkKMc"
+      ],
+      "name": "From Our Groves",
+      "settings": {
+        "eyebrow": "Every bottle tells a story of craftsmanship, transparency, and purity",
+        "heading": "From Our Australian Groves to Your Table",
+        "accent_word": "Australian Groves",
+        "step_divider_image": "shopify://shop_images/divider.svg",
+        "section_curve_svg": ""
+      }
+    },
+    "others_vs_aiwo_evoo_C7afmC": {
+      "type": "others-vs-aiwo_evoo",
+      "blocks": {
+        "comparison_row_DwzdbR": {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Lab Transparency:</strong> Vague \"extra virgin\" claims, no public data</p>",
+            "pos_content": "<p><strong>Lab Transparency:</strong> Publishes lot-specific COA QR with acidity, peroxide, PPP, DAGs</p>"
+          }
+        },
+        "comparison_row_6dLr7H": {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Freshness (Acidity):</strong> ≤0.8% or undisclosed</p>",
+            "pos_content": "<p><strong>Freshness (Acidity):</strong> Ultra-low — 80% below limit</p>"
+          }
+        },
+        "comparison_row_riK3T4": {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Early Oxidation:</strong> Not disclosed on label</p>",
+            "pos_content": "<p><strong>Early Oxidation:</strong> &lt;15 meq O₂/kg (very low)</p>"
+          }
+        },
+        "comparison_row_76P9mK": {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Advanced Freshness Markers:</strong> Rarely tested or shown</p>",
+            "pos_content": "<p><strong>Advanced Freshness Markers:</strong> Verified</p>"
+          }
+        },
+        "comparison_row_mDCU6i": {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Safety & Purity Pesticides:</strong> Generic \"lab-tested\" claim, no proof</p>",
+            "pos_content": "<p><strong>Safety & Purity Pesticides:</strong> Not Detected, PAH-4 &lt; 2 μg/kg</p>"
+          }
+        },
+        "comparison_row_pj4fK8": {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Harvest → Extraction Speed:</strong> Typically processed 12–24 hrs later</p>",
+            "pos_content": "<p><strong>Harvest → Extraction Speed:</strong> Pressed within 3 hours to lock in aroma and vitality</p>"
+          }
+        },
+        "comparison_row_XNyLK6": {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Heart-Healthy Profile:</strong> May claim MUFA but not verified</p>",
+            "pos_content": "<p><strong>Heart-Healthy Profile:</strong> ~68% MUFA — naturally high oleic profile</p>"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_DwzdbR",
+        "comparison_row_6dLr7H",
+        "comparison_row_riK3T4",
+        "comparison_row_76P9mK",
+        "comparison_row_mDCU6i",
+        "comparison_row_pj4fK8",
+        "comparison_row_XNyLK6"
+      ],
+      "name": "Other vs AIWO",
+      "settings": {
+        "overline": "Other vs AIWO",
+        "heading": "Extra Virgin Olive Oils",
+        "image_left_desktop": "shopify://shop_images/Desktop-other.png",
+        "image_right_desktop": "shopify://shop_images/Desktop-AIWO.png",
+        "image_left_mobile": "shopify://shop_images/Mobile-other.png",
+        "image_right_mobile": "shopify://shop_images/Mobile-AIWO.png",
+        "vs_image": "shopify://shop_images/vs_image.svg",
+        "icon_negative": "shopify://shop_images/cons_svg.svg",
+        "icon_positive": "shopify://shop_images/poistive.svg",
+        "button_text": "Buy Now",
+        "button_link": "",
+        "button_icon_upload": "shopify://shop_images/icon-external.svg",
+        "show_left_btn": false
+      }
+    },
+    "evoo_key_benefits_h8hBft": {
+      "type": "EVOO-key-benefits",
+      "blocks": {
+        "benefit_FnpbaM": {
+          "type": "benefit",
+          "settings": {
+            "icon_image": "shopify://shop_images/7.svg",
+            "title": "Rich in Polyphenols & Oleic Acid",
+            "description": "<p>Promotes heart health, vitality, and overall well-being.</p>"
+          }
+        },
+        "benefit_4Arykj": {
+          "type": "benefit",
+          "settings": {
+            "icon_image": "shopify://shop_images/Frame_d2e5cb95-c868-478f-8f2a-96d7991c2c69.svg",
+            "title": "100% Cold-Pressed",
+            "description": "<p>Extracted without heat or chemicals to retain natural flavors and nutrients.</p>"
+          }
+        },
+        "benefit_irPdbn": {
+          "type": "benefit",
+          "settings": {
+            "icon_image": "shopify://shop_images/Frame-1_078bd82e-c232-4bad-aa4b-e4000e0f035a.svg",
+            "title": "Naturally Low Acidity",
+            "description": "<p>Ensures an unrivaled taste and better health benefits.</p>"
+          }
+        },
+        "benefit_KyAbHX": {
+          "type": "benefit",
+          "settings": {
+            "icon_image": "shopify://shop_images/Frame-2_bff45fa6-eff6-4807-a156-802459460718.svg",
+            "title": "Versatile Culinary Use",
+            "description": "<p>Ideal for salads, dressings, marinades, and more.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_FnpbaM",
+        "benefit_4Arykj",
+        "benefit_irPdbn",
+        "benefit_KyAbHX"
+      ],
+      "name": "Key Benefits",
+      "settings": {
+        "image": "shopify://shop_images/11571396578.jpg",
+        "heading": "Key Benefits"
+      }
+    },
+    "proudly_crafted_nYPtTR": {
+      "type": "proudly-crafted",
+      "disabled": true,
+      "name": "Proudly Crafted",
+      "settings": {
+        "heading": "Proudly Crafted in Australia",
+        "paragraph": "<p>Not imported and relabeled. Not blended with mystery oils from unknown sources. AIWO Olive Aura is grown, pressed, and bottled on Australian soil–where quality <strong>standards are among the world's strictest</strong> and our commitment to transparency is <strong>uncompromising.</strong> Choosing Australian-made means traceability, accountability, and a guarantee that every drop meets the standards we'd serve our own families.</p>"
+      }
+    },
+    "aiwo_evoo_cta_g6ngjL": {
+      "type": "aiwo-EVOO-CTA",
+      "name": "Experience Section",
+      "settings": {
+        "bg_color_start": "#f0f3f5",
+        "bg_color_end": "#fefefe",
+        "heading_start": "Experience the",
+        "heading_highlight": "Difference",
+        "description": "Taste what happens when freshness is measured, purity is proven, and every step is designed to protect what matters.",
+        "button_label": "Shop AIWO Olive Aura",
+        "button_link": "",
+        "support_text": "Every bottle backed by independent lab certification.",
+        "checkmark_icon": "shopify://shop_images/check-mark_5290058_1_ed289dd9-bb3e-43df-8892-a815ac631f1e.svg",
+        "image": "shopify://shop_images/Frame_13_10.png"
+      }
+    },
+    "evoo_usage_TGjybJ": {
+      "type": "evoo-usage",
+      "blocks": {
+        "use_case_PPEWxK": {
+          "type": "use_case",
+          "settings": {
+            "icon": "shopify://shop_images/Frame-3_a650c645-78fb-492f-ab2e-ac8aae54abbe.svg",
+            "text": "<p>Drizzle over fresh salads for a burst of flavor.</p>"
+          }
+        },
+        "use_case_bFNJ7G": {
+          "type": "use_case",
+          "settings": {
+            "icon": "shopify://shop_images/Frame-4_52081b81-a933-47d1-b9c4-9c1699bf30ba.svg",
+            "text": "<p>Add to smoothies for a nutrient boost.</p>"
+          }
+        },
+        "use_case_UV8cpT": {
+          "type": "use_case",
+          "settings": {
+            "icon": "shopify://shop_images/Frame-5.svg",
+            "text": "<p>Use as a dip with artisan bread for a gourmet touch.</p>"
+          }
+        },
+        "use_case_CXw6pm": {
+          "type": "use_case",
+          "settings": {
+            "icon": "shopify://shop_images/Frame-6.svg",
+            "text": "<p>Enhance your recipe with its smooth texture and rich aroma.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "use_case_PPEWxK",
+        "use_case_bFNJ7G",
+        "use_case_UV8cpT",
+        "use_case_CXw6pm"
+      ],
+      "name": "Ways to Use",
+      "settings": {
+        "bg_color": "#F9FAFB",
+        "heading": "Ways to Use:"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "australian_crafted_GYjLfx",
+    "aiwo_certifications_bar_q7XtD4",
+    "why_aiwo_evoo_KggxUF",
+    "lab_verified_purity_pRLLJd",
+    "from_our_groves_EkAz6x",
+    "others_vs_aiwo_evoo_C7afmC",
+    "evoo_key_benefits_h8hBft",
+    "proudly_crafted_nYPtTR",
+    "aiwo_evoo_cta_g6ngjL",
+    "evoo_usage_TGjybJ"
+  ]
+}

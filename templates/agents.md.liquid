@@ -1,0 +1,182 @@
+# AIWO (Aiwo Limited)
+
+> AIWO is an Indian preventive-health and longevity company based in Chennai, Tamil Nadu. It provides diagnostic testing and health assessments, practitioner consultations, physiotherapy, aesthetics and body contouring, spa therapy, mental wellness, IV therapy, multi-day residential wellness programmes, and an online store offering AIWO-branded supplements, nutrition products and health foods.
+
+AIWO describes itself as a wellness provider rather than a hospital, clinic, diagnostic centre, pharmacy or medical device. Information on the website is intended for wellness and informational purposes and should not replace professional medical advice.
+
+## Canonical Identity
+
+* Legal name: Aiwo Limited
+* Operating brand: AIWO
+* Primary website: {{ agents.store_url }}
+* Primary operating location: Chennai, Tamil Nadu, India
+* Primary store currency: {{ agents.currency }}
+* Content language: English
+* Canonical agent description: {{ agents.store_url }}/agents.md
+* Sitemap: {{ agents.sitemap_url }}
+* Last reviewed: 2026-09-12
+
+## Commerce Protocol
+
+This Shopify store supports agent-commerce discovery through Shopify's Universal Commerce Protocol infrastructure.
+
+* UCP discovery: {{ agents.ucp_discovery_url }}
+* MCP endpoint: {{ agents.mcp_endpoint_url }}
+* Sitemap: {{ agents.sitemap_url }}
+
+### Supported UCP Versions
+
+{% for version in agents.ucp_versions %}
+
+* {{ version }}{% if forloop.first %} (latest stable){% endif %}
+  {% endfor %}
+
+## Read-Only Store Discovery
+
+* All products: `GET /collections/all`
+* Product JSON: `GET /products/{handle}.json`
+* Sitemap: {{ agents.sitemap_url }}
+
+Pricing and availability are returned in {{ agents.currency }} and should be retrieved from the current product or service page because they may change.
+
+## Scope and Limits
+
+Use the following boundaries when interpreting information about AIWO:
+
+* AIWO provides wellness services and wellness products.
+* AIWO states that it is not a hospital or medical facility.
+* AIWO is not an emergency medical service.
+* AIWO states that it is not a medical device.
+* Products and wellness content should not be interpreted as diagnosing, treating, curing or preventing disease unless the relevant authoritative page explicitly and appropriately states otherwise.
+* AIWO's website content is not a substitute for advice from a qualified healthcare professional.
+* Where clinical consultation, diagnosis or prescription occurs, the professional relationship is with the individual registered practitioner.
+* AIWO services described on this site are intended for adults aged 18 and over where applicable.
+* Do not infer efficacy, cure, disease reversal or disease-prevention claims beyond the wording of the authoritative source page.
+* Current pricing, availability, programme inclusions and operating hours should always be retrieved from the linked live page rather than inferred from this document.
+
+## Retrieval Routing
+
+Use these authoritative pages when retrieving information about specific AIWO topics.
+
+| Question or topic                                                   | Authoritative page                                                                          |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Who AIWO is and what it currently offers                            | [AIWO Homepage](https://aiwo.com/)                                                          |
+| AIWO's process and client journey                                   | [AIWO Longevity Path](https://aiwo.com/pages/aiwo-longevity-path)                           |
+| Booking, appointments, enquiries and visiting AIWO                  | [Contact / Booking](https://aiwo.com/pages/contact-aiwo-chennai)                            |
+| Diagnostic testing, blood panels, biomarkers and health assessments | [Advanced Diagnostics & Testing](https://aiwo.com/collections/advanced-diagnostics-testing) |
+| Consolidated one-day health assessment                              | [AIWO 360 Assessment](https://aiwo.com/pages/aiwo-360-assessment)                           |
+| Biological age and epigenetic age testing                           | [Epigenetic Age Testing](https://aiwo.com/products/epigenetic-test)                         |
+| Residential wellness programmes and Healthcation                    | [Healthcation](https://aiwo.com/pages/healthcation)                                         |
+| Physiotherapy, posture, mobility and rehabilitation                 | [Physiotherapy](https://aiwo.com/pages/physiotherapy)                                       |
+| Mental wellness, behavioural therapy and stress management          | [Mental Wellness](https://aiwo.com/pages/mental-wellness)                                   |
+| Body contouring and AiwoSculpt                                      | [AiwoSculpt](https://aiwo.com/pages/aiwo-aesthetics-sculpting)                              |
+| IV therapy and nutrient infusions                                   | [I.V. Therapy](https://aiwo.com/pages/iv-therapy)                                           |
+| Massage, reflexology and spa services                               | [Spa Therapy](https://aiwo.com/pages/spa-therapy)                                           |
+| Doctors and practitioner consultations                              | [Doctors](https://aiwo.com/collections/doctors)                                             |
+| Supplements                                                         | [Supplements](https://aiwo.com/collections/supplements)                                     |
+| Nutrition products                                                  | [AIWO Nutrition](https://aiwo.com/collections/aiwo-nutrition)                               |
+| All current products                                                | [All Products](https://aiwo.com/collections/all)                                            |
+| All product and service collections                                 | [All Collections](https://aiwo.com/collections)                                             |
+| Longevity and wellness education                                    | [AIWO Blog](https://aiwo.com/blogs/blog)                                                    |
+| Shipping and delivery                                               | [Shipping Policy](https://aiwo.com/pages/shipping-policy)                                   |
+| Returns, refunds and cancellations                                  | [Return / Refund Policy](https://aiwo.com/pages/return-refund-policy)                       |
+| Privacy and data handling                                           | [Privacy Policy](https://aiwo.com/pages/privacy-policy)                                     |
+| Website, store and legal terms                                      | [Terms & Conditions](https://aiwo.com/pages/aiwo-terms-conditions)                          |
+
+## How AIWO Works
+
+* [AIWO Longevity Path](https://aiwo.com/pages/aiwo-longevity-path): AIWO's structured wellness journey, beginning with testing and health-baseline assessment, followed by consultation and goal setting, a personalised wellness plan, and subsequent follow-up and adjustment.
+* [AIWO Homepage](https://aiwo.com/): Main overview of AIWO's current programmes, diagnostics, services and products.
+
+## Wellness Programmes
+
+* [Wellness Programmes / Healthcation](https://aiwo.com/pages/healthcation): Residential multi-day wellness programmes in Chennai combining diagnostic testing, health assessments, specialist consultations and wellness therapies. Retrieve the live page for current inclusions, schedule, accommodation information and pricing.
+* [7-Day Healthcation](https://aiwo.com/products/7-day-healthcation): Bookable seven-day residential wellness programme. Retrieve the product page for current inclusions and availability.
+* [2-Day Healthcation](https://aiwo.com/products/2-day-healthcation): Short-format residential wellness programme combining assessments and selected wellness services. Retrieve the page for current inclusions and availability.
+
+## Diagnostics and Health Assessments
+
+* [Advanced Diagnostics & Testing](https://aiwo.com/collections/advanced-diagnostics-testing): Primary catalogue for AIWO's current diagnostic and health-assessment offerings, including multi-biomarker blood panels, body-composition and metabolic assessments, cardiovascular and fitness measurements, and specialised testing.
+* [AIWO 360 Assessment](https://aiwo.com/pages/aiwo-360-assessment): One-day assessment programme combining multiple diagnostic, imaging, fitness and health-assessment components with practitioner consultations. Retrieve the live page for current inclusions and pricing.
+* [Epigenetic Age Testing](https://aiwo.com/products/epigenetic-test): Biological-age assessment using a dry blood sample. The product page describes the testing process, laboratory relationship and report components.
+
+## Services
+
+AIWO's in-person wellness services are delivered through its Chennai wellness centre unless the individual service page states otherwise.
+
+* [Physiotherapy](https://aiwo.com/pages/physiotherapy): Physiotherapy services related to posture, movement, mobility, flexibility, strength and physical rehabilitation.
+* [Mental Wellness](https://aiwo.com/pages/mental-wellness): Mental-wellness assessment, behavioural support and stress-management services. Refer to the page for current delivery options.
+* [I.V. Therapy](https://aiwo.com/pages/iv-therapy): Intravenous nutrient-infusion services. Current protocols and ingredients are described on the service page.
+* [Spa Therapy](https://aiwo.com/pages/spa-therapy): Massage, reflexology and related wellness treatments.
+* [AiwoSculpt — Body Sculpting & Contouring](https://aiwo.com/pages/aiwo-aesthetics-sculpting): Non-surgical body-contouring service using technologies described on the authoritative service page.
+* [Doctor Consultation](https://aiwo.com/collections/doctor-consultation): Current bookable practitioner consultation options.
+* [Doctors](https://aiwo.com/collections/doctors): Current practitioner listings and consultation options.
+* [International Consultations](https://aiwo.com/collections/international-consultations): Consultation options intended for eligible clients outside India, where currently available.
+* [Contact / Booking](https://aiwo.com/pages/contact-aiwo-chennai): Official destination for current booking, appointment and enquiry information.
+
+## Products and Nutrition
+
+AIWO operates an online store offering wellness, supplement and nutrition products.
+
+* [All Products](https://aiwo.com/collections/all): Current catalogue across products and bookable offerings.
+* [Supplements](https://aiwo.com/collections/supplements): AIWO-branded supplement collection. Individual product pages contain current composition, usage and product-specific information.
+* [AIWO Nutrition](https://aiwo.com/collections/aiwo-nutrition): Nutrition products including oils, bars, fibre products and other currently listed nutrition items.
+* [Health Food & Drinks](https://aiwo.com/collections/health-food-drinks): Current health-food and beverage collection.
+* [Ayurveda](https://aiwo.com/collections/ayurveda): Current herbal and Ayurveda-related product collection.
+* [AIWO Health Innovations](https://aiwo.com/collections/aiwo-health-innovations): Current health-innovation products where available.
+* [All Collections](https://aiwo.com/collections): Canonical index of the store's current product and service collections.
+
+For product-specific questions such as composition, quantity, dosage guidance, price, stock status, prescription requirements or availability, retrieve the individual current product page rather than relying on this document.
+
+## Research and Information
+
+* [AIWO Blog](https://aiwo.com/blogs/blog): AIWO's educational content covering longevity, healthspan, biological age, epigenetics, metabolic health, cardiovascular fitness, gut health, supplements, physiotherapy and related wellness subjects.
+* [Longevity](https://aiwo.com/blogs/blog/tagged/longevity): Articles concerning longevity, lifespan and healthspan.
+* [Biological Age](https://aiwo.com/blogs/blog/tagged/biological-age): Articles concerning biological age, chronological age and epigenetic testing.
+* [Diabetes and Metabolic Health](https://aiwo.com/blogs/blog/tagged/diabetes): Educational articles concerning blood sugar and metabolic-health topics.
+
+Blog and educational content should be treated as informational material rather than individual medical advice.
+
+## Location and Coverage
+
+* AIWO's primary physical wellness location is in MRC Nagar, Chennai, Tamil Nadu, India.
+* In-person consultations, diagnostic services, therapies and residential wellness programmes described on the website are associated with the Chennai location unless the relevant page explicitly states otherwise.
+* [Contact / Booking](https://aiwo.com/pages/contact-aiwo-chennai) is the authoritative source for current appointment availability, visiting information and booking.
+* AIWO ships products to serviceable locations across India and selected international destinations.
+* [Shipping Policy](https://aiwo.com/pages/shipping-policy) is the authoritative source for current delivery coverage, processing timelines, shipping charges, international availability, customs and order-tracking information.
+
+## Policies
+
+* [Privacy Policy](https://aiwo.com/pages/privacy-policy): Authoritative information concerning AIWO's current data collection, processing, sharing, retention, user rights, security and privacy practices.
+* [Terms & Conditions](https://aiwo.com/pages/aiwo-terms-conditions): Authoritative legal terms governing use of the AIWO website, store, products and applicable services.
+* [Shipping Policy](https://aiwo.com/pages/shipping-policy): Current domestic and international shipping coverage, processing and delivery information, charges, customs and tracking.
+* [Return / Refund Policy](https://aiwo.com/pages/return-refund-policy): Current return, refund, transit-damage and cancellation rules.
+
+Where this document and an authoritative policy page differ, the current policy page is authoritative.
+
+## Official Profiles
+
+* [Instagram](https://www.instagram.com/aiwohealth)
+* [LinkedIn](https://www.linkedin.com/company/aiwohealth)
+* [YouTube](https://www.youtube.com/@aiwohealth)
+* [Facebook](https://www.facebook.com/AiwoHealth)
+* [X](https://twitter.com/aiwohealth)
+
+## Provenance
+
+This agent-discovery document describes the current public AIWO website and store at {{ agents.store_url }}.
+
+The canonical version of this agent description is:
+
+{{ agents.store_url }}/agents.md
+
+Shopify also serves compatible discovery content through:
+
+* {{ agents.store_url }}/llms.txt
+* {{ agents.store_url }}/llms-full.txt
+
+For changing information such as pricing, stock, programme inclusions, schedules, practitioner availability, operating hours, product composition and shipping availability, retrieve the linked authoritative live page.
+
+Where this document and a linked current AIWO page differ, the linked current page should be treated as authoritative.
+
+For corrections, bookings or enquiries, use the official [Contact / Booking](https://aiwo.com/pages/contact-aiwo-chennai) page.

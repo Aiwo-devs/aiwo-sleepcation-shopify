@@ -1,0 +1,189 @@
+{%- liquid
+  assign section_uid = 'cb-' | append: section.id
+  assign cert_blocks = section.blocks | where: 'type', 'certification'
+-%}
+
+<style>
+
+#{{ section_uid }} {
+  background-color: #0C0C0D;
+  padding: 10px 0;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+#{{ section_uid }} .cb__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: nowrap;
+}
+
+#{{ section_uid }} .cb__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+#{{ section_uid }} .cb__icon-wrap {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#{{ section_uid }} .cb__icon-wrap img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+#{{ section_uid }} .cb__icon-placeholder {
+  height: 35px;
+  width: 35px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.15);
+  display: block;
+}
+
+#{{ section_uid }} .cb__label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #{{ section_uid }} .cb__container {
+    gap: 32px;
+    padding: 0 24px;
+    flex-wrap: wrap;
+  }
+  #{{ section_uid }} .cb__label {
+    font-size: 13px;
+  }
+}
+
+/* MOBILE 
+   2 Columns per row 
+*/
+@media (max-width: 767px) {
+
+  #{{ section_uid }} .cb__container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px 12px !important;
+    padding: 10px 24px !important;
+    justify-items: center !important;
+    align-items: start !important;
+  }
+
+  #{{ section_uid }} .cb__item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  #{{ section_uid }} .cb__icon-wrap {
+    height: 24px !important;
+  }
+
+  #{{ section_uid }} .cb__icon-wrap img {
+    height: 24px !important;
+    width: auto !important;
+  }
+
+  #{{ section_uid }} .cb__icon-placeholder {
+    height: 24px !important;
+    width: 24px !important;
+  }
+
+  #{{ section_uid }} .cb__label {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+</style>
+
+<div id="{{ section_uid }}">
+  <div class="cb__container">
+    {%- for block in cert_blocks -%}
+      {%- assign icon_alt = block.settings.label | escape -%}
+      <div class="cb__item" {{ block.shopify_attributes }}>
+        <div class="cb__icon-wrap">
+          {%- if block.settings.icon != blank -%}
+            {{ block.settings.icon | image_url: width: 140 | image_tag: loading: 'lazy', alt: icon_alt }}
+          {%- else -%}
+            <span class="cb__icon-placeholder"></span>
+          {%- endif -%}
+        </div>
+        {%- if block.settings.label != blank -%}
+          <p class="cb__label">{{ block.settings.label | escape }}</p>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Certifications Bar",
+  "tag": "section",
+  "class": "aiwo-certifications-bar",
+  "max_blocks": 8,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "certification",
+      "name": "Certification Badge",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Badge Icon",
+          "info": "Upload white PNG. 35px height desktop, 24px mobile."
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label Text",
+          "default": "Certification Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Certifications Bar",
+      "blocks": [
+        { "type": "certification", "settings": { "label": "Clinically Informed Formula" } },
+        { "type": "certification", "settings": { "label": "Clean Label Ingredients" } },
+        { "type": "certification", "settings": { "label": "FSSAI Licensed" } },
+        { "type": "certification", "settings": { "label": "GMP Certified" } },
+        { "type": "certification", "settings": { "label": "Lab Tested" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

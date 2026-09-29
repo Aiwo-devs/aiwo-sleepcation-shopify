@@ -1,0 +1,525 @@
+{% doc %}
+  @prompt
+    Generate a section with background image upload and all fonts inside the section need to outfit 2ith h2 and and below description text and primary button for checkout all centre and middle align , no section height go with top padding and bottom padding button color white and text color vlack and all font sizes configurable all fields needed
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-section-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+  }
+
+  .ai-hero-background-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .ai-hero-background-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-hero-background-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-background-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-hero-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity }};
+    z-index: 2;
+  }
+
+  .ai-hero-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: {{ block.settings.content_max_width }}px;
+    width: 100%;
+  }
+
+  .ai-hero-heading-{{ ai_gen_id }} {
+    font-family: 'Outfit', sans-serif;
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.spacing_between_elements }}px;
+    line-height: 1.2;
+    font-weight: {{ block.settings.heading_font_weight }};
+  }
+
+  .ai-hero-description-{{ ai_gen_id }} {
+    font-family: 'Outfit', sans-serif;
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    margin: 0 0 {{ block.settings.spacing_between_elements }}px;
+    line-height: 1.5;
+    font-weight: {{ block.settings.description_font_weight }};
+  }
+
+  .ai-hero-button-{{ ai_gen_id }} {
+    font-family: 'Outfit', sans-serif;
+    display: inline-block;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: {{ block.settings.button_font_weight }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .ai-hero-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-section-{{ ai_gen_id }} {
+      padding-top: {{ block.settings.padding_top_mobile }}px;
+      padding-bottom: {{ block.settings.padding_bottom_mobile }}px;
+    }
+
+    .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+
+    .ai-hero-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size_mobile }}px;
+    }
+
+    .ai-hero-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.button_font_size_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  #shopify-section-{{ section.id }} .ai-hero-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size_mobile }}px !important;
+  }
+  @media (min-width: 768px) {
+    #shopify-section-{{ section.id }} .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size }}px !important;
+    }
+  }
+</style>
+
+<div class="ai-hero-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hero-background-{{ ai_gen_id }}">
+    {% if block.settings.background_image %}
+      <img
+        src="{{ block.settings.background_image | image_url: width: 2000 }}"
+        alt="{{ block.settings.background_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.background_image.width }}"
+        height="{{ block.settings.background_image.height }}"
+      >
+    {% else %}
+      <div class="ai-hero-background-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-hero-overlay-{{ ai_gen_id }}"></div>
+
+  <div class="ai-hero-content-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-hero-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="ai-hero-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+    {% endif %}
+
+    {% if block.settings.show_button %}
+      <a href="/checkout" class="ai-hero-button-{{ ai_gen_id }}">
+        {{ block.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero with background",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Overlay opacity",
+      "default": 0.3
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Top padding on desktop",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom padding on desktop",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Top padding on mobile",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom padding on mobile",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 400,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "spacing_between_elements",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Spacing between elements",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading text",
+      "default": "Welcome to our store"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size on desktop",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size on mobile",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "Heading font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description text",
+      "default": "Discover our amazing collection of products"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Description size on desktop",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "min": 12,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Description size on mobile",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "description_font_weight",
+      "label": "Description font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Checkout now"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Button font size on desktop",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Button font size on mobile",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Button font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button vertical padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Button horizontal padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Button hover background color",
+      "default": "#FB8500"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero with background"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

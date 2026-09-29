@@ -1,0 +1,308 @@
+{% comment %}
+  11 Pillars of Longevity Section
+  Dark Theme - Video/Image Placeholder
+  Updates: Font changed to Outfit, Gold color changed to #919FA8
+{% endcomment %}
+
+<style>
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+
+/* ==========================================================================
+   CSS VARIABLES
+   ========================================================================== */
+:root {
+  --pillars-bg: #0C0C0D;
+  --pillars-text: #FEFEFE;
+  /* Updated color from #B4A17E to #919FA8 */
+  --pillars-gold: #919FA8;
+  --pillars-media-bg: #E8E8E8;
+  --pillars-radius: 32px;
+}
+
+/* ==========================================================================
+   SECTION
+   ========================================================================== */
+.section_pillars {
+  width: 100%;
+  padding: 80px 60px;
+  background-color: var(--pillars-bg);
+  /* Applied Outfit Font */
+  font-family: 'Outfit', sans-serif;
+}
+
+.pillars_container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.pillars_header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.pillars_eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--pillars-text);
+  padding: 4px 12px;
+  margin-bottom: 24px;
+  /* Updated RGBA values to match #919FA8 (145, 159, 168) */
+  background: linear-gradient(90deg, rgba(145, 159, 168, 0.24), rgba(145, 159, 168, 0.06));
+  border-radius: 2px;
+}
+
+.pillars_heading {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--pillars-text);
+  margin: 0 0 24px 0;
+}
+
+.pillars_heading-gold {
+  color: var(--pillars-gold);
+}
+
+.pillars_description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--pillars-text);
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* ==========================================================================
+   MEDIA PLACEHOLDER
+   ========================================================================== */
+.pillars_media {
+  width: 100%;
+  background-color: var(--pillars-media-bg);
+  border-radius: var(--pillars-radius);
+  overflow: hidden;
+  position: relative;
+}
+
+.pillars_media-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.pillars_media-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pillars_media-content img,
+.pillars_media-content video,
+.pillars_media-content iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVE - TABLET
+   ========================================================================== */
+@media (max-width: 991px) {
+  .section_pillars {
+    padding: 64px 40px;
+  }
+  
+  .pillars_header {
+    margin-bottom: 48px;
+  }
+  
+  .pillars_heading {
+    font-size: 40px;
+  }
+  
+  .pillars_description {
+    font-size: 17px;
+  }
+  
+  .pillars_media {
+    border-radius: 24px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE
+   ========================================================================== */
+@media (max-width: 767px) {
+  .section_pillars {
+    padding: 48px 24px;
+  }
+  
+  .pillars_header {
+    margin-bottom: 40px;
+  }
+  
+  .pillars_heading {
+    font-size: 32px;
+  }
+  
+  .pillars_eyebrow {
+    font-size: 12px;
+  }
+  
+  .pillars_description {
+    font-size: 16px;
+  }
+  
+  .pillars_media {
+    border-radius: 20px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE PORTRAIT
+   ========================================================================== */
+@media (max-width: 479px) {
+  .section_pillars {
+    padding: 40px 20px;
+  }
+  
+  .pillars_heading {
+    font-size: 28px;
+  }
+  
+  .pillars_eyebrow {
+    font-size: 11px;
+  }
+  
+  .pillars_description {
+    font-size: 15px;
+  }
+  
+  .pillars_media {
+    border-radius: 16px;
+  }
+}
+</style>
+
+<div class="section_pillars">
+  <div class="pillars_container">
+    
+    <header class="pillars_header">
+      <span class="pillars_eyebrow">{{ section.settings.eyebrow }}</span>
+      
+      <h2 class="pillars_heading">
+        {{ section.settings.heading_white }} <span class="pillars_heading-gold">{{ section.settings.heading_gold }}</span>
+      </h2>
+      
+      <p class="pillars_description">{{ section.settings.description }}</p>
+    </header>
+    
+    <div class="pillars_media">
+      <div class="pillars_media-wrapper">
+        <div class="pillars_media-content">
+          {%- if section.settings.video_url != blank -%}
+            {%- if section.settings.video_url contains 'youtube.com' or section.settings.video_url contains 'youtu.be' -%}
+              {%- assign video_id = section.settings.video_url | split: 'v=' | last | split: '&' | first -%}
+              {%- if section.settings.video_url contains 'youtu.be' -%}
+                {%- assign video_id = section.settings.video_url | split: 'youtu.be/' | last | split: '?' | first -%}
+              {%- endif -%}
+              <iframe 
+                src="https://www.youtube.com/embed/{{ video_id }}?rel=0&modestbranding=1"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            {%- elsif section.settings.video_url contains 'vimeo.com' -%}
+              {%- assign video_id = section.settings.video_url | split: 'vimeo.com/' | last | split: '?' | first -%}
+              <iframe 
+                src="https://player.vimeo.com/video/{{ video_id }}?title=0&byline=0&portrait=0"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            {%- else -%}
+              <video controls playsinline>
+                <source src="{{ section.settings.video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            {%- endif -%}
+          {%- elsif section.settings.image != blank -%}
+            {{- section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: section.settings.heading_white -}}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "11 Pillars of Longevity",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Breakthrough"
+    },
+    {
+      "type": "text",
+      "id": "heading_white",
+      "label": "Heading (White Part)",
+      "default": "Supporting Your"
+    },
+    {
+      "type": "text",
+      "id": "heading_gold",
+      "label": "Heading (Accent Part)",
+      "default": "11 Pillars of Longevity"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "AIWO Fast Bar uses a proprietary blend of premium nuts, seeds, and natural ingredients that doesn't trigger your body's nutrient-sensing pathways. Your body stays in its fasting state while you fuel up."
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "YouTube, Vimeo, or direct video URL. Leave blank to use image instead."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (Fallback)",
+      "info": "Used if no video URL is provided"
+    }
+  ],
+  "presets": [
+    {
+      "name": "11 Pillars of Longevity"
+    }
+  ]
+}
+{% endschema %}

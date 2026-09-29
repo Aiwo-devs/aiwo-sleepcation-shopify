@@ -1,0 +1,611 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo_evoo_v3_styles": {
+      "type": "aiwo-evoo-v3-global-styles",
+      "settings": {
+        "heading_font_size": 24,
+        "heading_font_weight": "700",
+        "heading_line_height": "1.2",
+        "heading_color": "#0c0c0d",
+        "body_font_size": 16,
+        "body_font_weight": "400",
+        "body_line_height": "1.6",
+        "body_color": "#666666",
+        "button_font_size": 16,
+        "button_font_weight": "600"
+      }
+    },
+    "aiwo_evoo_v3_breadcrumb": {
+      "type": "aiwo-evoo-v3-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo_evoo_v3_gallery_enhancements": {
+      "type": "aiwo-evoo-v3-gallery-enhancements",
+      "settings": {
+        "tagline_text": "LONGEVIS MATRIX · Pillar 3",
+        "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+        "tooltip_title": "What is LONGEVIS MATRIX?",
+        "tooltip_desc": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework. Each pillar targets a biological system that determines how fast you age.",
+        "tooltip_pillars_heading": "Pillars this product support",
+        "tooltip_active_pillars": "P3 · Nutrition and Metabolic Health",
+        "tooltip_stack_heading": "Complete your longevity stack",
+        "tooltip_inactive_pillars": "P1 · Sleep      \nP2 · Breathing\nP4 · Social       \nP5 · Exercise\nP6 · Stress       \nP7 · Circadian Rhythm\nP8 · Purpose      \nP9 · Environment\nP10 · Gut Health  \nP11 · Hydration"
+      }
+    },
+    "aiwo_evoo_v3_qty_label": {
+      "type": "aiwo-evoo-v3-quantity-label",
+      "settings": {
+        "mobile_quantity_label": "Add Quantity"
+      }
+    },
+    "main": {
+      "type": "aiwo-pdp-product-info",
+      "blocks": {
+        "product_tag_line_v1_zH8gVV": {
+          "type": "product_tag_line_v1",
+          "settings": {
+            "tag_text": "LONGEVIS MATRIX · Pillar 3"
+          }
+        },
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "purchase_stats_v1_CLkWVP": {
+          "type": "purchase_stats_v1",
+          "settings": {
+            "purchase_text": "Most bars compromise on the nut. We built the bar around the rarest one.",
+            "weight_text": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_j3mMyH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MRP Incl. of all taxes</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "trust_badges_v1_eUg7qR": {
+          "type": "trust_badges_v1",
+          "settings": {
+            "badge_1_title": "FSSAI Licensed",
+            "badge_1_icon": "shopify://shop_images/Fssai_Logo.png",
+            "badge_2_title": "Zero Cholesterol",
+            "badge_2_icon": "shopify://shop_images/alcohol_15413682.svg",
+            "badge_3_title": "Zero Added Sugar",
+            "badge_3_icon": "shopify://shop_images/sugar-free_7078810.svg",
+            "badge_4_title": "Source of Omega-3",
+            "badge_4_icon": "shopify://shop_images/omega-3_7574871.svg",
+            "badge_5_title": "Rich in Dietary Fibre",
+            "badge_5_icon": "shopify://shop_images/corn_9485321.svg",
+            "badge_6_title": ""
+          }
+        },
+        "benefits_grid_v1_KiKTqL": {
+          "type": "benefits_grid_v1",
+          "settings": {
+            "benefit_1_title": "Brain-Nourishing Fat",
+            "benefit_1_text": "Macadamia's oleic acid supports cognitive function",
+            "benefit_1_icon": "shopify://shop_images/brain_wave.svg",
+            "benefit_2_title": "Prebiotic Fiber",
+            "benefit_2_text": "Chicory powder feeds gut microbiome",
+            "benefit_2_icon": "shopify://shop_images/gut.svg",
+            "benefit_3_title": "Heart Healthy",
+            "benefit_3_text": "Zero cholesterol, rich in unsaturated fats",
+            "benefit_3_icon": "shopify://shop_images/check_6462442.svg",
+            "benefit_4_title": "Omega-3 Per Bar",
+            "benefit_4_text": "0.53g per bar — daily brain and heart support",
+            "benefit_4_icon": "shopify://shop_images/omega-3_7574871.svg"
+          }
+        },
+        "marquee_v1_iehzTE": {
+          "type": "marquee_v1",
+          "settings": {
+            "marquee_bg_color": "#2c2416",
+            "marquee_text_color": "#ffffff",
+            "marquee_text_1": "Macadamia First",
+            "marquee_text_2": "Zero Added Suga",
+            "marquee_text_3": "7g Protein",
+            "marquee_text_4": "Omega-3 Inside",
+            "marquee_text_5": "Dark Chocolate",
+            "marquee_text_6": "Prebiotic Fiber"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "html_jpVgQ3": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": true,
+            "protocol_tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "protocol_tooltip_title": "What is Protocol?",
+            "protocol_tooltip_desc": "A protocol is a daily system of supplements each one targeting specific longevity pillars."
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "disabled": true,
+          "settings": {}
+        },
+        "recommended_products_v1_6t3TaN": {
+          "type": "recommended_products_v1",
+          "settings": {
+            "recs_tag": "Complete the protocol",
+            "heading_text": "AIWO Macadamia Bar",
+            "heading_italic": "Works Better As A System",
+            "description_text": "Pair Dual-Amino Cellular Defence With Complementary LONGEVIS MATRIX Supplements For Liver, Heart, Stress and Respiratory Support",
+            "show_desktop": true,
+            "show_mobile": true,
+            "bundle_mode": true,
+            "bundle_pillar": "Add on ·  Pillar 3+Pillar 10",
+            "bundle_title": "Brain + Gut Stack",
+            "bundle_desc": "Daily nutrition and gut microbiome support",
+            "bundle_best_pick_text": "Best Pick",
+            "bundle_custom_price": "",
+            "bundle_product_1": "aiwo-macadamia-nut-bar",
+            "bundle_product_2": "ultimate-omega-3-triple-strength",
+            "bundle_product_3": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "bundle_learn_more_product": "",
+            "product_1": "ultimate-omega-3-triple-strength",
+            "pillar_1": "Add on · Pillar 3",
+            "custom_title_1": "",
+            "desc_1": "",
+            "best_pick_text_1": "",
+            "product_2": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "pillar_2": "Add on · Pillar 6",
+            "custom_title_2": "",
+            "desc_2": "",
+            "best_pick_text_2": "",
+            "product_3": "",
+            "pillar_3": "",
+            "custom_title_3": "",
+            "desc_3": "",
+            "best_pick_text_3": ""
+          }
+        },
+        "proven_health_benefits_v1_NpKbtK": {
+          "type": "proven_health_benefits_v1",
+          "disabled": true,
+          "settings": {
+            "phb_tag": "",
+            "phb_title": "Proven Benefits of Taurine and NAC Supplementation",
+            "phb_stat_1_num": "+30–40%",
+            "phb_stat_1_label": "Increase in Intracellular Glutathione Levels with NAC Supplementation",
+            "phb_stat_1_source": "Sekhar et al. Am J Clin Nutr 2011",
+            "phb_stat_2_num": "-12%",
+            "phb_stat_2_label": "Reduction in Systolic Blood Pressure with Taurine Supplementation",
+            "phb_stat_2_source": "Sun et al. Eur J Nutr 2016",
+            "phb_stat_3_num": "",
+            "phb_stat_3_label": "",
+            "phb_stat_3_source": "",
+            "phb_stat_4_num": "",
+            "phb_stat_4_label": "",
+            "phb_stat_4_source": ""
+          }
+        },
+        "text_gzYkwz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*Figures observed in meta-analyses and randomised controlled trials on EVOO and Mediterranean diet interventions. Individual results may vary. This is a food product. Not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "number_of_lines_shown": "",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_QVph7M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Download Sample Report",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "button_8zEkHK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore 181 Biomarkers",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": true,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "product_tag_line_v1_zH8gVV",
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "purchase_stats_v1_CLkWVP",
+        "price",
+        "text_j3mMyH",
+        "description",
+        "trust_badges_v1_eUg7qR",
+        "benefits_grid_v1_KiKTqL",
+        "marquee_v1_iehzTE",
+        "gift_wrapping_EK3NQn",
+        "html_jpVgQ3",
+        "buy_buttons",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "recommended_products_v1_6t3TaN",
+        "proven_health_benefits_v1_NpKbtK",
+        "text_gzYkwz",
+        "button_QVph7M",
+        "button_8zEkHK",
+        "complementary_XCwmDV",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked",
+        "thumbnail_position": "vertical",
+        "enable_sticky_image": true,
+        "mobile_media_size": "full_width",
+        "show_arrow_button": false,
+        "show_thumnail_mobile": false,
+        "spacing_col": "small",
+        "full_width": true,
+        "transition_style": "fade",
+        "show_first_image_avaiable": true,
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD": {
+      "type": "aiwo-evoo-v3-aiwo-difference",
+      "blocks": {
+        "stat_circle_336cQP": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "7g",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Protein",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Per Bar"
+          }
+        },
+        "stat_circle_meQiJa": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "6.3g",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Dietary Fiber",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Per Bar"
+          }
+        },
+        "stat_circle_V8MT9Y": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "0.53g",
+            "stat_sub": "Omega-3",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Per Bar"
+          }
+        },
+        "tagline_sub_86PARc": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/sugar.svg",
+            "text": "Zero Added Sugar"
+          }
+        },
+        "card_bullet_PQqYc3": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Macadamia nut leads the formula — the highest monounsaturated fat nut available, with an oleic acid profile extensively studied\nfor cardiovascular and cognitive health benefits across published human trials."
+          }
+        },
+        "stat_circle_Hhd9iw": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "0",
+            "stat_sub": "Cholesterol",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "None"
+          }
+        },
+        "tagline_sub_nR9nBX": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/alcohol.svg",
+            "text": "Zero Cholesterol"
+          }
+        }
+      },
+      "block_order": [
+        "stat_circle_336cQP",
+        "stat_circle_meQiJa",
+        "stat_circle_V8MT9Y",
+        "tagline_sub_86PARc",
+        "card_bullet_PQqYc3",
+        "stat_circle_Hhd9iw",
+        "tagline_sub_nR9nBX"
+      ],
+      "name": "AIWO Difference",
+      "settings": {
+        "bg_desktop": "shopify://shop_images/Ingredient-_Macademiabar_-_BG-_Desktop.png",
+        "bg_mobile": "shopify://shop_images/Ingredient-_Macademiabar_-_BG-_Mobile.png",
+        "heading": "Not All Nut Bars",
+        "heading_italic": "Are Built Equal",
+        "main_tag": "Macadamia + Prebiotic Formula",
+        "card_heading_white": "DELIVERING",
+        "card_heading_gold": "MAX POTENCY",
+        "card_icon": "shopify://shop_images/Frame_d47b8e26-3f6e-4c61-b06d-0e22994683c3.svg",
+        "disclaimer": "*Individual results vary. Consume as part of a balanced diet and active lifestyle.Not intended to diagnose, treat, cure, or prevent any disease."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_comparison_wVNYTt": {
+      "type": "aiwo-comparison",
+      "blocks": {
+        "comparison_row_mcaRP8": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Macadamia as Hero Nut",
+            "right_feature": "Cheaper filler nuts"
+          }
+        },
+        "comparison_row_VaPp4F": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Zero Added Sugar",
+            "right_feature": "Refined sugar-sweetened"
+          }
+        },
+        "comparison_row_YJRD3c": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Chicory Fiber Inside",
+            "right_feature": "No prebiotic fiber"
+          }
+        },
+        "comparison_row_iBKFFz": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Omega-3 Per Bar",
+            "right_feature": "No omega-3 source"
+          }
+        },
+        "comparison_row_QTKPHg": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Zero Cholesterol",
+            "right_feature": "Varies by formulation"
+          }
+        },
+        "comparison_row_YpTHXW": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Dark Chocolate Finish",
+            "right_feature": "Artificial flavoring agents"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_mcaRP8",
+        "comparison_row_VaPp4F",
+        "comparison_row_YJRD3c",
+        "comparison_row_iBKFFz",
+        "comparison_row_QTKPHg",
+        "comparison_row_YpTHXW"
+      ],
+      "name": "AIWO Comparison Table",
+      "settings": {
+        "tagline": "WHY AIWO",
+        "heading": "AIWO Macadamia Bar vs",
+        "heading_italic": "Others",
+        "left_image": "shopify://shop_images/AIWO_Macademia.png",
+        "left_title": "",
+        "icon_check": "shopify://shop_images/Frame_12.svg",
+        "btn_text": "Buy Now",
+        "btn_link": "https://shop-aiwo.myshopify.com/cart/44295191396534:1?channel=buy_button",
+        "right_image": "shopify://shop_images/Other_Nut_Bars.png",
+        "right_title": "",
+        "icon_cross": "shopify://shop_images/Group_13.svg"
+      }
+    },
+    "section_evoo_v3_faq_rRJhLR": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_BFc6Am": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes macadamia better than other nuts in a bar?",
+            "answer": "<p>Macadamia has the highest monounsaturated fat content of any nut specifically oleic acid, the same fat found in extra virgin olive oil. It is associated with cardiovascular support and cognitive nourishment. Most bars use cheaper nuts like peanuts or cashews as the base. AIWO Macadamia Bar is built around macadamia as the hero ingredient, not a garnish.</p>"
+          }
+        },
+        "faq_item_pgG9dR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is there added sugar in this bar?",
+            "answer": "<p>No added sugar. The sweetness comes from brown rice sugar syrup a less refined sweetener with no high-fructose syrups, cane sugar, or artificial sweeteners in the formula.</p>"
+          }
+        },
+        "faq_item_zet6LP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I eat this bar if I am watching my cholesterol?",
+            "answer": "<p>Yes. AIWO Macadamia Bar contains zero dietary cholesterol per serving. All fat in the bar comes from nuts and dry coconut unsaturated fat sources.</p>"
+          }
+        },
+        "faq_item_Q6TUxh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "When is the best time to eat this bar?",
+            "answer": "<p>Mid-morning when cognitive demand is high, post-workout as a recovery snack, or in the afternoon as a clean energy bridge. One bar. No preparation needed.</p>"
+          }
+        },
+        "faq_item_WyBt4K": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it contain allergens I should know about?",
+            "answer": "<p>Yes. The bar contains nuts and soy as declared on the allergen panel. If you have nut or soy sensitivities, review the full ingredient list before consuming.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_BFc6Am",
+        "faq_item_pgG9dR",
+        "faq_item_zet6LP",
+        "faq_item_Q6TUxh",
+        "faq_item_WyBt4K"
+      ],
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    }
+  },
+  "order": [
+    "aiwo_evoo_v3_styles",
+    "aiwo_evoo_v3_breadcrumb",
+    "aiwo_evoo_v3_gallery_enhancements",
+    "aiwo_evoo_v3_qty_label",
+    "main",
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD",
+    "product-recommendations",
+    "aiwo_comparison_wVNYTt",
+    "section_evoo_v3_faq_rRJhLR"
+  ]
+}

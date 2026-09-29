@@ -1,0 +1,2457 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_jCfpqN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tKAbBY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "Essential Wellness Checkpoint",
+            "heading": "AIWO 100",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>A powerful, mid-range panel covering <strong>100+ parameters</strong> to detect common imbalances and red flags in your body.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_Wydx3a": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Complimentary doctor consultation included",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_8YfEBB": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "100+ health parameters analyzed",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_cfEqVC": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Your complete wellness report card",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_dXfcRU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book Your Test Now",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#211e1e",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tKAbBY",
+        "columns_Wydx3a",
+        "columns_8YfEBB",
+        "columns_cfEqVC",
+        "button_dXfcRU"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/pexels-cristian-rojas-8460346_1.jpg",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_k9HCii": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_tNgiXb": {
+          "type": "column",
+          "settings": {
+            "icon": "activity",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Comprehensive Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>100+ parameters covering all major body systems and functions</p>"
+          }
+        },
+        "column_JFDaX3": {
+          "type": "column",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Cardiac & Metabolic",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Complete cardiac markers, lipid panels, and metabolic indicators</p>"
+          }
+        },
+        "column_7Kkjfw": {
+          "type": "column",
+          "settings": {
+            "icon": "zap",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Vitamin & Minerals",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Essential vitamin levels and trace mineral analysis</p>"
+          }
+        },
+        "column_R3QJxD": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "icon": "blink",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Early Detection",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Identify imbalances and red flags before they become problems</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_tNgiXb",
+        "column_JFDaX3",
+        "column_7Kkjfw",
+        "column_R3QJxD"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "Why Choose AIWO 100?",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "full_border",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 51,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "multicolumn_JVpPji": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_WT3YKV": {
+          "type": "column",
+          "settings": {
+            "icon": "check-mark",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Early Detection",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Identify imbalances and red flags before they become problems</p>"
+          }
+        },
+        "column_CAKPXT": {
+          "type": "column",
+          "settings": {
+            "icon": "star",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Expert Consultation",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Complimentary doctor consultation to interpret your results</p>"
+          }
+        },
+        "column_7bgwTM": {
+          "type": "column",
+          "settings": {
+            "icon": "support",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Actionable Insights",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Clear recommendations for optimizing your health and wellness</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_WT3YKV",
+        "column_CAKPXT",
+        "column_7bgwTM"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "full_border",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 51,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_jUxE9U": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xqVMde": {
+          "type": "heading",
+          "settings": {
+            "heading": "Complete Health Coverage",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_pKxL4i": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AIWO 100 covers every essential aspect of your health with over 100 carefully selected parameters</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xqVMde",
+        "text_pKxL4i"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "flow_H83gaY": {
+      "type": "flow",
+      "blocks": {
+        "media_YcW6zT": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Diabetic Profile",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>HBA1C</li><li>AVERAGE BLOOD GLUCOSE LEVEL</li><li>GLUCOSE FASTING (FBS)</li><li>INSULIN (F)</li><li>INSULIN RESISTANCE(HOMA IR)</li></ul>",
+            "button_text": "5 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_4FWcBJ": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Kidney Profile",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>BLOOD UREA NITROGEN (BUN)</li><li>CREATININE</li><li>BUN/CREATININE RATIO</li><li>URIC ACID</li><li>E-GLOMERULAR FILTRATION RATE (GFR)</li><li>CALCIUM</li><li>SODIUM</li><li>POTASSIUM</li><li>CHLORIDE</li></ul>",
+            "button_text": "9 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_nGp3DX": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Lipid Profile",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>CHOLESTEROL</li><li>HDL CHOLESTEROL</li><li>LDL CHOLESTEROL</li><li>TRIGLYCERIDES</li><li>VLDL CHOLESTEROL</li><li>Non-HDL Cholesterol</li><li>CHO/HDL RATIO</li><li>LDL/HDL RATIO</li></ul>",
+            "button_text": "8 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_PnXTtC": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Liver Profile",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>BILIRUBIN TOTAL</li><li>BILIRUBIN DIRECT</li><li>BILIRUBIN INDIRECT</li><li>ASPARTATE AMINOTRANSFERASE(AST/SGOT)</li><li>ALANINE AMINOTRANSFERASE(ALT/SGPT)</li><li>ALKALINE PHOSPHATASE</li><li>GAMMA GT</li><li>TOTAL PROTEIN</li><li>ALBUMIN</li><li>GLOBULIN</li><li>A/G RATIO</li></ul>",
+            "button_text": "11 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_8fqpXk": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Pancreas Profile",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>AMYLASE</li><li>LIPASE</li></ul>",
+            "button_text": "2 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_dtGeTm": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Iron Deficiency Profile",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>IRON</li></ul>",
+            "button_text": "1 Parameter",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_t4c3dP": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Trace Minerals",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>MAGNESIUM</li><li>ZINC</li></ul>",
+            "button_text": "2 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_4T9cMj": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Cardiac Risk Markers",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li> HOMOCYSTEINE</li><li>CRP-HIGHLY SENSITIVE(HSCRP)</li><li>LIPOPROTEIN (A)</li><li>APOLIPOPROTEIN A1</li><li>APOLIPOPROTEIN B</li><li>APOLIPOPROTEIN B/A1 RATIO</li></ul>",
+            "button_text": "6 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_GhhFUk": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Thyroid Profile",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>TOTAL-T3 (TRIIODOTHYRONINE-T3)</li><li>TOTAL-T4 (THYROXINE T4)</li><li>TSH (THYROID-STIMULATING HORMONE)-ULTRA</li></ul>",
+            "button_text": "3 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_NVRCnb": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629391_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Fat Soluble Vitamins",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>VITAMIN D TOTAL 25(OH)</li><li>VITAMIN B 12</li></ul>",
+            "button_text": "2 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        }
+      },
+      "block_order": [
+        "media_YcW6zT",
+        "media_4FWcBJ",
+        "media_nGp3DX",
+        "media_PnXTtC",
+        "media_8fqpXk",
+        "media_dtGeTm",
+        "media_t4c3dP",
+        "media_4T9cMj",
+        "media_GhhFUk",
+        "media_NVRCnb"
+      ],
+      "disabled": true,
+      "name": "t:sections.flow.name",
+      "settings": {
+        "heading": "[Metabolic & Organ Function Profiles]",
+        "highlight_type": "font_highlight",
+        "heading_size": 80,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "content_position": "middle",
+        "content_alignment": "left",
+        "select_motion": "hover",
+        "open_first_tab": true,
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "auto_play": false,
+        "change_steps_speed": 5,
+        "pause_hover": true,
+        "background_color": "#ffffff",
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background_color_dark": "#ffffff",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "image_position": "second",
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "desktop_height": "650px",
+        "padding_top": 12,
+        "padding_bottom": 28,
+        "image_position_mobile": "second",
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "mobile_height": "400px",
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "flow_WMyd9T": {
+      "type": "flow",
+      "blocks": {
+        "media_4JpbWN": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629367_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Hematology",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li> TOTAL WBC COUNT</li><li>NEUTROPHILS</li><li>LYMPHOCYTES</li><li>MONOCYTES</li><li>BASOPHILS</li><li>EOSINOPHILS</li><li>RBC (RED BLOOD CELL COUNT)</li><li>HAEMOGLOBIN (HB)</li><li>PCV - (HAEMATOCRIT-PACKED CELL VOLUME)</li><li>MCV (MEAN CORPUSCULAR VOLUME)</li><li>MCH (MEAN CORPUSCULAR HEMOGLOBIN)</li><li>MCHC (MEAN CORPUSCULAR HEMOGLOBIN</li><li>RDW-CV (RED CELL DISTRIBUTION WIDTH-CV)</li><li>RDW - SD</li><li>PLATELET COUNT</li><li>PDW (PLATELET DISTRIBUTION WIDTH)</li><li>MPV (MEAN PLATELET VOLUME)</li><li>PLCR</li><li>PCT(PLATELETCRIT)</li><li>ABSOLUTE BASOPHILS COUNT</li><li>ABSOLUTE EOSINOPHIL COUNT</li><li>ABSOLUTE LYMPHOCYTE COUNT</li><li>ABSOLUTE MONOCYTES COUNT</li><li>ABSOLUTE NEUTROPHIL COUNT</li><li>NRBC (NUCLEATED RED BLOOD CELLS.)</li><li>Nucleated RBC %</li><li>IMMATURE GRANULOCYTE PERCENTAGE(IG%)</li></ul>",
+            "button_text": "35 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_qreqqd": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629367_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "STD Panel",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>HEPATITIS B SURFACE ANTIGEN-QUALITATIVE</li></ul>",
+            "button_text": "16 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_77nBTG": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629367_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Steroid Panel",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>Testosterone - Total</li></ul>",
+            "button_text": "1 Parameter",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_TLBcdW": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629367_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Complete Urine Analysis",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>Specific Gravity</li><li>Appearance</li><li>Bacteria</li><li>Urinary Bilirubin</li><li>Urine Blood</li><li>Urobilinogen</li><li>Bile Pigment</li><li>Bile Salt</li><li>Casts</li><li>Colour</li><li>Crystals</li><li>Epithelial Cells</li><li>Urinary Glucose</li><li>Urine Ketone</li><li>Urinary Leucocytes</li><li>Nitrite</li><li>pH</li><li>Urinary Protein</li></ul>",
+            "button_text": "18 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        },
+        "media_bX7gDd": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/pexels-karolina-grabowska-6629367_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "video_alt_text": "",
+            "enable_video_autoplay": false,
+            "subheading": "",
+            "heading": "Microalbuminuria",
+            "image_style_heading": "square",
+            "image_ratio_heading": "aspect-16/9",
+            "description": "<ul><li>Creatinine - Urine</li><li>Urinary Albumin/Creatinine Ratio (UA/C)</li><li>Urinary Microalbumin</li></ul>",
+            "button_text": "30 Parameters",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style": "text-link"
+          }
+        }
+      },
+      "block_order": [
+        "media_4JpbWN",
+        "media_qreqqd",
+        "media_77nBTG",
+        "media_TLBcdW",
+        "media_bX7gDd"
+      ],
+      "disabled": true,
+      "name": "t:sections.flow.name",
+      "settings": {
+        "heading": "[Infection, Hormones & Excretion Profiles]",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "content_position": "middle",
+        "content_alignment": "left",
+        "select_motion": "hover",
+        "open_first_tab": true,
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "auto_play": false,
+        "change_steps_speed": 5,
+        "pause_hover": true,
+        "background_color": "#ffffff",
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background_color_dark": "#ffffff",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "image_position": "second",
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "desktop_height": "650px",
+        "padding_top": 12,
+        "padding_bottom": 28,
+        "image_position_mobile": "second",
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "mobile_height": "400px",
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "multicolumn_4cqMrY": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_dTwt3k": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Cardiac Health",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>WBC total<br/>Neutrophils<br/>Lymphocytes<br/>Eosinophils<br/>Monocytes<br/>Basophils<br/>LUC (Large Unstained Cells)<br/>RBC (Red Blood Cell Count)<br/>Haemoglobin (HB)<br/>Cellular Haemoglobin.<br/>PCV - (Haematocrit-Packed Cell Volume)<br/>MCV (Mean Corpuscular Volume)<br/>MCH (Mean Corpuscular Hemoglobin)<br/>CH (Mean Hemoglobin Content)<br/>MCHC (Mean Corpuscular Hemoglobin Concentra)<br/>CHCM (Corpuscular Hemoglobin Concentration M)<br/>RDW-CV (Red Cell Distribution Width-CV)<br/>HDW (Hemoglobin Distribution Width)<br/>Platelet Count<br/>PDW (Platelet Distribution Width)<br/>MPV (Mean Platelet Volume)<br/>Large Platelet Count<br/>PCT (Plateletcrit)<br/>MPM (Mean Platelet Mass)<br/>MPC (Mean Platelet Concentration)<br/>NRBC (Nucleated Red Blood Cells)<br/>Blast cells.<br/>Absolute Neutrophil Count<br/>Absolute Lymphocyte Count<br/>Absolute Eosinophil Count<br/>Absolute Monocytes Count<br/>Absolute Basophils Count<br/>ALUC (Absolute Large Unstained Cells)<br/>ANRBC (Absolute Nucleated Red Blood Cells.)</p>"
+          }
+        },
+        "column_7DRaFK": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Metabolic Function",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Comprehensive diabetes panel<br/>✅ Liver function tests<br/>✅ Kidney function markers<br/>✅ Metabolic syndrome indicators</p>"
+          }
+        },
+        "column_WTiyiG": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Blood Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete hemogram (CBC)<br/>✅ Iron studies<br/>✅ Inflammation markers<br/>✅ Blood cell analysis</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_dTwt3k",
+        "column_7DRaFK",
+        "column_WTiyiG"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "column",
+        "column_content_alignment": "start",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_qntr67": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_QhbtYg": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Cardiac Health",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete lipid profile<br/>✅ Cardiac enzyme markers<br/>✅ Blood pressure indicators<br/>✅ Cardiovascular risk assessment</p>"
+          }
+        },
+        "column_93zRHW": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Metabolic Function",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Comprehensive diabetes panel<br/>✅ Liver function tests<br/>✅ Kidney function markers<br/>✅ Metabolic syndrome indicators</p>"
+          }
+        },
+        "column_pEEKcm": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Blood Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete hemogram (CBC)<br/>✅ Iron studies<br/>✅ Inflammation markers<br/>✅ Blood cell analysis</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_QhbtYg",
+        "column_93zRHW",
+        "column_pEEKcm"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "column",
+        "column_content_alignment": "start",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_mWtkCb": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_yHhD94": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Nutritional Status",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Essential vitamin levels (B12, D3)<br/>✅ Trace mineral analysis<br/>✅ Protein markers<br/>✅ Nutritional deficiency screening</p>"
+          }
+        },
+        "column_hEXenQ": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Hormonal Balance",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete thyroid profile<br/>✅ Hormone level assessment<br/>✅ Endocrine function markers<br/>✅ Reproductive health indicators</p>"
+          }
+        },
+        "column_i9bdHJ": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Blood Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete hemogram (CBC)<br/>✅ Iron studies<br/>✅ Inflammation markers<br/>✅ Blood cell analysis<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_yHhD94",
+        "column_hEXenQ",
+        "column_i9bdHJ"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "column",
+        "column_content_alignment": "start",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_FkQA4M": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PQtnrY": {
+          "type": "heading",
+          "settings": {
+            "heading": "[More than a blood test — it's your wellness report card.]",
+            "highlight_type": "font_highlight",
+            "heading_size": 70,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PQtnrY"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_nkXKKT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_iMwCAP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ready to Take Control of Your Health?",
+            "highlight_type": "font_highlight",
+            "heading_size": 110,
+            "heading_tag": "h2"
+          }
+        },
+        "text_PyEUKg": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>Join thousands of professionals who trust AIWO 100 for their comprehensive wellness monitoring</h5>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        }
+      },
+      "block_order": [
+        "heading_iMwCAP",
+        "text_PyEUKg"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "featured_product_YFCwmy": {
+      "type": "featured-product",
+      "blocks": {
+        "price_6BQccm": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 120
+          }
+        },
+        "description_7peTqP": {
+          "type": "description",
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": false,
+            "make_content_center": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Complete AIWO 100 Package",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "text_rzBrLJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Complete AIWO 100 Package<br/>✅ 100+ Health Parameters<br/>✅ Complimentary Doctor Consultation<br/>✅ Comprehensive Report & Recommendations<br/></p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "quantity_selector_7KJcFC": {
+          "type": "quantity_selector",
+          "settings": {
+            "style": "adapt"
+          }
+        },
+        "button_j9br3w": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book Test Now",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "#000000",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "#157f7f",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "button_zP8hgV": {
+          "type": "button",
+          "settings": {
+            "button_label": "Request Call-back",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "secondary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "#000000",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "#979797",
+            "secondary_button_text": "#000000",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "price_6BQccm",
+        "description_7peTqP",
+        "text_rzBrLJ",
+        "quantity_selector_7KJcFC",
+        "button_j9br3w",
+        "button_zP8hgV"
+      ],
+      "disabled": true,
+      "name": "t:sections.featured-product.name",
+      "settings": {
+        "product": "aiwo-100",
+        "show_product_name": true,
+        "title_size": 100,
+        "heading_tag": "h2",
+        "show_vendor": false,
+        "make_content_center": false,
+        "desktop_layout": "left",
+        "image_ratio": "landscape",
+        "show_arrow_button": true,
+        "show_thumbnails": false,
+        "thumbnail_position": "horizontal",
+        "transition_style": "fade",
+        "enable_image_zoom": true,
+        "zoom_effect": "enlarge",
+        "enable_video_autoplay": false,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": true,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "full_width": false,
+        "spacing_col": "default",
+        "show_section_divider": false,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "background_color_light": "#ffffff",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)"
+      }
+    },
+    "multicolumn_jggGnD": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Nzmyc6": {
+          "type": "column",
+          "settings": {
+            "icon": "clock",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Quick Results",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Get your comprehensive report within 24-48 hours</p>"
+          }
+        },
+        "column_aMEwKq": {
+          "type": "column",
+          "settings": {
+            "icon": "check-mark",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Trusted Process",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>NABL accredited labs with highest quality standards<br/><br/></p>"
+          }
+        },
+        "column_KNiiqP": {
+          "type": "column",
+          "settings": {
+            "icon": "telephone",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Expert Support",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>Dedicated health consultants for personalized guidance</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_Nzmyc6",
+        "column_aMEwKq",
+        "column_KNiiqP"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "none",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "testimonials_bPAxbw": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_J4KxCC": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Neha S",
+            "text": "<p><strong>Exactly what I needed for a regular health check-in.</strong><em> <br/>I didn’t have time for a full-body scan, but AIWO 100 gave me a complete picture of my core health markers. The report was clean, and the doctor explained everything in detail.</em></p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_mDNQRF": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Amit Raj",
+            "text": "<p><strong>I track my health like I track my finances — precisely.<br/></strong><em>As a biohacker, I run multiple panels a year. This one was surprisingly thorough for the price. Food intolerance, thyroid, and cardiac markers all in one? Perfect.</em></p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_BYX7YM": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Priya Menon",
+            "text": "<p><strong>Helped me connect the dots behind my constant fatigue.<br/></strong><em>Turns out I had a vitamin D deficiency and borderline thyroid issues. Thanks to the test and consult, I got on a plan that’s already making a difference.</em></p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_YqTdmw": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Rohit Bhalla",
+            "text": "<p><strong>Convenient, professional, and clear.<br/></strong><em>From sample collection to the digital report, everything was smooth. I appreciated the clarity of the report and how the doctor didn’t push meds — just facts and direction.</em></p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        },
+        "testimonial_38rzhh": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "Reema Joseph",
+            "text": "<p><strong>A must-do for every working adult.<br/></strong><em>This test fits into a busy lifestyle without compromising depth. I now do AIWO 100 every 6 months — it’s my new wellness ritual.\"</em></p>",
+            "author": "",
+            "author_note": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_J4KxCC",
+        "testimonial_mDNQRF",
+        "testimonial_BYX7YM",
+        "testimonial_YqTdmw",
+        "testimonial_38rzhh"
+      ],
+      "disabled": true,
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "heading": "Testimonials",
+        "subheading": "",
+        "heading_alignment": "center",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "text_alignment": "center",
+        "testimonial_items_view": "multiple",
+        "show_arrow": false,
+        "show_pagination": false,
+        "auto_play": true,
+        "change_slides_speed": 7,
+        "show_author_image": false,
+        "author_image": "top",
+        "image_ratio": "round",
+        "desktop_height": 300,
+        "background_color_light": "rgba(0,0,0,0)",
+        "item_background_color_light": "#ffffff",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "item_background_color_dark": "rgba(0,0,0,0)",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 28,
+        "bottom_padding": 28,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 20
+      }
+    },
+    "faq_4JhpGN": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_EP64mk": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "What exactly does the AIWO 100 test cover?",
+            "row_content": "<p>The AIWO 100 panel checks over 100 health markers, including cardiac health, liver and kidney function, diabetes risk, vitamins, minerals, thyroid hormones, food intolerances, and metabolic health.</p>"
+          }
+        },
+        "frequently_asked_question_mK4jQW": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "How is this different from a regular full-body health checkup?",
+            "row_content": "<p>Most traditional checkups are either surface-level or focus only on disease detection. AIWO 100 gives you deep insights, flags early imbalances, and includes food sensitivity testing and a doctor consultation — all under one price.</p>"
+          }
+        },
+        "frequently_asked_question_6d9PWy": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "How long does the test take and what is the process?",
+            "row_content": "<p>The sample collection usually takes 20–30 minutes. You’ll be contacted for a convenient time slot, and once your samples are processed, your report is delivered digitally within 48–72 hours.</p>"
+          }
+        },
+        "frequently_asked_question_q6cWXm": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Is fasting required before the test?",
+            "row_content": "<p>Yes, we recommend fasting for <strong>10–12 hours</strong> before the test for the most accurate readings, especially for sugar, lipid, and insulin-related markers.</p>"
+          }
+        },
+        "frequently_asked_question_xrTpVV": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Can I consult with a doctor about my report?",
+            "row_content": "<p>Yes. A <strong>complimentary doctor consultation</strong> is included. You’ll get personalized feedback and recommendations based on your results.</p>"
+          }
+        },
+        "frequently_asked_question_WGBEQg": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "How often should I take the AIWO 100?",
+            "row_content": "<p>We recommend doing this test <strong>every 6–12 months</strong> for preventive tracking, especially if you're managing stress, diet changes, or lifestyle upgrades.</p>"
+          }
+        },
+        "frequently_asked_question_PwHBUR": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Can I share this report with my own physician?",
+            "row_content": "<p>Absolutely. The digital report is easy to download and share. It’s formatted in a medically recognized structure for any external consultation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_EP64mk",
+        "frequently_asked_question_mK4jQW",
+        "frequently_asked_question_6d9PWy",
+        "frequently_asked_question_q6cWXm",
+        "frequently_asked_question_xrTpVV",
+        "frequently_asked_question_WGBEQg",
+        "frequently_asked_question_PwHBUR"
+      ],
+      "disabled": true,
+      "name": "t:sections.question_and_answer.name",
+      "settings": {
+        "heading": "[Frequently Asked Questions]",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "show_border": false,
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "contact_form_f9c3md": {
+      "type": "contact-form",
+      "blocks": {
+        "name_BdDbDD": {
+          "type": "name",
+          "settings": {
+            "heading": "Name",
+            "mark_as_required": false
+          }
+        },
+        "email_9ECGp8": {
+          "type": "email",
+          "settings": {
+            "heading": "Email"
+          }
+        },
+        "phone_DqwQRy": {
+          "type": "phone",
+          "settings": {
+            "heading": "Phone number",
+            "mark_as_required": false
+          }
+        },
+        "message_G4rmFa": {
+          "type": "message",
+          "settings": {
+            "heading": "Message",
+            "mark_as_required": false
+          }
+        }
+      },
+      "block_order": [
+        "name_BdDbDD",
+        "email_9ECGp8",
+        "phone_DqwQRy",
+        "message_G4rmFa"
+      ],
+      "disabled": true,
+      "name": "t:sections.contact-form.name",
+      "settings": {
+        "heading": "Book Yours Today",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "text": "",
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "button_label": "Request a call-back",
+        "button_alignment": "center",
+        "success_message": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "show_content": "none",
+        "form_alignment": "left",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "contact_heading": "Contact infomation",
+        "highlight_type_1": "underline",
+        "heading_tag_2": "h2",
+        "infomation": "",
+        "address": "75 9th Ave, New York, NY 10011-7006",
+        "phone_nummber": "+1234567890",
+        "email_address": "info@yourstore.com",
+        "contact_text": "<p>Opening hours</p><p>Mon - Fri, 8:30am - 10:30pm,<br/>Saturday, 8:30am - 10:30pm,<br/>Sunday, 8:30am - 10:30pm</p>",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "comparison_table_4LkDY4": {
+      "type": "comparison-table",
+      "blocks": {
+        "criterion_Q6hdYB": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Total biomarkers screened",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "181+\n100\n77\n40"
+          }
+        },
+        "criterion_Bptdxj": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Advanced cardiac markers (hs-CRP, ApoB, Lp(a))",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nyes\nLimited\nNo"
+          }
+        },
+        "criterion_zWjeGP": {
+          "type": "criterion",
+          "settings": {
+            "heading": "In-depth hormones & insulin",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nyes\nLimited\nNo"
+          }
+        },
+        "criterion_KxcrJr": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Micronutrients & amino-acids",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nLimited\nNo\nNo"
+          }
+        },
+        "criterion_Ddnp8J": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Doctor-interpreted longevity plan",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "yes\nyes\nyes\nNo"
+          }
+        },
+        "criterion_MKxXgD": {
+          "type": "criterion",
+          "settings": {
+            "heading": "Price (INR)",
+            "criterion_detail_product": "Yes",
+            "criterion_detail_externals": "18,000\n10,000\n7,500 \n5,000+"
+          }
+        }
+      },
+      "block_order": [
+        "criterion_Q6hdYB",
+        "criterion_Bptdxj",
+        "criterion_zWjeGP",
+        "criterion_KxcrJr",
+        "criterion_Ddnp8J",
+        "criterion_MKxXgD"
+      ],
+      "disabled": true,
+      "name": "t:sections.comparision-table.name",
+      "settings": {
+        "heading": "Which Blood Panel is right for you?",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "description": "<p>Add further details to describe your comparison table</p>",
+        "product": "",
+        "alternative_text": "AIWO blood Panels vs Outside Tests",
+        "external_item_labels": "AIWO 181\nAIWO 100\nAIWO 77\nOutside tests",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "column_highlight_light": "rgba(0,0,0,0)",
+        "line_border": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "column_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_3ar7XE": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Gd7CYH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_Pqd4JP": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "caption_mjGcY6": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "uppercase",
+            "text_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_Gd7CYH",
+        "button_Pqd4JP",
+        "caption_mjGcY6"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_ajb9qg": {
+      "type": "rich-text",
+      "blocks": {
+        "text_gJR6M9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_RHbmm4": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "caption_4DwHwC": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "uppercase",
+            "text_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_gJR6M9",
+        "button_RHbmm4",
+        "caption_4DwHwC"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "blocks_yxryWz": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4de80e5_g3bKyy": {
+          "type": "ai_gen_block_4de80e5",
+          "settings": {
+            "max_width": 1400,
+            "grid_gap": 48,
+            "section_padding_desktop": 64,
+            "section_padding_mobile": 48,
+            "heading": "Your Fasting Journey Is Harder Than It Should Be",
+            "heading_highlight_text": "Fasting Journey",
+            "heading_size_desktop": 54,
+            "heading_size_mobile": 32,
+            "heading_color": "#211e1e",
+            "heading_highlight_color": "#d68641",
+            "subheading": "Start a new chapter with India's first science-backed fasting nutrition system. Get premium Fast Bars + Extra Virgin Olive Oil with exclusive freebies worth ₹11,000+",
+            "subheading_size_desktop": 18,
+            "subheading_size_mobile": 16,
+            "subheading_color": "#545252",
+            "stat_1_title": "5g Protein",
+            "stat_1_subtitle": "Per bar",
+            "stat_2_title": "Rich in MCTs",
+            "stat_2_subtitle": "Energy boost",
+            "stat_3_title": "Premium Ingredients",
+            "stat_3_subtitle": "Quality first",
+            "stat_4_title": "A.C. Verified",
+            "stat_4_subtitle": "Certified",
+            "stat_icon_color": "#d68641",
+            "primary_button_text": "View Combo Deals ↓",
+            "primary_button_link": "",
+            "button_bg_color": "#5b2e28",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#ffffff",
+            "button_hover_text_color": "#5b2e28",
+            "secondary_link_text": "How It Works →",
+            "secondary_link_url": "",
+            "show_countdown": true,
+            "countdown_label": "Offer Ends In:",
+            "countdown_hours": 24,
+            "countdown_bg_color": "#fff6ef",
+            "trust_1": "FSSAI Approved",
+            "trust_2": "30-Day Guarantee",
+            "trust_3": "Free Shipping",
+            "trust_4": "10,000+ Customers",
+            "trust_check_color": "#4caf50",
+            "trust_border_color": "#e0e0e0",
+            "product_image": "shopify://shop_images/wwwss.png",
+            "show_discount_badge": true,
+            "badge_up_text": "UP TO",
+            "badge_percent_text": "72%",
+            "badge_off_text": "OFF",
+            "badge_bg_color": "#5b2e28",
+            "badge_text_color": "#ffffff",
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8d81460_PhBtCt": {
+          "type": "ai_gen_block_8d81460",
+          "settings": {
+            "max_width": 1200,
+            "padding_vertical": 64,
+            "padding_vertical_mobile": 48,
+            "padding_horizontal": 20,
+            "background_color": "#2b2b2b",
+            "heading_part_1": "What You Could Eat",
+            "heading_part_2": "During Your Fast",
+            "heading_part_3": "Without Breaking It?",
+            "heading": "",
+            "heading_font": "assistant_n4",
+            "heading_size_desktop": 42,
+            "heading_size_mobile": 28,
+            "heading_color": "#ffffff",
+            "highlight_color": "#d68641",
+            "heading_margin_bottom": 20,
+            "body_text": "Most fast-friendly options break your autophagy, spike insulin, or contain hidden sugars. We engineered a better way.",
+            "body_font": "assistant_n4",
+            "body_size": 16,
+            "body_color": "#e0e0e0",
+            "line_height": 1.7,
+            "body_max_width": 800,
+            "body_margin_bottom": 48,
+            "icon_size": 40,
+            "icon_color": "#ffffff",
+            "feature_text_size": 14,
+            "feature_text_color": "#ffffff",
+            "feature_gap": 30,
+            "feature_gap_mobile": 20,
+            "feature_icon_text_gap": 10,
+            "feature_1_enabled": true,
+            "feature_1_text": "5g Protein",
+            "feature_2_enabled": true,
+            "feature_2_text": "Rich in MCTs",
+            "feature_3_enabled": true,
+            "feature_3_text": "Premium Ingredients",
+            "feature_4_enabled": true,
+            "feature_4_text": "Autophagy Compatible"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_04becbf_dQz84M": {
+          "type": "ai_gen_block_04becbf",
+          "settings": {
+            "section_heading": "<strong>6 Reasons Your </strong><em><strong>Body Will Thank You</strong></em>",
+            "highlight_text": "Body Will Thank You",
+            "heading_font": "poppins_n4",
+            "heading_size_desktop": 42,
+            "heading_size_mobile": 28,
+            "heading_color": "#211e1e",
+            "heading_highlight_color": "#d68641",
+            "header_margin_bottom": 64,
+            "desktop_width_percent": 100,
+            "max_width": 1400,
+            "section_padding_desktop": 100,
+            "section_padding_mobile": 48,
+            "section_padding_horizontal": 20,
+            "section_background": "#ffffff",
+            "grid_gap": 32,
+            "card_background": "#ffffff",
+            "card_border_width": 2,
+            "card_border_color": "#f0f0f0",
+            "card_border_radius": 0,
+            "card_padding": 32,
+            "card_padding_mobile": 24,
+            "card_shadow_color": "#211e1e0f",
+            "card_shadow_hover_color": "#211e1e1a",
+            "image_size": 200,
+            "image_size_mobile": 180,
+            "card_heading_font": "assistant_n4",
+            "card_heading_size": 20,
+            "card_heading_size_mobile": 18,
+            "card_heading_color": "#211e1e",
+            "body_font": "assistant_n4",
+            "body_size": 16,
+            "body_color": "#545252",
+            "badge_size": 12,
+            "badge_color": "#545252",
+            "checkmark_color": "#4caf50",
+            "card_1_enabled": true,
+            "card_1_heading": "Kick-Starts Metabolic Energy",
+            "card_1_highlight": "Metabolic Energy",
+            "card_1_body": "Kickstart a new chapter with healthy fats that fuel sustained energy without breaking your fast or spiking insulin.",
+            "card_1_badge": "Included in all combos",
+            "card_2_enabled": true,
+            "card_2_heading": "Keeps Feeling Full",
+            "card_2_highlight": "Feeling Full",
+            "card_2_body": "High in MCTs and healthy fats that keep you satiated longer, reducing cravings during your fasting window.",
+            "card_2_badge": "Included in all combos",
+            "card_3_enabled": true,
+            "card_3_heading": "Head-Start Replacement",
+            "card_3_highlight": "Head-Start",
+            "card_3_body": "The perfect breakfast replacement with complete nutrition that supports your fasting protocol.",
+            "card_3_badge": "Included in all combos",
+            "card_4_enabled": true,
+            "card_4_heading": "Complete Protein & Fiber",
+            "card_4_highlight": "Protein & Fiber",
+            "card_4_body": "5g of clean protein and dietary fiber to support gut health and muscle preservation during fasting.",
+            "card_4_badge": "Included in all combos",
+            "card_5_enabled": true,
+            "card_5_heading": "Pre & Post-Workout Support",
+            "card_5_highlight": "Workout Support",
+            "card_5_body": "Fuel your workouts without breaking your fast. Perfect pre/post training nutrition.",
+            "card_5_badge": "Included in all combos",
+            "card_6_enabled": true,
+            "card_6_heading": "Improves Nutrient Status",
+            "card_6_highlight": "Nutrient Status",
+            "card_6_body": "Extra virgin olive oil rich in polyphenols and antioxidants for cellular health and longevity.",
+            "card_6_badge": "Included in all combos"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_b0edc4c_mKJhmi": {
+          "type": "ai_gen_block_b0edc4c",
+          "settings": {
+            "max_width": 1200,
+            "padding_vertical": 64,
+            "padding_horizontal": 20,
+            "background_color": "#f5f2ed",
+            "heading_part_1": "Supporting Your",
+            "heading_highlight": "11 Pillars",
+            "heading_part_2": "of Longevity",
+            "heading_font": "assistant_n4",
+            "heading_size_desktop": 42,
+            "heading_size_mobile": 28,
+            "heading_color": "#211e1e",
+            "highlight_color": "#d68641",
+            "heading_margin_bottom": 20,
+            "subheading": "Fast Bar + EVOO combo supports 8 out of 11 pillars in the LONGEVIS MATRIX framework: Nutrition, Fasting, Inflammation, Metabolism, Gut Health, Brain Health, Cellular Health, Sleep Quality",
+            "body_font": "assistant_n4",
+            "subheading_size": 16,
+            "subheading_color": "#545252",
+            "subheading_max_width": 900,
+            "subheading_margin_bottom": 48,
+            "active_pillars": "nutrition,fasting,inflammation,metabolism,gut,brain,cellular,sleep",
+            "icon_size": 64,
+            "icon_size_mobile": 48,
+            "active_icon_color": "#5b2e28",
+            "active_icon_background": "#ffffff",
+            "inactive_icon_color": "#cccccc",
+            "icon_background": "#ffffff",
+            "inactive_opacity": 0.5,
+            "label_size": 13,
+            "label_size_mobile": 12,
+            "pillar_gap": 24,
+            "pillar_gap_mobile": 16,
+            "pillars_margin_bottom": 40,
+            "link_text": "Explore Full Matrix →",
+            "link_url": "",
+            "link_size": 16
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_ca85a44_UVzXwj": {
+          "type": "ai_gen_block_ca85a44",
+          "settings": {
+            "combo_1_image": "shopify://shop_images/i.png",
+            "combo_1_product": "",
+            "combo_2_image": "shopify://shop_images/c2.png",
+            "combo_2_product": "",
+            "combo_3_image": "shopify://shop_images/c3.png",
+            "combo_3_product": "",
+            "combo_4_image": "shopify://shop_images/c4.png",
+            "combo_4_product": "",
+            "combo_5_image": "shopify://shop_images/c6.png",
+            "combo_5_product": "",
+            "combo_6_image": "shopify://shop_images/c5.png",
+            "combo_6_product": "",
+            "combo_7_image": "shopify://shop_images/c7.png",
+            "combo_7_product": "",
+            "combo_8_image": "shopify://shop_images/c8.png",
+            "combo_8_product": ""
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_ffdb471_hcgAAg": {
+          "type": "ai_gen_block_ffdb471",
+          "settings": {
+            "title_part1": "Premium Ingredients.",
+            "title_part2": "Complete Transparency.",
+            "title_size_desktop": 42,
+            "title_size_mobile": 28,
+            "title_color": "#211e1e",
+            "title_highlight_color": "#d68641",
+            "header_margin_bottom": 64,
+            "fastbar_heading": "What's Inside Every Bar",
+            "fastbar_item1": "Grass-fed Ghee",
+            "fastbar_item2": "Organic Coconut Oil",
+            "fastbar_item3": "Premium Cocoa",
+            "fastbar_item4": "Probiotic Chicory Fiber",
+            "fastbar_item5": "Monk Fruit Sweetener",
+            "fastbar_item6": "Pink Himalayan Salt",
+            "fastbar_footer": "Zero artificial sweeteners, colors, or preservatives",
+            "evoo_heading": "Cold-Pressed, Single-Origin Excellence",
+            "evoo_item1": "Cold-pressed within 24 hours",
+            "evoo_item2": "Single-origin Mediterranean olives",
+            "evoo_item3": "Rich in polyphenols & antioxidants",
+            "evoo_item4": "FSSAI certified pure & natural",
+            "evoo_item5": "Dark glass bottle for freshness",
+            "evoo_footer": "",
+            "max_width": 1200,
+            "section_padding": 64,
+            "row_spacing": 64,
+            "image_size": 400,
+            "image_size_mobile": 300,
+            "heading_size": 24,
+            "heading_size_mobile": 20,
+            "list_text_size": 16,
+            "background_color": "#ffffff",
+            "heading_color": "#211e1e",
+            "list_text_color": "#545252",
+            "checkmark_color": "#5b2e28"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_7f94fbd_rK3XAV": {
+          "type": "ai_gen_block_7f94fbd",
+          "settings": {
+            "background_color": "#f5f2ed",
+            "padding_vertical": 64,
+            "padding_vertical_mobile": 40,
+            "padding_horizontal": 20,
+            "max_width": 1200,
+            "desktop_width_percent": 100,
+            "heading": "What Our Customers Is Saying",
+            "highlight_text": "Our Customers",
+            "heading_font": "assistant_n4",
+            "heading_size_desktop": 42,
+            "heading_size_mobile": 28,
+            "heading_color": "#211e1e",
+            "highlight_color": "#d68641",
+            "heading_margin_bottom": 48,
+            "video_url": "",
+            "video_width": 400,
+            "video_height": 600,
+            "video_width_mobile": 280,
+            "video_height_mobile": 420,
+            "border_radius": 12,
+            "shadow": "0 6px 28px rgba(33,30,30,0.12)",
+            "play_button_color": "#5b2e28",
+            "enable_loop": true,
+            "enable_mute": false,
+            "customer_name": "",
+            "location": "",
+            "body_font": "assistant_n4",
+            "name_size": 18,
+            "location_size": 14,
+            "text_color": "#211e1e",
+            "location_color": "#545252",
+            "show_rating": true,
+            "quote": "",
+            "quote_size": 16,
+            "quote_size_mobile": 16,
+            "bottom_text": "<p>Join 10,000+ Indians on their longevity journey</p>",
+            "bottom_text_size": 20,
+            "bottom_margin_top": 48
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_4ff734a_jgFFRa": {
+          "type": "ai_gen_block_4ff734a",
+          "disabled": true,
+          "settings": {
+            "background_color": "#ffffff",
+            "padding_vertical": 64,
+            "max_width": 1200,
+            "desktop_width_percent": 100,
+            "main_heading_part1": "Everything",
+            "main_heading_highlight": "Your Body Needs",
+            "main_heading_part2": ". Nothing It Doesn't.",
+            "heading_font": "assistant_n4",
+            "heading_size_desktop": 42,
+            "heading_size_mobile": 28,
+            "heading_color": "#211e1e",
+            "highlight_color": "#d68641",
+            "heading_margin_bottom": 48,
+            "image_width": 400,
+            "image_height": 500,
+            "image_border_radius": 8,
+            "subheading": "Nutrition Information Per Bar",
+            "subheading_font": "assistant_n4",
+            "subheading_size": 16,
+            "text_color": "#211e1e",
+            "table_font": "assistant_n4",
+            "table_font_size": 15,
+            "table_border_color": "#e5e5e5",
+            "energy_label": "Energy",
+            "energy_value": "200 kcal",
+            "protein_label": "Protein",
+            "protein_value": "5g",
+            "fat_label": "Total Fat",
+            "fat_value": "12g",
+            "carbs_label": "Carbohydrates",
+            "carbs_value": "18g",
+            "fiber_label": "Dietary Fiber",
+            "fiber_value": "3g",
+            "sodium_label": "Sodium",
+            "sodium_value": "150mg",
+            "badge_font": "assistant_n4",
+            "badge_font_size": 14,
+            "badge_background": "#f8f8f8",
+            "badge_icon_color": "#4caf50",
+            "badge_border_radius": 8,
+            "badge_1_text": "No Added Sugar",
+            "badge_2_text": "Gluten-Free",
+            "badge_3_text": "Keto-Friendly",
+            "badge_4_text": "FSSAI Approved"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4de80e5_g3bKyy",
+        "ai_gen_block_8d81460_PhBtCt",
+        "ai_gen_block_04becbf_dQz84M",
+        "ai_gen_block_b0edc4c_mKJhmi",
+        "ai_gen_block_ca85a44_UVzXwj",
+        "ai_gen_block_ffdb471_hcgAAg",
+        "ai_gen_block_7f94fbd_rK3XAV",
+        "ai_gen_block_4ff734a_jgFFRa"
+      ],
+      "settings": {}
+    },
+    "faq_UcGENx": {
+      "type": "faq",
+      "blocks": {
+        "category_AnchT7": {
+          "type": "category",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "icon_size": 28,
+            "title": "Category"
+          }
+        },
+        "frequently_asked_question_c3tnj7": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Frequently asked question",
+            "row_content": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        },
+        "frequently_asked_question_XPTLRt": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Frequently asked question",
+            "row_content": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        },
+        "frequently_asked_question_bw9aHn": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Frequently asked question",
+            "row_content": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        },
+        "frequently_asked_question_8AKp3D": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Frequently asked question",
+            "row_content": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_AnchT7",
+        "frequently_asked_question_c3tnj7",
+        "frequently_asked_question_XPTLRt",
+        "frequently_asked_question_bw9aHn",
+        "frequently_asked_question_8AKp3D"
+      ],
+      "name": "t:sections.question_and_answer.name",
+      "settings": {
+        "heading": "FAQs",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "show_border": false,
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": true,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "image_with_text_jCfpqN",
+    "main",
+    "multicolumn_k9HCii",
+    "multicolumn_JVpPji",
+    "rich_text_jUxE9U",
+    "flow_H83gaY",
+    "flow_WMyd9T",
+    "multicolumn_4cqMrY",
+    "multicolumn_qntr67",
+    "multicolumn_mWtkCb",
+    "rich_text_FkQA4M",
+    "rich_text_nkXKKT",
+    "featured_product_YFCwmy",
+    "multicolumn_jggGnD",
+    "testimonials_bPAxbw",
+    "faq_4JhpGN",
+    "contact_form_f9c3md",
+    "comparison_table_4LkDY4",
+    "rich_text_3ar7XE",
+    "rich_text_ajb9qg",
+    "blocks_yxryWz",
+    "faq_UcGENx"
+  ]
+}

@@ -1,0 +1,669 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo_evoo_v3_styles": {
+      "type": "aiwo-evoo-v3-global-styles",
+      "settings": {
+        "heading_font_size": 24,
+        "heading_font_weight": "700",
+        "heading_line_height": "1.2",
+        "heading_color": "#0c0c0d",
+        "body_font_size": 16,
+        "body_font_weight": "400",
+        "body_line_height": "1.6",
+        "body_color": "#666666",
+        "button_font_size": 16,
+        "button_font_weight": "600"
+      }
+    },
+    "aiwo_evoo_v3_breadcrumb": {
+      "type": "aiwo-evoo-v3-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo_evoo_v3_gallery_enhancements": {
+      "type": "aiwo-evoo-v3-gallery-enhancements",
+      "settings": {
+        "tagline_text": "LONGEVIS MATRIX · Pillar 3",
+        "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+        "tooltip_title": "What is LONGEVIS MATRIX?",
+        "tooltip_desc": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework. Each pillar targets a biological system that determines how fast you age.",
+        "tooltip_pillars_heading": "Pillars this product support",
+        "tooltip_active_pillars": "P3 · Nutrition and Metabolic Health",
+        "tooltip_stack_heading": "Complete your longevity stack",
+        "tooltip_inactive_pillars": "P1 · Sleep      \nP2 · Breathing\nP4 · Social       \nP5 · Exercise\nP6 · Stress       \nP7 · Circadian Rhythm\nP8 · Purpose      \nP9 · Environment\nP10 · Gut Health  \nP11 · Hydration"
+      }
+    },
+    "aiwo_evoo_v3_qty_label": {
+      "type": "aiwo-evoo-v3-quantity-label",
+      "settings": {
+        "mobile_quantity_label": "Add Quantity"
+      }
+    },
+    "main": {
+      "type": "aiwo-pdp-product-info",
+      "blocks": {
+        "product_tag_line_v1_zH8gVV": {
+          "type": "product_tag_line_v1",
+          "settings": {
+            "tag_text": "LONGEVIS MATRIX · Pillar 3 .Pillar 10"
+          }
+        },
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "purchase_stats_v1_CLkWVP": {
+          "type": "purchase_stats_v1",
+          "settings": {
+            "purchase_text": "Probiotics add bacteria. Prebiotics feed the ones you already have.AIWO Prebiotik-D is the substrate your microbiome needs to function at its best.",
+            "weight_text": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_j3mMyH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MRP Incl. of all taxes</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "trust_badges_v1_eUg7qR": {
+          "type": "trust_badges_v1",
+          "settings": {
+            "badge_1_title": "FSSAI Licensed",
+            "badge_1_icon": "shopify://shop_images/Fssai_Logo.png",
+            "badge_2_title": "ISO 9001:2015 Certified",
+            "badge_2_icon": "shopify://shop_images/iso.svg",
+            "badge_3_title": "Vegan Certified",
+            "badge_3_icon": "shopify://shop_images/Vegetarian_Capsule_svg.svg",
+            "badge_4_title": "GMO Free",
+            "badge_4_icon": "shopify://shop_images/free_15413948.svg",
+            "badge_5_title": "Pesticide Free",
+            "badge_5_icon": "shopify://shop_images/free_15413881.svg",
+            "badge_6_title": "Kosher Certified",
+            "badge_6_icon": "shopify://shop_images/underline_8284230.svg"
+          }
+        },
+        "benefits_grid_v1_KiKTqL": {
+          "type": "benefits_grid_v1",
+          "settings": {
+            "benefit_1_title": "Dual-Fibre Prebiotic",
+            "benefit_1_text": "Oligofructose + Inulin — two fibres, two gut zones, one formula",
+            "benefit_1_icon": "shopify://shop_images/digestive-system_5862745.svg",
+            "benefit_2_title": "Bifidogenic Action",
+            "benefit_2_text": "Preferentially supports Bifidobacterium — the most studied beneficial gut bacteria",
+            "benefit_2_icon": "shopify://shop_images/genetic-engineering_15758587.svg",
+            "benefit_3_title": "Gut-Brain Axis",
+            "benefit_3_text": "90% of serotonin is produced in the gut — your microbiome is the environment",
+            "benefit_3_icon": "shopify://shop_images/brain_18233416.svg",
+            "benefit_4_title": "Clean and Certified",
+            "benefit_4_text": "Vegan, GMO-free, pesticide-free, Kosher certified — sourced from Beneo Orafti",
+            "benefit_4_icon": "shopify://shop_images/authenticity_18722255.svg"
+          }
+        },
+        "marquee_v1_iehzTE": {
+          "type": "marquee_v1",
+          "settings": {
+            "marquee_bg_color": "#2c2416",
+            "marquee_text_color": "#ffffff",
+            "marquee_text_1": "Dual-Fibre Prebiotic",
+            "marquee_text_2": "Bifidogenic Action",
+            "marquee_text_3": "60 Servings",
+            "marquee_text_4": "Gut-Brain Axis Support",
+            "marquee_text_5": "Pesticide Free",
+            "marquee_text_6": "Orafti Chicory Root"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "html_jpVgQ3": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": true,
+            "protocol_tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "protocol_tooltip_title": "What is Protocol?",
+            "protocol_tooltip_desc": "A protocol is a daily system of supplements each one targeting specific longevity pillars."
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "disabled": true,
+          "settings": {}
+        },
+        "recommended_products_v1_6t3TaN": {
+          "type": "recommended_products_v1",
+          "settings": {
+            "recs_tag": "Complete the protocol",
+            "heading_text": "AIWO Prebiotik-D",
+            "heading_italic": "Works Better As A System",
+            "description_text": "Pair AIWO Prebiotik-D with complementary LONGEVIS MATRIX supplements for deeper gut, immune, and metabolic support.",
+            "image_desktop": "shopify://shop_images/Protocol_-_Landing_Page_Olive_Oil_dd1ca5f2-19c9-4660-8a59-8c4e728565f4.jpg",
+            "image_mobile": "shopify://shop_images/07._Protocal_Olive_Oil_8366ea37-ee61-4c6f-ac23-fde8013ecbd3.jpg",
+            "show_desktop": true,
+            "show_mobile": true,
+            "bundle_mode": true,
+            "bundle_pillar": "Add on ·  Pillar 3+Pillar 10",
+            "bundle_title": "Gut and Metabolic Stack",
+            "bundle_desc": "Prebiotik-D + Glycine — dual-layer gut support and microbiome maintenance",
+            "bundle_best_pick_text": "Best Pick",
+            "bundle_custom_price": "",
+            "bundle_product_1": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "bundle_product_2": "aiwo-glycine",
+            "bundle_product_3": "",
+            "bundle_learn_more_product": "",
+            "product_1": "aiwo-glycine",
+            "pillar_1": "Add on · Pillar 3",
+            "custom_title_1": "",
+            "desc_1": "",
+            "best_pick_text_1": "",
+            "product_2": "aiwo-taurine-100g",
+            "pillar_2": "Add on · Pillar 6",
+            "custom_title_2": "",
+            "desc_2": "",
+            "best_pick_text_2": "",
+            "product_3": "",
+            "pillar_3": "",
+            "custom_title_3": "",
+            "desc_3": "",
+            "best_pick_text_3": ""
+          }
+        },
+        "proven_health_benefits_v1_NpKbtK": {
+          "type": "proven_health_benefits_v1",
+          "settings": {
+            "phb_tag": "",
+            "phb_title": "Proven Benefits of Oligofructose and Inulin Supplementation",
+            "phb_stat_1_num": "+25–40%",
+            "phb_stat_1_label": "Increase in Bifidobacterium Counts with Prebiotic Fibre Supplementation",
+            "phb_stat_1_source": "Roberfroid et al. J Nutr 2010",
+            "phb_stat_2_num": "70%",
+            "phb_stat_2_label": "Of the Immune System Resides in Gut-Associated Lymphoid Tissue (GALT)",
+            "phb_stat_2_source": "Vighi et al. Clin Exp Immunol 2008",
+            "phb_stat_3_num": "",
+            "phb_stat_3_label": "",
+            "phb_stat_3_source": "",
+            "phb_stat_4_num": "",
+            "phb_stat_4_label": "",
+            "phb_stat_4_source": ""
+          }
+        },
+        "text_gzYkwz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*Figures observed in meta-analyses and randomised controlled trials on EVOO and Mediterranean diet interventions. Individual results may vary. This is a food product. Not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "number_of_lines_shown": "",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_QVph7M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Download Sample Report",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "button_8zEkHK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore 181 Biomarkers",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": true,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "product_tag_line_v1_zH8gVV",
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "purchase_stats_v1_CLkWVP",
+        "price",
+        "text_j3mMyH",
+        "description",
+        "trust_badges_v1_eUg7qR",
+        "benefits_grid_v1_KiKTqL",
+        "marquee_v1_iehzTE",
+        "gift_wrapping_EK3NQn",
+        "html_jpVgQ3",
+        "buy_buttons",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "recommended_products_v1_6t3TaN",
+        "proven_health_benefits_v1_NpKbtK",
+        "text_gzYkwz",
+        "button_QVph7M",
+        "button_8zEkHK",
+        "complementary_XCwmDV",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked",
+        "thumbnail_position": "vertical",
+        "enable_sticky_image": true,
+        "mobile_media_size": "full_width",
+        "show_arrow_button": false,
+        "show_thumnail_mobile": false,
+        "spacing_col": "small",
+        "full_width": true,
+        "transition_style": "fade",
+        "show_first_image_avaiable": true,
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD": {
+      "type": "aiwo-evoo-v3-aiwo-difference",
+      "blocks": {
+        "stat_circle_336cQP": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "4g",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Per Serving",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Starting Dose"
+          }
+        },
+        "stat_circle_meQiJa": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "60",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Servings",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Per Pack"
+          }
+        },
+        "stat_circle_V8MT9Y": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "2",
+            "stat_sub": "Active Fibres",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Dual Action"
+          }
+        },
+        "tagline_sub_86PARc": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/iodine.svg",
+            "text": "Oligofructose Enriched Inulin"
+          }
+        },
+        "card_bullet_PQqYc3": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Most prebiotic supplements contain a single fibre type. AIWO Prebiotik-D combines oligofructose and inulin — two fibres\nwith complementary chain lengths and fermentation zones. Oligofructose (shorter chain) is rapidly fermented in the proximal\ncolon and small intestine, producing an immediate bifidogenic effect. Inulin (longer chain) travels further, reaching the\ndistal colon to sustain fermentation and support deeper microbiome populations.\n\nTogether, they provide complete coverage — top to bottom — ensuring your beneficial bacteria are fed across the entire gut,\nnot just one zone.\n\nSourced from Beneo Orafti. Chicory root derived. Clinically studied prebiotic fibres."
+          }
+        },
+        "stat_circle_Hhd9iw": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "15g",
+            "stat_sub": "Max Daily",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Graduated Dose"
+          }
+        },
+        "tagline_sub_nR9nBX": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/plant.svg",
+            "text": "Chicory Root Derived (Beneo)"
+          }
+        }
+      },
+      "block_order": [
+        "stat_circle_336cQP",
+        "stat_circle_meQiJa",
+        "stat_circle_V8MT9Y",
+        "tagline_sub_86PARc",
+        "card_bullet_PQqYc3",
+        "stat_circle_Hhd9iw",
+        "tagline_sub_nR9nBX"
+      ],
+      "name": "AIWO Difference",
+      "settings": {
+        "bg_desktop": "shopify://shop_images/Desktop-BG.png",
+        "bg_mobile": "shopify://shop_images/Mobile-BG.png",
+        "heading": "Not All Prebiotic Supplements",
+        "heading_italic": "Work the Full Length of Your Gut",
+        "main_tag": "· Orafti Sourced · Verified Purity",
+        "card_heading_white": "DELIVERING",
+        "card_heading_gold": "Full Gut Coverage",
+        "card_icon": "shopify://shop_images/Frame_d47b8e26-3f6e-4c61-b06d-0e22994683c3.svg",
+        "disclaimer": "*Individual results vary. Consume as part of a balanced diet and active lifestyle.Not intended to diagnose, treat, cure, or prevent any disease."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_comparison_wVNYTt": {
+      "type": "aiwo-comparison",
+      "blocks": {
+        "comparison_row_mcaRP8": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Dual fibre — two gut zones covered",
+            "right_feature": "Single fibre — limited gut coverage"
+          }
+        },
+        "comparison_row_VaPp4F": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Oligofructose + Inulin together",
+            "right_feature": "Often inulin alone or FOS blend"
+          }
+        },
+        "comparison_row_YJRD3c": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Orafti Beneo sourced ingredient",
+            "right_feature": "Ingredient source unverified"
+          }
+        },
+        "comparison_row_iBKFFz": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Unflavoured — no additives",
+            "right_feature": "Often flavoured with sweeteners"
+          }
+        },
+        "comparison_row_QTKPHg": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Vegan, GMO-free, Pesticide-free",
+            "right_feature": "Certification varies"
+          }
+        },
+        "comparison_row_YpTHXW": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "60 servings per pack — 250g",
+            "right_feature": "Typically 30 servings per pack"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_mcaRP8",
+        "comparison_row_VaPp4F",
+        "comparison_row_YJRD3c",
+        "comparison_row_iBKFFz",
+        "comparison_row_QTKPHg",
+        "comparison_row_YpTHXW"
+      ],
+      "name": "AIWO Comparison Table",
+      "settings": {
+        "tagline": "WHY AIWO",
+        "heading": "AIWO Prebiotik-D vs",
+        "heading_italic": "Others Prebiotic Supplements",
+        "left_image": "shopify://shop_images/Frame_2147224933_7772b456-55db-4a96-9492-0e7d5273a6fa.png",
+        "left_title": "",
+        "icon_check": "shopify://shop_images/Frame_12.svg",
+        "btn_text": "Buy Now",
+        "btn_link": "https://shop-aiwo.myshopify.com/cart/37735838122166:1?channel=buy_button",
+        "right_image": "shopify://shop_images/Frame_2147224934_fadab04f-0424-45ae-9a35-aa41c242fa64.png",
+        "right_title": "",
+        "icon_cross": "shopify://shop_images/Group_13.svg"
+      }
+    },
+    "section_evoo_v3_faq_rRJhLR": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_N3EUqB": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take AIWO Prebiotik-D with probiotic supplements?",
+            "answer": "<p>Yes — prebiotics and probiotics are complementary. Prebiotics feed beneficial<br/>    bacteria; probiotics introduce them. Used together (a synbiotic approach),<br/>    you are both adding beneficial strains and ensuring they have the substrate to<br/>    survive and multiply. Bifidobacterium specifically thrives on inulin-type<br/>    fructans — making AIWO Prebiotik-D an ideal companion to any Bifidobacterium<br/>    probiotic supplement.<br/><br/></p>"
+          }
+        },
+        "faq_item_BFc6Am": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the difference between prebiotics and probiotics?",
+            "answer": "<p>Probiotics are live bacteria added from outside — supplements or fermented foods.<br/>    Prebiotics are the fibres that feed the bacteria already living in your gut.<br/>    Most people focus on adding bacteria without first ensuring the environment can<br/>    support them. AIWO Prebiotik-D feeds your existing microbiome — particularly<br/>    Bifidobacterium and Lactobacillus — the strains most associated with gut health,<br/>    immunity, and mood regulation.<br/><br/></p>"
+          }
+        },
+        "faq_item_pgG9dR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why does AIWO Prebiotik-D use both oligofructose and inulin?",
+            "answer": "<p>The two fibres ferment at different rates and in different gut zones.<br/>    Oligofructose has a shorter chain length — it is fermented earlier, in the<br/>    proximal colon and small intestine, providing a rapid bifidogenic effect.<br/>    Inulin has a longer chain — it travels further into the large intestine,<br/>    providing sustained fermentation and deeper microbiome support.<br/>    Together, they cover the full length of the gut rather than a single section.<br/><br/><br/></p>"
+          }
+        },
+        "faq_item_zet6LP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who benefits most from AIWO Prebiotik-D?",
+            "answer": "<p>Adults looking to support their gut microbiome diversity, immune health,<br/>    and digestive regularity. Particularly relevant for those with low-fibre diets,<br/>    high antibiotic use history, urban lifestyles with processed food exposure, or<br/>    anyone seeking to support the gut-brain axis as part of a longevity protocol.<br/>    Consult your physician before use if pregnant, nursing, or on medication.<br/><br/></p>"
+          }
+        },
+        "faq_item_Q6TUxh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is AIWO Prebiotik-D vegan?",
+            "answer": "<p>Yes. AIWO Prebiotik-D is certified vegan, GMO-free, and pesticide-free.<br/>    It contains no animal-derived ingredients. The active ingredient is derived from<br/>    chicory root via Beneo Orafti — a globally recognised plant-sourced prebiotic<br/>    ingredient supplier. It also carries Kosher certification (U symbol).<br/><br/></p>"
+          }
+        },
+        "faq_item_WyBt4K": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How should I start taking it?",
+            "answer": "<p>Start with one 4g scoop mixed in hot water daily. If tolerated well, you can<br/>    gradually increase to a maximum of 15g per day. Starting low and increasing<br/>    slowly allows your microbiome to adapt without discomfort (gas or bloating<br/>    can occur with rapid dose increases in those unaccustomed to prebiotic fibre).<br/>    Keep tightly closed after every use. Store in a cool, dry place.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_N3EUqB",
+        "faq_item_BFc6Am",
+        "faq_item_pgG9dR",
+        "faq_item_zet6LP",
+        "faq_item_Q6TUxh",
+        "faq_item_WyBt4K"
+      ],
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    },
+    "177510445730616487": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_009ce11_pnkBHH": {
+          "type": "ai_gen_block_009ce11",
+          "name": "V3- temporary",
+          "settings": {
+            "background_image": "shopify://shop_images/CTA_0a37e659-17d9-4ecb-9ae8-4b986cc5ebf5.png",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.3,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "padding_top_mobile": 60,
+            "padding_bottom_mobile": 60,
+            "content_max_width": 1000,
+            "spacing_between_elements": 20,
+            "heading": "Your Gut Runs More Than Your Digestion.Feed It Like It Matters.",
+            "heading_size": 48,
+            "heading_size_mobile": 32,
+            "heading_font_weight": "700",
+            "heading_color": "#ffffff",
+            "description": "AIWO Prebiotik-D 250g. Two fibres. 60 servings. The daily prebiotic your microbiome needs.",
+            "description_size": 18,
+            "description_size_mobile": 16,
+            "description_font_weight": "400",
+            "description_color": "#ffffff",
+            "show_button": true,
+            "button_text": "Buy Now",
+            "button_font_size": 16,
+            "button_font_size_mobile": 14,
+            "button_font_weight": "600",
+            "button_padding_vertical": 16,
+            "button_padding_horizontal": 40,
+            "button_border_radius": 4,
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "button_hover_background_color": "#0c0c0d",
+            "button_hover_text_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_009ce11_pnkBHH"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "aiwo_evoo_v3_styles",
+    "aiwo_evoo_v3_breadcrumb",
+    "aiwo_evoo_v3_gallery_enhancements",
+    "aiwo_evoo_v3_qty_label",
+    "main",
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD",
+    "product-recommendations",
+    "aiwo_comparison_wVNYTt",
+    "section_evoo_v3_faq_rRJhLR",
+    "177510445730616487"
+  ]
+}

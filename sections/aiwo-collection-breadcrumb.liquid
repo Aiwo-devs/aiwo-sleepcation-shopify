@@ -1,0 +1,99 @@
+{% comment %}
+  ============================================================
+  Section  : AIWO Collection — Custom Breadcrumb
+  ============================================================
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .aiwo-shopall-bc {
+    width: 100%;
+    font-family: 'Outfit', sans-serif !important;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  @media (min-width: 768px) {
+    .aiwo-shopall-bc { margin-top: 32px; margin-bottom: 32px; }
+  }
+  @media (min-width: 1024px) {
+    .aiwo-shopall-bc { margin-top: 40px; margin-bottom: 40px; }
+  }
+  .aiwo-shopall-bc__inner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .aiwo-shopall-bc__arrow {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #0C0C0D;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .aiwo-shopall-bc__link {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 14px;
+    font-weight: 400;
+    color: #0C0C0D;
+    text-decoration: none;
+  }
+  .aiwo-shopall-bc__sep {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 14px;
+    font-weight: 400;
+    color: #0C0C0D;
+    user-select: none;
+  }
+  .aiwo-shopall-bc__current {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 14px;
+    font-weight: 400;
+    color: #0C0C0D;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
+
+<nav class="aiwo-shopall-bc page-width" role="navigation" aria-label="Breadcrumb">
+  <div class="aiwo-shopall-bc__inner">
+    <a href="{{ routes.root_url }}" class="aiwo-shopall-bc__arrow" aria-label="Back to Home">
+      {%- if section.settings.back_arrow_icon -%}
+        <img src="{{ section.settings.back_arrow_icon | image_url: width: 24 }}" width="24" height="24" alt="Back">
+      {%- else -%}
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.92812 12.0018H20.4845" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8.55686 16.8585C8.55686 16.8585 4.23754 13.2107 4.23754 12.0017C4.23753 10.7927 8.5569 7.14499 8.5569 7.14499" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      {%- endif -%}
+    </a>
+    <a href="{{ routes.root_url }}" class="aiwo-shopall-bc__link">Home</a>
+    <span class="aiwo-shopall-bc__sep" aria-hidden="true"> / </span>
+    <span class="aiwo-shopall-bc__current" aria-current="page">{{- collection.title | escape -}}</span>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "AIWO Col Breadcrumb",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "back_arrow_icon",
+      "label": "Back arrow icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "AIWO Col Breadcrumb"
+    }
+  ]
+}
+{% endschema %}

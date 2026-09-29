@@ -1,0 +1,390 @@
+{% comment %}
+  ============================================================
+  Section  : Proudly Crafted in Australia
+  Brand    : AIWO EVOO
+  Version  : 2.2.0
+  ============================================================
+  Changes:
+  · Poppins font applied to all text
+  · proudly__body fills full container width (1400px)
+  · Base text is Regular (400), Strong text is SemiBold (600)
+  · Animation: 
+    - All text starts visible at 20% opacity.
+    - Word-by-word opacity increases to 100% from left to right.
+    - Animation scrubs forward/backward based strictly on scroll.
+  ============================================================
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================================
+   DESIGN TOKENS
+   ============================================================================ */
+#proudly-{{ section.id }} {
+  /* Colours */
+  --p-bg:                 #0C0C0D;
+  --p-h2-color:           #FEFEFE;
+  --p-para-color:         #FEFEFE;
+  --p-accent-color:       #919FA8;
+
+  /* Section spacing */
+  --p-pad-v:              48px;
+  --p-pad-h:              60px;
+  --p-max-w:              1400px;
+
+  /* Heading */
+  --p-h2-size:            40px;
+  --p-h2-weight:          600;
+  --p-h2-lh:              120%;
+  --p-h2-mb:              48px;
+
+  /* Paragraph */
+  --p-para-size:          28px;
+  --p-para-weight:        400; /* Regular */
+  --p-para-lh:            160%;
+
+  /* Font */
+  --p-font:               'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ============================================================================
+   SECTION SHELL
+   ============================================================================ */
+#proudly-{{ section.id }} {
+  width: 100%;
+  background-color: var(--p-bg);
+  padding-top: var(--p-pad-v);
+  padding-bottom: var(--p-pad-v);
+  padding-left: var(--p-pad-h);
+  padding-right: var(--p-pad-h);
+}
+
+/* ============================================================================
+   CONTAINER
+   ============================================================================ */
+#proudly-{{ section.id }} .proudly__container {
+  max-width: var(--p-max-w);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================================
+   HEADING — H2
+   STATIC — always fully visible, NO scroll interaction whatsoever
+   ============================================================================ */
+#proudly-{{ section.id }} .proudly__heading {
+  font-family: var(--p-font);
+  font-size: var(--p-h2-size);
+  font-weight: var(--p-h2-weight);
+  font-style: italic;
+  line-height: var(--p-h2-lh);
+  color: var(--p-h2-color);
+  text-align: center;
+  margin: 0 0 var(--p-h2-mb) 0;
+  letter-spacing: -0.01em;
+  opacity: 1;
+}
+
+/* ============================================================================
+   PARAGRAPH WRAPPER
+   ============================================================================ */
+#proudly-{{ section.id }} .proudly__body {
+  width: 100%;
+  font-family: var(--p-font);
+  font-size: var(--p-para-size);
+  font-weight: var(--p-para-weight); /* 400 Regular */
+  line-height: var(--p-para-lh);
+  color: var(--p-para-color);
+  text-align: center;
+}
+
+#proudly-{{ section.id }} .proudly__body p {
+  margin: 0;
+  width: 100%;
+}
+
+/* ============================================================================
+   WORD SPANS — injected by JS
+   Initial state: 20% opacity. No transforms.
+   Added a tiny transition to smooth out mouse-wheel scrolling jumps.
+   ============================================================================ */
+#proudly-{{ section.id }} .proudly__word {
+  display: inline-block;
+  opacity: 0.2; /* Starts at 20% */
+  will-change: opacity;
+  transition: opacity 0.1s ease-out;
+}
+
+/* ============================================================================
+   ACCENT — <strong> tags inside richtext
+   Font weight changed to 600 (SemiBold)
+   ============================================================================ */
+#proudly-{{ section.id }} .proudly__body strong,
+#proudly-{{ section.id }} .proudly__body b {
+  font-weight: 600; /* SemiBold */
+  color: var(--p-accent-color);
+}
+
+#proudly-{{ section.id }} .proudly__body strong .proudly__word,
+#proudly-{{ section.id }} .proudly__body b .proudly__word {
+  color: var(--p-accent-color);
+  font-weight: 600;
+}
+
+/* ============================================================================
+   REDUCED MOTION — instant full reveal
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  #proudly-{{ section.id }} .proudly__word {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — TABLET (≤991px)
+   ============================================================================ */
+@media screen and (max-width: 991px) {
+  #proudly-{{ section.id }} {
+    --p-pad-v:      40px;
+    --p-pad-h:      40px;
+    --p-h2-size:    34px;
+    --p-h2-mb:      36px;
+    --p-para-size:  22px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE LANDSCAPE (≤767px)
+   ============================================================================ */
+@media screen and (max-width: 767px) {
+  #proudly-{{ section.id }} {
+    --p-pad-v:      36px;
+    --p-pad-h:      24px;
+    --p-h2-size:    28px;
+    --p-h2-mb:      28px;
+    --p-para-size:  18px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE PORTRAIT (≤479px)
+   ============================================================================ */
+@media screen and (max-width: 479px) {
+  #proudly-{{ section.id }} {
+    --p-pad-v:      32px;
+    --p-pad-h:      20px;
+    --p-h2-size:    24px;
+    --p-h2-mb:      24px;
+    --p-para-size:  16px;
+    --p-para-lh:    155%;
+  }
+}
+</style>
+
+<section
+  id="proudly-{{ section.id }}"
+  data-section-type="proudly-crafted"
+  aria-label="{{ section.settings.heading | strip_html }}"
+>
+  <div class="proudly__container">
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="proudly__heading">
+        {{- section.settings.heading -}}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.settings.paragraph != blank -%}
+      <div class="proudly__body" data-proudly-body>
+        {{- section.settings.paragraph -}}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ════════════════════════════════════════════════════════
+     CONFIG
+     revealStart 0.85 → Animation begins when section is 85% down viewport
+     revealEnd   0.40 → Animation completes when section is 40% down viewport
+     fadeWindow  8    → How many words are actively fading in at any given moment
+  ════════════════════════════════════════════════════════ */
+  var CONFIG = {
+    revealStart: 0.85,
+    revealEnd:   0.40,
+    fadeWindow:  8     
+  };
+
+  function init() {
+    var section = document.getElementById('proudly-{{ section.id }}');
+    if (!section) return;
+
+    var bodyEl = section.querySelector('[data-proudly-body]');
+    if (!bodyEl) return;
+
+    /* Reduced motion — reveal instantly, skip JS */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      bodyEl.querySelectorAll('.proudly__word').forEach(function (w) {
+        w.style.opacity = '1';
+      });
+      return;
+    }
+
+    /* Step 1: Split text into spans */
+    splitTextNodes(bodyEl);
+
+    /* Step 2: Start scroll scrubber loop */
+    requestAnimationFrame(function () {
+      startReveal(section, bodyEl);
+    });
+  }
+
+  /* ════════════════════════════════════════════════════════
+     SPLIT TEXT NODES
+     Wraps each word in <span class="proudly__word"> preserving tags
+  ════════════════════════════════════════════════════════ */
+  function splitTextNodes(el) {
+    var nodes = Array.prototype.slice.call(el.childNodes);
+
+    nodes.forEach(function (node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        var tokens = node.textContent.split(/(\s+)/);
+        if (tokens.length <= 1) return;
+
+        var frag = document.createDocumentFragment();
+
+        tokens.forEach(function (token) {
+          if (/^\s+$/.test(token)) {
+            frag.appendChild(document.createTextNode(token));
+          } else if (token.length > 0) {
+            var span = document.createElement('span');
+            span.className = 'proudly__word';
+            span.textContent = token;
+            frag.appendChild(span);
+          }
+        });
+
+        node.parentNode.replaceChild(frag, node);
+
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        splitTextNodes(node); 
+      }
+    });
+  }
+
+  /* ════════════════════════════════════════════════════════
+     START REVEAL
+     Ties the left-to-right word opacity to the scroll position.
+     Works forward and backward automatically based on section.top
+  ════════════════════════════════════════════════════════ */
+  function startReveal(section, bodyEl) {
+    var words = bodyEl.querySelectorAll('.proudly__word');
+    if (words.length === 0) return;
+
+    var rafId = null;
+    var isVisible = false;
+
+    function tick() {
+      var vh = window.innerHeight;
+      var secRect = section.getBoundingClientRect();
+      
+      var startPos = vh * CONFIG.revealStart;
+      var endPos   = vh * CONFIG.revealEnd;
+      
+      /* Calculate overall scroll progress through the target window (0 to 1) */
+      var rawProgress = (startPos - secRect.top) / (startPos - endPos);
+      var progress = Math.min(1, Math.max(0, rawProgress));
+
+      /* Determine the "head" of the reveal animation */
+      var currentHead = progress * (words.length + CONFIG.fadeWindow);
+
+      /* Apply calculated opacity to each word */
+      for (var i = 0; i < words.length; i++) {
+        var wordProgress = currentHead - i;
+        
+        /* Clamp between 0 (not started) and 1 (fully revealed) */
+        var opacityProgress = Math.min(1, Math.max(0, wordProgress / CONFIG.fadeWindow));
+        
+        /* Map progress 0 -> 1 into opacity 0.2 -> 1.0 */
+        var finalOpacity = 0.2 + (0.8 * opacityProgress);
+        
+        words[i].style.opacity = finalOpacity;
+      }
+
+      /* Continue loop as long as section is in viewport */
+      if (isVisible) {
+        rafId = requestAnimationFrame(tick);
+      }
+    }
+
+    /* Use IntersectionObserver to pause JS loop when section is offscreen */
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !rafId) {
+          rafId = requestAnimationFrame(tick);
+        } else if (!isVisible && rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      });
+    }, {
+      threshold: 0,
+      rootMargin: '100px 0px 100px 0px' /* Pad slightly to catch fast scrolling */
+    });
+
+    observer.observe(section);
+  }
+
+  /* ════════════════════════════════════════════════════════
+     BOOT
+  ════════════════════════════════════════════════════════ */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  /* Shopify theme editor live reload */
+  document.addEventListener('shopify:section:load', function (e) {
+    if (e.detail.sectionId === '{{ section.id }}') init();
+  });
+
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Proudly Crafted",
+  "tag": "section",
+  "class": "section-proudly-crafted",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Proudly Crafted in Australia"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph",
+      "label": "Paragraph",
+      "info": "Use the Bold button to highlight key phrases — they display in accent colour #919FA8. Text fades in word by word as you scroll down, and reverses when you scroll up.",
+      "default": "<p>Not imported and relabeled. Not blended with mystery oils from unknown sources. AIWO Olive Aura is grown, pressed, and bottled on Australian soil–where quality <strong>standards are among the world's strictest</strong> and our commitment to transparency is <strong>uncompromising.</strong> Choosing Australian-made means traceability, accountability, and a guarantee that every drop meets the standards we'd serve our own families.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Proudly Crafted"
+    }
+  ]
+}
+{% endschema %}

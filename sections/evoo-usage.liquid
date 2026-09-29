@@ -1,0 +1,287 @@
+{% comment %}
+  ============================================================
+  Section  : Ways to Use
+  Layout   : 4-column grid (Desktop) / 2-column grid (Mobile)
+  Features : Custom icons, Poppins font, responsive flex layouts
+  ============================================================
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================================
+   SECTION SHELL & VARIABLES
+   ============================================================================ */
+#wtu-{{ section.id }} {
+  background-color: {{ section.settings.bg_color | default: '#F8F9FA' }};
+  padding-top: 48px;
+  padding-bottom: 48px;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+#wtu-{{ section.id }} .wtu__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px; /* Standard desktop safe-zone padding */
+}
+
+/* ============================================================================
+   HEADING
+   ============================================================================ */
+#wtu-{{ section.id }} .wtu__heading {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600; /* SemiBold */
+  font-style: italic;
+  line-height: 120%;
+  color: #211E1E;
+  margin: 0 0 40px 0;
+}
+
+/* ============================================================================
+   GRID LAYOUT (DESKTOP)
+   ============================================================================ */
+#wtu-{{ section.id }} .wtu__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* ============================================================================
+   INDIVIDUAL BLOCK ITEM
+   ============================================================================ */
+#wtu-{{ section.id }} .wtu__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+#wtu-{{ section.id }} .wtu__icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#wtu-{{ section.id }} .wtu__icon img,
+#wtu-{{ section.id }} .wtu__icon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Placeholder specific styling */
+#wtu-{{ section.id }} .wtu__icon-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #E2E8F0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#wtu-{{ section.id }} .wtu__text {
+  font-size: 24px;
+  font-weight: 500; /* Medium */
+  line-height: 150%;
+  color: #211E1E;
+  text-align: center;
+  margin: 0;
+}
+
+#wtu-{{ section.id }} .wtu__text p {
+  margin: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE — TABLET (≤991px)
+   ============================================================================ */
+@media screen and (max-width: 991px) {
+  #wtu-{{ section.id }} .wtu__container {
+    padding: 0 40px;
+  }
+  #wtu-{{ section.id }} .wtu__heading {
+    font-size: 40px;
+    margin-bottom: 32px;
+  }
+  #wtu-{{ section.id }} .wtu__grid {
+    gap: 24px;
+  }
+  #wtu-{{ section.id }} .wtu__icon {
+    width: 56px;
+    height: 56px;
+  }
+  #wtu-{{ section.id }} .wtu__text {
+    font-size: 20px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE (≤767px)
+   Grid becomes 2 columns. Flex direction changes to row (horizontal layout).
+   ============================================================================ */
+@media screen and (max-width: 767px) {
+  #wtu-{{ section.id }} {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  #wtu-{{ section.id }} .wtu__container {
+    padding: 0 24px;
+  }
+  #wtu-{{ section.id }} .wtu__heading {
+    font-size: 32px;
+    margin-bottom: 28px;
+  }
+  
+  #wtu-{{ section.id }} .wtu__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px; /* 24px row gap, 16px column gap */
+  }
+
+  #wtu-{{ section.id }} .wtu__item {
+    flex-direction: row; /* Flex horizontally as requested */
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #wtu-{{ section.id }} .wtu__icon {
+    width: 44px; /* Scaled down for horizontal mobile layout */
+    height: 44px;
+  }
+
+  #wtu-{{ section.id }} .wtu__text {
+    font-size: 15px; /* Scaled down heavily so 2 columns fit cleanly */
+    text-align: left; /* Left align to match horizontal layout */
+    line-height: 140%;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — SMALL MOBILE (≤479px)
+   ============================================================================ */
+@media screen and (max-width: 479px) {
+  #wtu-{{ section.id }} .wtu__container {
+    padding: 0 16px;
+  }
+  #wtu-{{ section.id }} .wtu__heading {
+    font-size: 28px;
+  }
+  #wtu-{{ section.id }} .wtu__grid {
+    grid-template-columns: 1fr; /* Drop to 1 column if screen is extremely narrow, or leave as 2 depending on preference. Setting to 1fr ensures text doesn't break. Remove this block if strict 2-col is needed on 320px screens. */
+    gap: 20px;
+  }
+}
+</style>
+
+<section id="wtu-{{ section.id }}">
+  <div class="wtu__container">
+    
+    {% if section.settings.heading != blank %}
+      <h2 class="wtu__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="wtu__grid">
+      {% for block in section.blocks %}
+        <div class="wtu__item" {{ block.shopify_attributes }}>
+          
+          <div class="wtu__icon">
+            {% if block.settings.icon != blank %}
+              <img src="{{ block.settings.icon | image_url: width: 128 }}" alt="{{ block.settings.text | strip_html | escape }}" loading="lazy" width="64" height="64">
+            {% else %}
+              <div class="wtu__icon-placeholder">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="wtu__text">
+            {{ block.settings.text }}
+          </div>
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ways to Use",
+  "tag": "section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#F9FAFB"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Ways to Use:"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "use_case",
+      "name": "Use Case Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image",
+          "info": "Upload a 64x64px PNG or SVG icon."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Drizzle over fresh salads for a burst of flavor.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ways to Use",
+      "blocks": [
+        {
+          "type": "use_case",
+          "settings": {
+            "text": "<p>Drizzle over fresh salads for a burst of flavor.</p>"
+          }
+        },
+        {
+          "type": "use_case",
+          "settings": {
+            "text": "<p>Add to smoothies for a nutrient boost.</p>"
+          }
+        },
+        {
+          "type": "use_case",
+          "settings": {
+            "text": "<p>Use as a dip with artisan bread for a gourmet touch.</p>"
+          }
+        },
+        {
+          "type": "use_case",
+          "settings": {
+            "text": "<p>Enhance your recipe with its smooth texture and rich aroma.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

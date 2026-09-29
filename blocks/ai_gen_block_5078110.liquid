@@ -1,0 +1,1467 @@
+{% doc %}
+  @prompt
+    Create a full-height hero section with gradient background (light ocean blue to cream):
+    Top Trust Badge Bar:
+    
+    Centered horizontal row of 5 pill-shaped badges
+    White background, light border, small shadow
+    Badges: "FSSAI Certified", "GMP Approved", "ISO Certified", "HALAL", "Gluten Free"
+    Fade-in animation with staggered delays
+    Responsive: wrap on mobile
+    
+    Two-Column Layout:
+    Left Column (Content):
+    
+    Green pill badge: sparkle icon + "Double Strength Formula"
+    Large display heading: "Aiwo" in dark, "Ultimate" in ocean blue gradient, line break, "Omega 3"
+    Subheading: "Premium 1000mg fish oil with EPA 360mg & DHA 240mg for comprehensive health support"
+    Smaller text: "Advanced Enteric Coating eliminates burping & fishy aftertaste"
+    3-column stat grid with white cards, rounded corners, shadows:
+    
+    "1000mg" (ocean blue) - Total Fish Oil
+    "660mg" (gold) - Omega-3
+    "{{product_count}}" (green) - Soft Gels [EDITABLE: dropdown 30/60/90]
+    
+    
+    Two CTA buttons side-by-side:
+    
+    Primary: Ocean blue gradient "{{cta_text_1}}" [EDITABLE LINK]
+    Secondary: Outline "{{cta_text_2}}" [EDITABLE LINK]
+    
+    
+    
+    Right Column (Product Image):
+    
+    Large glowing blue/ocean blur circle behind image
+    Product bottle/capsule image with float animation
+    4 floating icon badges around image (animated wave motion):
+    
+    Top-left: Heart icon (red) in white rounded card
+    Top-right: Brain icon (ocean blue) in white rounded card
+    Bottom-left: Eye icon (light blue) in white rounded card
+    Bottom-right: Shield icon (green) in white rounded card
+    
+    
+    
+    Background Decorations:
+    
+    Top-right: Large blurred ocean-colored circle
+    Left-center: Large blurred gold circle
+    
+    , Add Quantity selector, variables for 30s & 60s and also need to set a individual price for each variations & give a separate shop link for each variables 
+    
+    , Same as but flip columns - product image on left, content on right. Mirror the floating icon badges positions.
+    
+    
+    Give few More product images added options 
+    
+    remove 90 soft gels option, Change soft gels to s , Add add to cart button, Quantity increaser & remove learn more button, when i click a quantity the price also incerasable change it, add shop now button also
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-omega-hero-{{ ai_gen_id }} {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(135deg, {{ block.settings.gradient_color_1 }} 0%, {{ block.settings.gradient_color_2 }} 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+  }
+
+  .ai-omega-hero-bg-circle-1-{{ ai_gen_id }} {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: {{ block.settings.bg_circle_1_color }};
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .ai-omega-hero-bg-circle-2-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: {{ block.settings.bg_circle_2_color }};
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .ai-omega-hero-container-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-omega-hero-trust-bar-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+
+  .ai-omega-hero-trust-badge-{{ ai_gen_id }} {
+    background: {{ block.settings.trust_badge_bg }};
+    border: 1px solid {{ block.settings.trust_badge_border }};
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: {{ block.settings.trust_badge_text_color }};
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    animation: ai-omega-fade-in-{{ ai_gen_id }} 0.6s ease-out forwards;
+  }
+
+  .ai-omega-hero-trust-badge-{{ ai_gen_id }}:nth-child(1) { animation-delay: 0.1s; }
+  .ai-omega-hero-trust-badge-{{ ai_gen_id }}:nth-child(2) { animation-delay: 0.2s; }
+  .ai-omega-hero-trust-badge-{{ ai_gen_id }}:nth-child(3) { animation-delay: 0.3s; }
+  .ai-omega-hero-trust-badge-{{ ai_gen_id }}:nth-child(4) { animation-delay: 0.4s; }
+  .ai-omega-hero-trust-badge-{{ ai_gen_id }}:nth-child(5) { animation-delay: 0.5s; }
+
+  @keyframes ai-omega-fade-in-{{ ai_gen_id }} {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .ai-omega-hero-content-wrapper-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .ai-omega-hero-left-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ai-omega-hero-right-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ai-omega-hero-product-glow-{{ ai_gen_id }} {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: {{ block.settings.product_glow_color }};
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  .ai-omega-hero-product-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 1;
+    animation: ai-omega-float-{{ ai_gen_id }} 3s ease-in-out infinite;
+  }
+
+  .ai-omega-hero-product-image-{{ ai_gen_id }} {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-omega-hero-product-placeholder-{{ ai_gen_id }} {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-omega-hero-product-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+  }
+
+  .ai-omega-hero-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  @keyframes ai-omega-float-{{ ai_gen_id }} {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .ai-omega-hero-floating-badge-{{ ai_gen_id }} {
+    position: absolute;
+    background: {{ block.settings.floating_badge_bg }};
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    animation: ai-omega-wave-{{ ai_gen_id }} 3s ease-in-out infinite;
+  }
+
+  .ai-omega-hero-floating-badge-{{ ai_gen_id }} svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+
+  .ai-omega-hero-floating-badge-1-{{ ai_gen_id }} {
+    top: 10%;
+    right: 10%;
+    animation-delay: 0s;
+  }
+
+  .ai-omega-hero-floating-badge-2-{{ ai_gen_id }} {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0.5s;
+  }
+
+  .ai-omega-hero-floating-badge-3-{{ ai_gen_id }} {
+    bottom: 20%;
+    right: 5%;
+    animation-delay: 1s;
+  }
+
+  .ai-omega-hero-floating-badge-4-{{ ai_gen_id }} {
+    bottom: 20%;
+    left: 5%;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes ai-omega-wave-{{ ai_gen_id }} {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-10px) rotate(2deg);
+    }
+    75% {
+      transform: translateY(10px) rotate(-2deg);
+    }
+  }
+
+  .ai-omega-hero-formula-badge-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: {{ block.settings.formula_badge_bg }};
+    color: {{ block.settings.formula_badge_color }};
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    width: fit-content;
+  }
+
+  .ai-omega-hero-sparkle-{{ ai_gen_id }} {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ai-omega-hero-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .ai-omega-hero-heading-dark-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color_dark }};
+  }
+
+  .ai-omega-hero-heading-gradient-{{ ai_gen_id }} {
+    background: linear-gradient(135deg, {{ block.settings.heading_gradient_1 }} 0%, {{ block.settings.heading_gradient_2 }} 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ai-omega-hero-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.subheading_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-omega-hero-small-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.small_text_size }}px;
+    color: {{ block.settings.small_text_color }};
+    line-height: 1.5;
+  }
+
+  .ai-omega-hero-stats-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .ai-omega-hero-stat-card-{{ ai_gen_id }} {
+    background: {{ block.settings.stat_card_bg }};
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+
+  .ai-omega-hero-stat-value-{{ ai_gen_id }} {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  .ai-omega-hero-stat-label-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: {{ block.settings.stat_label_color }};
+    font-weight: 500;
+  }
+
+  .ai-omega-hero-quantity-section-{{ ai_gen_id }} {
+    background: {{ block.settings.quantity_section_bg }};
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-omega-hero-quantity-label-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color_dark }};
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .ai-omega-hero-quantity-options-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .ai-omega-hero-quantity-option-{{ ai_gen_id }} {
+    flex: 1;
+    background: {{ block.settings.quantity_option_bg }};
+    border: 2px solid {{ block.settings.quantity_option_border }};
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .ai-omega-hero-quantity-option-{{ ai_gen_id }}:hover {
+    border-color: {{ block.settings.quantity_option_hover_border }};
+    transform: translateY(-2px);
+  }
+
+  .ai-omega-hero-quantity-option-{{ ai_gen_id }}.active {
+    border-color: {{ block.settings.quantity_option_active_border }};
+    background: {{ block.settings.quantity_option_active_bg }};
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+  }
+
+  .ai-omega-hero-quantity-count-{{ ai_gen_id }} {
+    font-size: 24px;
+    font-weight: 800;
+    color: {{ block.settings.heading_color_dark }};
+    margin-bottom: 4px;
+  }
+
+  .ai-omega-hero-quantity-option-{{ ai_gen_id }}.active .ai-omega-hero-quantity-count-{{ ai_gen_id }} {
+    color: {{ block.settings.quantity_option_active_text }};
+  }
+
+  .ai-omega-hero-quantity-label-small-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: {{ block.settings.stat_label_color }};
+    font-weight: 500;
+  }
+
+  .ai-omega-hero-price-display-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .ai-omega-hero-price-{{ ai_gen_id }} {
+    font-size: 36px;
+    font-weight: 800;
+    color: {{ block.settings.price_color }};
+  }
+
+  .ai-omega-hero-price-label-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.stat_label_color }};
+    margin-top: 4px;
+  }
+
+  .ai-omega-hero-quantity-controls-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .ai-omega-hero-qty-label-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color_dark }};
+  }
+
+  .ai-omega-hero-qty-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: {{ block.settings.quantity_option_bg }};
+    border: 2px solid {{ block.settings.quantity_option_border }};
+    border-radius: 50px;
+    padding: 8px 16px;
+  }
+
+  .ai-omega-hero-qty-btn-{{ ai_gen_id }} {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: {{ block.settings.qty_button_bg }};
+    color: {{ block.settings.qty_button_color }};
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .ai-omega-hero-qty-btn-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.qty_button_hover_bg }};
+    transform: scale(1.1);
+  }
+
+  .ai-omega-hero-qty-btn-{{ ai_gen_id }}:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .ai-omega-hero-qty-btn-{{ ai_gen_id }}:disabled:hover {
+    transform: scale(1);
+  }
+
+  .ai-omega-hero-qty-input-{{ ai_gen_id }} {
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: {{ block.settings.heading_color_dark }};
+    border: none;
+    background: transparent;
+  }
+
+  .ai-omega-hero-cta-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .ai-omega-hero-cta-primary-{{ ai_gen_id }} {
+    background: linear-gradient(135deg, {{ block.settings.cta_primary_gradient_1 }} 0%, {{ block.settings.cta_primary_gradient_2 }} 100%);
+    color: {{ block.settings.cta_primary_text }};
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .ai-omega-hero-cta-primary-{{ ai_gen_id }}:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .ai-omega-hero-cta-secondary-{{ ai_gen_id }} {
+    background: {{ block.settings.cta_secondary_bg }};
+    color: {{ block.settings.cta_secondary_text }};
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid {{ block.settings.cta_secondary_border }};
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .ai-omega-hero-cta-secondary-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.cta_secondary_hover_bg }};
+    color: {{ block.settings.cta_secondary_hover_text }};
+    border-color: {{ block.settings.cta_secondary_hover_border }};
+    transform: translateY(-2px);
+  }
+
+  .ai-omega-hero-cart-icon-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-omega-hero-{{ ai_gen_id }} {
+      padding: 40px 20px;
+      min-height: auto;
+    }
+
+    .ai-omega-hero-content-wrapper-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-omega-hero-left-{{ ai_gen_id }} {
+      order: 2;
+    }
+
+    .ai-omega-hero-right-{{ ai_gen_id }} {
+      order: 1;
+    }
+
+    .ai-omega-hero-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.6);
+    }
+
+    .ai-omega-hero-subheading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subheading_size }}px * 0.9);
+    }
+
+    .ai-omega-hero-stats-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-omega-hero-quantity-options-{{ ai_gen_id }} {
+      flex-direction: column;
+    }
+
+    .ai-omega-hero-cta-wrapper-{{ ai_gen_id }} {
+      flex-direction: column;
+    }
+
+    .ai-omega-hero-cta-primary-{{ ai_gen_id }},
+    .ai-omega-hero-cta-secondary-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-omega-hero-product-placeholder-{{ ai_gen_id }} {
+      width: 300px;
+      height: 300px;
+    }
+
+    .ai-omega-hero-floating-badge-{{ ai_gen_id }} svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+{% endstyle %}
+
+<omega-hero-{{ ai_gen_id }} class="ai-omega-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-omega-hero-bg-circle-1-{{ ai_gen_id }}"></div>
+  <div class="ai-omega-hero-bg-circle-2-{{ ai_gen_id }}"></div>
+
+  <div class="ai-omega-hero-container-{{ ai_gen_id }}">
+    <div class="ai-omega-hero-trust-bar-{{ ai_gen_id }}">
+      <div class="ai-omega-hero-trust-badge-{{ ai_gen_id }}">{{ block.settings.trust_badge_1 }}</div>
+      <div class="ai-omega-hero-trust-badge-{{ ai_gen_id }}">{{ block.settings.trust_badge_2 }}</div>
+      <div class="ai-omega-hero-trust-badge-{{ ai_gen_id }}">{{ block.settings.trust_badge_3 }}</div>
+      <div class="ai-omega-hero-trust-badge-{{ ai_gen_id }}">{{ block.settings.trust_badge_4 }}</div>
+      <div class="ai-omega-hero-trust-badge-{{ ai_gen_id }}">{{ block.settings.trust_badge_5 }}</div>
+    </div>
+
+    <div class="ai-omega-hero-content-wrapper-{{ ai_gen_id }}">
+      <div class="ai-omega-hero-left-{{ ai_gen_id }}">
+        <div class="ai-omega-hero-product-glow-{{ ai_gen_id }}"></div>
+
+        <div class="ai-omega-hero-product-image-wrapper-{{ ai_gen_id }}">
+          {% assign selected_image = block.settings.product_image_1 %}
+          
+          {% if selected_image %}
+            <img
+              src="{{ selected_image | image_url: width: 800 }}"
+              alt="{{ selected_image.alt | escape }}"
+              loading="lazy"
+              width="{{ selected_image.width }}"
+              height="{{ selected_image.height }}"
+              class="ai-omega-hero-product-image-{{ ai_gen_id }} ai-omega-hero-active-image-{{ ai_gen_id }}"
+              data-image-id="1"
+            >
+          {% else %}
+            <div class="ai-omega-hero-product-placeholder-{{ ai_gen_id }}">
+              {{ 'product-1' | placeholder_svg_tag }}
+              <div class="ai-omega-hero-empty-state-{{ ai_gen_id }}">
+                Add product image
+              </div>
+            </div>
+          {% endif %}
+
+          {% if block.settings.product_image_2 %}
+            <img
+              src="{{ block.settings.product_image_2 | image_url: width: 800 }}"
+              alt="{{ block.settings.product_image_2.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.product_image_2.width }}"
+              height="{{ block.settings.product_image_2.height }}"
+              class="ai-omega-hero-product-image-{{ ai_gen_id }}"
+              data-image-id="2"
+              style="display: none;"
+            >
+          {% endif %}
+
+          {% if block.settings.product_image_3 %}
+            <img
+              src="{{ block.settings.product_image_3 | image_url: width: 800 }}"
+              alt="{{ block.settings.product_image_3.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.product_image_3.width }}"
+              height="{{ block.settings.product_image_3.height }}"
+              class="ai-omega-hero-product-image-{{ ai_gen_id }}"
+              data-image-id="3"
+              style="display: none;"
+            >
+          {% endif %}
+        </div>
+
+        <div class="ai-omega-hero-floating-badge-{{ ai_gen_id }} ai-omega-hero-floating-badge-1-{{ ai_gen_id }}">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61C19.5 3.28 17.76 2.5 15.92 2.5C14.08 2.5 12.34 3.28 11 4.61L12 5.61C13.05 4.56 14.45 3.95 15.92 3.95C17.39 3.95 18.79 4.56 19.84 5.61C20.89 6.66 21.5 8.06 21.5 9.53C21.5 11 20.89 12.4 19.84 13.45L12 21.29L4.16 13.45C3.11 12.4 2.5 11 2.5 9.53C2.5 8.06 3.11 6.66 4.16 5.61C5.21 4.56 6.61 3.95 8.08 3.95C9.55 3.95 10.95 4.56 12 5.61L13 4.61C11.66 3.28 9.92 2.5 8.08 2.5C6.24 2.5 4.5 3.28 3.16 4.61C1.83 5.95 1.05 7.69 1.05 9.53C1.05 11.37 1.83 13.11 3.16 14.45L12 23.29L20.84 14.45C22.17 13.11 22.95 11.37 22.95 9.53C22.95 7.69 22.17 5.95 20.84 4.61Z" fill="#EF4444"/>
+          </svg>
+        </div>
+
+        <div class="ai-omega-hero-floating-badge-{{ ai_gen_id }} ai-omega-hero-floating-badge-2-{{ ai_gen_id }}">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6C9.79 6 8 7.79 8 10C8 12.21 9.79 14 12 14C14.21 14 16 12.21 16 10C16 7.79 14.21 6 12 6ZM12 12C10.9 12 10 11.1 10 10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 11.1 13.1 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14ZM6.34 18C7.18 17.42 9.21 16 12 16C14.79 16 16.82 17.42 17.66 18H6.34Z" fill="#0EA5E9"/>
+          </svg>
+        </div>
+
+        <div class="ai-omega-hero-floating-badge-{{ ai_gen_id }} ai-omega-hero-floating-badge-3-{{ ai_gen_id }}">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z" fill="#06B6D4"/>
+          </svg>
+        </div>
+
+        <div class="ai-omega-hero-floating-badge-{{ ai_gen_id }} ai-omega-hero-floating-badge-4-{{ ai_gen_id }}">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 16.11 15.72 19.78 12 20.93V12H5V6.3L12 3.19V11.99Z" fill="#10B981"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="ai-omega-hero-right-{{ ai_gen_id }}">
+        <div class="ai-omega-hero-formula-badge-{{ ai_gen_id }}">
+          <svg class="ai-omega-hero-sparkle-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="currentColor"/>
+          </svg>
+          {{ block.settings.formula_badge_text }}
+        </div>
+
+        <h1 class="ai-omega-hero-heading-{{ ai_gen_id }}">
+          <span class="ai-omega-hero-heading-dark-{{ ai_gen_id }}">{{ block.settings.heading_part_1 }}</span>
+          <span class="ai-omega-hero-heading-gradient-{{ ai_gen_id }}">{{ block.settings.heading_part_2 }}</span><br>
+          <span class="ai-omega-hero-heading-dark-{{ ai_gen_id }}">{{ block.settings.heading_part_3 }}</span>
+        </h1>
+
+        <p class="ai-omega-hero-subheading-{{ ai_gen_id }}">
+          {{ block.settings.subheading }}
+        </p>
+
+        <p class="ai-omega-hero-small-text-{{ ai_gen_id }}">
+          {{ block.settings.small_text }}
+        </p>
+
+        <div class="ai-omega-hero-stats-{{ ai_gen_id }}">
+          <div class="ai-omega-hero-stat-card-{{ ai_gen_id }}">
+            <div class="ai-omega-hero-stat-value-{{ ai_gen_id }}" style="color: {{ block.settings.stat_1_color }};">
+              {{ block.settings.stat_1_value }}
+            </div>
+            <div class="ai-omega-hero-stat-label-{{ ai_gen_id }}">
+              {{ block.settings.stat_1_label }}
+            </div>
+          </div>
+
+          <div class="ai-omega-hero-stat-card-{{ ai_gen_id }}">
+            <div class="ai-omega-hero-stat-value-{{ ai_gen_id }}" style="color: {{ block.settings.stat_2_color }};">
+              {{ block.settings.stat_2_value }}
+            </div>
+            <div class="ai-omega-hero-stat-label-{{ ai_gen_id }}">
+              {{ block.settings.stat_2_label }}
+            </div>
+          </div>
+
+          <div class="ai-omega-hero-stat-card-{{ ai_gen_id }}">
+            <div class="ai-omega-hero-stat-value-{{ ai_gen_id }}" style="color: {{ block.settings.stat_3_color }};">
+              <span class="ai-omega-hero-dynamic-count-{{ ai_gen_id }}">30</span>
+            </div>
+            <div class="ai-omega-hero-stat-label-{{ ai_gen_id }}">
+              {{ block.settings.stat_3_label }}
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-omega-hero-quantity-section-{{ ai_gen_id }}">
+          <label class="ai-omega-hero-quantity-label-{{ ai_gen_id }}">{{ block.settings.quantity_selector_label }}</label>
+          
+          <div class="ai-omega-hero-quantity-options-{{ ai_gen_id }}">
+            <div class="ai-omega-hero-quantity-option-{{ ai_gen_id }} active" data-quantity="30" data-price="{{ block.settings.price_30 }}" data-link="{{ block.settings.shop_link_30 }}" data-image="1">
+              <div class="ai-omega-hero-quantity-count-{{ ai_gen_id }}">30s</div>
+              <div class="ai-omega-hero-quantity-label-small-{{ ai_gen_id }}">{{ block.settings.quantity_30_label }}</div>
+            </div>
+
+            <div class="ai-omega-hero-quantity-option-{{ ai_gen_id }}" data-quantity="60" data-price="{{ block.settings.price_60 }}" data-link="{{ block.settings.shop_link_60 }}" data-image="2">
+              <div class="ai-omega-hero-quantity-count-{{ ai_gen_id }}">60s</div>
+              <div class="ai-omega-hero-quantity-label-small-{{ ai_gen_id }}">{{ block.settings.quantity_60_label }}</div>
+            </div>
+          </div>
+
+          <div class="ai-omega-hero-price-display-{{ ai_gen_id }}">
+            <div class="ai-omega-hero-price-{{ ai_gen_id }}">
+              <span class="ai-omega-hero-currency-{{ ai_gen_id }}">{{ block.settings.currency_symbol }}</span><span class="ai-omega-hero-price-value-{{ ai_gen_id }}">{{ block.settings.price_30 }}</span>
+            </div>
+            <div class="ai-omega-hero-price-label-{{ ai_gen_id }}">{{ block.settings.price_label }}</div>
+          </div>
+
+          <div class="ai-omega-hero-quantity-controls-{{ ai_gen_id }}">
+            <span class="ai-omega-hero-qty-label-{{ ai_gen_id }}">{{ block.settings.qty_label }}</span>
+            <div class="ai-omega-hero-qty-wrapper-{{ ai_gen_id }}">
+              <button type="button" class="ai-omega-hero-qty-btn-{{ ai_gen_id }} ai-omega-hero-qty-decrease-{{ ai_gen_id }}" aria-label="Decrease quantity">−</button>
+              <input type="number" class="ai-omega-hero-qty-input-{{ ai_gen_id }}" value="1" min="1" max="99" readonly>
+              <button type="button" class="ai-omega-hero-qty-btn-{{ ai_gen_id }} ai-omega-hero-qty-increase-{{ ai_gen_id }}" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-omega-hero-cta-wrapper-{{ ai_gen_id }}">
+          <a href="{{ block.settings.shop_link_30 }}" class="ai-omega-hero-cta-primary-{{ ai_gen_id }} ai-omega-hero-shop-link-{{ ai_gen_id }}">
+            <svg class="ai-omega-hero-cart-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM1 2V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.28 15 7.17 14.89 7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C20.96 5.34 21 5.17 21 5C21 4.45 20.55 4 20 4H5.21L4.27 2H1ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z" fill="currentColor"/>
+            </svg>
+            {{ block.settings.cta_1_text }}
+          </a>
+
+          <a href="{{ block.settings.shop_link_30 }}" class="ai-omega-hero-cta-secondary-{{ ai_gen_id }} ai-omega-hero-shop-now-link-{{ ai_gen_id }}">
+            <svg class="ai-omega-hero-cart-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.01 11H4V13H16.01V16L20 12L16.01 8V11Z" fill="currentColor"/>
+            </svg>
+            {{ block.settings.cta_2_text }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</omega-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class OmegaHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.basePrice30 = {{ block.settings.price_30 | default: 0 }};
+        this.basePrice60 = {{ block.settings.price_60 | default: 0 }};
+        this.currentBasePrice = this.basePrice30;
+      }
+
+      connectedCallback() {
+        this.quantityOptions = this.querySelectorAll('.ai-omega-hero-quantity-option-{{ ai_gen_id }}');
+        this.priceValue = this.querySelector('.ai-omega-hero-price-value-{{ ai_gen_id }}');
+        this.shopLink = this.querySelector('.ai-omega-hero-shop-link-{{ ai_gen_id }}');
+        this.shopNowLink = this.querySelector('.ai-omega-hero-shop-now-link-{{ ai_gen_id }}');
+        this.dynamicCount = this.querySelector('.ai-omega-hero-dynamic-count-{{ ai_gen_id }}');
+        this.productImages = this.querySelectorAll('.ai-omega-hero-product-image-{{ ai_gen_id }}');
+        this.qtyInput = this.querySelector('.ai-omega-hero-qty-input-{{ ai_gen_id }}');
+        this.qtyDecrease = this.querySelector('.ai-omega-hero-qty-decrease-{{ ai_gen_id }}');
+        this.qtyIncrease = this.querySelector('.ai-omega-hero-qty-increase-{{ ai_gen_id }}');
+
+        this.setupQuantitySelector();
+        this.setupQuantityControls();
+      }
+
+      setupQuantitySelector() {
+        this.quantityOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            this.quantityOptions.forEach(opt => opt.classList.remove('active'));
+            option.classList.add('active');
+
+            const quantity = option.getAttribute('data-quantity');
+            const price = parseFloat(option.getAttribute('data-price'));
+            const link = option.getAttribute('data-link');
+            const imageId = option.getAttribute('data-image');
+
+            if (quantity === '30') {
+              this.currentBasePrice = this.basePrice30;
+            } else if (quantity === '60') {
+              this.currentBasePrice = this.basePrice60;
+            }
+
+            this.updateTotalPrice();
+
+            if (this.shopLink && link) {
+              this.shopLink.setAttribute('href', link);
+            }
+
+            if (this.shopNowLink && link) {
+              this.shopNowLink.setAttribute('href', link);
+            }
+
+            if (this.dynamicCount) {
+              this.dynamicCount.textContent = quantity;
+            }
+
+            if (imageId && this.productImages.length > 0) {
+              this.productImages.forEach(img => {
+                if (img.getAttribute('data-image-id') === imageId) {
+                  img.style.display = 'block';
+                  img.classList.add('ai-omega-hero-active-image-{{ ai_gen_id }}');
+                } else {
+                  img.style.display = 'none';
+                  img.classList.remove('ai-omega-hero-active-image-{{ ai_gen_id }}');
+                }
+              });
+            }
+          });
+        });
+      }
+
+      setupQuantityControls() {
+        if (this.qtyDecrease) {
+          this.qtyDecrease.addEventListener('click', () => {
+            const currentValue = parseInt(this.qtyInput.value);
+            const minValue = parseInt(this.qtyInput.getAttribute('min'));
+            if (currentValue > minValue) {
+              this.qtyInput.value = currentValue - 1;
+              this.updateQuantityButtons();
+              this.updateTotalPrice();
+            }
+          });
+        }
+
+        if (this.qtyIncrease) {
+          this.qtyIncrease.addEventListener('click', () => {
+            const currentValue = parseInt(this.qtyInput.value);
+            const maxValue = parseInt(this.qtyInput.getAttribute('max'));
+            if (currentValue < maxValue) {
+              this.qtyInput.value = currentValue + 1;
+              this.updateQuantityButtons();
+              this.updateTotalPrice();
+            }
+          });
+        }
+
+        this.updateQuantityButtons();
+      }
+
+      updateQuantityButtons() {
+        const currentValue = parseInt(this.qtyInput.value);
+        const minValue = parseInt(this.qtyInput.getAttribute('min'));
+        const maxValue = parseInt(this.qtyInput.getAttribute('max'));
+
+        if (this.qtyDecrease) {
+          this.qtyDecrease.disabled = currentValue <= minValue;
+        }
+
+        if (this.qtyIncrease) {
+          this.qtyIncrease.disabled = currentValue >= maxValue;
+        }
+      }
+
+      updateTotalPrice() {
+        const qty = parseInt(this.qtyInput.value);
+        const totalPrice = this.currentBasePrice * qty;
+        
+        if (this.priceValue) {
+          this.priceValue.textContent = totalPrice.toFixed(0);
+        }
+      }
+    }
+
+    customElements.define('omega-hero-{{ ai_gen_id }}', OmegaHero{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Omega 3 hero cart",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Start color",
+      "default": "#E0F2FE"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "End color",
+      "default": "#FEF3C7"
+    },
+    {
+      "type": "color",
+      "id": "bg_circle_1_color",
+      "label": "Left circle color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "bg_circle_2_color",
+      "label": "Right circle color",
+      "default": "#F59E0B"
+    },
+    {
+      "type": "header",
+      "content": "Trust badges"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_1",
+      "label": "Badge 1",
+      "default": "FSSAI Certified"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_2",
+      "label": "Badge 2",
+      "default": "GMP Approved"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_3",
+      "label": "Badge 3",
+      "default": "ISO Certified"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_4",
+      "label": "Badge 4",
+      "default": "HALAL"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_5",
+      "label": "Badge 5",
+      "default": "Gluten Free"
+    },
+    {
+      "type": "color",
+      "id": "trust_badge_bg",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "trust_badge_border",
+      "label": "Border",
+      "default": "#E5E7EB"
+    },
+    {
+      "type": "color",
+      "id": "trust_badge_text_color",
+      "label": "Text",
+      "default": "#374151"
+    },
+    {
+      "type": "header",
+      "content": "Formula badge"
+    },
+    {
+      "type": "text",
+      "id": "formula_badge_text",
+      "label": "Text",
+      "default": "Double Strength Formula"
+    },
+    {
+      "type": "color",
+      "id": "formula_badge_bg",
+      "label": "Background",
+      "default": "#10B981"
+    },
+    {
+      "type": "color",
+      "id": "formula_badge_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_part_1",
+      "label": "Part 1",
+      "default": "Aiwo"
+    },
+    {
+      "type": "text",
+      "id": "heading_part_2",
+      "label": "Part 2 (gradient)",
+      "default": "Ultimate"
+    },
+    {
+      "type": "text",
+      "id": "heading_part_3",
+      "label": "Part 3",
+      "default": "Omega 3"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Size",
+      "default": 70
+    },
+    {
+      "type": "color",
+      "id": "heading_color_dark",
+      "label": "Dark text color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "heading_gradient_1",
+      "label": "Gradient start",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "heading_gradient_2",
+      "label": "Gradient end",
+      "default": "#06B6D4"
+    },
+    {
+      "type": "header",
+      "content": "Subheading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Text",
+      "default": "Premium 1000mg fish oil with EPA 360mg & DHA 240mg for comprehensive health support"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Color",
+      "default": "#4B5563"
+    },
+    {
+      "type": "header",
+      "content": "Small text"
+    },
+    {
+      "type": "textarea",
+      "id": "small_text",
+      "label": "Text",
+      "default": "Advanced Enteric Coating eliminates burping & fishy aftertaste"
+    },
+    {
+      "type": "range",
+      "id": "small_text_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "small_text_color",
+      "label": "Color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "header",
+      "content": "Stats"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_value",
+      "label": "Stat 1 value",
+      "default": "1000mg"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 label",
+      "default": "Total Fish Oil"
+    },
+    {
+      "type": "color",
+      "id": "stat_1_color",
+      "label": "Stat 1 color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_value",
+      "label": "Stat 2 value",
+      "default": "660mg"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 label",
+      "default": "Omega-3"
+    },
+    {
+      "type": "color",
+      "id": "stat_2_color",
+      "label": "Stat 2 color",
+      "default": "#F59E0B"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 label",
+      "default": "Soft Gels"
+    },
+    {
+      "type": "color",
+      "id": "stat_3_color",
+      "label": "Stat 3 color",
+      "default": "#10B981"
+    },
+    {
+      "type": "color",
+      "id": "stat_card_bg",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "stat_label_color",
+      "label": "Label color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "header",
+      "content": "Quantity selector"
+    },
+    {
+      "type": "text",
+      "id": "quantity_selector_label",
+      "label": "Label",
+      "default": "Select Quantity"
+    },
+    {
+      "type": "color",
+      "id": "quantity_section_bg",
+      "label": "Section background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "quantity_option_bg",
+      "label": "Option background",
+      "default": "#F9FAFB"
+    },
+    {
+      "type": "color",
+      "id": "quantity_option_border",
+      "label": "Option border",
+      "default": "#E5E7EB"
+    },
+    {
+      "type": "color",
+      "id": "quantity_option_hover_border",
+      "label": "Option hover border",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "quantity_option_active_border",
+      "label": "Active border",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "quantity_option_active_bg",
+      "label": "Active background",
+      "default": "#EFF6FF"
+    },
+    {
+      "type": "color",
+      "id": "quantity_option_active_text",
+      "label": "Active text",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "header",
+      "content": "30s option"
+    },
+    {
+      "type": "text",
+      "id": "quantity_30_label",
+      "label": "Label",
+      "default": "1 Month Supply"
+    },
+    {
+      "type": "text",
+      "id": "price_30",
+      "label": "Price",
+      "default": "499"
+    },
+    {
+      "type": "url",
+      "id": "shop_link_30",
+      "label": "Shop link"
+    },
+    {
+      "type": "header",
+      "content": "60s option"
+    },
+    {
+      "type": "text",
+      "id": "quantity_60_label",
+      "label": "Label",
+      "default": "2 Month Supply"
+    },
+    {
+      "type": "text",
+      "id": "price_60",
+      "label": "Price",
+      "default": "899"
+    },
+    {
+      "type": "url",
+      "id": "shop_link_60",
+      "label": "Shop link"
+    },
+    {
+      "type": "header",
+      "content": "Price display"
+    },
+    {
+      "type": "text",
+      "id": "currency_symbol",
+      "label": "Currency symbol",
+      "default": "₹"
+    },
+    {
+      "type": "text",
+      "id": "price_label",
+      "label": "Price label",
+      "default": "Best price guaranteed"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "header",
+      "content": "Quantity controls"
+    },
+    {
+      "type": "text",
+      "id": "qty_label",
+      "label": "Label",
+      "default": "Quantity:"
+    },
+    {
+      "type": "color",
+      "id": "qty_button_bg",
+      "label": "Button background",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "qty_button_color",
+      "label": "Button color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "qty_button_hover_bg",
+      "label": "Button hover background",
+      "default": "#0284C7"
+    },
+    {
+      "type": "header",
+      "content": "Add to cart button"
+    },
+    {
+      "type": "text",
+      "id": "cta_1_text",
+      "label": "Button text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "color",
+      "id": "cta_primary_gradient_1",
+      "label": "Gradient start",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "cta_primary_gradient_2",
+      "label": "Gradient end",
+      "default": "#06B6D4"
+    },
+    {
+      "type": "color",
+      "id": "cta_primary_text",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Shop now button"
+    },
+    {
+      "type": "text",
+      "id": "cta_2_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "color",
+      "id": "cta_secondary_bg",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "cta_secondary_text",
+      "label": "Text color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "cta_secondary_border",
+      "label": "Border color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "cta_secondary_hover_bg",
+      "label": "Hover background",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "cta_secondary_hover_text",
+      "label": "Hover text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "cta_secondary_hover_border",
+      "label": "Hover border color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "header",
+      "content": "Product images"
+    },
+    {
+      "type": "paragraph",
+      "content": "Image 1 displays for 30s option, Image 2 for 60s option, Image 3 as fallback"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_1",
+      "label": "Image 1 (30s)"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_2",
+      "label": "Image 2 (60s)"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_3",
+      "label": "Image 3 (Extra)"
+    },
+    {
+      "type": "color",
+      "id": "product_glow_color",
+      "label": "Glow color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "floating_badge_bg",
+      "label": "Floating badge background",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Omega 3 hero cart"
+    }
+  ]
+}
+{% endschema %}

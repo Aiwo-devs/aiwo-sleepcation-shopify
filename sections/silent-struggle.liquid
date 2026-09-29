@@ -1,0 +1,266 @@
+{% comment %}
+  Silent Struggle Section
+  Client-First Methodology - Production Ready
+  Updates:
+  - Gold: #919FA8
+  - Black: #211E1E
+  - Grey: #545252
+{% endcomment %}
+
+<style>
+/* ============================================================================
+   SECTION
+   ============================================================================ */
+.section_silent-struggle {
+  width: 100%;
+  padding: 64px 60px;
+  background-color: #FEFEFE;
+}
+
+.silent-struggle_container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ============================================================================
+   GRID
+   ============================================================================ */
+.silent-struggle_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ============================================================================
+   CONTENT
+   ============================================================================ */
+.silent-struggle_content {
+  /* Changed from padding-right to padding-left since content is now on the right */
+  padding-left: 40px;
+}
+
+.silent-struggle_eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  /* Updated Primary Text Color */
+  color: #211E1E;
+  padding: 4px 12px;
+  margin-bottom: 24px;
+  /* Updated Gradient to match #919FA8 (RGB: 145, 159, 168) */
+  background: linear-gradient(90deg, rgba(145, 159, 168, 0.24) 0%, rgba(145, 159, 168, 0.06) 100%);
+  border-radius: 2px;
+}
+
+.silent-struggle_heading {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  /* Updated Primary Text Color */
+  color: #211E1E;
+  margin: 0 0 24px 0;
+}
+
+.silent-struggle_heading-gold {
+  /* Updated Accent Color */
+  color: #919FA8;
+}
+
+.silent-struggle_text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  /* Updated Secondary Text Color */
+  color: #545252;
+  margin-bottom: 20px;
+}
+
+.silent-struggle_text:last-of-type {
+  margin-bottom: 0;
+}
+
+.silent-struggle_text p {
+  margin: 0;
+}
+
+/* ============================================================================
+   MEDIA
+   ============================================================================ */
+.silent-struggle_media {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%;
+  background-color: #E8E8E8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.silent-struggle_media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================================================
+   RESPONSIVE - TABLET
+   ============================================================================ */
+@media screen and (max-width: 991px) {
+  .section_silent-struggle {
+    padding: 56px 40px;
+  }
+  
+  .silent-struggle_grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .silent-struggle_content {
+    /* Reset padding-left to 0 for stacked layout */
+    padding-left: 0;
+    order: 2;
+  }
+  
+  .silent-struggle_media {
+    order: 1;
+  }
+  
+  .silent-struggle_heading {
+    font-size: 40px;
+  }
+  
+  .silent-struggle_text {
+    font-size: 17px;
+  }
+  
+  .silent-struggle_eyebrow {
+    font-size: 13px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE LANDSCAPE
+   ============================================================================ */
+@media screen and (max-width: 767px) {
+  .section_silent-struggle {
+    padding: 40px 24px;
+  }
+  
+  .silent-struggle_grid {
+    gap: 32px;
+  }
+  
+  .silent-struggle_heading {
+    font-size: 36px;
+  }
+  
+  .silent-struggle_text {
+    font-size: 16px;
+  }
+  
+  .silent-struggle_eyebrow {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE PORTRAIT
+   ============================================================================ */
+@media screen and (max-width: 479px) {
+  .section_silent-struggle {
+    padding: 32px 20px;
+  }
+  
+  .silent-struggle_grid {
+    gap: 24px;
+  }
+  
+  .silent-struggle_heading {
+    font-size: 32px;
+  }
+  
+  .silent-struggle_text {
+    font-size: 15px;
+  }
+  
+  .silent-struggle_eyebrow {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+}
+</style>
+
+<div class="section_silent-struggle">
+  <div class="silent-struggle_container">
+    <div class="silent-struggle_grid">
+      
+      <div class="silent-struggle_media">
+        {%- if section.settings.image != blank -%}
+          {{- section.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: section.settings.image.alt -}}
+        {%- endif -%}
+      </div>
+
+      <div class="silent-struggle_content">
+        <span class="silent-struggle_eyebrow">{{ section.settings.eyebrow }}</span>
+        
+        <h2 class="silent-struggle_heading">
+          {{ section.settings.heading | replace: 'Fasting Journey', '<span class="silent-struggle_heading-gold">Fasting Journey</span>' }}
+        </h2>
+        
+        <div class="silent-struggle_text">{{ section.settings.paragraph_1 }}</div>
+        <div class="silent-struggle_text">{{ section.settings.paragraph_2 }}</div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Silent Struggle",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "THE SILENT STRUGGLE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Fasting Journey Is Harder Than It Should Be"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_1",
+      "label": "Paragraph 1",
+      "default": "<p>You've committed to intermittent fasting. You've seen the research. You know it works. But somewhere between hour 14 and your eating window, willpower gives way to desperation—and that \"healthy\" granola bar in your desk drawer starts calling your name.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_2",
+      "label": "Paragraph 2",
+      "default": "<p>The problem? Most \"energy bars\" are nutritional landmines. Hidden sugars spike your insulin. Artificial ingredients disrupt your metabolism. And just like that, your carefully maintained fast is broken before you even realize it.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Silent Struggle"
+    }
+  ]
+}
+{% endschema %}

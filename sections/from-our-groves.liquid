@@ -1,0 +1,623 @@
+{% comment %}
+  ============================================================
+  Section  : From Our Groves — Process Steps
+  Brand    : AIWO EVOO
+  Version  : 1.1.6
+  ============================================================
+  Layout   : 60/40 Left col sticky · Right col scrolling steps
+  Mobile   : Single column · Header sticky full-bleed at top
+  Fonts    : Poppins loaded via Google Fonts (Includes 600 weight)
+  Updates  : Forced sticky top offset to 48px on mobile/tablet
+  ============================================================
+{% endcomment %}
+
+{%- comment %} Load Poppins if not already loaded by theme {%- endcomment %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================================
+   DESIGN TOKENS — scoped to this section instance
+   ============================================================================ */
+#groves-{{ section.id }} {
+  /* Colours */
+  --g-bg:               #0C0C0D;
+  --g-text:             #FEFEFE;
+  --g-text-muted:       rgba(254, 254, 254, 0.70);
+  --g-accent:           #919FA8;
+  --g-eyebrow-grad-a:   rgba(145, 159, 168, 0.24);
+  --g-eyebrow-grad-b:   rgba(145, 159, 168, 0.06);
+
+  /* Spacing */
+  --g-pad-v:            48px;
+  --g-pad-h:            60px;
+  --g-max-w:            1400px;
+  --g-col-gap:          80px;
+  --g-el-gap:           16px;
+  --g-step-gap:         32px;
+
+  /* Badge / Step Tagline */
+  --g-badge-font:       'Poppins', 'Outfit', -apple-system, sans-serif;
+  --g-badge-size:       18px;
+  --g-badge-weight:     700;
+  --g-badge-lh:         150%;
+  --g-badge-ls:         0.06em;
+  --g-badge-pad-v:      5px;
+  --g-badge-pad-h:      24px;
+
+  /* Paragraph */
+  --g-para-font:        'Poppins', 'Outfit', -apple-system, sans-serif;
+  --g-para-size:        20px;
+  --g-para-lh:          150%;
+}
+
+/* ============================================================================
+   SECTION SHELL
+   ============================================================================ */
+#groves-{{ section.id }} {
+  width: 100%;
+  background-color: var(--g-bg);
+  padding-top: var(--g-pad-v);
+  padding-bottom: var(--g-pad-v);
+  padding-left: var(--g-pad-h);
+  padding-right: var(--g-pad-h);
+  clip-path: inset(0 -10000px -10000px -10000px);
+}
+
+/* ============================================================================
+   CONTAINER
+   ============================================================================ */
+#groves-{{ section.id }} .groves__container {
+  max-width: var(--g-max-w);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================================
+   TWO-COLUMN GRID (3fr 2fr = 60% / 40%)
+   ============================================================================ */
+#groves-{{ section.id }} .groves__grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr; 
+  column-gap: var(--g-col-gap);
+  align-items: start;
+}
+
+/* ============================================================================
+   LEFT COLUMN — STICKY HEADER
+   ============================================================================ */
+#groves-{{ section.id }} .groves__col-left {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  padding-right: 40px;
+  padding-top: 0px; 
+  padding-bottom: 16px;
+  z-index: 5;
+}
+
+/* ============================================================================
+   EYEBROW
+   ============================================================================ */
+#groves-{{ section.id }} .groves__eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--g-text);
+  padding: 4px 12px;
+  margin-bottom: var(--g-el-gap);
+  background: linear-gradient(
+    90deg,
+    var(--g-eyebrow-grad-a) 0%,
+    var(--g-eyebrow-grad-b) 100%
+  );
+  border-radius: 2px;
+}
+
+/* ============================================================================
+   HEADING
+   ============================================================================ */
+#groves-{{ section.id }} .groves__heading {
+  font-family: var(--g-para-font);
+  font-size: 48px;
+  font-weight: 600; 
+  font-style: normal;
+  line-height: 1.2;
+  color: var(--g-text);
+  margin: 0;
+}
+
+#groves-{{ section.id }} .groves__heading-accent {
+  color: var(--g-accent);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ============================================================================
+   RIGHT COLUMN — SCROLLING STEPS
+   ============================================================================ */
+#groves-{{ section.id }} .groves__step + .groves__step {
+  margin-top: var(--g-step-gap);
+}
+
+/* ============================================================================
+   STEP BADGE / TAGLINE
+   ============================================================================ */
+#groves-{{ section.id }} .groves__step-badge {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+#groves-{{ section.id }} .groves__step-badge-text {
+  display: inline-block;
+  font-family: var(--g-badge-font);
+  font-size: var(--g-badge-size);
+  font-weight: var(--g-badge-weight); 
+  font-style: normal;                 
+  line-height: var(--g-badge-lh);
+  letter-spacing: var(--g-badge-ls);
+  text-transform: uppercase;
+  color: #211E1E;                     
+  background: #FFFFFF;                
+  padding: var(--g-badge-pad-v) var(--g-badge-pad-h);
+  border-radius: 4px;                 
+}
+
+/* ============================================================================
+   STEP CONTENT
+   ============================================================================ */
+#groves-{{ section.id }} .groves__step-content {
+  margin-top: var(--g-el-gap);
+  font-family: var(--g-para-font);
+  font-size: var(--g-para-size);
+  font-weight: 400;
+  line-height: var(--g-para-lh);
+  color: var(--g-text);
+}
+
+#groves-{{ section.id }} .groves__step-content strong,
+#groves-{{ section.id }} .groves__step-content b {
+  font-family: var(--g-para-font);
+  font-size: inherit; 
+  font-weight: 700;
+  color: var(--g-text);
+}
+
+#groves-{{ section.id }} .groves__step-content p { margin: 0; }
+#groves-{{ section.id }} .groves__step-content p + p { margin-top: 12px; }
+
+/* ============================================================================
+   STEP DIVIDER
+   ============================================================================ */
+#groves-{{ section.id }} .groves__step-divider {
+  margin-top: var(--g-el-gap);
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+#groves-{{ section.id }} .groves__step-divider svg,
+#groves-{{ section.id }} .groves__step-divider img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ============================================================================
+   SECTION-LEVEL CURVE DIVIDER
+   ============================================================================ */
+.groves__section-curve {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background-color: #0C0C0D;
+}
+.groves__section-curve svg,
+.groves__section-curve img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ============================================================================
+   RESPONSIVE — TABLET (≤991px)
+   ============================================================================ */
+@media screen and (max-width: 991px) {
+  #groves-{{ section.id }} {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #groves-{{ section.id }} .groves__grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  #groves-{{ section.id }} .groves__col-left {
+    position: sticky;
+    top: 48px !important; /* FIX: Locks offset to 48px, overriding JS */
+    z-index: 20;
+    background-color: var(--g-bg);
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 0px; 
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(145, 159, 168, 0.15);
+  }
+
+  /* Solid block stretching upwards to hide scrolling text when nav hides */
+  #groves-{{ section.id }} .groves__col-left::before {
+    content: '';
+    position: absolute;
+    top: -300px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--g-bg);
+    z-index: -1;
+  }
+
+  #groves-{{ section.id }} .groves__heading { font-size: 40px; }
+  #groves-{{ section.id }} .groves__step-content { font-size: 18px; }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE LANDSCAPE (≤767px)
+   ============================================================================ */
+@media screen and (max-width: 767px) {
+  #groves-{{ section.id }} {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  #groves-{{ section.id }} .groves__grid { row-gap: 32px; }
+
+  #groves-{{ section.id }} .groves__col-left {
+    top: 48px !important; /* FIX: Locks offset to 48px, overriding JS */
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 0px; 
+  }
+
+  #groves-{{ section.id }} .groves__heading { font-size: 36px; }
+  #groves-{{ section.id }} .groves__eyebrow { font-size: 12px; margin-bottom: 12px; }
+  
+  #groves-{{ section.id }} .groves__step-content { font-size: 16px; }
+  #groves-{{ section.id }} .groves__step-badge-text { 
+    font-size: 16px; 
+    padding: 4px 20px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE PORTRAIT (≤479px)
+   ============================================================================ */
+@media screen and (max-width: 479px) {
+  #groves-{{ section.id }} {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #groves-{{ section.id }} .groves__grid { row-gap: 24px; }
+
+  #groves-{{ section.id }} .groves__col-left {
+    top: 48px !important; /* FIX: Locks offset to 48px, overriding JS */
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px; 
+  }
+
+  #groves-{{ section.id }} .groves__heading { font-size: 32px; }
+  #groves-{{ section.id }} .groves__eyebrow { font-size: 11px; margin-bottom: 10px; }
+  #groves-{{ section.id }} .groves__step + .groves__step { margin-top: 24px; }
+  
+  #groves-{{ section.id }} .groves__step-content { font-size: 15px; }
+  #groves-{{ section.id }} .groves__step-badge-text { 
+    font-size: 15px; 
+    padding: 4px 16px;
+  }
+}
+</style>
+
+{%- comment %} ── BUILD ACCENT REPLACEMENT STRING ── {%- endcomment %}
+{%- assign g_accent_word = section.settings.accent_word -%}
+{%- assign g_accent_open = '<em class="groves__heading-accent">' -%}
+{%- assign g_accent_close = '</em>' -%}
+{%- assign g_accent_replace = g_accent_open | append: g_accent_word | append: g_accent_close -%}
+
+<section
+  id="groves-{{ section.id }}"
+  aria-label="{{ section.settings.eyebrow | strip_html }}"
+>
+  <div class="groves__container">
+    <div class="groves__grid">
+
+      {%- comment %} ════════════════════════════════════════
+        LEFT COLUMN — STICKY HEADER
+      ════════════════════════════════════════ {%- endcomment %}
+      <div class="groves__col-left" id="groves-left-{{ section.id }}">
+
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="groves__eyebrow">{{ section.settings.eyebrow }}</span>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="groves__heading">
+            {%- if g_accent_word != blank -%}
+              {{ section.settings.heading | replace: g_accent_word, g_accent_replace }}
+            {%- else -%}
+              {{ section.settings.heading }}
+            {%- endif -%}
+          </h2>
+        {%- endif -%}
+
+      </div>
+
+      {%- comment %} ════════════════════════════════════════
+        RIGHT COLUMN — SCROLLING STEPS
+      ════════════════════════════════════════ {%- endcomment %}
+      <div class="groves__col-right" id="groves-right-{{ section.id }}">
+
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            <div class="groves__step" {{ block.shopify_attributes }}>
+
+              {%- comment %} ── STEP BADGE ── {%- endcomment %}
+              {%- if block.settings.badge != blank -%}
+                <div class="groves__step-badge">
+                  <span class="groves__step-badge-text">{{ block.settings.badge }}</span>
+                </div>
+              {%- endif -%}
+
+              {%- comment %} ── STEP CONTENT ── {%- endcomment %}
+              {%- if block.settings.content != blank -%}
+                <div class="groves__step-content">
+                  {{ block.settings.content }}
+                </div>
+              {%- endif -%}
+
+              {%- comment %} ── ASSET STEP DIVIDER ── {%- endcomment %}
+              {%- unless forloop.last -%}
+                <div class="groves__step-divider" aria-hidden="true">
+                  {%- if section.settings.step_divider_image != blank -%}
+                    {{ section.settings.step_divider_image | image_url: width: 200 | image_tag: loading: 'lazy' }}
+                  {%- else -%}
+                    {%- comment %} Fallback: Loads 'step-divider.svg' from Theme Assets {%- endcomment %}
+                    <img src="{{ 'step-divider.svg' | asset_url }}" alt="Divider" loading="lazy">
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{%- comment %} ── SECTION-LEVEL CURVE DIVIDER ── {%- endcomment %}
+{%- if section.settings.section_curve_svg != blank -%}
+  <div class="groves__section-curve" aria-hidden="true">
+    {{- section.settings.section_curve_svg -}}
+  </div>
+{%- endif -%}
+
+<script>
+(function () {
+  'use strict';
+
+  var sid   = '{{ section.id }}';
+  var sec   = document.getElementById('groves-' + sid);
+  var left  = document.getElementById('groves-left-' + sid);
+  var right = document.getElementById('groves-right-' + sid);
+
+  if (!sec || !left || !right) return;
+
+  function setStickyOffset() {
+    var navHeight = 0;
+    var header =
+      document.querySelector('.shopify-section-header-sticky') ||
+      document.querySelector('header[class*="sticky"]') ||
+      document.querySelector('.header-wrapper') ||
+      document.querySelector('header');
+
+    if (header) {
+      navHeight = header.offsetHeight;
+    }
+
+    sec.style.setProperty('--groves-sticky-top', navHeight + 'px');
+    left.style.top = navHeight + 'px';
+  }
+
+  setStickyOffset();
+  window.addEventListener('resize', setStickyOffset);
+
+  function isMobile() {
+    return window.innerWidth <= 991;
+  }
+
+  var lastStep = right.querySelector('.groves__step:last-child');
+
+  if (lastStep) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (isMobile()) {
+          if (entry.isIntersecting) {
+            left.style.borderBottomColor = 'transparent';
+          } else {
+            left.style.borderBottomColor = 'rgba(145, 159, 168, 0.15)';
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(lastStep);
+  }
+
+})();
+</script>
+
+{% schema %}
+{
+  "name": "From Our Groves",
+  "tag": "section",
+  "class": "section-from-our-groves",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left Column — Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text (italic pill)",
+      "default": "Every bottle tells a story of craftsmanship, transparency, and purity"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "From Our Australian Groves to Your Table"
+    },
+    {
+      "type": "text",
+      "id": "accent_word",
+      "label": "Accent words in heading",
+      "info": "Type the exact words to display italic + accent colour. Must match exactly.",
+      "default": "Australian Groves"
+    },
+    {
+      "type": "header",
+      "content": "Dividers"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_divider_image",
+      "label": "Step Divider Image",
+      "info": "Upload the wave divider image/SVG. If left blank, it will look for 'step-divider.svg' in your theme Assets folder."
+    },
+    {
+      "type": "html",
+      "id": "section_curve_svg",
+      "label": "Section Curve Divider SVG",
+      "info": "Paste your custom SVG for the decorative curve rendered between sections. Leave empty to hide."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Process Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Step Badge Label",
+          "default": "STEP-1"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Step Content",
+          "default": "<p><strong>Sustainably Grown, Non-GMO Groves:</strong> Pruned for health; soil and water managed for flavor-rich fruit.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "From Our Groves",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-1",
+            "content": "<p><strong>Sustainably Grown, Non-GMO Groves:</strong> Pruned for health; soil and water managed for flavor-rich fruit.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-2",
+            "content": "<p><strong>Selective Harvest:</strong> Hand precision-picked at optimal ripeness; early morning to protect aromatics.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-3",
+            "content": "<p><strong>Quick Transfer to Mill:</strong> Crates, not sacks—ventilated and shaded; no fruit piling.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-4",
+            "content": "<p><strong>Wash &amp; Sort:</strong> Leaves removed, olives rinsed; only sound fruit proceeds.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-5",
+            "content": "<p><strong>Cold Extraction (&lt;27°C):</strong> Gentle crush → short malaxation → immediate separation to lock in aroma and polyphenols.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-6",
+            "content": "<p><strong>Clarify &amp; Polish:</strong> Decant/centrifuge to reduce moisture and solids; bright, clean profile.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-7",
+            "content": "<p><strong>Independent Lab Verification:</strong> Pesticides: Not Detected; freshness numbers recorded per lot (acidity, peroxide, PPP/DAGs).</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-8",
+            "content": "<p><strong>Bottled in Dark-Tinted Glass:</strong> Shields from light; preserves vitality to the last drop.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-9",
+            "content": "<p><strong>Lot Coding &amp; COA QR:</strong> Radical transparency—scan to view the independent report for your bottle.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "badge": "STEP-10",
+            "content": "<p><strong>Cool-Chain Storage &amp; Ship:</strong> Stored away from heat and light; delivered ready to enjoy.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

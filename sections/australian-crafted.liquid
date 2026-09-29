@@ -1,0 +1,423 @@
+{% comment %}
+  Australian Crafted Excellence Section
+  Client-First Methodology - Production Ready
+  Updates:
+  - Gold: #919FA8
+  - Black: #211E1E
+  - Grey: #545252
+  - Aura Accent: #677E8D
+  - Fonts: Updated all to Poppins, H1 changed to Bold (700)
+{% endcomment %}
+
+{%- comment %} Load Poppins if not already loaded by theme {%- endcomment %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================================
+   SECTION
+   ============================================================================ */
+.section_australian-crafted {
+  width: 100%;
+  padding: 48px 60px;
+  background-color: #FEFEFE;
+}
+
+.australian-crafted_container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ============================================================================
+   GRID
+   ============================================================================ */
+.australian-crafted_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ============================================================================
+   CONTENT
+   ============================================================================ */
+.australian-crafted_content {
+  padding-right: 40px;
+  order: 1;
+}
+
+.australian-crafted_eyebrow {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #211E1E;
+  padding: 4px 12px;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, rgba(145, 159, 168, 0.24) 0%, rgba(145, 159, 168, 0.06) 100%);
+  border-radius: 2px;
+}
+
+.australian-crafted_heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 700; /* Updated from 600 to 700 for Bold */
+  line-height: 1.2;
+  color: #211E1E;
+  margin: 0 0 24px 0;
+}
+
+.australian-crafted_heading-aura {
+  color: #677E8D !important;
+  font-style: italic !important;
+}
+
+.australian-crafted_text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #545252;
+  margin-bottom: 20px;
+}
+
+.australian-crafted_text:last-of-type {
+  margin-bottom: 0;
+}
+
+.australian-crafted_text p {
+  margin: 0;
+}
+
+/* ============================================================================
+   BUTTON & PREMIUM ANIMATIONS
+   ============================================================================ */
+.australian-crafted_button {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 24px;
+  margin-top: 32px;
+  background-color: #0C0C0D;
+  border: 1px solid #0C0C0D;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Triggers every 4 seconds */
+  animation: button-pulse 4s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+/* The Glass Shine Sweep */
+.australian-crafted_button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg, 
+    rgba(255,255,255,0) 30%, 
+    rgba(255,255,255,0.2) 50%, 
+    rgba(255,255,255,0) 70%
+  );
+  transition: opacity 0.3s ease;
+  animation: button-shine 4s ease-in-out infinite;
+}
+
+/* Hover State - Clear visual feedback */
+.australian-crafted_button:hover {
+  background-color: #211E1E;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(12, 12, 13, 0.25);
+  animation-play-state: paused;
+}
+
+/* Fades out the shine on hover so it doesn't distract */
+.australian-crafted_button:hover::after {
+  opacity: 0;
+  animation-play-state: paused;
+}
+
+/* Active Click State - Tactile feedback */
+.australian-crafted_button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(12, 12, 13, 0.15);
+  transition-duration: 0.1s;
+}
+
+/* Icon Sizing */
+.australian-crafted_button img,
+.australian-crafted_button svg {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Keyframes: Smooth Pulse (Front-loaded to trigger immediately) */
+@keyframes button-pulse {
+  0%, 25%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 0 rgba(12, 12, 13, 0);
+  }
+  10% { 
+    transform: scale(1.03); 
+    box-shadow: 0 8px 20px rgba(12, 12, 13, 0.2);
+  }
+}
+
+/* Keyframes: Smooth Shine (Front-loaded to trigger immediately) */
+@keyframes button-shine {
+  0% { left: -150%; }
+  20%, 100% { left: 150%; }
+}
+
+/* ============================================================================
+   MEDIA
+   ============================================================================ */
+.australian-crafted_media {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%;
+  background-color: #E8E8E8;
+  border-radius: 8px;
+  overflow: hidden;
+  order: 2;
+}
+
+.australian-crafted_media img,
+.australian-crafted_media svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================================================
+   RESPONSIVE - TABLET
+   ============================================================================ */
+@media screen and (max-width: 991px) {
+  .section_australian-crafted {
+    padding: 56px 40px;
+  }
+  
+  .australian-crafted_grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .australian-crafted_content {
+    padding-right: 0;
+    order: 2;
+  }
+  
+  .australian-crafted_media {
+    order: 1;
+  }
+  
+  .australian-crafted_heading {
+    font-size: 40px;
+  }
+  
+  .australian-crafted_text {
+    font-size: 17px;
+  }
+  
+  .australian-crafted_eyebrow {
+    font-size: 13px;
+  }
+  
+  .australian-crafted_button {
+    margin-top: 24px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE LANDSCAPE
+   ============================================================================ */
+@media screen and (max-width: 767px) {
+  .section_australian-crafted {
+    padding: 40px 24px;
+  }
+  
+  .australian-crafted_grid {
+    gap: 32px;
+  }
+  
+  .australian-crafted_heading {
+    font-size: 36px;
+  }
+  
+  .australian-crafted_text {
+    font-size: 16px;
+  }
+  
+  .australian-crafted_eyebrow {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE PORTRAIT
+   ============================================================================ */
+@media screen and (max-width: 479px) {
+  .section_australian-crafted {
+    padding: 32px 20px;
+  }
+  
+  .australian-crafted_grid {
+    gap: 24px;
+  }
+  
+  .australian-crafted_heading {
+    font-size: 32px;
+  }
+  
+  .australian-crafted_text {
+    font-size: 15px;
+  }
+  
+  .australian-crafted_eyebrow {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+  
+  .australian-crafted_button {
+    width: 100%;
+  }
+}
+</style>
+
+<div class="section_australian-crafted">
+  <div class="australian-crafted_container">
+    <div class="australian-crafted_grid">
+      
+      <div class="australian-crafted_media">
+        {%- if section.settings.image != blank -%}
+          {{- section.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: section.settings.image.alt -}}
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag }}
+        {%- endif -%}
+      </div>
+
+      <div class="australian-crafted_content">
+        <span class="australian-crafted_eyebrow">{{ section.settings.eyebrow }}</span>
+        
+        <h1 class="australian-crafted_heading">
+          {{ section.settings.heading | replace: 'Olive Aura', '<span class="australian-crafted_heading-aura">Olive Aura</span>' | replace: 'olive aura', '<span class="australian-crafted_heading-aura">olive aura</span>' | replace: 'OLIVE AURA', '<span class="australian-crafted_heading-aura">OLIVE AURA</span>' }}
+        </h1>
+        
+        <div class="australian-crafted_text">{{ section.settings.paragraph_1 }}</div>
+        <div class="australian-crafted_text">{{ section.settings.paragraph_2 }}</div>
+
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_link | default: '#' }}" class="australian-crafted_button">
+            {{ section.settings.button_text }}
+            
+            {%- if section.settings.button_icon_upload != blank -%}
+              {{- section.settings.button_icon_upload | image_url: width: 40 | image_tag: loading: 'lazy' -}}
+            {%- else -%}
+              {{ section.settings.button_icon_svg }}
+            {%- endif -%}
+            
+          </a>
+        {%- endif -%}
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Australian Crafted",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "THE SILENT STRUGGLE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "AIWO Olive Aura Extra Virgin Olive Oil"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_1",
+      "label": "Paragraph 1",
+      "default": "<p>You've committed to intermittent fasting. You've seen the research. You know it works. But somewhere between hour 14 and your eating window, willpower gives way to desperation—and that \"healthy\" granola bar in your desk drawer starts calling your name.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_2",
+      "label": "Paragraph 2",
+      "default": "<p>The problem? Most \"energy bars\" are nutritional landmines. Hidden sugars spike your insulin. Artificial ingredients disrupt your metabolism. And just like that, your carefully maintained fast is broken before you even realize it.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Button Configuration"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "button_icon_upload",
+      "label": "Upload Icon (SVG/PNG)",
+      "info": "Upload a file to act as the button icon."
+    },
+    {
+      "type": "html",
+      "id": "button_icon_svg",
+      "label": "Fallback Icon Code (SVG)",
+      "info": "Paste raw SVG code here if you don't want to upload a file. The SVG will inherit text color.",
+      "default": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line><polyline points=\"12 5 19 12 12 19\"></polyline></svg>"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Australian Crafted Excellence"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,845 @@
+{% comment %}
+  Nutrition Facts Section
+  Desktop: Even corner radius 24px on Nutrition Table
+  Updates: 
+  - Nutrition Table Radius: 24px (All corners)
+  - Gold: #919FA8
+  - Black: #211E1E
+  - Grey: #545252
+  - Serving Badge Gradient: #F28367 -> #FF5282
+  - Clean Card BG: #EDF2F4
+  - Clean Card Border: #C3D1D7
+{% endcomment %}
+
+<style>
+/* ==========================================================================
+   CSS VARIABLES - CENTRALIZED DESIGN TOKENS
+   ========================================================================== */
+:root {
+  /* Colors - Nutrition Section */
+  --nutrition-bg: #FEFEFE;
+  --nutrition-card-bg: #FFFFFF;
+  --nutrition-card-border: #F0EDED;
+  
+  /* Clean Card Colors */
+  --nutrition-clean-bg: #EDF2F4;
+  --nutrition-clean-border: #C3D1D7;
+  
+  /* COLORS */
+  --nutrition-text-primary: #211E1E;
+  --nutrition-text-secondary: #545252;
+  --nutrition-gold: #919FA8;
+  
+  --nutrition-rda: #519A5E;
+  --nutrition-divider: #D3D3D3;
+  
+  /* Layout */
+  --nutrition-card-radius: 24px; /* Updated to 24px */
+  --nutrition-badge-radius: 34px;
+  --nutrition-clean-radius-large: 40px;
+  --nutrition-clean-radius-small: 24px;
+  
+  /* Typography */
+  --nutrition-heading-size: 48px;
+  --nutrition-title-size: 32px;
+  --nutrition-subtitle-size: 40px;
+  --nutrition-body-size: 18px;
+  --nutrition-badge-size: 16px;
+  --nutrition-cert-size: 14px;
+}
+
+/* ==========================================================================
+   SECTION STRUCTURE
+   ========================================================================== */
+.section_nutrition-facts {
+  width: 100%;
+  padding: 80px 60px;
+  background-color: var(--nutrition-bg);
+}
+
+.nutrition-facts_container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.nutrition-facts_header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.nutrition-facts_eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--nutrition-text-primary);
+  padding: 4px 12px;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, rgba(145, 159, 168, 0.24), rgba(145, 159, 168, 0.06));
+  border-radius: 2px;
+}
+
+.nutrition-facts_heading {
+  font-size: var(--nutrition-heading-size);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--nutrition-text-primary);
+  margin: 0;
+}
+
+.nutrition-facts_heading-gold {
+  color: var(--nutrition-gold);
+}
+
+/* ==========================================================================
+   TWO COLUMN GRID
+   ========================================================================== */
+.nutrition-facts_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: end;
+}
+
+/* ==========================================================================
+   LEFT COLUMN - NUTRITION CARD
+   ========================================================================== */
+.nutrition-facts_table {
+  background-color: var(--nutrition-card-bg);
+  border: 1px solid var(--nutrition-card-border);
+  border-right-width: 2px;
+  /* Updated: Even corner radius on all sides */
+  border-radius: var(--nutrition-card-radius);
+  padding: 24px;
+  box-shadow: 0 2px 4px -2px rgba(16, 24, 40, 0.06), 0 4px 8px -2px rgba(16, 24, 40, 0.10);
+}
+
+.nutrition-facts_table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.nutrition-facts_table-title {
+  font-size: var(--nutrition-title-size);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--nutrition-text-primary);
+  margin: 0;
+}
+
+.nutrition-facts_serving-badge {
+  display: inline-block;
+  font-size: var(--nutrition-badge-size);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: var(--nutrition-badge-radius);
+  background: linear-gradient(90deg, #F28367 0%, #FF5282 100%);
+  white-space: nowrap;
+}
+
+/* Nutrition List */
+.nutrition-facts_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nutrition-facts_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 10px;
+  padding-bottom: 16px;
+  border-bottom: 0.5px solid var(--nutrition-divider);
+}
+
+.nutrition-facts_item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.nutrition-facts_label {
+  font-size: var(--nutrition-body-size);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--nutrition-text-secondary);
+  margin: 0;
+}
+
+.nutrition-facts_value {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: var(--nutrition-body-size);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--nutrition-text-primary);
+  margin: 0;
+}
+
+.nutrition-facts_rda {
+  font-size: var(--nutrition-cert-size);
+  font-weight: 500;
+  color: var(--nutrition-rda);
+}
+
+/* ==========================================================================
+   RIGHT COLUMN - WRAPPED CERTIFICATIONS + CLEAN CARD
+   ========================================================================== */
+.nutrition-facts_credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Certifications Wrapper with Left Margin */
+.nutrition-facts_certifications-wrapper {
+  margin-left: 40px;
+}
+
+/* Certifications Grid */
+.nutrition-facts_certifications {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 12px;
+}
+
+.nutrition-facts_certification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nutrition-facts_cert-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--nutrition-card-border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.nutrition-facts_cert-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nutrition-facts_cert-label {
+  font-size: var(--nutrition-cert-size);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--nutrition-text-primary);
+  margin: 0;
+}
+
+/* Clean Nutrition Card */
+.nutrition-facts_clean-card {
+  background-color: var(--nutrition-clean-bg);
+  border: 1px solid var(--nutrition-clean-border);
+  border-top-left-radius: 0;
+  border-top-right-radius: var(--nutrition-clean-radius-large);
+  border-bottom-right-radius: var(--nutrition-clean-radius-small);
+  border-bottom-left-radius: 0;
+  padding: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 4px -2px rgba(16, 24, 40, 0.06), 0 4px 8px -2px rgba(16, 24, 40, 0.10);
+}
+
+.nutrition-facts_clean-title {
+  font-size: var(--nutrition-subtitle-size);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--nutrition-text-primary);
+  margin: 0 0 24px 0;
+}
+
+.nutrition-facts_clean-title-gold {
+  display: block;
+  color: var(--nutrition-gold);
+}
+
+.nutrition-facts_clean-description {
+  font-size: var(--nutrition-body-size);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--nutrition-text-secondary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE - TABLET (991px)
+   ========================================================================== */
+@media (max-width: 991px) {
+  .section_nutrition-facts {
+    padding: 64px 40px;
+  }
+  
+  .nutrition-facts_header {
+    margin-bottom: 48px;
+  }
+  
+  .nutrition-facts_heading {
+    font-size: 40px;
+  }
+  
+  .nutrition-facts_content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: stretch;
+  }
+  
+  .nutrition-facts_table-title {
+    font-size: 28px;
+  }
+  
+  .nutrition-facts_certifications-wrapper {
+    margin-left: 0;
+  }
+  
+  .nutrition-facts_certifications {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .nutrition-facts_clean-card {
+    border-radius: var(--nutrition-card-radius);
+    margin-bottom: 0;
+  }
+  
+  .nutrition-facts_clean-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .nutrition-facts_clean-description {
+    font-size: 16px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE (767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .section_nutrition-facts {
+    padding: 48px 24px;
+  }
+  
+  .nutrition-facts_header {
+    margin-bottom: 40px;
+  }
+  
+  .nutrition-facts_heading {
+    font-size: 32px;
+  }
+  
+  .nutrition-facts_eyebrow {
+    font-size: 12px;
+  }
+  
+  .nutrition-facts_content {
+    gap: 24px;
+  }
+  
+  .nutrition-facts_table {
+    padding: 20px;
+  }
+  
+  .nutrition-facts_table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .nutrition-facts_table-title {
+    font-size: 24px;
+  }
+  
+  .nutrition-facts_serving-badge {
+    font-size: 14px;
+  }
+  
+  .nutrition-facts_label,
+  .nutrition-facts_value {
+    font-size: 16px;
+  }
+  
+  .nutrition-facts_item {
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
+  
+  .nutrition-facts_certifications {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .nutrition-facts_cert-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .nutrition-facts_cert-label {
+    font-size: 13px;
+  }
+  
+  .nutrition-facts_clean-card {
+    padding: 20px;
+  }
+  
+  .nutrition-facts_clean-title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  
+  .nutrition-facts_clean-description {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE PORTRAIT (479px)
+   ========================================================================== */
+@media (max-width: 479px) {
+  .section_nutrition-facts {
+    padding: 40px 20px;
+  }
+  
+  .nutrition-facts_heading {
+    font-size: 28px;
+  }
+  
+  .nutrition-facts_eyebrow {
+    font-size: 11px;
+  }
+  
+  .nutrition-facts_table-title {
+    font-size: 22px;
+  }
+  
+  .nutrition-facts_certifications {
+    grid-template-columns: 1fr;
+  }
+  
+  .nutrition-facts_clean-title {
+    font-size: 24px;
+  }
+  
+  .nutrition-facts_clean-description {
+    font-size: 14px;
+  }
+}
+</style>
+
+<div class="section_nutrition-facts">
+  <div class="nutrition-facts_container">
+    
+    <header class="nutrition-facts_header">
+      <span class="nutrition-facts_eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="nutrition-facts_heading">
+        {{ section.settings.heading_black }} <span class="nutrition-facts_heading-gold">{{ section.settings.heading_gold }}</span> {{ section.settings.heading_black_2 }}
+      </h2>
+    </header>
+    
+    <div class="nutrition-facts_content">
+      
+      <div class="nutrition-facts_table">
+        
+        <div class="nutrition-facts_table-header">
+          <h3 class="nutrition-facts_table-title">{{ section.settings.table_title }}</h3>
+          <span class="nutrition-facts_serving-badge">{{ section.settings.serving_size }}</span>
+        </div>
+        
+        <ul class="nutrition-facts_list">
+          {%- for i in (1..8) -%}
+            {%- assign item_label = 'item_' | append: i | append: '_label' -%}
+            {%- assign item_value = 'item_' | append: i | append: '_value' -%}
+            {%- assign item_rda = 'item_' | append: i | append: '_rda' -%}
+            
+            {%- if section.settings[item_label] != blank -%}
+              <li class="nutrition-facts_item">
+                <span class="nutrition-facts_label">{{ section.settings[item_label] }}</span>
+                <span class="nutrition-facts_value">
+                  {{ section.settings[item_value] }}
+                  {%- if section.settings[item_rda] != blank -%}
+                    <span class="nutrition-facts_rda">{{ section.settings[item_rda] }}</span>
+                  {%- endif -%}
+                </span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        
+      </div>
+      
+      <div class="nutrition-facts_credentials">
+        
+        <div class="nutrition-facts_certifications-wrapper">
+          <div class="nutrition-facts_certifications">
+            {%- for i in (1..6) -%}
+              {%- assign cert_label = 'cert_' | append: i | append: '_label' -%}
+              {%- assign cert_icon = 'cert_' | append: i | append: '_icon' -%}
+              
+              {%- if section.settings[cert_label] != blank -%}
+                <div class="nutrition-facts_certification">
+                  <div class="nutrition-facts_cert-icon">
+                    {%- if section.settings[cert_icon] != blank -%}
+                      {{- section.settings[cert_icon] | image_url: width: 64 | image_tag: loading: 'lazy', alt: section.settings[cert_label] -}}
+                    {%- endif -%}
+                  </div>
+                  <p class="nutrition-facts_cert-label">{{ section.settings[cert_label] }}</p>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+        
+        <div class="nutrition-facts_clean-card">
+          <h3 class="nutrition-facts_clean-title">
+            {{ section.settings.clean_title }}
+            <span class="nutrition-facts_clean-title-gold">{{ section.settings.clean_subtitle }}</span>
+          </h3>
+          <p class="nutrition-facts_clean-description">{{ section.settings.clean_description }}</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Nutrition Facts",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "NUTRITION FACTS"
+    },
+    {
+      "type": "text",
+      "id": "heading_black",
+      "label": "Heading (Black Part 1)",
+      "default": "Everything"
+    },
+    {
+      "type": "text",
+      "id": "heading_gold",
+      "label": "Heading (Gold Part)",
+      "default": "Your Body Needs."
+    },
+    {
+      "type": "text",
+      "id": "heading_black_2",
+      "label": "Heading (Black Part 2)",
+      "default": "Nothing It Doesn't."
+    },
+    {
+      "type": "header",
+      "content": "Nutrition Table"
+    },
+    {
+      "type": "text",
+      "id": "table_title",
+      "label": "Table Title",
+      "default": "Nutrition Information"
+    },
+    {
+      "type": "text",
+      "id": "serving_size",
+      "label": "Serving Size Badge",
+      "default": "Per 40g Bar"
+    },
+    {
+      "type": "header",
+      "content": "Item 1"
+    },
+    {
+      "type": "text",
+      "id": "item_1_label",
+      "label": "Label",
+      "default": "Energy"
+    },
+    {
+      "type": "text",
+      "id": "item_1_value",
+      "label": "Value",
+      "default": "168.8 kcal"
+    },
+    {
+      "type": "text",
+      "id": "item_1_rda",
+      "label": "RDA %",
+      "info": "Optional"
+    },
+    {
+      "type": "header",
+      "content": "Item 2"
+    },
+    {
+      "type": "text",
+      "id": "item_2_label",
+      "label": "Label",
+      "default": "Protein"
+    },
+    {
+      "type": "text",
+      "id": "item_2_value",
+      "label": "Value",
+      "default": "5g"
+    },
+    {
+      "type": "text",
+      "id": "item_2_rda",
+      "label": "RDA %"
+    },
+    {
+      "type": "header",
+      "content": "Item 3"
+    },
+    {
+      "type": "text",
+      "id": "item_3_label",
+      "label": "Label",
+      "default": "Carbohydrates"
+    },
+    {
+      "type": "text",
+      "id": "item_3_value",
+      "label": "Value",
+      "default": "28.96g"
+    },
+    {
+      "type": "text",
+      "id": "item_3_rda",
+      "label": "RDA %"
+    },
+    {
+      "type": "header",
+      "content": "Item 4"
+    },
+    {
+      "type": "text",
+      "id": "item_4_label",
+      "label": "Label",
+      "default": "Total Sugars"
+    },
+    {
+      "type": "text",
+      "id": "item_4_value",
+      "label": "Value",
+      "default": "5.55g"
+    },
+    {
+      "type": "text",
+      "id": "item_4_rda",
+      "label": "RDA %"
+    },
+    {
+      "type": "header",
+      "content": "Item 5"
+    },
+    {
+      "type": "text",
+      "id": "item_5_label",
+      "label": "Label",
+      "default": "Vitamin A"
+    },
+    {
+      "type": "text",
+      "id": "item_5_value",
+      "label": "Value",
+      "default": "68.06 mcg"
+    },
+    {
+      "type": "text",
+      "id": "item_5_rda",
+      "label": "RDA %",
+      "default": "4.44% RDA"
+    },
+    {
+      "type": "header",
+      "content": "Item 6"
+    },
+    {
+      "type": "text",
+      "id": "item_6_label",
+      "label": "Label",
+      "default": "Vitamin C"
+    },
+    {
+      "type": "text",
+      "id": "item_6_value",
+      "label": "Value",
+      "default": "56.60 mg"
+    },
+    {
+      "type": "text",
+      "id": "item_6_rda",
+      "label": "RDA %",
+      "default": "62.22% RDA"
+    },
+    {
+      "type": "header",
+      "content": "Item 7"
+    },
+    {
+      "type": "text",
+      "id": "item_7_label",
+      "label": "Label",
+      "default": "Potassium"
+    },
+    {
+      "type": "text",
+      "id": "item_7_value",
+      "label": "Value",
+      "default": "177.4 mg"
+    },
+    {
+      "type": "text",
+      "id": "item_7_rda",
+      "label": "RDA %",
+      "default": "3.77% RDA"
+    },
+    {
+      "type": "header",
+      "content": "Item 8"
+    },
+    {
+      "type": "text",
+      "id": "item_8_label",
+      "label": "Label",
+      "default": "Iron"
+    },
+    {
+      "type": "text",
+      "id": "item_8_value",
+      "label": "Value",
+      "default": "2.54 mg"
+    },
+    {
+      "type": "text",
+      "id": "item_8_rda",
+      "label": "RDA %",
+      "default": "14.12% RDA"
+    },
+    {
+      "type": "header",
+      "content": "Certifications"
+    },
+    {
+      "type": "text",
+      "id": "cert_1_label",
+      "label": "Cert 1 Label",
+      "default": "Gluten Free"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_1_icon",
+      "label": "Cert 1 Icon"
+    },
+    {
+      "type": "text",
+      "id": "cert_2_label",
+      "label": "Cert 2 Label",
+      "default": "No Artificial Flavors"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_2_icon",
+      "label": "Cert 2 Icon"
+    },
+    {
+      "type": "text",
+      "id": "cert_3_label",
+      "label": "Cert 3 Label",
+      "default": "No Preservatives"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_3_icon",
+      "label": "Cert 3 Icon"
+    },
+    {
+      "type": "text",
+      "id": "cert_4_label",
+      "label": "Cert 4 Label",
+      "default": "Lab Tested"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_4_icon",
+      "label": "Cert 4 Icon"
+    },
+    {
+      "type": "text",
+      "id": "cert_5_label",
+      "label": "Cert 5 Label",
+      "default": "FSSAI Licensed"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_5_icon",
+      "label": "Cert 5 Icon"
+    },
+    {
+      "type": "text",
+      "id": "cert_6_label",
+      "label": "Cert 6 Label",
+      "default": "GMP Certified"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_6_icon",
+      "label": "Cert 6 Icon"
+    },
+    {
+      "type": "header",
+      "content": "Clean Nutrition Card"
+    },
+    {
+      "type": "text",
+      "id": "clean_title",
+      "label": "Title",
+      "default": "Clean Nutrition,"
+    },
+    {
+      "type": "text",
+      "id": "clean_subtitle",
+      "label": "Subtitle (Gold)",
+      "default": "No Compromises"
+    },
+    {
+      "type": "textarea",
+      "id": "clean_description",
+      "label": "Description",
+      "default": "Every AIWO Fast Bar is manufactured in an FSSAI-licensed facility under strict GMP standards. Lab-tested for purity and quality. No artificial flavors, no hidden ingredients—just honest nutrition that supports your fasting goals."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nutrition Facts"
+    }
+  ]
+}
+{% endschema %}

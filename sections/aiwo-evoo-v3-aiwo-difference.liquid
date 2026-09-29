@@ -1,0 +1,816 @@
+{%- style -%}
+  /* ========================================================
+     SCOPED SECTION CSS: AIWO Difference v3
+  ======================================================== */
+  .aiwo-cs-v3 {
+    position: relative;
+    background: linear-gradient(180deg, #F6F3EF 0%, #F6F6F6 100%);
+    padding: 48px 20px;
+    font-family: 'Outfit', sans-serif;
+    overflow: hidden;
+  }
+
+  .aiwo-cs-v3__bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .aiwo-cs-v3__bg-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .aiwo-cs-v3__bg-desktop { display: block; }
+  .aiwo-cs-v3__bg-mobile { display: none; }
+
+  .aiwo-cs-v3__inner {
+    position: relative;
+    z-index: 10;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* HEADING (Desktop: Left Align) */
+  .aiwo-cs-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 4px;
+    color: #0C0C0D;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 40px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+    text-align: left;
+    margin: 0 0 40px 0;
+  }
+
+  .aiwo-cs-heading span {
+    color: #7A7A85;
+    font-family: 'Newsreader', serif !important;
+    font-size: 40px !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+  }
+
+  /* TAGLINE (Desktop: Left Align) */
+  .aiwo-cs-tagline-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-bottom: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .aiwo-cs-pill {
+    display: flex;
+    padding: 5px 12px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    border: 1px solid #645452;
+    background: linear-gradient(90deg, #FBFBFB 0%, #F3F1F1 100%);
+    color: #0C0C0D;
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+
+  /* Tagline Feature */
+  .aiwo-cs-tagline-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #1A1A1A;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 16px;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    line-height: 120%;
+    letter-spacing: 0.64px;
+    text-transform: uppercase;
+  }
+
+  .aiwo-cs-tagline-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* STATS GRID */
+  .aiwo-cs-stats-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .aiwo-cs-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex: 1 0 0;
+    border-right: 2px solid #E6E6E6;
+  }
+
+  .aiwo-cs-stat-item:last-child {
+    border-right: none;
+  }
+
+  /* CIRCLE */
+  .aiwo-cs-circle-wrap {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .aiwo-cs-circle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+  }
+
+  .aiwo-cs-circle-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .aiwo-cs-stat-val {
+    color: #0C0C0D;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+  }
+
+  .aiwo-cs-stat-sub-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: -4px;
+    white-space: nowrap;
+  }
+
+  .aiwo-cs-stat-sub {
+    color: #1A1A1A;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  .aiwo-cs-stat-label {
+    color: #0C0C0D;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 0 10px;
+  }
+
+  /* TOOLTIP */
+  .aiwo-tooltip-wrap {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .aiwo-tooltip-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    outline: none;
+  }
+
+  .aiwo-tooltip {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFF;
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    width: 260px;
+    max-width: 260px;
+    padding: 12px;
+    z-index: 9999;
+    text-align: left;
+    white-space: normal;
+  }
+
+  /* Fallback CSS Arrow (if no image uploaded) */
+  .aiwo-tooltip__arrow {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg) !important;
+    width: 10px;
+    height: 10px;
+    background: #FFF;
+    border-top: 1px solid #E6E6E6;
+    border-left: 1px solid #E6E6E6;
+  }
+
+  .aiwo-tooltip__title {
+    color: #0C0C0D;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    margin: 0 0 4px 0;
+    text-transform: none;
+  }
+
+  .aiwo-tooltip__desc {
+    color: #666666;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+    text-transform: none;
+    white-space: pre-line;
+  }
+
+  /* DARK CARD */
+  .aiwo-cs-dark-card {
+    display: flex;
+    width: 100%;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #1A1A1A 0%, #383636 100%);
+    margin-bottom: 8px;
+    box-sizing: border-box;
+  }
+
+  .aiwo-cs-card-head {
+    color: #FFF;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .aiwo-cs-card-head span {
+    color: #A1895E;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+  }
+
+  .aiwo-cs-card-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .aiwo-cs-card-list {
+    margin: 0;
+    padding: 0 0 0 20px;
+    color: #FFF;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+    list-style-type: disc;
+  }
+
+  .aiwo-cs-card-list li {
+    margin-bottom: 4px;
+  }
+
+  /* DISCLAIMER */
+  .aiwo-cs-disclaimer {
+    color: #0C0C0D;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-top: 8px;
+    align-self: flex-start;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* TABLET */
+  @media (max-width: 1024px) {
+    .aiwo-cs-tagline-item { font-size: 14px; }
+    .aiwo-cs-stat-val { font-size: 44px; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 767px) {
+    .aiwo-cs-v3 { padding: 24px 16px; }
+    .aiwo-cs-v3__bg-desktop { display: none; }
+    .aiwo-cs-v3__bg-mobile { display: block; }
+
+    /* Strict Mobile Centering Enforcement */
+    .aiwo-cs-v3__inner { 
+      align-items: center !important; 
+      text-align: center !important; 
+    }
+
+    .aiwo-cs-heading {
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+      font-size: 32px !important;
+      margin-bottom: 24px !important;
+    }
+
+    .aiwo-cs-heading span { font-size: 32px !important; }
+
+    .aiwo-cs-tagline-wrapper {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      margin-bottom: 24px !important;
+      gap: 8px !important;
+      width: 100% !important;
+    }
+
+    .aiwo-cs-pill { font-size: 18px; }
+    .aiwo-cs-tagline-item { font-size: 13px; }
+
+    .aiwo-cs-stats-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 32px;
+      column-gap: 16px;
+    }
+
+    .aiwo-cs-stat-item { border-right: none !important; }
+    .aiwo-cs-stat-val { font-size: 40px; }
+    .aiwo-cs-stat-label { font-size: 16px; }
+
+    /* MOBILE TOOLTIP - above its own circle, no viewport overflow */
+    /* MOBILE TOOLTIP - below its own circle, no viewport overflow */
+    .aiwo-tooltip-wrap { position: relative; }
+
+    .aiwo-tooltip {
+      position: absolute !important;
+      top: calc(100% + 10px) !important;
+      bottom: auto !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: 200px !important;
+      max-width: 200px !important;
+      z-index: 9999 !important;
+    }
+
+    /* Left column circles - align tooltip to left edge */
+    .aiwo-cs-stat-item:nth-child(odd) .aiwo-tooltip {
+      left: 0 !important;
+      transform: none !important;
+    }
+
+    .aiwo-cs-stat-item:nth-child(odd) .aiwo-tooltip__arrow {
+      left: 20px !important;
+      transform: rotate(0deg) !important;
+    }
+
+    /* Right column circles - align tooltip to right edge */
+    .aiwo-cs-stat-item:nth-child(even) .aiwo-tooltip {
+      left: auto !important;
+      right: 0 !important;
+      transform: none !important;
+    }
+
+    /* Right Column Image Arrow Positioning */
+    .aiwo-cs-stat-item:nth-child(even) .aiwo-tooltip__custom-arrow {
+      left: auto !important;
+      right: 20px !important;
+      transform: none !important;
+    }
+
+    .aiwo-cs-stat-item:nth-child(even) .aiwo-tooltip__arrow {
+      left: auto !important;
+      right: 20px !important;
+      transform: rotate(0deg) !important;
+    }
+    }
+
+    .aiwo-tooltip__arrow {
+      top: -6px !important;
+      bottom: auto !important;
+      border-top: 1px solid #E6E6E6 !important;
+      border-left: 1px solid #E6E6E6 !important;
+      border-bottom: none !important;
+      border-right: none !important;
+      background: #FFF !important;
+    }
+
+    .aiwo-cs-dark-card { padding: 20px 16px; }
+    .aiwo-cs-card-head,
+    .aiwo-cs-card-head span { font-size: 16px; }
+    .aiwo-cs-card-list { font-size: 14px; }
+  }
+{%- endstyle -%}
+
+<script>
+  (function () {
+    if (document.querySelector('link[href*="Newsreader"]')) return;
+    var l1 = document.createElement('link');
+    l1.rel = 'preconnect';
+    l1.href = 'https://fonts.googleapis.com';
+    document.head.appendChild(l1);
+    var l2 = document.createElement('link');
+    l2.rel = 'preconnect';
+    l2.href = 'https://fonts.gstatic.com';
+    l2.crossOrigin = 'anonymous';
+    document.head.appendChild(l2);
+    var l3 = document.createElement('link');
+    l3.rel = 'stylesheet';
+    l3.href = 'https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,600&display=swap';
+    document.head.appendChild(l3);
+  })();
+</script>
+
+<section class="aiwo-cs-v3">
+  <div class="aiwo-cs-v3__bg-container">
+    {%- if section.settings.bg_desktop != blank -%}
+      {{ section.settings.bg_desktop | image_url: width: 2000 | image_tag:
+        class: 'aiwo-cs-v3__bg-decor aiwo-cs-v3__bg-desktop',
+        alt: '',
+        loading: 'lazy',
+        width: 2000,
+        height: 800
+      }}
+    {%- endif -%}
+    {%- if section.settings.bg_mobile != blank -%}
+      {{ section.settings.bg_mobile | image_url: width: 800 | image_tag:
+        class: 'aiwo-cs-v3__bg-decor aiwo-cs-v3__bg-mobile',
+        alt: '',
+        loading: 'lazy',
+        width: 800,
+        height: 800
+      }}
+    {%- endif -%}
+  </div>
+
+  <div class="aiwo-cs-v3__inner">
+
+    <h2 class="aiwo-cs-heading">
+      {{ section.settings.heading }}&nbsp;<span>{{ section.settings.heading_italic }}</span>
+    </h2>
+
+    <div class="aiwo-cs-tagline-wrapper">
+      {%- if section.settings.main_tag != blank -%}
+        <div class="aiwo-cs-pill">{{ section.settings.main_tag }}</div>
+      {%- endif -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'tagline_sub' -%}
+          <div class="aiwo-cs-tagline-item" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              {{ block.settings.icon | image_url: width: 48 | image_tag:
+                class: 'aiwo-cs-tagline-icon',
+                alt: '',
+                loading: 'lazy',
+                width: 24,
+                height: 24
+              }}
+            {%- endif -%}
+            {{ block.settings.text }}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="aiwo-cs-stats-container">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'stat_circle' -%}
+          <div class="aiwo-cs-stat-item" {{ block.shopify_attributes }}>
+            <div class="aiwo-cs-circle-wrap">
+              {%- if block.settings.circle_img != blank -%}
+                {{ block.settings.circle_img | image_url: width: 300 | image_tag:
+                  class: 'aiwo-cs-circle-bg',
+                  alt: '',
+                  loading: 'lazy',
+                  width: 140,
+                  height: 140
+                }}
+              {%- endif -%}
+              <div class="aiwo-cs-circle-content">
+                <div class="aiwo-cs-stat-val">{{ block.settings.stat_val }}</div>
+                <div class="aiwo-cs-stat-sub-wrap">
+                  {%- if block.settings.tooltip_title != blank or block.settings.tooltip_desc != blank -%}
+                    <div class="aiwo-tooltip-wrap"
+                      x-data="{ open: false }"
+                      @mouseenter="open = true"
+                      @mouseleave="open = false"
+                      @click.outside="open = false">
+                      <button class="aiwo-tooltip-trigger"
+                        aria-label="More info"
+                        @click="open = !open">
+                        {%- if block.settings.tooltip_icon != blank -%}
+                          {{ block.settings.tooltip_icon | image_url: width: 28 | image_tag:
+                            alt: '',
+                            width: 14,
+                            height: 14,
+                            style: 'width:14px;height:14px;object-fit:contain;'
+                          }}
+                        {%- else -%}
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <circle cx="7" cy="7" r="6.5" stroke="#645452"/>
+                            <text x="7" y="11" text-anchor="middle" font-size="9" fill="#645452">i</text>
+                          </svg>
+                        {%- endif -%}
+                      </button>
+                      <div class="aiwo-tooltip"
+                        x-show="open"
+                        style="display:none"
+                        role="tooltip">
+                        <div class="aiwo-tooltip__arrow"></div>
+                        {%- if block.settings.tooltip_title != blank -%}
+                          <p class="aiwo-tooltip__title">{{ block.settings.tooltip_title }}</p>
+                        {%- endif -%}
+                        {%- if block.settings.tooltip_desc != blank -%}
+                          <p class="aiwo-tooltip__desc">{{ block.settings.tooltip_desc }}</p>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.stat_sub != blank -%}
+                    <span class="aiwo-cs-stat-sub">{{ block.settings.stat_sub }}</span>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+            {%- if block.settings.bottom_label != blank -%}
+              <div class="aiwo-cs-stat-label">{{ block.settings.bottom_label }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="aiwo-cs-dark-card">
+      <div class="aiwo-cs-card-head">
+        {{ section.settings.card_heading_white }}&nbsp;<span>{{ section.settings.card_heading_gold }}</span>
+        {%- if section.settings.card_icon != blank -%}
+          {{ section.settings.card_icon | image_url: width: 40 | image_tag:
+            class: 'aiwo-cs-card-icon',
+            alt: '',
+            loading: 'lazy',
+            width: 20,
+            height: 20
+          }}
+        {%- endif -%}
+      </div>
+      <ul class="aiwo-cs-card-list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'card_bullet' -%}
+            <li {{ block.shopify_attributes }}>{{ block.settings.bullet_text }}</li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    {%- if section.settings.disclaimer != blank -%}
+      <div class="aiwo-cs-disclaimer">{{ section.settings.disclaimer }}</div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EVOO v3 - AIWO Difference",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_desktop",
+      "label": "Desktop Decorative Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_mobile",
+      "label": "Mobile Decorative Image"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Regular Text",
+      "default": "Not All Olive Oil"
+    },
+    {
+      "type": "text",
+      "id": "heading_italic",
+      "label": "Heading Italic Text",
+      "default": "Is The Same"
+    },
+    {
+      "type": "header",
+      "content": "Tagline"
+    },
+    {
+      "type": "text",
+      "id": "main_tag",
+      "label": "Pill Tag Text",
+      "default": "Olive Aura"
+    },
+    {
+      "type": "header",
+      "content": "Dark Card"
+    },
+    {
+      "type": "text",
+      "id": "card_heading_white",
+      "label": "Card Heading White Text",
+      "default": "DELIVERING"
+    },
+    {
+      "type": "text",
+      "id": "card_heading_gold",
+      "label": "Card Heading Gold Text",
+      "default": "MAX POTENCY"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_icon",
+      "label": "Card Icon"
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "text",
+      "id": "disclaimer",
+      "label": "Disclaimer Text",
+      "default": "*Based on clinical studies. Individual results may vary."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tagline_sub",
+      "name": "Tagline Feature Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (24x24)"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "PREMIUM GRADE"
+        }
+      ]
+    },
+    {
+      "type": "stat_circle",
+      "name": "Stat Circle",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "circle_img",
+          "label": "Circle Background Image"
+        },
+        {
+          "type": "text",
+          "id": "stat_val",
+          "label": "Stat Value",
+          "default": "68%"
+        },
+        {
+          "type": "image_picker",
+          "id": "tooltip_icon",
+          "label": "Custom Tooltip Icon (leave blank for default)"
+        },
+        {
+          "type": "text",
+          "id": "stat_sub",
+          "label": "Sub Label (e.g. RCTs)",
+          "default": "RCTs"
+        },
+        {
+          "type": "text",
+          "id": "tooltip_title",
+          "label": "Tooltip Title (leave blank to hide tooltip)"
+        },
+        {
+          "type": "textarea",
+          "id": "tooltip_desc",
+          "label": "Tooltip Description"
+        },
+        {
+          "type": "text",
+          "id": "bottom_label",
+          "label": "Label Below Circle",
+          "default": "Heart Support"
+        }
+      ]
+    },
+    {
+      "type": "card_bullet",
+      "name": "Dark Card Bullet",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "bullet_text",
+          "label": "Bullet Text",
+          "default": "Add your bullet point here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "EVOO v3 - AIWO Difference",
+      "blocks": [
+        { "type": "tagline_sub" },
+        { "type": "tagline_sub" },
+        { "type": "stat_circle" },
+        { "type": "stat_circle" },
+        { "type": "stat_circle" },
+        { "type": "stat_circle" },
+        { "type": "card_bullet" },
+        { "type": "card_bullet" }
+      ]
+    }
+  ]
+}
+{% endschema %}

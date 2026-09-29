@@ -1,0 +1,1003 @@
+{% doc %}
+  @prompt
+    Design a "Biohacker Testimonials" section for AIWO Ultimate Omega 3.
+    Layout:
+    Full-width section, light blue/gray background (#F8FAFC), centered content, generous padding.
+    Header:
+    
+    Yellow pill badge at top: "Biohacker Testimonials"
+    Main heading (bold, large black): "Trusted by Leading Biohackers in the World"
+    Subheading (gray, centered): "Top longevity experts and performance optimization specialists choose AIWO."
+    
+    Statistics Row (4 columns, centered):
+    
+    Stat 1: Large navy number "5.0/5" | Label: "Biohacker Rating"
+    Stat 2: Large navy number "100+" | Label: "Expert Reviews"
+    Stat 3: Large navy number "98%" | Label: "Would Recommend"
+    Stat 4: Large navy number "99%" | Label: "Purity Score"
+    
+    Testimonial Cards Grid (2x2 layout, 4 cards total):
+    Card Structure (all cards follow same layout):
+    
+    Split card design: Image left (40%), Content right (60%)
+    White background, rounded corners, subtle shadow
+    "Verified" badge with checkmark (top-right corner of image)
+    
+    Card 1 - Top Left:
+    
+    Image: Professional photo of woman with blonde hair
+    5 gold stars
+    Italic quote: "From gut health to glow—Aiwo is where science meets self-love in the most transformative way."
+    Name: "Inka" (bold)
+    Title: "Longevity Biohacker & Wellness Expert" (gray)
+    Time: "1 week ago" (light gray)
+    
+    Card 2 - Top Right:
+    
+    Image: Professional photo of man with beard on peach/orange background
+    5 gold stars
+    Italic quote: "This is not just a wellness retreat, it's a full-body upgrade—Aiwo turned biohacking into a lifestyle."
+    Name: "Tech Burner" (bold)
+    Title: "Tech Influencer and Entrepreneur" (gray)
+    Time: "2 weeks ago" (light gray)
+    
+    Card 3 - Bottom Left:
+    
+    Image: Professional photo of man in black shirt with AIWO branding background
+    4 gold stars
+    Italic quote: "Aiwo's data-driven approach to personalized wellness is exactly what the future of health optimization should look like."
+    Name: "Joe Cohen" (bold)
+    Title: "Longevity Expert & Biohacking Pioneer" (gray)
+    Time: "3 weeks ago" (light gray)
+    
+    Card 4 - Bottom Right:
+    
+    Image: Professi
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-biohacker-testimonials-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-biohacker-testimonials__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-biohacker-testimonials__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .ai-biohacker-testimonials__badge-{{ ai_gen_id }} {
+    display: inline-block;
+    background-color: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .ai-biohacker-testimonials__heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 15px;
+    line-height: 1.2;
+  }
+
+  .ai-biohacker-testimonials__subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.subheading_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ai-biohacker-testimonials__stats-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  .ai-biohacker-testimonials__stat-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ai-biohacker-testimonials__stat-number-{{ ai_gen_id }} {
+    font-size: {{ block.settings.stat_number_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.stat_number_color }};
+    margin: 0 0 8px;
+    line-height: 1;
+  }
+
+  .ai-biohacker-testimonials__stat-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.stat_label_size }}px;
+    color: {{ block.settings.stat_label_color }};
+    margin: 0;
+  }
+
+  .ai-biohacker-testimonials__cards-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .ai-biohacker-testimonials__card-{{ ai_gen_id }} {
+    display: flex;
+    background-color: {{ block.settings.card_bg_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-biohacker-testimonials__card-{{ ai_gen_id }}:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .ai-biohacker-testimonials__card-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 40%;
+    flex-shrink: 0;
+  }
+
+  .ai-biohacker-testimonials__card-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-biohacker-testimonials__card-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-biohacker-testimonials__card-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-biohacker-testimonials__verified-badge-{{ ai_gen_id }} {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: {{ block.settings.verified_badge_bg }};
+    color: {{ block.settings.verified_badge_text }};
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .ai-biohacker-testimonials__card-content-{{ ai_gen_id }} {
+    width: 60%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ai-biohacker-testimonials__stars-{{ ai_gen_id }} {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 15px;
+  }
+
+  .ai-biohacker-testimonials__star-{{ ai_gen_id }} {
+    width: 18px;
+    height: 18px;
+    fill: {{ block.settings.star_color }};
+  }
+
+  .ai-biohacker-testimonials__star--empty-{{ ai_gen_id }} {
+    fill: {{ block.settings.star_empty_color }};
+  }
+
+  .ai-biohacker-testimonials__quote-{{ ai_gen_id }} {
+    font-size: {{ block.settings.quote_size }}px;
+    font-style: italic;
+    color: {{ block.settings.quote_color }};
+    margin: 0 0 20px;
+    line-height: 1.6;
+  }
+
+  .ai-biohacker-testimonials__author-{{ ai_gen_id }} {
+    margin-bottom: 5px;
+  }
+
+  .ai-biohacker-testimonials__author-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.author_name_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.author_name_color }};
+    margin: 0;
+  }
+
+  .ai-biohacker-testimonials__author-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.author_title_size }}px;
+    color: {{ block.settings.author_title_color }};
+    margin: 0 0 8px;
+  }
+
+  .ai-biohacker-testimonials__time-{{ ai_gen_id }} {
+    font-size: 13px;
+    color: {{ block.settings.time_color }};
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-biohacker-testimonials__stats-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .ai-biohacker-testimonials__cards-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .ai-biohacker-testimonials__heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.8);
+    }
+
+    .ai-biohacker-testimonials__stat-number-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.stat_number_size }}px * 0.8);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-biohacker-testimonials-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.7 }}px 15px {{ block.settings.section_padding_bottom | times: 0.7 }}px;
+    }
+
+    .ai-biohacker-testimonials__card-{{ ai_gen_id }} {
+      flex-direction: column;
+    }
+
+    .ai-biohacker-testimonials__card-image-wrapper-{{ ai_gen_id }} {
+      width: 100%;
+      height: 200px;
+    }
+
+    .ai-biohacker-testimonials__card-content-{{ ai_gen_id }} {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .ai-biohacker-testimonials__heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.65);
+    }
+
+    .ai-biohacker-testimonials__subheading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subheading_size }}px * 0.9);
+    }
+
+    .ai-biohacker-testimonials__stat-number-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.stat_number_size }}px * 0.7);
+    }
+
+    .ai-biohacker-testimonials__quote-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.quote_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<biohacker-testimonials-{{ ai_gen_id }} class="ai-biohacker-testimonials-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-biohacker-testimonials__container-{{ ai_gen_id }}">
+    <div class="ai-biohacker-testimonials__header-{{ ai_gen_id }}">
+      {% if block.settings.badge_text != blank %}
+        <div class="ai-biohacker-testimonials__badge-{{ ai_gen_id }}">
+          {{ block.settings.badge_text }}
+        </div>
+      {% endif %}
+      
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-biohacker-testimonials__heading-{{ ai_gen_id }}">
+          {{ block.settings.heading }}
+        </h2>
+      {% endif %}
+      
+      {% if block.settings.subheading != blank %}
+        <p class="ai-biohacker-testimonials__subheading-{{ ai_gen_id }}">
+          {{ block.settings.subheading }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="ai-biohacker-testimonials__stats-{{ ai_gen_id }}">
+      <div class="ai-biohacker-testimonials__stat-{{ ai_gen_id }}">
+        <div class="ai-biohacker-testimonials__stat-number-{{ ai_gen_id }}">
+          {{ block.settings.stat_1_number }}
+        </div>
+        <div class="ai-biohacker-testimonials__stat-label-{{ ai_gen_id }}">
+          {{ block.settings.stat_1_label }}
+        </div>
+      </div>
+
+      <div class="ai-biohacker-testimonials__stat-{{ ai_gen_id }}">
+        <div class="ai-biohacker-testimonials__stat-number-{{ ai_gen_id }}">
+          {{ block.settings.stat_2_number }}
+        </div>
+        <div class="ai-biohacker-testimonials__stat-label-{{ ai_gen_id }}">
+          {{ block.settings.stat_2_label }}
+        </div>
+      </div>
+
+      <div class="ai-biohacker-testimonials__stat-{{ ai_gen_id }}">
+        <div class="ai-biohacker-testimonials__stat-number-{{ ai_gen_id }}">
+          {{ block.settings.stat_3_number }}
+        </div>
+        <div class="ai-biohacker-testimonials__stat-label-{{ ai_gen_id }}">
+          {{ block.settings.stat_3_label }}
+        </div>
+      </div>
+
+      <div class="ai-biohacker-testimonials__stat-{{ ai_gen_id }}">
+        <div class="ai-biohacker-testimonials__stat-number-{{ ai_gen_id }}">
+          {{ block.settings.stat_4_number }}
+        </div>
+        <div class="ai-biohacker-testimonials__stat-label-{{ ai_gen_id }}">
+          {{ block.settings.stat_4_label }}
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-biohacker-testimonials__cards-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign card_enabled_key = 'card_' | append: i | append: '_enabled'
+          assign card_image_key = 'card_' | append: i | append: '_image'
+          assign card_rating_key = 'card_' | append: i | append: '_rating'
+          assign card_quote_key = 'card_' | append: i | append: '_quote'
+          assign card_name_key = 'card_' | append: i | append: '_name'
+          assign card_title_key = 'card_' | append: i | append: '_title'
+          assign card_time_key = 'card_' | append: i | append: '_time'
+
+          assign card_enabled = block.settings[card_enabled_key]
+          assign card_image = block.settings[card_image_key]
+          assign card_rating = block.settings[card_rating_key]
+          assign card_quote = block.settings[card_quote_key]
+          assign card_name = block.settings[card_name_key]
+          assign card_title = block.settings[card_title_key]
+          assign card_time = block.settings[card_time_key]
+        %}
+
+        {% if card_enabled %}
+          <div class="ai-biohacker-testimonials__card-{{ ai_gen_id }}">
+            <div class="ai-biohacker-testimonials__card-image-wrapper-{{ ai_gen_id }}">
+              {% if card_image %}
+                <img
+                  src="{{ card_image | image_url: width: 600 }}"
+                  alt="{{ card_name | escape }}"
+                  class="ai-biohacker-testimonials__card-image-{{ ai_gen_id }}"
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                >
+              {% else %}
+                <div class="ai-biohacker-testimonials__card-image-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+              
+              {% if block.settings.show_verified_badge %}
+                <div class="ai-biohacker-testimonials__verified-badge-{{ ai_gen_id }}">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Verified
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="ai-biohacker-testimonials__card-content-{{ ai_gen_id }}">
+              <div class="ai-biohacker-testimonials__stars-{{ ai_gen_id }}">
+                {% for star in (1..5) %}
+                  {% if star <= card_rating %}
+                    <svg class="ai-biohacker-testimonials__star-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                  {% else %}
+                    <svg class="ai-biohacker-testimonials__star-{{ ai_gen_id }} ai-biohacker-testimonials__star--empty-{{ ai_gen_id }}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                  {% endif %}
+                {% endfor %}
+              </div>
+
+              {% if card_quote != blank %}
+                <p class="ai-biohacker-testimonials__quote-{{ ai_gen_id }}">
+                  "{{ card_quote }}"
+                </p>
+              {% endif %}
+
+              <div class="ai-biohacker-testimonials__author-{{ ai_gen_id }}">
+                {% if card_name != blank %}
+                  <p class="ai-biohacker-testimonials__author-name-{{ ai_gen_id }}">
+                    {{ card_name }}
+                  </p>
+                {% endif %}
+                
+                {% if card_title != blank %}
+                  <p class="ai-biohacker-testimonials__author-title-{{ ai_gen_id }}">
+                    {{ card_title }}
+                  </p>
+                {% endif %}
+              </div>
+
+              {% if card_time != blank %}
+                <p class="ai-biohacker-testimonials__time-{{ ai_gen_id }}">
+                  {{ card_time }}
+                </p>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</biohacker-testimonials-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BiohackerTestimonials{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.initializeObserver();
+      }
+
+      initializeObserver() {
+        const cards = this.querySelectorAll('.ai-biohacker-testimonials__card-{{ ai_gen_id }}');
+        
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+              }
+            });
+          }, {
+            threshold: 0.1
+          });
+
+          cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+          });
+        }
+      }
+    }
+
+    customElements.define('biohacker-testimonials-{{ ai_gen_id }}', BiohackerTestimonials{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Biohacker testimonials",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F8FAFC"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "label": "Container max width",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Biohacker Testimonials"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Background color",
+      "default": "#FDE68A"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text color",
+      "default": "#92400E"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Trusted by Leading Biohackers in the World"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 42
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Top longevity experts and performance optimization specialists choose AIWO."
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "header",
+      "content": "Statistics"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Stat 1 number",
+      "default": "5.0/5"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 label",
+      "default": "Biohacker Rating"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Stat 2 number",
+      "default": "100+"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 label",
+      "default": "Expert Reviews"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_number",
+      "label": "Stat 3 number",
+      "default": "98%"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 label",
+      "default": "Would Recommend"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_number",
+      "label": "Stat 4 number",
+      "default": "99%"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_label",
+      "label": "Stat 4 label",
+      "default": "Purity Score"
+    },
+    {
+      "type": "range",
+      "id": "stat_number_size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Number size",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "stat_number_color",
+      "label": "Number color",
+      "default": "#1E3A8A"
+    },
+    {
+      "type": "range",
+      "id": "stat_label_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "stat_label_color",
+      "label": "Label color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "show_verified_badge",
+      "label": "Show verified badge",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "verified_badge_bg",
+      "label": "Verified badge background",
+      "default": "#10B981"
+    },
+    {
+      "type": "color",
+      "id": "verified_badge_text",
+      "label": "Verified badge text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star color",
+      "default": "#FCD34D"
+    },
+    {
+      "type": "color",
+      "id": "star_empty_color",
+      "label": "Empty star color",
+      "default": "#E5E7EB"
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "Quote color",
+      "default": "#374151"
+    },
+    {
+      "type": "range",
+      "id": "author_name_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Author name size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "author_name_color",
+      "label": "Author name color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "author_title_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Author title size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "author_title_color",
+      "label": "Author title color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "color",
+      "id": "time_color",
+      "label": "Time color",
+      "default": "#9CA3AF"
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_1_enabled",
+      "label": "Enable card 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "card_1_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Rating",
+      "default": 5
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_quote",
+      "label": "Quote",
+      "default": "From gut health to glow—Aiwo is where science meets self-love in the most transformative way."
+    },
+    {
+      "type": "text",
+      "id": "card_1_name",
+      "label": "Name",
+      "default": "Inka"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Title",
+      "default": "Longevity Biohacker & Wellness Expert"
+    },
+    {
+      "type": "text",
+      "id": "card_1_time",
+      "label": "Time",
+      "default": "1 week ago"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_2_enabled",
+      "label": "Enable card 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "card_2_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Rating",
+      "default": 5
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_quote",
+      "label": "Quote",
+      "default": "This is not just a wellness retreat, it's a full-body upgrade—Aiwo turned biohacking into a lifestyle."
+    },
+    {
+      "type": "text",
+      "id": "card_2_name",
+      "label": "Name",
+      "default": "Tech Burner"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Title",
+      "default": "Tech Influencer and Entrepreneur"
+    },
+    {
+      "type": "text",
+      "id": "card_2_time",
+      "label": "Time",
+      "default": "2 weeks ago"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_3_enabled",
+      "label": "Enable card 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "card_3_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Rating",
+      "default": 4
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_quote",
+      "label": "Quote",
+      "default": "Aiwo's data-driven approach to personalized wellness is exactly what the future of health optimization should look like."
+    },
+    {
+      "type": "text",
+      "id": "card_3_name",
+      "label": "Name",
+      "default": "Joe Cohen"
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Title",
+      "default": "Longevity Expert & Biohacking Pioneer"
+    },
+    {
+      "type": "text",
+      "id": "card_3_time",
+      "label": "Time",
+      "default": "3 weeks ago"
+    },
+    {
+      "type": "header",
+      "content": "Card 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_4_enabled",
+      "label": "Enable card 4",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_4_image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "card_4_rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Rating",
+      "default": 5
+    },
+    {
+      "type": "textarea",
+      "id": "card_4_quote",
+      "label": "Quote",
+      "default": "The most comprehensive biohacking experience I've encountered—backed by real science and delivered with precision."
+    },
+    {
+      "type": "text",
+      "id": "card_4_name",
+      "label": "Name",
+      "default": "Dr. Sarah Mitchell"
+    },
+    {
+      "type": "text",
+      "id": "card_4_title",
+      "label": "Title",
+      "default": "Functional Medicine Specialist"
+    },
+    {
+      "type": "text",
+      "id": "card_4_time",
+      "label": "Time",
+      "default": "1 month ago"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Biohacker testimonials"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,825 @@
+{% doc %}
+  @prompt
+    Design a "Vital Health Dimensions" benefits section for AIWO Curcumin Rich supplement.
+    Layout:
+    Full-width section, light cream background, centered content, generous padding (60px vertical).
+    Header:
+    
+    Main heading (large, bold, dark serif font): "Support 11 Vital Health Dimensions"
+    Subheading (gray, centered, 16px): "The LONGEVIS MATRIX™ – Nature's multi-system wellness support through powerful anti-inflammatory and antioxidant properties"
+    Max-width constraint (800px), centered
+    
+    Health Dimension Cards Grid:
+    Layout: 11 cards total - Row 1: 4 cards, Row 2: 4 cards, Row 3: 3 cards (centered)
+    Card Styling:
+    
+    Light cream/beige background (#FFF9F0)
+    Orange border (#FDB813), rounded corners (12px)
+    Centered content with padding (32px vertical, 24px horizontal)
+    Hover effect: slight lift, shadow enhancement
+    
+    Cards with Editable Icons:
+    Row 1:
+    
+    Joint & Mobility - Bone icon (customizable)
+    Anti-Inflammatory - Flame icon (customizable)
+    Brain & Cognitive - Brain icon (customizable)
+    Cardiovascular - Heart icon (customizable)
+    
+    Row 2:
+    5. Immune System - Shield icon (customizable)
+    6. Digestive & Liver - Stomach/organ icon (customizable)
+    7. Cellular Health - Microscope icon (customizable)
+    8. Mood & Mental - Smiley face icon (customizable)
+    Row 3:
+    9. Skin Health - Star/sparkle icon (customizable)
+    10. Metabolic Wellness - Lightning bolt icon (customizable)
+    11. Bone Strength - Bone icon (customizable)
+    Icon Specifications:
+    
+    Size: 48x48px
+    Stroke-style illustrations with accent colors
+    Positioned centered above label
+    Icons should be easily replaceable/customizable via icon component or SVG
+    Margin bottom: 16px
+    
+    Label Specifications:
+    
+    Bold black text, 14-16px
+    Centered below icon
+    
+    Disclaimer Section:
+    
+    Full-width peach/orange background box (#FFDDB3)
+    Rounded corners (8px)
+    Small text (12px, centered): "The LONGEVIS MATRIX™: These statements represent nutritional support for overall wellness as part of a balanced diet and healthy lifestyle. This product is not intended to diagnose, treat, cure, or preve, Give all cart style boxes are in same Horizontal padding , add another 1 dimension
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-health-dimensions-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.section_background }};
+    padding: {{ block.settings.section_padding_vertical }}px 20px;
+  }
+
+  .ai-health-dimensions-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-health-dimensions-header-{{ ai_gen_id }} {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+  }
+
+  .ai-health-dimensions-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .ai-health-dimensions-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.subheading_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ai-health-dimensions-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .ai-health-dimensions-row-{{ ai_gen_id }} {
+    display: contents;
+  }
+
+  .ai-health-dimensions-row-{{ ai_gen_id }}:last-child .ai-health-dimensions-card-{{ ai_gen_id }} {
+    grid-column: span 1;
+  }
+
+  .ai-health-dimensions-row-{{ ai_gen_id }}:last-child {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    justify-items: center;
+  }
+
+  .ai-health-dimensions-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: {{ block.settings.card_padding_vertical }}px {{ block.settings.card_padding_horizontal }}px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 140px;
+    width: 100%;
+  }
+
+  .ai-health-dimensions-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-health-dimensions-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+
+  .ai-health-dimensions-icon-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-health-dimensions-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-health-dimensions-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.label_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.label_color }};
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .ai-health-dimensions-disclaimer-{{ ai_gen_id }} {
+    background-color: {{ block.settings.disclaimer_background }};
+    border-radius: {{ block.settings.disclaimer_border_radius }}px;
+    padding: 20px {{ block.settings.card_padding_horizontal }}px;
+    text-align: center;
+  }
+
+  .ai-health-dimensions-disclaimer-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.disclaimer_size }}px;
+    color: {{ block.settings.disclaimer_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-health-dimensions-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .ai-health-dimensions-row-{{ ai_gen_id }}:last-child {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ai-health-dimensions-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.8);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-health-dimensions-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_vertical | times: 0.7 }}px 16px;
+    }
+
+    .ai-health-dimensions-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .ai-health-dimensions-row-{{ ai_gen_id }}:last-child {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ai-health-dimensions-card-{{ ai_gen_id }} {
+      padding: 24px 16px;
+      min-height: 120px;
+    }
+
+    .ai-health-dimensions-disclaimer-{{ ai_gen_id }} {
+      padding: 16px 16px;
+    }
+
+    .ai-health-dimensions-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.65);
+    }
+
+    .ai-health-dimensions-subheading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subheading_size }}px * 0.9);
+    }
+
+    .ai-health-dimensions-icon-{{ ai_gen_id }} {
+      width: calc({{ block.settings.icon_size }}px * 0.85);
+      height: calc({{ block.settings.icon_size }}px * 0.85);
+      margin-bottom: 12px;
+    }
+
+    .ai-health-dimensions-label-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.label_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<vital-health-dimensions-{{ ai_gen_id }} class="ai-health-dimensions-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-health-dimensions-container-{{ ai_gen_id }}">
+    <div class="ai-health-dimensions-header-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-health-dimensions-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+      {% if block.settings.subheading != blank %}
+        <p class="ai-health-dimensions-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class="ai-health-dimensions-grid-{{ ai_gen_id }}">
+      {% for i in (1..8) %}
+        {% liquid
+          assign enabled_key = 'dimension_' | append: i | append: '_enabled'
+          assign label_key = 'dimension_' | append: i | append: '_label'
+          assign icon_key = 'dimension_' | append: i | append: '_icon'
+          
+          assign is_enabled = block.settings[enabled_key]
+          assign label = block.settings[label_key]
+          assign icon = block.settings[icon_key]
+        %}
+        
+        {% if is_enabled %}
+          <div class="ai-health-dimensions-card-{{ ai_gen_id }}">
+            <div class="ai-health-dimensions-icon-{{ ai_gen_id }}">
+              {% if icon != blank %}
+                <img src="{{ icon | image_url: width: 96 }}" alt="{{ label | escape }}" loading="lazy" width="48" height="48">
+              {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="{{ block.settings.default_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 16v-4"></path>
+                  <path d="M12 8h.01"></path>
+                </svg>
+              {% endif %}
+            </div>
+            {% if label != blank %}
+              <p class="ai-health-dimensions-label-{{ ai_gen_id }}">{{ label }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <div class="ai-health-dimensions-row-{{ ai_gen_id }}">
+        {% for i in (9..12) %}
+          {% liquid
+            assign enabled_key = 'dimension_' | append: i | append: '_enabled'
+            assign label_key = 'dimension_' | append: i | append: '_label'
+            assign icon_key = 'dimension_' | append: i | append: '_icon'
+            
+            assign is_enabled = block.settings[enabled_key]
+            assign label = block.settings[label_key]
+            assign icon = block.settings[icon_key]
+          %}
+          
+          {% if is_enabled %}
+            <div class="ai-health-dimensions-card-{{ ai_gen_id }}">
+              <div class="ai-health-dimensions-icon-{{ ai_gen_id }}">
+                {% if icon != blank %}
+                  <img src="{{ icon | image_url: width: 96 }}" alt="{{ label | escape }}" loading="lazy" width="48" height="48">
+                {% else %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="{{ block.settings.default_icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4"></path>
+                    <path d="M12 8h.01"></path>
+                  </svg>
+                {% endif %}
+              </div>
+              {% if label != blank %}
+                <p class="ai-health-dimensions-label-{{ ai_gen_id }}">{{ label }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if block.settings.disclaimer_text != blank %}
+      <div class="ai-health-dimensions-disclaimer-{{ ai_gen_id }}">
+        <p class="ai-health-dimensions-disclaimer-text-{{ ai_gen_id }}">{{ block.settings.disclaimer_text }}</p>
+      </div>
+    {% endif %}
+  </div>
+</vital-health-dimensions-{{ ai_gen_id }}>
+
+<script>
+(function() {
+  class VitalHealthDimensions{{ ai_gen_id }} extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.adjustLastRow();
+      window.addEventListener('resize', () => this.adjustLastRow());
+    }
+
+    adjustLastRow() {
+      const grid = this.querySelector('.ai-health-dimensions-grid-{{ ai_gen_id }}');
+      if (!grid) return;
+
+      const lastRow = this.querySelector('.ai-health-dimensions-row-{{ ai_gen_id }}:last-child');
+      if (!lastRow) return;
+
+      const cards = lastRow.querySelectorAll('.ai-health-dimensions-card-{{ ai_gen_id }}');
+      const cardCount = cards.length;
+
+      if (window.innerWidth <= 749) {
+        lastRow.style.gridTemplateColumns = 'repeat(2, 1fr)';
+      } else if (window.innerWidth <= 989) {
+        lastRow.style.gridTemplateColumns = 'repeat(3, 1fr)';
+      } else {
+        lastRow.style.gridTemplateColumns = `repeat(${cardCount}, 1fr)`;
+      }
+    }
+  }
+
+  customElements.define('vital-health-dimensions-{{ ai_gen_id }}', VitalHealthDimensions{{ ai_gen_id }});
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Vital health dimensions",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#FFF9F0"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_vertical",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Support 12 Vital Health Dimensions"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "The LONGEVIS MATRIX™ – Nature's multi-system wellness support through powerful anti-inflammatory and antioxidant properties"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Background",
+      "default": "#FFF9F0"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#FDB813"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding_vertical",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "card_padding_horizontal",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Icon settings"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 24,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "default_icon_color",
+      "label": "Default icon color",
+      "default": "#FDB813"
+    },
+    {
+      "type": "header",
+      "content": "Label settings"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_1_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_1_label",
+      "label": "Label",
+      "default": "Joint & Mobility"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_1_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_2_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_2_label",
+      "label": "Label",
+      "default": "Anti-Inflammatory"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_2_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_3_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_3_label",
+      "label": "Label",
+      "default": "Brain & Cognitive"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_3_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_4_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_4_label",
+      "label": "Label",
+      "default": "Cardiovascular"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_4_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_5_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_5_label",
+      "label": "Label",
+      "default": "Immune System"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_5_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_6_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_6_label",
+      "label": "Label",
+      "default": "Digestive & Liver"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_6_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 7"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_7_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_7_label",
+      "label": "Label",
+      "default": "Cellular Health"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_7_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 8"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_8_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_8_label",
+      "label": "Label",
+      "default": "Mood & Mental"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_8_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 9"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_9_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_9_label",
+      "label": "Label",
+      "default": "Skin Health"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_9_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 10"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_10_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_10_label",
+      "label": "Label",
+      "default": "Metabolic Wellness"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_10_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 11"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_11_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_11_label",
+      "label": "Label",
+      "default": "Bone Strength"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_11_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Dimension 12"
+    },
+    {
+      "type": "checkbox",
+      "id": "dimension_12_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "dimension_12_label",
+      "label": "Label",
+      "default": "Energy & Vitality"
+    },
+    {
+      "type": "image_picker",
+      "id": "dimension_12_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer_text",
+      "label": "Disclaimer text",
+      "default": "The LONGEVIS MATRIX™: These statements represent nutritional support for overall wellness as part of a balanced diet and healthy lifestyle. This product is not intended to diagnose, treat, cure, or prevent any disease."
+    },
+    {
+      "type": "range",
+      "id": "disclaimer_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "disclaimer_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "disclaimer_background",
+      "label": "Background",
+      "default": "#FFDDB3"
+    },
+    {
+      "type": "range",
+      "id": "disclaimer_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vital health dimensions"
+    }
+  ]
+}
+{% endschema %}

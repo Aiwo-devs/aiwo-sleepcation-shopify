@@ -1,0 +1,647 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo_evoo_v3_styles": {
+      "type": "aiwo-evoo-v3-global-styles",
+      "settings": {
+        "heading_font_size": 24,
+        "heading_font_weight": "700",
+        "heading_line_height": "1.2",
+        "heading_color": "#0c0c0d",
+        "body_font_size": 16,
+        "body_font_weight": "400",
+        "body_line_height": "1.6",
+        "body_color": "#666666",
+        "button_font_size": 16,
+        "button_font_weight": "600"
+      }
+    },
+    "aiwo_evoo_v3_breadcrumb": {
+      "type": "aiwo-evoo-v3-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo_evoo_v3_gallery_enhancements": {
+      "type": "aiwo-evoo-v3-gallery-enhancements",
+      "settings": {
+        "tagline_text": "LONGEVIS MATRIX · Pillar 3",
+        "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+        "tooltip_title": "What is LONGEVIS MATRIX?",
+        "tooltip_desc": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework. Each pillar targets a biological system that determines how fast you age.",
+        "tooltip_pillars_heading": "Pillars this product support",
+        "tooltip_active_pillars": "P3 · Nutrition and Metabolic Health",
+        "tooltip_stack_heading": "Complete your longevity stack",
+        "tooltip_inactive_pillars": "P1 · Sleep      \nP2 · Breathing\nP4 · Social       \nP5 · Exercise\nP6 · Stress       \nP7 · Circadian Rhythm\nP8 · Purpose      \nP9 · Environment\nP10 · Gut Health  \nP11 · Hydration"
+      }
+    },
+    "aiwo_evoo_v3_qty_label": {
+      "type": "aiwo-evoo-v3-quantity-label",
+      "settings": {
+        "mobile_quantity_label": "Add Quantity"
+      }
+    },
+    "main": {
+      "type": "aiwo-pdp-product-info",
+      "blocks": {
+        "product_tag_line_v1_zH8gVV": {
+          "type": "product_tag_line_v1",
+          "settings": {
+            "tag_text": "LONGEVIS MATRIX · Pillar 3"
+          }
+        },
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "purchase_stats_v1_CLkWVP": {
+          "type": "purchase_stats_v1",
+          "settings": {
+            "purchase_text": "What if the most abundant amino acid in your heart is the one you've never supplemented? Taurine does what your body can't replace fast enough.",
+            "weight_text": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_j3mMyH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MRP Incl. of all taxes</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "trust_badges_v1_eUg7qR": {
+          "type": "trust_badges_v1",
+          "settings": {
+            "badge_1_title": "FSSAI Licensed",
+            "badge_1_icon": "shopify://shop_images/Fssai_Logo.png",
+            "badge_2_title": "ISO 9001:2015 Certified",
+            "badge_2_icon": "shopify://shop_images/iso.svg",
+            "badge_3_title": "Vegan Certified",
+            "badge_3_icon": "shopify://shop_images/Vegetarian_Capsule_svg.svg",
+            "badge_4_title": "No Added Sugar",
+            "badge_4_icon": "shopify://shop_images/sugar-free_7078810.svg",
+            "badge_5_title": "Single Ingredient",
+            "badge_5_icon": "shopify://shop_images/single_ing.svg",
+            "badge_6_title": "Lab Tested",
+            "badge_6_icon": "shopify://shop_images/test_4675443.svg"
+          }
+        },
+        "benefits_grid_v1_KiKTqL": {
+          "type": "benefits_grid_v1",
+          "settings": {
+            "benefit_1_title": "Cardiovascular Support",
+            "benefit_1_text": "Supports blood pressureand cardiac muscle function",
+            "benefit_1_icon": "shopify://shop_images/Heart_Health_62e91ed8-4071-4d5d-af00-c871357b52f9.svg",
+            "benefit_2_title": "Nervous System Calm",
+            "benefit_2_text": "Supports GABA activity for stress and calm",
+            "benefit_2_icon": "shopify://shop_images/Brain_Function.svg",
+            "benefit_3_title": "Exercise Recovery",
+            "benefit_3_text": "Reduces oxidative stressduring and after exertion",
+            "benefit_3_icon": "shopify://shop_images/Muscle_Relaxation.svg",
+            "benefit_4_title": "Metabolic and Liver Health",
+            "benefit_4_text": "Aids bile acid conjugationand hepatic clearance",
+            "benefit_4_icon": "shopify://shop_images/liver_16463130.svg"
+          }
+        },
+        "marquee_v1_iehzTE": {
+          "type": "marquee_v1",
+          "settings": {
+            "marquee_bg_color": "#2c2416",
+            "marquee_text_color": "#ffffff",
+            "marquee_text_1": "Dual-Fibre Prebiotic",
+            "marquee_text_2": "Bifidogenic Action",
+            "marquee_text_3": "Orafti Chicory Root",
+            "marquee_text_4": "60 Servings",
+            "marquee_text_5": "Gut-Brain Axis Support",
+            "marquee_text_6": "Vegan Certified"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "html_jpVgQ3": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": true,
+            "protocol_tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "protocol_tooltip_title": "What is Protocol?",
+            "protocol_tooltip_desc": "A protocol is a daily system of supplements each one targeting specific longevity pillars."
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "disabled": true,
+          "settings": {}
+        },
+        "recommended_products_v1_6t3TaN": {
+          "type": "recommended_products_v1",
+          "settings": {
+            "recs_tag": "Complete the protocol",
+            "heading_text": "AIWO Taurine",
+            "heading_italic": "Works Better As A System",
+            "description_text": "Pair Pure Taurine With Complementary LONGEVIS MATRIX SupplementsFor Heart, Brain and Metabolic Support",
+            "show_desktop": true,
+            "show_mobile": true,
+            "bundle_mode": true,
+            "bundle_pillar": "Add on ·  Pillar 3+Pillar 6",
+            "bundle_title": "Heart and Stress Stack",
+            "bundle_desc": "Taurine + Ashwagandha — cardiovascular calm and stress resilience",
+            "bundle_best_pick_text": "Best Pick",
+            "bundle_custom_price": "",
+            "bundle_product_1": "organic-ashwagandha-500-mg-capsules",
+            "bundle_product_2": "aiwo-taurine-100g",
+            "bundle_product_3": "",
+            "bundle_learn_more_product": "",
+            "product_1": "ultimate-omega-3-triple-strength",
+            "pillar_1": "Add on · Pillar 1",
+            "custom_title_1": "",
+            "desc_1": "",
+            "best_pick_text_1": "",
+            "product_2": "aiwo-nac-100-tablets",
+            "pillar_2": "Add on · Pillar 6",
+            "custom_title_2": "",
+            "desc_2": "",
+            "best_pick_text_2": "",
+            "product_3": "",
+            "pillar_3": "",
+            "custom_title_3": "",
+            "desc_3": "",
+            "best_pick_text_3": ""
+          }
+        },
+        "proven_health_benefits_v1_NpKbtK": {
+          "type": "proven_health_benefits_v1",
+          "settings": {
+            "phb_tag": "",
+            "phb_title": "Proven Benefits of Taurine Supplementation",
+            "phb_stat_1_num": "-4 mmHg",
+            "phb_stat_1_label": "Reduction in Systolic Blood Pressure",
+            "phb_stat_1_source": "Sunuwar et al. Nutrients 2022 · meta-analysis of 19 RCTs",
+            "phb_stat_2_num": "+16%",
+            "phb_stat_2_label": "Improvement in Exercise Performance Markers",
+            "phb_stat_2_source": "Ra et al. Amino Acids 2013 · Individual results may vary",
+            "phb_stat_3_num": "",
+            "phb_stat_3_label": "",
+            "phb_stat_3_source": "",
+            "phb_stat_4_num": "",
+            "phb_stat_4_label": "",
+            "phb_stat_4_source": ""
+          }
+        },
+        "text_gzYkwz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*Figures observed in meta-analyses and randomised controlled trials on EVOO and Mediterranean diet interventions. Individual results may vary. This is a food product. Not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "number_of_lines_shown": "",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_QVph7M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Download Sample Report",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": true,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "product_tag_line_v1_zH8gVV",
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "purchase_stats_v1_CLkWVP",
+        "price",
+        "text_j3mMyH",
+        "description",
+        "trust_badges_v1_eUg7qR",
+        "benefits_grid_v1_KiKTqL",
+        "marquee_v1_iehzTE",
+        "gift_wrapping_EK3NQn",
+        "html_jpVgQ3",
+        "buy_buttons",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "recommended_products_v1_6t3TaN",
+        "proven_health_benefits_v1_NpKbtK",
+        "text_gzYkwz",
+        "button_QVph7M",
+        "complementary_XCwmDV",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked",
+        "thumbnail_position": "vertical",
+        "enable_sticky_image": true,
+        "mobile_media_size": "full_width",
+        "show_arrow_button": false,
+        "show_thumnail_mobile": false,
+        "spacing_col": "small",
+        "full_width": true,
+        "transition_style": "fade",
+        "show_first_image_avaiable": true,
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD": {
+      "type": "aiwo-evoo-v3-aiwo-difference",
+      "blocks": {
+        "stat_circle_336cQP": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "19+",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Clinical Evidence"
+          }
+        },
+        "stat_circle_meQiJa": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "100g",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "100% Pure"
+          }
+        },
+        "stat_circle_V8MT9Y": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "0g",
+            "stat_sub": "",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Added Fillers"
+          }
+        },
+        "tagline_sub_86PARc": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/brain_788d8c9d-094f-4adc-8e63-dff2807e362a.svg",
+            "text": "Neuroprotection"
+          }
+        },
+        "card_bullet_PQqYc3": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Taurine is a conditional amino acid your body makes some, but daily depletion from stress, exercise, and ageing consistently outpaces production."
+          }
+        },
+        "card_bullet_7N8tAz": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Supplementation restores the pool your cardiovascular and nervous systems depend on."
+          }
+        },
+        "card_bullet_xVA7qi": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Clinically studied taurine supplementation is linked to systolic blood pressure reduction in meta-analyses of randomised controlled trials one of the most robust mechanisms in amino acid research."
+          }
+        },
+        "card_bullet_MLtPza": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "AIWO Taurine is unflavoured, pure powder no capsule degradation, no proprietary blend dilution. Full dose. Full transparency. Mix it. Take it. Every day."
+          }
+        },
+        "stat_circle_Hhd9iw": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "#1",
+            "stat_sub": "",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Cardiac Amino"
+          }
+        },
+        "tagline_sub_nR9nBX": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/pure_clr.svg",
+            "text": "Verified Purity"
+          }
+        }
+      },
+      "block_order": [
+        "stat_circle_336cQP",
+        "stat_circle_meQiJa",
+        "stat_circle_V8MT9Y",
+        "tagline_sub_86PARc",
+        "card_bullet_PQqYc3",
+        "card_bullet_7N8tAz",
+        "card_bullet_xVA7qi",
+        "card_bullet_MLtPza",
+        "stat_circle_Hhd9iw",
+        "tagline_sub_nR9nBX"
+      ],
+      "name": "AIWO Difference",
+      "settings": {
+        "bg_desktop": "shopify://shop_images/Ingredient-_Glycine-_BG-_Desktop_aa25eb5c-2d58-4324-b7aa-d72b1c97d632.png",
+        "bg_mobile": "shopify://shop_images/Ingredient-_Glycine-_BG-_Mobile_ff6be446-58a9-4602-b868-a88fd23d13ed.png",
+        "heading": "Not All Amino Acid Supplements",
+        "heading_italic": "Reach the Heart and Brain",
+        "main_tag": "Cardiovascular Support",
+        "card_heading_white": "DELIVERING",
+        "card_heading_gold": "Full Gut Coverage",
+        "card_icon": "shopify://shop_images/Frame_d47b8e26-3f6e-4c61-b06d-0e22994683c3.svg",
+        "disclaimer": "*Based on clinical research on taurine supplementation.Individual results may vary. Use as directed by your Certified Dietician."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_comparison_wVNYTt": {
+      "type": "aiwo-comparison",
+      "blocks": {
+        "comparison_row_mcaRP8": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Pure single-ingredient taurine",
+            "right_feature": "Often blended with other amino acids"
+          }
+        },
+        "comparison_row_VaPp4F": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Unflavoured no added taste",
+            "right_feature": "Frequently sweetened or artificially flavoured"
+          }
+        },
+        "comparison_row_YJRD3c": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "100g per pack maximum value",
+            "right_feature": "Smaller packs at higher cost per gram"
+          }
+        },
+        "comparison_row_iBKFFz": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Vegan certified (confirm)",
+            "right_feature": "Vegan status varies by brand"
+          }
+        },
+        "comparison_row_QTKPHg": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "No proprietary blends",
+            "right_feature": "Dose hidden in blends no transparency"
+          }
+        },
+        "comparison_row_YpTHXW": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "FSSAI licensed and ISO certified",
+            "right_feature": "Certification varies by brand"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_mcaRP8",
+        "comparison_row_VaPp4F",
+        "comparison_row_YJRD3c",
+        "comparison_row_iBKFFz",
+        "comparison_row_QTKPHg",
+        "comparison_row_YpTHXW"
+      ],
+      "name": "AIWO Comparison Table",
+      "settings": {
+        "tagline": "WHY AIWO",
+        "heading": "AIWO Taurine vs.",
+        "heading_italic": "Others",
+        "left_image": "shopify://shop_images/AIWO_Taurine.png",
+        "left_title": "",
+        "icon_check": "shopify://shop_images/Frame_12.svg",
+        "btn_text": "Buy Now",
+        "btn_link": "https://shop-aiwo.myshopify.com/cart/43441441407158:1?channel=buy_button",
+        "right_image": "shopify://shop_images/Other_Taurine.png",
+        "right_title": "",
+        "icon_cross": "shopify://shop_images/Group_13.svg"
+      }
+    },
+    "section_evoo_v3_faq_rRJhLR": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_wg78Aq": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is AIWO Taurine different from the taurine in energy drinks?",
+            "answer": "<p>Energy drinks contain taurine but in small, unstandardised amounts alongside caffeine, sugar, and artificial additives that confound any individual benefit. AIWO Taurine is pure amino acid powder with no stimulants, no sugar, no flavours. You control the dose. You can use it consistently. That's what clinical research studies not energy drink formulations.</p>"
+          }
+        },
+        "faq_item_BFc6Am": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does Taurine actually do?",
+            "answer": "<p>Taurine is the most abundant free amino acid in the heart. It supports cardiac muscle contraction, regulates cellular calcium balance, and has been studied in multiple RCTs for its role in blood pressure support, exercise recovery, and antioxidant defence in cardiac and skeletal tissue. In the brain, it supports GABA receptor activity the inhibitory pathway that promotes calm and regulates stress responsiveness.</p>"
+          }
+        },
+        "faq_item_pgG9dR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Who benefits most from AIWO Taurine?",
+            "answer": "<p>Adults with cardiovascular risk awareness (elevated blood pressure, cholesterol), individuals under high chronic stress, regular exercisers seeking recovery support, or anyone building a metabolic longevity protocol. Taurine depletion increases with age making consistent supplementation particularly relevant from age 35 onwards. Consult your physician before use if on blood pressure or cardiac medication.</p>"
+          }
+        },
+        "faq_item_zet6LP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is AIWO Taurine vegan?",
+            "answer": "<p>Yes — taurine can be produced synthetically from plant-derived precursors with no animal involvement. AIWO Taurine is unflavoured pure powder. Verify certification status from current label before using the vegan badge in consumer copy.</p>"
+          }
+        },
+        "faq_item_Q6TUxh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long before I notice a difference?",
+            "answer": "<p>Clinical studies on taurine and blood pressure outcomes used supplementation periods of 2 to 12 weeks. Cardiovascular and metabolic support builds with consistent daily use. A 60–90 day benchmark with AIWO 181 biomarker tracking including blood pressure, CRP, and relevant cardiac markers is a practical way to measure individual response. Individual results vary.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_wg78Aq",
+        "faq_item_BFc6Am",
+        "faq_item_pgG9dR",
+        "faq_item_zet6LP",
+        "faq_item_Q6TUxh"
+      ],
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    },
+    "aiwo_two_column_grid_hbitk6": {
+      "type": "aiwo-two-column-grid",
+      "name": "Two Column Grid",
+      "settings": {
+        "bg_image": "shopify://shop_images/Taurine.jpg",
+        "bg_color": "#ffffff",
+        "heading": "Real Amino Acid. Every Day.",
+        "heading_size": 32,
+        "heading_size_mobile": 24,
+        "heading_color": "#000000",
+        "description": "Pure taurine powder. The cardiovascular and brain support your body depletes faster than you think.",
+        "description_size": 16,
+        "description_size_mobile": 14,
+        "description_color": "#555555",
+        "cta_text": "Shop Now",
+        "cta_link": "https://shop-aiwo.myshopify.com/cart/43441441407158:1?channel=buy_button"
+      }
+    },
+    "177510445730616487": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "aiwo_evoo_v3_styles",
+    "aiwo_evoo_v3_breadcrumb",
+    "aiwo_evoo_v3_gallery_enhancements",
+    "aiwo_evoo_v3_qty_label",
+    "main",
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD",
+    "product-recommendations",
+    "aiwo_comparison_wVNYTt",
+    "section_evoo_v3_faq_rRJhLR",
+    "aiwo_two_column_grid_hbitk6",
+    "177510445730616487"
+  ]
+}

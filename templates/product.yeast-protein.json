@@ -1,0 +1,649 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo_evoo_v3_styles": {
+      "type": "aiwo-evoo-v3-global-styles",
+      "settings": {
+        "heading_font_size": 24,
+        "heading_font_weight": "700",
+        "heading_line_height": "1.2",
+        "heading_color": "#0c0c0d",
+        "body_font_size": 16,
+        "body_font_weight": "400",
+        "body_line_height": "1.6",
+        "body_color": "#666666",
+        "button_font_size": 16,
+        "button_font_weight": "600"
+      }
+    },
+    "aiwo_evoo_v3_breadcrumb": {
+      "type": "aiwo-evoo-v3-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo_evoo_v3_gallery_enhancements": {
+      "type": "aiwo-evoo-v3-gallery-enhancements",
+      "settings": {
+        "tagline_text": "LONGEVIS MATRIX · Pillar 5",
+        "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+        "tooltip_title": "What is LONGEVIS MATRIX?",
+        "tooltip_desc": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework. Each pillar targets a biological system that determines how fast you age.",
+        "tooltip_pillars_heading": "",
+        "tooltip_active_pillars": "Pillars activated:",
+        "tooltip_stack_heading": "",
+        "tooltip_inactive_pillars": "P5 · Exercise & Muscle\nP10 · Gut Health\nP3 · Metabolic Health"
+      }
+    },
+    "aiwo_evoo_v3_qty_label": {
+      "type": "aiwo-evoo-v3-quantity-label",
+      "settings": {
+        "mobile_quantity_label": "Add Quantity"
+      }
+    },
+    "main": {
+      "type": "aiwo-pdp-product-info",
+      "blocks": {
+        "product_tag_line_v1_zH8gVV": {
+          "type": "product_tag_line_v1",
+          "settings": {
+            "tag_text": "LONGEVIS MATRIX · Pillar 5"
+          }
+        },
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "purchase_stats_v1_CLkWVP": {
+          "type": "purchase_stats_v1",
+          "settings": {
+            "purchase_text": "PDCAAS 1.0 complete plant protein — with gut enzymes, a probiotic, and zero added sugar.Built for sensitive stomachs. Sweetened with Monk Fruit. Made for every day.",
+            "weight_text": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_j3mMyH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MRP Incl. of all taxes</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "trust_badges_v1_eUg7qR": {
+          "type": "trust_badges_v1",
+          "settings": {
+            "badge_1_title": "FSSAI Licensed",
+            "badge_1_icon": "shopify://shop_images/Fssai_Logo.png",
+            "badge_2_title": "GMP Certified",
+            "badge_2_icon": "shopify://shop_images/Mask_group_70d7e5a4-3a0d-4053-96c9-f669beaa1c20.png",
+            "badge_3_title": "PDCAAS",
+            "badge_3_icon": "shopify://shop_images/molecule_10689619.svg",
+            "badge_4_title": "Zero Added Sugar",
+            "badge_4_icon": "shopify://shop_images/sugar-free_12131088.svg",
+            "badge_5_title": "ISO 22000:2018",
+            "badge_5_icon": "shopify://shop_images/iso_1798122.svg",
+            "badge_6_title": ""
+          }
+        },
+        "benefits_grid_v1_KiKTqL": {
+          "type": "benefits_grid_v1",
+          "settings": {
+            "benefit_1_title": "Complete Protein",
+            "benefit_1_text": "PDCAAS 1.0 — all 9 essential amino acids in one scoop",
+            "benefit_1_icon": "shopify://shop_images/svg2037.svg",
+            "benefit_2_title": "Gut-Friendly Formula",
+            "benefit_2_text": "5-enzyme blend + probiotic + prebiotic in every serving",
+            "benefit_2_icon": "shopify://shop_images/Layer_1_19236be7-fd32-4b75-a33f-d07e8ed2c6ca.svg",
+            "benefit_3_title": "Zero Added Sugar",
+            "benefit_3_text": "Monk Fruit sweetened zero glycaemic impact",
+            "benefit_3_icon": "shopify://shop_images/sugar-free_12131088.svg",
+            "benefit_4_title": "Every Batch Tested",
+            "benefit_4_text": "NABL lab · Heavy metals Microbiology · Protein potency",
+            "benefit_4_icon": "shopify://shop_images/flask_9928013.svg"
+          }
+        },
+        "marquee_v1_iehzTE": {
+          "type": "marquee_v1",
+          "settings": {
+            "marquee_bg_color": "#2c2416",
+            "marquee_text_color": "#ffffff",
+            "marquee_text_1": "PDCAAS 1.0",
+            "marquee_text_2": "25g Protein Per Scoop",
+            "marquee_text_3": "Soy-Free",
+            "marquee_text_4": "Gluten-Free",
+            "marquee_text_5": "Vegan",
+            "marquee_text_6": "GMP Certified"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "html_jpVgQ3": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": true,
+            "protocol_tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "protocol_tooltip_title": "What is Protocol?",
+            "protocol_tooltip_desc": "A protocol is a daily system of supplements each one targeting specific longevity pillars."
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "disabled": true,
+          "settings": {}
+        },
+        "recommended_products_v1_6t3TaN": {
+          "type": "recommended_products_v1",
+          "settings": {
+            "recs_tag": "Complete the protocol",
+            "heading_text": "Fermented Yeast Protein Powder",
+            "heading_italic": "Works Better  As A System",
+            "description_text": "",
+            "show_desktop": true,
+            "show_mobile": true,
+            "bundle_mode": true,
+            "bundle_pillar": "Pillar 5 + 10",
+            "bundle_title": "Muscle & Gut Stack",
+            "bundle_desc": "Amplifies gut prebiotic support from Inulin in Yeast Protein",
+            "bundle_best_pick_text": "Best Pick",
+            "bundle_custom_price": "",
+            "bundle_product_1": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "bundle_product_2": "ultimate-omega-3-triple-strength",
+            "bundle_product_3": "",
+            "bundle_learn_more_product": "",
+            "product_1": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "pillar_1": "Pillar 10",
+            "custom_title_1": "",
+            "desc_1": "Amplifies gut prebiotic support from Inulin in Yeast Protein",
+            "best_pick_text_1": "",
+            "product_2": "aiwo-berberine",
+            "pillar_2": "Add on · Pillar 3",
+            "custom_title_2": "AIWO A-Berine (Berberine 500mg)",
+            "desc_2": "Zero-sugar protein + AMPK metabolic support — complete metabolic protocol",
+            "best_pick_text_2": "",
+            "product_3": "",
+            "pillar_3": "",
+            "custom_title_3": "",
+            "desc_3": "",
+            "best_pick_text_3": ""
+          }
+        },
+        "proven_health_benefits_v1_NpKbtK": {
+          "type": "proven_health_benefits_v1",
+          "settings": {
+            "phb_tag": "",
+            "phb_title": "Proven Benefits of Fermented Yeast Protein",
+            "phb_stat_1_num": "1.0",
+            "phb_stat_1_label": "PDCAAS, Complete protein quality score  All 9 essential amino acids at or above human requirements",
+            "phb_stat_1_source": "FAO/WHO Protein Quality Evaluation, 1991               Young & Pellett, Am J Clin Nutr, 1994",
+            "phb_stat_2_num": "25g",
+            "phb_stat_2_label": "Protein per serving — within the 20–40g threshold for peak muscle protein synthesis",
+            "phb_stat_2_source": "Phillips & Van Loon, J Sports Sci, 2011               Morton et al., Br J Sports Med, 2018 (49 RCTs)",
+            "phb_stat_3_num": "",
+            "phb_stat_3_label": "",
+            "phb_stat_3_source": "",
+            "phb_stat_4_num": "",
+            "phb_stat_4_label": "",
+            "phb_stat_4_source": ""
+          }
+        },
+        "text_gzYkwz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*Figures observed in meta-analyses and randomised controlled trials on EVOO and Mediterranean diet interventions. Individual results may vary. This is a food product. Not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_QVph7M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Download Sample Report",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "button_8zEkHK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore 181 Biomarkers",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": true,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "product_tag_line_v1_zH8gVV",
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "purchase_stats_v1_CLkWVP",
+        "price",
+        "text_j3mMyH",
+        "description",
+        "trust_badges_v1_eUg7qR",
+        "benefits_grid_v1_KiKTqL",
+        "marquee_v1_iehzTE",
+        "gift_wrapping_EK3NQn",
+        "html_jpVgQ3",
+        "buy_buttons",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "recommended_products_v1_6t3TaN",
+        "proven_health_benefits_v1_NpKbtK",
+        "text_gzYkwz",
+        "button_QVph7M",
+        "button_8zEkHK",
+        "complementary_XCwmDV",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked",
+        "thumbnail_position": "vertical",
+        "enable_sticky_image": true,
+        "mobile_media_size": "full_width",
+        "show_arrow_button": false,
+        "show_thumnail_mobile": false,
+        "spacing_col": "small",
+        "full_width": true,
+        "transition_style": "fade",
+        "show_first_image_avaiable": true,
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD": {
+      "type": "aiwo-evoo-v3-aiwo-difference",
+      "blocks": {
+        "stat_circle_336cQP": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "1.0",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "PDCAAS",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Complete Protein Score"
+          }
+        },
+        "stat_circle_meQiJa": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "5",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Digestive Enzymes",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Gut Health"
+          }
+        },
+        "stat_circle_V8MT9Y": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "0g",
+            "stat_sub": "Added Sugar",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Clean Label"
+          }
+        },
+        "stat_circle_Hhd9iw": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "GI: 0",
+            "stat_sub": "Monk Fruit Sweetened",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Blood Sugar Safe"
+          }
+        },
+        "tagline_sub_86PARc": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/svg2661_33b5be59-9a1a-4eab-8e78-36496d063fa2.svg",
+            "text": "Gut-Friendly Formula"
+          }
+        },
+        "card_bullet_jMmxRW": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Fermented Yeast Protein achieves PDCAAS 1.0 — the FAO/WHO maximum protein\n  quality score. All 9 essential amino acids at or above human requirements.\n  On par with whey and egg white. Fully plant-derived and vegan."
+          }
+        },
+        "card_bullet_PQqYc3": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "The fermentation process removes yeast cell walls — increasing protein bioavailability and digestibility compared to standard unfermented plant proteins. Every batch protein potency verified via Kjeldahl / Dumas method at a NABL-accredited laboratory. COA downloadable by batch via QR code on the pack."
+          }
+        },
+        "card_bullet_kyXUtz": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Sweetened exclusively with Monk Fruit extract (mogrosides) — glycaemic index 0.\n  Does not raise blood glucose or insulin levels. Zero added sugar.\n  (Luo et al., Pharmacol Res, 2009)"
+          }
+        },
+        "tagline_sub_nR9nBX": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/research_7442672_1.svg",
+            "text": "NABL Tested Every Batch"
+          }
+        }
+      },
+      "block_order": [
+        "stat_circle_336cQP",
+        "stat_circle_meQiJa",
+        "stat_circle_V8MT9Y",
+        "stat_circle_Hhd9iw",
+        "tagline_sub_86PARc",
+        "card_bullet_jMmxRW",
+        "card_bullet_PQqYc3",
+        "card_bullet_kyXUtz",
+        "tagline_sub_nR9nBX"
+      ],
+      "name": "AIWO Difference",
+      "settings": {
+        "bg_desktop": "shopify://shop_images/AIWO_Fermented_Yeast_Protein_Powder_-1440.png",
+        "bg_mobile": "shopify://shop_images/AIWO_Fermented_Yeast_Protein_Powder_766adf7a-17df-47de-a6a4-af6aa58cbd7c.png",
+        "heading": "Not All Plant Protein",
+        "heading_italic": "is the same.",
+        "main_tag": "PDCAAS 1.0",
+        "card_heading_white": "DELIVERING",
+        "card_heading_gold": "MAX POTENCY",
+        "card_icon": "shopify://shop_images/Frame_d47b8e26-3f6e-4c61-b06d-0e22994683c3.svg",
+        "disclaimer": "*Based on peer-reviewed research. Individual results may vary.This is a nutraceutical. Not intended to diagnose, treat, cure, or prevent any disease."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_comparison_wVNYTt": {
+      "type": "aiwo-comparison",
+      "blocks": {
+        "comparison_row_mcaRP8": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "PDCAAS 1.0 — Complete",
+            "right_feature": "Pea: 0.67–0.89 (incomplete"
+          }
+        },
+        "comparison_row_VaPp4F": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "25g protein per scoop",
+            "right_feature": "18–22g with gaps in EAAs"
+          }
+        },
+        "comparison_row_YJRD3c": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "5-enzyme digestive blend",
+            "right_feature": "No enzymes — bloating common"
+          }
+        },
+        "comparison_row_iBKFFz": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "L. Rhamnosus probiotic",
+            "right_feature": "No gut support"
+          }
+        },
+        "comparison_row_QTKPHg": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Inulin prebiotic",
+            "right_feature": "No microbiome support"
+          }
+        },
+        "comparison_row_RCAJmk": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Zero added sugar · GI: 0",
+            "right_feature": "Sugar or artificial sweeteners"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_mcaRP8",
+        "comparison_row_VaPp4F",
+        "comparison_row_YJRD3c",
+        "comparison_row_iBKFFz",
+        "comparison_row_QTKPHg",
+        "comparison_row_RCAJmk"
+      ],
+      "name": "AIWO Comparison Table",
+      "settings": {
+        "tagline": "WHY AIWO",
+        "heading": "AIWO Yeast Protein vs.",
+        "heading_italic": "Others",
+        "left_image": "shopify://shop_images/Frame_2147224933_69fcb5f0-aa9a-4a21-8bda-51a721d365c9.png",
+        "left_title": "",
+        "icon_check": "shopify://shop_images/Frame_12.svg",
+        "btn_text": "Buy Now",
+        "btn_link": "https://shop-aiwo.myshopify.com/cart/42291169558710:1?channel=buy_button",
+        "right_image": "shopify://shop_images/Frame_2147224934_ec403cd0-b0ae-4d2a-b343-237724d7962e.png",
+        "right_title": "",
+        "icon_cross": "shopify://shop_images/Group_13.svg"
+      }
+    },
+    "section_evoo_v3_faq_rRJhLR": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_BFc6Am": {
+          "type": "faq_item",
+          "settings": {
+            "question": "I've never heard of yeast protein — is it proven?",
+            "answer": "<p>Fermented yeast protein achieves PDCAAS 1.0 — the FAO/WHO maximum protein quality score. This is the same standard that whey, egg white, and casein achieve. It contains all 9 essential amino acids at or above human requirements. It's not a novel concept — yeast has been a food-grade protein source for decades; the fermentation and extraction process is what concentrates and purifies the protein to a quality comparable to animal sources. Every batch is independently tested at a NABL-accredited laboratory. The COA is downloadable via the QR code on the pack.</p>"
+          }
+        },
+        "faq_item_pgG9dR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it actually taste good?",
+            "answer": "<p>AIWO Yeast Protein is flavoured with Kesar Badam — Saffron and Almond — and sweetened exclusively with Monk Fruit, which has a clean, sweet profile without the bitter aftertaste common in stevia. It is designed to mix into almond milk, smoothies, oats, or yogurt. It does not contain sucralose, aspartame, or acesulfame-K — the artificial sweeteners responsible for the chemical aftertaste in many protein powders.</p>"
+          }
+        },
+        "faq_item_zet6LP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "25g protein sounds high — is it safe?",
+            "answer": "<p>25g per serving is within the range identified in research as optimal for stimulating muscle protein synthesis (20–40g per serving, Phillips & Van Loon, J Sports Sci, 2011). It is below the threshold at which protein causes gastrointestinal distress in healthy individuals. The inclusion of a 5-enzyme digestive blend, probiotic, and prebiotic specifically addresses digestive tolerance. Individuals with kidney conditions should consult a physician before high-protein supplementation.</p>"
+          }
+        },
+        "faq_item_Q6TUxh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why not just use whey?",
+            "answer": "<p>If you tolerate whey and have no dairy concerns, whey is an excellent protein. But 65%+ of South Asian adults have some degree of lactose intolerance — making whey a poor match for most of the Indian market. AIWO Fermented Yeast Protein achieves the same PDCAAS 1.0 quality as whey, without any dairy derivatives, without lactose, and with a three-layer gut support formula that makes it genuinely appropriate for sensitive stomachs.</p>"
+          }
+        },
+        "faq_item_WyBt4K": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why is the price what it is?",
+            "answer": "<p>The cost reflects the manufacturing process (controlled fermentation, extraction, cell wall removal), the quality testing protocol (NABL lab, heavy metals, protein potency), the functional ingredients included (5-enzyme blend, L. Rhamnosus probiotic, Inulin prebiotic), and the premium Monk Fruit sweetener. Conventional plant proteins are cheaper because they skip the fermentation process, skip batch testing, and don't include gut-support ingredients. At ₹XX per serving, this is 25g of PDCAAS 1.0 complete protein with gut support — not a commodity protein powder.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_BFc6Am",
+        "faq_item_pgG9dR",
+        "faq_item_zet6LP",
+        "faq_item_Q6TUxh",
+        "faq_item_WyBt4K"
+      ],
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    },
+    "aiwo_two_column_grid_HF8RT8": {
+      "type": "aiwo-two-column-grid",
+      "name": "Two Column Grid",
+      "settings": {
+        "bg_image": "shopify://shop_images/CTA-_Yeast-protein-_powder_fc5db698-ef72-4580-981b-854e0d054f8d.png",
+        "bg_image_mobile": "shopify://shop_images/CTA-_Mobile-_Yeast.png",
+        "bg_color": "#ffffff",
+        "heading": "Start with 25g of complete plant protein",
+        "heading_size": 32,
+        "heading_size_mobile": 24,
+        "heading_color": "#000000",
+        "description": "zero bloating, zero added sugar.",
+        "description_size": 16,
+        "description_size_mobile": 14,
+        "description_color": "#555555",
+        "cta_text": "Buy Now",
+        "cta_link": "https://shop-aiwo.myshopify.com/cart/42291169558710:1?channel=buy_button"
+      }
+    },
+    "177510445730616487": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "aiwo_evoo_v3_styles",
+    "aiwo_evoo_v3_breadcrumb",
+    "aiwo_evoo_v3_gallery_enhancements",
+    "aiwo_evoo_v3_qty_label",
+    "main",
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD",
+    "product-recommendations",
+    "aiwo_comparison_wVNYTt",
+    "section_evoo_v3_faq_rRJhLR",
+    "aiwo_two_column_grid_HF8RT8",
+    "177510445730616487"
+  ]
+}

@@ -1,0 +1,949 @@
+{% doc %}
+  @prompt
+    Create ingredients section with light muted background:
+    Layout: 2 columns (stack on mobile)
+    Left Column - Nutritional Card:
+    
+    Large white rounded card with shadow/border
+    Heading: "Nutritional Information"
+    Subtext: "Each enteric coated soft gelatin capsule contains (approx.)"
+    5 ingredient rows, each showing:
+    
+    Name [EDITABLE]
+    Amount (large, bold, right-aligned) [EDITABLE]
+    Description (small, gray) [EDITABLE]
+    
+    
+    First row highlighted: light blue bg, blue text, blue border
+    EPA row: gold colored amount
+    Bottom: Certification tags in green pills [EDITABLE, repeatable]
+    
+    Default: "Gelatin Food Grade", "Gluten Free", "HALAL", "GMP", "ISO"
+    
+    
+    
+    Right Column - Content:
+    
+    Gold pill badge: "Premium Ingredients"
+    Large heading: "What's Inside" + "Every Capsule" (gold gradient)
+    Gray description paragraph [EDITABLE]
+    3 feature bullets with colored dot indicators:
+    
+    Ocean blue dot - "High Potency" + description [EDITABLE]
+    Gold dot - "Optimal Ratio" + description [EDITABLE]
+    Green dot - "Pure & Safe" + description [EDITABLE]
+    
+    
+    
+    Default 5 Ingredients:
+    
+    Fish Oil - 1000mg - "Premium quality molecularly distilled"
+    Total Omega-3 - 660mg - "High concentration of essential fatty acids"
+    EPA - 360mg - "Eicosapentaenoic Acid (36%)" (Gold amount)
+    DHA - 240mg - "Docosahexaenoic Acid (24%)"
+    Other Omega-3 - 60mg - "Additional beneficial fatty acids"
+    
+    Responsive: Stack vertically on mobile (content first, card second)
+    All ingredient rows, amounts, descriptions, bullets, and tags editable via Shopify settings., Every row has a light gray   background with outer line expect first highlighted one and right scetion should be Vertical centered align
+    
+    Font size should be editable
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-ingredients-section-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.section_background }};
+    padding: 60px 20px;
+  }
+
+  .ai-ingredients-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .ai-ingredients-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 40px;
+    box-shadow: {{ block.settings.card_shadow }};
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+  }
+
+  .ai-ingredients-card-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_heading_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.card_heading_color }};
+    margin: 0 0 8px 0;
+  }
+
+  .ai-ingredients-card-subtext-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_subtext_size }}px;
+    color: {{ block.settings.card_subtext_color }};
+    margin: 0 0 24px 0;
+  }
+
+  .ai-ingredients-row-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px;
+    margin-bottom: 12px;
+    background-color: {{ block.settings.row_background }};
+    border: 1px solid {{ block.settings.row_border_color }};
+    border-radius: 8px;
+  }
+
+  .ai-ingredients-row-{{ ai_gen_id }}:last-of-type {
+    margin-bottom: 24px;
+  }
+
+  .ai-ingredients-row-highlighted-{{ ai_gen_id }} {
+    background-color: {{ block.settings.highlight_background }};
+    border-color: {{ block.settings.highlight_border }};
+  }
+
+  .ai-ingredients-row-left-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .ai-ingredients-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.ingredient_name_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.ingredient_name_color }};
+    margin: 0 0 4px 0;
+  }
+
+  .ai-ingredients-row-highlighted-{{ ai_gen_id }} .ai-ingredients-name-{{ ai_gen_id }} {
+    color: {{ block.settings.highlight_text_color }};
+  }
+
+  .ai-ingredients-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.ingredient_description_size }}px;
+    color: {{ block.settings.ingredient_description_color }};
+    margin: 0;
+  }
+
+  .ai-ingredients-amount-{{ ai_gen_id }} {
+    font-size: {{ block.settings.ingredient_amount_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.ingredient_amount_color }};
+    text-align: right;
+    white-space: nowrap;
+    margin-left: 16px;
+  }
+
+  .ai-ingredients-amount-gold-{{ ai_gen_id }} {
+    color: {{ block.settings.gold_color }};
+  }
+
+  .ai-ingredients-certifications-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ai-ingredients-cert-tag-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: {{ block.settings.cert_background }};
+    color: {{ block.settings.cert_text_color }};
+    border-radius: 20px;
+    font-size: {{ block.settings.cert_text_size }}px;
+    font-weight: 500;
+  }
+
+  .ai-ingredients-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ai-ingredients-badge-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: {{ block.settings.badge_background }};
+    color: {{ block.settings.badge_text_color }};
+    border-radius: 20px;
+    font-size: {{ block.settings.badge_text_size }}px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    width: fit-content;
+  }
+
+  .ai-ingredients-badge-icon-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: {{ block.settings.gold_color }};
+  }
+
+  .ai-ingredients-content-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.content_heading_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.content_heading_color }};
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+  }
+
+  .ai-ingredients-content-heading-gold-{{ ai_gen_id }} {
+    background: {{ block.settings.gold_gradient }};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ai-ingredients-content-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.content_description_size }}px;
+    color: {{ block.settings.content_description_color }};
+    margin: 0 0 24px 0;
+    line-height: 1.6;
+  }
+
+  .ai-ingredients-features-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-ingredients-feature-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .ai-ingredients-feature-dot-{{ ai_gen_id }} {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .ai-ingredients-feature-dot-blue-{{ ai_gen_id }} {
+    background-color: {{ block.settings.dot_blue_color }};
+  }
+
+  .ai-ingredients-feature-dot-gold-{{ ai_gen_id }} {
+    background-color: {{ block.settings.gold_color }};
+  }
+
+  .ai-ingredients-feature-dot-green-{{ ai_gen_id }} {
+    background-color: {{ block.settings.dot_green_color }};
+  }
+
+  .ai-ingredients-feature-content-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .ai-ingredients-feature-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.feature_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.feature_title_color }};
+    margin: 0 0 4px 0;
+  }
+
+  .ai-ingredients-feature-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.feature_description_size }}px;
+    color: {{ block.settings.feature_description_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-ingredients-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .ai-ingredients-content-{{ ai_gen_id }} {
+      order: -1;
+    }
+
+    .ai-ingredients-card-{{ ai_gen_id }} {
+      padding: 24px;
+    }
+
+    .ai-ingredients-section-{{ ai_gen_id }} {
+      padding: 40px 16px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-ingredients-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-ingredients-container-{{ ai_gen_id }}">
+    <div class="ai-ingredients-card-{{ ai_gen_id }}">
+      <h2 class="ai-ingredients-card-heading-{{ ai_gen_id }}">{{ block.settings.card_heading }}</h2>
+      <p class="ai-ingredients-card-subtext-{{ ai_gen_id }}">{{ block.settings.card_subtext }}</p>
+
+      {% for i in (1..5) %}
+        {% liquid
+          assign name_key = 'ingredient_' | append: i | append: '_name'
+          assign amount_key = 'ingredient_' | append: i | append: '_amount'
+          assign description_key = 'ingredient_' | append: i | append: '_description'
+          assign is_gold_key = 'ingredient_' | append: i | append: '_gold'
+          
+          assign ingredient_name = block.settings[name_key]
+          assign ingredient_amount = block.settings[amount_key]
+          assign ingredient_description = block.settings[description_key]
+          assign is_gold = block.settings[is_gold_key]
+        %}
+
+        {% if i == 1 %}
+          <div class="ai-ingredients-row-{{ ai_gen_id }} ai-ingredients-row-highlighted-{{ ai_gen_id }}">
+        {% else %}
+          <div class="ai-ingredients-row-{{ ai_gen_id }}">
+        {% endif %}
+          <div class="ai-ingredients-row-left-{{ ai_gen_id }}">
+            <h3 class="ai-ingredients-name-{{ ai_gen_id }}">{{ ingredient_name }}</h3>
+            <p class="ai-ingredients-description-{{ ai_gen_id }}">{{ ingredient_description }}</p>
+          </div>
+          {% if is_gold %}
+            <div class="ai-ingredients-amount-{{ ai_gen_id }} ai-ingredients-amount-gold-{{ ai_gen_id }}">{{ ingredient_amount }}</div>
+          {% else %}
+            <div class="ai-ingredients-amount-{{ ai_gen_id }}">{{ ingredient_amount }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <div class="ai-ingredients-certifications-{{ ai_gen_id }}">
+        {% if block.settings.cert_1 != blank %}
+          <span class="ai-ingredients-cert-tag-{{ ai_gen_id }}">{{ block.settings.cert_1 }}</span>
+        {% endif %}
+        {% if block.settings.cert_2 != blank %}
+          <span class="ai-ingredients-cert-tag-{{ ai_gen_id }}">{{ block.settings.cert_2 }}</span>
+        {% endif %}
+        {% if block.settings.cert_3 != blank %}
+          <span class="ai-ingredients-cert-tag-{{ ai_gen_id }}">{{ block.settings.cert_3 }}</span>
+        {% endif %}
+        {% if block.settings.cert_4 != blank %}
+          <span class="ai-ingredients-cert-tag-{{ ai_gen_id }}">{{ block.settings.cert_4 }}</span>
+        {% endif %}
+        {% if block.settings.cert_5 != blank %}
+          <span class="ai-ingredients-cert-tag-{{ ai_gen_id }}">{{ block.settings.cert_5 }}</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-ingredients-content-{{ ai_gen_id }}">
+      <div class="ai-ingredients-badge-{{ ai_gen_id }}">
+        <span class="ai-ingredients-badge-icon-{{ ai_gen_id }}"></span>
+        {{ block.settings.badge_text }}
+      </div>
+
+      <h2 class="ai-ingredients-content-heading-{{ ai_gen_id }}">
+        {{ block.settings.content_heading_1 }}
+        <span class="ai-ingredients-content-heading-gold-{{ ai_gen_id }}">{{ block.settings.content_heading_2 }}</span>
+      </h2>
+
+      <p class="ai-ingredients-content-description-{{ ai_gen_id }}">{{ block.settings.content_description }}</p>
+
+      <div class="ai-ingredients-features-{{ ai_gen_id }}">
+        <div class="ai-ingredients-feature-{{ ai_gen_id }}">
+          <div class="ai-ingredients-feature-dot-{{ ai_gen_id }} ai-ingredients-feature-dot-blue-{{ ai_gen_id }}"></div>
+          <div class="ai-ingredients-feature-content-{{ ai_gen_id }}">
+            <h3 class="ai-ingredients-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_1_title }}</h3>
+            <p class="ai-ingredients-feature-description-{{ ai_gen_id }}">{{ block.settings.feature_1_description }}</p>
+          </div>
+        </div>
+
+        <div class="ai-ingredients-feature-{{ ai_gen_id }}">
+          <div class="ai-ingredients-feature-dot-{{ ai_gen_id }} ai-ingredients-feature-dot-gold-{{ ai_gen_id }}"></div>
+          <div class="ai-ingredients-feature-content-{{ ai_gen_id }}">
+            <h3 class="ai-ingredients-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_2_title }}</h3>
+            <p class="ai-ingredients-feature-description-{{ ai_gen_id }}">{{ block.settings.feature_2_description }}</p>
+          </div>
+        </div>
+
+        <div class="ai-ingredients-feature-{{ ai_gen_id }}">
+          <div class="ai-ingredients-feature-dot-{{ ai_gen_id }} ai-ingredients-feature-dot-green-{{ ai_gen_id }}"></div>
+          <div class="ai-ingredients-feature-content-{{ ai_gen_id }}">
+            <h3 class="ai-ingredients-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_3_title }}</h3>
+            <p class="ai-ingredients-feature-description-{{ ai_gen_id }}">{{ block.settings.feature_3_description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ingredients section",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#F8F9FA"
+    },
+    {
+      "type": "header",
+      "content": "Nutritional card"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_heading",
+      "label": "Heading",
+      "default": "Nutritional Information"
+    },
+    {
+      "type": "range",
+      "id": "card_heading_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_subtext",
+      "label": "Subtext",
+      "default": "Each enteric coated soft gelatin capsule contains (approx.)"
+    },
+    {
+      "type": "range",
+      "id": "card_subtext_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtext size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "card_subtext_color",
+      "label": "Subtext color",
+      "default": "#6C757D"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#E9ECEF"
+    },
+    {
+      "type": "text",
+      "id": "card_shadow",
+      "label": "Box shadow",
+      "default": "0 4px 12px rgba(0, 0, 0, 0.08)"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient rows"
+    },
+    {
+      "type": "color",
+      "id": "row_background",
+      "label": "Row background",
+      "default": "#F8F9FA"
+    },
+    {
+      "type": "color",
+      "id": "row_border_color",
+      "label": "Row border color",
+      "default": "#DEE2E6"
+    },
+    {
+      "type": "color",
+      "id": "highlight_background",
+      "label": "Highlighted row background",
+      "default": "#E7F3FF"
+    },
+    {
+      "type": "color",
+      "id": "highlight_border",
+      "label": "Highlighted row border",
+      "default": "#4A90E2"
+    },
+    {
+      "type": "color",
+      "id": "highlight_text_color",
+      "label": "Highlighted text color",
+      "default": "#0056B3"
+    },
+    {
+      "type": "range",
+      "id": "ingredient_name_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Name size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "ingredient_name_color",
+      "label": "Name color",
+      "default": "#212529"
+    },
+    {
+      "type": "range",
+      "id": "ingredient_description_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "ingredient_description_color",
+      "label": "Description color",
+      "default": "#6C757D"
+    },
+    {
+      "type": "range",
+      "id": "ingredient_amount_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Amount size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "ingredient_amount_color",
+      "label": "Amount color",
+      "default": "#212529"
+    },
+    {
+      "type": "color",
+      "id": "gold_color",
+      "label": "Gold color",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 1"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_1_name",
+      "label": "Name",
+      "default": "Fish Oil"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_1_amount",
+      "label": "Amount",
+      "default": "1000mg"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_1_description",
+      "label": "Description",
+      "default": "Premium quality molecularly distilled"
+    },
+    {
+      "type": "checkbox",
+      "id": "ingredient_1_gold",
+      "label": "Gold amount color",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 2"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_2_name",
+      "label": "Name",
+      "default": "Total Omega-3"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_2_amount",
+      "label": "Amount",
+      "default": "660mg"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_2_description",
+      "label": "Description",
+      "default": "High concentration of essential fatty acids"
+    },
+    {
+      "type": "checkbox",
+      "id": "ingredient_2_gold",
+      "label": "Gold amount color",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 3"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_3_name",
+      "label": "Name",
+      "default": "EPA"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_3_amount",
+      "label": "Amount",
+      "default": "360mg"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_3_description",
+      "label": "Description",
+      "default": "Eicosapentaenoic Acid (36%)"
+    },
+    {
+      "type": "checkbox",
+      "id": "ingredient_3_gold",
+      "label": "Gold amount color",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 4"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_4_name",
+      "label": "Name",
+      "default": "DHA"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_4_amount",
+      "label": "Amount",
+      "default": "240mg"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_4_description",
+      "label": "Description",
+      "default": "Docosahexaenoic Acid (24%)"
+    },
+    {
+      "type": "checkbox",
+      "id": "ingredient_4_gold",
+      "label": "Gold amount color",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 5"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_5_name",
+      "label": "Name",
+      "default": "Other Omega-3"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_5_amount",
+      "label": "Amount",
+      "default": "60mg"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_5_description",
+      "label": "Description",
+      "default": "Additional beneficial fatty acids"
+    },
+    {
+      "type": "checkbox",
+      "id": "ingredient_5_gold",
+      "label": "Gold amount color",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Certifications"
+    },
+    {
+      "type": "text",
+      "id": "cert_1",
+      "label": "Certification 1",
+      "default": "Gelatin Food Grade"
+    },
+    {
+      "type": "text",
+      "id": "cert_2",
+      "label": "Certification 2",
+      "default": "Gluten Free"
+    },
+    {
+      "type": "text",
+      "id": "cert_3",
+      "label": "Certification 3",
+      "default": "HALAL"
+    },
+    {
+      "type": "text",
+      "id": "cert_4",
+      "label": "Certification 4",
+      "default": "GMP"
+    },
+    {
+      "type": "text",
+      "id": "cert_5",
+      "label": "Certification 5",
+      "default": "ISO"
+    },
+    {
+      "type": "color",
+      "id": "cert_background",
+      "label": "Background",
+      "default": "#28A745"
+    },
+    {
+      "type": "color",
+      "id": "cert_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "cert_text_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Content section"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Premium Ingredients"
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Badge background",
+      "default": "#FFF8E1"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text color",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "range",
+      "id": "badge_text_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge text size",
+      "default": 14
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content_heading_1",
+      "label": "Heading line 1",
+      "default": "What's Inside"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content_heading_2",
+      "label": "Heading line 2",
+      "default": "Every Capsule"
+    },
+    {
+      "type": "range",
+      "id": "content_heading_size",
+      "min": 20,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "content_heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "gold_gradient",
+      "label": "Gold gradient",
+      "default": "linear-gradient(135deg, #D4AF37 0%, #F4E5A1 100%)"
+    },
+    {
+      "type": "textarea",
+      "id": "content_description",
+      "label": "Description",
+      "default": "Our premium omega-3 formula delivers the highest quality fish oil, carefully processed to ensure maximum purity and potency for optimal health benefits."
+    },
+    {
+      "type": "range",
+      "id": "content_description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "content_description_color",
+      "label": "Description color",
+      "default": "#6C757D"
+    },
+    {
+      "type": "header",
+      "content": "Feature 1"
+    },
+    {
+      "type": "color",
+      "id": "dot_blue_color",
+      "label": "Dot color",
+      "default": "#4A90E2"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_title",
+      "label": "Title",
+      "default": "High Potency"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_1_description",
+      "label": "Description",
+      "default": "Contains 660mg of total omega-3 fatty acids per capsule for maximum effectiveness"
+    },
+    {
+      "type": "header",
+      "content": "Feature 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_title",
+      "label": "Title",
+      "default": "Optimal Ratio"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_2_description",
+      "label": "Description",
+      "default": "Perfectly balanced EPA to DHA ratio for comprehensive cardiovascular and brain support"
+    },
+    {
+      "type": "header",
+      "content": "Feature 3"
+    },
+    {
+      "type": "color",
+      "id": "dot_green_color",
+      "label": "Dot color",
+      "default": "#28A745"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_title",
+      "label": "Title",
+      "default": "Pure & Safe"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_3_description",
+      "label": "Description",
+      "default": "Molecularly distilled to remove impurities and certified by leading quality standards"
+    },
+    {
+      "type": "range",
+      "id": "feature_title_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature title size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "feature_title_color",
+      "label": "Feature title color",
+      "default": "#212529"
+    },
+    {
+      "type": "range",
+      "id": "feature_description_size",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature description size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "feature_description_color",
+      "label": "Feature description color",
+      "default": "#6C757D"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,330 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.group.aside.name",
+  "type": "aside",
+  "sections": {
+    "product-labels-and-badges": {
+      "type": "product-labels-and-badges",
+      "blocks": {
+        "product-labels-and-badges-0": {
+          "type": "sale-label",
+          "settings": {
+            "show_on_product_card": true,
+            "show_on_product_page": true,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "content": "Save {sale}",
+            "display_type": "rounded-full",
+            "opacity": 100,
+            "font_size": 90,
+            "font_size_mobile": 90,
+            "size": 1,
+            "size_mobile": 2,
+            "position": "top-left",
+            "horizontal_position": 95,
+            "vertical_position": 5,
+            "background_color": "#980000",
+            "text_color": "#ffffff",
+            "border_color": "rgba(0,0,0,0)",
+            "background_color_dark": "#980000",
+            "text_color_dark": "#ffffff",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "preorder_label_qqcDpi": {
+          "type": "preorder-label",
+          "disabled": true,
+          "settings": {
+            "show_on_product_card": true,
+            "show_on_product_page": true,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "content": "Pre-order",
+            "display_type": "square",
+            "opacity": 100,
+            "font_size": 90,
+            "font_size_mobile": 90,
+            "size": 2,
+            "size_mobile": 2,
+            "position": "top-left",
+            "horizontal_position": 95,
+            "vertical_position": 5,
+            "background_color": "#706262",
+            "text_color": "#ffffff",
+            "border_color": "rgba(0,0,0,0)",
+            "background_color_dark": "#706262",
+            "text_color_dark": "#ffffff",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "new_label_MDdzbr": {
+          "type": "new-label",
+          "disabled": true,
+          "settings": {
+            "day_start": "activation_date",
+            "day_end": 30,
+            "show_on_product_card": true,
+            "show_on_product_page": true,
+            "applied_products": [],
+            "applied_collections": [],
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "content": "New",
+            "display_type": "square",
+            "opacity": 100,
+            "font_size": 90,
+            "font_size_mobile": 90,
+            "size": 2,
+            "size_mobile": 2,
+            "position": "top-left",
+            "horizontal_position": 5,
+            "vertical_position": 5,
+            "background_color": "#048872",
+            "text_color": "#ffffff",
+            "border_color": "rgba(0,0,0,0)",
+            "background_color_dark": "#048872",
+            "text_color_dark": "#ffffff",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "product-labels-and-badges-1": {
+          "type": "sold-out-label",
+          "disabled": true,
+          "settings": {
+            "show_on_product_card": true,
+            "show_on_product_page": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "content": "Sold out",
+            "display_type": "rounded-full",
+            "opacity": 100,
+            "font_size": 90,
+            "font_size_mobile": 90,
+            "size": 1,
+            "size_mobile": 2,
+            "position": "top-left",
+            "horizontal_position": 5,
+            "vertical_position": 5,
+            "background_color": "#7f817f",
+            "text_color": "#ffffff",
+            "border_color": "rgba(0,0,0,0)",
+            "background_color_dark": "#7f817f",
+            "text_color_dark": "#ffffff",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "text_label_eTDYxb": {
+          "type": "text-label",
+          "settings": {
+            "show_on_product_card": true,
+            "show_on_product_page": true,
+            "applied_products": [],
+            "applied_collections": [
+              "classic-spanish-groceries",
+              "food-bundles"
+            ],
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "content": "Hot",
+            "display_type": "rounded-full",
+            "opacity": 100,
+            "font_size": 90,
+            "font_size_mobile": 90,
+            "size": 1,
+            "size_mobile": 2,
+            "position": "top-left",
+            "horizontal_position": 5,
+            "vertical_position": 5,
+            "background_color": "#d68641",
+            "text_color": "#ffffff",
+            "border_color": "rgba(0,0,0,0)",
+            "background_color_dark": "#d68641",
+            "text_color_dark": "#ffffff",
+            "border_color_dark": "rgba(0,0,0,0)",
+            "schedule_enabled": false,
+            "timezone": "-4",
+            "start_year": 2023,
+            "start_month": "1",
+            "start_day": "1",
+            "start_hour": "0",
+            "start_minute": "0",
+            "end_year": 2023,
+            "end_month": "1",
+            "end_day": "1",
+            "end_hour": "0",
+            "end_minute": "0"
+          }
+        }
+      },
+      "block_order": [
+        "product-labels-and-badges-0",
+        "preorder_label_qqcDpi",
+        "new_label_MDdzbr",
+        "product-labels-and-badges-1",
+        "text_label_eTDYxb"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable": false
+      }
+    },
+    "quick-view": {
+      "type": "quick-view",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {
+            "position_adapt": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": false,
+            "make_content_center": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "variant-picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_option": true,
+            "enable_color_swatches": true,
+            "swatch_size": "small"
+          }
+        },
+        "quantity-selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "style": "adapt"
+          }
+        },
+        "buy-buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_button_style": "secondary",
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": false,
+            "show_price": false,
+            "hide_sale_price": true,
+            "preorder_button_label": "",
+            "preorder_message": "<p>This product will be available for sale in 2 weeks, but you can pre-order now to receive 10% discount!</p>",
+            "preorder_show_dynamic_button": false,
+            "show_background": false,
+            "box_type": "square",
+            "background_color_light": "rgba(0,0,0,0)",
+            "message_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "price",
+        "badges",
+        "description",
+        "variant-picker",
+        "quantity-selector",
+        "buy-buttons"
+      ],
+      "settings": {
+        "product": "epigenetic-test",
+        "show_product_name": true,
+        "title_size": 100,
+        "heading_tag": "h2",
+        "show_vendor": true,
+        "make_content_center": false,
+        "desktop_layout": "right",
+        "image_ratio": "natural",
+        "show_arrow_button": true,
+        "show_thumbnails": true,
+        "thumbnail_position": "horizontal",
+        "transition_style": "fade",
+        "enable_video_autoplay": true,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": true,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "show_atc_button": true,
+        "quickadd_position": "image",
+        "quickadd_mobile_position": "top",
+        "enable_quickview": true,
+        "quickview_label": "Quick view",
+        "color_button": "rgba(0,0,0,0)",
+        "color_text_button": "rgba(0,0,0,0)",
+        "color_button_hover": "rgba(0,0,0,0)",
+        "color_text_button_hover": "rgba(0,0,0,0)",
+        "color_button_dark": "rgba(0,0,0,0)",
+        "color_text_button_dark": "rgba(0,0,0,0)",
+        "color_button_hover_dark": "rgba(0,0,0,0)",
+        "color_text_button_hover_dark": "rgba(0,0,0,0)"
+      }
+    },
+    "cookie-banner": {
+      "type": "cookie-banner",
+      "disabled": true,
+      "settings": {
+        "cookie_enabled": true,
+        "cookie_notice": "<p>We use cookies and similar technologies to provide the best experience on our website. </p>",
+        "cookie_delay": 4,
+        "content_alignment": "",
+        "button_accept": "Got it!",
+        "button_decline": "Decline",
+        "background_color_cookie_light": "#ded5cd",
+        "text_color_cookie_light": "#545252",
+        "accept_button_background": "#743718",
+        "accept_button_text": "#ffffff",
+        "background_color_cookie_dark": "#5b5553",
+        "text_color_cookie_dark": "#cac7c7",
+        "accept_button_background_dark": "#743718",
+        "accept_button_text_dark": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "product-labels-and-badges",
+    "quick-view",
+    "cookie-banner"
+  ]
+}

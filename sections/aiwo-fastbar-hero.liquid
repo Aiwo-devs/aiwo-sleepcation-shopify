@@ -1,0 +1,825 @@
+{%- liquid
+  assign section_uid = 'fh-' | append: section.id
+  assign feature_blocks = section.blocks | where: 'type', 'feature'
+-%}
+
+<style>
+
+#{{ section_uid }} {
+  position: relative;
+  background-color: #FEFEFE;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+#{{ section_uid }} .fh__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
+
+#{{ section_uid }} .fh__bg-img-mobile {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#{{ section_uid }} .fh__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 50fr 45fr;
+  align-items: stretch;
+  min-height: 580px;
+}
+
+/* ── LEFT COLUMN ── */
+#{{ section_uid }} .fh__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  min-width: 0;
+  width: 100%;
+}
+
+/* 1. Physician Badge */
+#{{ section_uid }} .fh__physician-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 24px 0;
+  padding: 0;
+}
+#{{ section_uid }} .fh__badge-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#{{ section_uid }} .fh__badge-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+}
+#{{ section_uid }} .fh__badge-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #519A5E;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 2. H1 */
+#{{ section_uid }} .fh__heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #211E1E;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.4px;
+}
+
+/* 3. Description */
+#{{ section_uid }} .fh__description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #545252;
+  line-height: 1.5;
+  margin: 0 0 32px 0;
+  max-width: 480px;
+}
+
+/* 4. Pricing Card */
+#{{ section_uid }} .fh__pricing-card-wrap {
+  position: relative;
+  max-width: 260px;
+  width: 100%;
+  margin-bottom: 28px;
+  margin-top: 20px;
+}
+#{{ section_uid }} .fh__bestseller-pill {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(60deg, #FCF3C4, #F2C1EA, #F67B6B);
+  color: #211E1E;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.5;
+  padding: 2px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  z-index: 2;
+}
+#{{ section_uid }} .fh__pricing-card {
+  background: #E2EAED;
+  border: 1px solid #C3D1D7;
+  border-radius: 8px;
+  padding: 14px 14px 10px 14px;
+  box-shadow: 0px 1px 3px rgba(145,159,168,0.10), 0px 1px 2px rgba(145,159,168,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+#{{ section_uid }} .fh__pricing-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+#{{ section_uid }} .fh__pack-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #545252;
+  line-height: 1.5;
+  margin: 0;
+}
+#{{ section_uid }} .fh__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+#{{ section_uid }} .fh__sale-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #211E1E;
+  line-height: 1.5;
+}
+#{{ section_uid }} .fh__original-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #919FA8;
+  text-decoration: line-through;
+  text-decoration-color: #919FA8;
+  line-height: 1.5;
+}
+#{{ section_uid }} .fh__save-chip {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #519A5E;
+  padding: 4px 6px;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start;
+  line-height: 1.4;
+}
+
+/* 5. Features Grid */
+#{{ section_uid }} .fh__features-wrap {
+  width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+}
+#{{ section_uid }} .fh__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+#{{ section_uid }} .fh__feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+#{{ section_uid }} .fh__feature-icon-wrap {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: #B0BEC5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+#{{ section_uid }} .fh__feature-icon-img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+#{{ section_uid }} .fh__feature-icon-placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #B0BEC5;
+  display: block;
+  flex-shrink: 0;
+}
+#{{ section_uid }} .fh__feature-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #545252;
+  line-height: 1.4;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/* Show More — hidden desktop */
+#{{ section_uid }} .fh__show-more-wrap {
+  display: none;
+  width: 100%;
+}
+#{{ section_uid }} .fh__show-more-separator {
+  width: 100%;
+  height: 1px;
+  background: #C3D1D7;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+#{{ section_uid }} .fh__features-toggle {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #211E1E;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+#{{ section_uid }} .fh__features-toggle:hover {
+  color: #519A5E;
+}
+
+/* 6. USP Banner — single row, centered */
+#{{ section_uid }} .fh__fasting-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #C3D1D7;
+  padding: 4px 14px;
+  border-radius: 4px;
+  margin-bottom: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+#{{ section_uid }} .fh__fasting-icon-wrap {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+#{{ section_uid }} .fh__fasting-icon-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+#{{ section_uid }} .fh__fasting-icon-placeholder {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #9AAEB8;
+  display: block;
+}
+#{{ section_uid }} .fh__fasting-text {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+/* "100%" bold 26px */
+#{{ section_uid }} .fh__fasting-highlight {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  font-style: normal;
+  color: #211E1E;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+/* "Formulated..." medium italic 500 18px */
+#{{ section_uid }} .fh__fasting-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: #211E1E;
+  line-height: 1.5;
+}
+
+/* 7. CTA */
+#{{ section_uid }} .fh__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #211E1E;
+  color: #FEFEFE;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid #211E1E;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+#{{ section_uid }} .fh__cta-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+}
+#{{ section_uid }} .fh__cta-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #FEFEFE;
+  transition: stroke 0.2s ease;
+}
+#{{ section_uid }} .fh__cta:hover { background-color: #FEFEFE; color: #211E1E; }
+#{{ section_uid }} .fh__cta:hover .fh__cta-icon svg { stroke: #211E1E; }
+#{{ section_uid }} .fh__cta:focus-visible { outline: 3px solid #519A5E; outline-offset: 3px; }
+
+/* ── RIGHT COLUMN ── */
+#{{ section_uid }} .fh__media {
+  position: relative;
+  overflow: visible;
+}
+#{{ section_uid }} .fh__media-inner {
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+#{{ section_uid }} .fh__model-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+#{{ section_uid }} .fh__model-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: linear-gradient(160deg, #E2EAED 0%, #C3D1D7 100%);
+  border-radius: 12px 12px 0 0;
+}
+
+/* ── TABLET 768–1023px ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #{{ section_uid }} .fh__container {
+    padding: 0 24px;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+  }
+  #{{ section_uid }} .fh__content { padding-top: 40px; padding-bottom: 40px; }
+  #{{ section_uid }} .fh__heading { font-size: 30px; }
+  #{{ section_uid }} .fh__description { font-size: 14px; }
+  #{{ section_uid }} .fh__features { grid-template-columns: repeat(2, 1fr); }
+  #{{ section_uid }} .fh__fasting-highlight { font-size: 22px; }
+  #{{ section_uid }} .fh__fasting-label { font-size: 15px; }
+  #{{ section_uid }} .fh__cta { font-size: 17px; padding: 10px 20px; }
+  #{{ section_uid }} .fh__media-inner { top: 40px; }
+}
+
+/* ── MOBILE max-width 767px ── */
+@media (max-width: 767px) {
+
+  #{{ section_uid }} .fh__bg-img { display: none !important; }
+  #{{ section_uid }} .fh__bg-img-mobile { display: block !important; }
+
+  #{{ section_uid }} .fh__container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    padding: 0 16px !important;
+    min-height: unset !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #{{ section_uid }} .fh__content {
+    order: 1 !important;
+    padding-top: 32px !important;
+    padding-bottom: 24px !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  #{{ section_uid }} .fh__heading {
+    font-size: 28px !important;
+    width: 100% !important;
+  }
+  #{{ section_uid }} .fh__description {
+    font-size: 15px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  #{{ section_uid }} .fh__pricing-card-wrap {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Force single column, left aligned */
+  #{{ section_uid }} .fh__features {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  #{{ section_uid }} .fh__feature {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  #{{ section_uid }} .fh__feature-label {
+    text-align: left !important;
+  }
+  #{{ section_uid }} .fh__feature--hidden-mobile {
+    display: none !important;
+  }
+  #{{ section_uid }} .fh__feature--hidden-mobile.is-visible {
+    display: flex !important;
+  }
+  #{{ section_uid }} .fh__show-more-wrap {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* USP Banner mobile — single row, left aligned */
+  #{{ section_uid }} .fh__fasting-banner {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 10px 14px !important;
+    gap: 10px !important;
+    text-align: left !important;
+  }
+  #{{ section_uid }} .fh__fasting-text {
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    text-align: left !important;
+  }
+  #{{ section_uid }} .fh__fasting-highlight {
+    font-size: 20px !important;
+    white-space: nowrap !important;
+  }
+  #{{ section_uid }} .fh__fasting-label {
+    font-size: 14px !important;
+  }
+
+  #{{ section_uid }} .fh__cta {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    box-sizing: border-box !important;
+  }
+  #{{ section_uid }} .fh__media {
+    order: 2 !important;
+    min-height: 280px !important;
+  }
+  #{{ section_uid }} .fh__media-inner {
+    position: relative !important;
+    top: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+    right: unset !important;
+    width: 100% !important;
+    height: 280px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  #{{ section_uid }} .fh__container { max-width: 1400px; }
+}
+
+</style>
+
+
+<section id="{{ section_uid }}" class="fh" aria-labelledby="{{ section_uid }}-heading">
+
+  {%- if section.settings.bg_image != blank -%}
+    {{
+      section.settings.bg_image
+      | image_url: width: 1920
+      | image_tag:
+        loading: 'eager',
+        fetchpriority: 'high',
+        class: 'fh__bg-img',
+        alt: '',
+        role: 'presentation',
+        width: section.settings.bg_image.width,
+        height: section.settings.bg_image.height
+    }}
+  {%- endif -%}
+
+  {%- if section.settings.bg_image_mobile != blank -%}
+    {{
+      section.settings.bg_image_mobile
+      | image_url: width: 800
+      | image_tag:
+        loading: 'eager',
+        class: 'fh__bg-img-mobile',
+        alt: '',
+        role: 'presentation',
+        width: section.settings.bg_image_mobile.width,
+        height: section.settings.bg_image_mobile.height
+    }}
+  {%- endif -%}
+
+  <div class="fh__container">
+
+    <div class="fh__content">
+
+      {%- if section.settings.physician_badge_text != blank -%}
+        <p class="fh__physician-badge">
+          {%- if section.settings.physician_badge_icon != blank -%}
+            <span class="fh__badge-icon" aria-hidden="true">
+              {{
+                section.settings.physician_badge_icon
+                | image_url: width: 36
+                | image_tag: loading: 'lazy', width: 18, height: 18, alt: ''
+              }}
+            </span>
+          {%- endif -%}
+          <span class="fh__badge-text">{{ section.settings.physician_badge_text | escape }}</span>
+        </p>
+      {%- endif -%}
+
+      <h1 id="{{ section_uid }}-heading" class="fh__heading">
+        {{ section.settings.heading | escape }}
+      </h1>
+
+      {%- if section.settings.description != blank -%}
+        <p class="fh__description">{{ section.settings.description }}</p>
+      {%- endif -%}
+
+      <div class="fh__pricing-card-wrap">
+        {%- if section.settings.best_seller_label != blank -%}
+          <span class="fh__bestseller-pill">{{ section.settings.best_seller_label | escape }}</span>
+        {%- endif -%}
+        <div class="fh__pricing-card">
+          <div class="fh__pricing-info">
+            {%- if section.settings.pack_label != blank -%}
+              <p class="fh__pack-label">{{ section.settings.pack_label | escape }}</p>
+            {%- endif -%}
+            <div class="fh__price-row">
+              {%- if section.settings.sale_price != blank -%}
+                <span class="fh__sale-price">{{ section.settings.sale_price | escape }}</span>
+              {%- endif -%}
+              {%- if section.settings.original_price != blank -%}
+                <del class="fh__original-price">{{ section.settings.original_price | escape }}</del>
+              {%- endif -%}
+            </div>
+          </div>
+          {%- if section.settings.save_badge != blank -%}
+            <span class="fh__save-chip">{{ section.settings.save_badge | escape }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if feature_blocks.size > 0 -%}
+        <div class="fh__features-wrap">
+          <ul class="fh__features" role="list">
+            {%- for block in feature_blocks -%}
+              <li class="fh__feature{% if forloop.index > 3 %} fh__feature--hidden-mobile{% endif %}" {{ block.shopify_attributes }}>
+                <span class="fh__feature-icon-wrap" aria-hidden="true">
+                  {%- if block.settings.icon_image != blank -%}
+                    {{
+                      block.settings.icon_image
+                      | image_url: width: 72
+                      | image_tag:
+                        loading: 'lazy',
+                        class: 'fh__feature-icon-img',
+                        width: 36,
+                        height: 36,
+                        alt: ''
+                    }}
+                  {%- else -%}
+                    <span class="fh__feature-icon-placeholder"></span>
+                  {%- endif -%}
+                </span>
+                <span class="fh__feature-label">{{ block.settings.label | escape }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+          {%- if feature_blocks.size > 3 -%}
+            <div class="fh__show-more-wrap">
+              <div class="fh__show-more-separator"></div>
+              <button
+                class="fh__features-toggle"
+                id="{{ section_uid }}-toggle"
+                aria-expanded="false"
+              >
+                <span class="fh__toggle-label">Show More</span>
+              </button>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.fasting_highlight != blank or section.settings.fasting_text != blank -%}
+        <div class="fh__fasting-banner" role="note">
+          <span class="fh__fasting-icon-wrap" aria-hidden="true">
+            {%- if section.settings.fasting_icon_image != blank -%}
+              {{
+                section.settings.fasting_icon_image
+                | image_url: width: 56
+                | image_tag: loading: 'lazy', class: 'fh__fasting-icon-img', width: 28, height: 28, alt: ''
+              }}
+            {%- else -%}
+              <span class="fh__fasting-icon-placeholder"></span>
+            {%- endif -%}
+          </span>
+          <p class="fh__fasting-text">
+            {%- if section.settings.fasting_highlight != blank -%}
+              <strong class="fh__fasting-highlight">{{ section.settings.fasting_highlight | escape }}</strong>
+            {%- endif -%}
+            {%- if section.settings.fasting_text != blank -%}
+              <em class="fh__fasting-label">{{ section.settings.fasting_text | escape }}</em>
+            {%- endif -%}
+          </p>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_url | default: '/checkout' }}" class="fh__cta">
+          <span class="fh__cta-icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.667 2.667H6.4l3.2 14.72a2.133 2.133 0 002.093 1.746h10.24a2.133 2.133 0 002.08-1.653L26.08 7.333H9.067" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12.267" cy="26.133" r="2.133" stroke-width="2"/>
+              <circle cx="22.4" cy="26.133" r="2.133" stroke-width="2"/>
+            </svg>
+          </span>
+          <span>{{ section.settings.cta_label | escape }}</span>
+        </a>
+      {%- endif -%}
+
+    </div>
+
+    <div class="fh__media" aria-hidden="true">
+      <div class="fh__media-inner">
+        {%- if section.settings.hero_image != blank -%}
+          {{
+            section.settings.hero_image
+            | image_url: width: 1000
+            | image_tag:
+              loading: 'eager',
+              fetchpriority: 'high',
+              widths: '400, 600, 800, 1000',
+              sizes: '(max-width: 767px) 100vw, (max-width: 1199px) 45vw, 560px',
+              class: 'fh__model-img',
+              alt: section.settings.hero_image.alt | default: section.settings.heading | escape
+          }}
+        {%- else -%}
+          <div class="fh__model-placeholder"></div>
+        {%- endif -%}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var btn = document.getElementById('{{ section_uid }}-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var open = btn.classList.contains('is-open');
+    var items = document.querySelectorAll('#{{ section_uid }} .fh__feature--hidden-mobile');
+    var label = btn.querySelector('.fh__toggle-label');
+    items.forEach(function (el) {
+      open ? el.classList.remove('is-visible') : el.classList.add('is-visible');
+    });
+    btn.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    label.textContent = open ? 'Show More' : 'Show Less';
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Fast Bar Hero",
+  "tag": "section",
+  "class": "aiwo-fastbar-hero-section",
+  "settings": [
+    { "type": "header", "content": "Background — Desktop and Tablet" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background Image (Desktop/Tablet)", "info": "Hidden on mobile." },
+    { "type": "header", "content": "Background — Mobile Only" },
+    { "type": "image_picker", "id": "bg_image_mobile", "label": "Background Image (Mobile Only)", "info": "Shown only below 768px." },
+    { "type": "header", "content": "Physician Badge" },
+    { "type": "image_picker", "id": "physician_badge_icon", "label": "Badge Icon (SVG as PNG)", "info": "Green tick. 18x18px." },
+    { "type": "text", "id": "physician_badge_text", "label": "Badge Text", "default": "Physician Formulated" },
+    { "type": "header", "content": "Heading and Description" },
+    { "type": "text", "id": "heading", "label": "H1 Heading", "default": "Aiwo Fast Bar" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "AIWO Fast Bars are 40 grams of nut bars with 5 grams of protein, free from artificial flavors and gluten." },
+    { "type": "header", "content": "Pricing Card" },
+    { "type": "text", "id": "best_seller_label", "label": "Best Seller Pill", "default": "Best Seller", "info": "Gradient pill centered on top border of card. Leave blank to hide." },
+    { "type": "text", "id": "pack_label", "label": "Pack Label", "default": "Pack of 10" },
+    { "type": "text", "id": "sale_price", "label": "Sale Price", "default": "Rs. 1,000" },
+    { "type": "text", "id": "original_price", "label": "Original Price (strikethrough)", "default": "₹1,299" },
+    { "type": "text", "id": "save_badge", "label": "Save Badge Text", "default": "Save 20%" },
+    { "type": "header", "content": "USP Banner" },
+    { "type": "image_picker", "id": "fasting_icon_image", "label": "Banner Icon (SVG as PNG)", "info": "28x28px. Leave blank for circle placeholder." },
+    { "type": "text", "id": "fasting_highlight", "label": "Bold Text — 26px desktop / 20px mobile", "default": "100%" },
+    { "type": "text", "id": "fasting_text", "label": "Medium Italic Text — 18px desktop / 14px mobile", "default": "Formulated for intermittent fasting" },
+    { "type": "header", "content": "CTA Button" },
+    { "type": "text", "id": "cta_label", "label": "Button Text", "default": "Buy Now" },
+    { "type": "url", "id": "cta_url", "label": "Button URL", "info": "Link to /checkout or product page." },
+    { "type": "header", "content": "Hero Image" },
+    { "type": "image_picker", "id": "hero_image", "label": "Model or Product Image", "info": "PNG transparent background. Min 900x1100px." }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Item",
+      "limit": 6,
+      "settings": [
+        { "type": "image_picker", "id": "icon_image", "label": "Feature Icon", "info": "Fills 36x36px circle. PNG recommended." },
+        { "type": "text", "id": "label", "label": "Feature Label", "default": "Feature Label", "info": "Items 4-6 hidden on mobile under Show More." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fast Bar Hero",
+      "blocks": [
+        { "type": "feature", "settings": { "label": "5g Protein per Bar" } },
+        { "type": "feature", "settings": { "label": "Gluten-Free Nut Bar Snack" } },
+        { "type": "feature", "settings": { "label": "Meal replacement snack" } },
+        { "type": "feature", "settings": { "label": "Rich in Fiber & Nutrients" } },
+        { "type": "feature", "settings": { "label": "Clean Energy Anytime Boost" } },
+        { "type": "feature", "settings": { "label": "Pre/post Workout Bar" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

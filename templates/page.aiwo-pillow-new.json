@@ -1,0 +1,1857 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "slideshow_ah3V8H": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_hfkDTj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/guy_sleeping_1_1.png",
+            "image_mobile": "shopify://shop_images/guy_sleeping_1_1.png",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 50,
+            "show_sound_control": false,
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "enable_bakground": false,
+            "subheading": "",
+            "subheading_size": 100,
+            "heading": "Start Healing in Your Sleep",
+            "highlight_type": "underline",
+            "heading_size": 140,
+            "heading_tag": "h2",
+            "text": "<p>With the Pillow Designed for Postural Recovery and Deep Sleep</p>",
+            "button_label_1": "Buy Now",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "middle-right",
+            "custom_horizontal": 90,
+            "custom_vertical": 85,
+            "alignment": "center",
+            "text_product": "Check out our products:",
+            "list_products": [],
+            "show_rating": false,
+            "open_new_window_product": false,
+            "content_background_color": "rgba(0,0,0,0)",
+            "color_text": "#211e1e",
+            "color_button": "#545252",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "#211e1e",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "color_product_card_background": "rgba(0,0,0,0)",
+            "color_product_card_text": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hfkDTj"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "show_hero": true,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "pause_hover": true,
+        "slider_visual": "bars",
+        "show_arrow": true,
+        "image_pagination_background": "rgba(0,0,0,0)",
+        "image_pagination_text": "rgba(0,0,0,0)",
+        "transition_style": "default",
+        "full_width": true,
+        "padding_full_width": false,
+        "adapt_corners_desktop": true,
+        "rounded_corner_image": false,
+        "desktop_height": "550",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "adapt_corners_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "show_content_below_image": false,
+        "mobile_height": "500",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "image_with_text_RCF8na": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_xi68yi": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Start Healing in Your Sleep",
+            "highlight_type": "underline",
+            "heading_base_size": 130,
+            "heading_tag": "h1",
+            "text": "<p>With the Pillow Designed for Postural Recovery and Deep Sleep</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_cDJxBV": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Now",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xi68yi",
+        "button_cDJxBV"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/guy_sleeping_1_1.png",
+        "desktop_height": "550px",
+        "mobile_height": "250px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#ffffff",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "rich_text_yLwL3t": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BrCWTJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tired of Neck Pain, Shoulder Stiffness, or Numb Arms?",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "text_nQQjdT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With the Pillow Designed for Postural Recovery and Deep Sleep.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_Tpqycd": {
+          "type": "button",
+          "settings": {
+            "button_label": "TRY AIWO PILLOW",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "#545252",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "#211e1e",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BrCWTJ",
+        "text_nQQjdT",
+        "button_Tpqycd"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "image_with_text_tDfmVF": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Fkyqg6": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Why Deep Sleep Matters",
+            "highlight_type": "underline",
+            "heading_base_size": 100,
+            "heading_tag": "h2",
+            "text": "<p>Studies show that deep sleep is when your body does the most healing—repairing tissues, balancing hormones, and restoring brain function.<br/><br/><strong>Just one night of poor sleep</strong>can impair cognitive performance by up to<strong>33%</strong>and increase the risk of pain, fatigue, and chronic inflammation (NIH, 2022).</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_bwCBFE": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Fkyqg6",
+        "button_bwCBFE"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": false,
+        "image": "shopify://shop_images/young-man-sleeping-alarm-clock-wearing-smart-wristband.jpg",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "image_with_text_amWcnw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_7b7LqJ": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "The AIWO Pillow aligns your spine and relieves pressure, helping you enter deeper sleep cycles that rejuvenate your body and mind—naturally.",
+            "highlight_type": "underline",
+            "heading_base_size": 80,
+            "heading_tag": "h2",
+            "text": "",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_tfbzhg": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7b7LqJ",
+        "button_tfbzhg"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": false,
+        "image": "shopify://shop_images/sleeping_on_back.png",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "right",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "slideshow_Ufrf3E": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_9xEnT7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/pillow_explanation_1_black.png",
+            "image_mobile": "shopify://shop_images/pillow_explanation_1_black.png",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "show_sound_control": false,
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "enable_bakground": false,
+            "subheading": "",
+            "subheading_size": 100,
+            "heading": "What Makes It Special?",
+            "highlight_type": "underline",
+            "heading_size": 110,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "top-left",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "text_product": "Check out our products:",
+            "list_products": [],
+            "show_rating": false,
+            "open_new_window_product": false,
+            "content_background_color": "rgba(0,0,0,0)",
+            "color_text": "#211e1e",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "color_product_card_background": "rgba(0,0,0,0)",
+            "color_product_card_text": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_8PaKqj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/pillow_explanation_2_black.png",
+            "image_mobile": "shopify://shop_images/pillow_explanation_2_black.png",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "show_sound_control": false,
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "enable_bakground": false,
+            "subheading": "",
+            "subheading_size": 100,
+            "heading": "What Makes It Special?",
+            "highlight_type": "underline",
+            "heading_size": 110,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "content_alignment": "top-left",
+            "custom_horizontal": 50,
+            "custom_vertical": 50,
+            "alignment": "center",
+            "text_product": "Check out our products:",
+            "list_products": [],
+            "show_rating": false,
+            "open_new_window_product": false,
+            "content_background_color": "rgba(0,0,0,0)",
+            "color_text": "#211e1e",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "color_product_card_background": "rgba(0,0,0,0)",
+            "color_product_card_text": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_9xEnT7",
+        "slide_8PaKqj"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "show_hero": false,
+        "auto_play": true,
+        "change_slides_speed": 5,
+        "pause_hover": true,
+        "slider_visual": "bars",
+        "show_arrow": true,
+        "image_pagination_background": "rgba(0,0,0,0)",
+        "image_pagination_text": "rgba(0,0,0,0)",
+        "transition_style": "default",
+        "full_width": true,
+        "padding_full_width": false,
+        "adapt_corners_desktop": true,
+        "rounded_corner_image": false,
+        "desktop_height": "750",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "full_width_mobile": true,
+        "adapt_corners_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "show_content_below_image": false,
+        "mobile_height": "300",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "image_with_text_eE7QA6": {
+      "type": "image-with-text",
+      "blocks": {
+        "columns_int7Aa": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Use Code: AIWOPILLOW20",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 70,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "heading_bTCBgT": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "highlight_type": "underline",
+            "heading_base_size": 50,
+            "heading_tag": "h2",
+            "text": "<h3>Expertly designed by wellness professionals, this orthopedic-grade memory foam pillow supports your neck, spine, and shoulders in perfect alignment—all night long.</h3>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "button_dNBbwj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get 20% Launch Off",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "columns_int7Aa",
+        "heading_bTCBgT",
+        "button_dNBbwj"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": false,
+        "image": "shopify://shop_images/sideways_edf6cdd0-5f3f-45f8-8999-dea8f801b381.png",
+        "desktop_height": "450px",
+        "mobile_height": "400px",
+        "desktop_image_width": "large",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "slideshow_zUYfbc": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_VJRMeP": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/sideways_edf6cdd0-5f3f-45f8-8999-dea8f801b381.png",
+            "image_mobile": "shopify://shop_images/sideways_edf6cdd0-5f3f-45f8-8999-dea8f801b381.png",
+            "image_link": "",
+            "open_new_window_image": false,
+            "overlay_opacity": 0,
+            "show_sound_control": false,
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "enable_bakground": false,
+            "subheading": "",
+            "subheading_size": 100,
+            "heading": "Expertly designed by wellness professionals, this orthopedic-grade memory foam pillow supports your neck, spine, and shoulders in perfect alignment—all night long.",
+            "highlight_type": "underline",
+            "heading_size": 80,
+            "heading_tag": "h2",
+            "text": "",
+            "button_label_1": "Get 20% Off",
+            "button_link_1": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "USE CODE: AIWOPILLOW20",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "secondary",
+            "content_alignment": "middle-left",
+            "custom_horizontal": 90,
+            "custom_vertical": 85,
+            "alignment": "left",
+            "text_product": "Check out our products:",
+            "list_products": [],
+            "show_rating": false,
+            "open_new_window_product": false,
+            "content_background_color": "rgba(0,0,0,0)",
+            "color_text": "#ffffff",
+            "color_button": "#ffffff",
+            "color_text_button": "#211e1e",
+            "color_button_hover": "#211e1e",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "#ffffff",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "color_product_card_background": "rgba(0,0,0,0)",
+            "color_product_card_text": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_VJRMeP"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "show_hero": true,
+        "auto_play": false,
+        "change_slides_speed": 5,
+        "pause_hover": true,
+        "slider_visual": "bars",
+        "show_arrow": true,
+        "image_pagination_background": "rgba(0,0,0,0)",
+        "image_pagination_text": "rgba(0,0,0,0)",
+        "transition_style": "default",
+        "full_width": true,
+        "padding_full_width": false,
+        "adapt_corners_desktop": true,
+        "rounded_corner_image": false,
+        "desktop_height": "550",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "full_width_mobile": true,
+        "adapt_corners_mobile": true,
+        "rounded_corner_image_mobile": false,
+        "show_content_below_image": false,
+        "mobile_height": "500",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_jUxE9U": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xqVMde": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your Daily Healing Companion",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "heading_PFUJUi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Designed for All Sleeping Positions – With Science Behind Deep Sleep",
+            "highlight_type": "underline",
+            "heading_size": 80,
+            "heading_tag": "h2"
+          }
+        },
+        "text_pKxL4i": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether you sleep on your side, back, stomach or switch positions during the night, <strong>AIWO supports your unique sleep style</strong>, ensuring deeper, uninterrupted rest.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xqVMde",
+        "heading_PFUJUi",
+        "text_pKxL4i"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "multicolumn_4cqMrY": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_dTwt3k": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Cardiac Health",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>WBC total<br/>Neutrophils<br/>Lymphocytes<br/>Eosinophils<br/>Monocytes<br/>Basophils<br/>LUC (Large Unstained Cells)<br/>RBC (Red Blood Cell Count)<br/>Haemoglobin (HB)<br/>Cellular Haemoglobin.<br/>PCV - (Haematocrit-Packed Cell Volume)<br/>MCV (Mean Corpuscular Volume)<br/>MCH (Mean Corpuscular Hemoglobin)<br/>CH (Mean Hemoglobin Content)<br/>MCHC (Mean Corpuscular Hemoglobin Concentra)<br/>CHCM (Corpuscular Hemoglobin Concentration M)<br/>RDW-CV (Red Cell Distribution Width-CV)<br/>HDW (Hemoglobin Distribution Width)<br/>Platelet Count<br/>PDW (Platelet Distribution Width)<br/>MPV (Mean Platelet Volume)<br/>Large Platelet Count<br/>PCT (Plateletcrit)<br/>MPM (Mean Platelet Mass)<br/>MPC (Mean Platelet Concentration)<br/>NRBC (Nucleated Red Blood Cells)<br/>Blast cells.<br/>Absolute Neutrophil Count<br/>Absolute Lymphocyte Count<br/>Absolute Eosinophil Count<br/>Absolute Monocytes Count<br/>Absolute Basophils Count<br/>ALUC (Absolute Large Unstained Cells)<br/>ANRBC (Absolute Nucleated Red Blood Cells.)</p>"
+          }
+        },
+        "column_7DRaFK": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Metabolic Function",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Comprehensive diabetes panel<br/>✅ Liver function tests<br/>✅ Kidney function markers<br/>✅ Metabolic syndrome indicators</p>"
+          }
+        },
+        "column_WTiyiG": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Blood Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete hemogram (CBC)<br/>✅ Iron studies<br/>✅ Inflammation markers<br/>✅ Blood cell analysis</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_dTwt3k",
+        "column_7DRaFK",
+        "column_WTiyiG"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "column",
+        "column_content_alignment": "start",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_qntr67": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_QhbtYg": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Cardiac Health",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete lipid profile<br/>✅ Cardiac enzyme markers<br/>✅ Blood pressure indicators<br/>✅ Cardiovascular risk assessment</p>"
+          }
+        },
+        "column_93zRHW": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Metabolic Function",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Comprehensive diabetes panel<br/>✅ Liver function tests<br/>✅ Kidney function markers<br/>✅ Metabolic syndrome indicators</p>"
+          }
+        },
+        "column_pEEKcm": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Blood Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete hemogram (CBC)<br/>✅ Iron studies<br/>✅ Inflammation markers<br/>✅ Blood cell analysis</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_QhbtYg",
+        "column_93zRHW",
+        "column_pEEKcm"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "column",
+        "column_content_alignment": "start",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_mWtkCb": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_yHhD94": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Nutritional Status",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Essential vitamin levels (B12, D3)<br/>✅ Trace mineral analysis<br/>✅ Protein markers<br/>✅ Nutritional deficiency screening</p>"
+          }
+        },
+        "column_hEXenQ": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Hormonal Balance",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete thyroid profile<br/>✅ Hormone level assessment<br/>✅ Endocrine function markers<br/>✅ Reproductive health indicators</p>"
+          }
+        },
+        "column_i9bdHJ": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Blood Analysis",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": "<p>✅ Complete hemogram (CBC)<br/>✅ Iron studies<br/>✅ Inflammation markers<br/>✅ Blood cell analysis<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_yHhD94",
+        "column_hEXenQ",
+        "column_i9bdHJ"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "column",
+        "column_content_alignment": "start",
+        "icon_position": "above",
+        "icon_size": 45,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "text_column_with_image_VzUGP4": {
+      "type": "text-column-with-image",
+      "blocks": {
+        "column_9fWVhf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/back_sleep.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "sub_title": "",
+            "title": "Back Sleeper Support",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        },
+        "column_cDh8cr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/side_sleep.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "sub_title": "",
+            "title": "Side Sleeper Support",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        },
+        "column_PFkdXD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/hand_hug_ed3f973e-3fe3-433d-869f-509c935856a8.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "sub_title": "",
+            "title": "Stomach Sleeper Support",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "column_9fWVhf",
+        "column_cDh8cr",
+        "column_PFkdXD"
+      ],
+      "name": "t:sections.text-column-image.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "image_ratio": "75%",
+        "adapt_corners": true,
+        "rounded_corner_image": false,
+        "column_content_alignment": "center",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": false,
+        "change_bar_every": 5,
+        "image_position_desktop": "top",
+        "column_layout_desktop": "lg:w-1/3",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 44,
+        "padding_bottom": 28,
+        "image_position_mobile": "top",
+        "column_layout_mobile": "w-full",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_YBwtKp": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_HNtf3K": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/sleep_e3cccdd6-9cb6-4b10-a817-2d2d0d4fe342.png",
+            "custom_icon": "",
+            "title": "Deeper, Uninterrupted Sleep",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_PMFE7h": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/spine_icon_8fa3d0e6-9dde-4f5c-8bc6-5065201d9664.png",
+            "custom_icon": "",
+            "title": "Improved Posture & Spinal Alignment",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_3AiCnB": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/hurted_8291ae2c-102d-4e41-b522-97aca677052b.png",
+            "custom_icon": "",
+            "title": "Reduces Rotator Cuff & Shoulder Strain",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_6fkxJr": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/brain_2.png",
+            "custom_icon": "",
+            "title": "Enhanced Mental Clarity",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_HNtf3K",
+        "column_PMFE7h",
+        "column_3AiCnB",
+        "column_6fkxJr"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "Benefits You’ll Feel Every Morning",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "none",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 100,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/4",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "testimonials_bPAxbw": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_J4KxCC": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "",
+            "text": "<h6>It took me 4-5 nights to stop reaching for my old pillow. But now I can't believe how much better I sleep - especially on my side. Even my husband started using it and said his arm doesn't go numb anymore.</h6>",
+            "author": "",
+            "author_note": "<p><em>- Megha R., Hyderabad</em></p>",
+            "product": ""
+          }
+        },
+        "testimonial_mDNQRF": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "",
+            "text": "<h6>At my age, pain doesn't disappear easily. But after about two weeks of consistent use, I could feel less strain in my neck and upper back. It's now part of my nightly routine.</h6>",
+            "author": "",
+            "author_note": "<p><em>- Latha lyer, Coimbatore</em></p>",
+            "product": ""
+          }
+        },
+        "testimonial_pUVbyf": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "",
+            "text": "<h6>At first, the shape felt unfamiliar - I've never used a contoured pillow before. But by day 5 or 6, I noticed I wasn't waking up with that stiff neck anymore. It cradles my neck perfectly, and I finally sleep through the night without tossing.</h6>",
+            "author": "",
+            "author_note": "<p><em>- Priya M, Chennai</em></p>",
+            "product": ""
+          }
+        },
+        "testimonial_EHeDhq": {
+          "type": "testimonial",
+          "settings": {
+            "icon_star": "5_star",
+            "custom_icon": "",
+            "title": "",
+            "text": "<h6>I wear a sleep tracker and saw more REM sleep by the second week. The first few days not worse, just new. But now I wake up clearer and with less shoulder felt different stiffness.</h6>",
+            "author": "",
+            "author_note": "<p><em>- Rohit P, Bengaluru</em></p>",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_J4KxCC",
+        "testimonial_mDNQRF",
+        "testimonial_pUVbyf",
+        "testimonial_EHeDhq"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "heading": "Loved by 10,000+ Sleepers Across India",
+        "subheading": "",
+        "heading_alignment": "center",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "text_alignment": "center",
+        "testimonial_items_view": "multiple",
+        "show_arrow": false,
+        "show_pagination": false,
+        "auto_play": true,
+        "change_slides_speed": 7,
+        "show_author_image": false,
+        "author_image": "top",
+        "image_ratio": "round",
+        "desktop_height": 300,
+        "background_color_light": "rgba(0,0,0,0)",
+        "item_background_color_light": "#ffffff",
+        "heading_and_title_light": "rgba(0,0,0,0)",
+        "item_text_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "item_background_color_dark": "rgba(0,0,0,0)",
+        "heading_and_title_dark": "rgba(0,0,0,0)",
+        "item_text_color_dark": "rgba(0,0,0,0)",
+        "show_section_divider": false,
+        "top_padding": 28,
+        "bottom_padding": 28,
+        "show_section_divider_mobile": false,
+        "top_padding_mobile": 20,
+        "bottom_padding_mobile": 20
+      }
+    },
+    "featured_product_HNXQ3f": {
+      "type": "featured-product",
+      "blocks": {
+        "price_xgUNxk": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "badges_cRGA3F": {
+          "type": "badges",
+          "settings": {
+            "position_adapt": false
+          }
+        },
+        "description_4xrkHi": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": false,
+            "make_content_center": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "variant_picker_WAYn3j": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_option": true,
+            "enable_color_swatches": false,
+            "swatch_size": "small"
+          }
+        },
+        "quantity_selector_HkzKXL": {
+          "type": "quantity_selector",
+          "settings": {
+            "style": "adapt"
+          }
+        },
+        "buy_buttons_HKFAYH": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_button_style": "secondary",
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": false,
+            "show_price": false,
+            "hide_sale_price": true,
+            "pickup_availability": true,
+            "hide_when_pre_order": false,
+            "preorder_button_label": "Pre-order",
+            "box_type": "adapt",
+            "preorder_message": "<p>This product will be available for sale in 2 weeks, but you can pre-order now to receive 10% discount!</p>",
+            "preorder_show_dynamic_button": false,
+            "show_background": false,
+            "background_color_light": "rgba(0,0,0,0)",
+            "message_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "price_xgUNxk",
+        "badges_cRGA3F",
+        "description_4xrkHi",
+        "variant_picker_WAYn3j",
+        "quantity_selector_HkzKXL",
+        "buy_buttons_HKFAYH"
+      ],
+      "name": "t:sections.featured-product.name",
+      "settings": {
+        "product": "aiwo-deep-sleep-pillow",
+        "show_product_name": true,
+        "title_size": 100,
+        "heading_tag": "h2",
+        "show_vendor": false,
+        "make_content_center": false,
+        "desktop_layout": "left",
+        "image_ratio": "square",
+        "show_arrow_button": true,
+        "show_thumbnails": false,
+        "thumbnail_position": "horizontal",
+        "transition_style": "fade",
+        "enable_image_zoom": true,
+        "zoom_effect": "enlarge",
+        "enable_video_autoplay": false,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": true,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "full_width": false,
+        "spacing_col": "default",
+        "show_section_divider": false,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "background_color_light": "#ffffff",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#ffffff",
+        "text_dark": "rgba(0,0,0,0)"
+      }
+    },
+    "rich_text_fDWcPK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mdnUbn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Enjoy an Extra 20% Launch Off – Use Code: AIWOPILLOW20",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mdnUbn"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "faq_4JhpGN": {
+      "type": "faq",
+      "blocks": {
+        "frequently_asked_question_EP64mk": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Is this good for cervical spondylosis or neck pain?",
+            "row_content": "<p>Yes, it’s specifically designed to support cervical posture and reduce pain naturally.</p>"
+          }
+        },
+        "frequently_asked_question_mK4jQW": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Will it feel too soft or too hard?",
+            "row_content": "<p>The memory foam offers the right balance—soft to adapt, firm to support.</p>"
+          }
+        },
+        "frequently_asked_question_6d9PWy": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "How do I clean the pillow?",
+            "row_content": "<p>It comes with a removable, washable cover for easy hygiene.</p>"
+          }
+        },
+        "frequently_asked_question_q6cWXm": {
+          "type": "frequently_asked_question",
+          "settings": {
+            "icon": "heart",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Can I return it if it doesn’t suit me?",
+            "row_content": "<p>30-night money-back guarantee.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frequently_asked_question_EP64mk",
+        "frequently_asked_question_mK4jQW",
+        "frequently_asked_question_6d9PWy",
+        "frequently_asked_question_q6cWXm"
+      ],
+      "name": "t:sections.question_and_answer.name",
+      "settings": {
+        "heading": "Still Wondering? Here’s What Others Ask:",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "show_border": false,
+        "row_background": false,
+        "collapsible": true,
+        "show_view_all": false,
+        "view_all_position": "top",
+        "button_link": "",
+        "open_new_window": false,
+        "background_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "enable_microdata_schema": false,
+        "desktop_layout": "1",
+        "image_alignment": "left",
+        "desktop_height": "400px",
+        "show_section_divider": false,
+        "make_full_page_width": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_alignment_mobile": "left",
+        "mobile_height": "250px",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_QyKTJa": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Y89tpb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Comfort that heals and lets you sleep your way.",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "button_6ihTbW": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Now",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Y89tpb",
+        "button_6ihTbW"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "rich_text_ajb9qg": {
+      "type": "rich-text",
+      "blocks": {
+        "text_gJR6M9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_RHbmm4": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        },
+        "caption_4DwHwC": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "uppercase",
+            "text_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_gJR6M9",
+        "button_RHbmm4",
+        "caption_4DwHwC"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "left",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow_ah3V8H",
+    "image_with_text_RCF8na",
+    "rich_text_yLwL3t",
+    "image_with_text_tDfmVF",
+    "image_with_text_amWcnw",
+    "slideshow_Ufrf3E",
+    "image_with_text_eE7QA6",
+    "slideshow_zUYfbc",
+    "rich_text_jUxE9U",
+    "multicolumn_4cqMrY",
+    "multicolumn_qntr67",
+    "multicolumn_mWtkCb",
+    "text_column_with_image_VzUGP4",
+    "multicolumn_YBwtKp",
+    "testimonials_bPAxbw",
+    "featured_product_HNXQ3f",
+    "rich_text_fDWcPK",
+    "faq_4JhpGN",
+    "rich_text_QyKTJa",
+    "rich_text_ajb9qg"
+  ]
+}

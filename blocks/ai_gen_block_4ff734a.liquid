@@ -1,0 +1,702 @@
+{% doc %}
+  @prompt
+    Create nutrition transparency section with facts and clean eating badges.
+    
+    LAYOUT: 2 columns (Image left, Content right)
+    BACKGROUND: #FFFFFF
+    PADDING: 64px vertical
+    MAX-WIDTH: 1200px centered
+    
+    SECTION HEADING (above columns, centered):
+    "Everything Your Body Needs. Nothing It Doesn't."
+    - Font: Poppins SemiBold, 42px desktop / 28px mobile
+    - Color: #211E1E
+    - IMPORTANT: Style "Your Body Needs" in italic + #D68641
+    - Margin bottom: 48px
+    
+    LEFT COLUMN:
+    Nutrition Facts Label Image
+    - FSSAI-style Indian nutrition label
+    - Or clean nutrition facts table visual
+    - Size: 400x500px
+    - Professional, clear, readable
+    
+    RIGHT COLUMN:
+    Subheading: "Nutrition Information Per Bar"
+    - Poppins Bold, 16px, #211E1E
+    
+    Nutrition Table or List:
+    Energy: XXX kcal
+    Protein: 5g
+    Total Fat: XXg
+    Carbohydrates: XXg
+    Dietary Fiber: XXg
+    Sodium: XXmg
+    
+    (Use clean table format or structured list)
+    
+    FOOTER BADGES (4 badges horizontal):
+    ✓ No Added Sugar
+    ✓ Gluten-Free
+    ✓ Keto-Friendly
+    ✓ FSSAI Approved
+    
+    Badge design:
+    - Icon + text
+    - Clean, minimal
+    - Color: #4CAF50 for checkmarks
+    - Font: Lato SemiBold 14px
+    
+    MOBILE:
+    - Stack vertically
+    - Image on top
+    - Table: Mobile-optimized, scrollable if needed
+    - Badges: 2x2 grid
+    
+    AESTHETIC: Scientific credibility, clean label movement, transparent nutrition facts, health-conscious brand trust
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-nutrition-section-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_vertical }}px 20px;
+    width: 100%;
+  }
+
+  .ai-nutrition-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-nutrition-main-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size_desktop }}px;
+    color: {{ block.settings.heading_color }};
+    text-align: center;
+    margin: 0 0 {{ block.settings.heading_margin_bottom }}px 0;
+    line-height: 1.2;
+  }
+
+  .ai-nutrition-highlight-{{ ai_gen_id }} {
+    font-style: italic;
+    color: {{ block.settings.highlight_color }};
+  }
+
+  .ai-nutrition-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .ai-nutrition-image-column-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .ai-nutrition-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: {{ block.settings.image_width }}px;
+  }
+
+  .ai-nutrition-image-wrapper-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-nutrition-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: {{ block.settings.image_width }} / {{ block.settings.image_height }};
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    position: relative;
+  }
+
+  .ai-nutrition-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-nutrition-content-column-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .ai-nutrition-subheading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.subheading_font.family }}, {{ block.settings.subheading_font.fallback_families }};
+    font-weight: {{ block.settings.subheading_font.weight }};
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 16px 0;
+  }
+
+  .ai-nutrition-table-{{ ai_gen_id }} {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .ai-nutrition-table-{{ ai_gen_id }} tr {
+    border-bottom: 1px solid {{ block.settings.table_border_color }};
+  }
+
+  .ai-nutrition-table-{{ ai_gen_id }} tr:last-child {
+    border-bottom: none;
+  }
+
+  .ai-nutrition-table-{{ ai_gen_id }} td {
+    padding: 12px 0;
+    font-family: {{ block.settings.table_font.family }}, {{ block.settings.table_font.fallback_families }};
+    font-weight: {{ block.settings.table_font.weight }};
+    font-size: {{ block.settings.table_font_size }}px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-nutrition-table-{{ ai_gen_id }} td:first-child {
+    font-weight: 500;
+  }
+
+  .ai-nutrition-table-{{ ai_gen_id }} td:last-child {
+    text-align: right;
+    font-weight: 600;
+  }
+
+  .ai-nutrition-badges-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .ai-nutrition-badge-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background-color: {{ block.settings.badge_background }};
+    border-radius: {{ block.settings.badge_border_radius }}px;
+    text-align: center;
+  }
+
+  .ai-nutrition-badge-icon-{{ ai_gen_id }} {
+    width: 24px;
+    height: 24px;
+    color: {{ block.settings.badge_icon_color }};
+  }
+
+  .ai-nutrition-badge-text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.badge_font.family }}, {{ block.settings.badge_font.fallback_families }};
+    font-weight: {{ block.settings.badge_font.weight }};
+    font-size: {{ block.settings.badge_font_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.3;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-nutrition-main-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+
+    .ai-nutrition-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .ai-nutrition-badges-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .ai-nutrition-table-{{ ai_gen_id }} {
+      overflow-x: auto;
+      display: block;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-nutrition-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-nutrition-container-{{ ai_gen_id }}">
+    {% if block.settings.main_heading != blank %}
+      <h2 class="ai-nutrition-main-heading-{{ ai_gen_id }}">
+        {{ block.settings.main_heading_part1 }}
+        <span class="ai-nutrition-highlight-{{ ai_gen_id }}">{{ block.settings.main_heading_highlight }}</span>
+        {{ block.settings.main_heading_part2 }}
+      </h2>
+    {% endif %}
+
+    <div class="ai-nutrition-grid-{{ ai_gen_id }}">
+      <div class="ai-nutrition-image-column-{{ ai_gen_id }}">
+        <div class="ai-nutrition-image-wrapper-{{ ai_gen_id }}">
+          {% if block.settings.nutrition_image %}
+            <img
+              src="{{ block.settings.nutrition_image | image_url: width: 800 }}"
+              alt="{{ block.settings.nutrition_image.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.nutrition_image.width }}"
+              height="{{ block.settings.nutrition_image.height }}"
+            >
+          {% else %}
+            <div class="ai-nutrition-image-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="ai-nutrition-content-column-{{ ai_gen_id }}">
+        {% if block.settings.subheading != blank %}
+          <h3 class="ai-nutrition-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</h3>
+        {% endif %}
+
+        <table class="ai-nutrition-table-{{ ai_gen_id }}">
+          <tbody>
+            {% if block.settings.energy_value != blank %}
+              <tr>
+                <td>{{ block.settings.energy_label }}</td>
+                <td>{{ block.settings.energy_value }}</td>
+              </tr>
+            {% endif %}
+            {% if block.settings.protein_value != blank %}
+              <tr>
+                <td>{{ block.settings.protein_label }}</td>
+                <td>{{ block.settings.protein_value }}</td>
+              </tr>
+            {% endif %}
+            {% if block.settings.fat_value != blank %}
+              <tr>
+                <td>{{ block.settings.fat_label }}</td>
+                <td>{{ block.settings.fat_value }}</td>
+              </tr>
+            {% endif %}
+            {% if block.settings.carbs_value != blank %}
+              <tr>
+                <td>{{ block.settings.carbs_label }}</td>
+                <td>{{ block.settings.carbs_value }}</td>
+              </tr>
+            {% endif %}
+            {% if block.settings.fiber_value != blank %}
+              <tr>
+                <td>{{ block.settings.fiber_label }}</td>
+                <td>{{ block.settings.fiber_value }}</td>
+              </tr>
+            {% endif %}
+            {% if block.settings.sodium_value != blank %}
+              <tr>
+                <td>{{ block.settings.sodium_label }}</td>
+                <td>{{ block.settings.sodium_value }}</td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+
+        <div class="ai-nutrition-badges-{{ ai_gen_id }}">
+          {% if block.settings.badge_1_text != blank %}
+            <div class="ai-nutrition-badge-{{ ai_gen_id }}">
+              <svg class="ai-nutrition-badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="ai-nutrition-badge-text-{{ ai_gen_id }}">{{ block.settings.badge_1_text }}</span>
+            </div>
+          {% endif %}
+
+          {% if block.settings.badge_2_text != blank %}
+            <div class="ai-nutrition-badge-{{ ai_gen_id }}">
+              <svg class="ai-nutrition-badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="ai-nutrition-badge-text-{{ ai_gen_id }}">{{ block.settings.badge_2_text }}</span>
+            </div>
+          {% endif %}
+
+          {% if block.settings.badge_3_text != blank %}
+            <div class="ai-nutrition-badge-{{ ai_gen_id }}">
+              <svg class="ai-nutrition-badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="ai-nutrition-badge-text-{{ ai_gen_id }}">{{ block.settings.badge_3_text }}</span>
+            </div>
+          {% endif %}
+
+          {% if block.settings.badge_4_text != blank %}
+            <div class="ai-nutrition-badge-{{ ai_gen_id }}">
+              <svg class="ai-nutrition-badge-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span class="ai-nutrition-badge-text-{{ ai_gen_id }}">{{ block.settings.badge_4_text }}</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Nutrition transparency",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Main heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "main_heading_part1",
+      "label": "Heading part 1",
+      "default": "Everything"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "main_heading_highlight",
+      "label": "Heading highlight",
+      "default": "Your Body Needs"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "main_heading_part2",
+      "label": "Heading part 2",
+      "default": ". Nothing It Doesn't."
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Desktop size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#211E1E"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight color",
+      "default": "#D68641"
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "label": "Bottom margin",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Nutrition image"
+    },
+    {
+      "type": "image_picker",
+      "id": "nutrition_image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Width",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Height",
+      "min": 200,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Nutrition Information Per Bar"
+    },
+    {
+      "type": "font_picker",
+      "id": "subheading_font",
+      "label": "Subheading font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#211E1E"
+    },
+    {
+      "type": "header",
+      "content": "Nutrition table"
+    },
+    {
+      "type": "font_picker",
+      "id": "table_font",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "table_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "table_border_color",
+      "label": "Border color",
+      "default": "#E5E5E5"
+    },
+    {
+      "type": "text",
+      "id": "energy_label",
+      "label": "Energy label",
+      "default": "Energy"
+    },
+    {
+      "type": "text",
+      "id": "energy_value",
+      "label": "Energy value",
+      "default": "200 kcal"
+    },
+    {
+      "type": "text",
+      "id": "protein_label",
+      "label": "Protein label",
+      "default": "Protein"
+    },
+    {
+      "type": "text",
+      "id": "protein_value",
+      "label": "Protein value",
+      "default": "5g"
+    },
+    {
+      "type": "text",
+      "id": "fat_label",
+      "label": "Total fat label",
+      "default": "Total Fat"
+    },
+    {
+      "type": "text",
+      "id": "fat_value",
+      "label": "Total fat value",
+      "default": "12g"
+    },
+    {
+      "type": "text",
+      "id": "carbs_label",
+      "label": "Carbohydrates label",
+      "default": "Carbohydrates"
+    },
+    {
+      "type": "text",
+      "id": "carbs_value",
+      "label": "Carbohydrates value",
+      "default": "18g"
+    },
+    {
+      "type": "text",
+      "id": "fiber_label",
+      "label": "Dietary fiber label",
+      "default": "Dietary Fiber"
+    },
+    {
+      "type": "text",
+      "id": "fiber_value",
+      "label": "Dietary fiber value",
+      "default": "3g"
+    },
+    {
+      "type": "text",
+      "id": "sodium_label",
+      "label": "Sodium label",
+      "default": "Sodium"
+    },
+    {
+      "type": "text",
+      "id": "sodium_value",
+      "label": "Sodium value",
+      "default": "150mg"
+    },
+    {
+      "type": "header",
+      "content": "Badges"
+    },
+    {
+      "type": "font_picker",
+      "id": "badge_font",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Background color",
+      "default": "#F8F8F8"
+    },
+    {
+      "type": "color",
+      "id": "badge_icon_color",
+      "label": "Icon color",
+      "default": "#4CAF50"
+    },
+    {
+      "type": "range",
+      "id": "badge_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "text",
+      "id": "badge_1_text",
+      "label": "Badge 1 text",
+      "default": "No Added Sugar"
+    },
+    {
+      "type": "text",
+      "id": "badge_2_text",
+      "label": "Badge 2 text",
+      "default": "Gluten-Free"
+    },
+    {
+      "type": "text",
+      "id": "badge_3_text",
+      "label": "Badge 3 text",
+      "default": "Keto-Friendly"
+    },
+    {
+      "type": "text",
+      "id": "badge_4_text",
+      "label": "Badge 4 text",
+      "default": "FSSAI Approved"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nutrition transparency"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

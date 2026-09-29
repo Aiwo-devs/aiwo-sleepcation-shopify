@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo-collection-breadcrumb": {
+      "type": "aiwo-collection-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo-collection-banner-block": {
+      "type": "aiwo-collection-banner-block",
+      "settings": {
+        "image_desktop": "shopify://shop_images/Frame_2147224991_2f74ab44-8842-496d-bc3b-d9e01a8e056e.png",
+        "image_mobile": "shopify://shop_images/Frame_2147224991_829c0aac-09f4-44d6-b9f8-fd42fe09818a.png",
+        "banner_link": "shopify://products/dark-cocoa-powder"
+      }
+    },
+    "aiwo-collection-nav-tabs": {
+      "type": "aiwo-collection-nav-tabs",
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "a59e424d-3ee8-4334-9173-d22fbfeb78ac": {
+          "type": "promotion_block",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "heading": "Bundle & Save",
+            "highlight_type": "underline",
+            "title_size": 80,
+            "content": "",
+            "text_size": 100,
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": false,
+            "video_alt_text": "",
+            "image_overlay_opacity": 10,
+            "position": 7,
+            "button_label": "Shop Bundle",
+            "button_link": "",
+            "open_new_window": true,
+            "show_button_style": "primary",
+            "alignment": "left",
+            "content_position": "end",
+            "background_color_light": "#f6f6f6",
+            "text_color_light": "#000000",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "background_color_dark": "#2a2a2a",
+            "text_color_dark": "#ffffff",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "number_of_columns": 2,
+            "number_of_row": 1,
+            "number_of_columns_mobile": "1",
+            "number_of_row_mobile": "1"
+          }
+        }
+      },
+      "block_order": [
+        "a59e424d-3ee8-4334-9173-d22fbfeb78ac"
+      ],
+      "settings": {
+        "enable_filtering": true,
+        "sticky_filtering": false,
+        "filter_type": "above",
+        "filter_edge_style": "rounded",
+        "default_hide_filtering": false,
+        "expand_filter": false,
+        "enable_collection_count": true,
+        "enable_sorting": true,
+        "products_per_page": "18;26;30",
+        "products_per_row_on_desktop": 4,
+        "products_per_row_on_mobile": "2",
+        "pagination": "pagination",
+        "paginate_type": "circle",
+        "show_vendor": false,
+        "show_rating": false,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": false,
+        "show_description": true,
+        "enable_advanced_filter": false,
+        "key_value": "",
+        "hide_unavaiable_filter": false,
+        "columns_desktop_1": 4,
+        "desktop_image_width_1": 150,
+        "columns_desktop_2": 4,
+        "desktop_image_width_2": 150,
+        "enable_desktop_slider": false,
+        "image_ratio_filter": "round",
+        "advanced_filter_image_ratio": "square",
+        "enable_micro_schema": false,
+        "full_width": true,
+        "spacing_col": 30,
+        "spacing_row": 60,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "spacing_col_mobile": 16,
+        "spacing_row_mobile": 32,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 48,
+        "bestseller_text": "Best Seller",
+        "bestseller_bg": "#519a5e"
+      }
+    },
+    "section_evoo_v3_faq_mKnJtD": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_UTKCUU": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is this different from the cocoa powder I already buy?",
+            "answer": "<p>Most everyday cocoa is sweetened, soy-blended, or lower grade. AIWO Dark Cocoa is Premium Grade...</p>"
+          }
+        },
+        "faq_item_EEGFK9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is this different from the cocoa powder I already buy?",
+            "answer": "<p>Most everyday cocoa is sweetened, soy-blended, or lower grade. AIWO Dark Cocoa is Premium Grade...</p>"
+          }
+        },
+        "faq_item_4UN4pV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is this different from the cocoa powder I already buy?",
+            "answer": "<p>Most everyday cocoa is sweetened, soy-blended, or lower grade. AIWO Dark Cocoa is Premium Grade...</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_UTKCUU",
+        "faq_item_EEGFK9",
+        "faq_item_4UN4pV"
+      ],
+      "disabled": true,
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    }
+  },
+  "order": [
+    "aiwo-collection-breadcrumb",
+    "aiwo-collection-banner-block",
+    "aiwo-collection-nav-tabs",
+    "product-grid",
+    "section_evoo_v3_faq_mKnJtD"
+  ]
+}

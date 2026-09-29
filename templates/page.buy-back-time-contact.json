@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "custom_liquid_NqLfpe": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<!-- Schedule a Callback Form (Zoho Web-to-Lead, Shopify Custom Liquid) -->\n<div id=\"crmWebToEntityForm\" class=\"crmWebToEntityForm\" style=\"max-width:600px; margin:0 auto; background:#f8f9fa; padding:30px; border-radius:8px;\">\n  <h2 style=\"text-align:center; font-size:2rem; font-weight:700; margin-bottom:1.5rem;\">Schedule a callback</h2>\n\n  <form id=\"webform949221000004719011\" action=\"https://crm.zoho.in/crm/WebToLeadForm\" \n        name=\"WebToLeads949221000004719011\" method=\"POST\" accept-charset=\"UTF-8\"\n        onSubmit='javascript:document.charset=\"UTF-8\"; return checkMandatory949221000004719011()'>\n\n    <!-- Required hidden Zoho fields -->\n    <input type=\"hidden\" name=\"xnQsjsdp\" value=\"d3c10b774cea9eaaaf0605926de271fc10d98a968d2ac1168662f4f566b133b9\">\n    <input type=\"hidden\" name=\"xmIwtLD\" value=\"d5f16880cb11f2e68db3b610bb58b38588e52e165ff15872cb9357297cc686c77ece993b79f6cc929c8acc05743a8560\">\n    <input type=\"hidden\" name=\"actionType\" value=\"TGVhZHM=\">\n    <input type=\"hidden\" name=\"returnURL\" value=\"https://aiwo.com/pages/thank-you\"> <!-- Change if needed -->\n    <input type=\"hidden\" id=\"ldeskuid\" name=\"ldeskuid\">\n    <input type=\"hidden\" id=\"LDTuvid\" name=\"LDTuvid\">\n\n    <!-- Name -->\n    <div style=\"margin-bottom:1rem;\">\n      <input type=\"text\" id=\"Last_Name\" name=\"Last Name\" placeholder=\"Name *\" required\n        maxlength=\"80\" style=\"width:100%; padding:15px; border:1px solid #333; font-size:16px;\">\n    </div>\n\n    <!-- Whatsapp Number -->\n    <div style=\"margin-bottom:1rem;\">\n      <input type=\"text\" id=\"Phone\" name=\"Phone\" placeholder=\"Whatsapp number *\" required\n        maxlength=\"30\" style=\"width:100%; padding:15px; border:1px solid #333; font-size:16px;\">\n    </div>\n\n    <!-- Email -->\n    <div style=\"margin-bottom:1rem;\">\n      <input type=\"email\" id=\"Email\" name=\"Email\" placeholder=\"Email *\" required\n        maxlength=\"100\" style=\"width:100%; padding:15px; border:1px solid #333; font-size:16px;\">\n    </div>\n\n    <!-- Preferred Time -->\n    <div style=\"margin-bottom:1.5rem;\">\n      <textarea id=\"Description\" name=\"Description\" placeholder=\"Your preferred time for call *\" required\n        style=\"width:100%; padding:15px; border:1px solid #333; font-size:16px; min-height:100px;\"></textarea>\n    </div>\n\n    <!-- Submit -->\n    <button type=\"submit\" id=\"formsubmit\" class=\"formsubmit\"\n      style=\"background:#4a2626; color:#fff; border:none; padding:15px; font-size:16px; font-weight:600; cursor:pointer; width:100%;\">\n      Request a call-back\n    </button>\n  </form>\n</div>\n\n<!-- Mandatory check script -->\n<script>\nfunction checkMandatory949221000004719011() {\n  var mndFileds = ['Last Name','Phone','Email','Description'];\n  var fldLangVal = ['Name','Whatsapp Number','Email','Preferred time'];\n  for (var i = 0; i < mndFileds.length; i++) {\n    var fieldObj = document.forms['WebToLeads949221000004719011'][mndFileds[i]];\n    if (fieldObj) {\n      if ((fieldObj.value.trim()).length == 0) {\n        alert(fldLangVal[i] + ' cannot be empty.');\n        fieldObj.focus();\n        return false;\n      } else if (fieldObj.name == 'Email') {\n        var emailFld = fieldObj.value;\n        if (emailFld.match(/^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,})+$/) == null) {\n          alert('Please enter a valid email address');\n          fieldObj.focus();\n          return false;\n        }\n      }\n    }\n  }\n  return true;\n}\n</script>\n\n<!-- Zoho Visitor Tracking -->\n<script type=\"text/javascript\" id=\"VisitorTracking\">\n  var $zoho = $zoho || {};\n  $zoho.salesiq = $zoho.salesiq || { widgetcode:\"siq242555cec5c01d7c3776ebbadb02f89bbe3a69390fe752cedf1a3697185fe106\", values:{}, ready:function(){} };\n  var d=document; s=d.createElement(\"script\"); s.type=\"text/javascript\"; s.id=\"zsiqscript\"; s.defer=true;\n  s.src=\"https://salesiq.zoho.in/widget\"; t=d.getElementsByTagName(\"script\")[0]; t.parentNode.insertBefore(s,t);\n  function trackVisitor949221000004719011(){\n    try{\n      if($zoho){\n        var LDTuvidObj = document.forms['WebToLeads949221000004719011']['LDTuvid'];\n        if(LDTuvidObj){LDTuvidObj.value = $zoho.salesiq.visitor.uniqueid();}\n        var emailObj = document.forms['WebToLeads949221000004719011']['Email'];\n        if(emailObj){$zoho.salesiq.visitor.email(emailObj.value);}\n      }\n    } catch(e){}\n  }\n</script>\n\n<!-- Analytics Tracking -->\n<script src=\"https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=f0d67c5b27aee4fdc55d09a1276d91d70f8433a61ed1fae83d07e592677ab60db2c71af2b2769f06791ae71db4b6b5eagid0a7595d24796d946aef8ec1ceeab5f219be871af29a70dc1c8fe073ba9530595gidc419ce74c4a7de9add430dc6137d7832aac33a40060ca0ffdfaf0f5b114f2a63gid363963ee6df5ddb28b1851a043999e26429e936f50ae4a36de2b6226344b1804&tw=7777821feafa3a0f981c8042fe7ee288e2dbd345544028d5c0acf99697cdaa9b\"></script>",
+        "full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_NqLfpe"
+  ]
+}

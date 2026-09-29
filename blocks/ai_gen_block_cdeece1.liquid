@@ -1,0 +1,754 @@
+{% doc %}
+  @prompt
+    Design a premium product page hero section for AIWO Ultimate Omega 3 — a triple-strength fish oil supplement with enteric coating technology.
+    Layout:
+    
+    Split layout with product image gallery on the left (40%) and product details on the right (60%).
+    Light gradient background (pale blue to white with subtle texture).
+    Clean, modern e-commerce design with ample white space.
+    
+    Left Side (Product Gallery):
+    
+    Main product image area with white rounded background and subtle shadow.
+    Hero image: Two dark blue AIWO Ultimate Omega 3 bottles with silver caps, surrounded by golden softgel capsules floating elegantly with soft shadows.
+    Thumbnail gallery below the main image showing 5 images:
+    
+    Product front view (selected/highlighted with border)
+    Supplement facts label
+    Back label
+    Side view
+    Certificate/lab report preview
+    
+    
+    Thumbnails in horizontal row, each 60x60px with rounded corners and hover effect.
+    
+    Right Side (Product Details):
+    Header Section:
+    
+    Brand and product name in bold, large black font: "AIWO ULTIMATE OMEGA 3"
+    Subtitle in bold blue font (#1E40AF): "Triple Strength 1000mg"
+    Star rating: 5 gold stars with "4.8" score and "(2,847 reviews)" in gray text.
+    
+    Description:
+    
+    Body text in medium gray: "Premium fish oil with 1000mg Omega-3 fatty acids featuring 46% EPA and 38% DHA. Advanced Enteric Coating and Molecularly Distilled technology for maximum absorption without burping or foul taste."
+    
+    Benefits Grid (4 icons in 2x2 layout):
+    
+    Cardio Protection - Red heart icon | "Vasodilation & anti-arrhythmic effects"
+    Brain Function - Pink brain icon | "DHA supports cognitive health"
+    Anti-Inflammatory - Red shield icon | "Reduces inflammation naturally"
+    Antioxidant Power - Yellow lightning icon | "Protects against oxidative stress"
+    Each benefit has icon, bold heading, and supporting text on white background with subtle border.
+    
+    Pricing Card (highlighted section with border):
+    
+    Product variant: "60 Soft Gel Capsules" with yellow "BEST VALUE" badge on right
+    Subtext: "1 Month Supply" in gray
+    P, add 5 more thumbnails
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-omega-hero-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%);
+    padding: 60px 20px;
+  }
+
+  .ai-omega-hero__container-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .ai-omega-hero__gallery-{{ ai_gen_id }} {
+    position: sticky;
+    top: 20px;
+  }
+
+  .ai-omega-hero__main-image-{{ ai_gen_id }} {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-omega-hero__main-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-omega-hero__thumbnails-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+  }
+
+  .ai-omega-hero__thumbnail-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .ai-omega-hero__thumbnail-{{ ai_gen_id }}.active {
+    border-color: #1E40AF;
+  }
+
+  .ai-omega-hero__thumbnail-{{ ai_gen_id }}:hover {
+    border-color: #60A5FA;
+  }
+
+  .ai-omega-hero__thumbnail-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-omega-hero__details-{{ ai_gen_id }} {
+    padding-top: 20px;
+  }
+
+  .ai-omega-hero__brand-{{ ai_gen_id }} {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+  }
+
+  .ai-omega-hero__subtitle-{{ ai_gen_id }} {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1E40AF;
+    margin: 0 0 16px 0;
+  }
+
+  .ai-omega-hero__rating-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .ai-omega-hero__stars-{{ ai_gen_id }} {
+    display: flex;
+    gap: 4px;
+  }
+
+  .ai-omega-hero__star-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+    color: #FFA500;
+  }
+
+  .ai-omega-hero__rating-text-{{ ai_gen_id }} {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 600;
+  }
+
+  .ai-omega-hero__reviews-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: #6B7280;
+  }
+
+  .ai-omega-hero__description-{{ ai_gen_id }} {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6B7280;
+    margin-bottom: 32px;
+  }
+
+  .ai-omega-hero__benefits-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .ai-omega-hero__benefit-{{ ai_gen_id }} {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-omega-hero__benefit-icon-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+  }
+
+  .ai-omega-hero__benefit-title-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+  }
+
+  .ai-omega-hero__benefit-text-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+  }
+
+  .ai-omega-hero__pricing-card-{{ ai_gen_id }} {
+    background: #FFFFFF;
+    border: 2px solid #1E40AF;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  .ai-omega-hero__variant-header-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .ai-omega-hero__variant-name-{{ ai_gen_id }} {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+  }
+
+  .ai-omega-hero__badge-{{ ai_gen_id }} {
+    background: #FCD34D;
+    color: #000000;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .ai-omega-hero__supply-text-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: #6B7280;
+    margin-bottom: 16px;
+  }
+
+  .ai-omega-hero__price-row-{{ ai_gen_id }} {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .ai-omega-hero__price-{{ ai_gen_id }} {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .ai-omega-hero__compare-price-{{ ai_gen_id }} {
+    font-size: 20px;
+    color: #9CA3AF;
+    text-decoration: line-through;
+  }
+
+  .ai-omega-hero__savings-{{ ai_gen_id }} {
+    background: #DCFCE7;
+    color: #166534;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  .ai-omega-hero__cta-button-{{ ai_gen_id }} {
+    width: 100%;
+    background: #1E40AF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .ai-omega-hero__cta-button-{{ ai_gen_id }}:hover {
+    background: #1E3A8A;
+  }
+
+  .ai-omega-hero__trust-badges-{{ ai_gen_id }} {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .ai-omega-hero__trust-badge-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #6B7280;
+  }
+
+  .ai-omega-hero__trust-icon-{{ ai_gen_id }} {
+    width: 20px;
+    height: 20px;
+    color: #10B981;
+  }
+
+  @media screen and (max-width: 990px) {
+    .ai-omega-hero__container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-omega-hero__gallery-{{ ai_gen_id }} {
+      position: static;
+    }
+
+    .ai-omega-hero__benefits-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-omega-hero__brand-{{ ai_gen_id }} {
+      font-size: 28px;
+    }
+
+    .ai-omega-hero__subtitle-{{ ai_gen_id }} {
+      font-size: 20px;
+    }
+  }
+{% endstyle %}
+
+<omega-hero-{{ ai_gen_id }} class="ai-omega-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-omega-hero__container-{{ ai_gen_id }}">
+    <div class="ai-omega-hero__gallery-{{ ai_gen_id }}">
+      <div class="ai-omega-hero__main-image-{{ ai_gen_id }}">
+        {% if block.settings.main_image %}
+          <img
+            src="{{ block.settings.main_image | image_url: width: 800 }}"
+            alt="{{ block.settings.main_image.alt | escape }}"
+            width="800"
+            height="800"
+            loading="eager"
+          >
+        {% else %}
+          <div class="ai-omega-hero__placeholder-{{ ai_gen_id }}">
+            {{ 'product-1' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-omega-hero__thumbnails-{{ ai_gen_id }}">
+        {% if block.settings.main_image %}
+          <div class="ai-omega-hero__thumbnail-{{ ai_gen_id }} active" data-index="0">
+            <img
+              src="{{ block.settings.main_image | image_url: width: 100 }}"
+              alt="{{ block.settings.main_image.alt | escape }}"
+              width="60"
+              height="60"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+
+        {% for i in (1..9) %}
+          {% assign thumb_key = 'thumbnail_' | append: i %}
+          {% assign thumb_image = block.settings[thumb_key] %}
+          {% if thumb_image %}
+            <div class="ai-omega-hero__thumbnail-{{ ai_gen_id }}" data-index="{{ i }}">
+              <img
+                src="{{ thumb_image | image_url: width: 100 }}"
+                alt="{{ thumb_image.alt | escape }}"
+                width="60"
+                height="60"
+                loading="lazy"
+              >
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="ai-omega-hero__details-{{ ai_gen_id }}">
+      <h1 class="ai-omega-hero__brand-{{ ai_gen_id }}">{{ block.settings.product_name }}</h1>
+      <div class="ai-omega-hero__subtitle-{{ ai_gen_id }}">{{ block.settings.product_subtitle }}</div>
+
+      <div class="ai-omega-hero__rating-{{ ai_gen_id }}">
+        <div class="ai-omega-hero__stars-{{ ai_gen_id }}">
+          {% for i in (1..5) %}
+            <svg class="ai-omega-hero__star-{{ ai_gen_id }}" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          {% endfor %}
+        </div>
+        <span class="ai-omega-hero__rating-text-{{ ai_gen_id }}">{{ block.settings.rating_score }}</span>
+        <span class="ai-omega-hero__reviews-{{ ai_gen_id }}">({{ block.settings.review_count }} reviews)</span>
+      </div>
+
+      <div class="ai-omega-hero__description-{{ ai_gen_id }}">
+        {{ block.settings.description }}
+      </div>
+
+      <div class="ai-omega-hero__benefits-{{ ai_gen_id }}">
+        <div class="ai-omega-hero__benefit-{{ ai_gen_id }}">
+          <svg class="ai-omega-hero__benefit-icon-{{ ai_gen_id }}" fill="none" stroke="#EF4444" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+          <h3 class="ai-omega-hero__benefit-title-{{ ai_gen_id }}">{{ block.settings.benefit_1_title }}</h3>
+          <p class="ai-omega-hero__benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_1_text }}</p>
+        </div>
+
+        <div class="ai-omega-hero__benefit-{{ ai_gen_id }}">
+          <svg class="ai-omega-hero__benefit-icon-{{ ai_gen_id }}" fill="none" stroke="#EC4899" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+          <h3 class="ai-omega-hero__benefit-title-{{ ai_gen_id }}">{{ block.settings.benefit_2_title }}</h3>
+          <p class="ai-omega-hero__benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_2_text }}</p>
+        </div>
+
+        <div class="ai-omega-hero__benefit-{{ ai_gen_id }}">
+          <svg class="ai-omega-hero__benefit-icon-{{ ai_gen_id }}" fill="none" stroke="#EF4444" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          <h3 class="ai-omega-hero__benefit-title-{{ ai_gen_id }}">{{ block.settings.benefit_3_title }}</h3>
+          <p class="ai-omega-hero__benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_3_text }}</p>
+        </div>
+
+        <div class="ai-omega-hero__benefit-{{ ai_gen_id }}">
+          <svg class="ai-omega-hero__benefit-icon-{{ ai_gen_id }}" fill="none" stroke="#FBBF24" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          <h3 class="ai-omega-hero__benefit-title-{{ ai_gen_id }}">{{ block.settings.benefit_4_title }}</h3>
+          <p class="ai-omega-hero__benefit-text-{{ ai_gen_id }}">{{ block.settings.benefit_4_text }}</p>
+        </div>
+      </div>
+
+      <div class="ai-omega-hero__pricing-card-{{ ai_gen_id }}">
+        <div class="ai-omega-hero__variant-header-{{ ai_gen_id }}">
+          <div class="ai-omega-hero__variant-name-{{ ai_gen_id }}">{{ block.settings.variant_name }}</div>
+          {% if block.settings.show_badge %}
+            <div class="ai-omega-hero__badge-{{ ai_gen_id }}">{{ block.settings.badge_text }}</div>
+          {% endif %}
+        </div>
+        <div class="ai-omega-hero__supply-text-{{ ai_gen_id }}">{{ block.settings.supply_text }}</div>
+
+        <div class="ai-omega-hero__price-row-{{ ai_gen_id }}">
+          <div class="ai-omega-hero__price-{{ ai_gen_id }}">{{ block.settings.price }}</div>
+          {% if block.settings.compare_price != blank %}
+            <div class="ai-omega-hero__compare-price-{{ ai_gen_id }}">{{ block.settings.compare_price }}</div>
+          {% endif %}
+        </div>
+
+        {% if block.settings.savings_text != blank %}
+          <div class="ai-omega-hero__savings-{{ ai_gen_id }}">{{ block.settings.savings_text }}</div>
+        {% endif %}
+
+        <button class="ai-omega-hero__cta-button-{{ ai_gen_id }}">
+          {{ block.settings.cta_text }}
+        </button>
+      </div>
+
+      <div class="ai-omega-hero__trust-badges-{{ ai_gen_id }}">
+        <div class="ai-omega-hero__trust-badge-{{ ai_gen_id }}">
+          <svg class="ai-omega-hero__trust-icon-{{ ai_gen_id }}" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>{{ block.settings.trust_badge_1 }}</span>
+        </div>
+
+        <div class="ai-omega-hero__trust-badge-{{ ai_gen_id }}">
+          <svg class="ai-omega-hero__trust-icon-{{ ai_gen_id }}" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>{{ block.settings.trust_badge_2 }}</span>
+        </div>
+
+        <div class="ai-omega-hero__trust-badge-{{ ai_gen_id }}">
+          <svg class="ai-omega-hero__trust-icon-{{ ai_gen_id }}" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>{{ block.settings.trust_badge_3 }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</omega-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class OmegaHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.thumbnails = this.querySelectorAll('.ai-omega-hero__thumbnail-{{ ai_gen_id }}');
+        this.mainImage = this.querySelector('.ai-omega-hero__main-image-{{ ai_gen_id }} img');
+        this.setupThumbnailClicks();
+      }
+
+      setupThumbnailClicks() {
+        this.thumbnails.forEach((thumbnail) => {
+          thumbnail.addEventListener('click', () => {
+            this.thumbnails.forEach(t => t.classList.remove('active'));
+            thumbnail.classList.add('active');
+
+            const img = thumbnail.querySelector('img');
+            if (img && this.mainImage) {
+              this.mainImage.src = img.src.replace('width=100', 'width=800');
+              this.mainImage.alt = img.alt;
+            }
+          });
+        });
+      }
+    }
+
+    customElements.define('omega-hero-{{ ai_gen_id }}', OmegaHero{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Omega 3 product hero",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product images"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main product image"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_1",
+      "label": "Thumbnail 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_2",
+      "label": "Thumbnail 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_3",
+      "label": "Thumbnail 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_4",
+      "label": "Thumbnail 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_5",
+      "label": "Thumbnail 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_6",
+      "label": "Thumbnail 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_7",
+      "label": "Thumbnail 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_8",
+      "label": "Thumbnail 8"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_9",
+      "label": "Thumbnail 9"
+    },
+    {
+      "type": "header",
+      "content": "Product information"
+    },
+    {
+      "type": "text",
+      "id": "product_name",
+      "label": "Product name",
+      "default": "AIWO ULTIMATE OMEGA 3"
+    },
+    {
+      "type": "text",
+      "id": "product_subtitle",
+      "label": "Product subtitle",
+      "default": "Triple Strength 1000mg"
+    },
+    {
+      "type": "text",
+      "id": "rating_score",
+      "label": "Rating score",
+      "default": "4.8"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review count",
+      "default": "2,847"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Product description",
+      "default": "Premium fish oil with 1000mg Omega-3 fatty acids featuring 46% EPA and 38% DHA. Advanced Enteric Coating and Molecularly Distilled technology for maximum absorption without burping or foul taste."
+    },
+    {
+      "type": "header",
+      "content": "Benefits"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_title",
+      "label": "Benefit 1 title",
+      "default": "Cardio Protection"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_text",
+      "label": "Benefit 1 text",
+      "default": "Vasodilation & anti-arrhythmic effects"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_title",
+      "label": "Benefit 2 title",
+      "default": "Brain Function"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_text",
+      "label": "Benefit 2 text",
+      "default": "DHA supports cognitive health"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_title",
+      "label": "Benefit 3 title",
+      "default": "Anti-Inflammatory"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_text",
+      "label": "Benefit 3 text",
+      "default": "Reduces inflammation naturally"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_title",
+      "label": "Benefit 4 title",
+      "default": "Antioxidant Power"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_text",
+      "label": "Benefit 4 text",
+      "default": "Protects against oxidative stress"
+    },
+    {
+      "type": "header",
+      "content": "Pricing"
+    },
+    {
+      "type": "text",
+      "id": "variant_name",
+      "label": "Variant name",
+      "default": "60 Soft Gel Capsules"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "BEST VALUE"
+    },
+    {
+      "type": "text",
+      "id": "supply_text",
+      "label": "Supply text",
+      "default": "1 Month Supply"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "default": "₹1,299"
+    },
+    {
+      "type": "text",
+      "id": "compare_price",
+      "label": "Compare at price"
+    },
+    {
+      "type": "text",
+      "id": "savings_text",
+      "label": "Savings text"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA button text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "header",
+      "content": "Trust badges"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_1",
+      "label": "Trust badge 1",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_2",
+      "label": "Trust badge 2",
+      "default": "30-Day Returns"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_3",
+      "label": "Trust badge 3",
+      "default": "Lab Tested"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Omega 3 product hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,640 @@
+{% doc %}
+  @prompt
+    Create alternating 2-column ingredients showcase section.
+    
+    SECTION HEADER (centered, full-width):
+    "Premium Ingredients. Complete Transparency."
+    - Font: Poppins SemiBold, 42px desktop / 28px mobile
+    - Color: #211E1E
+    - IMPORTANT: Style "Premium Ingredients" in italic + #D68641
+    - Margin bottom: 64px
+    
+    BACKGROUND: #FFFFFF
+    PADDING: 64px vertical
+    MAX-WIDTH: 1200px centered
+    
+    PART A - FAST BAR INGREDIENTS:
+    Layout: 2 columns (Image left, Content right)
+    
+    Left: Product image with ingredient callouts (400x400px)
+    Right Content:
+    - Heading: "What's Inside Every Bar" - Poppins SemiBold 24px #211E1E
+    - Checklist (Lato Regular 16px, #545252):
+      ✓ Grass-fed Ghee
+      ✓ Organic Coconut Oil  
+      ✓ Premium Cocoa
+      ✓ Probiotic Chicory Fiber
+      ✓ Monk Fruit Sweetener
+      ✓ Pink Himalayan Salt
+    - Checkmarks: #5B2E28, bold
+    - Footer text: "Zero artificial sweeteners, colors, or preservatives" - Poppins SemiBold, #211E1E
+    
+    PART B - EVOO SPECIFICATIONS:
+    Layout: 2 columns (Content left, Image right) - REVERSE of Part A
+    
+    Left Content:
+    - Heading: "Cold-Pressed, Single-Origin Excellence" - Poppins SemiBold 24px
+    - Quality specs checklist:
+      ✓ Cold-pressed within 24 hours
+      ✓ Single-origin Mediterranean olives
+      ✓ Rich in polyphenols & antioxidants
+      ✓ FSSAI certified pure & natural
+      ✓ Dark glass bottle for freshness
+    
+    Right: EVOO bottle image (400x400px)
+    
+    SPACING: 64px gap between Part A and Part B
+    
+    MOBILE:
+    - Stack vertically
+    - Image always on top, content below
+    - Image: 300x300px
+    - Reduce heading to 20px
+    
+    AESTHETIC: Clean ingredient label style, scientific transparency, premium natural product feel, health-conscious brand positioning
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-ingredients-showcase-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 20px;
+    width: 100%;
+  }
+
+  .ai-ingredients-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-ingredients-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_margin_bottom }}px;
+  }
+
+  .ai-ingredients-title-{{ ai_gen_id }} {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: {{ block.settings.title_size_desktop }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ai-ingredients-title-highlight-{{ ai_gen_id }} {
+    font-style: italic;
+    color: {{ block.settings.title_highlight_color }};
+  }
+
+  .ai-ingredients-row-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: {{ block.settings.row_spacing }}px;
+  }
+
+  .ai-ingredients-row-{{ ai_gen_id }}:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-ingredients-row-reverse-{{ ai_gen_id }} {
+    direction: rtl;
+  }
+
+  .ai-ingredients-row-reverse-{{ ai_gen_id }} > * {
+    direction: ltr;
+  }
+
+  .ai-ingredients-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ai-ingredients-image-{{ ai_gen_id }} {
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    object-fit: contain;
+  }
+
+  .ai-ingredients-image-placeholder-{{ ai_gen_id }} {
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .ai-ingredients-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-ingredients-content-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-ingredients-heading-{{ ai_gen_id }} {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+  }
+
+  .ai-ingredients-list-{{ ai_gen_id }} {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+
+  .ai-ingredients-list-item-{{ ai_gen_id }} {
+    font-family: 'Lato', sans-serif;
+    font-size: {{ block.settings.list_text_size }}px;
+    color: {{ block.settings.list_text_color }};
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .ai-ingredients-checkmark-{{ ai_gen_id }} {
+    color: {{ block.settings.checkmark_color }};
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  .ai-ingredients-footer-{{ ai_gen_id }} {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: {{ block.settings.list_text_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-ingredients-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size_mobile }}px;
+    }
+
+    .ai-ingredients-row-{{ ai_gen_id }},
+    .ai-ingredients-row-reverse-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      direction: ltr;
+    }
+
+    .ai-ingredients-image-wrapper-{{ ai_gen_id }} {
+      order: -1;
+    }
+
+    .ai-ingredients-image-{{ ai_gen_id }} {
+      width: {{ block.settings.image_size_mobile }}px;
+      height: {{ block.settings.image_size_mobile }}px;
+    }
+
+    .ai-ingredients-image-placeholder-{{ ai_gen_id }} {
+      width: {{ block.settings.image_size_mobile }}px;
+      height: {{ block.settings.image_size_mobile }}px;
+    }
+
+    .ai-ingredients-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-ingredients-showcase-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-ingredients-container-{{ ai_gen_id }}">
+    <div class="ai-ingredients-header-{{ ai_gen_id }}">
+      <h2 class="ai-ingredients-title-{{ ai_gen_id }}">
+        <span class="ai-ingredients-title-highlight-{{ ai_gen_id }}">{{ block.settings.title_part1 }}</span> {{ block.settings.title_part2 }}
+      </h2>
+    </div>
+
+    <div class="ai-ingredients-row-{{ ai_gen_id }}">
+      <div class="ai-ingredients-image-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.fastbar_image %}
+          <img
+            src="{{ block.settings.fastbar_image | image_url: width: 800 }}"
+            alt="{{ block.settings.fastbar_image.alt | escape }}"
+            class="ai-ingredients-image-{{ ai_gen_id }}"
+            loading="lazy"
+            width="400"
+            height="400"
+          >
+        {% else %}
+          <div class="ai-ingredients-image-placeholder-{{ ai_gen_id }}">
+            {{ 'product-1' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-ingredients-content-{{ ai_gen_id }}">
+        <h3 class="ai-ingredients-heading-{{ ai_gen_id }}">{{ block.settings.fastbar_heading }}</h3>
+        <ul class="ai-ingredients-list-{{ ai_gen_id }}">
+          {% if block.settings.fastbar_item1 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.fastbar_item1 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.fastbar_item2 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.fastbar_item2 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.fastbar_item3 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.fastbar_item3 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.fastbar_item4 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.fastbar_item4 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.fastbar_item5 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.fastbar_item5 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.fastbar_item6 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.fastbar_item6 }}</span>
+            </li>
+          {% endif %}
+        </ul>
+        {% if block.settings.fastbar_footer != blank %}
+          <p class="ai-ingredients-footer-{{ ai_gen_id }}">{{ block.settings.fastbar_footer }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-ingredients-row-{{ ai_gen_id }} ai-ingredients-row-reverse-{{ ai_gen_id }}">
+      <div class="ai-ingredients-image-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.evoo_image %}
+          <img
+            src="{{ block.settings.evoo_image | image_url: width: 800 }}"
+            alt="{{ block.settings.evoo_image.alt | escape }}"
+            class="ai-ingredients-image-{{ ai_gen_id }}"
+            loading="lazy"
+            width="400"
+            height="400"
+          >
+        {% else %}
+          <div class="ai-ingredients-image-placeholder-{{ ai_gen_id }}">
+            {{ 'product-1' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-ingredients-content-{{ ai_gen_id }}">
+        <h3 class="ai-ingredients-heading-{{ ai_gen_id }}">{{ block.settings.evoo_heading }}</h3>
+        <ul class="ai-ingredients-list-{{ ai_gen_id }}">
+          {% if block.settings.evoo_item1 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.evoo_item1 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.evoo_item2 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.evoo_item2 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.evoo_item3 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.evoo_item3 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.evoo_item4 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.evoo_item4 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.evoo_item5 != blank %}
+            <li class="ai-ingredients-list-item-{{ ai_gen_id }}">
+              <span class="ai-ingredients-checkmark-{{ ai_gen_id }}">✓</span>
+              <span>{{ block.settings.evoo_item5 }}</span>
+            </li>
+          {% endif %}
+        </ul>
+        {% if block.settings.evoo_footer != blank %}
+          <p class="ai-ingredients-footer-{{ ai_gen_id }}">{{ block.settings.evoo_footer }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ingredients showcase",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "title_part1",
+      "label": "Title part 1 (italic, highlighted)",
+      "default": "Premium Ingredients."
+    },
+    {
+      "type": "text",
+      "id": "title_part2",
+      "label": "Title part 2",
+      "default": "Complete Transparency."
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Title size (desktop)",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title size (mobile)",
+      "min": 18,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#211E1E"
+    },
+    {
+      "type": "color",
+      "id": "title_highlight_color",
+      "label": "Highlighted text color",
+      "default": "#D68641"
+    },
+    {
+      "type": "range",
+      "id": "header_margin_bottom",
+      "label": "Header margin bottom",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "Fast Bar section"
+    },
+    {
+      "type": "image_picker",
+      "id": "fastbar_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "fastbar_heading",
+      "label": "Heading",
+      "default": "What's Inside Every Bar"
+    },
+    {
+      "type": "text",
+      "id": "fastbar_item1",
+      "label": "Ingredient 1",
+      "default": "Grass-fed Ghee"
+    },
+    {
+      "type": "text",
+      "id": "fastbar_item2",
+      "label": "Ingredient 2",
+      "default": "Organic Coconut Oil"
+    },
+    {
+      "type": "text",
+      "id": "fastbar_item3",
+      "label": "Ingredient 3",
+      "default": "Premium Cocoa"
+    },
+    {
+      "type": "text",
+      "id": "fastbar_item4",
+      "label": "Ingredient 4",
+      "default": "Probiotic Chicory Fiber"
+    },
+    {
+      "type": "text",
+      "id": "fastbar_item5",
+      "label": "Ingredient 5",
+      "default": "Monk Fruit Sweetener"
+    },
+    {
+      "type": "text",
+      "id": "fastbar_item6",
+      "label": "Ingredient 6",
+      "default": "Pink Himalayan Salt"
+    },
+    {
+      "type": "text",
+      "id": "fastbar_footer",
+      "label": "Footer text",
+      "default": "Zero artificial sweeteners, colors, or preservatives"
+    },
+    {
+      "type": "header",
+      "content": "EVOO section"
+    },
+    {
+      "type": "image_picker",
+      "id": "evoo_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "evoo_heading",
+      "label": "Heading",
+      "default": "Cold-Pressed, Single-Origin Excellence"
+    },
+    {
+      "type": "text",
+      "id": "evoo_item1",
+      "label": "Specification 1",
+      "default": "Cold-pressed within 24 hours"
+    },
+    {
+      "type": "text",
+      "id": "evoo_item2",
+      "label": "Specification 2",
+      "default": "Single-origin Mediterranean olives"
+    },
+    {
+      "type": "text",
+      "id": "evoo_item3",
+      "label": "Specification 3",
+      "default": "Rich in polyphenols & antioxidants"
+    },
+    {
+      "type": "text",
+      "id": "evoo_item4",
+      "label": "Specification 4",
+      "default": "FSSAI certified pure & natural"
+    },
+    {
+      "type": "text",
+      "id": "evoo_item5",
+      "label": "Specification 5",
+      "default": "Dark glass bottle for freshness"
+    },
+    {
+      "type": "text",
+      "id": "evoo_footer",
+      "label": "Footer text"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Vertical padding",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "row_spacing",
+      "label": "Space between rows",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Image size (desktop)",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "image_size_mobile",
+      "label": "Image size (mobile)",
+      "min": 150,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "default": 300
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Section heading size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Section heading size (mobile)",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "list_text_size",
+      "label": "List text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Headings",
+      "default": "#211E1E"
+    },
+    {
+      "type": "color",
+      "id": "list_text_color",
+      "label": "List text",
+      "default": "#545252"
+    },
+    {
+      "type": "color",
+      "id": "checkmark_color",
+      "label": "Checkmarks",
+      "default": "#5B2E28"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients showcase"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

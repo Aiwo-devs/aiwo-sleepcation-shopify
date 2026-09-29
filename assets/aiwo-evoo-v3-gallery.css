@@ -1,0 +1,1375 @@
+/*
+  AIWO EVOO v3 — Gallery Enhancements
+  Scope: #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3
+  (Body has no template class in this theme — MainContent is the correct scope)
+*/
+
+/* ── TAGLINE ────────────────────────────────────────────────── */
+.aiwo-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #0C0C0D;
+  text-transform: uppercase;
+  margin-bottom: 0 !important;
+  border: 1px solid #645452;
+  padding: 4px 10px;
+}
+
+/* Scoped override — beats aiwo-comparison.liquid's inline .aiwo-tagline style (higher specificity) */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-tagline {
+  border-color: #645452;
+}
+
+/* Combo utility — overrides the 0 !important above (same specificity, later in source) */
+.aiwo-evoo-v3-mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.aiwo-tagline .pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #645452;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── TAGLINE WRAPPER + TOOLTIP ──────────────────────────────── */
+.aiwo-tagline-wrapper {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px !important;
+}
+
+.aiwo-tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.aiwo-tooltip-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.aiwo-tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px); /* below the trigger icon */
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 320px !important;
+  max-width: 320px !important;
+  padding: 12px;
+  flex-direction: column;
+  gap: 4px;
+  border-radius: 8px;
+  background: #FFF;
+  /* drop-shadow applies to the whole shape including the overflow arrow */
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.15));
+}
+
+.aiwo-tooltip[x-show] { display: flex; }
+
+/* ── TOOLTIP — CONTAINING BLOCK + OVERFLOW FIX ─────────────── */
+/* Root cause: Eurus theme CSS overrides position on intermediate
+   ancestors, so .aiwo-tooltip-wrap loses its containing-block role
+   and position:absolute on .aiwo-tooltip resolves against a
+   high-up sticky/relative ancestor (appears at top of screen).
+   Fix 1 — force .aiwo-tooltip-wrap to be the containing block.
+   Fix 2 — unblock overflow on the product info column chain.
+   All rules scoped tightly — zero impact outside this template. */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-tooltip-wrap {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-tooltip {
+  position: absolute !important;
+  top: calc(100% + 10px) !important;
+  bottom: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-tooltip__arrow {
+  top: -8px !important;
+  bottom: auto !important;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%) !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-info,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-content-container {
+  overflow: visible !important;
+}
+
+.aiwo-tooltip__arrow {
+  position: absolute;
+  top: -8px;    /* sits in the gap above the tooltip box, pointing at the icon */
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 8px;
+  background: #FFF;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* ▲ pointing upward toward the trigger */
+}
+
+.aiwo-tooltip__title {
+  color: #0C0C0D;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0 0 4px;
+  text-transform: none !important;
+}
+
+.aiwo-tooltip__pillars-heading,
+.aiwo-tooltip__stack-heading {
+  color: #0C0C0D !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 150% !important;
+  margin: 8px 0 4px !important;
+  text-transform: none !important;
+}
+
+.aiwo-tooltip__desc {
+  color: #666;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0 0 8px;
+  text-transform: none !important;
+}
+
+.aiwo-tooltip__active-pillars {
+  color: #0C0C0D;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+  text-transform: none !important;
+  white-space: pre-line;
+}
+
+.aiwo-tooltip__inactive-pillars {
+  color: #666;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+  text-transform: none !important;
+  white-space: pre-line;
+}
+
+@media (max-width: 768px) {
+  .aiwo-tagline-wrapper {
+    position: unset;
+  }
+  .aiwo-tooltip-wrap {
+    position: relative !important;
+    overflow: visible !important;
+  }
+  .aiwo-tooltip {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    bottom: auto !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: calc(100vw - 40px) !important;
+    max-width: 320px !important;
+    z-index: 100 !important;
+  }
+  .aiwo-tooltip__arrow {
+    display: block !important;
+    top: -8px !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* ── PRODUCT TITLE (H1) MOBILE ─────────────────────────────── */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-content-container .product-title {
+    color: #0C0C0D !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── SECTION WRAPPER PADDING RESET ─────────────────────────── */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .full-width.pt-\[40px\].pb-\[28px\] {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* ── MEDIA CONTAINER BOTTOM PADDING RESET ───────────────────── */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-media-container.pb-7 {
+    padding-bottom: 0 !important;
+  }
+
+  /* ── BADGES MOBILE SWIPER ───────────────────────────────────── */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__grid {
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Each item = 1/3 of container (gap:0 so 3 items = exactly containerWidth) */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__item {
+    flex: 0 0 33.333% !important;
+    width: 33.333% !important;
+    padding: 0 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── BADGES DOTS (mobile: visible) ─────────────────────────── */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__dots {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    margin-top: 12px !important;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__dot {
+    width: 6.364px !important;
+    height: 6.364px !important;
+    border-radius: 4.773px !important;
+    background: #16130D !important;
+    opacity: 0.12 !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+  }
+
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__dot.active {
+    background: #A1895E !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ── PRODUCT INFO SPACING ───────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-product-title.mb-4 {
+  margin-bottom: 8px !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .main-product-price {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .w-full.rte {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  color: #0C0C0D;
+  text-align: left;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+/* ── STATS + PRICE SPACING ──────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-stats.mb-3 {
+  margin-bottom: 8px !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-price.mb-4 {
+  margin-bottom: 0 !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-text.mb-4 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ── PRICE TYPOGRAPHY ───────────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 small.cap {
+  color: #1A1A1A;
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-decoration-line: line-through;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .price-sale {
+  color: #C0622A;
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+/* ── PRODUCT TITLE (H1) ─────────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-content-container .product-title {
+  color: #1A1A1A !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 32px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 120% !important;
+}
+
+/* ── STATS PURCHASED TEXT ───────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-stats__purchased {
+  color: #666;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+/* ── BADGES GRID ─────────────────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__grid {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  align-self: stretch !important;
+  gap: 12px !important;
+  overflow-x: auto !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 6.5px !important;
+  width: 94px !important;
+  flex-shrink: 0 !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__label {
+  color: #0C0C0D !important;
+  text-align: center !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 120% !important;
+  height: 34px !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__icon {
+  height: 32px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* ── BADGES PAGINATION DOTS (desktop: hidden) ───────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges__dots {
+  display: none;
+}
+
+/* ── THUMBNAIL ACTIVE BORDER ────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-thumbnail.is-active {
+  border: 1.5px solid #0C0C0D !important;
+  border-radius: 0 !important;
+  opacity: 1;
+}
+
+/* ── MOBILE SWIPER DOTS ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .swiper-product {
+    position: relative;
+  }
+
+  /* Splide native pagination hidden — custom aiwo-evoo-v3-dots renders immediately on DOMContentLoaded */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .splide__pagination {
+    display: none !important;
+  }
+
+  /* Splide wrapper — position:relative so absolute dots stay inside the image */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .evoo-v3-splide-wrap {
+    position: relative;
+  }
+
+  /* Dots container — pill bar centred at the bottom of the image */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    flex-direction: row;
+    padding: 4px;
+    gap: 4px !important;
+    border-radius: 30px;
+    border: 0.5px solid #E4DCCD;
+    background: #FFF;
+    width: auto;
+    z-index: 2;
+  }
+
+  /* Individual dot (inactive) */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-dot {
+    background: #16130D;
+    opacity: 0.12;
+    transform: none;
+    width: 6.364px !important;
+    height: 6.364px !important;
+    border-radius: 4.773px !important;
+    display: block;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  /* Active dot */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-dot--active {
+    background: #A1895E;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── BADGES WRAPPER — MARGIN BOTTOM ─────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-badges {
+  margin-bottom: 20px !important;
+}
+
+/* ── BENEFITS — CONTAINER CARD ──────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits {
+  padding: 12px;
+  padding-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #F2F1EF;
+  background: #F6F3EF;
+}
+
+/* ── BENEFITS — 2-COLUMN GRID ───────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/* ── BENEFITS — CELL PADDING + DIVIDERS ─────────────────────── */
+/* Mobile/tablet default: stacked column, centered, 6px gap between icon and text */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits__item {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+/* Desktop (1024px+): horizontal row — icon left, text right */
+@media (min-width: 1024px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits__item {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+/* Top-row cells: container padding covers the top — remove item top padding */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits__item:nth-child(-n+2) {
+  padding-top: 0;
+}
+
+/* Bottom-row cells: container padding covers the bottom — remove item bottom padding */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits__item:nth-last-child(-n+2) {
+  padding-bottom: 0;
+}
+
+/* Vertical divider: left-column cells only, skip if it's the lone last item */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits__item:nth-child(odd):not(:last-child) {
+  border-right: 1px solid #E8E4DC;
+}
+
+/* Horizontal divider: all cells except those in the last row */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits__item:nth-last-child(n+3) {
+  border-bottom: 1px solid #E8E4DC;
+}
+
+/* ── BENEFITS — TITLE ───────────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits__title {
+  color: #333;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+/* ── BENEFITS — DESC ────────────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits__desc {
+  color: #333;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+  letter-spacing: 0.24px;
+  margin: 0;
+}
+
+/* ── BENEFITS — BOTTOM PADDING (mobile) ─────────────────────── */
+@media (max-width: 768px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-benefits {
+    padding-bottom: 14px;
+  }
+}
+
+/* ── MARQUEE ─────────────────────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-marquee {
+  background: #16130D !important;
+  color: #FFF !important;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.28px;
+}
+
+/* Fade overlays — shared properties */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-marquee::before,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(270deg, rgba(22, 19, 13, 0.00) 0%, rgba(22, 19, 13, 0.64) 50%, #16130D 100%);
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-marquee::before {
+  left: 0;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-marquee::after {
+  right: 0;
+  background: linear-gradient(90deg, rgba(22, 19, 13, 0.00) 0%, rgba(22, 19, 13, 0.64) 45.19%, #16130D 100%);
+}
+
+/* ── MARQUEE — MOBILE RESPONSIVE ────────────────────────────── */
+/* Scope: strictly .aiwo-v1-marquee on this template, mobile only.
+   Full-bleed applies ONLY at max-width:767px to avoid breaking the
+   two-column product grid at tablet (768px+).                    */
+@media (max-width: 767px) {
+  /* Full-bleed: calc() breaks out of any parent padding exactly,
+     overflow-x:hidden clips the scrolling track — not the page.  */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-marquee {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow-x: hidden;
+    font-size: 3.5vw;
+  }
+
+  /* Single-line items with proportional inter-item spacing */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-marquee .aiwo-v1-marquee__item {
+    white-space: nowrap;
+    padding: 0 2vw;
+  }
+}
+
+/* ── MARQUEE — TABLET/DESKTOP RESET ─────────────────────────── */
+/* Hard-reset: ensure full-bleed never leaks into tablet/desktop. */
+@media (min-width: 768px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-marquee {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 14px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   QUANTITY SELECTOR — VISUAL OVERRIDES
+   Targets only .product-form__quantity on the EVOO v3 template.
+   All existing ids, data-attributes, Alpine.js state, and form
+   logic are untouched — CSS properties only.
+   ════════════════════════════════════════════════════════════ */
+
+/* Wrapper: 20px top + bottom margin, always left-aligned */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-qty-wrapper {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  text-align: left;
+}
+
+/* Hide the original Shopify-translated "Quantity" label —
+   replaced by the injected "Add Quantity" span on mobile.    */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity > label {
+  display: none !important;
+}
+
+/* ── INNER FLEX ROW (the border/radius/height shell) ─────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity .inline-flex {
+  border: 1px solid #1A1A1A !important;
+  border-radius: 6px !important;
+  height: 36px !important;
+  overflow: hidden !important;          /* clips button bg to border-radius */
+  align-items: stretch !important;
+  margin-top: 0 !important;
+  background: #FFF !important;
+  width: fit-content !important;
+}
+
+@media (min-width: 768px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity .inline-flex {
+    border-radius: 7.5px !important;
+    height: 45px !important;
+  }
+}
+
+/* ── MINUS BUTTON — white bg, right-side divider ────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity button[name="minus"] {
+  background: #FFF !important;
+  border: none !important;
+  border-right: 1px solid #1A1A1A !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ── QUANTITY INPUT — white bg, full height ─────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity input[name="quantity"] {
+  background: #FFF !important;
+  height: 100% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ── PLUS BUTTON — dark fill, white icon ────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity button[name="plus"] {
+  background: #1A1A1A !important;
+  border: none !important;
+  border-radius: 0 !important;         /* overflow:hidden on parent clips corners */
+  opacity: 1 !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  color: #FFF !important;              /* catches currentColor icons */
+}
+
+/* Force white on all SVG drawing elements inside plus button */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity button[name="plus"] svg path,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity button[name="plus"] svg line,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity button[name="plus"] svg circle,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .product-form__quantity button[name="plus"] svg rect {
+  stroke: #FFF !important;
+  fill: none !important;
+}
+
+/* ── INJECTED "ADD QUANTITY" LABEL (mobile only) ─────────── */
+/* Desktop: hidden — quantity box stands alone */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-qty-label-injected {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  /* Wrapper becomes the flex row: label left, qty right */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-qty-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* qty element must not stretch — override Tailwind's w-full */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-qty-wrapper > .product-form__quantity {
+    width: auto !important;
+    flex-shrink: 0;
+  }
+
+  /* Show the label (inline styles on the element cover font/color) */
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-qty-label-injected {
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+  }
+}
+
+/* Label hidden on tablet/desktop */
+@media (min-width: 768px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-qty-label-injected {
+    display: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   EVOO v3 — Protocol Tooltip
+   ══════════════════════════════════════════════════════════════ */
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-protocol-tooltip {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+/* Trigger: positioning context for the bubble */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-protocol-tooltip__trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #0C0C0D;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Bubble: above trigger, arrow points down */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-protocol-tooltip__bubble {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  max-width: calc(100vw - 32px);
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  text-align: left;
+  white-space: normal;
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-protocol-tooltip__bubble.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Down-pointing arrow (white triangle at bottom of bubble) */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-protocol-tooltip__arrow {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fff;
+}
+
+/* Title */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-protocol-tooltip__title {
+  color: #0C0C0D;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0 0 4px;
+}
+
+/* Description */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-protocol-tooltip__desc {
+  color: #666;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+}
+
+/* Sticky bar: tooltip row — centered, full width, stacks above buttons */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-protocol-tooltip {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 6px;
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+/* Sticky buttons area: reset tooltip margin to prevent bleed from inline 20px rule */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-sticky-buttons-area .aiwo-evoo-v3-protocol-tooltip {
+  margin-top: 0 !important;
+  margin-bottom: 4px !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   EVOO v3 — Buy Buttons (inline product form)
+   ══════════════════════════════════════════════════════════════ */
+
+/* Action wrapper: hidden on mobile, flex-column centered on desktop */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-action-wrapper {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-action-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+/* Button row sits inside action wrapper with 8px gap from tooltip */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-evoo-v3-action-wrapper .x-block-buy-buttons {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Form = button row flex container */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons form[data-type="add-to-cart-form"] {
+  display: flex;
+  gap: 12px;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  flex: 1 1 100% !important;
+  align-items: stretch;
+  margin: 0 !important;
+}
+
+/* Add to Cart — outline */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .add_to_cart_button {
+  background: transparent !important;
+  color: #0C0C0D !important;
+  border: 1.5px solid #0C0C0D !important;
+  border-radius: 4px !important;
+  padding: 14px 24px !important;
+  flex: 1 0 0;
+  width: auto !important;
+  min-width: 0;
+  margin-bottom: 0 !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-transform: capitalize !important;
+}
+
+/* Add to Cart hover */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .add_to_cart_button:hover:not(:disabled) {
+  background: #0C0C0D !important;
+  color: #FEFEFE !important;
+}
+
+/* Payment button container — equal flex share */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .payment-button-container {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* Shopify dynamic checkout button (Buy Now) */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .shopify-payment-button__button {
+  background: #0C0C0D !important;
+  color: #FEFEFE !important;
+  border: 1px solid #0C0C0D !important;
+  border-radius: 4px !important;
+  padding: 14px 24px !important;
+  width: 100% !important;
+  min-height: auto !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-transform: capitalize !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   EVOO v3 — Sticky ATC Button Styles
+   ══════════════════════════════════════════════════════════════ */
+
+/* Sticky ATC button — solid dark primary style */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .add_to_cart_button,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .add_to_cart_button {
+  background: #111 !important;
+  background-color: #111 !important;
+  color: #fff !important;
+  border: none !important;
+  border-color: transparent !important;
+  border-radius: 6px !important;
+  padding: 10px 16px !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-transform: capitalize !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .add_to_cart_button:hover:not(:disabled),
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .add_to_cart_button:hover:not(:disabled) {
+  background: #333 !important;
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+/* ── PHB — OUTER WRAPPER SPACING RESET ─────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-phb {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0 !important;
+}
+
+/* ── PHB — GRID WRAPPER ─────────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-phb__grid-mb {
+  border-top-width: 12px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* ── PHB — HEADING SPACING RESET ───────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-phb__heading {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* ── PHB — HEADING EM (raw <em> tags from settings) ─────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-phb__heading em {
+  font-family: 'Newsreader', serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #999999;
+  font-style: italic;
+}
+
+/* ── PHB — ITEM: always row layout, overrides benefits column ── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-phb__item {
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+  gap: 10px;
+}
+
+/* ── PHB — NUMBER ───────────────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-phb__num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #A1895E;
+  letter-spacing: 0.48px;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+/* ── PHB — TEXT COLUMN ──────────────────────────────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-phb__text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── PHB — ITEM MOBILE: vertical stack ──────────────────────── */
+@media (max-width: 767px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .aiwo-v1-phb__item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ── DISCLAIMER (x-block-text rte) — DESKTOP ───────────────── */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-text.rte p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #0C0C0D;
+  margin: 0;
+}
+
+/* ── DISCLAIMER — MOBILE ────────────────────────────────────── */
+@media (max-width: 767px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-text.rte p {
+    font-size: 10px;
+    line-height: 120%;
+  }
+}
+
+/* Sticky bar inner layout: stack tooltip above button row */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-buttons-area,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-buttons-area {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+/* ── RECS v2 — Recommended Products Block ───────────────────── */
+.aiwo-recs-v2__header { margin-bottom: 24px; }
+.aiwo-recs-v2__heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #1A1A1A;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+.aiwo-recs-v2__heading-em {
+  font-family: 'Newsreader', serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #999999;
+  font-style: italic;
+}
+.aiwo-recs-v2__desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0C0C0D;
+  margin: 0 0 16px;
+}
+.aiwo-recs-v2__banner { border-radius: 4px; overflow: hidden; }
+.aiwo-recs-v2__banner-img {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.aiwo-recs-v2__banner-img--mobile { display: block; }
+@media (min-width: 768px) {
+  .aiwo-recs-v2__banner-img--mobile { display: none; }
+  .aiwo-recs-v2__banner-img--desktop { display: block; }
+}
+.aiwo-recs-v2__item {
+  display: flex;
+  flex-direction: row;
+  padding: 0 12px 12px 12px;
+  gap: 12px;
+  justify-content: space-between;
+  border-bottom: 1px solid #E8E4DC;
+  margin-bottom: 13px;
+}
+.aiwo-recs-v2__item:last-child { border-bottom: none; margin-bottom: 0; }
+.aiwo-recs-v2__img-link { flex-shrink: 0; display: block; }
+.aiwo-recs-v2__img {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.aiwo-recs-v2__img img { width: 70px; height: 70px; object-fit: cover; display: block; }
+.aiwo-recs-v2__img--bundle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  border-radius: 0;
+}
+.aiwo-recs-v2__img--bundle img { width: 70px; height: 70px; border-radius: 4px; object-fit: cover; }
+.aiwo-recs-v2__details { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.aiwo-recs-v2__badge {
+  display: inline-block;
+  padding: 2px 6px 3px;
+  border-radius: 2px;
+  background: #C0622A;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #FEFEFE;
+  text-transform: capitalize;
+  letter-spacing: 0.24px;
+  margin-bottom: 4px;
+  width: fit-content;
+}
+.aiwo-recs-v2__pillar {
+  font-family: 'Newsreader', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #519A5E;
+  font-style: italic;
+  letter-spacing: 0.28px;
+  margin: 0 0 2px;
+}
+.aiwo-recs-v2__product-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0C0C0D;
+  letter-spacing: 0.3px;
+  margin: 0 0 4px;
+}
+.aiwo-recs-v2__product-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+.aiwo-recs-v2__bottom { display: flex; align-items: center; gap: 6px; }
+.aiwo-recs-v2__price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+.aiwo-recs-v2__learn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+  letter-spacing: 0.28px;
+  text-decoration: underline;
+}
+.aiwo-recs-v2__atc { display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; align-self: flex-start; flex-shrink: 0; }
+.aiwo-recs-v2__add-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: #1A1A1A;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+.aiwo-recs-v2__add-btn--loading { opacity: 0.5; }
+.aiwo-recs-v2__add-btn--done { background: #333 !important; cursor: default; }
+.aiwo-recs-v2__add-btn svg { width: 16px; height: 16px; stroke: #FFF; }
+
+/* Recs v2 — block visibility utilities */
+@media (min-width: 768px) { .aiwo-v1-hide-desktop { display: none !important; } }
+@media (max-width: 767px) { .aiwo-v1-hide-mobile { display: none !important; } }
+
+/* ══════════════════════════════════════════════════════════════
+   EVOO v3 — Desktop Buy Buttons Row (qty + ATC side by side)
+   Activated when show_atc_quantity is true on buy_buttons block.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Row wrapper: CSS Grid — qty takes max-content, ATC fills remainder */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .aiwo-evoo-v3-atc-row {
+  display: grid !important;
+  grid-template-columns: max-content 1fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+  align-items: center;
+}
+
+/* Qty box: styled border, fixed height, dark plus / white minus */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .aiwo-evoo-v3-atc-row .inline-flex {
+  border: 1px solid #1A1A1A !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  height: 50px !important;
+  align-items: stretch !important;
+  background: #FFF !important;
+  margin-bottom: 0 !important;
+  flex-shrink: 0;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .aiwo-evoo-v3-atc-row button[name="minus"] {
+  background: #FFF !important;
+  border: none !important;
+  border-right: 1px solid #1A1A1A !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .aiwo-evoo-v3-atc-row button[name="plus"] {
+  background: #1A1A1A !important;
+  border: none !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .aiwo-evoo-v3-atc-row button[name="plus"] svg path,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .aiwo-evoo-v3-atc-row button[name="plus"] svg line,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .aiwo-evoo-v3-atc-row button[name="plus"] svg circle,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .aiwo-evoo-v3-atc-row button[name="plus"] svg rect {
+  stroke: #FFF !important;
+  fill: none !important;
+}
+
+/* ATC button inside row: brute-force full expansion */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .x-block-buy-buttons .aiwo-evoo-v3-atc-row .add_to_cart_button {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  flex: 1 1 100% !important;
+  display: block !important;
+  margin: 0 !important;
+  background: #1A1A1A !important;
+  background-color: #1A1A1A !important;
+  color: #FEFEFE !important;
+  border: none !important;
+  border-color: transparent !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  text-align: center !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   EVOO v3 — Mobile Sticky Bar Qty Selector
+   Fixes h-full rendering as 0 and makes qty visible inline
+   immediately left of the sticky ATC button.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Buttons row: qty left, ATC right, fills full width */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-action-row,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-action-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: 100% !important;
+  gap: 8px !important;
+}
+
+/* Sticky form: grow to fill remaining space after qty */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-action-row .form,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-action-row .form {
+  flex: 1 !important;
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+/* Sticky qty outer wrapper: gives h-full a resolved parent height */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty-wrap,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty-wrap {
+  display: flex !important;
+  align-items: stretch !important;
+  height: 44px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Sticky qty container: explicit height overrides h-full:0 */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty {
+  display: flex !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  border: 1px solid #1A1A1A !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  align-items: stretch !important;
+  background: #FFF !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── SECTION TOP PADDING — DESKTOP OVERRIDE ─────────────────── */
+@media (min-width: 768px) {
+  #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .full-width.md\:pt-\[60px\] {
+    padding-top: 20px !important;
+  }
+}
+
+/* Sticky minus button — white bg */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="minus"],
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="minus"] {
+  background: #FFF !important;
+  background-color: #FFF !important;
+  border: none !important;
+  border-right: 1px solid #1A1A1A !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 10px !important;
+}
+
+/* Sticky plus button — dark fill, white icon */
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"],
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"] {
+  background: #1A1A1A !important;
+  background-color: #1A1A1A !important;
+  border: none !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFF !important;
+  padding: 0 10px !important;
+}
+
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"] svg path,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"] svg line,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"] svg circle,
+#MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"] svg rect,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"] svg path,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"] svg line,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"] svg circle,
+body #MainContent.theme-template-suffix-extra-virgin-olive-oil-v3 .sticky_add_to_cart .aiwo-evoo-v3-sticky-qty button[name="plus"] svg rect {
+  stroke: #FFF !important;
+  fill: none !important;
+}
+
+/* ── BUNDLE IMAGE ALIGNMENT ─────────────────────────────── */
+.aiwo-recs-v2__image-wrap {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ── DESKTOP ATC ROW — form + button width ───────────────── */
+.aiwo-evoo-v3-atc-row form {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+.aiwo-evoo-v3-atc-row .add_to_cart_button {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: none !important;
+}

@@ -1,0 +1,898 @@
+{% doc %}
+  @prompt
+    Create a 6-card benefits showcase grid with clean, minimal aesthetic.
+    
+    SECTION HEADER (full-width, centered):
+    "6 Reasons Your Body Will Thank You"
+    - Font: Poppins SemiBold, 42px desktop / 28px mobile
+    - Color: #211E1E
+    - IMPORTANT: Style "Body Will Thank You" in italic + #D68641
+    - Margin bottom: 64px
+    
+    GRID LAYOUT:
+    - Desktop: 3 columns, 2 rows
+    - Tablet: 2 columns, 3 rows
+    - Mobile: 1 column, 6 rows
+    - Gap: 32px
+    
+    CARD DESIGN (each of 6 cards):
+    - Background: #FFFFFF
+    - Border: 2px solid #F0F0F0
+    - Border-radius: 0px (sharp corners)
+    - Padding: 32px
+    - Shadow: 0 4px 20px rgba(33,30,30,0.06)
+    - Hover: transform translateY(-8px), shadow increases to rgba(33,30,30,0.1)
+    - Transition: all 0.3s ease
+    
+    CARD CONTENT STRUCTURE (top to bottom):
+    1. Image Area: 200x200px, centered, product shot or clean illustration
+    2. Heading: Poppins SemiBold, 20px, #211E1E, key benefit words in italic #D68641
+    3. Body: Lato Regular, 16px, #545252, line-height 1.6
+    4. Footer Badge: "✓ Included in all combos" - Lato 12px, #4CAF50 checkmark
+    
+    6 BENEFIT CARDS CONTENT:
+    
+    Card 1 - Kick-Starts Metabolic Energy
+    Heading: "Kick-Starts Metabolic Energy" (Metabolic Energy italic orange)
+    Body: "Kickstart a new chapter with healthy fats that fuel sustained energy without breaking your fast or spiking insulin."
+    Image: Energetic person or energy burst illustration
+    
+    Card 2 - Keeps Feeling Full
+    Heading: "Keeps Feeling Full" (Feeling Full italic orange)
+    Body: "High in MCTs and healthy fats that keep you satiated longer, reducing cravings during your fasting window."
+    Image: Satisfied person or satiety concept
+    
+    Card 3 - Head-Start Replacement
+    Heading: "Head-Start Replacement" (Head-Start italic orange)
+    Body: "The perfect breakfast replacement with complete nutrition that supports your fasting protocol."
+    Image: Breakfast ingredients or meal replacement visual
+    
+    Card 4 - Compromised Protein & Fiber
+    Heading: "Complete Protein & Fiber" (Protein & Fiber italic orange)
+    Body: "5g of clean protein and dietary fiber to support gut health and muscle preservation during fasting."
+    Image: Nutrition chart or protein visual
+    
+    Card 5 - Pre & Post-Workout Support
+    Heading: "Pre & Post-Workout Support" (Workout Support italic orange)
+    Body: "Fuel your workouts without breaking your fast. Perfect pre/post training nutrition."
+    Image: Active person or fitness visual
+    
+    Card 6 - Improves Nutrient Status
+    Heading: "Improves Nutrient Status" (Nutrient Status italic orange)
+    Body: "Extra virgin olive oil rich in polyphenols and antioxidants for cellular health and longevity."
+    Image: Healthy ingredients or cellular health
+    
+    SECTION BACKGROUND: #FFFFFF
+    SECTION PADDING: 96px vertical, 20px horizontal
+    MAX-WIDTH: 1400px centered
+    
+    MOBILE:
+    - Cards stack 1 per row
+    - Reduce heading to 18px
+    - Image: 180x180px
+    - Padding: 24px per card
+    - Section padding: 48px vertical
+    
+    AESTHETIC: Clean grid system, Instagram-worthy layout, health supplement premium feel, plenty of breathing room, consistent card heights, professional product page
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-benefits-showcase-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.section_background }};
+    padding: {{ block.settings.section_padding_desktop }}px {{ block.settings.section_padding_horizontal }}px;
+    width: 100%;
+  }
+
+  .ai-benefits-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-benefits-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_margin_bottom }}px;
+  }
+
+  .ai-benefits-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size_desktop }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ai-benefits-title-{{ ai_gen_id }} .highlight {
+    font-style: italic;
+    color: {{ block.settings.heading_highlight_color }};
+  }
+
+  .ai-benefits-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+  }
+
+  .ai-benefits-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: {{ block.settings.card_padding }}px;
+    box-shadow: 0 4px 20px {{ block.settings.card_shadow_color }};
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ai-benefits-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 20px {{ block.settings.card_shadow_hover_color }};
+  }
+
+  .ai-benefits-image-wrapper-{{ ai_gen_id }} {
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+  }
+
+  .ai-benefits-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-benefits-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .ai-benefits-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-benefits-card-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.card_heading_font.family }}, {{ block.settings.card_heading_font.fallback_families }};
+    font-weight: {{ block.settings.card_heading_font.weight }};
+    font-size: {{ block.settings.card_heading_size }}px;
+    color: {{ block.settings.card_heading_color }};
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+  }
+
+  .ai-benefits-card-heading-{{ ai_gen_id }} .highlight {
+    font-style: italic;
+    color: {{ block.settings.heading_highlight_color }};
+  }
+
+  .ai-benefits-card-body-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.body_color }};
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+    flex-grow: 1;
+  }
+
+  .ai-benefits-card-badge-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.badge_size }}px;
+    color: {{ block.settings.badge_color }};
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ai-benefits-checkmark-{{ ai_gen_id }} {
+    color: {{ block.settings.checkmark_color }};
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-benefits-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-benefits-showcase-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_mobile }}px {{ block.settings.section_padding_horizontal }}px;
+    }
+
+    .ai-benefits-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+
+    .ai-benefits-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-benefits-card-{{ ai_gen_id }} {
+      padding: {{ block.settings.card_padding_mobile }}px;
+    }
+
+    .ai-benefits-image-wrapper-{{ ai_gen_id }} {
+      width: {{ block.settings.image_size_mobile }}px;
+      height: {{ block.settings.image_size_mobile }}px;
+    }
+
+    .ai-benefits-card-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.card_heading_size_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<benefits-showcase-{{ ai_gen_id }} class="ai-benefits-showcase-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-benefits-container-{{ ai_gen_id }}">
+    {% if block.settings.section_heading != blank %}
+      <div class="ai-benefits-header-{{ ai_gen_id }}">
+        <h2 class="ai-benefits-title-{{ ai_gen_id }}">{{ block.settings.section_heading }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="ai-benefits-grid-{{ ai_gen_id }}">
+      {% for i in (1..6) %}
+        {% liquid
+          assign card_enabled_key = 'card_' | append: i | append: '_enabled'
+          assign card_image_key = 'card_' | append: i | append: '_image'
+          assign card_heading_key = 'card_' | append: i | append: '_heading'
+          assign card_body_key = 'card_' | append: i | append: '_body'
+          assign card_badge_key = 'card_' | append: i | append: '_badge'
+
+          assign card_enabled = block.settings[card_enabled_key]
+          assign card_image = block.settings[card_image_key]
+          assign card_heading = block.settings[card_heading_key]
+          assign card_body = block.settings[card_body_key]
+          assign card_badge = block.settings[card_badge_key]
+        %}
+
+        {% if card_enabled %}
+          <div class="ai-benefits-card-{{ ai_gen_id }}">
+            <div class="ai-benefits-image-wrapper-{{ ai_gen_id }}">
+              {% if card_image %}
+                <img
+                  src="{{ card_image | image_url: width: 400 }}"
+                  alt="{{ card_image.alt | escape }}"
+                  loading="lazy"
+                  width="400"
+                  height="400"
+                  class="ai-benefits-image-{{ ai_gen_id }}"
+                >
+              {% else %}
+                <div class="ai-benefits-image-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+
+            {% if card_heading != blank %}
+              <h3 class="ai-benefits-card-heading-{{ ai_gen_id }}">{{ card_heading }}</h3>
+            {% endif %}
+
+            {% if card_body != blank %}
+              <p class="ai-benefits-card-body-{{ ai_gen_id }}">{{ card_body }}</p>
+            {% endif %}
+
+            {% if card_badge != blank %}
+              <div class="ai-benefits-card-badge-{{ ai_gen_id }}">
+                <span class="ai-benefits-checkmark-{{ ai_gen_id }}">✓</span>
+                <span>{{ card_badge }}</span>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</benefits-showcase-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BenefitsShowcase{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.processHighlights();
+      }
+
+      processHighlights() {
+        const title = this.querySelector('.ai-benefits-title-{{ ai_gen_id }}');
+        if (title) {
+          this.wrapHighlightedText(title, '{{ block.settings.highlight_text }}');
+        }
+
+        const cardHeadings = this.querySelectorAll('.ai-benefits-card-heading-{{ ai_gen_id }}');
+        cardHeadings.forEach((heading, index) => {
+          const highlightKey = 'card_' + (index + 1) + '_highlight';
+          const highlightText = '{{ block.settings[highlightKey] }}';
+          if (highlightText) {
+            this.wrapHighlightedText(heading, highlightText);
+          }
+        });
+      }
+
+      wrapHighlightedText(element, highlightText) {
+        if (!highlightText || highlightText === '') return;
+
+        const text = element.textContent;
+        const regex = new RegExp('(' + this.escapeRegex(highlightText) + ')', 'gi');
+        const newHTML = text.replace(regex, '<span class="highlight">$1</span>');
+        element.innerHTML = newHTML;
+      }
+
+      escapeRegex(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+    }
+
+    customElements.define('benefits-showcase-{{ ai_gen_id }}', BenefitsShowcase{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Benefits showcase",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "section_heading",
+      "label": "Heading",
+      "default": "6 Reasons Your Body Will Thank You"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Text to highlight",
+      "default": "Body Will Thank You",
+      "info": "Enter the exact text from the heading to style in italic and orange"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size desktop",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size mobile",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#211E1E"
+    },
+    {
+      "type": "color",
+      "id": "heading_highlight_color",
+      "label": "Highlight color",
+      "default": "#D68641"
+    },
+    {
+      "type": "range",
+      "id": "header_margin_bottom",
+      "label": "Header margin bottom",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "header",
+      "content": "Section layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "section_padding_desktop",
+      "label": "Vertical padding desktop",
+      "min": 40,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding_mobile",
+      "label": "Vertical padding mobile",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Grid settings"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#F0F0F0"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Padding desktop",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "label": "Padding mobile",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "card_shadow_color",
+      "label": "Shadow color",
+      "default": "rgba(33,30,30,0.06)"
+    },
+    {
+      "type": "color",
+      "id": "card_shadow_hover_color",
+      "label": "Shadow hover color",
+      "default": "rgba(33,30,30,0.1)"
+    },
+    {
+      "type": "header",
+      "content": "Card content"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Image size desktop",
+      "min": 100,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "image_size_mobile",
+      "label": "Image size mobile",
+      "min": 80,
+      "max": 240,
+      "step": 10,
+      "unit": "px",
+      "default": 180
+    },
+    {
+      "type": "font_picker",
+      "id": "card_heading_font",
+      "label": "Card heading font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "card_heading_size",
+      "label": "Card heading size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_heading_size_mobile",
+      "label": "Card heading size mobile",
+      "min": 14,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Card heading color",
+      "default": "#211E1E"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body size",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body color",
+      "default": "#545252"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Badge size",
+      "min": 10,
+      "max": 18,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge text color",
+      "default": "#545252"
+    },
+    {
+      "type": "color",
+      "id": "checkmark_color",
+      "label": "Checkmark color",
+      "default": "#4CAF50"
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_1_enabled",
+      "label": "Enable card 1",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_1_heading",
+      "label": "Heading",
+      "default": "Kick-Starts Metabolic Energy"
+    },
+    {
+      "type": "text",
+      "id": "card_1_highlight",
+      "label": "Text to highlight",
+      "default": "Metabolic Energy"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_body",
+      "label": "Body text",
+      "default": "Kickstart a new chapter with healthy fats that fuel sustained energy without breaking your fast or spiking insulin."
+    },
+    {
+      "type": "text",
+      "id": "card_1_badge",
+      "label": "Badge text",
+      "default": "Included in all combos"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_2_enabled",
+      "label": "Enable card 2",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_2_heading",
+      "label": "Heading",
+      "default": "Keeps Feeling Full"
+    },
+    {
+      "type": "text",
+      "id": "card_2_highlight",
+      "label": "Text to highlight",
+      "default": "Feeling Full"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_body",
+      "label": "Body text",
+      "default": "High in MCTs and healthy fats that keep you satiated longer, reducing cravings during your fasting window."
+    },
+    {
+      "type": "text",
+      "id": "card_2_badge",
+      "label": "Badge text",
+      "default": "Included in all combos"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_3_enabled",
+      "label": "Enable card 3",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_3_heading",
+      "label": "Heading",
+      "default": "Head-Start Replacement"
+    },
+    {
+      "type": "text",
+      "id": "card_3_highlight",
+      "label": "Text to highlight",
+      "default": "Head-Start"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_body",
+      "label": "Body text",
+      "default": "The perfect breakfast replacement with complete nutrition that supports your fasting protocol."
+    },
+    {
+      "type": "text",
+      "id": "card_3_badge",
+      "label": "Badge text",
+      "default": "Included in all combos"
+    },
+    {
+      "type": "header",
+      "content": "Card 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_4_enabled",
+      "label": "Enable card 4",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_4_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_4_heading",
+      "label": "Heading",
+      "default": "Complete Protein & Fiber"
+    },
+    {
+      "type": "text",
+      "id": "card_4_highlight",
+      "label": "Text to highlight",
+      "default": "Protein & Fiber"
+    },
+    {
+      "type": "textarea",
+      "id": "card_4_body",
+      "label": "Body text",
+      "default": "5g of clean protein and dietary fiber to support gut health and muscle preservation during fasting."
+    },
+    {
+      "type": "text",
+      "id": "card_4_badge",
+      "label": "Badge text",
+      "default": "Included in all combos"
+    },
+    {
+      "type": "header",
+      "content": "Card 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_5_enabled",
+      "label": "Enable card 5",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_5_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_5_heading",
+      "label": "Heading",
+      "default": "Pre & Post-Workout Support"
+    },
+    {
+      "type": "text",
+      "id": "card_5_highlight",
+      "label": "Text to highlight",
+      "default": "Workout Support"
+    },
+    {
+      "type": "textarea",
+      "id": "card_5_body",
+      "label": "Body text",
+      "default": "Fuel your workouts without breaking your fast. Perfect pre/post training nutrition."
+    },
+    {
+      "type": "text",
+      "id": "card_5_badge",
+      "label": "Badge text",
+      "default": "Included in all combos"
+    },
+    {
+      "type": "header",
+      "content": "Card 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_6_enabled",
+      "label": "Enable card 6",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "card_6_image",
+      "label": "Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_6_heading",
+      "label": "Heading",
+      "default": "Improves Nutrient Status"
+    },
+    {
+      "type": "text",
+      "id": "card_6_highlight",
+      "label": "Text to highlight",
+      "default": "Nutrient Status"
+    },
+    {
+      "type": "textarea",
+      "id": "card_6_body",
+      "label": "Body text",
+      "default": "Extra virgin olive oil rich in polyphenols and antioxidants for cellular health and longevity."
+    },
+    {
+      "type": "text",
+      "id": "card_6_badge",
+      "label": "Badge text",
+      "default": "Included in all combos"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits showcase"
+    }
+  ]
+}
+{% endschema %}

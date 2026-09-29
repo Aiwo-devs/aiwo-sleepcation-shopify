@@ -1,0 +1,667 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo_evoo_v3_styles": {
+      "type": "aiwo-evoo-v3-global-styles",
+      "settings": {
+        "heading_font_size": 24,
+        "heading_font_weight": "700",
+        "heading_line_height": "1.2",
+        "heading_color": "#0c0c0d",
+        "body_font_size": 16,
+        "body_font_weight": "400",
+        "body_line_height": "1.6",
+        "body_color": "#666666",
+        "button_font_size": 16,
+        "button_font_weight": "600"
+      }
+    },
+    "aiwo_evoo_v3_breadcrumb": {
+      "type": "aiwo-evoo-v3-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo_evoo_v3_gallery_enhancements": {
+      "type": "aiwo-evoo-v3-gallery-enhancements",
+      "settings": {
+        "tagline_text": "LONGEVIS MATRIX · Pillar 3",
+        "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+        "tooltip_title": "What is LONGEVIS MATRIX?",
+        "tooltip_desc": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework. Each pillar targets a biological system that determines how fast you age.",
+        "tooltip_pillars_heading": "Pillars this product support",
+        "tooltip_active_pillars": "P3 · Nutrition and Metabolic Health",
+        "tooltip_stack_heading": "Complete your longevity stack",
+        "tooltip_inactive_pillars": "P1 · Sleep      \nP2 · Breathing\nP4 · Social       \nP5 · Exercise\nP6 · Stress       \nP7 · Circadian Rhythm\nP8 · Purpose      \nP9 · Environment\nP10 · Gut Health  \nP11 · Hydration"
+      }
+    },
+    "aiwo_evoo_v3_qty_label": {
+      "type": "aiwo-evoo-v3-quantity-label",
+      "settings": {
+        "mobile_quantity_label": "Add Quantity"
+      }
+    },
+    "main": {
+      "type": "aiwo-pdp-product-info",
+      "blocks": {
+        "product_tag_line_v1_zH8gVV": {
+          "type": "product_tag_line_v1",
+          "settings": {
+            "tag_text": "LONGEVIS MATRIX · Pillar 3"
+          }
+        },
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "purchase_stats_v1_CLkWVP": {
+          "type": "purchase_stats_v1",
+          "settings": {
+            "purchase_text": "Most multiminerals give you twenty minerals at doses too small to matter.This gives you five. At 100% RDA. In researched, bioavailable forms.",
+            "weight_text": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_j3mMyH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MRP Incl. of all taxes · ₹5.75 per tablet</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "trust_badges_v1_eUg7qR": {
+          "type": "trust_badges_v1",
+          "settings": {
+            "badge_1_title": "FSSAI Licensed",
+            "badge_1_icon": "shopify://shop_images/Fssai_Logo.png",
+            "badge_2_title": "GMP Quality Certified",
+            "badge_2_icon": "shopify://shop_images/Mask_group_70d7e5a4-3a0d-4053-96c9-f669beaa1c20.png",
+            "badge_3_title": "ISO 9001:2015",
+            "badge_3_icon": "shopify://shop_images/iso_1798122.svg",
+            "badge_4_title": "ISO 22000:2018",
+            "badge_4_icon": "shopify://shop_images/iso_1798122.svg",
+            "badge_5_title": "ISO 14001:2015",
+            "badge_5_icon": "shopify://shop_images/iso_1798122.svg",
+            "badge_6_title": ""
+          }
+        },
+        "benefits_grid_v1_KiKTqL": {
+          "type": "benefits_grid_v1",
+          "settings": {
+            "benefit_1_title": "Supports Immune Health",
+            "benefit_1_text": "Copper, Zinc and Selenium contribute to the normal function of the immune system — three minerals, one tablet",
+            "benefit_1_icon": "shopify://shop_images/immune-system_6167405.svg",
+            "benefit_2_title": "Antioxidant Protection",
+            "benefit_2_text": "Selenium, Copper, Zinc and Manganese help protect cells from oxidative stress through antioxidant enzyme support",
+            "benefit_2_icon": "shopify://shop_images/molecule_4164483.svg",
+            "benefit_3_title": "Supports Normal Metabolism",
+            "benefit_3_text": "Chromium Picolinate (50 mcg · 100% RDA) — the most bioavailable supplemental form — contributes to normal blood glucose metabolism",
+            "benefit_3_icon": "shopify://shop_images/metabolism_8157247.svg",
+            "benefit_4_title": "Daily Nutritional Support",
+            "benefit_4_text": "Five essential trace minerals formulated to help meet daily nutritional requirements — in a single film-coated tablet",
+            "benefit_4_icon": "shopify://shop_images/healthy-food_2756716.svg"
+          }
+        },
+        "marquee_v1_iehzTE": {
+          "type": "marquee_v1",
+          "settings": {
+            "marquee_bg_color": "#2c2416",
+            "marquee_text_color": "#ffffff",
+            "marquee_text_1": "5 Trace Minerals",
+            "marquee_text_2": "Immune Health",
+            "marquee_text_3": "Antioxidant Protection",
+            "marquee_text_4": "Normal Metabolism",
+            "marquee_text_5": "4 Minerals at 100% RDA",
+            "marquee_text_6": "Zero Trans Fat"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "html_jpVgQ3": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": true,
+            "protocol_tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "protocol_tooltip_title": "What is Protocol?",
+            "protocol_tooltip_desc": "A protocol is a daily system of supplements each one targeting specific longevity pillars."
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "disabled": true,
+          "settings": {}
+        },
+        "recommended_products_v1_6t3TaN": {
+          "type": "recommended_products_v1",
+          "settings": {
+            "recs_tag": "Complete the protocol",
+            "heading_text": "AIWO AIMINERAL",
+            "heading_italic": "Works Better As A System",
+            "description_text": "",
+            "show_desktop": true,
+            "show_mobile": true,
+            "bundle_mode": true,
+            "bundle_pillar": "Pillar 6 + 3 + 8",
+            "bundle_title": "AIMINERAL + AMg-D3 + Omega-3 Triple Strength",
+            "bundle_desc": "complete trace mineral, macro-mineral, and anti-inflammatory coverage",
+            "bundle_best_pick_text": "Best Seller",
+            "bundle_custom_price": "",
+            "bundle_product_1": "omega-3-double-strength",
+            "bundle_product_2": "aiwo-amg-d3",
+            "bundle_product_3": "aiwo-spa-day",
+            "bundle_learn_more_product": "aiwo-spa-day",
+            "product_1": "ultimate-omega-3-triple-strength",
+            "pillar_1": "Pillar 6 + 3",
+            "custom_title_1": "AIWO AMg-D3 (Magnesium 250mg + D3 600IU)",
+            "desc_1": "Completes the macro-mineral layer — Magnesium activates 600+ enzymes; D3 supports immune cell maturation alongside AIMINERAL",
+            "best_pick_text_1": "",
+            "product_2": "aiwo-berberine",
+            "pillar_2": "Pillar 3",
+            "custom_title_2": "AIWO A-Berine (Berberine 500mg)",
+            "desc_2": "Metabolic co-support — Berberine activates AMPK for glucose and lipid metabolism alongside Chromium in AIMINERAL",
+            "best_pick_text_2": "",
+            "product_3": "",
+            "pillar_3": "",
+            "custom_title_3": "",
+            "desc_3": "",
+            "best_pick_text_3": ""
+          }
+        },
+        "proven_health_benefits_v1_NpKbtK": {
+          "type": "proven_health_benefits_v1",
+          "settings": {
+            "phb_tag": "",
+            "phb_title": "Proven Benefits of Essential Trace Minerals",
+            "phb_stat_1_num": "−1.13%",
+            "phb_stat_1_label": "Reduction in HbA1c with Chromium Picolinate supplementation in adults with Type 2 Diabetes",
+            "phb_stat_1_source": "Huang et al., Mol Nutr Food Res, 2018 Pooled analysis of randomised controlled trials",
+            "phb_stat_2_num": "−2.03",
+            "phb_stat_2_label": "mmol/L reduction in fasting blood glucose with Chromium Picolinate supplementation",
+            "phb_stat_2_source": "Huang et al., Mol Nutr Food Res, 2018 Pooled analysis of randomised controlled trials",
+            "phb_stat_3_num": "",
+            "phb_stat_3_label": "",
+            "phb_stat_3_source": "",
+            "phb_stat_4_num": "",
+            "phb_stat_4_label": "",
+            "phb_stat_4_source": ""
+          }
+        },
+        "text_gzYkwz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*Figures observed in meta-analyses and randomised controlled trials on EVOO and Mediterranean diet interventions. Individual results may vary. This is a food product. Not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_QVph7M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Download Sample Report",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "button_8zEkHK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore 181 Biomarkers",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": true,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "product_tag_line_v1_zH8gVV",
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "purchase_stats_v1_CLkWVP",
+        "price",
+        "text_j3mMyH",
+        "description",
+        "trust_badges_v1_eUg7qR",
+        "benefits_grid_v1_KiKTqL",
+        "marquee_v1_iehzTE",
+        "gift_wrapping_EK3NQn",
+        "html_jpVgQ3",
+        "buy_buttons",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "recommended_products_v1_6t3TaN",
+        "proven_health_benefits_v1_NpKbtK",
+        "text_gzYkwz",
+        "button_QVph7M",
+        "button_8zEkHK",
+        "complementary_XCwmDV",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked",
+        "thumbnail_position": "vertical",
+        "enable_sticky_image": true,
+        "mobile_media_size": "full_width",
+        "show_arrow_button": false,
+        "show_thumnail_mobile": false,
+        "spacing_col": "small",
+        "full_width": true,
+        "transition_style": "fade",
+        "show_first_image_avaiable": true,
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD": {
+      "type": "aiwo-evoo-v3-aiwo-difference",
+      "blocks": {
+        "stat_circle_336cQP": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "1.7",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "mg",
+            "tooltip_title": "Copper",
+            "tooltip_desc": "100% RDA · From Copper Sulphate Anhydrous Contributes to normal immune function and antioxidant enzyme activity (Cu/Zn SOD). Required for ceruloplasmin synthesis (iron transport) and iron incorporation into haemoglobin.",
+            "bottom_label": "100% RDA"
+          }
+        },
+        "stat_circle_meQiJa": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "40",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "mcg",
+            "tooltip_title": "Selenium",
+            "tooltip_desc": "100% RDA · From Sodium Selenate\nSupports antioxidant protection via glutathione peroxidase (GPx) — one of 25+ selenoproteins. Enables T4 → T3 thyroid hormone conversion via selenium-dependent deiodinase enzymes.",
+            "bottom_label": "100% RDA"
+          }
+        },
+        "stat_circle_V8MT9Y": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "11",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "mg",
+            "tooltip_title": "ZINC",
+            "tooltip_desc": "From Zinc Sulphate Monohydrate\nContributes to normal immune function via NK cell activity, T-cell proliferation, and antibody production. Cofactor for over 300 enzyme reactions and Cu/Zn superoxide dismutase.",
+            "bottom_label": "83.33% RDA"
+          }
+        },
+        "stat_circle_Hhd9iw": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "4",
+            "tooltip_icon": "shopify://shop_images/tooltip_missing.svg",
+            "stat_sub": "mg",
+            "tooltip_title": "Manganese",
+            "tooltip_desc": "From Manganese Sulphate Monohydrate\nSupports antioxidant protection via mitochondrial superoxide dismutase (MnSOD). Required for chondroitin sulphate synthesis and normal bone matrix formation.",
+            "bottom_label": "100% RDA"
+          }
+        },
+        "tagline_sub_86PARc": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/research_7442672_1.svg",
+            "text": "Research-Backed Forms"
+          }
+        },
+        "card_bullet_jMmxRW": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Copper · Zinc · Selenium — three minerals that contribute to normal immune function"
+          }
+        },
+        "card_bullet_PQqYc3": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Selenium · Copper · Zinc · Manganese — antioxidant enzyme protection per tablet"
+          }
+        },
+        "card_bullet_zwkFYD": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Chromium Picolinate — normal macronutrient & blood glucose metabolism support"
+          }
+        },
+        "tagline_sub_nR9nBX": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/food_14886758_1.svg",
+            "text": "100% RDA Dosing"
+          }
+        }
+      },
+      "block_order": [
+        "stat_circle_336cQP",
+        "stat_circle_meQiJa",
+        "stat_circle_V8MT9Y",
+        "stat_circle_Hhd9iw",
+        "tagline_sub_86PARc",
+        "card_bullet_jMmxRW",
+        "card_bullet_PQqYc3",
+        "card_bullet_zwkFYD",
+        "tagline_sub_nR9nBX"
+      ],
+      "name": "AIWO Difference",
+      "settings": {
+        "bg_desktop": "shopify://shop_images/AI_MIneral-_Desktop.png",
+        "bg_mobile": "shopify://shop_images/AI_MIneral-_Mobile.png",
+        "heading": "Not All Mineral",
+        "heading_italic": "Supplements Are The Same",
+        "main_tag": "Complete Formula",
+        "card_heading_white": "DELIVERING",
+        "card_heading_gold": "MAX POTENCY",
+        "card_icon": "shopify://shop_images/Frame_d47b8e26-3f6e-4c61-b06d-0e22994683c3.svg",
+        "disclaimer": "*Based on peer-reviewed research. Individual results may vary."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_comparison_wVNYTt": {
+      "type": "aiwo-comparison",
+      "blocks": {
+        "comparison_row_mcaRP8": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Complete trace mineral formula — 5 minerals, specific roles",
+            "right_feature": "Broad spectrum with many minerals underdosed"
+          }
+        },
+        "comparison_row_VaPp4F": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Copper 1.7 mg · 100% RDA — supports immune health",
+            "right_feature": "Copper often absent or at trace amounts"
+          }
+        },
+        "comparison_row_YJRD3c": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Zinc 11 mg · Sulphate Monohydrate — normal immune function",
+            "right_feature": "Zinc Oxide commonly used — lower bioavailability"
+          }
+        },
+        "comparison_row_iBKFFz": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Selenium 40 mcg · 100% RDA — antioxidant + thyroid",
+            "right_feature": "Selenium form and dose frequently unlisted"
+          }
+        },
+        "comparison_row_QTKPHg": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Chromium 50 mcg Picolinate — blood glucose metabolism",
+            "right_feature": "Chromium Chloride used — inferior absorption"
+          }
+        },
+        "comparison_row_RCAJmk": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Manganese 4 mg · 100% RDA — antioxidant + bone",
+            "right_feature": "Manganese absent in most multimineral formulas"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_mcaRP8",
+        "comparison_row_VaPp4F",
+        "comparison_row_YJRD3c",
+        "comparison_row_iBKFFz",
+        "comparison_row_QTKPHg",
+        "comparison_row_RCAJmk"
+      ],
+      "name": "AIWO Comparison Table",
+      "settings": {
+        "tagline": "WHY AIWO",
+        "heading": "AIWO AIMINERAL vs.",
+        "heading_italic": "Other Mineral Supplements",
+        "left_image": "shopify://shop_images/Aiwo-_Mineral.png",
+        "left_title": "",
+        "icon_check": "shopify://shop_images/Frame_12.svg",
+        "btn_text": "Buy Now",
+        "btn_link": "https://shop-aiwo.myshopify.com/cart/42291169558710:1?channel=buy_button",
+        "right_image": "shopify://shop_images/Others_Mineral.png",
+        "right_title": "",
+        "icon_cross": "shopify://shop_images/Group_13.svg"
+      }
+    },
+    "section_evoo_v3_faq_rRJhLR": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_BFc6Am": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does \"scientifically balanced\" mean for this formula?",
+            "answer": "<p>It means each mineral was selected for its specific biological role and for how it works with the others. Copper and Zinc share Cu/Zn superoxide dismutase as a cofactor — the same antioxidant enzyme. Copper also prevents the copper depletion that sustained zinc use can cause. Selenium activates antioxidant glutathione peroxidase enzymes and thyroid hormone conversion deiodinases — two functions in one mineral. Manganese covers MnSOD — the mitochondrial antioxidant the other four minerals can't activate. The formula is balanced because the five minerals fill each other's gaps.</p>"
+          }
+        },
+        "faq_item_pgG9dR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why does this say it \"contributes to normal immune function\" rather than \"boosts immunity\"?",
+            "answer": "<p>Under FSSAI regulations, health supplements can only make structure/function claims — statements about how a nutrient contributes to normal physiological processes. \"Contributes to the normal function of the immune system\" is the evidence-based, FSSAI-compliant way to state what Copper, Zinc, and Selenium are documented to do. Claims like \"boosts immunity\" are not permitted under Indian nutraceutical regulations for this product category.</p>"
+          }
+        },
+        "faq_item_zet6LP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why are four minerals at 100% RDA and Zinc at 83.33%?",
+            "answer": "<p>The 11 mg of elemental Zinc per tablet (83.33% RDA) was deliberately calibrated — it delivers meaningful daily zinc supplementation while staying well below the upper tolerable intake limit. More importantly, excessive zinc over time can deplete copper. By including Copper at 1.7 mg (100% RDA) in the same tablet and keeping zinc at 83.33% rather than 100%, the formula maintains mineral balance rather than creating an imbalance.</p>"
+          }
+        },
+        "faq_item_Q6TUxh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "The label says it contains Lactose Monohydrate — does this mean it's not suitable for me?",
+            "answer": "<p>If you have diagnosed lactose intolerance or a milk protein allergy, consult your physician before taking AIMINERAL. Lactose Monohydrate is used as a pharmaceutical-grade tablet binder and is present at excipient-level amounts — but individuals with significant dairy sensitivities should check with their doctor. The product is also not suitable for strict vegans due to this excipient.</p>"
+          }
+        },
+        "faq_item_WyBt4K": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take this with my existing multivitamin?",
+            "answer": "<p>The recommended protocol is 3 to 6 months of daily use. Trace mineral repletion works at the tissue level — not just in blood serum — and takes longer to complete than vitamin supplementation. Clinical research on chromium's effect on blood glucose metabolism and selenium's role in antioxidant enzyme activity both used 8–16 week supplementation windows before measuring outcomes. Consistent daily use over 3–6 months allows the body to rebuild tissue-level mineral reserves fully.</p>"
+          }
+        },
+        "faq_item_cgJH8c": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long should I take AIMINERAL?",
+            "answer": "<p>The recommended protocol is 3 to 6 months of daily use. Trace mineral repletion works at the tissue level — not just in blood serum — and takes longer to complete than vitamin supplementation. Clinical research on chromium's effect on blood glucose metabolism and selenium's role in antioxidant enzyme activity both used 8–16 week supplementation windows before measuring outcomes. Consistent daily use over 3–6 months allows the body to rebuild tissue-level mineral reserves fully.</p>"
+          }
+        },
+        "faq_item_H4QPQF": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is there a risk of taking too much of any of these minerals?",
+            "answer": "<p>At the doses in AIMINERAL — within or at 100% ICMR RDA for each mineral — no mineral exceeds safe daily intake limits. The key caution is against combining AIMINERAL with other supplements that contain the same minerals, particularly selenium (selenosis risk) and zinc (copper depletion risk). Do not exceed one tablet per day. Do not combine with additional trace mineral supplements without physician review.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_BFc6Am",
+        "faq_item_pgG9dR",
+        "faq_item_zet6LP",
+        "faq_item_Q6TUxh",
+        "faq_item_WyBt4K",
+        "faq_item_cgJH8c",
+        "faq_item_H4QPQF"
+      ],
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    },
+    "aiwo_two_column_grid_HF8RT8": {
+      "type": "aiwo-two-column-grid",
+      "name": "Two Column Grid",
+      "settings": {
+        "bg_image": "shopify://shop_images/AI_MIneral-_CTA_Banner.png",
+        "bg_image_mobile": "shopify://shop_images/AI_MIneral-_Mobile_77798a5a-11cf-4609-bb15-af130b7e19dc.png",
+        "bg_color": "#ffffff",
+        "heading": "Five Essential Minerals. Complete Daily Support.",
+        "heading_size": 32,
+        "heading_size_mobile": 24,
+        "heading_color": "#000000",
+        "description": "Copper · Zinc · Selenium · Chromium · Manganese\nImmune Health · Antioxidant Defence · Normal Metabolism · Bone Support",
+        "description_size": 16,
+        "description_size_mobile": 14,
+        "description_color": "#555555",
+        "cta_text": "Buy Now",
+        "cta_link": "https://shop-aiwo.myshopify.com/cart/42291169558710:1?channel=buy_button"
+      }
+    },
+    "177510445730616487": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "aiwo_evoo_v3_styles",
+    "aiwo_evoo_v3_breadcrumb",
+    "aiwo_evoo_v3_gallery_enhancements",
+    "aiwo_evoo_v3_qty_label",
+    "main",
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD",
+    "product-recommendations",
+    "aiwo_comparison_wVNYTt",
+    "section_evoo_v3_faq_rRJhLR",
+    "aiwo_two_column_grid_HF8RT8",
+    "177510445730616487"
+  ]
+}

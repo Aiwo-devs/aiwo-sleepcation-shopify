@@ -1,0 +1,649 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo_evoo_v3_styles": {
+      "type": "aiwo-evoo-v3-global-styles",
+      "settings": {
+        "heading_font_size": 24,
+        "heading_font_weight": "700",
+        "heading_line_height": "1.2",
+        "heading_color": "#0c0c0d",
+        "body_font_size": 16,
+        "body_font_weight": "400",
+        "body_line_height": "1.6",
+        "body_color": "#666666",
+        "button_font_size": 16,
+        "button_font_weight": "600"
+      }
+    },
+    "aiwo_evoo_v3_breadcrumb": {
+      "type": "aiwo-evoo-v3-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo_evoo_v3_gallery_enhancements": {
+      "type": "aiwo-evoo-v3-gallery-enhancements",
+      "settings": {
+        "tagline_text": "LONGEVIS MATRIX · Pillar 3",
+        "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+        "tooltip_title": "What is LONGEVIS MATRIX?",
+        "tooltip_desc": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework. Each pillar targets a biological system that determines how fast you age.",
+        "tooltip_pillars_heading": "Pillars this product support",
+        "tooltip_active_pillars": "P3 · Nutrition and Metabolic Health",
+        "tooltip_stack_heading": "Complete your longevity stack",
+        "tooltip_inactive_pillars": "P1 · Sleep      \nP2 · Breathing\nP4 · Social       \nP5 · Exercise\nP6 · Stress       \nP7 · Circadian Rhythm\nP8 · Purpose      \nP9 · Environment\nP10 · Gut Health  \nP11 · Hydration"
+      }
+    },
+    "aiwo_evoo_v3_qty_label": {
+      "type": "aiwo-evoo-v3-quantity-label",
+      "settings": {
+        "mobile_quantity_label": "Add Quantity"
+      }
+    },
+    "main": {
+      "type": "aiwo-pdp-product-info",
+      "blocks": {
+        "product_tag_line_v1_zH8gVV": {
+          "type": "product_tag_line_v1",
+          "settings": {
+            "tag_text": "LONGEVIS MATRIX · Pillar 3"
+          }
+        },
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "purchase_stats_v1_CLkWVP": {
+          "type": "purchase_stats_v1",
+          "settings": {
+            "purchase_text": "Every sweetener asks you to compromise. Allulose doesn't.Sugar-like taste. No glycemic impact. No aftertaste. Real food chemistry.",
+            "weight_text": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_j3mMyH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MRP Incl. of all taxes</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "trust_badges_v1_eUg7qR": {
+          "type": "trust_badges_v1",
+          "settings": {
+            "badge_1_title": "FSSAI Licensed",
+            "badge_1_icon": "shopify://shop_images/Fssai_Logo.png",
+            "badge_2_title": "Vegan",
+            "badge_2_icon": "shopify://shop_images/supports-l_1_3cef3104-eb8d-47f6-b156-c995ab26a387.svg",
+            "badge_3_title": "Halal Compliant",
+            "badge_3_icon": "shopify://shop_images/Layer_1_68fae174-c049-42c9-b7aa-b0765db4766a.svg",
+            "badge_4_title": "Gluten Free",
+            "badge_4_icon": "shopify://shop_images/Frame_9da1a2d8-ceea-4a19-bcd5-5fd586b8ec53.svg",
+            "badge_5_title": "Kosher Certified",
+            "badge_5_icon": "shopify://shop_images/meal_3130160.svg",
+            "badge_6_title": ""
+          }
+        },
+        "benefits_grid_v1_KiKTqL": {
+          "type": "benefits_grid_v1",
+          "settings": {
+            "benefit_1_title": "No Aftertaste",
+            "benefit_1_text": "The only major complaint with every sweetener alternative eliminated. Allulose tastes like sugar because it is a sugar.",
+            "benefit_1_icon": "shopify://shop_images/taste_10655756.svg",
+            "benefit_2_title": "Heat Stable",
+            "benefit_2_text": "Caramelizes and browns like sugar — reduce oven temperature slightly to prevent over-browning",
+            "benefit_2_icon": "shopify://shop_images/bake_2917630.svg",
+            "benefit_3_title": "No Glycemic Impact",
+            "benefit_3_text": "Supports healthy post-meal glucose response diabetic friendly when used as part of a balanced diet",
+            "benefit_3_icon": "shopify://shop_images/diabetes_9032032.svg",
+            "benefit_4_title": "99.5% Pure allSWEET®",
+            "benefit_4_text": "Not generic allulose a registered branded ingredient with validated purity, Kosher, Halal, and Non-GMO certified",
+            "benefit_4_icon": "shopify://shop_images/shield_738803.svg"
+          }
+        },
+        "marquee_v1_iehzTE": {
+          "type": "marquee_v1",
+          "settings": {
+            "marquee_bg_color": "#2c2416",
+            "marquee_text_color": "#ffffff",
+            "marquee_text_1": "99.5% Pure Allulose",
+            "marquee_text_2": "No Aftertaste",
+            "marquee_text_3": "Heat Stable",
+            "marquee_text_4": "Keto Friendly",
+            "marquee_text_5": "No Glycemic Impact",
+            "marquee_text_6": "Non-GMO"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "html_jpVgQ3": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": true,
+            "protocol_tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "protocol_tooltip_title": "What is Protocol?",
+            "protocol_tooltip_desc": "A protocol is a daily system of supplements each one targeting specific longevity pillars."
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "disabled": true,
+          "settings": {}
+        },
+        "recommended_products_v1_6t3TaN": {
+          "type": "recommended_products_v1",
+          "settings": {
+            "recs_tag": "Complete the protocol",
+            "heading_text": "AIWO Allulose",
+            "heading_italic": "Works Better  As A System",
+            "description_text": "",
+            "show_desktop": true,
+            "show_mobile": true,
+            "bundle_mode": true,
+            "bundle_pillar": "Add on · Pillar 3",
+            "bundle_title": "Metabolic Wellness Stack",
+            "bundle_desc": "Allulose + Dark Cocoa + Prebiotik-D low-sugar daily staples for gut and metabolic health",
+            "bundle_best_pick_text": "Best Pick",
+            "bundle_custom_price": "",
+            "bundle_product_1": "",
+            "bundle_product_2": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "bundle_product_3": "dark-cocoa-powder",
+            "bundle_learn_more_product": "",
+            "product_1": "",
+            "pillar_1": "Add on · Pillar 1",
+            "custom_title_1": "",
+            "desc_1": "",
+            "best_pick_text_1": "",
+            "product_2": "dark-cocoa-powder",
+            "pillar_2": "Add on · Pillar 3",
+            "custom_title_2": "AIWO Dark Cocoa Powder",
+            "desc_2": "Natural cocoa make sugar-free hot chocolate with real cocoa and zero glycemic impact",
+            "best_pick_text_2": "",
+            "product_3": "",
+            "pillar_3": "",
+            "custom_title_3": "",
+            "desc_3": "",
+            "best_pick_text_3": ""
+          }
+        },
+        "proven_health_benefits_v1_NpKbtK": {
+          "type": "proven_health_benefits_v1",
+          "disabled": true,
+          "settings": {
+            "phb_tag": "",
+            "phb_title": "Proven Benefits of Allulose Supplementation",
+            "phb_stat_1_num": "70%",
+            "phb_stat_1_label": "sugar's sweetening power with negligible caloric contribution and no significant glycemic impact",
+            "phb_stat_1_source": "EFSA NDA Panel 2022",
+            "phb_stat_2_num": "~0.4",
+            "phb_stat_2_label": "Allulose provides sweetness at approximately 10% of sugar's caloric value supporting calorie-conscious and low-carb dietary goals",
+            "phb_stat_2_source": "US FDA GRAS Notice 2019",
+            "phb_stat_3_num": "",
+            "phb_stat_3_label": "",
+            "phb_stat_3_source": "",
+            "phb_stat_4_num": "",
+            "phb_stat_4_label": "",
+            "phb_stat_4_source": ""
+          }
+        },
+        "text_gzYkwz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*Figures from regulatory submissions and clinical research on allulose. Individual results may vary. Diabetic friendly when used as part of a balanced diet and healthy lifestyle. This is a food ingredient, not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_QVph7M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Download Sample Report",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "button_8zEkHK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore 181 Biomarkers",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": true,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "product_tag_line_v1_zH8gVV",
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "purchase_stats_v1_CLkWVP",
+        "price",
+        "text_j3mMyH",
+        "description",
+        "trust_badges_v1_eUg7qR",
+        "benefits_grid_v1_KiKTqL",
+        "marquee_v1_iehzTE",
+        "gift_wrapping_EK3NQn",
+        "html_jpVgQ3",
+        "buy_buttons",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "recommended_products_v1_6t3TaN",
+        "proven_health_benefits_v1_NpKbtK",
+        "text_gzYkwz",
+        "button_QVph7M",
+        "button_8zEkHK",
+        "complementary_XCwmDV",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked",
+        "thumbnail_position": "vertical",
+        "enable_sticky_image": true,
+        "mobile_media_size": "full_width",
+        "show_arrow_button": false,
+        "show_thumnail_mobile": false,
+        "spacing_col": "small",
+        "full_width": true,
+        "transition_style": "fade",
+        "show_first_image_avaiable": true,
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD": {
+      "type": "aiwo-evoo-v3-aiwo-difference",
+      "blocks": {
+        "stat_circle_336cQP": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "99.5%",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Pure D-Psicose",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Zero Additives"
+          }
+        },
+        "stat_circle_meQiJa": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "10%",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Sugar's Calories",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "0.4 kcal Per Gram"
+          }
+        },
+        "stat_circle_V8MT9Y": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "100%",
+            "stat_sub": "Keto Friendly",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Low-Carb Lifestyles"
+          }
+        },
+        "stat_circle_Hhd9iw": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "4",
+            "stat_sub": "Certifications",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Kosher · Halal · Non-GMO · Gluten FreeClean Label"
+          }
+        },
+        "tagline_sub_86PARc": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/taste.svg",
+            "text": "Taste Profile"
+          }
+        },
+        "card_bullet_jMmxRW": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Allulose (D-Psicose) is a rare sugar that occurs naturally in small quantities in figs, raisins, and kiwi fruit. It is classified as a monosaccharide with the same molecular formula as fructose but a different molecular arrangement — this structural difference is why it tastes like sugar but is not metabolised as sugar."
+          }
+        },
+        "card_bullet_PQqYc3": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Of all the sugar alternatives studied, allulose is unique in its ability to caramelise and brown at temperatures comparable to regular sugar. Stevia does not caramelise. Erythritol crystallises differently and produces a cooling mouthfeel. Sucralose degrades at high heat. Allulose behaves in the oven, in the pan, and in the cup the same way sugar does without the glycemic consequence."
+          }
+        },
+        "card_bullet_9rcbGt": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "AIWO Allulose uses allSWEET® registered D-Psicose at 99.5% purity not a generic allulose powder. allSWEET® is a registered brand designation for validated purity grade allulose. Kosher certified, Halal compliant, Non-GMO, and Gluten Free. No mixing agents, no anti-caking additives beyond the crystalline form."
+          }
+        },
+        "tagline_sub_nR9nBX": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/optimization.svg",
+            "text": "Baking Performance"
+          }
+        }
+      },
+      "block_order": [
+        "stat_circle_336cQP",
+        "stat_circle_meQiJa",
+        "stat_circle_V8MT9Y",
+        "stat_circle_Hhd9iw",
+        "tagline_sub_86PARc",
+        "card_bullet_jMmxRW",
+        "card_bullet_PQqYc3",
+        "card_bullet_9rcbGt",
+        "tagline_sub_nR9nBX"
+      ],
+      "name": "AIWO Difference",
+      "settings": {
+        "bg_desktop": "shopify://shop_images/Ingredient-_Allulose_-_BG-_Desktop.png",
+        "bg_mobile": "shopify://shop_images/Ingredient-_Allulose_-_BG-_Mobile.png",
+        "heading": "Not All Sweeteners",
+        "heading_italic": "Work Like Sugar",
+        "main_tag": "Rare Sugar",
+        "card_heading_white": "DELIVERING",
+        "card_heading_gold": "MAX POTENCY",
+        "card_icon": "shopify://shop_images/Frame_d47b8e26-3f6e-4c61-b06d-0e22994683c3.svg",
+        "disclaimer": "*Diabetic friendly when used as part of a balanced diet and healthy lifestyle.Not intended to diagnose, treat, cure, or prevent any disease."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_comparison_wVNYTt": {
+      "type": "aiwo-comparison",
+      "blocks": {
+        "comparison_row_mcaRP8": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Rare sugar naturally found in fruits",
+            "right_feature": "Syntheticor highly processed alcohol (erythritol)"
+          }
+        },
+        "comparison_row_VaPp4F": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "No aftertaste tastes like sugar",
+            "right_feature": "Bitter aftertaste (stevia), chemical note (sucralose)"
+          }
+        },
+        "comparison_row_YJRD3c": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "No cooling mouthfeel",
+            "right_feature": "Erythritol produces a cold sensation in the mouth"
+          }
+        },
+        "comparison_row_iBKFFz": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "caramelizes and browns like real sugar",
+            "right_feature": "Most alternatives cannot caramelise"
+          }
+        },
+        "comparison_row_QTKPHg": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Heat stable in all cooking and baking",
+            "right_feature": "Many alternatives degrade or fail at high temperatures"
+          }
+        },
+        "comparison_row_RCAJmk": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Kosher · Halal · Non-GMO · Gluten Free",
+            "right_feature": "Certification varies by brand"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_mcaRP8",
+        "comparison_row_VaPp4F",
+        "comparison_row_YJRD3c",
+        "comparison_row_iBKFFz",
+        "comparison_row_QTKPHg",
+        "comparison_row_RCAJmk"
+      ],
+      "name": "AIWO Comparison Table",
+      "settings": {
+        "tagline": "WHY AIWO",
+        "heading": "AIWO Allulose vs.",
+        "heading_italic": "Others",
+        "left_image": "shopify://shop_images/Frame_2147224932_e70b7021-3b72-4888-be0c-1f231ce884e2.png",
+        "left_title": "",
+        "icon_check": "shopify://shop_images/Frame_12.svg",
+        "btn_text": "Buy Now",
+        "btn_link": "https://shop-aiwo.myshopify.com/cart/42291169558710:1?channel=buy_button",
+        "right_image": "shopify://shop_images/Frame_2147224935_5.png",
+        "right_title": "",
+        "icon_cross": "shopify://shop_images/Group_13.svg"
+      }
+    },
+    "section_evoo_v3_faq_rRJhLR": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_BFc6Am": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What exactly is allulose and how is it different from other sweeteners?",
+            "answer": "<p>Allulose (D-Psicose) is a rare sugar a monosaccharide that occurs naturally in figs, raisins, and kiwi fruit. It has the same molecular formula as fructose but a different molecular arrangement, which means the body absorbs it differently. It is not converted to glucose in the bloodstream the way regular sugar is, and it provides approximately 0.4 kcal per gram compared to 4 kcal per gram for sugar.</p><p>It is not a synthetic sweetener. It is not a sugar alcohol. It is a naturally occurring rare sugar purified to 99.5% and registered under the allSWEET® designation.</p>"
+          }
+        },
+        "faq_item_pgG9dR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does it actually taste like sugar? No aftertaste?",
+            "answer": "<p>Yes. This is the defining reason allulose has become the premium sugar alternative in clinical and culinary applications.</p><p>Stevia and monk fruit have a detectable aftertaste particularly bitter or licorice notes at higher concentrations. Sucralose has a chemical note that becomes apparent in baked goods. Erythritol produces a cooling mouthfeel.</p><p>Allulose has none of these. It provides approximately 70% of sugar's sweetness with no detectable aftertaste and no cooling sensation. Either add a citation, or change to — \"Rated by users as the closest tasting alternative to  sugar.</p>"
+          }
+        },
+        "faq_item_zet6LP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I actually bake and cook with it like sugar?",
+            "answer": "<p>Yes and this is the second defining advantage.</p><p>Allulose caramelizes at temperatures comparable to regular sugar. It browns. It produces the Maillard reaction. You can make mithai, kheer, cookies, cakes, brownies, and caramel sauces with it. The texture and color profile in baked goods is closer to sugar than any other alternative available.</p><p>Use it as a 1:1 replacement by volume in any recipe that calls for sugar.</p>"
+          }
+        },
+        "faq_item_Q6TUxh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is AIWO Allulose safe for people managing their blood sugar?",
+            "answer": "<p>Allulose is described as diabetic friendly when used as part of a balanced diet and healthy lifestyle. It supports healthy post-meal glucose response and is not expected to cause significant glycemic spikes based on current research.</p><p>However: if you are managing diabetes, pre-diabetes, or are on medication for blood glucose, consult your physician or healthcare practitioner before incorporating any sweetener alternative into your diet. Individual responses vary. Track your HbA1c and fasting glucose with AIWO 181 blood markers for objective measurement.</p>"
+          }
+        },
+        "faq_item_WyBt4K": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is allSWEET® and why does it matter?",
+            "answer": "<p>allSWEET® is a registered brand designation for validated purity-grade D-Psicose (allulose). AIWO Allulose uses allSWEET® at 99.5% purity not a generic or unregistered allulose powder.</p><p>The brand registration indicates verified identity, purity testing, and quality standards beyond what unregistered generic powders provide. The same principle as using BCM-95® curcumin instead of generic curcumin extract the brand designation is the traceability assurance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_BFc6Am",
+        "faq_item_pgG9dR",
+        "faq_item_zet6LP",
+        "faq_item_Q6TUxh",
+        "faq_item_WyBt4K"
+      ],
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    },
+    "177510445730616487": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "aiwo_two_column_grid_8PTFVa": {
+      "type": "aiwo-two-column-grid",
+      "name": "Two Column Grid",
+      "settings": {
+        "bg_image": "shopify://shop_images/Frame_2147224960.jpg",
+        "bg_color": "#ffffff",
+        "heading": "Sweet. Without the Spike. Without the Aftertaste. Without the Compromise.",
+        "heading_size": 32,
+        "heading_size_mobile": 24,
+        "heading_color": "#000000",
+        "description": "99.5% pure all SWEET® Allulose. The rare sugar that works like the real thing.",
+        "description_size": 16,
+        "description_size_mobile": 14,
+        "description_color": "#555555",
+        "cta_text": "Buy Now",
+        "cta_link": ""
+      }
+    }
+  },
+  "order": [
+    "aiwo_evoo_v3_styles",
+    "aiwo_evoo_v3_breadcrumb",
+    "aiwo_evoo_v3_gallery_enhancements",
+    "aiwo_evoo_v3_qty_label",
+    "main",
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD",
+    "product-recommendations",
+    "aiwo_comparison_wVNYTt",
+    "section_evoo_v3_faq_rRJhLR",
+    "177510445730616487",
+    "aiwo_two_column_grid_8PTFVa"
+  ]
+}

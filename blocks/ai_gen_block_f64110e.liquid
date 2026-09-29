@@ -1,0 +1,537 @@
+{% doc %}
+  @prompt
+    Create a clean, high-end web section titled “Why it costs more (and why elites choose it)” for a premium product website.
+    
+    Layout:
+    
+    Background: soft beige or warm neutral tone (#FAF8F3 or similar).
+    
+    Heading: bold, large olive-green text (“Why it costs more (and why elites choose it)”).
+    
+    Below heading: four horizontally aligned info cards (two per row on desktop, stacked on mobile).
+    
+    Each card features:
+    
+    Rounded corners, subtle shadow, white background.
+    
+    Small golden-yellow icon inside a light yellow circle on the left (clock, beaker, shield, arrow).
+    
+    Title in olive-green bold font (e.g., “Harvest Discipline”, “Independent Verification”).
+    
+    Descriptive text below in muted brown/gray (#5C5C3D) tone.
+    
+    Consistent spacing and padding.
+    
+    Content Example:
+    
+    Harvest Discipline — “Olives are picked and cold-extracted within ~3 hours—fast logistics cost more, but protect aroma and polyphenols.”
+    
+    Independent Verification — “Every lot is lab-tested for freshness, authenticity, and contaminants—tests add cost, trust adds value.”
+    
+    Material Choices — “Dark-tinted glass, inert closures, and cool-chain handling preserve quality.”
+    
+    Measured Excellence — “We deliver measurable headroom vs. EVOO limits (acidity, PV, K-values, ethyl esters, PPP/DAGs), not just the minimum.”
+    
+    Style Guide:
+    
+    Font: modern sans-serif (e.g., Inter, Lato, or Nunito).
+    
+    Color Palette:
+    
+    Olive green (#556B2F) for headings
+    
+    Gold-yellow (#F9D65C) for icons
+    
+    Cream background (#FAF8F3)
+    
+    White cards (#FFFFFF)
+    
+    Icons: minimalist line icons (clock, test tube, shield, upward arrow).
+    
+    Layout: responsive grid, 2 columns (desktop), 1 column (mobile).
+    
+    Overall vibe: clean, elegant, trustworthy, artisanal premium brand aesthetic.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-premium-section-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-premium-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-premium-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    text-align: center;
+    margin: 0 0 {{ block.settings.heading_spacing }}px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .ai-premium-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: {{ block.settings.card_gap }}px;
+    margin-top: {{ block.settings.cards_top_spacing }}px;
+  }
+
+  .ai-premium-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: {{ block.settings.card_padding }}px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: {{ block.settings.card_content_gap }}px;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-premium-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .ai-premium-icon-wrapper-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: 50%;
+    background-color: {{ block.settings.icon_background }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-premium-icon-{{ ai_gen_id }} {
+    width: calc({{ block.settings.icon_size }}px * 0.5);
+    height: calc({{ block.settings.icon_size }}px * 0.5);
+    stroke: {{ block.settings.icon_color }};
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .ai-premium-card-content-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .ai-premium-card-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_title_size }}px;
+    color: {{ block.settings.card_title_color }};
+    font-weight: 700;
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+    line-height: 1.3;
+  }
+
+  .ai-premium-card-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_text_size }}px;
+    color: {{ block.settings.card_text_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-premium-section-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.6 }}px 16px {{ block.settings.section_padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-premium-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+      margin-bottom: {{ block.settings.heading_spacing | times: 0.7 }}px;
+    }
+
+    .ai-premium-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.card_gap | times: 0.7 }}px;
+      margin-top: {{ block.settings.cards_top_spacing | times: 0.7 }}px;
+    }
+
+    .ai-premium-card-{{ ai_gen_id }} {
+      padding: {{ block.settings.card_padding | times: 0.8 }}px;
+    }
+
+    .ai-premium-icon-wrapper-{{ ai_gen_id }} {
+      width: {{ block.settings.icon_size | times: 0.85 }}px;
+      height: {{ block.settings.icon_size | times: 0.85 }}px;
+    }
+
+    .ai-premium-icon-{{ ai_gen_id }} {
+      width: calc({{ block.settings.icon_size | times: 0.85 }}px * 0.5);
+      height: calc({{ block.settings.icon_size | times: 0.85 }}px * 0.5);
+    }
+
+    .ai-premium-card-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.card_title_size | times: 0.9 }}px;
+    }
+
+    .ai-premium-card-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.card_text_size | times: 0.95 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-premium-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-premium-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-premium-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="ai-premium-grid-{{ ai_gen_id }}">
+      {% if block.settings.card_1_title != blank %}
+        <div class="ai-premium-card-{{ ai_gen_id }}">
+          <div class="ai-premium-icon-wrapper-{{ ai_gen_id }}">
+            <svg class="ai-premium-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="ai-premium-card-content-{{ ai_gen_id }}">
+            <h3 class="ai-premium-card-title-{{ ai_gen_id }}">{{ block.settings.card_1_title }}</h3>
+            {% if block.settings.card_1_text != blank %}
+              <p class="ai-premium-card-text-{{ ai_gen_id }}">{{ block.settings.card_1_text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_2_title != blank %}
+        <div class="ai-premium-card-{{ ai_gen_id }}">
+          <div class="ai-premium-icon-wrapper-{{ ai_gen_id }}">
+            <svg class="ai-premium-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+          <div class="ai-premium-card-content-{{ ai_gen_id }}">
+            <h3 class="ai-premium-card-title-{{ ai_gen_id }}">{{ block.settings.card_2_title }}</h3>
+            {% if block.settings.card_2_text != blank %}
+              <p class="ai-premium-card-text-{{ ai_gen_id }}">{{ block.settings.card_2_text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_3_title != blank %}
+        <div class="ai-premium-card-{{ ai_gen_id }}">
+          <div class="ai-premium-icon-wrapper-{{ ai_gen_id }}">
+            <svg class="ai-premium-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="ai-premium-card-content-{{ ai_gen_id }}">
+            <h3 class="ai-premium-card-title-{{ ai_gen_id }}">{{ block.settings.card_3_title }}</h3>
+            {% if block.settings.card_3_text != blank %}
+              <p class="ai-premium-card-text-{{ ai_gen_id }}">{{ block.settings.card_3_text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_4_title != blank %}
+        <div class="ai-premium-card-{{ ai_gen_id }}">
+          <div class="ai-premium-icon-wrapper-{{ ai_gen_id }}">
+            <svg class="ai-premium-icon-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </div>
+          <div class="ai-premium-card-content-{{ ai_gen_id }}">
+            <h3 class="ai-premium-card-title-{{ ai_gen_id }}">{{ block.settings.card_4_title }}</h3>
+            {% if block.settings.card_4_text != blank %}
+              <p class="ai-premium-card-text-{{ ai_gen_id }}">{{ block.settings.card_4_text }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Premium value proposition",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why it costs more (and why elites choose it)"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#556B2F"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Heading spacing",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 800,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "label": "Container width",
+      "default": 1200
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap between cards",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "cards_top_spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Top spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "card_content_gap",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Content gap",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 40,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Background",
+      "default": "#FFF4D6"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#F9D65C"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Title color",
+      "default": "#556B2F"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Title spacing",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Text color",
+      "default": "#5C5C3D"
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_1_title",
+      "label": "Title",
+      "default": "Harvest Discipline"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_text",
+      "label": "Text",
+      "default": "Olives are picked and cold-extracted within ~3 hours—fast logistics cost more, but protect aroma and polyphenols."
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_2_title",
+      "label": "Title",
+      "default": "Independent Verification"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_text",
+      "label": "Text",
+      "default": "Every lot is lab-tested for freshness, authenticity, and contaminants—tests add cost, trust adds value."
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_3_title",
+      "label": "Title",
+      "default": "Material Choices"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_text",
+      "label": "Text",
+      "default": "Dark-tinted glass, inert closures, and cool-chain handling preserve quality."
+    },
+    {
+      "type": "header",
+      "content": "Card 4"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_4_title",
+      "label": "Title",
+      "default": "Measured Excellence"
+    },
+    {
+      "type": "textarea",
+      "id": "card_4_text",
+      "label": "Text",
+      "default": "We deliver measurable headroom vs. EVOO limits (acidity, PV, K-values, ethyl esters, PPP/DAGs), not just the minimum."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium value proposition"
+    }
+  ]
+}
+{% endschema %}

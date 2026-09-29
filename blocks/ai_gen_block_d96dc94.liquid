@@ -1,0 +1,465 @@
+{% doc %}
+  @prompt
+    Create 3-column grid section (peach to cream gradient background):
+    
+    Heading: "Why Absorption Matters"
+    Subtitle about standard curcumin absorption
+    Three cards with white background, orange border, hover lift effect:
+    
+    Card 1: Trophy emoji 🏆, "Patented Formula" heading, description of BCM-95®
+    Card 2: Orange circle badge with "7×", "Better Absorption" heading, clinical study description
+    Card 3: Shield emoji 🛡️, "Clinically Tested" heading, trial validation description
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-absorption-section-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, {{ block.settings.gradient_start }} 0%, {{ block.settings.gradient_end }} 100%);
+  }
+
+  .ai-absorption-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-absorption-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .ai-absorption-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 15px 0;
+    font-weight: 700;
+  }
+
+  .ai-absorption-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-absorption-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .ai-absorption-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-absorption-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-{{ block.settings.hover_lift }}px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-absorption-icon-{{ ai_gen_id }} {
+    font-size: {{ block.settings.icon_size }}px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .ai-absorption-badge-{{ ai_gen_id }} {
+    width: {{ block.settings.badge_size }}px;
+    height: {{ block.settings.badge_size }}px;
+    background-color: {{ block.settings.badge_background }};
+    color: {{ block.settings.badge_text_color }};
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: {{ block.settings.badge_text_size }}px;
+    font-weight: 700;
+  }
+
+  .ai-absorption-card-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_heading_size }}px;
+    color: {{ block.settings.card_heading_color }};
+    margin: 0 0 15px 0;
+    font-weight: 600;
+  }
+
+  .ai-absorption-card-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_text_size }}px;
+    color: {{ block.settings.card_text_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-absorption-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .ai-absorption-card-{{ ai_gen_id }} {
+      padding: 30px 20px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-absorption-section-{{ ai_gen_id }} {
+      padding: 40px 15px;
+    }
+
+    .ai-absorption-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .ai-absorption-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.8);
+    }
+
+    .ai-absorption-subtitle-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subtitle_size }}px * 0.9);
+    }
+
+    .ai-absorption-card-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.card_heading_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-absorption-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-absorption-container-{{ ai_gen_id }}">
+    <div class="ai-absorption-header-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-absorption-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+      {% if block.settings.subtitle != blank %}
+        <div class="ai-absorption-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</div>
+      {% endif %}
+    </div>
+
+    <div class="ai-absorption-grid-{{ ai_gen_id }}">
+      <div class="ai-absorption-card-{{ ai_gen_id }}">
+        {% if block.settings.card_1_icon != blank %}
+          <span class="ai-absorption-icon-{{ ai_gen_id }}">{{ block.settings.card_1_icon }}</span>
+        {% endif %}
+        {% if block.settings.card_1_heading != blank %}
+          <h3 class="ai-absorption-card-heading-{{ ai_gen_id }}">{{ block.settings.card_1_heading }}</h3>
+        {% endif %}
+        {% if block.settings.card_1_text != blank %}
+          <div class="ai-absorption-card-text-{{ ai_gen_id }}">{{ block.settings.card_1_text }}</div>
+        {% endif %}
+      </div>
+
+      <div class="ai-absorption-card-{{ ai_gen_id }}">
+        {% if block.settings.show_badge %}
+          <div class="ai-absorption-badge-{{ ai_gen_id }}">{{ block.settings.badge_text }}</div>
+        {% else %}
+          {% if block.settings.card_2_icon != blank %}
+            <span class="ai-absorption-icon-{{ ai_gen_id }}">{{ block.settings.card_2_icon }}</span>
+          {% endif %}
+        {% endif %}
+        {% if block.settings.card_2_heading != blank %}
+          <h3 class="ai-absorption-card-heading-{{ ai_gen_id }}">{{ block.settings.card_2_heading }}</h3>
+        {% endif %}
+        {% if block.settings.card_2_text != blank %}
+          <div class="ai-absorption-card-text-{{ ai_gen_id }}">{{ block.settings.card_2_text }}</div>
+        {% endif %}
+      </div>
+
+      <div class="ai-absorption-card-{{ ai_gen_id }}">
+        {% if block.settings.card_3_icon != blank %}
+          <span class="ai-absorption-icon-{{ ai_gen_id }}">{{ block.settings.card_3_icon }}</span>
+        {% endif %}
+        {% if block.settings.card_3_heading != blank %}
+          <h3 class="ai-absorption-card-heading-{{ ai_gen_id }}">{{ block.settings.card_3_heading }}</h3>
+        {% endif %}
+        {% if block.settings.card_3_text != blank %}
+          <div class="ai-absorption-card-text-{{ ai_gen_id }}">{{ block.settings.card_3_text }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Absorption matters",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Absorption Matters"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Standard curcumin has poor absorption, limiting its effectiveness in your body.</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#525151"
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Gradient start color",
+      "default": "#FFDAB9"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient end color",
+      "default": "#FFFDD0"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#FB8500"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "hover_lift",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Hover lift distance",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "card_heading_size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card heading size",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "card_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Card text size",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Card heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card text color",
+      "default": "#525151"
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "text",
+      "id": "card_1_icon",
+      "label": "Icon",
+      "default": "🏆"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_1_heading",
+      "label": "Heading",
+      "default": "Patented Formula"
+    },
+    {
+      "type": "richtext",
+      "id": "card_1_text",
+      "label": "Description",
+      "default": "<p>BCM-95® is a clinically studied, patented curcumin extract that delivers superior bioavailability without the need for additives.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show badge instead of icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_2_icon",
+      "label": "Icon",
+      "default": "⭕"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "7×"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "min": 50,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Badge size",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "badge_text_size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Badge text size",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Badge background",
+      "default": "#FB8500"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_2_heading",
+      "label": "Heading",
+      "default": "Better Absorption"
+    },
+    {
+      "type": "richtext",
+      "id": "card_2_text",
+      "label": "Description",
+      "default": "<p>Clinical studies show BCM-95® is absorbed 7 times better than standard curcumin, ensuring maximum benefits reach your cells.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "text",
+      "id": "card_3_icon",
+      "label": "Icon",
+      "default": "🛡️"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "card_3_heading",
+      "label": "Heading",
+      "default": "Clinically Tested"
+    },
+    {
+      "type": "richtext",
+      "id": "card_3_text",
+      "label": "Description",
+      "default": "<p>Validated through rigorous clinical trials, BCM-95® has been proven safe and effective in over 50 published studies worldwide.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Absorption matters"
+    }
+  ]
+}
+{% endschema %}

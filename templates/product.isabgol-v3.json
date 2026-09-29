@@ -1,0 +1,642 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo_evoo_v3_styles": {
+      "type": "aiwo-evoo-v3-global-styles",
+      "settings": {
+        "heading_font_size": 24,
+        "heading_font_weight": "700",
+        "heading_line_height": "1.2",
+        "heading_color": "#0c0c0d",
+        "body_font_size": 16,
+        "body_font_weight": "400",
+        "body_line_height": "1.6",
+        "body_color": "#666666",
+        "button_font_size": 16,
+        "button_font_weight": "600"
+      }
+    },
+    "aiwo_evoo_v3_breadcrumb": {
+      "type": "aiwo-evoo-v3-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo_evoo_v3_gallery_enhancements": {
+      "type": "aiwo-evoo-v3-gallery-enhancements",
+      "settings": {
+        "tagline_text": "LONGEVIS MATRIX · Pillar 10",
+        "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+        "tooltip_title": "What is LONGEVIS MATRIX?",
+        "tooltip_desc": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework. Each pillar targets a biological system that determines how fast you age.",
+        "tooltip_pillars_heading": "Pillars this product support",
+        "tooltip_active_pillars": "P10 · Gut Health and Microbiome\nP3 · Nutrition and Metabolic Health",
+        "tooltip_stack_heading": "Complete your longevity stack",
+        "tooltip_inactive_pillars": "P1 · Sleep      \nP2 · Breathing\nP4 · Social       \nP5 · Exercise\nP6 · Stress       \nP7 · Circadian Rhythm\nP8 · Purpose      \nP9 · Environment\nP11 · Hydration"
+      }
+    },
+    "aiwo_evoo_v3_qty_label": {
+      "type": "aiwo-evoo-v3-quantity-label",
+      "settings": {
+        "mobile_quantity_label": "Add Quantity"
+      }
+    },
+    "main": {
+      "type": "aiwo-pdp-product-info",
+      "blocks": {
+        "product_tag_line_v1_zH8gVV": {
+          "type": "product_tag_line_v1",
+          "settings": {
+            "tag_text": "LONGEVIS MATRIX · Pillar 3"
+          }
+        },
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "purchase_stats_v1_CLkWVP": {
+          "type": "purchase_stats_v1",
+          "settings": {
+            "purchase_text": "India's oldest gut remedy. 100% pure psyllium. No fillers. No compromise.",
+            "weight_text": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_j3mMyH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MRP Incl. of all taxes</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "trust_badges_v1_eUg7qR": {
+          "type": "trust_badges_v1",
+          "settings": {
+            "badge_1_title": "FSSAI Licensed",
+            "badge_1_icon": "shopify://shop_images/Fssai_Logo.png",
+            "badge_2_title": "100% Pure",
+            "badge_2_icon": "shopify://shop_images/No_Artificial_Colors.svg",
+            "badge_3_title": "GMP Certified",
+            "badge_3_icon": "shopify://shop_images/Mask_group_e1df3221-ea6e-49bb-80e8-a76d1d8a28fc.png",
+            "badge_4_title": "Plant-Based",
+            "badge_4_icon": "shopify://shop_images/supports-l_1_3cef3104-eb8d-47f6-b156-c995ab26a387.svg",
+            "badge_5_title": "Product of India",
+            "badge_5_icon": "shopify://shop_images/india_11711467.svg",
+            "badge_6_title": ""
+          }
+        },
+        "benefits_grid_v1_KiKTqL": {
+          "type": "benefits_grid_v1",
+          "settings": {
+            "benefit_1_title": "100% Pure Psyllium",
+            "benefit_1_text": "No fillers, no starches the whole husk, nothing removed and nothing added",
+            "benefit_1_icon": "shopify://shop_images/plant_616904.svg",
+            "benefit_2_title": "Prebiotic and Digestive",
+            "benefit_2_text": "Supports both bowel regularity and microbiome health — two mechanisms, one daily scoop",
+            "benefit_2_icon": "shopify://shop_images/Capa_1_7b31bb01-ecf8-432a-8df3-2310d0294bfb.svg",
+            "benefit_3_title": "Whole Family Formula",
+            "benefit_3_text": "10g for adults, 5g for children — household daily fibre from one certified product",
+            "benefit_3_icon": "shopify://shop_images/parents_10184701.svg",
+            "benefit_4_title": "GMP · Kosher",
+            "benefit_4_text": "Certified clean manufacturing across two internationally recognized quality standards",
+            "benefit_4_icon": "shopify://shop_images/shield_738803.svg"
+          }
+        },
+        "marquee_v1_iehzTE": {
+          "type": "marquee_v1",
+          "settings": {
+            "marquee_bg_color": "#2c2416",
+            "marquee_text_color": "#ffffff",
+            "marquee_text_1": "100% Psyllium Husk",
+            "marquee_text_2": "GMP Certified",
+            "marquee_text_3": "",
+            "marquee_text_4": "Kosher Certified",
+            "marquee_text_5": "88% Dietary Fibre",
+            "marquee_text_6": "Prebiotic Fibre"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "html_jpVgQ3": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": true,
+            "protocol_tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "protocol_tooltip_title": "What is Protocol?",
+            "protocol_tooltip_desc": "A protocol is a daily system of supplements each one targeting specific longevity pillars."
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "disabled": true,
+          "settings": {}
+        },
+        "recommended_products_v1_6t3TaN": {
+          "type": "recommended_products_v1",
+          "disabled": true,
+          "settings": {
+            "recs_tag": "Complete the protocol",
+            "heading_text": "AIWO Isabgol",
+            "heading_italic": "Works Better  As A System",
+            "description_text": "",
+            "show_desktop": true,
+            "show_mobile": true,
+            "bundle_mode": true,
+            "bundle_pillar": "P10 + P3",
+            "bundle_title": "Gut Health Stack",
+            "bundle_desc": "Isabgol + Prebiotik-D - soluble fibre regularity and prebiotic microbiome support together",
+            "bundle_best_pick_text": "Best Pick",
+            "bundle_custom_price": "",
+            "bundle_product_1": "aiwo-isabgol",
+            "bundle_product_2": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "bundle_product_3": "",
+            "bundle_learn_more_product": "",
+            "product_1": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "pillar_1": "Add on · Pillar 10",
+            "custom_title_1": "",
+            "desc_1": "",
+            "best_pick_text_1": "",
+            "product_2": "dark-cocoa-powder",
+            "pillar_2": "Add on · Pillar 3",
+            "custom_title_2": "",
+            "desc_2": "Cocoa flavanols support gut microbiome diversity pairs with daily fibre as a prebiotic food stack",
+            "best_pick_text_2": "",
+            "product_3": "",
+            "pillar_3": "",
+            "custom_title_3": "",
+            "desc_3": "",
+            "best_pick_text_3": ""
+          }
+        },
+        "proven_health_benefits_v1_NpKbtK": {
+          "type": "proven_health_benefits_v1",
+          "settings": {
+            "phb_tag": "",
+            "phb_title": "Proven Benefits of Psyllium Husk Supplementation",
+            "phb_stat_1_num": "10.5%",
+            "phb_stat_1_label": "Average Reduction in HbA1c Levels & Help Manage Blood Sugar Spikes",
+            "phb_stat_1_source": "McKeown NM et al. BMJ 2022",
+            "phb_stat_2_num": "-7%",
+            "phb_stat_2_label": "Reduction in LDL Cholesterol with Regular Psyllium Fibre Supplementation",
+            "phb_stat_2_source": "Anderson JW et al. Am J Clin Nutr 2009",
+            "phb_stat_3_num": "",
+            "phb_stat_3_label": "",
+            "phb_stat_3_source": "",
+            "phb_stat_4_num": "",
+            "phb_stat_4_label": "",
+            "phb_stat_4_source": ""
+          }
+        },
+        "text_gzYkwz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*Figures from label nutritional data and clinical research on psyllium fibre supplementation.<br/>Individual results may vary. This is a nutraceutical. Not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_QVph7M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Download Sample Report",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "button_8zEkHK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore 181 Biomarkers",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": true,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "product_tag_line_v1_zH8gVV",
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "purchase_stats_v1_CLkWVP",
+        "price",
+        "text_j3mMyH",
+        "description",
+        "trust_badges_v1_eUg7qR",
+        "benefits_grid_v1_KiKTqL",
+        "marquee_v1_iehzTE",
+        "gift_wrapping_EK3NQn",
+        "html_jpVgQ3",
+        "buy_buttons",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "recommended_products_v1_6t3TaN",
+        "proven_health_benefits_v1_NpKbtK",
+        "text_gzYkwz",
+        "button_QVph7M",
+        "button_8zEkHK",
+        "complementary_XCwmDV",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked",
+        "thumbnail_position": "vertical",
+        "enable_sticky_image": true,
+        "mobile_media_size": "full_width",
+        "show_arrow_button": false,
+        "show_thumnail_mobile": false,
+        "spacing_col": "small",
+        "full_width": true,
+        "transition_style": "fade",
+        "show_first_image_avaiable": true,
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD": {
+      "type": "aiwo-evoo-v3-aiwo-difference",
+      "blocks": {
+        "stat_circle_336cQP": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "88g",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Dietary Fibre",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Digestive Support"
+          }
+        },
+        "stat_circle_meQiJa": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "53g",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Soluble Dietary Fibre",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Microbiome and Cholesterol"
+          }
+        },
+        "stat_circle_V8MT9Y": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "200g",
+            "stat_sub": "20 Adult Servings",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Value"
+          }
+        },
+        "stat_circle_Hhd9iw": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "100%",
+            "stat_sub": "Pure Psyllium",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Clean Label"
+          }
+        },
+        "tagline_sub_86PARc": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/Cap_1.svg",
+            "text": "Fibre Profile"
+          }
+        },
+        "card_bullet_jMmxRW": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Psyllium husk is the outer coat of the seed of Plantago ovata, a plant native to Gujarat and Rajasthan — India's most established source of commercial psyllium. The Unjha region of Mahesana, Gujarat, where AIWO Isabgol is manufactured, is the global centre of psyllium production."
+          }
+        },
+        "card_bullet_PQqYc3": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "The soluble fibre in psyllium husk 53.50g per 100g is a arabinoxylan \npolysaccharide. When it contacts water, it forms a viscous gel that slows intestinal transit, increases stool bulk, and provides a fermentable substrate for Bifidobacterium, Lactobacillus, and other beneficial gut bacteria."
+          }
+        },
+        "card_bullet_iC6rUA": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "AIWO Isabgol contains 100% pure psyllium husk with no starches, fillers, or flow agents added, manufactured by Giriraj Enterprise at a GMP-certified facility in Unjha, Gujarat the same region that supplies pharmaceutical-grade psyllium globally. GMP & Kosher certified."
+          }
+        },
+        "tagline_sub_nR9nBX": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/Capa_1_8fc8410b-2d44-451d-80ef-16d12fc56279.svg",
+            "text": "Prebiotic Action"
+          }
+        }
+      },
+      "block_order": [
+        "stat_circle_336cQP",
+        "stat_circle_meQiJa",
+        "stat_circle_V8MT9Y",
+        "stat_circle_Hhd9iw",
+        "tagline_sub_86PARc",
+        "card_bullet_jMmxRW",
+        "card_bullet_PQqYc3",
+        "card_bullet_iC6rUA",
+        "tagline_sub_nR9nBX"
+      ],
+      "name": "AIWO Difference",
+      "settings": {
+        "bg_desktop": "shopify://shop_images/Ingredient-_isagbol_-_BG-_Desktop.png",
+        "bg_mobile": "shopify://shop_images/Ingredient-_isagbol_-_BG-_Mobile.png",
+        "heading": "Not All Isabgol",
+        "heading_italic": "is the same.",
+        "main_tag": "Pure Psyllium",
+        "card_heading_white": "DELIVERING",
+        "card_heading_gold": "MAX POTENCY",
+        "card_icon": "shopify://shop_images/Frame_d47b8e26-3f6e-4c61-b06d-0e22994683c3.svg",
+        "disclaimer": "*Based on established nutritional science on psyllium husk supplementation. Individual results may vary.Not for medicinal use. Consult your physician if pregnant, nursing, or on medication."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_comparison_wVNYTt": {
+      "type": "aiwo-comparison",
+      "blocks": {
+        "comparison_row_mcaRP8": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "100% pure psyllium no fillers or starches",
+            "right_feature": "Often blended with psyllium seed powder or starch"
+          }
+        },
+        "comparison_row_VaPp4F": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "GMP Certified manufacturing",
+            "right_feature": "Manufacturing standard varies"
+          }
+        },
+        "comparison_row_YJRD3c": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Kosher certified",
+            "right_feature": "Certification varies or absent"
+          }
+        },
+        "comparison_row_iBKFFz": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "88.25g dietary fibre per 100g (221% RDA per 100g)",
+            "right_feature": "Fibre content often undisclosed or variable"
+          }
+        },
+        "comparison_row_QTKPHg": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Nutritional table on label full transparency",
+            "right_feature": "Nutritional data often not provided"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_mcaRP8",
+        "comparison_row_VaPp4F",
+        "comparison_row_YJRD3c",
+        "comparison_row_iBKFFz",
+        "comparison_row_QTKPHg"
+      ],
+      "name": "AIWO Comparison Table",
+      "settings": {
+        "tagline": "WHY AIWO",
+        "heading": "AIWO Isabgol vs.",
+        "heading_italic": "Regular Isabgol Powder",
+        "left_image": "shopify://shop_images/Frame_2147224932_1.png",
+        "left_title": "",
+        "icon_check": "shopify://shop_images/Frame_12.svg",
+        "btn_text": "Buy Now",
+        "btn_link": "https://shop-aiwo.myshopify.com/cart/42291169558710:1?channel=buy_button",
+        "right_image": "shopify://shop_images/Frame_2147224935_4.png",
+        "right_title": "",
+        "icon_cross": "shopify://shop_images/Group_13.svg"
+      }
+    },
+    "section_evoo_v3_faq_rRJhLR": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_BFc6Am": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the difference between psyllium husk and psyllium seed powder?",
+            "answer": "<p>Psyllium husk is the outer coat of the Plantago ovata seed it is the primary source of soluble dietary fibre. Psyllium seed powder includes the inner seed, which has lower fibre content and a different fermentation profile. AIWO Isabgol contains 100% psyllium husk not seed powder at 88.25g dietary fibre per 100g. Many cheaper market products blend the two or use mostly seed powder. Check for the fibre number, not just the name.</p>"
+          }
+        },
+        "faq_item_pgG9dR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is Isabgol just for constipation?",
+            "answer": "<p>No this is the most common misunderstanding about psyllium husk.</p><p>Psyllium supports digestive regularity in both directions: it adds bulk and moisture to dry, hard stools (relieving constipation) and can firm loose stools by absorbing excess water in the colon (supporting diarrhoea). This is why it is classified as a bulk-forming fibre, not a laxative.</p><p>Beyond motility, psyllium is a prebiotic its soluble fibre ferments in the gut to feed Bifidobacterium and Lactobacillus, the two most studied beneficial gut bacteria families. It also supports healthy cholesterol levels as part of a daily fibre intake. Regularity is just one benefit of three.</p>"
+          }
+        },
+        "faq_item_zet6LP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can children take AIWO Isabgol?",
+            "answer": "<p>Yes AIWO Isabgol is one of the few nutraceutical products with a specific child dosage on the label: <br/>5g (1 teaspoon) for children, compared to 10g (2 teaspoons) for adults. Always mix with a full glass of water and follow with an additional glass. Do not give to children under 6 without physician guidance.</p>"
+          }
+        },
+        "faq_item_Q6TUxh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How should I take it so it doesn't clump?",
+            "answer": "<p>Two rules: use a dry spoon, and drink it immediately after mixing.</p><p>Psyllium husk begins gelling within seconds of water contact. If you measure with a wet spoon, it will clump before you can mix it. If you let it sit too long after mixing, it becomes difficult to drink. Mix into a full glass of water, stir briefly, and drink before it thickens. Follow immediately with another glass of water for best results.</p><p>For cooking: mix into dry flour before adding water to your dough. It acts as a natural binding agent and does not affect taste.</p>"
+          }
+        },
+        "faq_item_WyBt4K": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long before I see a difference?",
+            "answer": "<p>Bowel motility support is typically noticed within 1-3 days of consistent daily use, provided you are drinking adequate water.<br/>Microbiome support and cholesterol benefits build over 4-8 weeks of daily use. Individual results vary based on existing fibre intake, hydration, and gut health baseline.</p><p>For objective measurement, track gut microbiome diversity and lipid markers with AIWO 181 at baseline and <br/>again at 60 days. Individual results vary.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_BFc6Am",
+        "faq_item_pgG9dR",
+        "faq_item_zet6LP",
+        "faq_item_Q6TUxh",
+        "faq_item_WyBt4K"
+      ],
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    },
+    "aiwo_two_column_grid_HF8RT8": {
+      "type": "aiwo-two-column-grid",
+      "name": "Two Column Grid",
+      "settings": {
+        "bg_image": "shopify://shop_images/image_12.jpg",
+        "bg_image_mobile": "shopify://shop_images/Group_7_2.png",
+        "bg_color": "#ffffff",
+        "heading": "The Gut Knows.Give It What It Has Always Needed.",
+        "heading_size": 32,
+        "heading_size_mobile": 24,
+        "heading_color": "#000000",
+        "description": "100% pure psyllium husk. GMP certified. Rs.1.80 per day.",
+        "description_size": 16,
+        "description_size_mobile": 14,
+        "description_color": "#555555",
+        "cta_text": "Buy Now",
+        "cta_link": "https://shop-aiwo.myshopify.com/cart/42291169558710:1?channel=buy_button"
+      }
+    },
+    "177510445730616487": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "aiwo_evoo_v3_styles",
+    "aiwo_evoo_v3_breadcrumb",
+    "aiwo_evoo_v3_gallery_enhancements",
+    "aiwo_evoo_v3_qty_label",
+    "main",
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD",
+    "product-recommendations",
+    "aiwo_comparison_wVNYTt",
+    "section_evoo_v3_faq_rRJhLR",
+    "aiwo_two_column_grid_HF8RT8",
+    "177510445730616487"
+  ]
+}

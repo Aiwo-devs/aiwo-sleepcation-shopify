@@ -1,0 +1,3227 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  .shoden-s {
+    font-family: 'Outfit', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.5;
+  }
+  .shoden-s *, .shoden-s *::before, .shoden-s *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .shoden-s img { display: block; }
+  .shoden-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ================================================================
+     SECTION 1 — INGREDIENT COMPARISON (kept from previous)
+     ================================================================ */
+  .shoden-ingredient {
+    background: #f9f6f1;
+    padding: 60px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .shoden-ingredient__tag {
+    display: inline-block;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  .shoden-ingredient__title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+  }
+  .shoden-ingredient__title em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .shoden-ingredient__badges-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .shoden-ingredient__badges-row-mobile{
+    display: none;
+  }
+  .shoden-ingredient__badges-row-mobile {
+       
+      margin-left: 48px;
+      padding: 15px;
+  }
+  @media (max-width: 767px) {
+    .shoden-ingredient__badges-row-mobile{
+      display: block;
+    }
+    .shoden-ingredient__badges-row{
+      display: none;
+    }
+  }
+  .shoden-ingredient__badge-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333;
+  }
+  .shoden-ingredient__badge-item img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+  .shoden-ingredient__hplc-text {
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  .shoden-circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 32px;
+  }
+  .shoden-circles__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+  }
+  .shoden-circles__item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: #ccc;
+  }
+  .shoden-circles__ring {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 16px;
+    background:   #FFFFFE;
+  }
+  .shoden-circles__item:first-child .shoden-circles__ring {
+    /*background: #EEEAE3;*/
+  }
+  .shoden-circles__ring::before {
+    content: '';
+    position: absolute;
+    inset: -13px;
+    border-radius: 50%;
+    background-image: url('https://cdn.shopify.com/s/files/1/0267/5700/5494/files/round-round.png?v=1773058677');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .shoden-circles__content { text-align: center; z-index: 1; }
+  .shoden-circles__percent {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+    display: block;
+  }
+  .shoden-circles__sublabel {
+    font-size: 11px;
+    color: #8a7a5a;
+    line-height: 1.3;
+    margin-top: 4px;
+    display: block;
+  }
+  .shoden-circles__brand {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-top: 4px;
+  }
+  .shoden-ingredient__deco-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+    pointer-events: none;
+  }
+  .shoden-ingredient__deco-top img { width: 100%; height: auto; }
+  .shoden-ingredient__deco-bottom {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 140px;
+    pointer-events: none;
+  }
+  .shoden-ingredient__deco-bottom img { width: 100%; height: auto; }
+  .shoden-ingredient__disclaimer {
+    text-align: center;
+    font-size: 13px;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+
+  /* Potency Banner — full width */
+  .shoden-potency-wrap { background: #2c2c2c; }
+  .shoden-potency {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 40px;
+    color: #fff;
+  }
+  .shoden-potency__heading {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .shoden-potency__heading .gold { color: #c5a96a; }
+  .shoden-potency__desc {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+  }
+
+  /* Pure & Natural Icons */
+  .shoden-pure {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    /*padding: 40px 20px;*/
+    flex-wrap: wrap;
+    border-top: 1px solid #e8e8e8;
+    background: #E3D9C4;
+  }
+  .shoden-pure__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    min-width: 90px;
+  }
+  .shoden-pure__icon { width: 44px; height: 44px; }
+  .shoden-pure__icon img { width: 100%; height: 100%; object-fit: contain; }
+  .shoden-pure__label { font-size: 12px; font-weight: 500; color: #333; line-height: 1.3; }
+
+  /* ================================================================
+     SECTION 2 — RECOMMENDED BY NUTRITIONIST
+     ================================================================ */
+  .shoden-nutri {
+    background: #FEFEFE;
+    padding: 70px 0;
+  }
+  .shoden-nutri__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .shoden-nutri__left {
+    text-align: center;
+    padding: 20px;
+  }
+  .shoden-nutri__quote-mark {
+    font-family: 'Newsreader', serif;
+    font-size: 120px;
+    line-height: 0.6;
+    color: #d6cfc3;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .shoden-nutri__heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+  }
+  .shoden-nutri__heading em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #A99368;
+  }
+  .shoden-nutri__text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+  .shoden-nutri__author {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+    color: #1a1a1a;
+  }
+  .shoden-nutri__right {
+    display: flex;
+    justify-content: center;
+  }
+  .shoden-nutri__video-wrap {
+    width: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 9/14;
+    background: #e8e2d8;
+  }
+  .shoden-nutri__video-wrap video,
+  .shoden-nutri__video-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .shoden-nutri__play-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.15);
+    transition: opacity 0.3s;
+  }
+  .shoden-nutri__play-btn svg {
+    width: 56px;
+    height: 56px;
+    fill: #fff;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  }
+  .shoden-nutri__video-wrap.playing .shoden-nutri__play-btn {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ================================================================
+     SECTION 3 — PROVEN HEALTH BENEFITS
+     ================================================================ */
+  .shoden-benefits-section {
+    background: #fff;
+  }
+  .shoden-benefits__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+  .shoden-benefits__img {
+    background: #eae6e0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .shoden-benefits__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .shoden-benefits__right {
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Faded medical icon watermark in bg */
+  .shoden-benefits__right::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    width: 200px;
+    height: 200px;
+    background: var(--benefits-bg-img) no-repeat center / contain;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  .shoden-benefits__title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .shoden-benefits__title-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .shoden-benefits__title-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .shoden-benefits__title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+  }
+  .shoden-benefits__title em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #A99368;
+  }
+  /* 2x2 grid with dividers */
+  .shoden-benefits__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    z-index: 1;
+  }
+  .shoden-stat {
+    text-align: center;
+    padding: 28px 16px;
+    position: relative;
+  }
+  /* Vertical divider between columns */
+  .shoden-stat:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 16px;
+    bottom: 16px;
+    width: 1px;
+    background: #e0dcd6;
+  }
+  /* Horizontal divider between rows */
+  .shoden-stat:nth-child(1),
+  .shoden-stat:nth-child(2) {
+    border-bottom: 1px solid #e0dcd6;
+  }
+  .shoden-stat__circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #E3D9C4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .shoden-stat__num {
+    font-size: 20px;
+    font-weight: 700;
+    color: #A1895E;
+  }
+  .shoden-stat__label {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .shoden-stat__source {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+  }
+
+  /* Mobile: Proven Health Benefits */
+  @media (max-width: 767px) {
+    .shoden-benefits__grid { grid-template-columns: 1fr; }
+    .shoden-benefits__img { min-height: 300px; }
+    .shoden-benefits__right { padding: 32px 20px; }
+    .shoden-benefits__right::before {
+      top: 10px;
+      left: -10px;
+      width: 120px;
+      height: 120px;
+    }
+    .shoden-benefits__title { font-size: 26px; }
+    .shoden-benefits__title-row { margin-bottom: 24px; }
+    /* Vertical list on mobile */
+    .shoden-benefits__stats {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .shoden-stat {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      text-align: left;
+      padding: 20px 0;
+      border-bottom: 1px solid #e0dcd6;
+    }
+    .shoden-stat:last-child { border-bottom: none; }
+    /* Remove desktop dividers on mobile */
+    .shoden-stat:nth-child(odd)::after { display: none; }
+    .shoden-stat:nth-child(1),
+    .shoden-stat:nth-child(2) { border-bottom: 1px solid #e0dcd6; }
+    .shoden-stat__circle {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      margin: 0;
+    }
+    .shoden-stat__num { font-size: 16px; }
+    .shoden-stat__text { flex: 1; }
+  }
+
+  /* ================================================================
+     SECTION 4 — PRODUCT COMPARISON TABLE
+     ================================================================ */
+  .shoden-compare {
+    padding: 60px 0 70px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .shoden-compare__bg-check {
+    position: absolute;
+    top: 160px;
+    left: 220px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .shoden-compare__bg-check img { width: 100%; height: auto; }
+  .shoden-compare__bg-wrong {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    width: 121px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+  }
+  .shoden-compare__bg-wrong img { width: 100%; height: auto; }
+
+  /* --- DESKTOP VERSION --- */
+  .shoden-ct-desktop { display: block; }
+  .shoden-ct-mobile  { display: none; }
+
+  .shoden-ct-desktop .ct-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .shoden-ct-desktop .ct-tag {
+    display: inline-block;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  .shoden-ct-desktop .ct-title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #1a1a1a;
+    margin: 0;
+  }
+  .shoden-ct-desktop .ct-title em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #999;
+  }
+
+  /* Desktop products row */
+  .shoden-ct-desktop .ct-products {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .shoden-ct-desktop .ct-prod {
+    text-align: center;
+  }
+  .shoden-ct-desktop .ct-prod-img-aiwo {
+    border: 2px solid #d4e8d0;
+    border-radius: 16px;
+    padding: 20px;
+    background: #fff;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .shoden-ct-desktop .ct-prod-img-aiwo img {
+    width: 180px;
+    height: auto;
+    display: block;
+  }
+  .shoden-ct-desktop .ct-prod-img-gen {
+    background: #f0ece6;
+    border-radius: 12px;
+    padding: 16px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .shoden-ct-desktop .ct-prod-img-gen img {
+    width: 130px;
+    height: auto;
+    display: block;
+  }
+  .shoden-ct-desktop .ct-prod-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  /* Desktop table */
+  .shoden-ct-desktop .ct-table {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    position: relative;
+    z-index: 1;
+    table-layout: fixed;
+  }
+  .shoden-ct-desktop .ct-table col.col-label { width: 30%; }
+  .shoden-ct-desktop .ct-table col.col-aiwo  { width: 40%; }
+  .shoden-ct-desktop .ct-table col.col-gen   { width: 30%; }
+
+  .shoden-ct-desktop .ct-table td {
+    padding: 18px 24px;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+  }
+  .shoden-ct-desktop .ct-aiwo-top {
+      text-align: center;
+      background: #f2f8f0;
+  }
+  .shoden-ct-desktop .ct-table td.ct-label {
+    font-weight: 600;
+    color: #333;
+    /*text-align: left;*/
+    background: rgba(246, 243, 239, 1);
+    text-align: center;
+  }
+  .shoden-ct-desktop .ct-table td.ct-aiwo {
+    background: #f2f8f0;
+    font-weight: 500;
+    color: #333;
+  }
+  .shoden-ct-desktop .ct-table td.ct-gen {
+    color: #888;
+    font-weight: 400;
+  }
+  .shoden-ct-desktop .ct-table td.ct-aiwo,
+  .shoden-ct-desktop .ct-table td.ct-gen {
+    text-align: center;
+  }
+  .shoden-ct-desktop .ct-table td.ct-aiwo span,
+  .shoden-ct-desktop .ct-table td.ct-gen span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .shoden-ct-desktop .ct-table td img.ic {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  /* Desktop buy row */
+  .shoden-ct-desktop .ct-buy-row td {
+    padding: 24px 24px 0;
+    border-bottom: none;
+  }
+  .shoden-ct-desktop .ct-buy-btn {
+    display: block;
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    width: 100%;
+  }
+  .shoden-ct-desktop .ct-buy-btn:hover {
+    background: #333;
+    color: #fff;
+  }
+
+  /* --- MOBILE VERSION --- */
+  @media (max-width: 767px) {
+    .shoden-ct-desktop { display: none !important; }
+    .shoden-ct-mobile  { display: block !important; }
+    .shoden-compare { padding: 40px 0 50px; }
+    .shoden-compare__bg-check,
+    .shoden-compare__bg-wrong { display: none; }
+  }
+
+  .shoden-ct-mobile .ctm-header {
+    margin-bottom: 20px;
+  }
+  .shoden-ct-mobile .ctm-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f2f8f0;
+    border: 1px solid #c8dfc4;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 14px;
+  }
+  .shoden-ct-mobile .ctm-tag::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d44;
+    flex-shrink: 0;
+  }
+  .shoden-ct-mobile .ctm-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin: 0;
+    text-align: left;
+  }
+  .shoden-ct-mobile .ctm-title em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* Mobile products */
+  .shoden-ct-mobile .ctm-products {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .shoden-ct-mobile .ctm-prod-aiwo {
+    flex: 1;
+    border: 2px solid #d4e8d0;
+    border-radius: 12px;
+    padding: 12px;
+    background: #fff;
+    text-align: center;
+    background: #f2f8f0;
+  }
+  .shoden-ct-mobile .ctm-prod-aiwo img {
+    width: 100%;
+    /*max-width: 120px;*/
+    height: auto;
+  }
+  .shoden-ct-mobile .ctm-prod-gen {
+    flex: 1;
+    background: #f0ece6;
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+  }
+  .shoden-ct-mobile .ctm-prod-gen img {
+    width: 100%;
+    /*max-width: 100px;*/
+    height: auto;
+  }
+
+  /* Mobile comparison rows */
+  .shoden-ct-mobile .ctm-row {
+    margin-bottom: 0;
+  }
+  .shoden-ct-mobile .ctm-row-label {
+    text-align: center;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #0C0C0D;
+    font-weight: 600;
+    /*padding: 16px 0 6px;*/
+    border-bottom: none;
+    position: absolute;
+    background: #FFFFFF;
+    left: 126px;
+    padding:4px;
+  }
+  .shoden-ct-mobile .ctm-row-data {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    /*padding: 0 0 14px;*/
+  }
+  .shoden-ct-mobile .ctm-val-aiwo {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+    background: #f2f8f0;
+    padding: 25px 14px;
+    border-radius: 0;
+    display: flex;
+  }
+  .shoden-ct-mobile .ctm-val-gen {
+    flex: 1;
+    font-size: 14px;
+    color: #888;
+    text-align: right;
+    padding: 25px 14px;
+    display: flex;
+    margin-left: 33px;
+  }
+  .shoden-ct-mobile .ctm-val-aiwo img.ic,
+  .shoden-ct-mobile .ctm-val-gen img.ic {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  /* Mobile buy button */
+  .shoden-ct-mobile .ctm-buy {
+    display: block;
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  /* ================================================================
+     SECTION 5 — RECOMMENDED BY TOP BIOHACKERS
+     ================================================================ */
+  .shoden-biohackers {
+    padding: 60px 0;
+    background: #fff;
+  }
+  .shoden-biohackers__heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+  }
+  .shoden-biohackers__heading em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 600;
+    color:#A99368;
+  }
+  .shoden-biohackers__sub {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 28px;
+  }
+  .shoden-biohackers__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .shoden-bh-card {
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 3/4;
+    background: #222;
+  }
+  .shoden-bh-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .shoden-bh-card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: #fff;
+  }
+  .shoden-bh-card__name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .shoden-bh-card__verified {
+    width: 16px;
+    height: 16px;
+    background: #1d9bf0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .shoden-bh-card__verified svg {
+    width: 10px;
+    height: 10px;
+    fill: #fff;
+  }
+  .shoden-bh-card__role {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .shoden-bh-card__quote {
+    font-size: 12px;
+    line-height: 1.45;
+    color: rgba(255,255,255,0.85);
+  }
+  /* Slider controls — hidden on desktop */
+  .shoden-bh-controls { display: none; }
+
+  /* ================================================================
+     SECTION 5b — PROMO BANNERS
+     ================================================================ */
+  .shoden-banners {
+    padding: 0;
+  }
+  .shoden-banners__item {
+    width: 100%;
+  }
+  .shoden-banners__item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /* Desktop: show desktop images, hide mobile */
+  .shoden-banners__desktop { display: block; }
+  .shoden-banners__mobile { display: none; }
+  @media (max-width: 767px) {
+    .shoden-banners__desktop { display: none; }
+    .shoden-banners__mobile { display: block; }
+  }
+
+  /* ================================================================
+     SECTION 7 — RECOMMENDED PRODUCTS
+     ================================================================ */
+  .shoden-recs {
+    padding: 50px 0 60px;
+    background: #fff;
+  }
+  .shoden-recs__title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 28px;
+    line-height: 1.25;
+  }
+  .shoden-recs__title em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .shoden-recs__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .shoden-rec-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+  .shoden-rec-card:first-child {
+    border-top: 1px solid #eee;
+  }
+  .shoden-rec-card--recommended {
+    border: 2px solid #3a7d34;
+    border-radius: 12px;
+    padding: 32px 16px 20px;
+    margin: 12px 0;
+    position: relative;
+  }
+  .shoden-rec-card--recommended .shoden-rec-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3a7d34;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 5px 24px;
+    border-radius: 0 0 10px 10px;
+  }
+  .shoden-rec-badge { display: none; }
+  .shoden-rec-card--recommended .shoden-rec-badge { display: block; }
+
+  .shoden-rec-card__img {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f5f5f5;
+  }
+  .shoden-rec-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .shoden-rec-card__info {
+    flex: 1;
+    min-width: 0;
+  }
+  .shoden-rec-card__pillar {
+    font-size: 13px;
+    font-weight: 600;
+    font-style: italic;
+    color: #3a7d34;
+    margin-bottom: 2px;
+  }
+  .shoden-rec-card__pillar span {
+    color: #1a1a1a;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .shoden-rec-card__desc {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .shoden-rec-card__bottom {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .shoden-rec-card__price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .shoden-rec-card__learn {
+    font-size: 13px;
+    color: #3a7d34;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  .shoden-rec-card__learn:hover {
+    color: #2b5e27;
+  }
+  .shoden-rec-card__add {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1.5px solid #1a1a1a;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  .shoden-rec-card__add svg {
+    width: 20px;
+    height: 20px;
+    stroke: #1a1a1a;
+  }
+  .shoden-rec-card__add:hover {
+    background: #1a1a1a;
+  }
+  .shoden-rec-card__add:hover svg {
+    stroke: #fff;
+  }
+  @media (max-width: 767px) {
+    .shoden-recs { padding: 40px 0 48px; }
+    .shoden-recs__title { font-size: 22px; }
+    .shoden-rec-card__img { width: 60px; height: 60px; }
+  }
+
+  /* ================================================================
+     SECTION 6 — FAQ ACCORDION
+     ================================================================ */
+  .shoden-faq {
+    background: #f9f6f1;
+    padding: 70px 0 80px;
+  }
+  .shoden-faq__tag {
+    display: inline-block;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  .shoden-faq__title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    line-height: 1.1;
+  }
+  .shoden-faq__item {
+    border-top: 1px solid #ccc;
+  }
+  .shoden-faq__item:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+  .shoden-faq__q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1a1a1a;
+    gap: 16px;
+  }
+  .shoden-faq__q:hover { color: #555; }
+  .shoden-faq__chevron {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+  .shoden-faq__chevron svg {
+    width: 100%;
+    height: 100%;
+  }
+  .shoden-faq__a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .shoden-faq__a-inner {
+    padding: 0 0 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+  }
+  .shoden-faq__chevron img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .shoden-faq__chevron .shoden-faq__icon-close {
+    display: none;
+  }
+  .shoden-faq__item.open .shoden-faq__chevron svg {
+    transform: rotate(180deg);
+  }
+  .shoden-faq__item.open .shoden-faq__chevron .shoden-faq__icon-open {
+    display: none;
+  }
+  .shoden-faq__item.open .shoden-faq__chevron .shoden-faq__icon-close {
+    display: block;
+  }
+  .shoden-faq__item.open .shoden-faq__a {
+    max-height: 600px;
+  }
+
+  /* ================================================================
+     SECTION 7 — FAQ WITH IMAGE (Icon-based)
+     ================================================================ */
+  .shoden-faq2 {
+    background: #fff;
+    padding: 70px 0 80px;
+  }
+  .shoden-faq2__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .shoden-faq2__left {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e8e4df;
+  }
+  .shoden-faq2__left img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  .shoden-faq2__right {
+    display: flex;
+    flex-direction: column;
+  }
+  .shoden-faq2__item {
+    border-bottom: 1px solid #e0dcd7;
+  }
+  .shoden-faq2__q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #1a1a1a;
+    gap: 16px;
+  }
+  .shoden-faq2__q:hover { color: #555; }
+  .shoden-faq2__icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #f5f1ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .shoden-faq2__icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  .shoden-faq2__q-text {
+    flex: 1;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  .shoden-faq2__chevron {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+  .shoden-faq2__chevron img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .shoden-faq2__chevron .shoden-faq2__icon-close {
+    display: none;
+  }
+  .shoden-faq2__item.open .shoden-faq2__chevron .shoden-faq2__icon-open {
+    display: none;
+  }
+  .shoden-faq2__item.open .shoden-faq2__chevron .shoden-faq2__icon-close {
+    display: block;
+  }
+  .shoden-faq2__item.open .shoden-faq2__chevron svg {
+    transform: rotate(180deg);
+  }
+  .shoden-faq2__a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .shoden-faq2__a-inner {
+    padding: 0 0 20px 60px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #888;
+  }
+  .shoden-faq2__item.open .shoden-faq2__a {
+    max-height: 600px;
+  }
+
+  /* ================================================================
+     RESPONSIVE
+     ================================================================ */
+  @media (max-width: 767px) {
+    .shoden-ingredient__title { font-size: 28px; }
+    .shoden-circles { flex-wrap: wrap; }
+    .shoden-circles__item { flex: 0 0 50%; padding: 16px 10px; }
+    .shoden-circles__item:not(:last-child)::after { display: none; }
+    .shoden-circles__ring { width: 120px; height: 120px; }
+    .shoden-circles__percent { font-size: 32px; }
+    .shoden-potency { padding: 20px; }
+    .shoden-pure { gap: 20px; }
+    .shoden-pure__item { min-width: 70px; flex: 0 0 calc(33% - 16px); }
+    .shoden-ingredient__deco-top { width: 60px; top: -25px; }
+    .shoden-ingredient__deco-bottom { width: 80px; }
+    .shoden-nutri__grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .shoden-nutri__left {
+      display: contents;
+    }
+    .shoden-nutri__heading { 
+      order: 1; 
+      /*font-size: 24px; */
+    }
+    .shoden-nutri__heading img{
+      width: 55px;
+    }
+    .shoden-nutri {
+      padding: 10px 0;
+    }
+    .shoden-nutri__right { order: 2; }
+    .shoden-nutri__text { order: 3; }
+    .shoden-nutri__author { order: 4; }
+    .shoden-biohackers__heading { font-size: 24px; }
+    .shoden-biohackers__grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 0;
+      scroll-behavior: smooth;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .shoden-biohackers__grid::-webkit-scrollbar { display: none; }
+    .shoden-bh-card {
+      flex: 0 0 85%;
+      scroll-snap-align: start;
+      margin-right: 12px;
+      aspect-ratio: 3/5;
+    }
+    .shoden-bh-card__overlay { padding: 24px 16px; }
+    .shoden-bh-card__name { font-size: 16px; }
+    .shoden-bh-card__role { font-size: 13px; font-style: italic; margin-bottom: 10px; }
+    .shoden-bh-card__quote { font-size: 14px; line-height: 1.5; font-style: italic; }
+    /* Slider controls */
+    .shoden-bh-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; }
+    .shoden-bh-arrows { display: flex; gap: 8px; }
+    .shoden-bh-arrow {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #333;
+    }
+    .shoden-bh-arrow svg { width: 16px; height: 16px; }
+    .shoden-bh-dots { display: flex; gap: 6px; }
+    .shoden-bh-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      transition: background 0.3s;
+    }
+    .shoden-bh-dot.active { background: #555; }
+    .shoden-faq__title { font-size: 28px; }
+    .shoden-faq2__grid { grid-template-columns: 1fr; gap: 32px; }
+    .shoden-faq2__left { max-height: 400px; }
+    .shoden-faq2__a-inner { padding-left: 60px; }
+  }
+
+  /* --- Recommended Products V1 --- */
+  .shoden-recs-v1 { padding: 40px 0; }
+  .shoden-hide-desktop.shoden-recs-v1  { padding: 20px 20px; }
+  .shoden-recs-v1__tag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #7b6f63;
+    margin-bottom: 4px;
+    display: inline-block;
+    padding: 5px 14px;
+    border: 1px solid #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #555;
+  }
+  .shoden-recs-v1__title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+  .shoden-recs-v1__title em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .shoden-recs-v1__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .shoden-recs-v1__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+  .shoden-recs-v1__item:first-child { border-top: 1px solid #eee; }
+  .shoden-recs-v1__item--recommended {
+    /*border: 2px solid #3a7d34;*/
+    border-radius: 12px;
+    padding: 28px 14px 14px;
+    margin: 10px 0;
+  }
+  .shoden-recs-v1__badge { display: none; }
+  .shoden-recs-v1__item--recommended .shoden-recs-v1__badge {
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    /*transform: translateX(-50%);*/
+    background: #C0622A;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 5px;
+  }
+  .shoden-recs-v1__img {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f5f5f5;
+  }
+  .shoden-recs-v1__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .shoden-recs-v1__img--bundle {
+    display: flex;
+    width: auto;
+    height: auto;
+    gap: 0;
+    background: none;
+  }
+  .shoden-recs-v1__img--bundle img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    margin-left: -10px;
+  }
+  .shoden-recs-v1__img--bundle img:first-child { margin-left: 0; }
+  .shoden-recs-v1__info { flex: 1; min-width: 0; }
+  .shoden-recs-v1__pillar {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: italic;
+    color: #3a7d34;
+    margin-bottom: 2px;
+  }
+  .shoden-recs-v1__pillar b {
+    color: #1a1a1a;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .shoden-recs-v1__desc {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .shoden-recs-v1__bottom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .shoden-recs-v1__price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .shoden-recs-v1__learn {
+    font-size: 12px;
+    color: #3a7d34;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  .shoden-recs-v1__add {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1.5px solid #1a1a1a;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shoden-recs-v1__add svg { width: 18px; height: 18px; stroke: #1a1a1a; }
+  .shoden-recs-v1__add:hover { background: #1a1a1a; }
+  .shoden-recs-v1__add:hover svg { stroke: #fff; }
+  .shoden-hide-desktop { display: block; }
+  .shoden-hide-mobile { display: block; }
+  @media (min-width: 769px) {
+    .shoden-hide-desktop { display: none !important; }
+  }
+  @media (max-width: 768px) {
+    .shoden-hide-mobile { display: none !important; }
+    .shoden-recs-v1__title { font-size: 22px; }
+  }
+
+  /* --- CTA Banner --- */
+  .shoden-cta-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    margin: 40px 0;
+  }
+  .shoden-cta-banner__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .shoden-cta-banner__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .shoden-cta-banner__bg--mobile { display: none; }
+  .shoden-cta-banner__overlay {
+    position: relative;
+    z-index: 1;
+    padding: 80px 24px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .shoden-cta-banner__title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+  .shoden-cta-banner__title em {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .shoden-cta-banner__desc {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+    max-width: 620px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+  .shoden-cta-banner__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #1a1a1a;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .shoden-cta-banner__btn:hover { opacity: 0.9; }
+  .shoden-cta-banner__btn svg { width: 20px; height: 20px; }
+  @media (max-width: 768px) {
+    .shoden-cta-banner__bg--desktop { display: none; }
+    .shoden-cta-banner__bg--mobile { display: block; }
+    .shoden-cta-banner__overlay { padding: 50px 20px; }
+    .shoden-cta-banner__title { font-size: 28px; }
+    .shoden-cta-banner__desc { font-size: 13px; }
+  }
+
+
+  .shoden-ingredient__tag::before , .shoden-faq__tag::before, .shoden-ct-mobile .ctm-tag::before, .aiwo-v1-tagline__label::before, .shoden-recs-v1__tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: black;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+      animation: blinkDot 1s infinite;
+  }
+  @keyframes blinkDot {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+  }
+</style>
+
+<div class="shoden-s">
+
+{% for block in section.blocks %}
+  {% if block.type == 'section_block' %}
+    {% case block.settings.section_type %}
+
+    {% when 'ingredient_comparison' %}
+  <!-- ================================================================
+       SECTION 1 — INGREDIENT COMPARISON
+       ================================================================ -->
+  <div class="shoden-ingredient" {{ block.shopify_attributes }}>
+    {% if section.settings.deco_image_top != blank %}
+      <div class="shoden-ingredient__deco-top">
+        <img src="{{ section.settings.deco_image_top | image_url: width: 360 }}" alt="" loading="lazy">
+      </div>
+    {% endif %}
+    {% if section.settings.deco_image_bottom != blank %}
+      <div class="shoden-ingredient__deco-bottom">
+        <img src="{{ section.settings.deco_image_bottom | image_url: width: 280 }}" alt="" loading="lazy">
+      </div>
+    {% endif %}
+    <div class="shoden-wrap">
+      <div class="shoden-ingredient__tag">{{ section.settings.ingredient_tag }}</div>
+      <h2 class="shoden-ingredient__title">{{ section.settings.comparison_title | replace: '<p>', '' | replace: '</p>', '' }}</h2>
+      <div class="shoden-ingredient__badges-row">
+        {% if section.settings.badge_text_0 != blank %}
+          <div class="shoden-ingredient__badge-item" style="border:1.5px solid #1a1a1a;border-radius:6px;padding:6px 14px;font-weight:700;font-size:14px;">
+            {{ section.settings.badge_text_0 }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.badge_text_1 != blank %}
+          <div class="shoden-ingredient__badge-item">
+            {% if section.settings.badge_icon_1 != blank %}<img src="{{ section.settings.badge_icon_1 | image_url: width: 40 }}" alt="">{% endif %}
+            {{ section.settings.badge_text_1 }}
+          </div>
+        {% endif %}
+        {% if section.settings.badge_text_2 != blank %}
+          <div class="shoden-ingredient__badge-item">
+            {% if section.settings.badge_icon_2 != blank %}<img src="{{ section.settings.badge_icon_2 | image_url: width: 40 }}" alt="">{% endif %}
+            {{ section.settings.badge_text_2 }}
+          </div>
+        {% endif %}
+      </div>
+      <p class="shoden-ingredient__hplc-text">{{ section.settings.comparison_subtitle }}</p>
+      <div class="shoden-circles">
+        {% for block in section.blocks %}
+          {% if block.type == 'comparison_badge' %}
+            <div class="shoden-circles__item" {{ block.shopify_attributes }}>
+              <div class="shoden-circles__ring">
+                <div class="shoden-circles__content">
+                  <span class="shoden-circles__percent">{{ block.settings.badge_percentage }}</span>
+                  <span class="shoden-circles__sublabel">{{ block.settings.badge_sublabel }}</span>
+                </div>
+              </div>
+              <div class="shoden-circles__brand">{{ block.settings.badge_name }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <p class="shoden-ingredient__disclaimer">{{ section.settings.disclaimer_text }}</p>
+      <div class="shoden-ingredient__badges-row-mobile">
+        <div class="shoden-ingredient__tag ShodenTag">
+          {% if section.settings.badge_text_0 != blank %}
+            {% comment %} <div class="shoden-ingredient__badge-item" style="border:1.5px solid #1a1a1a;border-radius:6px;padding:6px 14px;font-weight:700;font-size:14px;"> {% endcomment %}
+              {{ section.settings.badge_text_0 }}
+            {% comment %} </div> {% endcomment %}
+          {% endif %}
+
+        </div>
+        {% if section.settings.badge_text_1 != blank %}
+          <div class="shoden-ingredient__badge-item">
+            {% if section.settings.badge_icon_1 != blank %}<img src="{{ section.settings.badge_icon_1 | image_url: width: 40 }}" alt="">{% endif %}
+            {{ section.settings.badge_text_1 }}
+          </div>
+        {% endif %}
+        {% if section.settings.badge_text_2 != blank %}
+          <div class="shoden-ingredient__badge-item">
+            {% if section.settings.badge_icon_2 != blank %}<img src="{{ section.settings.badge_icon_2 | image_url: width: 40 }}" alt="">{% endif %}
+            {{ section.settings.badge_text_2 }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Potency Banner — full width -->
+  <div class="shoden-potency-wrap">
+    <div class="shoden-potency">
+      <div class="shoden-potency__heading">{{ section.settings.potency_heading }} &#9889;</div>
+      <div class="shoden-potency__desc">{{ section.settings.potency_text }}</div>
+    </div>
+  </div>
+
+  <!-- Pure & Natural Icons -->
+  <div class="shoden-pure">
+    {% for block in section.blocks %}
+      {% if block.type == 'pure_icon' %}
+        <div class="shoden-pure__item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <div class="shoden-pure__icon">
+              <img src="{{ block.settings.icon | image_url: width: 88 }}" alt="{{ block.settings.label }}" loading="lazy">
+            </div>
+          {% endif %}
+          <div class="shoden-pure__label">{{ block.settings.label }}</div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+    {% when 'nutritionist' %}
+  <!-- ================================================================
+       SECTION 2 — RECOMMENDED BY NUTRITIONIST
+       ================================================================ -->
+  <div class="shoden-nutri" {{ block.shopify_attributes }}>
+    <div class="shoden-wrap">
+      <div class="shoden-nutri__grid">
+        <div class="shoden-nutri__left">
+          <!-- <span class="shoden-nutri__quote-mark">&ldquo;</span> -->
+          <h2 class="shoden-nutri__heading">
+            <img src="https://cdn.shopify.com/s/files/1/0267/5700/5494/files/quote_7350737_1.png?v=1773076203">
+          {{ section.settings.nutri_heading | replace: '<p>', '' | replace: '</p>', ''  }}
+          </h2>
+          <p class="shoden-nutri__text">{{ section.settings.nutri_text }}</p>
+          <p class="shoden-nutri__author">{{ section.settings.nutri_author }}</p>
+        </div>
+        <div class="shoden-nutri__right">
+          <div class="shoden-nutri__video-wrap" id="shoden-nutri-video">
+            {% if section.settings.nutritionist_video_file != blank %}
+              <video src="{{ section.settings.nutritionist_video_file }}" playsinline preload="metadata" poster="{% if section.settings.nutritionist_image != blank %}{{ section.settings.nutritionist_image | image_url: width: 600 }}{% endif %}"></video>
+            {% elsif section.settings.nutritionist_image != blank %}
+              <img src="{{ section.settings.nutritionist_image | image_url: width: 600 }}" alt="Keerthana, Clinical Nutritionist" loading="lazy">
+            {% endif %}
+            <div class="shoden-nutri__play-btn">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.4)"/><polygon points="26,20 26,44 46,32" fill="#fff"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    {% when 'proven_benefits' %}
+  <!-- ================================================================
+       SECTION 3 — PROVEN HEALTH BENEFITS
+       ================================================================ -->
+  <div class="shoden-benefits-section" {{ block.shopify_attributes }}>
+    <div class="shoden-benefits__grid">
+      <div class="shoden-benefits__img">
+        {% if section.settings.benefits_image != blank %}
+          <img src="{{ section.settings.benefits_image | image_url: width: 720 }}" alt="Ashwagandha Benefits" loading="lazy">
+        {% else %}
+          <img src="https://placehold.co/720x626" alt="Ashwagandha Benefits" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="shoden-benefits__right" style="--benefits-bg-img: url('{% if section.settings.benefits_bg_image != blank %}{{ section.settings.benefits_bg_image | image_url: width: 400 }}{% else %}https://cdn.shopify.com/s/files/1/0267/5700/5494/files/healthcare_x2C__medical_x2C__protection_1.png?v=1772972037{% endif %}')">
+        <div class="shoden-benefits__title-row">
+          <h2 class="shoden-benefits__title">Proven Health <em>Benefits</em></h2>
+        </div>
+        <div class="shoden-benefits__stats">
+          <!-- Stat 1 -->
+          <div class="shoden-stat">
+            <div class="shoden-stat__circle"><span class="shoden-stat__num">{{ section.settings.stat1_num }}</span></div>
+            <div class="shoden-stat__text">
+              <p class="shoden-stat__label">{{ section.settings.stat1_label }}</p>
+              <p class="shoden-stat__source">{{ section.settings.stat1_source }}</p>
+            </div>
+          </div>
+          <!-- Stat 2 -->
+          <div class="shoden-stat">
+            <div class="shoden-stat__circle"><span class="shoden-stat__num">{{ section.settings.stat2_num }}</span></div>
+            <div class="shoden-stat__text">
+              <p class="shoden-stat__label">{{ section.settings.stat2_label }}</p>
+              <p class="shoden-stat__source">{{ section.settings.stat2_source }}</p>
+            </div>
+          </div>
+          <!-- Stat 3 -->
+          <div class="shoden-stat">
+            <div class="shoden-stat__circle"><span class="shoden-stat__num">{{ section.settings.stat3_num }}</span></div>
+            <div class="shoden-stat__text">
+              <p class="shoden-stat__label">{{ section.settings.stat3_label }}</p>
+              <p class="shoden-stat__source">{{ section.settings.stat3_source }}</p>
+            </div>
+          </div>
+          <!-- Stat 4 -->
+          <div class="shoden-stat">
+            <div class="shoden-stat__circle"><span class="shoden-stat__num">{{ section.settings.stat4_num }}</span></div>
+            <div class="shoden-stat__text">
+              <p class="shoden-stat__label">{{ section.settings.stat4_label }}</p>
+              <p class="shoden-stat__source">{{ section.settings.stat4_source }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    {% when 'comparison_table' %}
+  <!-- ================================================================
+       SECTION 4 — PRODUCT COMPARISON TABLE
+       ================================================================ -->
+  <div class="shoden-compare" {{ block.shopify_attributes }}>
+    <!-- Background watermark images -->
+    <div class="shoden-compare__bg-check">
+      {% if section.settings.ct_bg_check != blank %}
+        <img src="{{ section.settings.ct_bg_check | image_url: width: 400 }}" alt="" loading="lazy">
+      {% else %}
+        <img src="https://cdn.shopify.com/s/files/1/0267/5700/5494/files/right-big-fade.png?v=1772963074" alt="" loading="lazy">
+      {% endif %}
+    </div>
+    <div class="shoden-compare__bg-wrong">
+      {% if section.settings.ct_bg_wrong != blank %}
+        <img src="{{ section.settings.ct_bg_wrong | image_url: width: 200 }}" alt="" loading="lazy">
+      {% else %}
+        <img src="https://cdn.shopify.com/s/files/1/0267/5700/5494/files/wrong-big-fade.png?v=1772964686" alt="" loading="lazy">
+      {% endif %}
+    </div>
+
+    {%- comment -%} Assign icon URLs once {%- endcomment -%}
+    {%- liquid
+      if section.settings.ct_right_icon != blank
+        assign right_icon_url = section.settings.ct_right_icon | image_url: width: 44
+      else
+        assign right_icon_url = 'https://cdn.shopify.com/s/files/1/0267/5700/5494/files/right-icon.png?v=1772962568'
+      endif
+      if section.settings.ct_wrong_icon != blank
+        assign wrong_icon_url = section.settings.ct_wrong_icon | image_url: width: 44
+      else
+        assign wrong_icon_url = 'https://cdn.shopify.com/s/files/1/0267/5700/5494/files/wrong-icon.png?v=1772962531'
+      endif
+    -%}
+
+    <div class="shoden-wrap">
+
+      <!-- ======== DESKTOP VERSION ======== -->
+      <div class="shoden-ct-desktop">
+        <div class="ct-header">
+          <div class="ct-tag">{{ section.settings.ct_tag }}</div>
+          <h2 class="ct-title">{{ section.settings.ct_title | replace: '<p>', '' | replace: '</p>', ''  }}</h2>
+        </div>
+        <table class="ct-table">
+          <colgroup>
+            <col class="col-label">
+            <col class="col-aiwo">
+            <col class="col-gen">
+          </colgroup>
+          <!-- Product images row -->
+          <tr>
+            <td></td>
+            <td class="ct-aiwo-top">
+              <div class="ct-prod-img-aiwo">
+                {% if section.settings.ct_aiwo_image != blank %}
+                  <img src="{{ section.settings.ct_aiwo_image | image_url: width: 360 }}" alt="{{ section.settings.ct_aiwo_name }}" loading="lazy">
+                {% endif %}
+              </div>
+              <div class="ct-prod-name">{{ section.settings.ct_aiwo_name }}</div>
+            </td>
+            <td class="ct-gen">
+              <div class="ct-prod-img-gen">
+                {% if section.settings.ct_gen_image != blank %}
+                  <img src="{{ section.settings.ct_gen_image | image_url: width: 260 }}" alt="{{ section.settings.ct_gen_name }}" loading="lazy">
+                {% endif %}
+              </div>
+              <div class="ct-prod-name">{{ section.settings.ct_gen_name }}</div>
+            </td>
+          </tr>
+          <!-- Dynamic data rows -->
+          {% for block in section.blocks %}
+            {% if block.type == 'comparison_row' %}
+              <tr {{ block.shopify_attributes }}>
+                <td class="ct-label">{{ block.settings.label }}</td>
+                <td class="ct-aiwo">
+                  <span>
+                    {% if block.settings.aiwo_icon == 'correct' %}<img class="ic" src="{{ right_icon_url }}" alt="">
+                    {% elsif block.settings.aiwo_icon == 'wrong' %}<img class="ic" src="{{ wrong_icon_url }}" alt="">
+                    {% endif %}
+                    {{ block.settings.aiwo_value }}
+                  </span>
+                </td>
+                <td class="ct-gen">
+                  <span>
+                    {% if block.settings.gen_icon == 'correct' %}<img class="ic" src="{{ right_icon_url }}" alt="">
+                    {% elsif block.settings.gen_icon == 'wrong' %}<img class="ic" src="{{ wrong_icon_url }}" alt="">
+                    {% endif %}
+                    {{ block.settings.gen_value }}
+                  </span>
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+          <!-- Buy button row -->
+          <tr class="ct-buy-row">
+            <td></td>
+            <td><a href="#" class="ct-buy-btn" onclick="document.querySelector('form.form button[type=submit]')?.click(); return false;">{{ section.settings.ct_buy_text }}</a></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ======== MOBILE VERSION ======== -->
+      <div class="shoden-ct-mobile">
+        <div class="ctm-header">
+          <div class="ctm-tag">{{ section.settings.ct_tag }}</div>
+          <h2 class="ctm-title">{{ section.settings.ct_title | replace: '<p>', '' | replace: '</p>', ''  }}</h2>
+        </div>
+
+        <div class="ctm-products">
+          <div class="ctm-prod-aiwo">
+            {% if section.settings.ct_aiwo_image != blank %}
+              <img src="{{ section.settings.ct_aiwo_image | image_url: width: 240 }}" alt="{{ section.settings.ct_aiwo_name }}" loading="lazy">
+            {% endif %}
+          </div>
+          <div class="ctm-prod-gen">
+            {% if section.settings.ct_gen_image != blank %}
+              <img src="{{ section.settings.ct_gen_image | image_url: width: 200 }}" alt="{{ section.settings.ct_gen_name }}" loading="lazy">
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Dynamic data rows -->
+        {% for block in section.blocks %}
+          {% if block.type == 'comparison_row' %}
+            <div class="ctm-row" {{ block.shopify_attributes }}>
+              <div class="ctm-row-label">{{ block.settings.label }}</div>
+              <div class="ctm-row-data">
+                <div class="ctm-val-aiwo">
+                  {% if block.settings.aiwo_icon == 'correct' %}<img class="ic" src="{{ right_icon_url }}" alt="">
+                  {% elsif block.settings.aiwo_icon == 'wrong' %}<img class="ic" src="{{ wrong_icon_url }}" alt="">
+                  {% endif %}
+                  {{ block.settings.aiwo_value }}
+                </div>
+                <div class="ctm-val-gen">
+                  {% if block.settings.gen_icon == 'correct' %}<img class="ic" src="{{ right_icon_url }}" alt="">
+                  {% elsif block.settings.gen_icon == 'wrong' %}<img class="ic" src="{{ wrong_icon_url }}" alt="">
+                  {% endif %}
+                  {{ block.settings.gen_value }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+        <div class="ctm-row">
+              
+              <div class="ctm-row-data">
+                <div class="ctm-val-aiwo">
+                  <a href="#" class="ctm-buy" onclick="document.querySelector('form.form button[type=submit]')?.click(); return false;">{{ section.settings.ct_buy_text }}</a>
+                </div>
+                <div class="ctm-val-gen">
+                  
+                </div>
+              </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+
+    {% when 'biohackers' %}
+  <!-- ================================================================
+       SECTION 5 — RECOMMENDED BY TOP BIOHACKERS
+       ================================================================ -->
+  <div class="shoden-biohackers" {{ block.shopify_attributes }}>
+    <div class="shoden-wrap">
+      <h2 class="shoden-biohackers__heading">Recommended By <em>Top Biohackers</em></h2>
+      <p class="shoden-biohackers__sub">See what makes AIWO the global leader in complete Wellness</p>
+      <div class="shoden-biohackers__grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'biohacker_card' %}
+            <div class="shoden-bh-card" {{ block.shopify_attributes }}>
+              {% if block.settings.photo != blank %}
+                <img src="{{ block.settings.photo | image_url: width: 500 }}" alt="{{ block.settings.name }}" loading="lazy">
+              {% endif %}
+              <div class="shoden-bh-card__overlay">
+                <div class="shoden-bh-card__name">
+                  {{ block.settings.name }}
+                  <span class="shoden-bh-card__verified"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
+                </div>
+                <div class="shoden-bh-card__role">{{ block.settings.role }}</div>
+                <div class="shoden-bh-card__quote">{{ block.settings.quote }}</div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <!-- Mobile slider controls -->
+      <div class="shoden-bh-controls" id="shoden-bh-controls">
+        <div class="shoden-bh-arrows">
+          <button class="shoden-bh-arrow" id="shoden-bh-prev" aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="shoden-bh-arrow" id="shoden-bh-next" aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg>
+          </button>
+        </div>
+        <div class="shoden-bh-dots" id="shoden-bh-dots"></div>
+      </div>
+    </div>
+  </div>
+
+    {% when 'promo_banners' %}
+  <!-- ================================================================
+       SECTION 5b — PROMO BANNERS
+       ================================================================ -->
+  <div class="shoden-banners" {{ block.shopify_attributes }}>
+    <!-- Desktop banners -->
+    <div class="shoden-banners__desktop">
+      {% if section.settings.banner1_desktop != blank %}
+        <div class="shoden-banners__item">
+          <img src="{{ section.settings.banner1_desktop | image_url: width: 1440 }}" alt="Promo Banner 1" loading="lazy">
+        </div>
+      {% endif %}
+      {% if section.settings.banner2_desktop != blank %}
+        <div class="shoden-banners__item">
+          <img src="{{ section.settings.banner2_desktop | image_url: width: 1440 }}" alt="Promo Banner 2" loading="lazy">
+        </div>
+      {% endif %}
+    </div>
+    <!-- Mobile banners -->
+    <div class="shoden-banners__mobile">
+      {% if section.settings.banner1_mobile != blank %}
+        <div class="shoden-banners__item">
+          <img src="{{ section.settings.banner1_mobile | image_url: width: 750 }}" alt="Promo Banner 1" loading="lazy">
+        </div>
+      {% endif %}
+      {% if section.settings.banner2_mobile != blank %}
+        <div class="shoden-banners__item">
+          <img src="{{ section.settings.banner2_mobile | image_url: width: 750 }}" alt="Promo Banner 2" loading="lazy">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+    {% when 'recommended_products' %}
+  <!-- ================================================================
+       SECTION 7 — RECOMMENDED PRODUCTS
+       ================================================================ -->
+  <div class="shoden-recs" {{ block.shopify_attributes }}>
+    <div class="shoden-wrap">
+      <h2 class="shoden-recs__title">
+        {{ section.settings.recs_title | replace: '<p>', '' | replace: '</p>', '' }}
+        
+      </h2>
+     
+      <div class="shoden-recs__list">
+        {% for block in section.blocks %}
+          {% if block.type == 'recommended_product' %}
+            {% assign rec_product = block.settings.product %}
+            {% if rec_product != blank %}
+              <div class="shoden-rec-card {% if block.settings.is_recommended %}shoden-rec-card--recommended{% endif %}" {{ block.shopify_attributes }}>
+                <span class="shoden-rec-badge">Best Pick</span>
+                <a href="{{ rec_product.url }}" class="shoden-rec-card__img">
+                  {% if rec_product.featured_image != blank %}
+                    <img src="{{ rec_product.featured_image | image_url: width: 150 }}" alt="{{ rec_product.title }}" loading="lazy">
+                  {% endif %}
+                </a>
+                <div class="shoden-rec-card__info">
+                  <div class="shoden-rec-card__pillar">
+                    {% if block.settings.pillar_tag != blank %}{{ block.settings.pillar_tag }} | {% endif %}<span>{{ rec_product.title }}</span>
+                  </div>
+                  <div class="shoden-rec-card__desc">
+                    {% if block.settings.description != blank %}
+                      {{ block.settings.description }}
+                    {% else %}
+                      {{ rec_product.description | strip_html | truncate: 80 }}
+                    {% endif %}
+                  </div>
+                  <div class="shoden-rec-card__bottom">
+                    <span class="shoden-rec-card__price">₹{{ rec_product.price | money_without_currency }}</span>
+                    <a href="{{ rec_product.url }}" class="shoden-rec-card__learn">Learn more</a>
+                  </div>
+                </div>
+                <button type="button" class="shoden-rec-card__add" aria-label="Add to cart" data-variant-id="{{ rec_product.selected_or_first_available_variant.id }}" onclick="
+                  var id = this.getAttribute('data-variant-id');
+                  fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: {'Content-Type':'application/json'},
+                    body: JSON.stringify({items:[{id: parseInt(id), quantity:1}]})
+                  }).then(function(r){ return r.json(); }).then(function(){
+                    window.location.href = '/cart';
+                  });
+                ">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+    {% when 'faq_accordion' %}
+  <!-- ================================================================
+       SECTION 6 — FAQ ACCORDION (Dynamic)
+       ================================================================ -->
+  {% assign has_faq_items = false %}
+  {% for block in section.blocks %}
+    {% if block.type == 'faq_item' %}
+      {% assign has_faq_items = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if has_faq_items %}
+  <div class="shoden-faq">
+    <div class="shoden-wrap">
+      {% if section.settings.faq_tag != blank %}
+        <div class="shoden-faq__tag">{{ section.settings.faq_tag }}</div>
+      {% endif %}
+      {% if section.settings.faq_title != blank %}
+        <h2 class="shoden-faq__title">{{ section.settings.faq_title }}</h2>
+      {% endif %}
+
+      {% assign faq_index = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'faq_item' %}
+          <div class="shoden-faq__item{% if faq_index == 0 %} open{% endif %}" {{ block.shopify_attributes }}>
+            <button class="shoden-faq__q" onclick="this.parentElement.classList.toggle('open')">
+              <span>{{ block.settings.question }}</span>
+              <span class="shoden-faq__chevron">
+                {% if section.settings.faq_open_icon != blank %}
+                  <img class="shoden-faq__icon-open" src="{{ section.settings.faq_open_icon | image_url: width: 40 }}" alt="expand" loading="lazy">
+                  {% if section.settings.faq_close_icon != blank %}
+                    <img class="shoden-faq__icon-close" src="{{ section.settings.faq_close_icon | image_url: width: 40 }}" alt="collapse" loading="lazy">
+                  {% else %}
+                    <img class="shoden-faq__icon-close" src="{{ section.settings.faq_open_icon | image_url: width: 40 }}" alt="collapse" loading="lazy" style="transform: rotate(180deg);">
+                  {% endif %}
+                {% else %}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                {% endif %}
+              </span>
+            </button>
+            <div class="shoden-faq__a">
+              <div class="shoden-faq__a-inner">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+          {% assign faq_index = faq_index | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+  {% endif %}
+
+    {% when 'faq_with_image' %}
+  <!-- ================================================================
+       SECTION 7 — FAQ WITH IMAGE (Icon-based accordion)
+       ================================================================ -->
+  {% assign has_faq2_items = false %}
+  {% for block in section.blocks %}
+    {% if block.type == 'faq_icon_item' %}
+      {% assign has_faq2_items = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if has_faq2_items %}
+  <div class="shoden-faq2">
+    <div class="shoden-wrap">
+      <div class="shoden-faq2__grid">
+        <div class="shoden-faq2__left">
+          {% if section.settings.faq2_image != blank %}
+            <img src="{{ section.settings.faq2_image | image_url: width: 800 }}" alt="" loading="lazy">
+          {% endif %}
+        </div>
+        <div class="shoden-faq2__right">
+          {% assign faq2_index = 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'faq_icon_item' %}
+              <div class="shoden-faq2__item{% if faq2_index == 0 %} open{% endif %}" {{ block.shopify_attributes }}>
+                <button class="shoden-faq2__q" onclick="this.parentElement.classList.toggle('open')">
+                  {% if block.settings.icon != blank %}
+                    <span class="shoden-faq2__icon">
+                      <img src="{{ block.settings.icon | image_url: width: 48 }}" alt="" loading="lazy">
+                    </span>
+                  {% endif %}
+                  <span class="shoden-faq2__q-text">{{ block.settings.title }}</span>
+                  <span class="shoden-faq2__chevron">
+                    {% if section.settings.faq2_open_icon != blank %}
+                      <img class="shoden-faq2__icon-open" src="{{ section.settings.faq2_open_icon | image_url: width: 40 }}" alt="expand" loading="lazy">
+                      {% if section.settings.faq2_close_icon != blank %}
+                        <img class="shoden-faq2__icon-close" src="{{ section.settings.faq2_close_icon | image_url: width: 40 }}" alt="collapse" loading="lazy">
+                      {% else %}
+                        <img class="shoden-faq2__icon-close" src="{{ section.settings.faq2_open_icon | image_url: width: 40 }}" alt="collapse" loading="lazy" style="transform: rotate(180deg);">
+                      {% endif %}
+                    {% else %}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    {% endif %}
+                  </span>
+                </button>
+                <div class="shoden-faq2__a">
+                  <div class="shoden-faq2__a-inner">
+                    {{ block.settings.description }}
+                  </div>
+                </div>
+              </div>
+              {% assign faq2_index = faq2_index | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+    {% when 'cta_banner' %}
+  <!-- ================================================================
+       CTA BANNER — Full Width with Background Image
+       ================================================================ -->
+  <div class="shoden-cta-banner" {{ block.shopify_attributes }}>
+    <div class="shoden-cta-banner__bg">
+      {% if section.settings.cta_bg_desktop != blank %}
+        <div class="shoden-cta-banner__bg--desktop">
+          <img src="{{ section.settings.cta_bg_desktop | image_url: width: 1600 }}" alt="" loading="lazy">
+        </div>
+      {% endif %}
+      {% if section.settings.cta_bg_mobile != blank %}
+        <div class="shoden-cta-banner__bg--mobile">
+          <img src="{{ section.settings.cta_bg_mobile | image_url: width: 800 }}" alt="" loading="lazy">
+        </div>
+      {% elsif section.settings.cta_bg_desktop != blank %}
+        <div class="shoden-cta-banner__bg--mobile">
+          <img src="{{ section.settings.cta_bg_desktop | image_url: width: 800 }}" alt="" loading="lazy">
+        </div>
+      {% endif %}
+    </div>
+    <div class="shoden-cta-banner__overlay">
+      {% if section.settings.cta_title != blank %}
+        <h2 class="shoden-cta-banner__title">{{ section.settings.cta_title }}</h2>
+      {% endif %}
+      {% if section.settings.cta_desc != blank %}
+        <p class="shoden-cta-banner__desc">{{ section.settings.cta_desc }}</p>
+      {% endif %}
+      {% if section.settings.cta_btn_text != blank %}
+        <a href="{{ section.settings.cta_btn_link | default: '#' }}" class="shoden-cta-banner__btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          {{ section.settings.cta_btn_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+    {% endcase %}
+  {% endif %}
+
+  {% if block.type == 'recommended_products_v1' %}
+  <!-- ================================================================
+       RECOMMENDED PRODUCTS V1 (standalone block)
+       ================================================================ -->
+  <div class="shoden-recs-v1 shoden-wrap {% unless block.settings.show_desktop %}shoden-hide-desktop{% endunless %} {% unless block.settings.show_mobile %}shoden-hide-mobile{% endunless %}" {{ block.shopify_attributes }}>
+    {% if block.settings.recs_tag != blank %}
+      <div class="shoden-recs-v1__tag">{{ block.settings.recs_tag }}</div>
+    {% endif %}
+    {% if block.settings.recs_title != blank %}
+      <h2 class="shoden-recs-v1__title">
+        {{ block.settings.recs_title | replace: '<p>', '' | replace: '</p>', '' }}
+      </h2>
+      
+    {% endif %}
+    <div class="shoden-recs-v1__list">
+      {% if block.settings.bundle_mode %}
+        {% assign bp1 = block.settings.bundle_product_1 %}
+        {% assign bp2 = block.settings.bundle_product_2 %}
+        {% assign bp3 = block.settings.bundle_product_3 %}
+        <div class="shoden-recs-v1__item {% if block.settings.bundle_recommended %}shoden-recs-v1__item--recommended{% endif %}">
+          <span class="shoden-recs-v1__badge">Recommended</span>
+          <div class="shoden-recs-v1__img shoden-recs-v1__img--bundle">
+            {% if bp1 != blank and bp1.featured_image != blank %}
+              <img src="{{ bp1.featured_image | image_url: width: 100 }}" alt="{{ bp1.title }}" loading="lazy">
+            {% endif %}
+            {% if bp2 != blank and bp2.featured_image != blank %}
+              <img src="{{ bp2.featured_image | image_url: width: 100 }}" alt="{{ bp2.title }}" loading="lazy">
+            {% endif %}
+            {% if bp3 != blank and bp3.featured_image != blank %}
+              <img src="{{ bp3.featured_image | image_url: width: 100 }}" alt="{{ bp3.title }}" loading="lazy">
+            {% endif %}
+          </div>
+          <div class="shoden-recs-v1__info">
+            <div class="shoden-recs-v1__pillar">
+              {% if block.settings.bundle_pillar != blank %}{{ block.settings.bundle_pillar }} | {% endif %}
+              <b>{{ block.settings.bundle_title }}</b>
+            </div>
+            {% if block.settings.bundle_desc != blank %}
+              <div class="shoden-recs-v1__desc">{{ block.settings.bundle_desc }}</div>
+            {% endif %}
+            <div class="shoden-recs-v1__bottom">
+              {% assign bundle_total = 0 %}
+              {% if bp1 != blank %}{% assign bundle_total = bundle_total | plus: bp1.price %}{% endif %}
+              {% if bp2 != blank %}{% assign bundle_total = bundle_total | plus: bp2.price %}{% endif %}
+              {% if bp3 != blank %}{% assign bundle_total = bundle_total | plus: bp3.price %}{% endif %}
+              <span class="shoden-recs-v1__price">₹{{ bundle_total | money_without_currency }}</span>
+            </div>
+          </div>
+          <button type="button" class="shoden-recs-v1__add" aria-label="Add bundle to cart" onclick="
+            var items = [];
+            {% if bp1 != blank %}items.push({id: {{ bp1.selected_or_first_available_variant.id }}, quantity: 1});{% endif %}
+            {% if bp2 != blank %}items.push({id: {{ bp2.selected_or_first_available_variant.id }}, quantity: 1});{% endif %}
+            {% if bp3 != blank %}items.push({id: {{ bp3.selected_or_first_available_variant.id }}, quantity: 1});{% endif %}
+            fetch('/cart/add.js', {
+              method: 'POST',
+              headers: {'Content-Type':'application/json'},
+              body: JSON.stringify({items: items})
+            }).then(function(r){ return r.json(); }).then(function(){ window.location.href = '/cart'; });
+          ">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </div>
+      {% endif %}
+      {% assign rv1_products = 'product_1,product_2,product_3' | split: ',' %}
+      {% assign rv1_pillars = 'pillar_1,pillar_2,pillar_3' | split: ',' %}
+      {% assign rv1_descs = 'desc_1,desc_2,desc_3' | split: ',' %}
+      {% assign rv1_recs = 'rec_1,rec_2,rec_3' | split: ',' %}
+      {% for i in (0..2) %}
+        {% assign rec_product = block.settings[rv1_products[i]] %}
+        {% if rec_product != blank %}
+          {% assign pillar_val = block.settings[rv1_pillars[i]] %}
+          {% assign desc_val = block.settings[rv1_descs[i]] %}
+          {% assign is_rec = block.settings[rv1_recs[i]] %}
+          <div class="shoden-recs-v1__item {% if is_rec %}shoden-recs-v1__item--recommended{% endif %}">
+            <span class="shoden-recs-v1__badge">Recommended</span>
+            <a href="{{ rec_product.url }}" class="shoden-recs-v1__img">
+              {% if rec_product.featured_image != blank %}
+                <img src="{{ rec_product.featured_image | image_url: width: 150 }}" alt="{{ rec_product.title }}" loading="lazy">
+              {% endif %}
+            </a>
+            <div class="shoden-recs-v1__info">
+              <div class="shoden-recs-v1__pillar">
+                {% if pillar_val != blank %}{{ pillar_val }} | {% endif %}
+                <b>{{ rec_product.title }}</b>
+              </div>
+              <div class="shoden-recs-v1__desc">
+                {% if desc_val != blank %}
+                  {{ desc_val }}
+                {% else %}
+                  {{ rec_product.description | strip_html | truncate: 80 }}
+                {% endif %}
+              </div>
+              <div class="shoden-recs-v1__bottom">
+                <span class="shoden-recs-v1__price">₹{{ rec_product.price | money_without_currency }}</span>
+                <a href="{{ rec_product.url }}" class="shoden-recs-v1__learn">Learn more</a>
+              </div>
+            </div>
+            <button type="button" class="shoden-recs-v1__add" aria-label="Add to cart" data-variant-id="{{ rec_product.selected_or_first_available_variant.id }}" onclick="
+              var id = this.getAttribute('data-variant-id');
+              fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify({items:[{id: parseInt(id), quantity:1}]})
+              }).then(function(r){ return r.json(); }).then(function(){ window.location.href = '/cart'; });
+            ">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+{% endfor %}
+
+</div>
+
+<!-- Video play/pause -->
+<script>
+  (function(){
+    var wrap = document.getElementById('shoden-nutri-video');
+    if (!wrap) return;
+    var video = wrap.querySelector('video');
+    if (!video) return;
+    wrap.addEventListener('click', function(){
+      if (video.paused) {
+        video.play();
+        wrap.classList.add('playing');
+      } else {
+        video.pause();
+        wrap.classList.remove('playing');
+      }
+    });
+  })();
+
+  /* Biohackers mobile slider */
+  (function(){
+    var grid = document.querySelector('.shoden-biohackers__grid');
+    var prev = document.getElementById('shoden-bh-prev');
+    var next = document.getElementById('shoden-bh-next');
+    var dotsWrap = document.getElementById('shoden-bh-dots');
+    if (!grid || !prev || !next || !dotsWrap) return;
+
+    var cards = grid.querySelectorAll('.shoden-bh-card');
+    if (!cards.length) return;
+
+    // Build dots
+    cards.forEach(function(_, i){
+      var dot = document.createElement('span');
+      dot.className = 'shoden-bh-dot' + (i === 0 ? ' active' : '');
+      dotsWrap.appendChild(dot);
+    });
+    var dots = dotsWrap.querySelectorAll('.shoden-bh-dot');
+    var current = 0;
+
+    function updateDots(){
+      dots.forEach(function(d, i){ d.classList.toggle('active', i === current); });
+    }
+
+    function scrollTo(index){
+      if (index < 0) index = cards.length - 1;
+      if (index >= cards.length) index = 0;
+      current = index;
+      cards[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      updateDots();
+    }
+
+    prev.addEventListener('click', function(){ scrollTo(current - 1); });
+    next.addEventListener('click', function(){ scrollTo(current + 1); });
+
+    // Update dots on scroll
+    var scrollTimer;
+    grid.addEventListener('scroll', function(){
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function(){
+        var scrollLeft = grid.scrollLeft;
+        var cardWidth = cards[0].offsetWidth + 12;
+        current = Math.round(scrollLeft / cardWidth);
+        if (current >= cards.length) current = cards.length - 1;
+        if (current < 0) current = 0;
+        updateDots();
+      }, 100);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product Benefits - Shoden",
+  "tag": "section",
+  "class": "section-shoden-benefits",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Ingredient Comparison"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_tag",
+      "label": "Tag Label",
+      "default": "THE INGREDIENT"
+    },
+    {
+      "type": "text",
+      "id": "comparison_title",
+      "label": "Title (use <em> for italic)",
+      "default": "Not all Ashwagandha <em>is the same.</em>"
+    },
+    {
+    "type": "text",
+    "id": "badge_text_0",
+    "label": "Brand Badge (text only, no icon)",
+    "default": "Olive Aura"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_icon_1",
+      "label": "Badge 1 Icon"
+    },
+    {
+      "type": "text",
+      "id": "badge_text_1",
+      "label": "Badge 1 Text",
+      "default": "PATENTED EXTRACT"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_icon_2",
+      "label": "Badge 2 Icon"
+    },
+    {
+      "type": "text",
+      "id": "badge_text_2",
+      "label": "Badge 2 Text",
+      "default": "HIGHEST PUBLISHED WITHANOLIDE CONCENTRATION"
+    },
+    {
+      "type": "text",
+      "id": "comparison_subtitle",
+      "label": "HPLC Subtitle",
+      "default": "Withanolide glycoside % measured by validated HPLC."
+    },
+    {
+      "type": "text",
+      "id": "disclaimer_text",
+      "label": "Disclaimer",
+      "default": "Different extraction methods measure different withanolide subsets not all % figures are comparable across brands."
+    },
+    {
+      "type": "image_picker",
+      "id": "deco_image_top",
+      "label": "Deco Image (Top Right - Capsules)"
+    },
+    {
+      "type": "image_picker",
+      "id": "deco_image_bottom",
+      "label": "Deco Image (Bottom Left - Root)"
+    },
+    {
+      "type": "header",
+      "content": "Potency Banner"
+    },
+    {
+      "type": "text",
+      "id": "potency_heading",
+      "label": "Potency Heading",
+      "default": "DELIVERING MAX POTENCY"
+    },
+    {
+      "type": "textarea",
+      "id": "potency_text",
+      "label": "Potency Description",
+      "default": "Potency is validated by an advanced HPLC method developed by Arjuna Natural, measuring 21 specific glycosiside compounds."
+    },
+    {
+      "type": "header",
+      "content": "Nutritionist Section"
+    },
+    {
+      "type": "text",
+      "id": "nutri_heading",
+      "label": "Heading",
+      "default": "Recommended By Nutritionist"
+    },
+    {
+      "type": "textarea",
+      "id": "nutri_text",
+      "label": "Description",
+      "default": "Diet alone can\u2019t optimize stress, sleep, and hormones. A daily standardized dose of Ashwagandha supports these longevity pillars to create a balanced lifestyle."
+    },
+    {
+      "type": "text",
+      "id": "nutri_author",
+      "label": "Author",
+      "default": "- Keerthana, Clinical Nutritionist"
+    },
+    {
+      "type": "image_picker",
+      "id": "nutritionist_image",
+      "label": "Nutritionist Image (or Video Poster)"
+    },
+    {
+      "type": "text",
+      "id": "nutritionist_video_file",
+      "label": "Video URL (paste Shopify file URL)"
+    },
+    {
+      "type": "header",
+      "content": "Proven Health Benefits"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefits_image",
+      "label": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefits_bg_image",
+      "label": "Background watermark image"
+    },
+    {
+      "type": "text",
+      "id": "stat1_num",
+      "label": "Stat 1 Number",
+      "default": "32%"
+    },
+    {
+      "type": "text",
+      "id": "stat1_label",
+      "label": "Stat 1 Label",
+      "default": "Reduction in morning cortisol in stressed adults"
+    },
+    {
+      "type": "text",
+      "id": "stat1_source",
+      "label": "Stat 1 Source",
+      "default": "Lopresti et al., 2019 \u00b7 RCT n=60"
+    },
+    {
+      "type": "text",
+      "id": "stat2_num",
+      "label": "Stat 2 Number",
+      "default": "72%"
+    },
+    {
+      "type": "text",
+      "id": "stat2_label",
+      "label": "Stat 2 Label",
+      "default": "Improvement in self-reported sleep quality score"
+    },
+    {
+      "type": "text",
+      "id": "stat2_source",
+      "label": "Stat 2 Source",
+      "default": "Deshpande et al., 2020 \u00b7 RCT n=144"
+    },
+    {
+      "type": "text",
+      "id": "stat3_num",
+      "label": "Stat 3 Number",
+      "default": "14.7%"
+    },
+    {
+      "type": "text",
+      "id": "stat3_label",
+      "label": "Stat 3 Label",
+      "default": "Increase in testosterone in aging, overweight males"
+    },
+    {
+      "type": "text",
+      "id": "stat3_source",
+      "label": "Stat 3 Source",
+      "default": "Lopresti et al., 2019 \u00b7 Men 40\u201370 only"
+    },
+    {
+      "type": "text",
+      "id": "stat4_num",
+      "label": "Stat 4 Number",
+      "default": "60mg"
+    },
+    {
+      "type": "text",
+      "id": "stat4_label",
+      "label": "Stat 4 Label",
+      "default": "Minimum effective dose studied \u2014 vs 300\u2013600mg in older extracts"
+    },
+    {
+      "type": "text",
+      "id": "stat4_source",
+      "label": "Stat 4 Source",
+      "default": "Shoden RCT, 2024"
+    },
+    {
+      "type": "header",
+      "content": "Promo Banners"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner1_desktop",
+      "label": "Banner 1 - Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner1_mobile",
+      "label": "Banner 1 - Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner2_desktop",
+      "label": "Banner 2 - Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner2_mobile",
+      "label": "Banner 2 - Mobile"
+    },
+    {
+      "type": "header",
+      "content": "Comparison Table"
+    },
+    {
+      "type": "text",
+      "id": "ct_tag",
+      "label": "Tag text",
+      "default": "WHY SHODEN\u00ae"
+    },
+    {
+      "type": "text",
+      "id": "ct_title",
+      "label": "Title (use <em> for italic)",
+      "default": "Shoden\u00ae BDS vs. Generic Ashwagandha"
+    },
+    {
+      "type": "image_picker",
+      "id": "ct_aiwo_image",
+      "label": "AIWO Product Image"
+    },
+    {
+      "type": "text",
+      "id": "ct_aiwo_name",
+      "label": "AIWO Product Name",
+      "default": "AIWO Shoden\u00ae"
+    },
+    {
+      "type": "image_picker",
+      "id": "ct_gen_image",
+      "label": "Generic Product Image"
+    },
+    {
+      "type": "text",
+      "id": "ct_gen_name",
+      "label": "Generic Product Name",
+      "default": "Generic"
+    },
+    {
+      "type": "image_picker",
+      "id": "ct_right_icon",
+      "label": "Correct / Right Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "ct_wrong_icon",
+      "label": "Wrong / Cross Icon"
+    },
+    {
+      "type": "text",
+      "id": "ct_buy_text",
+      "label": "Buy Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "ct_bg_check",
+      "label": "Background Watermark (check)"
+    },
+    {
+      "type": "image_picker",
+      "id": "ct_bg_wrong",
+      "label": "Background Watermark (wrong)"
+    },
+    {
+      "type": "header",
+      "content": "Recommended Products"
+    },
+    {
+      "type": "text",
+      "id": "recs_title",
+      "label": "Title (use <em> for italic)",
+      "default": "Ashwagandha works better <em>as a system.</em>"
+    },
+    {
+      "type": "header",
+      "content": "FAQ Accordion (Section 6)"
+    },
+    {
+      "type": "text",
+      "id": "faq_tag",
+      "label": "Tag Label",
+      "default": "QUESTIONS"
+    },
+    {
+      "type": "text",
+      "id": "faq_title",
+      "label": "Title",
+      "default": "Straight answers."
+    },
+    {
+      "type": "image_picker",
+      "id": "faq_open_icon",
+      "label": "Open / Down Icon (leave blank for default SVG)"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq_close_icon",
+      "label": "Close / Up Icon (leave blank to rotate open icon)"
+    },
+    {
+      "type": "header",
+      "content": "FAQ with Image (Section 7)"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq2_image",
+      "label": "Left Side Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq2_open_icon",
+      "label": "Open / Down Icon (leave blank for default SVG)"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq2_close_icon",
+      "label": "Close / Up Icon (leave blank to rotate open icon)"
+    },
+    {
+      "type": "header",
+      "content": "CTA Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_bg_desktop",
+      "label": "Background Image - Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_bg_mobile",
+      "label": "Background Image - Mobile"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "Title",
+      "default": "The Oil That Proves It Deserves Your Table."
+    },
+    {
+      "type": "textarea",
+      "id": "cta_desc",
+      "label": "Description",
+      "default": "0.16% acidity. 68.5% MUFA. 250+ pesticides: none detected. Lab-verified freshness in every bottle. Start your Mediterranean protocol today."
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_btn_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "section_block",
+      "name": "Section Order",
+      "settings": [
+        {
+          "type": "select",
+          "id": "section_type",
+          "label": "Section",
+          "options": [
+            { "value": "ingredient_comparison", "label": "Ingredient Comparison" },
+            { "value": "nutritionist", "label": "Nutritionist" },
+            { "value": "proven_benefits", "label": "Proven Health Benefits" },
+            { "value": "comparison_table", "label": "Comparison Table" },
+            { "value": "biohackers", "label": "Biohackers" },
+            { "value": "promo_banners", "label": "Promo Banners" },
+            { "value": "recommended_products", "label": "Recommended Products" },
+            { "value": "faq_accordion", "label": "FAQ Accordion" },
+            { "value": "faq_with_image", "label": "FAQ with Image" },
+            { "value": "cta_banner", "label": "CTA Banner" }
+          ],
+          "default": "ingredient_comparison"
+        }
+      ]
+    },
+    {
+      "type": "comparison_row",
+      "name": "Comparison Table Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Row Label",
+          "default": "Withanolide %"
+        },
+        {
+          "type": "text",
+          "id": "aiwo_value",
+          "label": "AIWO Value",
+          "default": "35% HPLC"
+        },
+        {
+          "type": "select",
+          "id": "aiwo_icon",
+          "label": "AIWO Icon",
+          "options": [
+            { "value": "correct", "label": "Correct (green)" },
+            { "value": "wrong", "label": "Wrong (red)" },
+            { "value": "none", "label": "No icon" }
+          ],
+          "default": "correct"
+        },
+        {
+          "type": "text",
+          "id": "gen_value",
+          "label": "Generic Value",
+          "default": "1-3%"
+        },
+        {
+          "type": "select",
+          "id": "gen_icon",
+          "label": "Generic Icon",
+          "options": [
+            { "value": "correct", "label": "Correct (green)" },
+            { "value": "wrong", "label": "Wrong (red)" },
+            { "value": "none", "label": "No icon" }
+          ],
+          "default": "wrong"
+        }
+      ]
+    },
+    {
+      "type": "comparison_badge",
+      "name": "Comparison Circle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_percentage",
+          "label": "Percentage",
+          "default": "35%"
+        },
+        {
+          "type": "text",
+          "id": "badge_sublabel",
+          "label": "Sub-label",
+          "default": "withanolide Glycosides"
+        },
+        {
+          "type": "text",
+          "id": "badge_name",
+          "label": "Brand Name",
+          "default": "AIWO Shoden\u00ae BDS"
+        }
+      ]
+    },
+    {
+      "type": "pure_icon",
+      "name": "Pure & Natural Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "100% Pure & Natural"
+        }
+      ]
+    },
+    {
+      "type": "biohacker_card",
+      "name": "Biohacker Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": "Biohacker & Wellness"
+        },
+        {
+          "type": "text",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Quote text here"
+        }
+      ]
+    },
+    {
+      "type": "recommended_product",
+      "name": "Recommended Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "pillar_tag",
+          "label": "Pillar tag (e.g. Add on \u00b7 Pillar 6)",
+          "default": "Add on \u00b7 Pillar 6"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Custom description (optional)"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_recommended",
+          "label": "Show Recommended badge",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Your question here?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Your answer here.</p>"
+        }
+      ]
+    },
+    {
+      "type": "faq_icon_item",
+      "name": "FAQ with Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "FAQ title here"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Description text here.</p>"
+        }
+      ]
+    },
+    {
+      "type": "recommended_products_v1",
+      "name": "Recommended Products V1",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "recs_tag",
+          "label": "Tag Line",
+          "default": "Complete System"
+        },
+        {
+          "type": "text",
+          "id": "recs_title",
+          "label": "Title (use <em> for italic)",
+          "default": "Ashwagandha works better <em>as a system.</em>"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_desktop",
+          "label": "Show on Desktop",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_mobile",
+          "label": "Show on Mobile",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Bundle Row"
+        },
+        {
+          "type": "checkbox",
+          "id": "bundle_mode",
+          "label": "Show Bundle Row",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "bundle_title",
+          "label": "Bundle Title",
+          "default": "Sleep & Stress Stack"
+        },
+        {
+          "type": "textarea",
+          "id": "bundle_desc",
+          "label": "Bundle Description"
+        },
+        {
+          "type": "text",
+          "id": "bundle_pillar",
+          "label": "Bundle Pillar Tag",
+          "default": "Add on \u00b7 Pillar 6"
+        },
+        {
+          "type": "checkbox",
+          "id": "bundle_recommended",
+          "label": "Show Recommended badge on bundle",
+          "default": true
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_1",
+          "label": "Bundle Product 1"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_2",
+          "label": "Bundle Product 2"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_3",
+          "label": "Bundle Product 3"
+        },
+        {
+          "type": "header",
+          "content": "Product 1"
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Product 1"
+        },
+        {
+          "type": "text",
+          "id": "pillar_1",
+          "label": "Pillar Tag 1"
+        },
+        {
+          "type": "textarea",
+          "id": "desc_1",
+          "label": "Description 1"
+        },
+        {
+          "type": "checkbox",
+          "id": "rec_1",
+          "label": "Show Recommended badge",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Product 2"
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Product 2"
+        },
+        {
+          "type": "text",
+          "id": "pillar_2",
+          "label": "Pillar Tag 2"
+        },
+        {
+          "type": "textarea",
+          "id": "desc_2",
+          "label": "Description 2"
+        },
+        {
+          "type": "checkbox",
+          "id": "rec_2",
+          "label": "Show Recommended badge",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Product 3"
+        },
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Product 3"
+        },
+        {
+          "type": "text",
+          "id": "pillar_3",
+          "label": "Pillar Tag 3"
+        },
+        {
+          "type": "textarea",
+          "id": "desc_3",
+          "label": "Description 3"
+        },
+        {
+          "type": "checkbox",
+          "id": "rec_3",
+          "label": "Show Recommended badge",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Benefits - Shoden"
+    }
+  ]
+}
+{% endschema %}

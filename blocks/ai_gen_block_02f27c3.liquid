@@ -1,0 +1,787 @@
+{% doc %}
+  @prompt
+    Design a premium testimonial showcase section for a luxury olive oil brand (AIWO Olive Aura). The section should highlight real, detailed customer experiences from across India — from chefs, doctors, and nutritionists to home cooks and health advocates — emphasizing authenticity, trust, and national reach.
+    
+    Section Title:
+    
+    Heading: “What Connoisseurs Across India Are Saying”
+    
+    Centered, in bold olive-green font (#324A2D).
+    
+    Subtle underline or divider line in gold (#F9D65C).
+    
+    Optional subtext: “Real voices. Real results. Real freshness.”
+    
+    Layout Options:
+    
+    Use a carousel slider or grid layout with 2–3 testimonials per row on desktop and 1 per row on mobile.
+    
+    Each testimonial appears inside a softly rounded card with cream or white background (#FAF8F3 / #FFFFFF).
+    
+    Include a quotation mark icon or subtle gold accent line at the top of each card.
+    
+    Highlight reviewer name, title, and city below the quote.
+    
+    Maintain generous padding and whitespace for elegance.
+    
+    Example Content (use 3–5 showcased at a time):
+    
+    1️⃣ Priya Malhotra — Home Chef & Food Blogger, Delhi
+    “I’ve tried every premium EVOO in Delhi’s gourmet stores. AIWO is the first that actually tastes fresh—that peppery bite at the back of your throat? That’s real polyphenols, not marketing. The QR code with lab results sealed the deal for me.”
+    
+    2️⃣ Dr. Rajesh Kumar — Cardiologist, Bangalore
+    “As a cardiologist, I recommend olive oil to every patient. But most bottles here are oxidized before they leave the warehouse. AIWO’s peroxide value of 6—I've never seen numbers that good in India. This is what EVOO should be.”
+    
+    3️⃣ Chef Vikram Mehta — Executive Chef, Mumbai
+    “We tested 12 ‘extra virgin’ oils for our restaurant—most were refined junk. AIWO was the only one with DAGs above 70%. The color, the aroma, the finish... this is what Italian nonnas would approve of.”
+    
+    4️⃣ Anjali Reddy — Wellness Advocate, Hyderabad
+    “My husband has diabetes and heart issues. I needed oil I could trust—not just labels, but proof. The NABL cer
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-testimonial-showcase-{{ ai_gen_id }} {
+    padding: 60px 20px;
+    background-color: {{ block.settings.section_background }};
+  }
+
+  .ai-testimonial-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-testimonial-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .ai-testimonial-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    font-weight: 700;
+    margin: 0 0 15px;
+    line-height: 1.2;
+  }
+
+  .ai-testimonial-divider-{{ ai_gen_id }} {
+    width: 80px;
+    height: 3px;
+    background-color: {{ block.settings.divider_color }};
+    margin: 0 auto 15px;
+  }
+
+  .ai-testimonial-subtext-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtext_size }}px;
+    color: {{ block.settings.text_color }};
+    font-style: italic;
+    margin: 0;
+  }
+
+  .ai-testimonial-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .ai-testimonial-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 35px 30px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-testimonial-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .ai-testimonial-quote-icon-{{ ai_gen_id }} {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.15;
+  }
+
+  .ai-testimonial-quote-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    fill: {{ block.settings.accent_color }};
+  }
+
+  .ai-testimonial-accent-line-{{ ai_gen_id }} {
+    width: 50px;
+    height: 2px;
+    background-color: {{ block.settings.accent_color }};
+    margin-bottom: 20px;
+  }
+
+  .ai-testimonial-quote-{{ ai_gen_id }} {
+    font-size: {{ block.settings.quote_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.7;
+    margin: 0 0 25px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-testimonial-author-{{ ai_gen_id }} {
+    border-top: 1px solid {{ block.settings.divider_color }};
+    padding-top: 20px;
+  }
+
+  .ai-testimonial-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.name_size }}px;
+    color: {{ block.settings.heading_color }};
+    font-weight: 600;
+    margin: 0 0 5px;
+  }
+
+  .ai-testimonial-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 3px;
+    font-style: italic;
+  }
+
+  .ai-testimonial-location-{{ ai_gen_id }} {
+    font-size: {{ block.settings.location_size }}px;
+    color: {{ block.settings.accent_color }};
+    font-weight: 500;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-testimonial-showcase-{{ ai_gen_id }} {
+      padding: 50px 20px;
+    }
+
+    .ai-testimonial-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .ai-testimonial-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.85);
+    }
+
+    .ai-testimonial-card-{{ ai_gen_id }} {
+      padding: 30px 25px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-testimonial-showcase-{{ ai_gen_id }} {
+      padding: 40px 15px;
+    }
+
+    .ai-testimonial-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .ai-testimonial-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.7);
+    }
+
+    .ai-testimonial-quote-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.quote_size }}px * 0.9);
+    }
+
+    .ai-testimonial-card-{{ ai_gen_id }} {
+      padding: 25px 20px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-testimonial-showcase-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-testimonial-container-{{ ai_gen_id }}">
+    <div class="ai-testimonial-header-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-testimonial-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+      
+      {% if block.settings.show_divider %}
+        <div class="ai-testimonial-divider-{{ ai_gen_id }}"></div>
+      {% endif %}
+      
+      {% if block.settings.subtext != blank %}
+        <p class="ai-testimonial-subtext-{{ ai_gen_id }}">{{ block.settings.subtext }}</p>
+      {% endif %}
+    </div>
+
+    <div class="ai-testimonial-grid-{{ ai_gen_id }}">
+      {% if block.settings.testimonial_1_enabled %}
+        <div class="ai-testimonial-card-{{ ai_gen_id }}">
+          {% if block.settings.show_quote_icon %}
+            <div class="ai-testimonial-quote-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
+          {% endif %}
+          
+          {% if block.settings.show_accent_line %}
+            <div class="ai-testimonial-accent-line-{{ ai_gen_id }}"></div>
+          {% endif %}
+          
+          {% if block.settings.testimonial_1_quote != blank %}
+            <p class="ai-testimonial-quote-{{ ai_gen_id }}">{{ block.settings.testimonial_1_quote }}</p>
+          {% endif %}
+          
+          <div class="ai-testimonial-author-{{ ai_gen_id }}">
+            {% if block.settings.testimonial_1_name != blank %}
+              <p class="ai-testimonial-name-{{ ai_gen_id }}">{{ block.settings.testimonial_1_name }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_1_title != blank %}
+              <p class="ai-testimonial-title-{{ ai_gen_id }}">{{ block.settings.testimonial_1_title }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_1_location != blank %}
+              <p class="ai-testimonial-location-{{ ai_gen_id }}">{{ block.settings.testimonial_1_location }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.testimonial_2_enabled %}
+        <div class="ai-testimonial-card-{{ ai_gen_id }}">
+          {% if block.settings.show_quote_icon %}
+            <div class="ai-testimonial-quote-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
+          {% endif %}
+          
+          {% if block.settings.show_accent_line %}
+            <div class="ai-testimonial-accent-line-{{ ai_gen_id }}"></div>
+          {% endif %}
+          
+          {% if block.settings.testimonial_2_quote != blank %}
+            <p class="ai-testimonial-quote-{{ ai_gen_id }}">{{ block.settings.testimonial_2_quote }}</p>
+          {% endif %}
+          
+          <div class="ai-testimonial-author-{{ ai_gen_id }}">
+            {% if block.settings.testimonial_2_name != blank %}
+              <p class="ai-testimonial-name-{{ ai_gen_id }}">{{ block.settings.testimonial_2_name }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_2_title != blank %}
+              <p class="ai-testimonial-title-{{ ai_gen_id }}">{{ block.settings.testimonial_2_title }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_2_location != blank %}
+              <p class="ai-testimonial-location-{{ ai_gen_id }}">{{ block.settings.testimonial_2_location }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.testimonial_3_enabled %}
+        <div class="ai-testimonial-card-{{ ai_gen_id }}">
+          {% if block.settings.show_quote_icon %}
+            <div class="ai-testimonial-quote-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
+          {% endif %}
+          
+          {% if block.settings.show_accent_line %}
+            <div class="ai-testimonial-accent-line-{{ ai_gen_id }}"></div>
+          {% endif %}
+          
+          {% if block.settings.testimonial_3_quote != blank %}
+            <p class="ai-testimonial-quote-{{ ai_gen_id }}">{{ block.settings.testimonial_3_quote }}</p>
+          {% endif %}
+          
+          <div class="ai-testimonial-author-{{ ai_gen_id }}">
+            {% if block.settings.testimonial_3_name != blank %}
+              <p class="ai-testimonial-name-{{ ai_gen_id }}">{{ block.settings.testimonial_3_name }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_3_title != blank %}
+              <p class="ai-testimonial-title-{{ ai_gen_id }}">{{ block.settings.testimonial_3_title }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_3_location != blank %}
+              <p class="ai-testimonial-location-{{ ai_gen_id }}">{{ block.settings.testimonial_3_location }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.testimonial_4_enabled %}
+        <div class="ai-testimonial-card-{{ ai_gen_id }}">
+          {% if block.settings.show_quote_icon %}
+            <div class="ai-testimonial-quote-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
+          {% endif %}
+          
+          {% if block.settings.show_accent_line %}
+            <div class="ai-testimonial-accent-line-{{ ai_gen_id }}"></div>
+          {% endif %}
+          
+          {% if block.settings.testimonial_4_quote != blank %}
+            <p class="ai-testimonial-quote-{{ ai_gen_id }}">{{ block.settings.testimonial_4_quote }}</p>
+          {% endif %}
+          
+          <div class="ai-testimonial-author-{{ ai_gen_id }}">
+            {% if block.settings.testimonial_4_name != blank %}
+              <p class="ai-testimonial-name-{{ ai_gen_id }}">{{ block.settings.testimonial_4_name }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_4_title != blank %}
+              <p class="ai-testimonial-title-{{ ai_gen_id }}">{{ block.settings.testimonial_4_title }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_4_location != blank %}
+              <p class="ai-testimonial-location-{{ ai_gen_id }}">{{ block.settings.testimonial_4_location }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.testimonial_5_enabled %}
+        <div class="ai-testimonial-card-{{ ai_gen_id }}">
+          {% if block.settings.show_quote_icon %}
+            <div class="ai-testimonial-quote-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
+          {% endif %}
+          
+          {% if block.settings.show_accent_line %}
+            <div class="ai-testimonial-accent-line-{{ ai_gen_id }}"></div>
+          {% endif %}
+          
+          {% if block.settings.testimonial_5_quote != blank %}
+            <p class="ai-testimonial-quote-{{ ai_gen_id }}">{{ block.settings.testimonial_5_quote }}</p>
+          {% endif %}
+          
+          <div class="ai-testimonial-author-{{ ai_gen_id }}">
+            {% if block.settings.testimonial_5_name != blank %}
+              <p class="ai-testimonial-name-{{ ai_gen_id }}">{{ block.settings.testimonial_5_name }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_5_title != blank %}
+              <p class="ai-testimonial-title-{{ ai_gen_id }}">{{ block.settings.testimonial_5_title }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_5_location != blank %}
+              <p class="ai-testimonial-location-{{ ai_gen_id }}">{{ block.settings.testimonial_5_location }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.testimonial_6_enabled %}
+        <div class="ai-testimonial-card-{{ ai_gen_id }}">
+          {% if block.settings.show_quote_icon %}
+            <div class="ai-testimonial-quote-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
+          {% endif %}
+          
+          {% if block.settings.show_accent_line %}
+            <div class="ai-testimonial-accent-line-{{ ai_gen_id }}"></div>
+          {% endif %}
+          
+          {% if block.settings.testimonial_6_quote != blank %}
+            <p class="ai-testimonial-quote-{{ ai_gen_id }}">{{ block.settings.testimonial_6_quote }}</p>
+          {% endif %}
+          
+          <div class="ai-testimonial-author-{{ ai_gen_id }}">
+            {% if block.settings.testimonial_6_name != blank %}
+              <p class="ai-testimonial-name-{{ ai_gen_id }}">{{ block.settings.testimonial_6_name }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_6_title != blank %}
+              <p class="ai-testimonial-title-{{ ai_gen_id }}">{{ block.settings.testimonial_6_title }}</p>
+            {% endif %}
+            {% if block.settings.testimonial_6_location != blank %}
+              <p class="ai-testimonial-location-{{ ai_gen_id }}">{{ block.settings.testimonial_6_location }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Premium testimonials",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Connoisseurs Across India Are Saying"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "label": "Show divider line",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Real voices. Real results. Real freshness."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Columns on desktop",
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quote_icon",
+      "label": "Show quotation icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_accent_line",
+      "label": "Show accent line",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Card border radius",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#324A2D"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#525151"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#F9D65C"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#F9D65C"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtext_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtext size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Name size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "location_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Location size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Testimonial 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "testimonial_1_enabled",
+      "label": "Enable testimonial 1",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_1_quote",
+      "label": "Quote",
+      "default": "I've tried every premium EVOO in Delhi's gourmet stores. AIWO is the first that actually tastes fresh—that peppery bite at the back of your throat? That's real polyphenols, not marketing. The QR code with lab results sealed the deal for me."
+    },
+    {
+      "type": "text",
+      "id": "testimonial_1_name",
+      "label": "Name",
+      "default": "Priya Malhotra"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_1_title",
+      "label": "Title",
+      "default": "Home Chef & Food Blogger"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_1_location",
+      "label": "Location",
+      "default": "Delhi"
+    },
+    {
+      "type": "header",
+      "content": "Testimonial 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "testimonial_2_enabled",
+      "label": "Enable testimonial 2",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_2_quote",
+      "label": "Quote",
+      "default": "As a cardiologist, I recommend olive oil to every patient. But most bottles here are oxidized before they leave the warehouse. AIWO's peroxide value of 6—I've never seen numbers that good in India. This is what EVOO should be."
+    },
+    {
+      "type": "text",
+      "id": "testimonial_2_name",
+      "label": "Name",
+      "default": "Dr. Rajesh Kumar"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_2_title",
+      "label": "Title",
+      "default": "Cardiologist"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_2_location",
+      "label": "Location",
+      "default": "Bangalore"
+    },
+    {
+      "type": "header",
+      "content": "Testimonial 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "testimonial_3_enabled",
+      "label": "Enable testimonial 3",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_3_quote",
+      "label": "Quote",
+      "default": "We tested 12 'extra virgin' oils for our restaurant—most were refined junk. AIWO was the only one with DAGs above 70%. The color, the aroma, the finish... this is what Italian nonnas would approve of."
+    },
+    {
+      "type": "text",
+      "id": "testimonial_3_name",
+      "label": "Name",
+      "default": "Chef Vikram Mehta"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_3_title",
+      "label": "Title",
+      "default": "Executive Chef"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_3_location",
+      "label": "Location",
+      "default": "Mumbai"
+    },
+    {
+      "type": "header",
+      "content": "Testimonial 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "testimonial_4_enabled",
+      "label": "Enable testimonial 4",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_4_quote",
+      "label": "Quote",
+      "default": "My husband has diabetes and heart issues. I needed oil I could trust—not just labels, but proof. The NABL certification and transparent testing gave me confidence. Finally, an olive oil brand that respects Indian consumers."
+    },
+    {
+      "type": "text",
+      "id": "testimonial_4_name",
+      "label": "Name",
+      "default": "Anjali Reddy"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_4_title",
+      "label": "Title",
+      "default": "Wellness Advocate"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_4_location",
+      "label": "Location",
+      "default": "Hyderabad"
+    },
+    {
+      "type": "header",
+      "content": "Testimonial 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "testimonial_5_enabled",
+      "label": "Enable testimonial 5",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_5_quote",
+      "label": "Quote"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_5_name",
+      "label": "Name"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_5_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_5_location",
+      "label": "Location"
+    },
+    {
+      "type": "header",
+      "content": "Testimonial 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "testimonial_6_enabled",
+      "label": "Enable testimonial 6",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_6_quote",
+      "label": "Quote"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_6_name",
+      "label": "Name"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_6_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_6_location",
+      "label": "Location"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium testimonials"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

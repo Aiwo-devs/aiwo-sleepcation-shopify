@@ -1,0 +1,1243 @@
+{% doc %}
+  @prompt
+    Hero Section - Product Purchase with Cart Integration (Complete)
+    Section Prompt
+    Create a full-height hero section with product purchase functionality:
+    
+    Layout Options
+    Variant A: Image Right (Default)
+    Variant B: Image Left (Mirrored)
+    Both variants include identical functionality, just flipped horizontally.
+    
+    Structure
+    Background: Gradient (light ocean blue #F0F9FF to cream #FFFBEB)
+    Background Decorations:
+    
+    Top-right: Large blurred ocean circle
+    Left-center: Large blurred gold circle
+    
+    
+    Top Trust Badge Bar
+    Centered horizontal row:
+    
+    5 pill-shaped badges [REPEATABLE, ADD/REMOVE]
+    White bg, light gray border, small shadow
+    Fade-in animation (staggered 100ms delays)
+    Default badges:
+    
+    "FSSAI Certified" [EDITABLE]
+    "GMP Approved" [EDITABLE]
+    "ISO Certified" [EDITABLE]
+    "HALAL" [EDITABLE]
+    "Gluten Free" [EDITABLE]
+    
+    
+    Responsive: Wrap on mobile
+    
+    
+    Left Column - Product Content
+    Badge
+    
+    Green pill badge with sparkle icon
+    Text: "{{badge_text}}" [EDITABLE, default: "Double Strength Formula"]
+    
+    Heading
+    
+    Large display heading (48-72px)
+    Format: "{{brand_name}}" (dark) + "{{product_highlight}}" (ocean gradient) + line break + "{{product_name}}"
+    Defaults: "Aiwo" + "Ultimate" + "Omega 3"
+    All parts [EDITABLE]
+    
+    Description
+    
+    Main subheading (18-20px): "{{main_description}}" [EDITABLE RICH TEXT]
+    Default: "Premium 1000mg fish oil with EPA 360mg & DHA 240mg for comprehensive health support"
+    Small text (14px): "{{feature_text}}" [EDITABLE]
+    Default: "Advanced Enteric Coating eliminates burping & fishy aftertaste"
+    
+    Stats Grid
+    
+    3 columns (stack on mobile)
+    White cards, rounded, shadow
+    
+    Card 1:
+    
+    Number: "{{stat_1_value}}" (ocean blue) [EDITABLE, default: "1000mg"]
+    Label: "{{stat_1_label}}" [EDITABLE, default: "Total Fish Oil"]
+    
+    Card 2:
+    
+    Number: "{{stat_2_value}}" (gold) [EDITABLE, default: "660mg"]
+    Label: "{{stat_2_label}}" [EDITABLE, default: "Omega-3"]
+    
+    Card 3:
+    
+    Number: Shows selected variant count (green)
+    Label: Soft Gels
+    Dynamic based on variant selection
+    
+    
+    Product Variant Selection
+    Label: "Select Pack Size
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-product-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, {{ block.settings.gradient_start }} 0%, {{ block.settings.gradient_end }} 100%);
+    overflow: hidden;
+    padding: 40px 20px;
+  }
+
+  .ai-hero-product-{{ ai_gen_id }}::before,
+  .ai-hero-product-{{ ai_gen_id }}::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .ai-hero-product-{{ ai_gen_id }}::before {
+    width: 400px;
+    height: 400px;
+    background: {{ block.settings.decoration_ocean }};
+    top: -100px;
+    right: -100px;
+  }
+
+  .ai-hero-product-{{ ai_gen_id }}::after {
+    width: 500px;
+    height: 500px;
+    background: {{ block.settings.decoration_gold }};
+    left: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .ai-hero-product-container-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-hero-product-trust-bar-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 60px;
+  }
+
+  .ai-hero-product-trust-badge-{{ ai_gen_id }} {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    animation: ai-hero-fade-in-{{ ai_gen_id }} 0.6s ease forwards;
+  }
+
+  @keyframes ai-hero-fade-in-{{ ai_gen_id }} {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .ai-hero-product-main-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .ai-hero-product-main-{{ ai_gen_id }}.layout-image-left {
+    direction: rtl;
+  }
+
+  .ai-hero-product-main-{{ ai_gen_id }}.layout-image-left > * {
+    direction: ltr;
+  }
+
+  .ai-hero-product-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ai-hero-product-badge-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: {{ block.settings.badge_bg }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    width: fit-content;
+  }
+
+  .ai-hero-product-badge-{{ ai_gen_id }} svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ai-hero-product-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    line-height: 1.1;
+    margin: 0;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-hero-product-heading-{{ ai_gen_id }} .brand {
+    display: block;
+  }
+
+  .ai-hero-product-heading-{{ ai_gen_id }} .highlight {
+    background: linear-gradient(135deg, {{ block.settings.gradient_ocean_start }} 0%, {{ block.settings.gradient_ocean_end }} 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ai-hero-product-description-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ai-hero-product-description-{{ ai_gen_id }} .main {
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.5;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-hero-product-description-{{ ai_gen_id }} .feature {
+    font-size: 14px;
+    color: {{ block.settings.feature_text_color }};
+  }
+
+  .ai-hero-product-stats-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .ai-hero-product-stat-card-{{ ai_gen_id }} {
+    background: white;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+
+  .ai-hero-product-stat-card-{{ ai_gen_id }} .number {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .ai-hero-product-stat-card-{{ ai_gen_id }} .label {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 500;
+  }
+
+  .ai-hero-product-stat-card-{{ ai_gen_id }}:nth-child(1) .number {
+    color: {{ block.settings.stat_1_color }};
+  }
+
+  .ai-hero-product-stat-card-{{ ai_gen_id }}:nth-child(2) .number {
+    color: {{ block.settings.stat_2_color }};
+  }
+
+  .ai-hero-product-stat-card-{{ ai_gen_id }}:nth-child(3) .number {
+    color: {{ block.settings.stat_3_color }};
+  }
+
+  .ai-hero-product-variant-section-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-hero-product-variant-label-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-hero-product-variant-options-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .ai-hero-product-variant-option-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-hero-product-variant-option-{{ ai_gen_id }} input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ai-hero-product-variant-option-{{ ai_gen_id }} label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: {{ block.settings.variant_border_radius }}px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-height: 80px;
+  }
+
+  .ai-hero-product-variant-option-{{ ai_gen_id }} input:checked + label {
+    border-color: {{ block.settings.variant_selected_border }};
+    background: {{ block.settings.variant_selected_bg }};
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-hero-product-variant-option-{{ ai_gen_id }} label:hover {
+    border-color: {{ block.settings.variant_hover_border }};
+  }
+
+  .ai-hero-product-variant-option-{{ ai_gen_id }} .variant-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color }};
+    margin-bottom: 4px;
+  }
+
+  .ai-hero-product-variant-option-{{ ai_gen_id }} .variant-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: {{ block.settings.price_color }};
+  }
+
+  .ai-hero-product-variant-option-{{ ai_gen_id }} .variant-compare {
+    font-size: 12px;
+    color: #9ca3af;
+    text-decoration: line-through;
+  }
+
+  .ai-hero-product-variant-option-{{ ai_gen_id }} .variant-save {
+    font-size: 11px;
+    color: {{ block.settings.save_color }};
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .ai-hero-product-quantity-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .ai-hero-product-quantity-{{ ai_gen_id }} label {
+    font-size: 16px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-hero-product-quantity-controls-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 2px solid #e5e7eb;
+    border-radius: {{ block.settings.quantity_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-hero-product-quantity-controls-{{ ai_gen_id }} button {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color }};
+    transition: background 0.2s ease;
+  }
+
+  .ai-hero-product-quantity-controls-{{ ai_gen_id }} button:hover {
+    background: #f3f4f6;
+  }
+
+  .ai-hero-product-quantity-controls-{{ ai_gen_id }} input {
+    width: 60px;
+    height: 40px;
+    border: none;
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .ai-hero-product-cta-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ai-hero-product-add-to-cart-{{ ai_gen_id }} {
+    background: {{ block.settings.button_bg }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    padding: 18px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-hero-product-add-to-cart-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.button_hover_bg }};
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .ai-hero-product-add-to-cart-{{ ai_gen_id }}:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .ai-hero-product-total-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: white;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .ai-hero-product-total-{{ ai_gen_id }} .label {
+    font-size: 16px;
+    color: #6b7280;
+  }
+
+  .ai-hero-product-total-{{ ai_gen_id }} .amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-hero-product-image-{{ ai_gen_id }} {
+    position: relative;
+  }
+
+  .ai-hero-product-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-hero-product-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #f3f4f6;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-hero-product-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-hero-product-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #6b7280;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-hero-product-{{ ai_gen_id }} {
+      min-height: auto;
+      padding: 30px 16px;
+    }
+
+    .ai-hero-product-main-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-hero-product-main-{{ ai_gen_id }}.layout-image-left {
+      direction: ltr;
+    }
+
+    .ai-hero-product-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.6 }}px;
+    }
+
+    .ai-hero-product-description-{{ ai_gen_id }} .main {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+
+    .ai-hero-product-stats-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-hero-product-variant-options-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-hero-product-trust-bar-{{ ai_gen_id }} {
+      margin-bottom: 40px;
+    }
+  }
+{% endstyle %}
+
+<product-hero-{{ ai_gen_id }}
+  class="ai-hero-product-{{ ai_gen_id }}"
+  data-product-id="{{ product.id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-hero-product-container-{{ ai_gen_id }}">
+    <div class="ai-hero-product-trust-bar-{{ ai_gen_id }}">
+      {% for i in (1..5) %}
+        {% assign badge_enabled_key = 'trust_badge_' | append: i | append: '_enabled' %}
+        {% assign badge_text_key = 'trust_badge_' | append: i | append: '_text' %}
+        {% assign badge_enabled = block.settings[badge_enabled_key] %}
+        {% assign badge_text = block.settings[badge_text_key] %}
+        
+        {% if badge_enabled and badge_text != blank %}
+          <div
+            class="ai-hero-product-trust-badge-{{ ai_gen_id }}"
+            style="animation-delay: {{ forloop.index | times: 0.1 }}s;"
+          >
+            {{ badge_text }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="ai-hero-product-main-{{ ai_gen_id }} {% if block.settings.layout == 'image_left' %}layout-image-left{% endif %}">
+      <div class="ai-hero-product-content-{{ ai_gen_id }}">
+        <div class="ai-hero-product-badge-{{ ai_gen_id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9.153 5.408C10.42 3.136 11.053 2 12 2c.947 0 1.58 1.136 2.847 3.408l.328.588c.36.646.54.969.82 1.182.28.213.63.292 1.33.45l.636.144c2.46.557 3.689.835 3.982 1.776.292.94-.546 1.921-2.223 3.882l-.434.507c-.476.557-.715.836-.822 1.18-.107.345-.071.717.001 1.46l.066.677c.253 2.617.38 3.925-.386 4.506-.766.582-1.918.051-4.22-1.009l-.597-.274c-.654-.302-.981-.452-1.328-.452-.347 0-.674.15-1.329.452l-.595.274c-2.303 1.06-3.455 1.59-4.22 1.01-.767-.582-.64-1.89-.387-4.507l.066-.676c.072-.744.108-1.116 0-1.46-.106-.345-.345-.624-.821-1.18l-.434-.508c-1.677-1.96-2.515-2.941-2.223-3.882.293-.941 1.523-1.22 3.983-1.776l.636-.144c.699-.158 1.048-.237 1.329-.45.28-.213.46-.536.82-1.182l.328-.588z"/>
+          </svg>
+          {{ block.settings.badge_label }}
+        </div>
+
+        <h1 class="ai-hero-product-heading-{{ ai_gen_id }}">
+          <span class="brand">{{ block.settings.brand_name }}</span>
+          <span class="highlight">{{ block.settings.product_highlight }}</span>
+          {{ block.settings.product_name }}
+        </h1>
+
+        <div class="ai-hero-product-description-{{ ai_gen_id }}">
+          <div class="main">{{ block.settings.main_description }}</div>
+          <div class="feature">{{ block.settings.feature_text }}</div>
+        </div>
+
+        <div class="ai-hero-product-stats-{{ ai_gen_id }}">
+          <div class="ai-hero-product-stat-card-{{ ai_gen_id }}">
+            <div class="number">{{ block.settings.stat_1_value }}</div>
+            <div class="label">{{ block.settings.stat_1_label }}</div>
+          </div>
+          <div class="ai-hero-product-stat-card-{{ ai_gen_id }}">
+            <div class="number">{{ block.settings.stat_2_value }}</div>
+            <div class="label">{{ block.settings.stat_2_label }}</div>
+          </div>
+          <div class="ai-hero-product-stat-card-{{ ai_gen_id }}">
+            <div class="number" data-variant-count>60</div>
+            <div class="label">Soft Gels</div>
+          </div>
+        </div>
+
+        {% if product %}
+          {%- form 'product', product -%}
+            <div class="ai-hero-product-variant-section-{{ ai_gen_id }}">
+              <div class="ai-hero-product-variant-label-{{ ai_gen_id }}">
+                Select Pack Size
+              </div>
+              <div class="ai-hero-product-variant-options-{{ ai_gen_id }}">
+                {% for variant in product.variants %}
+                  <div class="ai-hero-product-variant-option-{{ ai_gen_id }}">
+                    <input
+                      type="radio"
+                      name="id"
+                      value="{{ variant.id }}"
+                      id="variant-{{ ai_gen_id }}-{{ variant.id }}"
+                      {% if forloop.first %}checked{% endif %}
+                      data-variant-price="{{ variant.price }}"
+                      data-variant-count="{{ variant.title }}"
+                    >
+                    <label for="variant-{{ ai_gen_id }}-{{ variant.id }}">
+                      <div class="variant-title">{{ variant.title }}</div>
+                      <div class="variant-price">{{ variant.price | money }}</div>
+                      {% if variant.compare_at_price > variant.price %}
+                        <div class="variant-compare">{{ variant.compare_at_price | money }}</div>
+                        {% assign savings = variant.compare_at_price | minus: variant.price %}
+                        <div class="variant-save">Save {{ savings | money }}</div>
+                      {% endif %}
+                    </label>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="ai-hero-product-quantity-{{ ai_gen_id }}">
+              <label>Quantity</label>
+              <div class="ai-hero-product-quantity-controls-{{ ai_gen_id }}">
+                <button type="button" data-quantity-decrease aria-label="Decrease quantity">−</button>
+                <input
+                  type="number"
+                  name="quantity"
+                  value="1"
+                  min="1"
+                  data-quantity-input
+                  aria-label="Quantity"
+                >
+                <button type="button" data-quantity-increase aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="ai-hero-product-cta-{{ ai_gen_id }}">
+              <button
+                type="submit"
+                class="ai-hero-product-add-to-cart-{{ ai_gen_id }}"
+                data-add-to-cart
+              >
+                {{ block.settings.button_label }}
+              </button>
+              <div class="ai-hero-product-total-{{ ai_gen_id }}">
+                <span class="label">Total Price:</span>
+                <span class="amount" data-total-price>{{ product.selected_or_first_available_variant.price | money }}</span>
+              </div>
+            </div>
+          {%- endform -%}
+        {% else %}
+          <div class="ai-hero-product-variant-section-{{ ai_gen_id }}">
+            <div class="ai-hero-product-variant-label-{{ ai_gen_id }}">
+              Select Pack Size
+            </div>
+            <div class="ai-hero-product-variant-options-{{ ai_gen_id }}">
+              <div class="ai-hero-product-variant-option-{{ ai_gen_id }}">
+                <input type="radio" id="demo-variant-1-{{ ai_gen_id }}" checked>
+                <label for="demo-variant-1-{{ ai_gen_id }}">
+                  <div class="variant-title">60 Capsules</div>
+                  <div class="variant-price">₹599</div>
+                  <div class="variant-compare">₹799</div>
+                  <div class="variant-save">Save ₹200</div>
+                </label>
+              </div>
+              <div class="ai-hero-product-variant-option-{{ ai_gen_id }}">
+                <input type="radio" id="demo-variant-2-{{ ai_gen_id }}">
+                <label for="demo-variant-2-{{ ai_gen_id }}">
+                  <div class="variant-title">120 Capsules</div>
+                  <div class="variant-price">₹999</div>
+                  <div class="variant-compare">₹1499</div>
+                  <div class="variant-save">Save ₹500</div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-hero-product-quantity-{{ ai_gen_id }}">
+            <label>Quantity</label>
+            <div class="ai-hero-product-quantity-controls-{{ ai_gen_id }}">
+              <button type="button" aria-label="Decrease quantity">−</button>
+              <input type="number" value="1" min="1" aria-label="Quantity">
+              <button type="button" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+
+          <div class="ai-hero-product-cta-{{ ai_gen_id }}">
+            <button type="button" class="ai-hero-product-add-to-cart-{{ ai_gen_id }}" disabled>
+              {{ block.settings.button_label }}
+            </button>
+            <div class="ai-hero-product-total-{{ ai_gen_id }}">
+              <span class="label">Total Price:</span>
+              <span class="amount">₹599</span>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-hero-product-image-{{ ai_gen_id }}">
+        {% if block.settings.product_image %}
+          <img
+            src="{{ block.settings.product_image | image_url: width: 1000 }}"
+            alt="{{ block.settings.product_image.alt | escape }}"
+            loading="eager"
+            width="{{ block.settings.product_image.width }}"
+            height="{{ block.settings.product_image.height }}"
+          >
+        {% else %}
+          <div class="ai-hero-product-image-placeholder-{{ ai_gen_id }}">
+            {{ 'product-1' | placeholder_svg_tag }}
+            <div class="ai-hero-product-empty-state-{{ ai_gen_id }}">
+              Add a product image
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</product-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.quantityInput = this.querySelector('[data-quantity-input]');
+        this.decreaseBtn = this.querySelector('[data-quantity-decrease]');
+        this.increaseBtn = this.querySelector('[data-quantity-increase]');
+        this.variantInputs = this.querySelectorAll('input[name="id"]');
+        this.totalPriceEl = this.querySelector('[data-total-price]');
+        this.variantCountEl = this.querySelector('[data-variant-count]');
+        this.addToCartBtn = this.querySelector('[data-add-to-cart]');
+      }
+
+      connectedCallback() {
+        this.setupQuantityControls();
+        this.setupVariantSelection();
+        this.setupAddToCart();
+      }
+
+      setupQuantityControls() {
+        if (!this.quantityInput) return;
+
+        this.decreaseBtn.addEventListener('click', () => {
+          const currentValue = parseInt(this.quantityInput.value) || 1;
+          if (currentValue > 1) {
+            this.quantityInput.value = currentValue - 1;
+            this.updateTotalPrice();
+          }
+        });
+
+        this.increaseBtn.addEventListener('click', () => {
+          const currentValue = parseInt(this.quantityInput.value) || 1;
+          this.quantityInput.value = currentValue + 1;
+          this.updateTotalPrice();
+        });
+
+        this.quantityInput.addEventListener('change', () => {
+          const value = parseInt(this.quantityInput.value) || 1;
+          if (value < 1) {
+            this.quantityInput.value = 1;
+          }
+          this.updateTotalPrice();
+        });
+      }
+
+      setupVariantSelection() {
+        if (!this.variantInputs.length) return;
+
+        this.variantInputs.forEach(input => {
+          input.addEventListener('change', () => {
+            this.updateTotalPrice();
+            this.updateVariantCount(input);
+          });
+        });
+      }
+
+      updateVariantCount(input) {
+        if (!this.variantCountEl) return;
+        const count = input.dataset.variantCount;
+        if (count) {
+          this.variantCountEl.textContent = count.replace(/\D/g, '');
+        }
+      }
+
+      updateTotalPrice() {
+        if (!this.totalPriceEl) return;
+
+        const selectedVariant = this.querySelector('input[name="id"]:checked');
+        if (!selectedVariant) return;
+
+        const variantPrice = parseFloat(selectedVariant.dataset.variantPrice);
+        const quantity = parseInt(this.quantityInput.value) || 1;
+        const total = variantPrice * quantity;
+
+        const formattedPrice = new Intl.NumberFormat('en-IN', {
+          style: 'currency',
+          currency: 'INR',
+          minimumFractionDigits: 0
+        }).format(total / 100);
+
+        this.totalPriceEl.textContent = formattedPrice;
+      }
+
+      setupAddToCart() {
+        if (!this.addToCartBtn) return;
+
+        const form = this.querySelector('form');
+        if (!form) return;
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          const formData = new FormData(form);
+          
+          fetch('/cart/add.js', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            window.dispatchEvent(new CustomEvent('cart:refresh'));
+            
+            if (window.theme && window.theme.cart) {
+              window.theme.cart.refresh();
+            }
+          })
+          .catch(error => {
+            console.error('Error adding to cart:', error);
+          });
+        });
+      }
+    }
+
+    customElements.define('product-hero-{{ ai_gen_id }}', ProductHero{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Hero product purchase",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "image_right",
+          "label": "Right"
+        },
+        {
+          "value": "image_left",
+          "label": "Left"
+        }
+      ],
+      "default": "image_right"
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Gradient start",
+      "default": "#F0F9FF"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient end",
+      "default": "#FFFBEB"
+    },
+    {
+      "type": "color",
+      "id": "decoration_ocean",
+      "label": "Ocean decoration",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "decoration_gold",
+      "label": "Gold decoration",
+      "default": "#F59E0B"
+    },
+    {
+      "type": "header",
+      "content": "Trust badges"
+    },
+    {
+      "type": "checkbox",
+      "id": "trust_badge_1_enabled",
+      "label": "Enable badge 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_1_text",
+      "label": "Badge 1 text",
+      "default": "FSSAI Certified"
+    },
+    {
+      "type": "checkbox",
+      "id": "trust_badge_2_enabled",
+      "label": "Enable badge 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_2_text",
+      "label": "Badge 2 text",
+      "default": "GMP Approved"
+    },
+    {
+      "type": "checkbox",
+      "id": "trust_badge_3_enabled",
+      "label": "Enable badge 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_3_text",
+      "label": "Badge 3 text",
+      "default": "ISO Certified"
+    },
+    {
+      "type": "checkbox",
+      "id": "trust_badge_4_enabled",
+      "label": "Enable badge 4",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_4_text",
+      "label": "Badge 4 text",
+      "default": "HALAL"
+    },
+    {
+      "type": "checkbox",
+      "id": "trust_badge_5_enabled",
+      "label": "Enable badge 5",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_5_text",
+      "label": "Badge 5 text",
+      "default": "Gluten Free"
+    },
+    {
+      "type": "header",
+      "content": "Product badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_label",
+      "label": "Badge text",
+      "default": "Double Strength Formula"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Background",
+      "default": "#10B981"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand name",
+      "default": "Aiwo"
+    },
+    {
+      "type": "text",
+      "id": "product_highlight",
+      "label": "Product highlight",
+      "default": "Ultimate"
+    },
+    {
+      "type": "text",
+      "id": "product_name",
+      "label": "Product name",
+      "default": "Omega 3"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 32,
+      "max": 72,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "gradient_ocean_start",
+      "label": "Highlight gradient start",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "gradient_ocean_end",
+      "label": "Highlight gradient end",
+      "default": "#06B6D4"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "main_description",
+      "label": "Main description",
+      "default": "<p>Premium 1000mg fish oil with EPA 360mg & DHA 240mg for comprehensive health support</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "text",
+      "id": "feature_text",
+      "label": "Feature text",
+      "default": "Advanced Enteric Coating eliminates burping & fishy aftertaste"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#4B5563"
+    },
+    {
+      "type": "color",
+      "id": "feature_text_color",
+      "label": "Feature text color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "header",
+      "content": "Stats"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_value",
+      "label": "Stat 1 value",
+      "default": "1000mg"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 label",
+      "default": "Total Fish Oil"
+    },
+    {
+      "type": "color",
+      "id": "stat_1_color",
+      "label": "Stat 1 color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_value",
+      "label": "Stat 2 value",
+      "default": "660mg"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 label",
+      "default": "Omega-3"
+    },
+    {
+      "type": "color",
+      "id": "stat_2_color",
+      "label": "Stat 2 color",
+      "default": "#F59E0B"
+    },
+    {
+      "type": "color",
+      "id": "stat_3_color",
+      "label": "Stat 3 color",
+      "default": "#10B981"
+    },
+    {
+      "type": "header",
+      "content": "Product image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Variant selection"
+    },
+    {
+      "type": "range",
+      "id": "variant_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "variant_selected_border",
+      "label": "Selected border",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "variant_selected_bg",
+      "label": "Selected background",
+      "default": "#F0F9FF"
+    },
+    {
+      "type": "color",
+      "id": "variant_hover_border",
+      "label": "Hover border",
+      "default": "#9CA3AF"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "save_color",
+      "label": "Save color",
+      "default": "#10B981"
+    },
+    {
+      "type": "header",
+      "content": "Quantity controls"
+    },
+    {
+      "type": "range",
+      "id": "quantity_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Background",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Hover background",
+      "default": "#0284C7"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero product purchase"
+    }
+  ]
+}
+{% endschema %}

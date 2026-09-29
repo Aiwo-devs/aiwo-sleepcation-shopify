@@ -1,0 +1,1032 @@
+{% doc %}
+  @prompt
+    Create a stunning hero section for Fast Bar + EVOO combo launch landing page.
+    
+    LAYOUT: Split screen - 60% text left, 40% image right (stack vertically on mobile, image first)
+    
+    LEFT SIDE CONTENT:
+    
+    Main Heading:
+    "Your Fasting Journey Is Harder Than It Should Be"
+    - Font: Poppins Bold, 54px desktop / 32px mobile
+    - Color: #211E1E
+    - IMPORTANT: Style "Fasting Journey" in italic font-style with color #D68641
+    - Line height: 1.2
+    - Margin bottom: 20px
+    
+    Subheading:
+    "Start a new chapter with India's first science-backed fasting nutrition system. Get premium Fast Bars + Extra Virgin Olive Oil with exclusive freebies worth ₹11,000+"
+    - Font: Lato Regular, 18px
+    - Color: #545252
+    - Line height: 1.6
+    - Max width: 600px
+    - Margin bottom: 32px
+    
+    Stats Row (4 items horizontal, clean icons):
+    [Icon] 5g Protein  |  [Icon] Rich in MCTs  |  [Icon] Premium Ingredients  |  [Icon] A.C. Verified
+    - Icons: 32x32px, minimal line style
+    - Text: Poppins SemiBold 16px (top) + Lato 13px (bottom)
+    - Gap: 32px between items
+    - Mobile: 2x2 grid
+    
+    Primary CTA Button:
+    "View Combo Deals ↓"
+    - Background: #5B2E28
+    - Text: #FFFFFF, Poppins SemiBold 18px
+    - Padding: 18px 48px
+    - Border radius: 0px (sharp corners)
+    - Hover effect: Fill from left to right with #FFFFFF, text changes to #5B2E28
+    - Smooth transition: 0.4s ease
+    
+    Secondary Link (beside button):
+    "How It Works →"
+    - Font: Lato Regular 16px
+    - Color: #211E1E
+    - Text underline, underline-offset: 4px
+    - Hover: #D68641
+    
+    Countdown Timer (below buttons):
+    "⏰ Offer Ends In: 23:45:12"
+    - Background: #FFF6EF
+    - Padding: 12px 20px
+    - Font: Poppins Medium 16px
+    - Color: #211E1E
+    - Display: inline-flex, align-items center
+    - Make countdown live/functional
+    
+    Trust Badges Row (small, bottom):
+    ✓ FSSAI Approved  |  ✓ 30-Day Guarantee  |  ✓ Free Shipping  |  ✓ 10,000+ Customers
+    - Font: Lato Regular 13px
+    - Color: #545252
+    - Checkmarks: #4CAF50
+    - Separator: 1px border-top, padding-top 20px
+    - Mobile: wrap to 2x2
+    
+    RIGHT SIDE CONTENT:
+    
+    Product Image:
+    - High-quality Fast Bar pack + EVOO bottle
+    - Clean white/transparent background
+    - Subtle shadow: 0 4px 20px rgba(33,30,30,0.08)
+    
+    Floating Discount Badge (position absolute, top-right):
+    Circular badge 120x120px
+    Text: "UP TO" / "72%" / "OFF" (stacked)
+    - Background: #5B2E28
+    - Text: #FFFFFF
+    - Font: Poppins Bold
+    - Animation: subtle pulse (scale 1 to 1.05, 2s infinite)
+    
+    DESIGN SPECIFICATIONS:
+    - Background: #FFFFFF
+    - Section padding: 64px top/bottom, 20px left/right
+    - Max-width: 1400px, centered
+    - Grid gap: 48px
+    
+    MOBILE RESPONSIVE:
+    - Stack: Image → Text
+    - Heading: 32px
+    - Subheading: 16px
+    - Full-width buttons
+    - Stats: 2x2 grid, gap 20px
+    - Section padding: 48px vertical, 20px horizontal
+    
+    AESTHETIC: Swiss minimalism, premium health brand, clean typography, generous white space, sophisticated without being cold, conversion-focused layout
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-fastbar-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding_desktop }}px 20px;
+    width: 100%;
+  }
+
+  .ai-hero-fastbar-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: {{ block.settings.grid_gap }}px;
+    align-items: center;
+  }
+
+  .ai-hero-fastbar-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ai-hero-fastbar-heading-{{ ai_gen_id }} {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: {{ block.settings.heading_size_desktop }}px;
+    line-height: 1.2;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 20px 0;
+  }
+
+  .ai-hero-fastbar-heading-highlight-{{ ai_gen_id }} {
+    font-style: italic;
+    color: {{ block.settings.heading_highlight_color }};
+  }
+
+  .ai-hero-fastbar-subheading-{{ ai_gen_id }} {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: {{ block.settings.subheading_size_desktop }}px;
+    line-height: 1.6;
+    color: {{ block.settings.subheading_color }};
+    max-width: 600px;
+    margin: 0 0 32px 0;
+  }
+
+  .ai-hero-fastbar-stats-{{ ai_gen_id }} {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .ai-hero-fastbar-stat-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ai-hero-fastbar-stat-icon-{{ ai_gen_id }} {
+    width: 32px;
+    height: 32px;
+    color: {{ block.settings.stat_icon_color }};
+  }
+
+  .ai-hero-fastbar-stat-title-{{ ai_gen_id }} {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: {{ block.settings.heading_color }};
+    text-align: center;
+  }
+
+  .ai-hero-fastbar-stat-subtitle-{{ ai_gen_id }} {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: {{ block.settings.subheading_color }};
+    text-align: center;
+  }
+
+  .ai-hero-fastbar-cta-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .ai-hero-fastbar-primary-btn-{{ ai_gen_id }} {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 48px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 0;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease;
+  }
+
+  .ai-hero-fastbar-primary-btn-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: {{ block.settings.button_hover_bg_color }};
+    transition: width 0.4s ease;
+    z-index: 0;
+  }
+
+  .ai-hero-fastbar-primary-btn-{{ ai_gen_id }}:hover::before {
+    width: 100%;
+  }
+
+  .ai-hero-fastbar-primary-btn-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-hero-fastbar-primary-btn-{{ ai_gen_id }} span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-hero-fastbar-secondary-link-{{ ai_gen_id }} {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: {{ block.settings.heading_color }};
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.3s ease;
+  }
+
+  .ai-hero-fastbar-secondary-link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.heading_highlight_color }};
+  }
+
+  .ai-hero-fastbar-countdown-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: {{ block.settings.countdown_bg_color }};
+    padding: 12px 20px;
+    margin-bottom: 20px;
+  }
+
+  .ai-hero-fastbar-countdown-text-{{ ai_gen_id }} {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-hero-fastbar-trust-badges-{{ ai_gen_id }} {
+    display: flex;
+    gap: 24px;
+    padding-top: 20px;
+    border-top: 1px solid {{ block.settings.trust_border_color }};
+  }
+
+  .ai-hero-fastbar-trust-badge-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: {{ block.settings.subheading_color }};
+  }
+
+  .ai-hero-fastbar-trust-check-{{ ai_gen_id }} {
+    color: {{ block.settings.trust_check_color }};
+    font-size: 16px;
+  }
+
+  .ai-hero-fastbar-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-fastbar-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 20px rgba(33, 30, 30, 0.08));
+  }
+
+  .ai-hero-fastbar-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+  }
+
+  .ai-hero-fastbar-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  .ai-hero-fastbar-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-hero-fastbar-discount-badge-{{ ai_gen_id }} {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: {{ block.settings.badge_bg_color }};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: ai-hero-fastbar-pulse-{{ ai_gen_id }} 2s infinite;
+    z-index: 2;
+  }
+
+  .ai-hero-fastbar-badge-text-{{ ai_gen_id }} {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: {{ block.settings.badge_text_color }};
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .ai-hero-fastbar-badge-up-{{ ai_gen_id }} {
+    font-size: 14px;
+  }
+
+  .ai-hero-fastbar-badge-percent-{{ ai_gen_id }} {
+    font-size: 36px;
+  }
+
+  .ai-hero-fastbar-badge-off-{{ ai_gen_id }} {
+    font-size: 14px;
+  }
+
+  @keyframes ai-hero-fastbar-pulse-{{ ai_gen_id }} {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-fastbar-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_mobile }}px 20px;
+    }
+
+    .ai-hero-fastbar-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .ai-hero-fastbar-image-wrapper-{{ ai_gen_id }} {
+      order: -1;
+    }
+
+    .ai-hero-fastbar-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+
+    .ai-hero-fastbar-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size_mobile }}px;
+    }
+
+    .ai-hero-fastbar-stats-{{ ai_gen_id }} {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .ai-hero-fastbar-cta-wrapper-{{ ai_gen_id }} {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+    }
+
+    .ai-hero-fastbar-primary-btn-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-hero-fastbar-secondary-link-{{ ai_gen_id }} {
+      text-align: center;
+    }
+
+    .ai-hero-fastbar-trust-badges-{{ ai_gen_id }} {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .ai-hero-fastbar-discount-badge-{{ ai_gen_id }} {
+      width: 100px;
+      height: 100px;
+      top: 10px;
+      right: 10px;
+    }
+
+    .ai-hero-fastbar-badge-percent-{{ ai_gen_id }} {
+      font-size: 30px;
+    }
+  }
+{% endstyle %}
+
+<fast-bar-hero-{{ ai_gen_id }} class="ai-hero-fastbar-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hero-fastbar-container-{{ ai_gen_id }}">
+    <div class="ai-hero-fastbar-content-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h1 class="ai-hero-fastbar-heading-{{ ai_gen_id }}">
+          {{ block.settings.heading }}
+        </h1>
+      {% endif %}
+
+      {% if block.settings.subheading != blank %}
+        <div class="ai-hero-fastbar-subheading-{{ ai_gen_id }}">
+          {{ block.settings.subheading }}
+        </div>
+      {% endif %}
+
+      <div class="ai-hero-fastbar-stats-{{ ai_gen_id }}">
+        {% if block.settings.stat_1_title != blank %}
+          <div class="ai-hero-fastbar-stat-{{ ai_gen_id }}">
+            <div class="ai-hero-fastbar-stat-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="ai-hero-fastbar-stat-title-{{ ai_gen_id }}">{{ block.settings.stat_1_title }}</div>
+            {% if block.settings.stat_1_subtitle != blank %}
+              <div class="ai-hero-fastbar-stat-subtitle-{{ ai_gen_id }}">{{ block.settings.stat_1_subtitle }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if block.settings.stat_2_title != blank %}
+          <div class="ai-hero-fastbar-stat-{{ ai_gen_id }}">
+            <div class="ai-hero-fastbar-stat-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="ai-hero-fastbar-stat-title-{{ ai_gen_id }}">{{ block.settings.stat_2_title }}</div>
+            {% if block.settings.stat_2_subtitle != blank %}
+              <div class="ai-hero-fastbar-stat-subtitle-{{ ai_gen_id }}">{{ block.settings.stat_2_subtitle }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if block.settings.stat_3_title != blank %}
+          <div class="ai-hero-fastbar-stat-{{ ai_gen_id }}">
+            <div class="ai-hero-fastbar-stat-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="ai-hero-fastbar-stat-title-{{ ai_gen_id }}">{{ block.settings.stat_3_title }}</div>
+            {% if block.settings.stat_3_subtitle != blank %}
+              <div class="ai-hero-fastbar-stat-subtitle-{{ ai_gen_id }}">{{ block.settings.stat_3_subtitle }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if block.settings.stat_4_title != blank %}
+          <div class="ai-hero-fastbar-stat-{{ ai_gen_id }}">
+            <div class="ai-hero-fastbar-stat-icon-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="ai-hero-fastbar-stat-title-{{ ai_gen_id }}">{{ block.settings.stat_4_title }}</div>
+            {% if block.settings.stat_4_subtitle != blank %}
+              <div class="ai-hero-fastbar-stat-subtitle-{{ ai_gen_id }}">{{ block.settings.stat_4_subtitle }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="ai-hero-fastbar-cta-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.primary_button_text != blank %}
+          <a href="{{ block.settings.primary_button_link }}" class="ai-hero-fastbar-primary-btn-{{ ai_gen_id }}">
+            <span>{{ block.settings.primary_button_text }}</span>
+          </a>
+        {% endif %}
+
+        {% if block.settings.secondary_link_text != blank %}
+          <a href="{{ block.settings.secondary_link_url }}" class="ai-hero-fastbar-secondary-link-{{ ai_gen_id }}">
+            {{ block.settings.secondary_link_text }}
+          </a>
+        {% endif %}
+      </div>
+
+      {% if block.settings.show_countdown %}
+        <div class="ai-hero-fastbar-countdown-{{ ai_gen_id }}">
+          <span class="ai-hero-fastbar-countdown-text-{{ ai_gen_id }}">
+            ⏰ {{ block.settings.countdown_label }} <span id="ai-hero-countdown-timer-{{ ai_gen_id }}">23:45:12</span>
+          </span>
+        </div>
+      {% endif %}
+
+      <div class="ai-hero-fastbar-trust-badges-{{ ai_gen_id }}">
+        {% if block.settings.trust_1 != blank %}
+          <div class="ai-hero-fastbar-trust-badge-{{ ai_gen_id }}">
+            <span class="ai-hero-fastbar-trust-check-{{ ai_gen_id }}">✓</span>
+            <span>{{ block.settings.trust_1 }}</span>
+          </div>
+        {% endif %}
+
+        {% if block.settings.trust_2 != blank %}
+          <div class="ai-hero-fastbar-trust-badge-{{ ai_gen_id }}">
+            <span class="ai-hero-fastbar-trust-check-{{ ai_gen_id }}">✓</span>
+            <span>{{ block.settings.trust_2 }}</span>
+          </div>
+        {% endif %}
+
+        {% if block.settings.trust_3 != blank %}
+          <div class="ai-hero-fastbar-trust-badge-{{ ai_gen_id }}">
+            <span class="ai-hero-fastbar-trust-check-{{ ai_gen_id }}">✓</span>
+            <span>{{ block.settings.trust_3 }}</span>
+          </div>
+        {% endif %}
+
+        {% if block.settings.trust_4 != blank %}
+          <div class="ai-hero-fastbar-trust-badge-{{ ai_gen_id }}">
+            <span class="ai-hero-fastbar-trust-check-{{ ai_gen_id }}">✓</span>
+            <span>{{ block.settings.trust_4 }}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-hero-fastbar-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.product_image %}
+        <img
+          src="{{ block.settings.product_image | image_url: width: 800 }}"
+          alt="{{ block.settings.product_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.product_image.width }}"
+          height="{{ block.settings.product_image.height }}"
+          class="ai-hero-fastbar-image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-hero-fastbar-image-placeholder-{{ ai_gen_id }}">
+          {{ 'product-1' | placeholder_svg_tag }}
+          <div class="ai-hero-fastbar-empty-state-{{ ai_gen_id }}">
+            Next, add your product image
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.show_discount_badge %}
+        <div class="ai-hero-fastbar-discount-badge-{{ ai_gen_id }}">
+          <div class="ai-hero-fastbar-badge-text-{{ ai_gen_id }}">
+            <div class="ai-hero-fastbar-badge-up-{{ ai_gen_id }}">{{ block.settings.badge_up_text }}</div>
+            <div class="ai-hero-fastbar-badge-percent-{{ ai_gen_id }}">{{ block.settings.badge_percent_text }}</div>
+            <div class="ai-hero-fastbar-badge-off-{{ ai_gen_id }}">{{ block.settings.badge_off_text }}</div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</fast-bar-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FastBarHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.countdownElement = this.querySelector('#ai-hero-countdown-timer-{{ ai_gen_id }}');
+      }
+
+      connectedCallback() {
+        if (this.countdownElement) {
+          this.startCountdown();
+        }
+        this.applyHeadingHighlight();
+      }
+
+      applyHeadingHighlight() {
+        const heading = this.querySelector('.ai-hero-fastbar-heading-{{ ai_gen_id }}');
+        if (heading) {
+          const highlightText = '{{ block.settings.heading_highlight_text }}';
+          if (highlightText) {
+            const headingHTML = heading.innerHTML;
+            const highlightedHTML = headingHTML.replace(
+              highlightText,
+              '<span class="ai-hero-fastbar-heading-highlight-{{ ai_gen_id }}">' + highlightText + '</span>'
+            );
+            heading.innerHTML = highlightedHTML;
+          }
+        }
+      }
+
+      startCountdown() {
+        const endTime = new Date().getTime() + ({{ block.settings.countdown_hours }} * 60 * 60 * 1000);
+
+        const updateCountdown = () => {
+          const now = new Date().getTime();
+          const distance = endTime - now;
+
+          if (distance < 0) {
+            this.countdownElement.textContent = '00:00:00';
+            return;
+          }
+
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          this.countdownElement.textContent = 
+            String(hours).padStart(2, '0') + ':' + 
+            String(minutes).padStart(2, '0') + ':' + 
+            String(seconds).padStart(2, '0');
+        };
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+    }
+
+    customElements.define('fast-bar-hero-{{ ai_gen_id }}', FastBarHero{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Fast Bar hero",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "section_padding_desktop",
+      "label": "Desktop padding",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "section_padding_mobile",
+      "label": "Mobile padding",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Main heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Fasting Journey Is Harder Than It Should Be"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight_text",
+      "label": "Text to highlight in italic",
+      "default": "Fasting Journey"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Desktop size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 54
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#211E1E"
+    },
+    {
+      "type": "color",
+      "id": "heading_highlight_color",
+      "label": "Highlight color",
+      "default": "#D68641"
+    },
+    {
+      "type": "header",
+      "content": "Subheading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Start a new chapter with India's first science-backed fasting nutrition system. Get premium Fast Bars + Extra Virgin Olive Oil with exclusive freebies worth ₹11,000+"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_desktop",
+      "label": "Desktop size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "label": "Mobile size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#545252"
+    },
+    {
+      "type": "header",
+      "content": "Stats row"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_title",
+      "label": "Stat 1 title",
+      "default": "5g Protein"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_subtitle",
+      "label": "Stat 1 subtitle",
+      "default": "Per bar"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_title",
+      "label": "Stat 2 title",
+      "default": "Rich in MCTs"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_subtitle",
+      "label": "Stat 2 subtitle",
+      "default": "Energy boost"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_title",
+      "label": "Stat 3 title",
+      "default": "Premium Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_subtitle",
+      "label": "Stat 3 subtitle",
+      "default": "Quality first"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_title",
+      "label": "Stat 4 title",
+      "default": "A.C. Verified"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_subtitle",
+      "label": "Stat 4 subtitle",
+      "default": "Certified"
+    },
+    {
+      "type": "color",
+      "id": "stat_icon_color",
+      "label": "Icon color",
+      "default": "#D68641"
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "text",
+      "id": "primary_button_text",
+      "label": "Button text",
+      "default": "View Combo Deals ↓"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#5B2E28"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#5B2E28"
+    },
+    {
+      "type": "header",
+      "content": "Secondary link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_link_text",
+      "label": "Link text",
+      "default": "How It Works →"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "header",
+      "content": "Countdown timer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_countdown",
+      "label": "Show countdown timer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "countdown_label",
+      "label": "Countdown label",
+      "default": "Offer Ends In:"
+    },
+    {
+      "type": "range",
+      "id": "countdown_hours",
+      "label": "Countdown duration",
+      "min": 1,
+      "max": 48,
+      "step": 1,
+      "unit": "h",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "countdown_bg_color",
+      "label": "Background color",
+      "default": "#FFF6EF"
+    },
+    {
+      "type": "header",
+      "content": "Trust badges"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust badge 1",
+      "default": "FSSAI Approved"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust badge 2",
+      "default": "30-Day Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Trust badge 3",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "trust_4",
+      "label": "Trust badge 4",
+      "default": "10,000+ Customers"
+    },
+    {
+      "type": "color",
+      "id": "trust_check_color",
+      "label": "Checkmark color",
+      "default": "#4CAF50"
+    },
+    {
+      "type": "color",
+      "id": "trust_border_color",
+      "label": "Border color",
+      "default": "#E0E0E0"
+    },
+    {
+      "type": "header",
+      "content": "Product image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "header",
+      "content": "Discount badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discount_badge",
+      "label": "Show discount badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_up_text",
+      "label": "Top text",
+      "default": "UP TO"
+    },
+    {
+      "type": "text",
+      "id": "badge_percent_text",
+      "label": "Percent text",
+      "default": "72%"
+    },
+    {
+      "type": "text",
+      "id": "badge_off_text",
+      "label": "Bottom text",
+      "default": "OFF"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Background color",
+      "default": "#5B2E28"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fast Bar hero"
+    }
+  ]
+}
+{% endschema %}

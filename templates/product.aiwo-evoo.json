@@ -1,0 +1,531 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "settings": {
+            "hide_when_pre_order": false,
+            "box_type": "square",
+            "message": "<p>Estimated delivery between <strong>earliest_delivery_date and latest_delivery_date.</strong></p>",
+            "tooltip_text": "",
+            "tooltip_icon": "none",
+            "custom_icon": "",
+            "tooltip_icon_position": "left",
+            "tooltip_message": "",
+            "show_background": true,
+            "show_border": false,
+            "background_color_light": "#e4edfa",
+            "message_color_light": "#568ddd",
+            "border_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)",
+            "bg_tooltip_color_light": "rgba(0,0,0,0)",
+            "tooltip_color_light": "rgba(0,0,0,0)",
+            "bg_tooltip_color_dark": "rgba(0,0,0,0)",
+            "tooltip_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_option": true,
+            "enable_color_swatches": true,
+            "swatch_size": "small"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "style": "adapt"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "disabled": true,
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_button_style": "secondary",
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": false,
+            "show_price": false,
+            "hide_sale_price": true,
+            "show_gift_card_recipient": true,
+            "pickup_availability": false,
+            "hide_when_pre_order": false,
+            "preorder_button_label": "Pre-order",
+            "preorder_message": "<p>This product will be available for sale in 2 weeks, but you can pre-order now to receive 10% discount!</p>",
+            "preorder_show_dynamic_button": false,
+            "show_background": false,
+            "box_type": "square",
+            "background_color_light": "rgba(0,0,0,0)",
+            "message_color_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "message_color_dark": "rgba(0,0,0,0)",
+            "button_light": "rgba(0,0,0,0)",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "rgba(0,0,0,0)",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "button_dark": "rgba(0,0,0,0)",
+            "button_text_dark": "rgba(0,0,0,0)",
+            "button_hover_dark": "rgba(0,0,0,0)",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "feature_icon_99BxnX": {
+          "type": "feature_icon",
+          "settings": {
+            "applied_collections": [],
+            "heading_size": 110,
+            "icon_size": 30,
+            "border_column": "none",
+            "content_alignment": "start",
+            "background_color_light": "rgba(0,0,0,0)",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "line_border_light": "rgba(0,0,0,0)",
+            "color_icon_light": "rgba(0,0,0,0)",
+            "background_color_dark": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "line_border_dark": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "icon_1": "none",
+            "another_icon_1": "",
+            "custom_icon_1": "",
+            "title_1": "ICON",
+            "text_1": "<ul><li>Anti-Aging</li><li>Firms</li><li>Moisturizes</li></ul>",
+            "link_1": "",
+            "open_new_window_1": false,
+            "icon_2": "none",
+            "another_icon_2": "",
+            "custom_icon_2": "",
+            "title_2": "ICON",
+            "text_2": "<ul><li>Mature</li><li>Dry</li><li>Sensitive</li></ul>",
+            "link_2": "",
+            "open_new_window_2": false,
+            "icon_3": "none",
+            "another_icon_3": "",
+            "custom_icon_3": "",
+            "title_3": "ICON",
+            "text_3": "<p>Fragrance-free</p>",
+            "link_3": "",
+            "open_new_window_3": false,
+            "icon_4": "truck",
+            "another_icon_4": "",
+            "custom_icon_4": "",
+            "title_4": "",
+            "text_4": "",
+            "link_4": "",
+            "open_new_window_4": false,
+            "icon_5": "truck",
+            "another_icon_5": "",
+            "custom_icon_5": "",
+            "title_5": "",
+            "text_5": "",
+            "link_5": "",
+            "open_new_window_5": false,
+            "icon_6": "truck",
+            "another_icon_6": "",
+            "custom_icon_6": "",
+            "title_6": "",
+            "text_6": "",
+            "link_6": "",
+            "open_new_window_6": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "show_in_tab": true,
+            "open_by_default": true,
+            "make_content_center": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false,
+            "border_color_light": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "collapsible-row-1": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "use_secondary_background": false,
+            "heading": "Returns + Exchanges",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "use_secondary_background": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": false,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "price",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "variant_picker",
+        "quantity_selector",
+        "gift_wrapping_EK3NQn",
+        "buy_buttons",
+        "feature_icon_99BxnX",
+        "description",
+        "complementary_XCwmDV",
+        "collapsible-row-1",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_image": true,
+        "show_product_name": false,
+        "title_size": 100,
+        "heading_tag": "h1",
+        "show_vendor": false,
+        "link_vendor": false,
+        "make_content_center": false,
+        "desktop_layout": "left",
+        "desktop_media_layout": "thumbnail_slider",
+        "show_arrow_button": true,
+        "mobile_media_size": "full_width",
+        "show_thumnail_mobile": false,
+        "transition_style": "fade",
+        "image_ratio": "3/4",
+        "thumbnail_position": "vertical",
+        "enable_image_zoom": false,
+        "zoom_effect": "enlarge",
+        "enable_video_autoplay": false,
+        "enable_video_loop": false,
+        "show_first_image_avaiable": true,
+        "show_media_with_variant_selected": false,
+        "option_to_classify_variant_media": "",
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "show_breadcrumbs_border": true,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-center",
+        "mobile_content_alignment": "text-center",
+        "background_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "full_width": true,
+        "spacing_col": "small",
+        "padding_top": 60,
+        "padding_bottom": 40,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_certifications_bar_XGMUHD": {
+      "type": "aiwo-certifications-bar",
+      "blocks": {
+        "certification_FGGgLY": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/Clinically_Informed_Formula.png",
+            "label": "Clinically Informed Formula"
+          }
+        },
+        "certification_aNkGEg": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/Clean_Label_Ingredients.png",
+            "label": "Clean Label Ingredients"
+          }
+        },
+        "certification_KM7NAY": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/FSSAI_Licensed.png",
+            "label": "FSSAI Licensed"
+          }
+        },
+        "certification_dA3gpU": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/GMP_Certified.png",
+            "label": "GMP Certified"
+          }
+        },
+        "certification_dGhPDt": {
+          "type": "certification",
+          "settings": {
+            "icon": "shopify://shop_images/Lab_Tested.png",
+            "label": "Lab Tested"
+          }
+        }
+      },
+      "block_order": [
+        "certification_FGGgLY",
+        "certification_aNkGEg",
+        "certification_KM7NAY",
+        "certification_dA3gpU",
+        "certification_dGhPDt"
+      ],
+      "name": "Certifications Bar",
+      "settings": {}
+    },
+    "australian_crafted_JfQ3Uz": {
+      "type": "australian-crafted",
+      "name": "Australian Crafted Excellence",
+      "settings": {
+        "eyebrow": "Australian Crafted Excellence",
+        "heading": "AIWO Olive Aura Extra Virgin Olive Oil",
+        "paragraph_1": "<p>Freshness you can measure. Purity you can trust.<br/><br/>The elite choice in EVOO crafted in Australia, chosen by connoisseurs. Ultra low oxidation, lab-clean, and protected to the last drop. Taste the bright, clean, peppery finish—and know exactly why it's better.</p>",
+        "paragraph_2": "<p>Olives harvested and cold extracted within 3 hours to lock in aroma, vitality, and that signature peppery tickle.</p>",
+        "image": "shopify://shop_images/EVOO_product_features.png"
+      }
+    },
+    "why_aiwo_evoo_xLaVLe": {
+      "type": "Why-AIWO-EVOO",
+      "blocks": {
+        "quality_point_F3Ni84": {
+          "type": "quality_point",
+          "settings": {
+            "title": "Speed Matters More Than You Think",
+            "description": "Most olive oils sit 6–24 hours before pressing. We crush within 3 hours—before the olives even 'know' they've been picked.",
+            "result": "Result: Peroxide below 15 meq O₂/kg"
+          }
+        },
+        "quality_point_EhDcTN": {
+          "type": "quality_point",
+          "settings": {
+            "title": "True Cold Extraction",
+            "description": "We maintain temperatures below 27°C throughout the process. Many 'cold-pressed' oils heat to 35–40°C—destroying delicate polyphenols and that peppery finish.",
+            "result": "Result: Exceptional freshness markers verified (88% fresher than benchmark)"
+          }
+        },
+        "quality_point_rjKrNK": {
+          "type": "quality_point",
+          "settings": {
+            "title": "Triple-Verified by Independent Labs",
+            "description": "Every lot tested by NABL-accredited labs. Scan the QR and see the actual Certificate of Analysis.",
+            "result": "Result: Heavy metals conforming to FSSAI, PAH-4 &lt; 2 μg/kg"
+          }
+        },
+        "quality_point_mGgQqp": {
+          "type": "quality_point",
+          "settings": {
+            "title": "Protected Until You Pour",
+            "description": "Dark-tinted bottles, cool-chain storage, nitrogen flushing—preserving what we spent months growing.",
+            "result": "Result: OSI 24.3 hours—stays fresher, longer"
+          }
+        },
+        "quality_point_VUPGjV": {
+          "type": "quality_point",
+          "settings": {
+            "title": "No Blending, No Bulk",
+            "description": "Single-origin from our Australian groves. Not blended with cheaper imports. Pure fruit expression.",
+            "result": "Result: ΔK &lt; 0.01 (no refinement detected)"
+          }
+        },
+        "quality_point_rgepfQ": {
+          "type": "quality_point",
+          "settings": {
+            "title": "The Fat That Loves You Back",
+            "description": "~68% MUFA—the heart-healthy fat backed by decades of research. This isn't oil; it's liquid nutrition.",
+            "result": "Result: Premium quality indicators well above industry benchmarks"
+          }
+        }
+      },
+      "block_order": [
+        "quality_point_F3Ni84",
+        "quality_point_EhDcTN",
+        "quality_point_rjKrNK",
+        "quality_point_mGgQqp",
+        "quality_point_VUPGjV",
+        "quality_point_rgepfQ"
+      ],
+      "name": "Why It's Worth It",
+      "settings": {
+        "icon_image": "shopify://shop_images/check-mark_5290058.svg",
+        "eyebrow": "WHY AIWO EVOO COSTS MORE.",
+        "heading_primary": "Why It's",
+        "heading_accent": "Worth It",
+        "subheading": "Scientific quality, freshness, and craftsmanship you can trust"
+      }
+    },
+    "lab_verified_purity_bT89BD": {
+      "type": "Lab-verified-purity",
+      "blocks": {
+        "stat_W9tD9Y": {
+          "type": "stat",
+          "settings": {
+            "stat": "Ultra Low",
+            "label": "Acidity\n(80% below limit)"
+          }
+        },
+        "stat_LNYwdH": {
+          "type": "stat",
+          "settings": {
+            "stat": "< 15 meq/kg",
+            "label": "Peroxide\n(70% below limit)"
+          }
+        },
+        "stat_L4kMtr": {
+          "type": "stat",
+          "settings": {
+            "stat": "250+",
+            "label": "Pesticides tested:\nNone detected"
+          }
+        },
+        "stat_kJtbnX": {
+          "type": "stat",
+          "settings": {
+            "stat": "23 Months",
+            "label": "Shelf life\n(lab-verified)"
+          }
+        }
+      },
+      "block_order": [
+        "stat_W9tD9Y",
+        "stat_LNYwdH",
+        "stat_L4kMtr",
+        "stat_kJtbnX"
+      ],
+      "name": "Lab-Verified Purity Stats",
+      "settings": {
+        "heading": "*Lab-Verified Purity"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "aiwo_certifications_bar_XGMUHD",
+    "australian_crafted_JfQ3Uz",
+    "why_aiwo_evoo_xLaVLe",
+    "lab_verified_purity_bT89BD"
+  ]
+}

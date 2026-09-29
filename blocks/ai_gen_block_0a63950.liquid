@@ -1,0 +1,1011 @@
+{% doc %}
+  @prompt
+    Create vertical timeline section (peach gradient background):
+    
+    Heading: "What to Expect – Your Journey"
+    Subtitle about cumulative benefits
+    5 timeline items, each with:
+    
+    Left: Circular orange gradient icon with emoji
+    Right: White card with orange border
+    
+    Serif heading with badge showing timeframe
+    Description paragraph
+    
+    
+    
+    
+    Timeline items:
+    
+    Week 1-2 (🌱): Establishment Phase
+    Week 3-4 (✨): Early Benefits
+    Week 4-8 (💪): Noticeable Improvements
+    Week 8-12 (🎯): Full Benefits
+    Month 3+ (🏆): Long-Term Wellness
+    
+    
+    Bottom: Pro tip box with orange border
+    
+    icons are editable
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-timeline-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background: linear-gradient(180deg, {{ block.settings.gradient_color_1 }} 0%, {{ block.settings.gradient_color_2 }} 100%);
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-timeline-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-timeline-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-timeline-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.subtitle_spacing }}px;
+    line-height: 1.2;
+  }
+
+  .ai-timeline-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ai-timeline-items-{{ ai_gen_id }} {
+    position: relative;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .ai-timeline-item-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    gap: {{ block.settings.item_gap }}px;
+    margin-bottom: {{ block.settings.item_spacing }}px;
+    align-items: flex-start;
+  }
+
+  .ai-timeline-item-{{ ai_gen_id }}:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-timeline-item-{{ ai_gen_id }}:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: {{ block.settings.icon_size | divided_by: 2 }}px;
+    top: {{ block.settings.icon_size }}px;
+    width: {{ block.settings.line_width }}px;
+    height: calc(100% + {{ block.settings.item_spacing }}px - {{ block.settings.icon_size }}px);
+    background-color: {{ block.settings.line_color }};
+    transform: translateX(-50%);
+  }
+
+  .ai-timeline-icon-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, {{ block.settings.icon_gradient_1 }} 0%, {{ block.settings.icon_gradient_2 }} 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: {{ block.settings.emoji_size }}px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-timeline-card-{{ ai_gen_id }} {
+    flex: 1;
+    background-color: {{ block.settings.card_bg_color }};
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: {{ block.settings.card_padding }}px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-timeline-card-header-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: {{ block.settings.card_content_spacing }}px;
+    flex-wrap: wrap;
+  }
+
+  .ai-timeline-card-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.card_title_font.family }}, {{ block.settings.card_title_font.fallback_families }};
+    font-weight: {{ block.settings.card_title_font.weight }};
+    font-size: {{ block.settings.card_title_size }}px;
+    color: {{ block.settings.card_title_color }};
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .ai-timeline-badge-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.badge_padding_vertical }}px {{ block.settings.badge_padding_horizontal }}px;
+    background-color: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    border-radius: {{ block.settings.badge_border_radius }}px;
+    font-size: {{ block.settings.badge_font_size }}px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .ai-timeline-card-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_description_size }}px;
+    color: {{ block.settings.card_description_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-timeline-tip-{{ ai_gen_id }} {
+    margin-top: {{ block.settings.tip_spacing }}px;
+    padding: {{ block.settings.tip_padding }}px;
+    background-color: {{ block.settings.tip_bg_color }};
+    border: {{ block.settings.tip_border_width }}px solid {{ block.settings.tip_border_color }};
+    border-radius: {{ block.settings.tip_border_radius }}px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ai-timeline-tip-icon-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    font-size: {{ block.settings.tip_icon_size }}px;
+    line-height: 1;
+  }
+
+  .ai-timeline-tip-content-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .ai-timeline-tip-title-{{ ai_gen_id }} {
+    font-weight: 700;
+    font-size: {{ block.settings.tip_title_size }}px;
+    color: {{ block.settings.tip_title_color }};
+    margin: 0 0 8px;
+  }
+
+  .ai-timeline-tip-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.tip_text_size }}px;
+    color: {{ block.settings.tip_text_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-timeline-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.6 }}px 16px {{ block.settings.section_padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-timeline-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-timeline-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.9 }}px;
+    }
+
+    .ai-timeline-item-{{ ai_gen_id }} {
+      gap: {{ block.settings.item_gap | times: 0.7 }}px;
+    }
+
+    .ai-timeline-icon-{{ ai_gen_id }} {
+      width: {{ block.settings.icon_size | times: 0.8 }}px;
+      height: {{ block.settings.icon_size | times: 0.8 }}px;
+      font-size: {{ block.settings.emoji_size | times: 0.8 }}px;
+    }
+
+    .ai-timeline-item-{{ ai_gen_id }}:not(:last-child)::before {
+      left: {{ block.settings.icon_size | times: 0.8 | divided_by: 2 }}px;
+      top: {{ block.settings.icon_size | times: 0.8 }}px;
+    }
+
+    .ai-timeline-card-{{ ai_gen_id }} {
+      padding: {{ block.settings.card_padding | times: 0.7 }}px;
+    }
+
+    .ai-timeline-card-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.card_title_size | times: 0.85 }}px;
+    }
+
+    .ai-timeline-badge-{{ ai_gen_id }} {
+      font-size: {{ block.settings.badge_font_size | times: 0.9 }}px;
+    }
+
+    .ai-timeline-card-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.card_description_size | times: 0.9 }}px;
+    }
+
+    .ai-timeline-tip-{{ ai_gen_id }} {
+      padding: {{ block.settings.tip_padding | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}
+
+<timeline-journey-{{ ai_gen_id }} class="ai-timeline-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-timeline-container-{{ ai_gen_id }}">
+    <div class="ai-timeline-header-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-timeline-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+      {% if block.settings.subtitle != blank %}
+        <div class="ai-timeline-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</div>
+      {% endif %}
+    </div>
+
+    <ul class="ai-timeline-items-{{ ai_gen_id }}">
+      {% for i in (1..5) %}
+        {% liquid
+          assign enabled_key = 'item_' | append: i | append: '_enabled'
+          assign emoji_key = 'item_' | append: i | append: '_emoji'
+          assign timeframe_key = 'item_' | append: i | append: '_timeframe'
+          assign title_key = 'item_' | append: i | append: '_title'
+          assign description_key = 'item_' | append: i | append: '_description'
+
+          assign enabled = block.settings[enabled_key]
+          assign emoji = block.settings[emoji_key]
+          assign timeframe = block.settings[timeframe_key]
+          assign title = block.settings[title_key]
+          assign description = block.settings[description_key]
+        %}
+
+        {% if enabled %}
+          <li class="ai-timeline-item-{{ ai_gen_id }}">
+            <div class="ai-timeline-icon-{{ ai_gen_id }}">
+              <span>{{ emoji }}</span>
+            </div>
+            <div class="ai-timeline-card-{{ ai_gen_id }}">
+              <div class="ai-timeline-card-header-{{ ai_gen_id }}">
+                {% if title != blank %}
+                  <h3 class="ai-timeline-card-title-{{ ai_gen_id }}">{{ title }}</h3>
+                {% endif %}
+                {% if timeframe != blank %}
+                  <span class="ai-timeline-badge-{{ ai_gen_id }}">{{ timeframe }}</span>
+                {% endif %}
+              </div>
+              {% if description != blank %}
+                <div class="ai-timeline-card-description-{{ ai_gen_id }}">{{ description }}</div>
+              {% endif %}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    {% if block.settings.show_tip %}
+      <div class="ai-timeline-tip-{{ ai_gen_id }}">
+        <div class="ai-timeline-tip-icon-{{ ai_gen_id }}">{{ block.settings.tip_icon }}</div>
+        <div class="ai-timeline-tip-content-{{ ai_gen_id }}">
+          {% if block.settings.tip_title != blank %}
+            <div class="ai-timeline-tip-title-{{ ai_gen_id }}">{{ block.settings.tip_title }}</div>
+          {% endif %}
+          {% if block.settings.tip_text != blank %}
+            <div class="ai-timeline-tip-text-{{ ai_gen_id }}">{{ block.settings.tip_text }}</div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</timeline-journey-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class TimelineJourney{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.observeItems();
+      }
+
+      observeItems() {
+        const items = this.querySelectorAll('.ai-timeline-item-{{ ai_gen_id }}');
+        
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+              }
+            });
+          }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          });
+
+          items.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            item.style.transitionDelay = (index * 0.1) + 's';
+            observer.observe(item);
+          });
+        }
+      }
+    }
+
+    customElements.define('timeline-journey-{{ ai_gen_id }}', TimelineJourney{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Journey timeline",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 1000
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient start",
+      "default": "#FFE5D9"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient end",
+      "default": "#FFDAC1"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What to Expect – Your Journey"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Font",
+      "default": "serif"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Size",
+      "default": 42
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#2C1810"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Experience the cumulative benefits as your body adapts and thrives</p>"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Color",
+      "default": "#6B5B4F"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_spacing",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Spacing",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Timeline"
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Item spacing",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon to card gap",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "line_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Line width",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Line color",
+      "default": "#FFB088"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 40,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "emoji_size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Emoji size",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "icon_gradient_1",
+      "label": "Gradient start",
+      "default": "#FF8C42"
+    },
+    {
+      "type": "color",
+      "id": "icon_gradient_2",
+      "label": "Gradient end",
+      "default": "#FF6B35"
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#FF8C42"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "card_content_spacing",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Content spacing",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Card title"
+    },
+    {
+      "type": "font_picker",
+      "id": "card_title_font",
+      "label": "Font",
+      "default": "serif"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Size",
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Color",
+      "default": "#2C1810"
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "range",
+      "id": "badge_padding_vertical",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "badge_padding_horizontal",
+      "min": 6,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Background",
+      "default": "#FF8C42"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "badge_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Card description"
+    },
+    {
+      "type": "range",
+      "id": "card_description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Size",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "card_description_color",
+      "label": "Color",
+      "default": "#5A4A42"
+    },
+    {
+      "type": "header",
+      "content": "Item 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_1_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "item_1_emoji",
+      "label": "Icon",
+      "default": "🌱"
+    },
+    {
+      "type": "text",
+      "id": "item_1_timeframe",
+      "label": "Timeframe",
+      "default": "Week 1-2"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "item_1_title",
+      "label": "Title",
+      "default": "Establishment Phase"
+    },
+    {
+      "type": "richtext",
+      "id": "item_1_description",
+      "label": "Description",
+      "default": "<p>Your body begins to absorb and recognize the active compounds. Initial adaptation period as bioavailability increases.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Item 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_2_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "item_2_emoji",
+      "label": "Icon",
+      "default": "✨"
+    },
+    {
+      "type": "text",
+      "id": "item_2_timeframe",
+      "label": "Timeframe",
+      "default": "Week 3-4"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "item_2_title",
+      "label": "Title",
+      "default": "Early Benefits"
+    },
+    {
+      "type": "richtext",
+      "id": "item_2_description",
+      "label": "Description",
+      "default": "<p>You may start noticing subtle improvements in energy levels and overall well-being as the formula begins to work.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Item 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_3_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "item_3_emoji",
+      "label": "Icon",
+      "default": "💪"
+    },
+    {
+      "type": "text",
+      "id": "item_3_timeframe",
+      "label": "Timeframe",
+      "default": "Week 4-8"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "item_3_title",
+      "label": "Title",
+      "default": "Noticeable Improvements"
+    },
+    {
+      "type": "richtext",
+      "id": "item_3_description",
+      "label": "Description",
+      "default": "<p>More pronounced effects become apparent. Enhanced comfort, improved mobility, and better daily function.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Item 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_4_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "item_4_emoji",
+      "label": "Icon",
+      "default": "🎯"
+    },
+    {
+      "type": "text",
+      "id": "item_4_timeframe",
+      "label": "Timeframe",
+      "default": "Week 8-12"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "item_4_title",
+      "label": "Title",
+      "default": "Full Benefits"
+    },
+    {
+      "type": "richtext",
+      "id": "item_4_description",
+      "label": "Description",
+      "default": "<p>Peak effectiveness reached. Maximum support for inflammation response, joint health, and overall vitality.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Item 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_5_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "item_5_emoji",
+      "label": "Icon",
+      "default": "🏆"
+    },
+    {
+      "type": "text",
+      "id": "item_5_timeframe",
+      "label": "Timeframe",
+      "default": "Month 3+"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "item_5_title",
+      "label": "Title",
+      "default": "Long-Term Wellness"
+    },
+    {
+      "type": "richtext",
+      "id": "item_5_description",
+      "label": "Description",
+      "default": "<p>Sustained benefits with continued use. Ongoing support for healthy aging, cognitive function, and whole-body wellness.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Pro tip"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tip",
+      "label": "Show tip",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tip_icon",
+      "label": "Icon",
+      "default": "💡"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tip_title",
+      "label": "Title",
+      "default": "Pro Tip"
+    },
+    {
+      "type": "richtext",
+      "id": "tip_text",
+      "label": "Text",
+      "default": "<p>For best results, take consistently with meals. Pair with healthy fats to maximize absorption of curcumin.</p>"
+    },
+    {
+      "type": "range",
+      "id": "tip_spacing",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Top spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "tip_padding",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "tip_bg_color",
+      "label": "Background",
+      "default": "#FFF8F3"
+    },
+    {
+      "type": "range",
+      "id": "tip_border_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "tip_border_color",
+      "label": "Border color",
+      "default": "#FF8C42"
+    },
+    {
+      "type": "range",
+      "id": "tip_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "tip_icon_size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "tip_title_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "tip_title_color",
+      "label": "Title color",
+      "default": "#2C1810"
+    },
+    {
+      "type": "range",
+      "id": "tip_text_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "tip_text_color",
+      "label": "Text color",
+      "default": "#5A4A42"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Journey timeline"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,739 @@
+{% comment %}
+  Clean Label Promise Section
+  Fixed Layout with Matching Column Heights
+  Updates: 
+  - Product Image: Removed flex-grow/fixed height, added aspect-ratio for natural alignment
+  - Gold: #919FA8
+  - Black: #211E1E
+  - Grey: #545252
+{% endcomment %}
+
+<style>
+/* ==========================================================================
+   CSS VARIABLES
+   ========================================================================== */
+:root {
+  --label-bg: #FEFEFE;
+  --label-card-bg: #FFFFFF;
+  --label-text-primary: #211E1E;
+  --label-text-secondary: #545252;
+  --label-gold: #919FA8;
+  --label-image-bg: #E8E8E8;
+  --label-radius: 24px;
+  --label-gap: 40px;
+}
+
+/* ==========================================================================
+   SECTION
+   ========================================================================== */
+.section_clean-label {
+  width: 100%;
+  padding: 80px 60px;
+  background-color: var(--label-bg);
+}
+
+.clean-label_container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.clean-label_header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.clean-label_eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--label-text-primary);
+  padding: 4px 12px;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, rgba(145, 159, 168, 0.24), rgba(145, 159, 168, 0.06));
+  border-radius: 2px;
+}
+
+.clean-label_heading {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--label-text-primary);
+  margin: 0;
+}
+
+.clean-label_heading-gold {
+  color: var(--label-gold);
+}
+
+/* ==========================================================================
+   TWO COLUMN LAYOUT - MATCHING HEIGHTS
+   ========================================================================== */
+.clean-label_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--label-gap);
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   LEFT COLUMN - PRODUCT IMAGE + INGREDIENTS
+   ========================================================================== */
+.clean-label_product {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* UPDATED: Image Container Logic */
+.clean-label_product-image {
+  width: 100%;
+  background-color: var(--label-image-bg);
+  border-radius: var(--label-radius);
+  overflow: hidden;
+  /* Removed flex: 1 and min-height to prevent stretching */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Added aspect-ratio to control height relative to width */
+  aspect-ratio: 1.35;
+}
+
+.clean-label_product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.clean-label_product-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--label-text-primary);
+  margin: 0 0 24px 0;
+}
+
+/* Ingredients Grid - Horizontal Layout */
+.clean-label_ingredients {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 12px;
+}
+
+.clean-label_ingredient {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clean-label_ingredient-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--label-image-bg);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.clean-label_ingredient-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clean-label_ingredient-name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--label-text-primary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN - BENEFITS CARD
+   ========================================================================== */
+.clean-label_benefits {
+  background-color: var(--label-card-bg);
+  border-radius: var(--label-radius);
+  padding: 24px;
+  box-shadow: 0 2px 4px -2px rgba(16, 24, 40, 0.06), 0 4px 8px -2px rgba(16, 24, 40, 0.10);
+  display: flex;
+  flex-direction: column;
+}
+
+.clean-label_benefits-title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--label-text-primary);
+  margin: 0 0 24px 0;
+}
+
+.clean-label_benefits-intro {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--label-text-secondary);
+  margin: 0 0 24px 0;
+}
+
+/* Benefits List */
+.clean-label_benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.clean-label_benefit-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.clean-label_benefit-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--label-image-bg);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.clean-label_benefit-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clean-label_benefit-content {
+  flex: 1;
+}
+
+.clean-label_benefit-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--label-text-primary);
+  margin: 0 0 8px 0;
+}
+
+.clean-label_benefit-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--label-text-secondary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE - TABLET
+   ========================================================================== */
+@media (max-width: 991px) {
+  .section_clean-label {
+    padding: 64px 40px;
+  }
+  
+  .clean-label_header {
+    margin-bottom: 48px;
+  }
+  
+  .clean-label_heading {
+    font-size: 40px;
+  }
+  
+  .clean-label_content {
+    gap: 32px;
+  }
+  
+  .clean-label_benefits-title {
+    font-size: 32px;
+  }
+  
+  .clean-label_benefits-intro {
+    font-size: 16px;
+  }
+  
+  .clean-label_benefit-title {
+    font-size: 18px;
+  }
+  
+  .clean-label_benefit-description {
+    font-size: 15px;
+  }
+  
+  /* Removed min-height override to allow aspect-ratio to work */
+  .clean-label_product-image {
+    /* min-height: 250px; Removed */
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE
+   ========================================================================== */
+@media (max-width: 767px) {
+  .section_clean-label {
+    padding: 48px 24px;
+  }
+  
+  .clean-label_header {
+    margin-bottom: 40px;
+  }
+  
+  .clean-label_heading {
+    font-size: 32px;
+  }
+  
+  .clean-label_eyebrow {
+    font-size: 12px;
+  }
+  
+  .clean-label_content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .clean-label_product {
+    gap: 20px;
+  }
+  
+  .clean-label_product-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Removed min-height override */
+  .clean-label_product-image {
+    /* min-height: 200px; Removed */
+    aspect-ratio: 1.5; /* Slightly wider on mobile */
+  }
+  
+  .clean-label_ingredients {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .clean-label_ingredient-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .clean-label_ingredient-name {
+    font-size: 13px;
+  }
+  
+  .clean-label_benefits {
+    padding: 20px;
+  }
+  
+  .clean-label_benefits-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .clean-label_benefits-intro {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .clean-label_benefits-list {
+    gap: 20px;
+  }
+  
+  .clean-label_benefit-title {
+    font-size: 17px;
+  }
+  
+  .clean-label_benefit-description {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE PORTRAIT
+   ========================================================================== */
+@media (max-width: 479px) {
+  .section_clean-label {
+    padding: 40px 20px;
+  }
+  
+  .clean-label_heading {
+    font-size: 28px;
+  }
+  
+  .clean-label_eyebrow {
+    font-size: 11px;
+  }
+  
+  .clean-label_benefits-title {
+    font-size: 24px;
+  }
+  
+  .clean-label_benefits-intro {
+    font-size: 14px;
+  }
+  
+  .clean-label_benefit-title {
+    font-size: 16px;
+  }
+}
+</style>
+
+<div class="section_clean-label">
+  <div class="clean-label_container">
+    
+    <header class="clean-label_header">
+      <span class="clean-label_eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="clean-label_heading">
+        <span class="clean-label_heading-gold">{{ section.settings.heading_gold }}</span> {{ section.settings.heading_black }}
+      </h2>
+    </header>
+    
+    <div class="clean-label_content">
+      
+      <div class="clean-label_product">
+        
+        <div class="clean-label_product-image">
+          {%- if section.settings.product_image != blank -%}
+            {{- section.settings.product_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: section.settings.product_title -}}
+          {%- endif -%}
+        </div>
+        
+        <div>
+          <h3 class="clean-label_product-title">{{ section.settings.product_title }}</h3>
+          
+          <div class="clean-label_ingredients">
+            {%- for i in (1..8) -%}
+              {%- assign ingredient_name = 'ingredient_' | append: i | append: '_name' -%}
+              {%- assign ingredient_icon = 'ingredient_' | append: i | append: '_icon' -%}
+              
+              {%- if section.settings[ingredient_name] != blank -%}
+                <div class="clean-label_ingredient">
+                  <div class="clean-label_ingredient-icon">
+                    {%- if section.settings[ingredient_icon] != blank -%}
+                      {{- section.settings[ingredient_icon] | image_url: width: 64 | image_tag: loading: 'lazy', alt: section.settings[ingredient_name] -}}
+                    {%- endif -%}
+                  </div>
+                  <p class="clean-label_ingredient-name">{{ section.settings[ingredient_name] }}</p>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="clean-label_benefits">
+        
+        <h3 class="clean-label_benefits-title">{{ section.settings.benefits_title }}</h3>
+        <p class="clean-label_benefits-intro">{{ section.settings.benefits_intro }}</p>
+        
+        <div class="clean-label_benefits-list">
+          {%- for i in (1..4) -%}
+            {%- assign benefit_title = 'benefit_' | append: i | append: '_title' -%}
+            {%- assign benefit_description = 'benefit_' | append: i | append: '_description' -%}
+            {%- assign benefit_icon = 'benefit_' | append: i | append: '_icon' -%}
+            
+            {%- if section.settings[benefit_title] != blank -%}
+              <div class="clean-label_benefit-item">
+                <div class="clean-label_benefit-icon">
+                  {%- if section.settings[benefit_icon] != blank -%}
+                    {{- section.settings[benefit_icon] | image_url: width: 64 | image_tag: loading: 'lazy', alt: section.settings[benefit_title] -}}
+                  {%- endif -%}
+                </div>
+                <div class="clean-label_benefit-content">
+                  <h4 class="clean-label_benefit-title">{{ section.settings[benefit_title] }}</h4>
+                  <p class="clean-label_benefit-description">{{ section.settings[benefit_description] }}</p>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Clean Label Promise",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "CLEAN LABEL PROMISE"
+    },
+    {
+      "type": "text",
+      "id": "heading_gold",
+      "label": "Heading (Gold Part)",
+      "default": "Premium Ingredients."
+    },
+    {
+      "type": "text",
+      "id": "heading_black",
+      "label": "Heading (Black Part)",
+      "default": "Complete Transparency."
+    },
+    {
+      "type": "header",
+      "content": "Product Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "text",
+      "id": "product_title",
+      "label": "Product Title",
+      "default": "AIWO Fast Bar"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 1"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_1_name",
+      "label": "Name",
+      "default": "Almonds"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_1_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 2"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_2_name",
+      "label": "Name",
+      "default": "Cashews"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_2_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 3"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_3_name",
+      "label": "Name",
+      "default": "Pecans"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_3_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 4"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_4_name",
+      "label": "Name",
+      "default": "Sunflower"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_4_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 5"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_5_name",
+      "label": "Name",
+      "default": "Dark cocoa"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_5_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 6"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_6_name",
+      "label": "Name",
+      "default": "Honey"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_6_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 7"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_7_name",
+      "label": "Name",
+      "default": "Himalayan"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_7_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Ingredient 8"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_8_name",
+      "label": "Name",
+      "default": "Chicory"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_8_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Benefits Card"
+    },
+    {
+      "type": "text",
+      "id": "benefits_title",
+      "label": "Card Title",
+      "default": "What's Inside Every Bar"
+    },
+    {
+      "type": "textarea",
+      "id": "benefits_intro",
+      "label": "Intro Text",
+      "default": "We believe you should know exactly what you're eating. Every ingredient in AIWO Fast Bar serves a specific purpose—from the premium nut blend providing heart-healthy fats to the chicory powder feeding your beneficial gut bacteria."
+    },
+    {
+      "type": "header",
+      "content": "Benefit 1"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_title",
+      "label": "Title",
+      "default": "Premium Nut Blend"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_1_description",
+      "label": "Description",
+      "default": "Almonds, cashews, pecans—heart-healthy fats, Vitamin E, magnesium"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_1_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 2"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_title",
+      "label": "Title",
+      "default": "Dark Chocolate Drizzle"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_2_description",
+      "label": "Description",
+      "default": "Rich in polyphenols and flavonoids for antioxidant protection"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_2_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 3"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_title",
+      "label": "Title",
+      "default": "Prebiotic Chicory Fiber"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_3_description",
+      "label": "Description",
+      "default": "Natural inulin to nourish beneficial gut bacteria"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_3_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 4"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_title",
+      "label": "Title",
+      "default": "Himalayan Pink Salt"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_4_description",
+      "label": "Description",
+      "default": "Essential minerals for electrolyte balance during fasting"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_4_icon",
+      "label": "Icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clean Label Promise"
+    }
+  ]
+}
+{% endschema %}

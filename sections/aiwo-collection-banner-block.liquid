@@ -1,0 +1,91 @@
+<style>
+  .aiwo-banner-block {
+    width: 100%;
+    margin-bottom: 24px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  @media (max-width: 767px) {
+    .aiwo-banner-block { padding-left: 24px; padding-right: 24px; }
+  }
+  .aiwo-banner-block__link {
+    display: block;
+    width: 100%;
+  }
+  .aiwo-banner-block__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Optional: smooth corners matching your design */
+  }
+  @media (min-width: 768px) {
+    .aiwo-banner-block { margin-bottom: 32px; }
+  }
+  @media (min-width: 1024px) {
+    .aiwo-banner-block { margin-bottom: 40px; }
+  }
+</style>
+
+<div class="aiwo-banner-block">
+  {%- if section.settings.banner_link != blank -%}
+    <a href="{{ section.settings.banner_link }}" class="aiwo-banner-block__link" aria-label="Collection Banner">
+  {%- else -%}
+    <div class="aiwo-banner-block__link">
+  {%- endif -%}
+
+    {%- if section.settings.image_desktop != blank or section.settings.image_mobile != blank -%}
+      <picture>
+        {%- if section.settings.image_desktop != blank -%}
+          <!-- Desktop and Tablet Source -->
+          <source media="(min-width: 768px)" srcset="{{ section.settings.image_desktop | image_url: width: 2000 }}">
+        {%- endif -%}
+
+        {%- if section.settings.image_mobile != blank -%}
+          <!-- Mobile Fallback Source -->
+          <img class="aiwo-banner-block__img" src="{{ section.settings.image_mobile | image_url: width: 800 }}" alt="{{ section.settings.image_mobile.alt | escape | default: 'Collection Banner' }}">
+        {%- elsif section.settings.image_desktop != blank -%}
+          <!-- Desktop Fallback if no mobile image is uploaded -->
+          <img class="aiwo-banner-block__img" src="{{ section.settings.image_desktop | image_url: width: 800 }}" alt="{{ section.settings.image_desktop.alt | escape | default: 'Collection Banner' }}">
+        {%- endif -%}
+      </picture>
+    {%- else -%}
+      <!-- Placeholder if no images are selected in Theme Editor -->
+      <div style="background: #f4f4f4; padding: 60px; text-align: center; border-radius: 8px;">Upload Banner Images in Theme Editor</div>
+    {%- endif -%}
+
+  {%- if section.settings.banner_link != blank -%}
+    </a>
+  {%- else -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "AIWO Collection Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop & Tablet Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile Image (Optional)",
+      "info": "If left blank, the Desktop image will be used on all screens."
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Banner Link",
+      "info": "Makes the entire banner clickable."
+    }
+  ],
+  "presets": [
+    {
+      "name": "AIWO Collection Banner"
+    }
+  ]
+}
+{% endschema %}

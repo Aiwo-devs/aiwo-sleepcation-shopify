@@ -1,0 +1,947 @@
+{% doc %}
+  @prompt
+    Create a dramatic product comparison section with centered layout:
+    Header:
+    
+    Large serif heading: "Still Taking Regular Turmeric?"
+    Second line: "You're Absorbing Less Than 1%"
+    Subheading below: "Switch to BCM-95® and Get 700% More Into Your Body"
+    All text center-aligned, dark color
+    
+    Two-Column Comparison Cards:
+    Left Card (Regular Turmeric - Negative):
+    
+    Light red/pink background (#FFE5E5 or similar)
+    Rounded corners, padding
+    Bold heading with X emoji: "❌ Regular Turmeric"
+    7-8 bullet points with red X marks (❌):
+    
+    <1% absorbed into blood
+    Need 3000mg for any effect
+    Works in 3+ months (or never)
+    ₹30/day for minimal results
+    Cheap fillers & additives
+    No clinical studies
+    Flushing money down toilet
+    
+    
+    
+    Right Card (AIWO BCM-95® - Positive):
+    
+    Light green/mint background (#E5F9F5 or similar)
+    Rounded corners, padding
+    Bold heading with checkmark: "✅ AIWO BCM-95® + Piperine"
+    7-8 bullet points with green checkmarks (✅):
+    
+    7x better absorption
+    Only 493mg needed
+    Results in 4-8 weeks
+    ₹9/day for real results
+    Pure BCM-95® + Piperine
+    10,000+ studies
+    Actually works!
+    
+    
+    
+    Bottom Summary Box:
+    
+    Peach/light orange gradient background
+    Rounded corners, full width below cards
+    Icon: 💡 "Bottom Line"
+    Bold statement: "493mg AIWO = More absorbed curcumin than 3000mg standard supplement"
+    Smaller text below: "Don't waste money on cheap turmeric your body can't absorb. Invest in BCM-95® technology that actually works."
+    
+    Design Details:
+    
+    Cards side-by-side on desktop, stack on mobile
+    Equal height cards with matching padding
+    Subtle hover effect on cards (slight lift/shadow)
+    Use contrasting colors (red vs green) to emphasize difference
+    Font: Bold for headings, regular for bullet points
+    Spacing: generous padding within cards, space between bullet points
+    
+    Sticky Bottom Bar (if adding):
+    
+    Fixed at bottom of viewport
+    White background, shadow above
+    Left: Small product image + "AIWO Curcumin Rich" + star rating
+    Right: Orange CTA button "Try Risk Free Now →"
+    Appears on scroll
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-comparison-section-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 60px 20px;
+    background-color: {{ block.settings.section_background }};
+  }
+
+  .ai-comparison-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-comparison-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .ai-comparison-main-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.main_heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 10px;
+    line-height: 1.2;
+  }
+
+  .ai-comparison-sub-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.sub_heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 20px;
+    line-height: 1.3;
+  }
+
+  .ai-comparison-tagline-{{ ai_gen_id }} {
+    font-size: {{ block.settings.tagline_size }}px;
+    color: {{ block.settings.tagline_color }};
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .ai-comparison-cards-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .ai-comparison-card-{{ ai_gen_id }} {
+    background-color: var(--card-bg);
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 40px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-comparison-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-comparison-card--negative-{{ ai_gen_id }} {
+    --card-bg: {{ block.settings.negative_card_bg }};
+  }
+
+  .ai-comparison-card--positive-{{ ai_gen_id }} {
+    --card-bg: {{ block.settings.positive_card_bg }};
+  }
+
+  .ai-comparison-card-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_heading_size }}px;
+    font-weight: 700;
+    margin: 0 0 25px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-comparison-list-{{ ai_gen_id }} {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ai-comparison-list-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: {{ block.settings.bullet_text_size }}px;
+    color: {{ block.settings.bullet_text_color }};
+    line-height: 1.5;
+  }
+
+  .ai-comparison-list-item-{{ ai_gen_id }}:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-comparison-icon-{{ ai_gen_id }} {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .ai-comparison-summary-{{ ai_gen_id }} {
+    background: {{ block.settings.summary_bg_gradient }};
+    border-radius: {{ block.settings.summary_border_radius }}px;
+    padding: 35px 40px;
+    text-align: center;
+  }
+
+  .ai-comparison-summary-icon-{{ ai_gen_id }} {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .ai-comparison-summary-label-{{ ai_gen_id }} {
+    font-size: {{ block.settings.summary_label_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.summary_text_color }};
+    margin: 0 0 15px;
+  }
+
+  .ai-comparison-summary-statement-{{ ai_gen_id }} {
+    font-size: {{ block.settings.summary_statement_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.summary_text_color }};
+    margin: 0 0 12px;
+    line-height: 1.4;
+  }
+
+  .ai-comparison-summary-subtext-{{ ai_gen_id }} {
+    font-size: {{ block.settings.summary_subtext_size }}px;
+    color: {{ block.settings.summary_text_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ai-comparison-sticky-bar-{{ ai_gen_id }} {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: {{ block.settings.sticky_bar_bg }};
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    z-index: 100;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .ai-comparison-sticky-bar-{{ ai_gen_id }}.visible {
+    transform: translateY(0);
+  }
+
+  .ai-comparison-sticky-content-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .ai-comparison-sticky-product-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .ai-comparison-sticky-image-{{ ai_gen_id }} {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .ai-comparison-sticky-info-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .ai-comparison-sticky-title-{{ ai_gen_id }} {
+    font-size: 16px;
+    font-weight: 600;
+    color: {{ block.settings.sticky_text_color }};
+    margin: 0;
+  }
+
+  .ai-comparison-sticky-rating-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: {{ block.settings.sticky_text_color }};
+  }
+
+  .ai-comparison-sticky-cta-{{ ai_gen_id }} {
+    background-color: {{ block.settings.cta_button_bg }};
+    color: {{ block.settings.cta_button_text }};
+    padding: 15px 35px;
+    border-radius: {{ block.settings.cta_button_radius }}px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .ai-comparison-sticky-cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.cta_button_hover_bg }};
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-comparison-section-{{ ai_gen_id }} {
+      padding: 40px 15px;
+    }
+
+    .ai-comparison-main-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.main_heading_size }}px * 0.7);
+    }
+
+    .ai-comparison-sub-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.sub_heading_size }}px * 0.8);
+    }
+
+    .ai-comparison-tagline-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.tagline_size }}px * 0.85);
+    }
+
+    .ai-comparison-cards-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .ai-comparison-card-{{ ai_gen_id }} {
+      padding: 30px 20px;
+    }
+
+    .ai-comparison-card-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.card_heading_size }}px * 0.9);
+    }
+
+    .ai-comparison-summary-{{ ai_gen_id }} {
+      padding: 25px 20px;
+    }
+
+    .ai-comparison-sticky-content-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .ai-comparison-sticky-cta-{{ ai_gen_id }} {
+      width: 100%;
+      text-align: center;
+    }
+  }
+{% endstyle %}
+
+<product-comparison-{{ ai_gen_id }} class="ai-comparison-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-comparison-container-{{ ai_gen_id }}">
+    <div class="ai-comparison-header-{{ ai_gen_id }}">
+      {% if block.settings.main_heading != blank %}
+        <h2 class="ai-comparison-main-heading-{{ ai_gen_id }}">{{ block.settings.main_heading }}</h2>
+      {% endif %}
+      {% if block.settings.sub_heading != blank %}
+        <p class="ai-comparison-sub-heading-{{ ai_gen_id }}">{{ block.settings.sub_heading }}</p>
+      {% endif %}
+      {% if block.settings.tagline != blank %}
+        <p class="ai-comparison-tagline-{{ ai_gen_id }}">{{ block.settings.tagline }}</p>
+      {% endif %}
+    </div>
+
+    <div class="ai-comparison-cards-{{ ai_gen_id }}">
+      <div class="ai-comparison-card-{{ ai_gen_id }} ai-comparison-card--negative-{{ ai_gen_id }}">
+        <h3 class="ai-comparison-card-heading-{{ ai_gen_id }}">{{ block.settings.negative_heading }}</h3>
+        <ul class="ai-comparison-list-{{ ai_gen_id }}">
+          {% if block.settings.negative_point_1 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">❌</span>
+              <span>{{ block.settings.negative_point_1 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.negative_point_2 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">❌</span>
+              <span>{{ block.settings.negative_point_2 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.negative_point_3 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">❌</span>
+              <span>{{ block.settings.negative_point_3 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.negative_point_4 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">❌</span>
+              <span>{{ block.settings.negative_point_4 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.negative_point_5 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">❌</span>
+              <span>{{ block.settings.negative_point_5 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.negative_point_6 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">❌</span>
+              <span>{{ block.settings.negative_point_6 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.negative_point_7 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">❌</span>
+              <span>{{ block.settings.negative_point_7 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.negative_point_8 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">❌</span>
+              <span>{{ block.settings.negative_point_8 }}</span>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="ai-comparison-card-{{ ai_gen_id }} ai-comparison-card--positive-{{ ai_gen_id }}">
+        <h3 class="ai-comparison-card-heading-{{ ai_gen_id }}">{{ block.settings.positive_heading }}</h3>
+        <ul class="ai-comparison-list-{{ ai_gen_id }}">
+          {% if block.settings.positive_point_1 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">✅</span>
+              <span>{{ block.settings.positive_point_1 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.positive_point_2 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">✅</span>
+              <span>{{ block.settings.positive_point_2 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.positive_point_3 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">✅</span>
+              <span>{{ block.settings.positive_point_3 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.positive_point_4 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">✅</span>
+              <span>{{ block.settings.positive_point_4 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.positive_point_5 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">✅</span>
+              <span>{{ block.settings.positive_point_5 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.positive_point_6 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">✅</span>
+              <span>{{ block.settings.positive_point_6 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.positive_point_7 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">✅</span>
+              <span>{{ block.settings.positive_point_7 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.positive_point_8 != blank %}
+            <li class="ai-comparison-list-item-{{ ai_gen_id }}">
+              <span class="ai-comparison-icon-{{ ai_gen_id }}">✅</span>
+              <span>{{ block.settings.positive_point_8 }}</span>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="ai-comparison-summary-{{ ai_gen_id }}">
+      <div class="ai-comparison-summary-icon-{{ ai_gen_id }}">💡</div>
+      {% if block.settings.summary_label != blank %}
+        <p class="ai-comparison-summary-label-{{ ai_gen_id }}">{{ block.settings.summary_label }}</p>
+      {% endif %}
+      {% if block.settings.summary_statement != blank %}
+        <p class="ai-comparison-summary-statement-{{ ai_gen_id }}">{{ block.settings.summary_statement }}</p>
+      {% endif %}
+      {% if block.settings.summary_subtext != blank %}
+        <p class="ai-comparison-summary-subtext-{{ ai_gen_id }}">{{ block.settings.summary_subtext }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if block.settings.enable_sticky_bar %}
+    <div class="ai-comparison-sticky-bar-{{ ai_gen_id }}" data-sticky-bar>
+      <div class="ai-comparison-sticky-content-{{ ai_gen_id }}">
+        <div class="ai-comparison-sticky-product-{{ ai_gen_id }}">
+          {% if block.settings.sticky_product_image %}
+            <img
+              src="{{ block.settings.sticky_product_image | image_url: width: 120 }}"
+              alt="{{ block.settings.sticky_product_image.alt | escape }}"
+              class="ai-comparison-sticky-image-{{ ai_gen_id }}"
+              width="60"
+              height="60"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="ai-comparison-sticky-info-{{ ai_gen_id }}">
+            {% if block.settings.sticky_product_title != blank %}
+              <p class="ai-comparison-sticky-title-{{ ai_gen_id }}">{{ block.settings.sticky_product_title }}</p>
+            {% endif %}
+            {% if block.settings.sticky_rating != blank %}
+              <div class="ai-comparison-sticky-rating-{{ ai_gen_id }}">{{ block.settings.sticky_rating }}</div>
+            {% endif %}
+          </div>
+        </div>
+        {% if block.settings.sticky_cta_url != blank and block.settings.sticky_cta_text != blank %}
+          <a href="{{ block.settings.sticky_cta_url }}" class="ai-comparison-sticky-cta-{{ ai_gen_id }}">
+            {{ block.settings.sticky_cta_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</product-comparison-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductComparison{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.stickyBar = this.querySelector('[data-sticky-bar]');
+        this.scrollThreshold = 300;
+      }
+
+      connectedCallback() {
+        if (this.stickyBar) {
+          this.handleScroll = this.handleScroll.bind(this);
+          window.addEventListener('scroll', this.handleScroll);
+          this.handleScroll();
+        }
+      }
+
+      disconnectedCallback() {
+        if (this.stickyBar) {
+          window.removeEventListener('scroll', this.handleScroll);
+        }
+      }
+
+      handleScroll() {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition > this.scrollThreshold) {
+          this.stickyBar.classList.add('visible');
+        } else {
+          this.stickyBar.classList.remove('visible');
+        }
+      }
+    }
+
+    customElements.define('product-comparison-{{ ai_gen_id }}', ProductComparison{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product comparison",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "serif"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "main_heading",
+      "label": "Main heading",
+      "default": "Still Taking Regular Turmeric?"
+    },
+    {
+      "type": "range",
+      "id": "main_heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Main heading size",
+      "default": 48
+    },
+    {
+      "type": "inline_richtext",
+      "id": "sub_heading",
+      "label": "Sub heading",
+      "default": "You're Absorbing Less Than 1%"
+    },
+    {
+      "type": "range",
+      "id": "sub_heading_size",
+      "min": 18,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Sub heading size",
+      "default": 32
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Switch to BCM-95® and Get 700% More Into Your Body"
+    },
+    {
+      "type": "range",
+      "id": "tagline_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Tagline size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "tagline_color",
+      "label": "Tagline color",
+      "default": "#FB8500"
+    },
+    {
+      "type": "header",
+      "content": "Negative card"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "negative_heading",
+      "label": "Heading",
+      "default": "❌ Regular Turmeric"
+    },
+    {
+      "type": "color",
+      "id": "negative_card_bg",
+      "label": "Background",
+      "default": "#FFE5E5"
+    },
+    {
+      "type": "text",
+      "id": "negative_point_1",
+      "label": "Point 1",
+      "default": "<1% absorbed into blood"
+    },
+    {
+      "type": "text",
+      "id": "negative_point_2",
+      "label": "Point 2",
+      "default": "Need 3000mg for any effect"
+    },
+    {
+      "type": "text",
+      "id": "negative_point_3",
+      "label": "Point 3",
+      "default": "Works in 3+ months (or never)"
+    },
+    {
+      "type": "text",
+      "id": "negative_point_4",
+      "label": "Point 4",
+      "default": "₹30/day for minimal results"
+    },
+    {
+      "type": "text",
+      "id": "negative_point_5",
+      "label": "Point 5",
+      "default": "Cheap fillers & additives"
+    },
+    {
+      "type": "text",
+      "id": "negative_point_6",
+      "label": "Point 6",
+      "default": "No clinical studies"
+    },
+    {
+      "type": "text",
+      "id": "negative_point_7",
+      "label": "Point 7",
+      "default": "Flushing money down toilet"
+    },
+    {
+      "type": "text",
+      "id": "negative_point_8",
+      "label": "Point 8"
+    },
+    {
+      "type": "header",
+      "content": "Positive card"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "positive_heading",
+      "label": "Heading",
+      "default": "✅ AIWO BCM-95® + Piperine"
+    },
+    {
+      "type": "color",
+      "id": "positive_card_bg",
+      "label": "Background",
+      "default": "#E5F9F5"
+    },
+    {
+      "type": "text",
+      "id": "positive_point_1",
+      "label": "Point 1",
+      "default": "7x better absorption"
+    },
+    {
+      "type": "text",
+      "id": "positive_point_2",
+      "label": "Point 2",
+      "default": "Only 493mg needed"
+    },
+    {
+      "type": "text",
+      "id": "positive_point_3",
+      "label": "Point 3",
+      "default": "Results in 4-8 weeks"
+    },
+    {
+      "type": "text",
+      "id": "positive_point_4",
+      "label": "Point 4",
+      "default": "₹9/day for real results"
+    },
+    {
+      "type": "text",
+      "id": "positive_point_5",
+      "label": "Point 5",
+      "default": "Pure BCM-95® + Piperine"
+    },
+    {
+      "type": "text",
+      "id": "positive_point_6",
+      "label": "Point 6",
+      "default": "10,000+ studies"
+    },
+    {
+      "type": "text",
+      "id": "positive_point_7",
+      "label": "Point 7",
+      "default": "Actually works!"
+    },
+    {
+      "type": "text",
+      "id": "positive_point_8",
+      "label": "Point 8"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_heading_size",
+      "min": 16,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Card heading size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "bullet_text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Bullet text size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "bullet_text_color",
+      "label": "Bullet text color",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Summary box"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "summary_label",
+      "label": "Label",
+      "default": "Bottom Line"
+    },
+    {
+      "type": "range",
+      "id": "summary_label_size",
+      "min": 14,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Label size",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "summary_statement",
+      "label": "Statement",
+      "default": "493mg AIWO = More absorbed curcumin than 3000mg standard supplement"
+    },
+    {
+      "type": "range",
+      "id": "summary_statement_size",
+      "min": 14,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Statement size",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "summary_subtext",
+      "label": "Subtext",
+      "default": "Don't waste money on cheap turmeric your body can't absorb."
+    },
+    {
+      "type": "range",
+      "id": "summary_subtext_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtext size",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "summary_bg_gradient",
+      "label": "Background",
+      "default": "#FFE4CC"
+    },
+    {
+      "type": "color",
+      "id": "summary_text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "summary_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Sticky bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_bar",
+      "label": "Enable sticky bar",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "sticky_product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "sticky_product_title",
+      "label": "Product title",
+      "default": "AIWO Curcumin Rich"
+    },
+    {
+      "type": "text",
+      "id": "sticky_rating",
+      "label": "Rating",
+      "default": "⭐⭐⭐⭐⭐ 4.8/5"
+    },
+    {
+      "type": "text",
+      "id": "sticky_cta_text",
+      "label": "CTA text",
+      "default": "Try Risk Free Now →"
+    },
+    {
+      "type": "url",
+      "id": "sticky_cta_url",
+      "label": "CTA link"
+    },
+    {
+      "type": "color",
+      "id": "sticky_bar_bg",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "sticky_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_bg",
+      "label": "CTA background",
+      "default": "#FB8500"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_text",
+      "label": "CTA text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_hover_bg",
+      "label": "CTA hover background",
+      "default": "#E07700"
+    },
+    {
+      "type": "range",
+      "id": "cta_button_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "CTA border radius",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product comparison"
+    }
+  ]
+}
+{% endschema %}

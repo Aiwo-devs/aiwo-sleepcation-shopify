@@ -1,0 +1,438 @@
+{% comment %}
+  The Breakthrough Section
+  Client-First Methodology - Production Ready
+  Senior Developer Standards
+  Updates: Gold color changed to #919FA8
+{% endcomment %}
+
+<style>
+/* ============================================================================
+   SECTION - FULL WIDTH DARK BACKGROUND
+   ============================================================================ */
+.section_breakthrough {
+  width: 100%;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-left: 60px;
+  padding-right: 60px;
+  background-color: #0C0C0D;
+}
+
+/* Container - Max Width Control */
+.breakthrough_container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================================
+   GRID LAYOUT - TWO COLUMN SYSTEM
+   ============================================================================ */
+.breakthrough_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 80px;
+  align-items: center;
+}
+
+/* ============================================================================
+   MEDIA - RIGHT COLUMN (Desktop)
+   ============================================================================ */
+.breakthrough_media {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%;
+  background-color: #1A1A1A;
+  border-radius: 8px;
+  overflow: hidden;
+  /* No order set implies order: 0 (Second position on Desktop) */
+}
+
+.breakthrough_media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================================================
+   CONTENT - LEFT COLUMN (Desktop)
+   ============================================================================ */
+.breakthrough_content {
+  /* Visual Swap: Moves content to the first position on Desktop */
+  order: -1;
+  /* Spacing: padding-right because content is now on the Left */
+  padding-right: 40px;
+  padding-left: 0;
+}
+
+/* Eyebrow Tag */
+.breakthrough_eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #FEFEFE;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 24px;
+  /* Updated Gradient to match #919FA8 (RGB: 145, 159, 168) */
+  background: linear-gradient(90deg, rgba(145, 159, 168, 0.24) 0%, rgba(145, 159, 168, 0.06) 100%);
+  border-radius: 2px;
+}
+
+/* Heading */
+.breakthrough_heading {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #FEFEFE;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.breakthrough_heading-gold {
+  /* Updated Accent Color */
+  color: #919FA8;
+}
+
+/* Paragraph */
+.breakthrough_text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #FEFEFE;
+  margin-bottom: 32px;
+}
+
+/* ============================================================================
+   STATS - HORIZONTAL ROW WITH SEPARATORS
+   ============================================================================ */
+.breakthrough_stats {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+}
+
+/* Individual Stat */
+.breakthrough_stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+
+.breakthrough_stat-value {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #FEFEFE;
+  margin-bottom: 4px;
+}
+
+.breakthrough_stat-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(254, 254, 254, 0.7);
+}
+
+/* Vertical Separator */
+.breakthrough_separator {
+  width: 1px;
+  height: 48px;
+  background-color: #818182;
+  flex-shrink: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE - TABLET (991px and below)
+   ============================================================================ */
+@media screen and (max-width: 991px) {
+  .section_breakthrough {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  .breakthrough_grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+  
+  .breakthrough_content {
+    /* Reset Order: Content goes back to second position (below Image) */
+    order: 2;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+  /* Ensure Media stays on top */
+  .breakthrough_media {
+    order: 1;
+  }
+  
+  .breakthrough_heading {
+    font-size: 40px;
+  }
+  
+  .breakthrough_text {
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+  
+  .breakthrough_eyebrow {
+    font-size: 13px;
+  }
+  
+  /* Stats to 2x2 Grid */
+  .breakthrough_stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 24px;
+  }
+  
+  .breakthrough_separator {
+    display: none;
+  }
+  
+  .breakthrough_stat-value {
+    font-size: 32px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE LANDSCAPE (767px and below)
+   ============================================================================ */
+@media screen and (max-width: 767px) {
+  .section_breakthrough {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  .breakthrough_grid {
+    row-gap: 32px;
+  }
+  
+  .breakthrough_heading {
+    font-size: 36px;
+  }
+  
+  .breakthrough_text {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .breakthrough_eyebrow {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .breakthrough_stats {
+    gap: 20px;
+  }
+  
+  .breakthrough_stat-value {
+    font-size: 28px;
+  }
+  
+  .breakthrough_stat-label {
+    font-size: 13px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE PORTRAIT (479px and below)
+   ============================================================================ */
+@media screen and (max-width: 479px) {
+  .section_breakthrough {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .breakthrough_grid {
+    row-gap: 24px;
+  }
+  
+  .breakthrough_heading {
+    font-size: 32px;
+  }
+  
+  .breakthrough_text {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .breakthrough_eyebrow {
+    font-size: 11px;
+    margin-bottom: 16px;
+  }
+  
+  .breakthrough_stats {
+    gap: 16px;
+  }
+  
+  .breakthrough_stat-value {
+    font-size: 24px;
+  }
+  
+  .breakthrough_stat-label {
+    font-size: 12px;
+  }
+}
+</style>
+
+<div class="section_breakthrough">
+  <div class="breakthrough_container">
+    <div class="breakthrough_grid">
+      
+      <div class="breakthrough_media">
+        {%- if section.settings.image != blank -%}
+          {{- section.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: section.settings.image.alt -}}
+        {%- endif -%}
+      </div>
+      
+      <div class="breakthrough_content">
+        <span class="breakthrough_eyebrow">{{ section.settings.eyebrow }}</span>
+        
+        <h2 class="breakthrough_heading">
+          {{ section.settings.heading | replace: 'Eat During Your Fast', '<span class="breakthrough_heading-gold">Eat During Your Fast</span>' }}
+        </h2>
+        
+        <div class="breakthrough_text">{{ section.settings.paragraph }}</div>
+        
+        <div class="breakthrough_stats">
+          <div class="breakthrough_stat">
+            <span class="breakthrough_stat-value">{{ section.settings.stat_1_value }}</span>
+            <span class="breakthrough_stat-label">{{ section.settings.stat_1_label }}</span>
+          </div>
+          
+          <div class="breakthrough_separator"></div>
+          
+          <div class="breakthrough_stat">
+            <span class="breakthrough_stat-value">{{ section.settings.stat_2_value }}</span>
+            <span class="breakthrough_stat-label">{{ section.settings.stat_2_label }}</span>
+          </div>
+          
+          <div class="breakthrough_separator"></div>
+          
+          <div class="breakthrough_stat">
+            <span class="breakthrough_stat-value">{{ section.settings.stat_3_value }}</span>
+            <span class="breakthrough_stat-label">{{ section.settings.stat_3_label }}</span>
+          </div>
+          
+          <div class="breakthrough_separator"></div>
+          
+          <div class="breakthrough_stat">
+            <span class="breakthrough_stat-value">{{ section.settings.stat_4_value }}</span>
+            <span class="breakthrough_stat-label">{{ section.settings.stat_4_label }}</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "The Breakthrough",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Breakthrough"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What If You Could Eat During Your Fast Without Breaking It?"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph",
+      "label": "Paragraph",
+      "default": "<p>AIWO Fast Bar uses a proprietary blend of premium nuts, seeds, and natural ingredients that doesn't trigger your body's nutrient-sensing pathways. Your body stays in its fasting state while you fuel up.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Stats"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_value",
+      "label": "Stat 1 Value",
+      "default": "5g"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 Label",
+      "default": "Protein"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_value",
+      "label": "Stat 2 Value",
+      "default": "Rich"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 Label",
+      "default": "Fiber"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_value",
+      "label": "Stat 3 Value",
+      "default": "Premium"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 Label",
+      "default": "Healthy Fats"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_value",
+      "label": "Stat 4 Value",
+      "default": "A, C, K"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_label",
+      "label": "Stat 4 Label",
+      "default": "Vitamins"
+    }
+  ],
+  "presets": [
+    {
+      "name": "The Breakthrough"
+    }
+  ]
+}
+{% endschema %}

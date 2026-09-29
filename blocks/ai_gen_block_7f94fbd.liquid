@@ -1,0 +1,689 @@
+{% doc %}
+  @prompt
+    Create social proof testimonials section featuring Instagram reel.
+    
+    BACKGROUND: #F5F2ED (warm cream)
+    PADDING: 64px vertical, 20px horizontal
+    MAX-WIDTH: 1200px centered
+    
+    SECTION HEADING (centered):
+    "What Our Customers Is Saying"
+    - Font: Poppins SemiBold, 42px desktop / 28px mobile
+    - Color: #211E1E
+    - IMPORTANT: Style "Our Customers" in italic + #D68641
+    - Margin bottom: 48px
+    
+    MAIN CONTENT:
+    Instagram Reel Video Player (centered)
+    - Size: 400x600px (Instagram story dimensions)
+    - Clean video player with play button overlay
+    - Play button: Large, centered, brown #5B2E28, minimal design
+    - Border-radius: 12px
+    - Shadow: 0 6px 28px rgba(33,30,30,0.12)
+    
+    Below Video:
+    - Customer name + age - Poppins Medium 18px
+    - Location/city - Lato Regular 14px #545252
+    - 5-star rating: ⭐⭐⭐⭐⭐ (gold stars)
+    - Short quote (1-2 lines) if available
+    
+    BOTTOM SECTION (centered):
+    "Join 10,000+ Indians on their longevity journey"
+    - Font: Poppins Medium, 20px
+    - Color: #211E1E
+    - Margin top: 48px
+    
+    Optional: If more testimonials available, add text-only quote cards on sides
+    
+    MOBILE:
+    - Video: 280x420px (scale proportionally)
+    - Centered, full focus
+    - Quote: 16px
+    
+    AESTHETIC: Clean testimonial showcase, Instagram-native feel, authentic social proof, premium health community vibe
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-testimonial-section-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    width: 100%;
+    display: block;
+  }
+
+  .ai-testimonial-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-testimonial-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size_desktop }}px;
+    color: {{ block.settings.heading_color }};
+    text-align: center;
+    margin: 0 0 {{ block.settings.heading_margin_bottom }}px 0;
+    line-height: 1.2;
+  }
+
+  .ai-testimonial-heading-{{ ai_gen_id }} .ai-testimonial-highlight-{{ ai_gen_id }} {
+    font-style: italic;
+    color: {{ block.settings.highlight_color }};
+  }
+
+  .ai-testimonial-video-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .ai-testimonial-video-container-{{ ai_gen_id }} {
+    position: relative;
+    width: {{ block.settings.video_width }}px;
+    height: {{ block.settings.video_height }}px;
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+    box-shadow: {{ block.settings.shadow }};
+  }
+
+  .ai-testimonial-video-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ai-testimonial-video-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-testimonial-placeholder-text-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .ai-testimonial-play-button-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: {{ block.settings.play_button_color }};
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+  }
+
+  .ai-testimonial-play-button-{{ ai_gen_id }}:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .ai-testimonial-play-button-{{ ai_gen_id }}.ai-testimonial-hidden-{{ ai_gen_id }} {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ai-testimonial-play-icon-{{ ai_gen_id }} {
+    width: 0;
+    height: 0;
+    border-left: 24px solid white;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    margin-left: 6px;
+  }
+
+  .ai-testimonial-info-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .ai-testimonial-customer-name-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: 500;
+    font-size: {{ block.settings.name_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 4px 0;
+  }
+
+  .ai-testimonial-location-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: 400;
+    font-size: {{ block.settings.location_size }}px;
+    color: {{ block.settings.location_color }};
+    margin: 0 0 8px 0;
+  }
+
+  .ai-testimonial-rating-{{ ai_gen_id }} {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .ai-testimonial-quote-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-size: {{ block.settings.quote_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .ai-testimonial-bottom-text-{{ ai_gen_id }} {
+    text-align: center;
+    margin-top: {{ block.settings.bottom_margin_top }}px;
+  }
+
+  .ai-testimonial-bottom-text-{{ ai_gen_id }} p {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: 500;
+    font-size: {{ block.settings.bottom_text_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-testimonial-section-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_vertical_mobile }}px {{ block.settings.padding_horizontal }}px;
+    }
+
+    .ai-testimonial-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+
+    .ai-testimonial-video-container-{{ ai_gen_id }} {
+      width: {{ block.settings.video_width_mobile }}px;
+      height: {{ block.settings.video_height_mobile }}px;
+    }
+
+    .ai-testimonial-play-button-{{ ai_gen_id }} {
+      width: 60px;
+      height: 60px;
+    }
+
+    .ai-testimonial-play-icon-{{ ai_gen_id }} {
+      border-left: 18px solid white;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+
+    .ai-testimonial-quote-{{ ai_gen_id }} {
+      font-size: {{ block.settings.quote_size_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<instagram-testimonial-{{ ai_gen_id }} class="ai-testimonial-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-testimonial-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-testimonial-heading-{{ ai_gen_id }}">
+        {% assign heading_parts = block.settings.heading | split: block.settings.highlight_text %}
+        {% if heading_parts.size > 1 %}
+          {{ heading_parts[0] }}<span class="ai-testimonial-highlight-{{ ai_gen_id }}">{{ block.settings.highlight_text }}</span>{{ heading_parts[1] }}
+        {% else %}
+          {{ block.settings.heading }}
+        {% endif %}
+      </h2>
+    {% endif %}
+
+    <div class="ai-testimonial-video-wrapper-{{ ai_gen_id }}">
+      <div class="ai-testimonial-video-container-{{ ai_gen_id }}">
+        {% if block.settings.video_url != blank %}
+          <video
+            class="ai-testimonial-video-{{ ai_gen_id }}"
+            src="{{ block.settings.video_url }}"
+            playsinline
+            {% if block.settings.enable_loop %}loop{% endif %}
+            {% if block.settings.enable_mute %}muted{% endif %}
+          ></video>
+          <button
+            class="ai-testimonial-play-button-{{ ai_gen_id }}"
+            aria-label="Play video"
+          >
+            <div class="ai-testimonial-play-icon-{{ ai_gen_id }}"></div>
+          </button>
+        {% else %}
+          <div class="ai-testimonial-video-placeholder-{{ ai_gen_id }}">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="40" fill="white" fill-opacity="0.2"/>
+              <path d="M32 26L56 40L32 54V26Z" fill="white"/>
+            </svg>
+            <div class="ai-testimonial-placeholder-text-{{ ai_gen_id }}">
+              Add your Instagram reel video URL
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-testimonial-info-{{ ai_gen_id }}">
+      {% if block.settings.customer_name != blank %}
+        <p class="ai-testimonial-customer-name-{{ ai_gen_id }}">{{ block.settings.customer_name }}</p>
+      {% endif %}
+
+      {% if block.settings.location != blank %}
+        <p class="ai-testimonial-location-{{ ai_gen_id }}">{{ block.settings.location }}</p>
+      {% endif %}
+
+      {% if block.settings.show_rating %}
+        <div class="ai-testimonial-rating-{{ ai_gen_id }}">⭐⭐⭐⭐⭐</div>
+      {% endif %}
+
+      {% if block.settings.quote != blank %}
+        <div class="ai-testimonial-quote-{{ ai_gen_id }}">
+          {{ block.settings.quote }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if block.settings.bottom_text != blank %}
+      <div class="ai-testimonial-bottom-text-{{ ai_gen_id }}">
+        {{ block.settings.bottom_text }}
+      </div>
+    {% endif %}
+  </div>
+</instagram-testimonial-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class InstagramTestimonial{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.video = this.querySelector('.ai-testimonial-video-{{ ai_gen_id }}');
+        this.playButton = this.querySelector('.ai-testimonial-play-button-{{ ai_gen_id }}');
+
+        if (this.video && this.playButton) {
+          this.setupVideoPlayer();
+        }
+      }
+
+      setupVideoPlayer() {
+        this.playButton.addEventListener('click', () => {
+          if (this.video.paused) {
+            this.video.play();
+            this.playButton.classList.add('ai-testimonial-hidden-{{ ai_gen_id }}');
+          } else {
+            this.video.pause();
+            this.playButton.classList.remove('ai-testimonial-hidden-{{ ai_gen_id }}');
+          }
+        });
+
+        this.video.addEventListener('click', () => {
+          if (!this.video.paused) {
+            this.video.pause();
+            this.playButton.classList.remove('ai-testimonial-hidden-{{ ai_gen_id }}');
+          }
+        });
+
+        this.video.addEventListener('ended', () => {
+          this.playButton.classList.remove('ai-testimonial-hidden-{{ ai_gen_id }}');
+        });
+
+        this.video.addEventListener('pause', () => {
+          this.playButton.classList.remove('ai-testimonial-hidden-{{ ai_gen_id }}');
+        });
+
+        this.video.addEventListener('play', () => {
+          this.playButton.classList.add('ai-testimonial-hidden-{{ ai_gen_id }}');
+        });
+      }
+    }
+
+    customElements.define('instagram-testimonial-{{ ai_gen_id }}', InstagramTestimonial{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Instagram testimonial",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#F5F2ED"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical_mobile",
+      "label": "Vertical padding mobile",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading text",
+      "default": "What Our Customers Is Saying"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Text to highlight",
+      "default": "Our Customers"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size mobile",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#211E1E"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight color",
+      "default": "#D68641"
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "label": "Heading bottom margin",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "range",
+      "id": "video_width",
+      "label": "Video width desktop",
+      "min": 300,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "video_height",
+      "label": "Video height desktop",
+      "min": 400,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "video_width_mobile",
+      "label": "Video width mobile",
+      "min": 200,
+      "max": 400,
+      "step": 20,
+      "unit": "px",
+      "default": 280
+    },
+    {
+      "type": "range",
+      "id": "video_height_mobile",
+      "label": "Video height mobile",
+      "min": 300,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 420
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "text",
+      "id": "shadow",
+      "label": "Box shadow",
+      "default": "0 6px 28px rgba(33,30,30,0.12)"
+    },
+    {
+      "type": "color",
+      "id": "play_button_color",
+      "label": "Play button color",
+      "default": "#5B2E28"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_loop",
+      "label": "Loop video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mute",
+      "label": "Mute by default",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Customer info"
+    },
+    {
+      "type": "text",
+      "id": "customer_name",
+      "label": "Customer name"
+    },
+    {
+      "type": "text",
+      "id": "location",
+      "label": "Location"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "name_size",
+      "label": "Name size",
+      "min": 14,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "location_size",
+      "label": "Location size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#211E1E"
+    },
+    {
+      "type": "color",
+      "id": "location_color",
+      "label": "Location color",
+      "default": "#545252"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Show rating",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote"
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "label": "Quote size desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "quote_size_mobile",
+      "label": "Quote size mobile",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Bottom text"
+    },
+    {
+      "type": "richtext",
+      "id": "bottom_text",
+      "label": "Bottom text",
+      "default": "<p>Join 10,000+ Indians on their longevity journey</p>"
+    },
+    {
+      "type": "range",
+      "id": "bottom_text_size",
+      "label": "Bottom text size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "bottom_margin_top",
+      "label": "Bottom text top margin",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram testimonial"
+    }
+  ]
+}
+{% endschema %}

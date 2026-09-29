@@ -1,0 +1,1439 @@
+{% doc %}
+  @prompt
+    Prompt:
+    Design a modern, premium comparison table section titled “AIWO vs Other Extra Virgin Olive Oils” for a luxury olive oil brand. The design should convey scientific credibility, transparency, and superiority—while remaining minimalist, elegant, and easy to read.
+    
+    Layout:
+    
+    A clean, centered container with rounded corners and soft shadows.
+    
+    Title area with bold heading and supporting subtitle.
+    
+    Two-column comparison table (“AIWO” vs “Others”) with clear category labeling.
+    
+    Each row should highlight one metric or attribute using typography, icons, and subtle color contrast.
+    
+    Responsive layout (scrollable horizontally on mobile or stacked comparison).
+    
+    Section Header:
+    
+    Title: AIWO vs Other Extra Virgin Olive Oils
+    
+    Subtitle: “We replace vague claims with auditable proof of freshness, purity, and protection—per lot.”
+    
+    Background: light gradient from ivory to pale olive (#FDFBF5 → #FAF8F3).
+    
+    Table Design:
+    
+    3-column layout: Category | AIWO | Others
+    
+    Use alternating row backgrounds for clarity (e.g., off-white and pale beige).
+    
+    Header row with bold typography and a gold underline or separator.
+    
+    Rounded corners on table edges.
+    
+    Light divider lines in gold, | **Category** | **AIWO** | **Others** |
+    
+    > |---------------|----------|-------------|
+    > | **Lab Transparency** | Publishes lot-specific COA QR with acidity, peroxide, PPP, DAGs | Vague “extra virgin” claims, no public data |
+    > | **Freshness (Acidity)** | **0.16% (ultra-low)** — 80% below limit | ≤0.8% or undisclosed |
+    > | **Early Oxidation** | **6 meq O₂/kg** (very low) | Not disclosed on label |
+    > | **Advanced Freshness Markers** | **PPP 2.1%, DAGs 71.5%** (verified) | Rarely tested or shown |
+    > | **Safety & Purity** | Pesticides: Not Detected, PAH-4 < 2 µg/kg | Generic “lab-tested” claim, no proof |
+    > | **Harvest → Extraction Speed** | **Pressed within 3 hours** to lock in aroma and vitality | Typically processed 12–24 hrs later |
+    > | **Heart-Healthy Profile** | **68.5% MUFA** — naturally high oleic profile | May claim MUFA but not verified |
+    - use above content 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-comparison-table-{{ ai_gen_id }} {
+    width: 100%;
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+    background: linear-gradient(180deg, {{ block.settings.background_gradient_start }} 0%, {{ block.settings.background_gradient_end }} 100%);
+  }
+
+  .ai-comparison-table-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_max_width }}px;
+    margin: 0 auto;
+    background-color: {{ block.settings.table_background }};
+    border-radius: {{ block.settings.border_radius }}px;
+    box-shadow: {{ block.settings.shadow_horizontal }}px {{ block.settings.shadow_vertical }}px {{ block.settings.shadow_blur }}px {{ block.settings.shadow_color }};
+    overflow: hidden;
+  }
+
+  .ai-comparison-header-{{ ai_gen_id }} {
+    text-align: center;
+    padding: {{ block.settings.header_padding }}px 30px;
+    background-color: {{ block.settings.header_background }};
+  }
+
+  .ai-comparison-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {{ block.settings.title_weight }};
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_margin_bottom }}px;
+    letter-spacing: {{ block.settings.title_letter_spacing }}px;
+    text-transform: {{ block.settings.title_transform }};
+  }
+
+  .ai-comparison-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .ai-comparison-table-wrapper-{{ ai_gen_id }} {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} thead {
+    background-color: {{ block.settings.thead_background }};
+    border-bottom: {{ block.settings.header_border_width }}px solid {{ block.settings.divider_color }};
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} thead th {
+    padding: {{ block.settings.header_cell_padding }}px 20px;
+    font-size: {{ block.settings.header_font_size }}px;
+    font-weight: {{ block.settings.header_font_weight }};
+    color: {{ block.settings.header_text_color }};
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} thead th:first-child {
+    text-align: left;
+    width: 40%;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} thead th:nth-child(2) {
+    color: {{ block.settings.aiwo_column_color }};
+    font-weight: 700;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} tbody tr {
+    border-bottom: 1px solid {{ block.settings.row_divider_color }};
+    transition: background-color 0.2s ease;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} tbody tr:hover {
+    background-color: {{ block.settings.row_hover_background }};
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} tbody tr:nth-child(even) {
+    background-color: {{ block.settings.row_even_background }};
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} tbody tr:nth-child(odd) {
+    background-color: {{ block.settings.row_odd_background }};
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} tbody td {
+    padding: {{ block.settings.cell_padding }}px 20px;
+    font-size: {{ block.settings.cell_font_size }}px;
+    color: {{ block.settings.cell_text_color }};
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} tbody td:first-child {
+    font-weight: {{ block.settings.category_font_weight }};
+    color: {{ block.settings.category_text_color }};
+  }
+
+  .ai-comparison-table-{{ ai_gen_id }} tbody td:nth-child(2),
+  .ai-comparison-table-{{ ai_gen_id }} tbody td:nth-child(3) {
+    text-align: center;
+  }
+
+  .ai-comparison-icon-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+  }
+
+  .ai-comparison-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-comparison-checkmark-{{ ai_gen_id }} {
+    color: {{ block.settings.checkmark_color }};
+  }
+
+  .ai-comparison-cross-{{ ai_gen_id }} {
+    color: {{ block.settings.cross_color }};
+  }
+
+  .ai-comparison-value-{{ ai_gen_id }} {
+    font-weight: 600;
+    color: {{ block.settings.value_text_color }};
+  }
+
+  .ai-comparison-aiwo-value-{{ ai_gen_id }} {
+    color: {{ block.settings.aiwo_value_color }};
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-comparison-table-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.6 }}px 15px {{ block.settings.section_padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-comparison-header-{{ ai_gen_id }} {
+      padding: {{ block.settings.header_padding | times: 0.7 }}px 20px;
+    }
+
+    .ai-comparison-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.7 }}px;
+    }
+
+    .ai-comparison-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.85 }}px;
+    }
+
+    .ai-comparison-table-{{ ai_gen_id }} thead th {
+      font-size: {{ block.settings.header_font_size | times: 0.85 }}px;
+      padding: {{ block.settings.header_cell_padding | times: 0.7 }}px 12px;
+    }
+
+    .ai-comparison-table-{{ ai_gen_id }} tbody td {
+      font-size: {{ block.settings.cell_font_size | times: 0.85 }}px;
+      padding: {{ block.settings.cell_padding | times: 0.7 }}px 12px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-comparison-table-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-comparison-table-container-{{ ai_gen_id }}">
+    <div class="ai-comparison-header-{{ ai_gen_id }}">
+      {% if block.settings.title != blank %}
+        <h2 class="ai-comparison-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+      {% endif %}
+      {% if block.settings.subtitle != blank %}
+        <div class="ai-comparison-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</div>
+      {% endif %}
+    </div>
+
+    <div class="ai-comparison-table-wrapper-{{ ai_gen_id }}">
+      <table>
+        <thead>
+          <tr>
+            <th>{{ block.settings.category_header }}</th>
+            <th>{{ block.settings.aiwo_header }}</th>
+            <th>{{ block.settings.others_header }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in (1..10) %}
+            {% liquid
+              assign enabled_key = 'row_' | append: i | append: '_enabled'
+              assign category_key = 'row_' | append: i | append: '_category'
+              assign aiwo_type_key = 'row_' | append: i | append: '_aiwo_type'
+              assign aiwo_value_key = 'row_' | append: i | append: '_aiwo_value'
+              assign others_type_key = 'row_' | append: i | append: '_others_type'
+              assign others_value_key = 'row_' | append: i | append: '_others_value'
+
+              assign row_enabled = block.settings[enabled_key]
+              assign category = block.settings[category_key]
+              assign aiwo_type = block.settings[aiwo_type_key]
+              assign aiwo_value = block.settings[aiwo_value_key]
+              assign others_type = block.settings[others_type_key]
+              assign others_value = block.settings[others_value_key]
+            %}
+
+            {% if row_enabled %}
+              <tr>
+                <td>{{ category }}</td>
+                <td>
+                  {% if aiwo_type == 'checkmark' %}
+                    <span class="ai-comparison-icon-{{ ai_gen_id }} ai-comparison-checkmark-{{ ai_gen_id }}">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                  {% elsif aiwo_type == 'cross' %}
+                    <span class="ai-comparison-icon-{{ ai_gen_id }} ai-comparison-cross-{{ ai_gen_id }}">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </span>
+                  {% elsif aiwo_type == 'text' %}
+                    <span class="ai-comparison-value-{{ ai_gen_id }} ai-comparison-aiwo-value-{{ ai_gen_id }}">{{ aiwo_value }}</span>
+                  {% endif %}
+                </td>
+                <td>
+                  {% if others_type == 'checkmark' %}
+                    <span class="ai-comparison-icon-{{ ai_gen_id }} ai-comparison-checkmark-{{ ai_gen_id }}">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                  {% elsif others_type == 'cross' %}
+                    <span class="ai-comparison-icon-{{ ai_gen_id }} ai-comparison-cross-{{ ai_gen_id }}">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </span>
+                  {% elsif others_type == 'text' %}
+                    <span class="ai-comparison-value-{{ ai_gen_id }}">{{ others_value }}</span>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Premium comparison table",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "AIWO vs Other Extra Virgin Olive Oils"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We replace vague claims with auditable proof of freshness, purity, and protection—per lot."
+    },
+    {
+      "type": "header",
+      "content": "Table headers"
+    },
+    {
+      "type": "text",
+      "id": "category_header",
+      "label": "Category column header",
+      "default": "Category"
+    },
+    {
+      "type": "text",
+      "id": "aiwo_header",
+      "label": "AIWO column header",
+      "default": "AIWO"
+    },
+    {
+      "type": "text",
+      "id": "others_header",
+      "label": "Others column header",
+      "default": "Others"
+    },
+    {
+      "type": "header",
+      "content": "Row 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_1_enabled",
+      "label": "Enable row 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "row_1_category",
+      "label": "Category",
+      "default": "Lab Transparency"
+    },
+    {
+      "type": "select",
+      "id": "row_1_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_1_aiwo_value",
+      "label": "AIWO text value",
+      "default": "Publishes lot-specific COA QR with acidity, peroxide, PPP, DAGs"
+    },
+    {
+      "type": "select",
+      "id": "row_1_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_1_others_value",
+      "label": "Others text value",
+      "default": "Vague \"extra virgin\" claims, no public data"
+    },
+    {
+      "type": "header",
+      "content": "Row 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_2_enabled",
+      "label": "Enable row 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "row_2_category",
+      "label": "Category",
+      "default": "Freshness (Acidity)"
+    },
+    {
+      "type": "select",
+      "id": "row_2_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_2_aiwo_value",
+      "label": "AIWO text value",
+      "default": "0.16% (ultra-low) — 80% below limit"
+    },
+    {
+      "type": "select",
+      "id": "row_2_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "text",
+      "id": "row_2_others_value",
+      "label": "Others text value",
+      "default": "≤0.8% or undisclosed"
+    },
+    {
+      "type": "header",
+      "content": "Row 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_3_enabled",
+      "label": "Enable row 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "row_3_category",
+      "label": "Category",
+      "default": "Early Oxidation"
+    },
+    {
+      "type": "select",
+      "id": "row_3_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "text",
+      "id": "row_3_aiwo_value",
+      "label": "AIWO text value",
+      "default": "6 meq O₂/kg (very low)"
+    },
+    {
+      "type": "select",
+      "id": "row_3_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "text",
+      "id": "row_3_others_value",
+      "label": "Others text value",
+      "default": "Not disclosed on label"
+    },
+    {
+      "type": "header",
+      "content": "Row 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_4_enabled",
+      "label": "Enable row 4",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "row_4_category",
+      "label": "Category",
+      "default": "Advanced Freshness Markers"
+    },
+    {
+      "type": "select",
+      "id": "row_4_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_4_aiwo_value",
+      "label": "AIWO text value",
+      "default": "PPP 2.1%, DAGs 71.5% (verified)"
+    },
+    {
+      "type": "select",
+      "id": "row_4_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "text",
+      "id": "row_4_others_value",
+      "label": "Others text value",
+      "default": "Rarely tested or shown"
+    },
+    {
+      "type": "header",
+      "content": "Row 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_5_enabled",
+      "label": "Enable row 5",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "row_5_category",
+      "label": "Category",
+      "default": "Safety & Purity"
+    },
+    {
+      "type": "select",
+      "id": "row_5_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_5_aiwo_value",
+      "label": "AIWO text value",
+      "default": "Pesticides: Not Detected, PAH-4 < 2 µg/kg"
+    },
+    {
+      "type": "select",
+      "id": "row_5_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_5_others_value",
+      "label": "Others text value",
+      "default": "Generic \"lab-tested\" claim, no proof"
+    },
+    {
+      "type": "header",
+      "content": "Row 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_6_enabled",
+      "label": "Enable row 6",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "row_6_category",
+      "label": "Category",
+      "default": "Harvest → Extraction Speed"
+    },
+    {
+      "type": "select",
+      "id": "row_6_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_6_aiwo_value",
+      "label": "AIWO text value",
+      "default": "Pressed within 3 hours to lock in aroma and vitality"
+    },
+    {
+      "type": "select",
+      "id": "row_6_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_6_others_value",
+      "label": "Others text value",
+      "default": "Typically processed 12–24 hrs later"
+    },
+    {
+      "type": "header",
+      "content": "Row 7"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_7_enabled",
+      "label": "Enable row 7",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "row_7_category",
+      "label": "Category",
+      "default": "Heart-Healthy Profile"
+    },
+    {
+      "type": "select",
+      "id": "row_7_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_7_aiwo_value",
+      "label": "AIWO text value",
+      "default": "68.5% MUFA — naturally high oleic profile"
+    },
+    {
+      "type": "select",
+      "id": "row_7_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_7_others_value",
+      "label": "Others text value",
+      "default": "May claim MUFA but not verified"
+    },
+    {
+      "type": "header",
+      "content": "Row 8"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_8_enabled",
+      "label": "Enable row 8",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "row_8_category",
+      "label": "Category"
+    },
+    {
+      "type": "select",
+      "id": "row_8_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_8_aiwo_value",
+      "label": "AIWO text value"
+    },
+    {
+      "type": "select",
+      "id": "row_8_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_8_others_value",
+      "label": "Others text value"
+    },
+    {
+      "type": "header",
+      "content": "Row 9"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_9_enabled",
+      "label": "Enable row 9",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "row_9_category",
+      "label": "Category"
+    },
+    {
+      "type": "select",
+      "id": "row_9_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_9_aiwo_value",
+      "label": "AIWO text value"
+    },
+    {
+      "type": "select",
+      "id": "row_9_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_9_others_value",
+      "label": "Others text value"
+    },
+    {
+      "type": "header",
+      "content": "Row 10"
+    },
+    {
+      "type": "checkbox",
+      "id": "row_10_enabled",
+      "label": "Enable row 10",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "row_10_category",
+      "label": "Category"
+    },
+    {
+      "type": "select",
+      "id": "row_10_aiwo_type",
+      "label": "AIWO value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_10_aiwo_value",
+      "label": "AIWO text value"
+    },
+    {
+      "type": "select",
+      "id": "row_10_others_type",
+      "label": "Others value type",
+      "options": [
+        {
+          "value": "checkmark",
+          "label": "Checkmark"
+        },
+        {
+          "value": "cross",
+          "label": "Cross"
+        },
+        {
+          "value": "text",
+          "label": "Text"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "textarea",
+      "id": "row_10_others_value",
+      "label": "Others text value"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "min": 600,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "label": "Container max width",
+      "default": 1000
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_start",
+      "label": "Background gradient start",
+      "default": "#FDFBF5"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_end",
+      "label": "Background gradient end",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "table_background",
+      "label": "Table background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "header_background",
+      "label": "Header background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "thead_background",
+      "label": "Table header background",
+      "default": "#FDFBF5"
+    },
+    {
+      "type": "color",
+      "id": "row_odd_background",
+      "label": "Odd row background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "row_even_background",
+      "label": "Even row background",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "row_hover_background",
+      "label": "Row hover background",
+      "default": "#F5F3ED"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Header divider color",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "color",
+      "id": "row_divider_color",
+      "label": "Row divider color",
+      "default": "#E8E6E0"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 36
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Title weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "select",
+      "id": "title_transform",
+      "label": "Title transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Title letter spacing",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Title margin bottom",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#6B6B6B"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Header padding",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Table header text color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "range",
+      "id": "header_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Table header font size",
+      "default": 15
+    },
+    {
+      "type": "select",
+      "id": "header_font_weight",
+      "label": "Table header font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "header_cell_padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Header cell padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "header_border_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Header border width",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "aiwo_column_color",
+      "label": "AIWO column color",
+      "default": "#D4AF37"
+    },
+    {
+      "type": "color",
+      "id": "category_text_color",
+      "label": "Category text color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "select",
+      "id": "category_font_weight",
+      "label": "Category font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "color",
+      "id": "cell_text_color",
+      "label": "Cell text color",
+      "default": "#4A4A4A"
+    },
+    {
+      "type": "range",
+      "id": "cell_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Cell font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "cell_padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Cell padding",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "value_text_color",
+      "label": "Value text color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "color",
+      "id": "aiwo_value_color",
+      "label": "AIWO value color",
+      "default": "#6B762D"
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 16,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "checkmark_color",
+      "label": "Checkmark color",
+      "default": "#6B762D"
+    },
+    {
+      "type": "color",
+      "id": "cross_color",
+      "label": "Cross color",
+      "default": "#BF122A"
+    },
+    {
+      "type": "header",
+      "content": "Shadow"
+    },
+    {
+      "type": "range",
+      "id": "shadow_horizontal",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Horizontal offset",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "shadow_vertical",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical offset",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "shadow_blur",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Blur radius",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "shadow_color",
+      "label": "Shadow color",
+      "default": "rgba(0, 0, 0, 0.08)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium comparison table"
+    }
+  ]
+}
+{% endschema %}

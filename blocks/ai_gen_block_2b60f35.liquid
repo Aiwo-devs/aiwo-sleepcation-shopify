@@ -1,0 +1,667 @@
+{% doc %}
+  @prompt
+    # FAQ Section - 2 Column Accordion (Condensed)
+    
+    ## Prompt
+    
+    Create FAQ section with light background:
+    
+    **Layout:** 2 columns (stack on mobile)
+    
+    **Left Column - Header** (sticky on scroll, desktop only):
+    - Ocean blue pill badge: "FAQ"
+    - Large heading: "Frequently Asked" + "Questions" (ocean gradient) [EDITABLE]
+    - Gray description paragraph (max-width 500px) [EDITABLE]
+    
+    **Right Column - Accordion:**
+    - Vertical stack of expandable FAQ items
+    - Medium gap between items (16px)
+    
+    **FAQ Accordion Item:**
+    - White card bg, rounded corners, border, light shadow
+    - 24px horizontal padding
+    - Click to expand/collapse (smooth animation)
+    - Chevron icon rotates when expanded
+    - Question: Bold, dark text, left-aligned [EDITABLE]
+    - Answer: Gray text, relaxed line height, hidden when collapsed [EDITABLE]
+    - Only one item open at a time
+    
+    **Default 6 FAQs (all editable, repeatable):**
+    1. "What makes Aiwo Omega 3 different?" - About enteric coating...
+    2. "What is the recommended dosage?" - 1-2 capsules daily...
+    3. "Will I experience fishy burps?" - No, DR coating eliminates...
+    4. "Is it suitable for vegetarians?" - No, uses fish oil and gelatin...
+    5. "How long before I see results?" - 2-4 weeks for mood, 2-3 months full...
+    6. "Are there quality certifications?" - GMP, ISO, FSSAI, Halal...
+    
+    **Responsive:** 
+    - Desktop: Left sticky, right scrolls
+    - Mobile: Stack vertically (header then accordion)
+    
+    **All questions, answers repeatable. Add/remove FAQ items via Shopify settings.**
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-faq-section-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-faq-container-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .ai-faq-header-{{ ai_gen_id }} {
+    position: sticky;
+    top: 100px;
+  }
+
+  .ai-faq-badge-{{ ai_gen_id }} {
+    display: inline-block;
+    background-color: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .ai-faq-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-faq-heading-highlight-{{ ai_gen_id }} {
+    background: {{ block.settings.gradient_start }};
+    background: linear-gradient(135deg, {{ block.settings.gradient_start }} 0%, {{ block.settings.gradient_end }} 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ai-faq-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.6;
+    color: {{ block.settings.description_color }};
+    max-width: 500px;
+    margin: 0;
+  }
+
+  .ai-faq-accordion-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-faq-item-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    border: 1px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .ai-faq-item-{{ ai_gen_id }}:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-faq-question-{{ ai_gen_id }} {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: {{ block.settings.question_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.question_color }};
+    transition: color 0.3s ease;
+  }
+
+  .ai-faq-question-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.question_hover_color }};
+  }
+
+  .ai-faq-chevron-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-left: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-faq-chevron-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+  }
+
+  .ai-faq-item-{{ ai_gen_id }}.active .ai-faq-chevron-{{ ai_gen_id }} {
+    transform: rotate(180deg);
+  }
+
+  .ai-faq-answer-wrapper-{{ ai_gen_id }} {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .ai-faq-answer-{{ ai_gen_id }} {
+    padding: 0 24px 24px;
+    font-size: {{ block.settings.answer_size }}px;
+    line-height: 1.7;
+    color: {{ block.settings.answer_color }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-faq-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-faq-header-{{ ai_gen_id }} {
+      position: static;
+    }
+
+    .ai-faq-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.7);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-faq-section-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.6 }}px 16px {{ block.settings.section_padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-faq-question-{{ ai_gen_id }} {
+      padding: 20px;
+      font-size: calc({{ block.settings.question_size }}px * 0.9);
+    }
+
+    .ai-faq-answer-{{ ai_gen_id }} {
+      padding: 0 20px 20px;
+      font-size: calc({{ block.settings.answer_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<faq-accordion-{{ ai_gen_id }} class="ai-faq-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-faq-container-{{ ai_gen_id }}">
+    <div class="ai-faq-header-{{ ai_gen_id }}">
+      <div class="ai-faq-badge-{{ ai_gen_id }}">{{ block.settings.badge_text }}</div>
+      <h2 class="ai-faq-heading-{{ ai_gen_id }}">
+        {{ block.settings.heading_part1 }}
+        <span class="ai-faq-heading-highlight-{{ ai_gen_id }}">{{ block.settings.heading_part2 }}</span>
+      </h2>
+      {% if block.settings.description != blank %}
+        <p class="ai-faq-description-{{ ai_gen_id }}">{{ block.settings.description }}</p>
+      {% endif %}
+    </div>
+
+    <div class="ai-faq-accordion-{{ ai_gen_id }}">
+      {% if block.settings.faq_1_question != blank %}
+        <div class="ai-faq-item-{{ ai_gen_id }}" data-faq-item>
+          <button class="ai-faq-question-{{ ai_gen_id }}" aria-expanded="false">
+            <span>{{ block.settings.faq_1_question }}</span>
+            <span class="ai-faq-chevron-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="ai-faq-answer-wrapper-{{ ai_gen_id }}">
+            <div class="ai-faq-answer-{{ ai_gen_id }}">{{ block.settings.faq_1_answer }}</div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.faq_2_question != blank %}
+        <div class="ai-faq-item-{{ ai_gen_id }}" data-faq-item>
+          <button class="ai-faq-question-{{ ai_gen_id }}" aria-expanded="false">
+            <span>{{ block.settings.faq_2_question }}</span>
+            <span class="ai-faq-chevron-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="ai-faq-answer-wrapper-{{ ai_gen_id }}">
+            <div class="ai-faq-answer-{{ ai_gen_id }}">{{ block.settings.faq_2_answer }}</div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.faq_3_question != blank %}
+        <div class="ai-faq-item-{{ ai_gen_id }}" data-faq-item>
+          <button class="ai-faq-question-{{ ai_gen_id }}" aria-expanded="false">
+            <span>{{ block.settings.faq_3_question }}</span>
+            <span class="ai-faq-chevron-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="ai-faq-answer-wrapper-{{ ai_gen_id }}">
+            <div class="ai-faq-answer-{{ ai_gen_id }}">{{ block.settings.faq_3_answer }}</div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.faq_4_question != blank %}
+        <div class="ai-faq-item-{{ ai_gen_id }}" data-faq-item>
+          <button class="ai-faq-question-{{ ai_gen_id }}" aria-expanded="false">
+            <span>{{ block.settings.faq_4_question }}</span>
+            <span class="ai-faq-chevron-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="ai-faq-answer-wrapper-{{ ai_gen_id }}">
+            <div class="ai-faq-answer-{{ ai_gen_id }}">{{ block.settings.faq_4_answer }}</div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.faq_5_question != blank %}
+        <div class="ai-faq-item-{{ ai_gen_id }}" data-faq-item>
+          <button class="ai-faq-question-{{ ai_gen_id }}" aria-expanded="false">
+            <span>{{ block.settings.faq_5_question }}</span>
+            <span class="ai-faq-chevron-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="ai-faq-answer-wrapper-{{ ai_gen_id }}">
+            <div class="ai-faq-answer-{{ ai_gen_id }}">{{ block.settings.faq_5_answer }}</div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.faq_6_question != blank %}
+        <div class="ai-faq-item-{{ ai_gen_id }}" data-faq-item>
+          <button class="ai-faq-question-{{ ai_gen_id }}" aria-expanded="false">
+            <span>{{ block.settings.faq_6_question }}</span>
+            <span class="ai-faq-chevron-{{ ai_gen_id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="ai-faq-answer-wrapper-{{ ai_gen_id }}">
+            <div class="ai-faq-answer-{{ ai_gen_id }}">{{ block.settings.faq_6_answer }}</div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</faq-accordion-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FaqAccordion{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.items = this.querySelectorAll('[data-faq-item]');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.items.forEach((item) => {
+          const button = item.querySelector('.ai-faq-question-{{ ai_gen_id }}');
+          const answerWrapper = item.querySelector('.ai-faq-answer-wrapper-{{ ai_gen_id }}');
+          const answer = item.querySelector('.ai-faq-answer-{{ ai_gen_id }}');
+
+          button.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            this.items.forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove('active');
+                const otherWrapper = otherItem.querySelector('.ai-faq-answer-wrapper-{{ ai_gen_id }}');
+                const otherButton = otherItem.querySelector('.ai-faq-question-{{ ai_gen_id }}');
+                otherWrapper.style.maxHeight = '0';
+                otherButton.setAttribute('aria-expanded', 'false');
+              }
+            });
+
+            if (isActive) {
+              item.classList.remove('active');
+              answerWrapper.style.maxHeight = '0';
+              button.setAttribute('aria-expanded', 'false');
+            } else {
+              item.classList.add('active');
+              answerWrapper.style.maxHeight = answer.scrollHeight + 'px';
+              button.setAttribute('aria-expanded', 'true');
+            }
+          });
+        });
+      }
+    }
+
+    customElements.define('faq-accordion-{{ ai_gen_id }}', FaqAccordion{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ accordion",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F9FAFB"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "FAQ"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Background color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_part1",
+      "label": "Heading part 1",
+      "default": "Frequently Asked"
+    },
+    {
+      "type": "text",
+      "id": "heading_part2",
+      "label": "Heading part 2",
+      "default": "Questions"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "gradient_start",
+      "label": "Gradient start",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient end",
+      "default": "#06B6D4"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Find answers to common questions about our products and services."
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#E5E7EB"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Question"
+    },
+    {
+      "type": "range",
+      "id": "question_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Question size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "question_color",
+      "label": "Question color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "color",
+      "id": "question_hover_color",
+      "label": "Question hover color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "header",
+      "content": "Answer"
+    },
+    {
+      "type": "range",
+      "id": "answer_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Answer size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "answer_color",
+      "label": "Answer color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 1"
+    },
+    {
+      "type": "text",
+      "id": "faq_1_question",
+      "label": "Question",
+      "default": "What makes Aiwo Omega 3 different?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_1_answer",
+      "label": "Answer",
+      "default": "Our Omega 3 features enteric coating technology that ensures the capsule dissolves in the intestines rather than the stomach, eliminating fishy aftertaste and improving absorption."
+    },
+    {
+      "type": "header",
+      "content": "FAQ 2"
+    },
+    {
+      "type": "text",
+      "id": "faq_2_question",
+      "label": "Question",
+      "default": "What is the recommended dosage?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_2_answer",
+      "label": "Answer",
+      "default": "Take 1-2 capsules daily with meals, or as directed by your healthcare professional. Each capsule provides 1000mg of high-quality fish oil."
+    },
+    {
+      "type": "header",
+      "content": "FAQ 3"
+    },
+    {
+      "type": "text",
+      "id": "faq_3_question",
+      "label": "Question",
+      "default": "Will I experience fishy burps?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_3_answer",
+      "label": "Answer",
+      "default": "No, our delayed-release (DR) coating eliminates fishy burps and aftertaste by ensuring the capsule dissolves in your intestines, not your stomach."
+    },
+    {
+      "type": "header",
+      "content": "FAQ 4"
+    },
+    {
+      "type": "text",
+      "id": "faq_4_question",
+      "label": "Question",
+      "default": "Is it suitable for vegetarians?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_4_answer",
+      "label": "Answer",
+      "default": "No, this product uses fish oil and gelatin capsules, making it unsuitable for vegetarians and vegans. We recommend exploring our plant-based omega alternatives."
+    },
+    {
+      "type": "header",
+      "content": "FAQ 5"
+    },
+    {
+      "type": "text",
+      "id": "faq_5_question",
+      "label": "Question",
+      "default": "How long before I see results?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_5_answer",
+      "label": "Answer",
+      "default": "Most people notice improvements in mood and energy within 2-4 weeks. For full cardiovascular and cognitive benefits, consistent use for 2-3 months is recommended."
+    },
+    {
+      "type": "header",
+      "content": "FAQ 6"
+    },
+    {
+      "type": "text",
+      "id": "faq_6_question",
+      "label": "Question",
+      "default": "Are there quality certifications?"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_6_answer",
+      "label": "Answer",
+      "default": "Yes, our Omega 3 is manufactured in GMP and ISO certified facilities. We also hold FSSAI approval and Halal certification, ensuring the highest quality and safety standards."
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ accordion"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,564 @@
+{% comment %}
+  Why Choose AIWO Section
+  All Short Cards - Different Column Widths Per Row
+  Updates:
+  - Gold: #919FA8
+  - Black: #211E1E
+  - Grey: #545252
+{% endcomment %}
+
+<style>
+/* ==========================================================================
+   CSS VARIABLES
+   ========================================================================== */
+:root {
+  --wc-bg: #FEFEFE;
+  --wc-card-bg: #FBFAFA;
+  --wc-card-border: #F0EDED;
+  
+  /* UPDATED COLORS */
+  --wc-text-primary: #211E1E;   /* Was #0C0C0D */
+  --wc-text-secondary: #545252; /* Was #4B4B4B */
+  --wc-accent-gold: #919FA8;    /* Was #B4A17E */
+  
+  --wc-radius: 16px;
+  --wc-gap: 24px;
+  --wc-card-height: 232px;
+}
+
+/* ==========================================================================
+   SECTION
+   ========================================================================== */
+.section_why-choose {
+  width: 100%;
+  padding: 64px 60px;
+  background-color: var(--wc-bg);
+}
+
+.why-choose_container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.why-choose_header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.why-choose_eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--wc-text-primary);
+  padding: 4px 12px;
+  margin-bottom: 24px;
+  /* Updated Gradient to match #919FA8 (RGB: 145, 159, 168) */
+  background: linear-gradient(90deg, rgba(145, 159, 168, 0.24), rgba(145, 159, 168, 0.06));
+  border-radius: 2px;
+}
+
+.why-choose_heading {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--wc-text-primary);
+  margin: 0;
+}
+
+.why-choose_heading-gold {
+  color: var(--wc-accent-gold);
+}
+
+/* ==========================================================================
+   GRID - 2 ROWS WITH DIFFERENT COLUMN WIDTHS
+   ========================================================================== */
+.why-choose_grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wc-gap);
+}
+
+.why-choose_row {
+  display: grid;
+  gap: var(--wc-gap);
+  align-items: start;
+}
+
+/* Row 1: WIDE (40fr), NARROW (25fr), MEDIUM (35fr) */
+.why-choose_row:nth-child(1) {
+  grid-template-columns: 40fr 25fr 35fr;
+}
+
+/* Row 2: MEDIUM (35fr), NARROW (25fr), WIDE (40fr) */
+.why-choose_row:nth-child(2) {
+  grid-template-columns: 35fr 25fr 40fr;
+}
+
+/* ==========================================================================
+   CARD BASE - ALL SAME HEIGHT
+   ========================================================================== */
+.why-choose_card {
+  position: relative;
+  background-color: var(--wc-card-bg);
+  border: 1px solid var(--wc-card-border);
+  border-radius: var(--wc-radius);
+  padding: 24px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px -2px rgba(16, 24, 40, 0.06), 0 4px 8px -2px rgba(16, 24, 40, 0.10);
+  display: flex;
+  flex-direction: column;
+  min-height: var(--wc-card-height);
+}
+
+/* ==========================================================================
+   CARD PADDING FOR IMAGES
+   ========================================================================== */
+.why-choose_row:nth-child(1) .why-choose_card:nth-child(1) {
+  padding-right: 144px;
+}
+
+.why-choose_row:nth-child(1) .why-choose_card:nth-child(3) {
+  padding-right: 175px;
+}
+
+.why-choose_row:nth-child(2) .why-choose_card:nth-child(1) {
+  padding-right: 175px;
+}
+
+.why-choose_row:nth-child(2) .why-choose_card:nth-child(3) {
+  padding-right: 144px;
+}
+
+/* ==========================================================================
+   CARD CONTENT
+   ========================================================================== */
+.why-choose_card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.why-choose_card-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--wc-text-primary);
+  margin: 0 0 12px 0;
+}
+
+.why-choose_card-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--wc-text-secondary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   CARD IMAGES
+   ========================================================================== */
+.why-choose_card-media {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.why-choose_card-media--woman {
+  width: 136px;
+  height: 159px;
+}
+
+.why-choose_card-media--food {
+  width: 167px;
+  height: 100px;
+}
+
+.why-choose_card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVE - TABLET (SAME AS MOBILE)
+   ========================================================================== */
+@media (max-width: 991px) {
+  .section_why-choose {
+    padding: 56px 40px;
+  }
+  
+  .why-choose_heading {
+    font-size: 40px;
+  }
+  
+  .why-choose_header {
+    margin-bottom: 32px;
+  }
+  
+  .why-choose_eyebrow {
+    font-size: 12px;
+  }
+  
+  .why-choose_grid {
+    gap: 16px;
+  }
+  
+  .why-choose_row:nth-child(1),
+  .why-choose_row:nth-child(2) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .why-choose_card {
+    min-height: 180px !important;
+    padding: 20px !important;
+  }
+  
+  .why-choose_row:nth-child(1) .why-choose_card:nth-child(1),
+  .why-choose_row:nth-child(1) .why-choose_card:nth-child(3),
+  .why-choose_row:nth-child(2) .why-choose_card:nth-child(1),
+  .why-choose_row:nth-child(2) .why-choose_card:nth-child(3) {
+    padding-right: 95px !important;
+  }
+  
+  .why-choose_card-title {
+    font-size: 18px;
+  }
+  
+  .why-choose_card-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .why-choose_card-media {
+    opacity: 0.25;
+  }
+  
+  .why-choose_card-media--woman {
+    width: 85px;
+    height: 99px;
+  }
+  
+  .why-choose_card-media--food {
+    width: 105px;
+    height: 63px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE
+   ========================================================================== */
+@media (max-width: 767px) {
+  .section_why-choose {
+    padding: 40px 24px;
+  }
+  
+  .why-choose_header {
+    margin-bottom: 32px;
+  }
+  
+  .why-choose_heading {
+    font-size: 32px;
+  }
+  
+  .why-choose_eyebrow {
+    font-size: 12px;
+  }
+  
+  .why-choose_grid {
+    gap: 16px;
+  }
+  
+  .why-choose_row:nth-child(1),
+  .why-choose_row:nth-child(2) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .why-choose_card {
+    min-height: 180px !important;
+    padding: 20px !important;
+  }
+  
+  .why-choose_row:nth-child(1) .why-choose_card:nth-child(1),
+  .why-choose_row:nth-child(1) .why-choose_card:nth-child(3),
+  .why-choose_row:nth-child(2) .why-choose_card:nth-child(1),
+  .why-choose_row:nth-child(2) .why-choose_card:nth-child(3) {
+    padding-right: 95px !important;
+  }
+  
+  .why-choose_card-title {
+    font-size: 18px;
+  }
+  
+  .why-choose_card-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .why-choose_card-media {
+    opacity: 0.25;
+  }
+  
+  .why-choose_card-media--woman {
+    width: 85px;
+    height: 99px;
+  }
+  
+  .why-choose_card-media--food {
+    width: 105px;
+    height: 63px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE PORTRAIT
+   ========================================================================== */
+@media (max-width: 479px) {
+  .section_why-choose {
+    padding: 32px 20px;
+  }
+  
+  .why-choose_heading {
+    font-size: 28px;
+  }
+  
+  .why-choose_eyebrow {
+    font-size: 11px;
+  }
+  
+  .why-choose_card-title {
+    font-size: 17px;
+  }
+  
+  .why-choose_card-text {
+    font-size: 13px;
+  }
+}
+</style>
+
+<div class="section_why-choose">
+  <div class="why-choose_container">
+    
+    <header class="why-choose_header">
+      <span class="why-choose_eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="why-choose_heading">
+        <span class="why-choose_heading-gold">{{ section.settings.heading_gold }}</span> {{ section.settings.heading_black }}
+      </h2>
+    </header>
+    
+    <div class="why-choose_grid">
+      
+      <div class="why-choose_row">
+        
+        <article class="why-choose_card">
+          <div class="why-choose_card-content">
+            <h3 class="why-choose_card-title">{{ section.settings.card_1_title }}</h3>
+            <p class="why-choose_card-text">{{ section.settings.card_1_description }}</p>
+          </div>
+          {%- if section.settings.card_1_image -%}
+            <div class="why-choose_card-media why-choose_card-media--woman">
+              {{- section.settings.card_1_image | image_url: width: 272 | image_tag: loading: 'lazy', alt: section.settings.card_1_title -}}
+            </div>
+          {%- endif -%}
+        </article>
+        
+        <article class="why-choose_card">
+          <div class="why-choose_card-content">
+            <h3 class="why-choose_card-title">{{ section.settings.card_2_title }}</h3>
+            <p class="why-choose_card-text">{{ section.settings.card_2_description }}</p>
+          </div>
+        </article>
+        
+        <article class="why-choose_card">
+          <div class="why-choose_card-content">
+            <h3 class="why-choose_card-title">{{ section.settings.card_3_title }}</h3>
+            <p class="why-choose_card-text">{{ section.settings.card_3_description }}</p>
+          </div>
+          {%- if section.settings.card_3_image -%}
+            <div class="why-choose_card-media why-choose_card-media--food">
+              {{- section.settings.card_3_image | image_url: width: 334 | image_tag: loading: 'lazy', alt: section.settings.card_3_title -}}
+            </div>
+          {%- endif -%}
+        </article>
+        
+      </div>
+      
+      <div class="why-choose_row">
+        
+        <article class="why-choose_card">
+          <div class="why-choose_card-content">
+            <h3 class="why-choose_card-title">{{ section.settings.card_4_title }}</h3>
+            <p class="why-choose_card-text">{{ section.settings.card_4_description }}</p>
+          </div>
+          {%- if section.settings.card_4_image -%}
+            <div class="why-choose_card-media why-choose_card-media--food">
+              {{- section.settings.card_4_image | image_url: width: 334 | image_tag: loading: 'lazy', alt: section.settings.card_4_title -}}
+            </div>
+          {%- endif -%}
+        </article>
+        
+        <article class="why-choose_card">
+          <div class="why-choose_card-content">
+            <h3 class="why-choose_card-title">{{ section.settings.card_5_title }}</h3>
+            <p class="why-choose_card-text">{{ section.settings.card_5_description }}</p>
+          </div>
+        </article>
+        
+        <article class="why-choose_card">
+          <div class="why-choose_card-content">
+            <h3 class="why-choose_card-title">{{ section.settings.card_6_title }}</h3>
+            <p class="why-choose_card-text">{{ section.settings.card_6_description }}</p>
+          </div>
+          {%- if section.settings.card_6_image -%}
+            <div class="why-choose_card-media why-choose_card-media--woman">
+              {{- section.settings.card_6_image | image_url: width: 272 | image_tag: loading: 'lazy', alt: section.settings.card_6_title -}}
+            </div>
+          {%- endif -%}
+        </article>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Why Choose AIWO",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "WHY CHOOSE AIWO"
+    },
+    {
+      "type": "text",
+      "id": "heading_gold",
+      "label": "Heading Gold",
+      "default": "6 Reasons"
+    },
+    {
+      "type": "text",
+      "id": "heading_black",
+      "label": "Heading Black",
+      "default": "Your Body Will Thank You"
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Card 1 Title",
+      "default": "Kick-Starts Metabolic Energy"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_description",
+      "label": "Card 1 Description",
+      "default": "Provides a quick boost to your metabolic energy, making it ideal for starting your day or as a pre-workout snack without breaking your fast."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Card 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Card 2 Title",
+      "default": "Keeps Feeling Full"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_description",
+      "label": "Card 2 Description",
+      "default": "High fiber and protein content contribute to satiety, aiding in appetite control and portion management during your eating window."
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Card 3 Title",
+      "default": "Ideal Meal Replacement"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_description",
+      "label": "Card 3 Description",
+      "default": "Serves as a nutritious replacement for breakfast, particularly for those on time-restricted diets or intermittent fasting protocols."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Card 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "card_4_title",
+      "label": "Card 4 Title",
+      "default": "Convenient Protein & Fiber"
+    },
+    {
+      "type": "textarea",
+      "id": "card_4_description",
+      "label": "Card 4 Description",
+      "default": "Contains 5g of protein and is rich in fiber, helping to support muscle health and digestive wellness throughout your fasting journey."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_4_image",
+      "label": "Card 4 Image"
+    },
+    {
+      "type": "text",
+      "id": "card_5_title",
+      "label": "Card 5 Title",
+      "default": "Pre & Post-Workout Support"
+    },
+    {
+      "type": "textarea",
+      "id": "card_5_description",
+      "label": "Card 5 Description",
+      "default": "Offers valuable nutritional support before and after workouts, helping with energy replenishment and muscle recovery."
+    },
+    {
+      "type": "text",
+      "id": "card_6_title",
+      "label": "Card 6 Title",
+      "default": "Improves Nutrient Status"
+    },
+    {
+      "type": "textarea",
+      "id": "card_6_description",
+      "label": "Card 6 Description",
+      "default": "Packed with unsaturated fats, phytonutrients, Vitamin C (62% RDA), iron, potassium, and calcium for enhanced nutritional support."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_6_image",
+      "label": "Card 6 Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Choose AIWO"
+    }
+  ]
+}
+{% endschema %}

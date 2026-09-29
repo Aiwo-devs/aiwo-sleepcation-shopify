@@ -1,0 +1,116 @@
+{% comment %}
+  ============================================================
+  Section  : AIWO EVOO v3 — Gallery Enhancements Loader
+  Template : product.extra-virgin-olive-oil-v3 ONLY
+  ============================================================
+  Loads scoped CSS. Renders tagline+tooltip template for JS swap.
+  ============================================================
+{% endcomment %}
+
+{{ 'aiwo-evoo-v3-gallery.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}
+  Pre-rendered Liquid HTML stored in <template> so the browser
+  does not render or initialize it. aiwo-evoo-v3-swiper.js reads
+  tpl.innerHTML and injects it in place of .aiwo-v1-tagline.
+{%- endcomment -%}
+<template id="evoo-v3-tagline-tpl">
+  <div class="aiwo-tagline-wrapper">
+    <div class="aiwo-tagline">
+      <span class="pulse-dot"></span>
+      <span class="aiwo-tagline__text">{{ section.settings.tagline_text | escape }}</span>
+    </div>
+    <div class="aiwo-tooltip-wrap"
+      x-data="{ open: false }"
+      @mouseenter="open = true"
+      @mouseleave="open = false"
+      @click.outside="open = false">
+      <button class="aiwo-tooltip-trigger" aria-label="More info" @click="open = !open">
+        {%- if section.settings.tooltip_icon -%}
+          <img src="{{ section.settings.tooltip_icon | image_url: width: 14 }}"
+            width="14" height="14" alt="info">
+        {%- else -%}
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="6.5" stroke="#645452"/>
+            <text x="7" y="11" text-anchor="middle" font-size="9" fill="#645452">i</text>
+          </svg>
+        {%- endif -%}
+      </button>
+      <div class="aiwo-tooltip" x-show="open" style="display:none" role="tooltip">
+        <div class="aiwo-tooltip__arrow"></div>
+        <div class="aiwo-tooltip__content">
+          <div class="aiwo-tooltip__section">
+            <p class="aiwo-tooltip__title">{{ section.settings.tooltip_title }}</p>
+            <p class="aiwo-tooltip__desc">{{ section.settings.tooltip_desc }}</p>
+          </div>
+          <div class="aiwo-tooltip__section">
+            <p class="aiwo-tooltip__pillars-heading">{{ section.settings.tooltip_pillars_heading }}</p>
+            <p class="aiwo-tooltip__active-pillars">{{ section.settings.tooltip_active_pillars }}</p>
+          </div>
+          <div class="aiwo-tooltip__section">
+            <p class="aiwo-tooltip__stack-heading">{{ section.settings.tooltip_stack_heading }}</p>
+            <p class="aiwo-tooltip__inactive-pillars">{{ section.settings.tooltip_inactive_pillars }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script src="{{ 'aiwo-evoo-v3-swiper.js' | asset_url }}" defer></script>
+<script src="{{ 'aiwo-evoo-v3-gallery.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "EVOO v3 Gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline_text",
+      "label": "Tagline",
+      "default": "WHY AIWO"
+    },
+    {
+      "type": "image_picker",
+      "id": "tooltip_icon",
+      "label": "Tooltip icon"
+    },
+    {
+      "type": "text",
+      "id": "tooltip_title",
+      "label": "Tooltip title",
+      "default": "What is LONGEVIS MATRIX?"
+    },
+    {
+      "type": "textarea",
+      "id": "tooltip_desc",
+      "label": "Tooltip description",
+      "default": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework."
+    },
+    {
+      "type": "text",
+      "id": "tooltip_pillars_heading",
+      "label": "Active pillars heading",
+      "default": "Pillars this product support"
+    },
+    {
+      "type": "textarea",
+      "id": "tooltip_active_pillars",
+      "label": "Active pillars list",
+      "default": "Cardiovascular Health · Inflammation · Longevity · Brain Function"
+    },
+    {
+      "type": "text",
+      "id": "tooltip_stack_heading",
+      "label": "Stack heading",
+      "default": "Complete your longevity stack"
+    },
+    {
+      "type": "textarea",
+      "id": "tooltip_inactive_pillars",
+      "label": "Inactive pillars list",
+      "default": "Gut Health · Bone Density · Immune Support · Energy · Sleep · Hormones · Skin"
+    }
+  ]
+}
+{% endschema %}

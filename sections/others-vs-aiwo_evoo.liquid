@@ -1,0 +1,847 @@
+{% comment %}
+  ============================================================
+  Section  : Other vs AIWO — Comparison Table
+  Brand    : AIWO EVOO
+  Version  : 1.2.0
+  ============================================================
+  Spec Summary:
+  · BG: #F0F3F5 | Section pad: 48px top/bottom | H-pad: 60px
+  · Header: "Other vs AIWO" 32px Poppins Medium 120% lh
+             "Extra Virgin Olive Oils" 40px Poppins SemiBold Italic 120% lh
+             Both color #211E1E | flex gap 12px | mb 48px
+  · Two-column 1fr 1fr gap 32px (image grid & text grid) 
+    -> **REMAINS 2 COLUMNS ON ALL DEVICES**
+  · Images: Separate Desktop and Mobile uploads for varying aspect ratios
+  · VS: uploadable image, absolute centre, mb 32px, 136x136, no shadow
+  · Icons: uploadable SVG per block | size 32x32 | icon↔text gap 16px
+  · Row gap: 16px between points
+  · Content text: 24px Bold (strong) / Medium (rest) color #545252 lh 150%
+  · Button: 100% column width, top margin 32px
+  ============================================================
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ============================================================================
+   DESIGN TOKENS — scoped to section instance
+   ============================================================================ */
+#cmp-{{ section.id }} {
+  /* Colours */
+  --cmp-bg:               #F0F3F5;
+  --cmp-heading-color:    #211E1E;
+  --cmp-text-color:       #545252;
+  --cmp-btn-bg:           #0C0C0D;
+  --cmp-btn-text:         #FEFEFE;
+  --cmp-btn-hover:        #211E1E;
+
+  /* Section padding */
+  --cmp-pad-v:            48px;
+  --cmp-pad-h:            60px;
+  --cmp-max-w:            1400px;
+
+  /* Header */
+  --cmp-overline-size:    32px;
+  --cmp-overline-weight:  500;
+  --cmp-overline-lh:      120%;
+  --cmp-heading-size:     40px;
+  --cmp-heading-weight:   600;
+  --cmp-heading-lh:       120%;
+  --cmp-header-gap:       12px;
+  --cmp-header-mb:        48px;
+
+  /* Image grid */
+  --cmp-img-gap:          32px;
+  --cmp-img-mb:           32px;
+
+  /* Row list */
+  --cmp-row-gap:          16px;
+  --cmp-icon-text-gap:    16px;
+  --cmp-content-size:     24px;
+  --cmp-content-lh:       150%;
+
+  /* Button */
+  --cmp-btn-mt:           32px;
+
+  /* Font */
+  --cmp-font:             'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ============================================================================
+   SECTION SHELL
+   ============================================================================ */
+#cmp-{{ section.id }} {
+  width: 100%;
+  background-color: var(--cmp-bg);
+  padding-top: var(--cmp-pad-v);
+  padding-bottom: var(--cmp-pad-v);
+  padding-left: var(--cmp-pad-h);
+  padding-right: var(--cmp-pad-h);
+  font-family: var(--cmp-font);
+}
+
+/* ============================================================================
+   CONTAINER
+   ============================================================================ */
+#cmp-{{ section.id }} .cmp__container {
+  max-width: var(--cmp-max-w);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================================
+   HEADER BLOCK
+   ============================================================================ */
+#cmp-{{ section.id }} .cmp__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cmp-header-gap);
+  margin-bottom: var(--cmp-header-mb);
+}
+
+#cmp-{{ section.id }} .cmp__overline {
+  font-family: var(--cmp-font);
+  font-size: var(--cmp-overline-size);
+  font-weight: var(--cmp-overline-weight);
+  font-style: normal;
+  line-height: var(--cmp-overline-lh);
+  color: var(--cmp-heading-color);
+  margin: 0;
+}
+
+#cmp-{{ section.id }} .cmp__heading {
+  font-family: var(--cmp-font);
+  font-size: var(--cmp-heading-size);
+  font-weight: var(--cmp-heading-weight);
+  font-style: italic;
+  line-height: var(--cmp-heading-lh);
+  color: var(--cmp-heading-color);
+  margin: 0;
+}
+
+/* ============================================================================
+   IMAGE GRID — Two columns 1fr 1fr | gap 32px
+   ============================================================================ */
+#cmp-{{ section.id }} .cmp__image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--cmp-img-gap);
+  position: relative;
+  margin-bottom: var(--cmp-img-mb);
+}
+
+/* ── Image cards ── */
+#cmp-{{ section.id }} .cmp__image-card {
+  position: relative;
+  width: 100%;
+  padding-bottom: 90%;   /* Aspect ratio 10:9 */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#cmp-{{ section.id }} .cmp__image-card--left {
+  background-color: #E0DEDB;
+}
+
+#cmp-{{ section.id }} .cmp__image-card--right {
+  background-color: #111111;
+}
+
+#cmp-{{ section.id }} .cmp__img-desktop,
+#cmp-{{ section.id }} .cmp__img-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   
+  display: block;
+}
+
+#cmp-{{ section.id }} .cmp__img-mobile {
+  display: none !important;
+}
+
+/* Shopify placeholder SVG */
+#cmp-{{ section.id }} .cmp__image-card .placeholder-svg-wrap {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+#cmp-{{ section.id }} .cmp__image-card .placeholder-svg-wrap svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+}
+
+/* ── VS Badge ── */
+#cmp-{{ section.id }} .cmp__vs-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 136px;
+  height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#cmp-{{ section.id }} .cmp__vs-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Fallback "VS" text when no image uploaded */
+#cmp-{{ section.id }} .cmp__vs-fallback {
+  width: 100%;
+  height: 100%;
+  background-color: #45C155; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cmp-{{ section.id }} .cmp__vs-text {
+  font-family: var(--cmp-font);
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================================
+   COMPARISON COLUMNS — 1fr 1fr | gap 32px
+   ============================================================================ */
+#cmp-{{ section.id }} .cmp__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--cmp-img-gap);
+}
+
+#cmp-{{ section.id }} .cmp__col {
+  display: flex;
+  flex-direction: column;
+}
+
+#cmp-{{ section.id }} .cmp__points {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cmp-row-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+#cmp-{{ section.id }} .cmp__point {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cmp-icon-text-gap);
+}
+
+/* ── UPDATED: Icons to 32px ── */
+#cmp-{{ section.id }} .cmp__point-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-top: 2px;   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cmp-{{ section.id }} .cmp__point-icon img,
+#cmp-{{ section.id }} .cmp__point-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* Fallback icons */
+#cmp-{{ section.id }} .cmp__point-icon--fallback-neg svg circle { fill: none; stroke: #D46060; stroke-width: 1.5; }
+#cmp-{{ section.id }} .cmp__point-icon--fallback-neg svg path { stroke: #D46060; stroke-width: 1.8; }
+#cmp-{{ section.id }} .cmp__point-icon--fallback-pos svg circle { fill: none; stroke: #45C155; stroke-width: 1.5; }
+#cmp-{{ section.id }} .cmp__point-icon--fallback-pos svg path { stroke: #45C155; stroke-width: 1.8; fill: none; }
+
+#cmp-{{ section.id }} .cmp__point-text {
+  font-family: var(--cmp-font);
+  font-size: var(--cmp-content-size);
+  font-weight: 500;
+  line-height: var(--cmp-content-lh);
+  color: var(--cmp-text-color);
+  margin: 0;
+}
+
+#cmp-{{ section.id }} .cmp__point-text strong {
+  font-family: var(--cmp-font);
+  font-size: var(--cmp-content-size);
+  font-weight: 700;
+  color: var(--cmp-text-color);
+}
+
+#cmp-{{ section.id }} .cmp__point-text p { margin: 0; }
+
+/* ============================================================================
+   CTA BUTTON
+   ============================================================================ */
+#cmp-{{ section.id }} .cmp__col-btn {
+  margin-top: var(--cmp-btn-mt);
+  width: 100%;
+}
+
+#cmp-{{ section.id }} .cmp__btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 18px 32px;
+  background-color: var(--cmp-btn-bg);
+  border: 1px solid var(--cmp-btn-bg);
+  border-radius: 8px;
+  color: var(--cmp-btn-text);
+  font-family: var(--cmp-font);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#cmp-{{ section.id }} .cmp__btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -150%;
+  width: 100%; height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 30%,
+    rgba(255,255,255,0.15) 50%,
+    rgba(255,255,255,0) 70%
+  );
+  transition: opacity 0.3s ease;
+}
+
+#cmp-{{ section.id }} .cmp__btn:hover {
+  background-color: var(--cmp-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(12, 12, 13, 0.22);
+}
+
+#cmp-{{ section.id }} .cmp__btn:hover::after {
+  opacity: 0;
+}
+
+#cmp-{{ section.id }} .cmp__btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(12, 12, 13, 0.15);
+  transition-duration: 0.1s;
+}
+
+#cmp-{{ section.id }} .cmp__btn svg,
+#cmp-{{ section.id }} .cmp__btn img {
+  width: 18px; height: 18px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE — TABLET (≤991px)
+   ============================================================================ */
+@media screen and (max-width: 991px) {
+  #cmp-{{ section.id }} {
+    --cmp-pad-v:          40px;
+    --cmp-pad-h:          40px;
+    --cmp-overline-size:  26px;
+    --cmp-heading-size:   32px;
+    --cmp-header-mb:      40px;
+    --cmp-header-gap:     10px;
+    --cmp-img-gap:        24px;
+    --cmp-img-mb:         24px;
+    --cmp-row-gap:        14px;
+    --cmp-icon-text-gap:  14px;
+    --cmp-content-size:   18px;
+    --cmp-btn-mt:         24px;
+  }
+
+  #cmp-{{ section.id }} .cmp__vs-badge {
+    width: 100px;
+    height: 100px;
+  }
+
+  #cmp-{{ section.id }} .cmp__point-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  #cmp-{{ section.id }} .cmp__btn {
+    font-size: 15px;
+    padding: 16px 24px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE LANDSCAPE (≤767px)
+   STAYS 2 COLUMNS
+   ============================================================================ */
+@media screen and (max-width: 767px) {
+  #cmp-{{ section.id }} {
+    --cmp-pad-v:          32px;
+    --cmp-pad-h:          24px;
+    --cmp-overline-size:  22px;
+    --cmp-heading-size:   26px;
+    --cmp-header-mb:      32px;
+    --cmp-header-gap:     8px;
+    --cmp-img-gap:        16px;
+    --cmp-img-mb:         20px;
+    --cmp-row-gap:        12px;
+    --cmp-icon-text-gap:  10px;
+    --cmp-content-size:   13px;
+    --cmp-btn-mt:         20px;
+  }
+
+  #cmp-{{ section.id }} .cmp__img-desktop {
+    display: none !important;
+  }
+  #cmp-{{ section.id }} .cmp__img-mobile {
+    display: block !important;
+  }
+
+  #cmp-{{ section.id }} .cmp__vs-badge {
+    width: 80px;
+    height: 80px;
+  }
+
+  #cmp-{{ section.id }} .cmp__point-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  #cmp-{{ section.id }} .cmp__btn {
+    font-size: 13px;
+    padding: 12px 16px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE PORTRAIT (≤479px)
+   STAYS 2 COLUMNS
+   ============================================================================ */
+@media screen and (max-width: 479px) {
+  #cmp-{{ section.id }} {
+    --cmp-pad-v:          24px;
+    --cmp-pad-h:          16px;
+    --cmp-overline-size:  18px;
+    --cmp-heading-size:   22px;
+    --cmp-header-mb:      24px;
+    --cmp-header-gap:     6px;
+    --cmp-img-gap:        12px;
+    --cmp-img-mb:         16px;
+    --cmp-row-gap:        10px;
+    --cmp-icon-text-gap:  8px;
+    --cmp-content-size:   11px; 
+    --cmp-btn-mt:         16px;
+  }
+
+  #cmp-{{ section.id }} .cmp__image-card {
+    padding-bottom: 120%; 
+  }
+
+  #cmp-{{ section.id }} .cmp__vs-badge {
+    width: 60px;
+    height: 60px;
+  }
+  
+  #cmp-{{ section.id }} .cmp__vs-badge .cmp__vs-text {
+    font-size: 14px;
+  }
+
+  #cmp-{{ section.id }} .cmp__point-icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+  }
+
+  #cmp-{{ section.id }} .cmp__btn {
+    font-size: 11px;
+    padding: 10px 8px;
+  }
+}
+</style>
+
+<section
+  id="cmp-{{ section.id }}"
+  aria-label="{{ section.settings.heading }}"
+>
+  <div class="cmp__container">
+
+    {%- comment %} ════════════════════════════════
+      HEADER BLOCK
+    ════════════════════════════════ {%- endcomment %}
+    <div class="cmp__header">
+      {%- if section.settings.overline != blank -%}
+        <p class="cmp__overline">{{ section.settings.overline }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="cmp__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- comment %} ════════════════════════════════
+      IMAGE GRID
+    ════════════════════════════════ {%- endcomment %}
+    <div class="cmp__image-grid">
+
+      {%- comment %} Left card — Other brand {%- endcomment %}
+      <div class="cmp__image-card cmp__image-card--left">
+        {%- if section.settings.image_left_desktop != blank -%}
+          {%- assign alt_left = section.settings.image_left_desktop.alt | default: 'Other brand olive oil' -%}
+          {{- section.settings.image_left_desktop | image_url: width: 800 | image_tag: class: 'cmp__img-desktop', loading: 'lazy', alt: alt_left -}}
+          
+          {%- if section.settings.image_left_mobile != blank -%}
+            {{- section.settings.image_left_mobile | image_url: width: 600 | image_tag: class: 'cmp__img-mobile', loading: 'lazy', alt: alt_left -}}
+          {%- else -%}
+            {{- section.settings.image_left_desktop | image_url: width: 600 | image_tag: class: 'cmp__img-mobile', loading: 'lazy', alt: alt_left -}}
+          {%- endif -%}
+        {%- else -%}
+          <div class="placeholder-svg-wrap">
+            {{ 'product-1' | placeholder_svg_tag }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment %} VS Badge {%- endcomment %}
+      <div class="cmp__vs-badge" aria-hidden="true">
+        {%- if section.settings.vs_image != blank -%}
+          {{- section.settings.vs_image | image_url: width: 272 | image_tag:
+              loading: 'lazy',
+              alt: 'VS'
+          -}}
+        {%- else -%}
+          <div class="cmp__vs-fallback">
+            <span class="cmp__vs-text">VS</span>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment %} Right card — AIWO {%- endcomment %}
+      <div class="cmp__image-card cmp__image-card--right">
+        {%- if section.settings.image_right_desktop != blank -%}
+          {%- assign alt_right = section.settings.image_right_desktop.alt | default: 'AIWO olive oil bottle' -%}
+          {{- section.settings.image_right_desktop | image_url: width: 800 | image_tag: class: 'cmp__img-desktop', loading: 'lazy', alt: alt_right -}}
+          
+          {%- if section.settings.image_right_mobile != blank -%}
+            {{- section.settings.image_right_mobile | image_url: width: 600 | image_tag: class: 'cmp__img-mobile', loading: 'lazy', alt: alt_right -}}
+          {%- else -%}
+            {{- section.settings.image_right_desktop | image_url: width: 600 | image_tag: class: 'cmp__img-mobile', loading: 'lazy', alt: alt_right -}}
+          {%- endif -%}
+        {%- else -%}
+          <div class="placeholder-svg-wrap">
+            {{ 'product-2' | placeholder_svg_tag }}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+    {%- comment %} ════════════════════════════════
+      COMPARISON COLUMNS
+    ════════════════════════════════ {%- endcomment %}
+    <div class="cmp__columns">
+
+      {%- comment %} LEFT column {%- endcomment %}
+      <div class="cmp__col cmp__col--left">
+
+        <ul class="cmp__points" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.neg_content != blank -%}
+              <li class="cmp__point" {{ block.shopify_attributes }}>
+
+                <span class="cmp__point-icon cmp__point-icon--fallback-neg" aria-label="Not available">
+                  {%- if section.settings.icon_negative != blank -%}
+                    {{- section.settings.icon_negative | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                  {%- else -%}
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10.25" stroke="#D46060" stroke-width="1.5"/>
+                      <path d="M8.5 8.5L15.5 15.5M15.5 8.5L8.5 15.5" stroke="#D46060" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                  {%- endif -%}
+                </span>
+
+                <div class="cmp__point-text">{{ block.settings.neg_content }}</div>
+
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- if section.settings.show_left_btn and section.settings.button_text != blank -%}
+          <div class="cmp__col-btn">
+            <a href="{{ section.settings.button_link | default: '#' }}" class="cmp__btn">
+              {{ section.settings.button_text }}
+              {%- if section.settings.button_icon_upload != blank -%}
+                {{- section.settings.button_icon_upload | image_url: width: 40 | image_tag: loading: 'lazy', alt: '' -}}
+              {%- else -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              {%- endif -%}
+            </a>
+          </div>
+        {%- endif -%}
+
+      </div>
+
+      {%- comment %} RIGHT column {%- endcomment %}
+      <div class="cmp__col cmp__col--right">
+
+        <ul class="cmp__points" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.pos_content != blank -%}
+              <li class="cmp__point" {{ block.shopify_attributes }}>
+
+                <span class="cmp__point-icon cmp__point-icon--fallback-pos" aria-label="Available">
+                  {%- if section.settings.icon_positive != blank -%}
+                    {{- section.settings.icon_positive | image_url: width: 64 | image_tag: loading: 'lazy', alt: '' -}}
+                  {%- else -%}
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10.25" stroke="#45C155" stroke-width="1.5"/>
+                      <path d="M7.5 12L10.5 15L16.5 9" stroke="#45C155" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  {%- endif -%}
+                </span>
+
+                <div class="cmp__point-text">{{ block.settings.pos_content }}</div>
+
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- if section.settings.button_text != blank -%}
+          <div class="cmp__col-btn">
+            <a href="{{ section.settings.button_link | default: '#' }}" class="cmp__btn">
+              {{ section.settings.button_text }}
+              {%- if section.settings.button_icon_upload != blank -%}
+                {{- section.settings.button_icon_upload | image_url: width: 40 | image_tag: loading: 'lazy', alt: '' -}}
+              {%- else -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              {%- endif -%}
+            </a>
+          </div>
+        {%- endif -%}
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Other vs AIWO",
+  "tag": "section",
+  "class": "section-comparison",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "overline",
+      "label": "Overline Text",
+      "default": "Other vs AIWO"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "Extra Virgin Olive Oils"
+    },
+    {
+      "type": "header",
+      "content": "Image Grid — Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left_desktop",
+      "label": "Left Image (Desktop) — Other Brand"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right_desktop",
+      "label": "Right Image (Desktop) — AIWO Bottle"
+    },
+    {
+      "type": "header",
+      "content": "Image Grid — Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left_mobile",
+      "label": "Left Image (Mobile) — Other Brand",
+      "info": "Optional. Will fall back to desktop image if left blank."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right_mobile",
+      "label": "Right Image (Mobile) — AIWO Bottle",
+      "info": "Optional. Will fall back to desktop image if left blank."
+    },
+    {
+      "type": "header",
+      "content": "VS Badge"
+    },
+    {
+      "type": "image_picker",
+      "id": "vs_image",
+      "label": "VS Badge Image (136x136px)",
+      "info": "Upload an image for the VS badge positioned between cards."
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_negative",
+      "label": "Negative Icon (✗) — Other Brand",
+      "info": "Recommended: 32x32px transparent PNG/SVG."
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_positive",
+      "label": "Positive Icon (✓) — AIWO",
+      "info": "Recommended: 32x32px transparent PNG/SVG."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "button_icon_upload",
+      "label": "Button Icon (SVG/PNG)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_left_btn",
+      "label": "Show button in left column too?",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_row",
+      "name": "Comparison Row",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "neg_content",
+          "label": "Other Brand — Point",
+          "default": "<p><strong>Lab Transparency:</strong> Vague \"extra virgin\" claims, no public data</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "pos_content",
+          "label": "AIWO — Point",
+          "default": "<p><strong>Lab Transparency:</strong> Publishes lot-specific COA QR with acidity, peroxide, PPP, DAGs</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Other vs AIWO",
+      "blocks": [
+        {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Lab Transparency:</strong> Vague \"extra virgin\" claims, no public data</p>",
+            "pos_content": "<p><strong>Lab Transparency:</strong> Publishes lot-specific COA QR with acidity, peroxide, PPP, DAGs</p>"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Freshness (Acidity):</strong> ≤0.8% or undisclosed</p>",
+            "pos_content": "<p><strong>Freshness (Acidity):</strong> Ultra-low — 80% below limit</p>"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Early Oxidation:</strong> Not disclosed on label</p>",
+            "pos_content": "<p><strong>Early Oxidation:</strong> &lt;15 meq O₂/kg (very low)</p>"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Advanced Freshness Markers:</strong> Rarely tested or shown</p>",
+            "pos_content": "<p><strong>Advanced Freshness Markers:</strong> Verified</p>"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Safety &amp; Purity Pesticides:</strong> Generic \"lab-tested\" claim, no proof</p>",
+            "pos_content": "<p><strong>Safety &amp; Purity Pesticides:</strong> Not Detected, PAH-4 &lt; 2 μg/kg</p>"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Harvest → Extraction Speed:</strong> Typically processed 12–24 hrs later</p>",
+            "pos_content": "<p><strong>Harvest → Extraction Speed:</strong> Pressed within 3 hours to lock in aroma and vitality</p>"
+          }
+        },
+        {
+          "type": "comparison_row",
+          "settings": {
+            "neg_content": "<p><strong>Heart-Healthy Profile:</strong> May claim MUFA but not verified</p>",
+            "pos_content": "<p><strong>Heart-Healthy Profile:</strong> ~68% MUFA — naturally high oleic profile</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

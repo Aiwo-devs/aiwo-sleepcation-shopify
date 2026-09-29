@@ -1,0 +1,657 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo_evoo_v3_styles": {
+      "type": "aiwo-evoo-v3-global-styles",
+      "settings": {
+        "heading_font_size": 24,
+        "heading_font_weight": "700",
+        "heading_line_height": "1.2",
+        "heading_color": "#0c0c0d",
+        "body_font_size": 16,
+        "body_font_weight": "400",
+        "body_line_height": "1.6",
+        "body_color": "#666666",
+        "button_font_size": 16,
+        "button_font_weight": "600"
+      }
+    },
+    "aiwo_evoo_v3_breadcrumb": {
+      "type": "aiwo-evoo-v3-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo_evoo_v3_gallery_enhancements": {
+      "type": "aiwo-evoo-v3-gallery-enhancements",
+      "settings": {
+        "tagline_text": "LONGEVIS MATRIX · Pillar 3",
+        "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+        "tooltip_title": "What is LONGEVIS MATRIX?",
+        "tooltip_desc": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework. Each pillar targets a biological system that determines how fast you age.",
+        "tooltip_pillars_heading": "Pillars this product support",
+        "tooltip_active_pillars": "P3 · Nutrition and Metabolic Health",
+        "tooltip_stack_heading": "Complete your longevity stack",
+        "tooltip_inactive_pillars": "P1 · Sleep      \nP2 · Breathing\nP4 · Social       \nP5 · Exercise\nP6 · Stress       \nP7 · Circadian Rhythm\nP8 · Purpose      \nP9 · Environment\nP10 · Gut Health  \nP11 · Hydration"
+      }
+    },
+    "aiwo_evoo_v3_qty_label": {
+      "type": "aiwo-evoo-v3-quantity-label",
+      "settings": {
+        "mobile_quantity_label": "Add Quantity"
+      }
+    },
+    "main": {
+      "type": "aiwo-pdp-product-info",
+      "blocks": {
+        "product_tag_line_v1_zH8gVV": {
+          "type": "product_tag_line_v1",
+          "settings": {
+            "tag_text": "LONGEVIS MATRIX · Pillar 3"
+          }
+        },
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "purchase_stats_v1_CLkWVP": {
+          "type": "purchase_stats_v1",
+          "settings": {
+            "purchase_text": "The turmeric you've been drinking for years - finally in a form your body can actually absorb.",
+            "weight_text": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_j3mMyH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MRP Incl. of all taxes</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "trust_badges_v1_eUg7qR": {
+          "type": "trust_badges_v1",
+          "settings": {
+            "badge_1_title": "FSSAI Licensed",
+            "badge_1_icon": "shopify://shop_images/Fssai_Logo.png",
+            "badge_2_title": "BCM-95® Formula",
+            "badge_2_icon": "shopify://shop_images/antioxidant.svg",
+            "badge_3_title": "NLT 45% Curcuminoids",
+            "badge_3_icon": "shopify://shop_images/supports-l_1_3cef3104-eb8d-47f6-b156-c995ab26a387.svg",
+            "badge_4_title": "Caffeine-Free",
+            "badge_4_icon": "shopify://shop_images/iso.svg",
+            "badge_5_title": "No Added Sugar",
+            "badge_5_icon": "shopify://shop_images/Frame_748e5c96-2eb5-4d99-ad6d-713df97a6338.svg",
+            "badge_6_title": ""
+          }
+        },
+        "benefits_grid_v1_KiKTqL": {
+          "type": "benefits_grid_v1",
+          "settings": {
+            "benefit_1_title": "Heart Ready",
+            "benefit_1_text": "High-dose EPA supports cardiovascular health",
+            "benefit_1_icon": "shopify://shop_images/Heart_Health_bb6f6292-f7e3-40c3-9dac-db11b1f28e2d.svg",
+            "benefit_2_title": "Antioxidant Rich",
+            "benefit_2_text": "Vitamin E at 100% RDA keeps the EPA from oxidizing",
+            "benefit_2_icon": "shopify://shop_images/Layer_1-2.svg",
+            "benefit_3_title": "Pure, Not Blended",
+            "benefit_3_text": "500mg standalone EPA, not diluted with DHA",
+            "benefit_3_icon": "shopify://shop_images/Frame_748e5c96-2eb5-4d99-ad6d-713df97a6338.svg",
+            "benefit_4_title": "Tested Clean",
+            "benefit_4_text": "Free from heavy metals and mercury",
+            "benefit_4_icon": "shopify://shop_images/critical-illness-insurance_17670112.svg"
+          }
+        },
+        "marquee_v1_iehzTE": {
+          "type": "marquee_v1",
+          "settings": {
+            "marquee_bg_color": "#2c2416",
+            "marquee_text_color": "#ffffff",
+            "marquee_text_1": "100% Cold Pressed",
+            "marquee_text_2": "Single Origin Australia",
+            "marquee_text_3": "Natural Polyphenols",
+            "marquee_text_4": "UV-Resistant Glass",
+            "marquee_text_5": "68.5% MUFA",
+            "marquee_text_6": "Zero Trans Fat"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "html_jpVgQ3": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": true,
+            "protocol_tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "protocol_tooltip_title": "What is Protocol?",
+            "protocol_tooltip_desc": "A protocol is a daily system of supplements each one targeting specific longevity pillars."
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "disabled": true,
+          "settings": {}
+        },
+        "recommended_products_v1_6t3TaN": {
+          "type": "recommended_products_v1",
+          "settings": {
+            "recs_tag": "Complete the protocol",
+            "heading_text": "AIWO Turmeric Extract",
+            "heading_italic": "Works Better  As A System",
+            "description_text": "",
+            "show_desktop": true,
+            "show_mobile": true,
+            "bundle_mode": true,
+            "bundle_pillar": "Add on · Pillar 6",
+            "bundle_title": "Nutrition and Gut Health Stack",
+            "bundle_desc": "EVOO + Omega 3 + Prebiotik- D",
+            "bundle_best_pick_text": "Best Seller",
+            "bundle_custom_price": "",
+            "bundle_product_1": "omega-3-double-strength",
+            "bundle_product_2": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "bundle_product_3": "aiwo-extra-virgin-olive-oil",
+            "bundle_learn_more_product": "",
+            "product_1": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "pillar_1": "Add on · Pillar 1",
+            "custom_title_1": "",
+            "desc_1": "",
+            "best_pick_text_1": "",
+            "product_2": "omega-3-double-strength",
+            "pillar_2": "Add on · Pillar 3",
+            "custom_title_2": "",
+            "desc_2": "",
+            "best_pick_text_2": "",
+            "product_3": "",
+            "pillar_3": "",
+            "custom_title_3": "",
+            "desc_3": "",
+            "best_pick_text_3": ""
+          }
+        },
+        "proven_health_benefits_v1_NpKbtK": {
+          "type": "proven_health_benefits_v1",
+          "settings": {
+            "phb_tag": "",
+            "phb_title": "Proven Benefits of Standardised Curcumin",
+            "phb_stat_1_num": "-15 to -30%",
+            "phb_stat_1_label": "Reduction in triglyceride levels with EPA supplementation",
+            "phb_stat_1_source": "Harris et al. J Cardiovasc Med 2007",
+            "phb_stat_2_num": ">8%",
+            "phb_stat_2_label": "Omega-3 Index associated with cardioprotective status",
+            "phb_stat_2_source": "Harris and von Schacky. Prev Med 2004",
+            "phb_stat_3_num": "",
+            "phb_stat_3_label": "",
+            "phb_stat_3_source": "",
+            "phb_stat_4_num": "",
+            "phb_stat_4_label": "",
+            "phb_stat_4_source": ""
+          }
+        },
+        "text_gzYkwz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*Figures observed in meta-analyses and randomised controlled trials on EVOO and Mediterranean diet interventions. Individual results may vary. This is a food product. Not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_QVph7M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Download Sample Report",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "button_8zEkHK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore 181 Biomarkers",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": true,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "product_tag_line_v1_zH8gVV",
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "purchase_stats_v1_CLkWVP",
+        "price",
+        "text_j3mMyH",
+        "description",
+        "trust_badges_v1_eUg7qR",
+        "benefits_grid_v1_KiKTqL",
+        "marquee_v1_iehzTE",
+        "gift_wrapping_EK3NQn",
+        "html_jpVgQ3",
+        "buy_buttons",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "recommended_products_v1_6t3TaN",
+        "proven_health_benefits_v1_NpKbtK",
+        "text_gzYkwz",
+        "button_QVph7M",
+        "button_8zEkHK",
+        "complementary_XCwmDV",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked",
+        "thumbnail_position": "vertical",
+        "enable_sticky_image": true,
+        "mobile_media_size": "full_width",
+        "show_arrow_button": false,
+        "show_thumnail_mobile": false,
+        "spacing_col": "small",
+        "full_width": true,
+        "transition_style": "fade",
+        "show_first_image_avaiable": true,
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD": {
+      "type": "aiwo-evoo-v3-aiwo-difference",
+      "blocks": {
+        "stat_circle_336cQP": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "45%+",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Min",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Curcuminoids"
+          }
+        },
+        "stat_circle_meQiJa": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "73g",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Turmeric",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Equivalent"
+          }
+        },
+        "stat_circle_V8MT9Y": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "BCM-95®",
+            "stat_sub": "Patented",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Formula"
+          }
+        },
+        "stat_circle_Hhd9iw": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "0",
+            "stat_sub": "Added",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Sugar"
+          }
+        },
+        "tagline_sub_86PARc": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/Import_4a5f53de-7518-4a26-8b54-089202d11d2e.svg",
+            "text": "NLT 45% Curcuminoids"
+          }
+        },
+        "card_bullet_jMmxRW": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Water-dispersible BCM-95® - no bitterness, no separate fat required"
+          }
+        },
+        "card_bullet_PQqYc3": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Standardised to NLT 45% total curcuminoids - every batch verified"
+          }
+        },
+        "card_bullet_wfAgF8": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Exclusively manufactured for Aiwo Limited - not available under any other brand"
+          }
+        },
+        "tagline_sub_nR9nBX": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/extract_560d54f9-375a-45aa-981d-59ba7c8209d3.svg",
+            "text": "Nothing Diluted"
+          }
+        }
+      },
+      "block_order": [
+        "stat_circle_336cQP",
+        "stat_circle_meQiJa",
+        "stat_circle_V8MT9Y",
+        "stat_circle_Hhd9iw",
+        "tagline_sub_86PARc",
+        "card_bullet_jMmxRW",
+        "card_bullet_PQqYc3",
+        "card_bullet_wfAgF8",
+        "tagline_sub_nR9nBX"
+      ],
+      "name": "AIWO Difference",
+      "settings": {
+        "bg_desktop": "shopify://shop_images/Ingredient-_EPA-_BG-_Desktop.png",
+        "bg_mobile": "shopify://shop_images/Ingredient-_EPA-_BG-_Mobile.png",
+        "heading": "Not All Turmeric",
+        "heading_italic": "is the same.",
+        "main_tag": "BCM-95® Water Dispersible Extract",
+        "card_heading_white": "DELIVERING",
+        "card_heading_gold": "PURE BIOAVAILABLE CURCUMIN",
+        "card_icon": "shopify://shop_images/Frame_d47b8e26-3f6e-4c61-b06d-0e22994683c3.svg",
+        "disclaimer": "*Based on a review of curcumin research literature. Individual results may vary."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_comparison_wVNYTt": {
+      "type": "aiwo-comparison",
+      "blocks": {
+        "comparison_row_mcaRP8": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "BCM-95® water-dispersible extract",
+            "right_feature": "Raw turmeric powder or simple extract"
+          }
+        },
+        "comparison_row_VaPp4F": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "NLT 45% curcuminoids - standardised",
+            "right_feature": "Curcuminoid content often unlisted"
+          }
+        },
+        "comparison_row_YJRD3c": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "1 scoop = 73 g turmeric equivalent",
+            "right_feature": "Dosing rarely cross-referenced to whole root"
+          }
+        },
+        "comparison_row_iBKFFz": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Dissolves completely - no grit",
+            "right_feature": "Chalky residue in drinks common"
+          }
+        },
+        "comparison_row_QTKPHg": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Caffeine-free - any time of day",
+            "right_feature": "Some blends contain added stimulants"
+          }
+        },
+        "comparison_row_RCAJmk": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "FSSAI Licensed",
+            "right_feature": "Certification varies"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_mcaRP8",
+        "comparison_row_VaPp4F",
+        "comparison_row_YJRD3c",
+        "comparison_row_iBKFFz",
+        "comparison_row_QTKPHg",
+        "comparison_row_RCAJmk"
+      ],
+      "name": "AIWO Comparison Table",
+      "settings": {
+        "tagline": "WHY AIWO",
+        "heading": "AIWO Turmeric Extract vs.",
+        "heading_italic": "Others",
+        "left_image": "shopify://shop_images/AIWO_EPA.png",
+        "left_title": "",
+        "icon_check": "shopify://shop_images/Frame_12.svg",
+        "btn_text": "Buy Now",
+        "btn_link": "https://shop-aiwo.myshopify.com/cart/42291169558710:1?channel=buy_button",
+        "right_image": "shopify://shop_images/Frame_2147224935.png",
+        "right_title": "",
+        "icon_cross": "shopify://shop_images/Group_13.svg"
+      }
+    },
+    "section_evoo_v3_faq_rRJhLR": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_BFc6Am": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is this different from adding turmeric to my food or milk?",
+            "answer": "<p>Kitchen turmeric contains 2–5% curcuminoids - and most of that passes through your digestive system without being absorbed. AIWO Turmeric Extract uses BCM-95® - a patented water-dispersible extraction technology standardised to not less than 45% total curcuminoids. One 2.25 g serving is bioequivalent to 73 grams of kitchen turmeric. The difference isn't taste — it's what actually reaches your bloodstream.<br/></p>"
+          }
+        },
+        "faq_item_pgG9dR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What does \"water dispersible\" mean and why does it matter?",
+            "answer": "<p>Standard curcumin is fat-soluble and poorly absorbed without a lipid vehicle (fat or piperine). BCM-95® water-dispersible format is engineered to dissolve completely in any liquid - hot milk, cold water, smoothies - without needing fat or black pepper to improve uptake. No chalky texture, no bitterness, no separate fat source required.<br/></p>"
+          }
+        },
+        "faq_item_zet6LP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long before I notice a difference?",
+            "answer": "<p>Research on curcumin typically uses 8–12 week supplementation windows for immune, joint, and metabolic outcomes. Expect to assess results after consistent daily use for at least 60–90 days. Some individuals report skin and energy changes earlier. Results depend on your baseline health status.<br/></p>"
+          }
+        },
+        "faq_item_Q6TUxh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I take this alongside the AIWO Curcumin Rich capsules?",
+            "answer": "<p>The powder and the capsule contain the same BCM-95® extract at different concentrations and formats. They are not typically combined - use the powder as your primary delivery method, or the capsule for convenience during travel. Consult a nutritionist about daily curcuminoid load before combining both.<br/></p>"
+          }
+        },
+        "faq_item_WyBt4K": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it safe for children?",
+            "answer": "<p>The label states this product is for adults. Consult a paediatrician before giving any concentrated curcumin product to children. Not for medicinal use.<br/></p>"
+          }
+        },
+        "faq_item_FD4NGR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why does the label say \"Exclusively for AIWO Limited\"?",
+            "answer": "<p>The BCM-95® water-dispersible Turmeric Extract is manufactured to AIWO's specification and is not available under any other brand in India through the same exclusive formulation arrangement. This ensures batch consistency, quality control, and verified curcuminoid content with every jar.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_BFc6Am",
+        "faq_item_pgG9dR",
+        "faq_item_zet6LP",
+        "faq_item_Q6TUxh",
+        "faq_item_WyBt4K",
+        "faq_item_FD4NGR"
+      ],
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    },
+    "aiwo_two_column_grid_HF8RT8": {
+      "type": "aiwo-two-column-grid",
+      "name": "Two Column Grid",
+      "settings": {
+        "bg_image": "shopify://shop_images/Product_BG_EPA_1_5ae03183-17fe-44cd-812f-d3e82d7020f7.png",
+        "bg_image_mobile": "shopify://shop_images/Product_BG_EPA_1.png",
+        "bg_color": "#ffffff",
+        "heading": "Let Immunity Begin in a Cup.",
+        "heading_size": 32,
+        "heading_size_mobile": 24,
+        "heading_color": "#000000",
+        "description": "BCM-95® Water Dispersible · NLT 45% Curcuminoids · Caffeine-Free",
+        "description_size": 16,
+        "description_size_mobile": 14,
+        "description_color": "#555555",
+        "cta_text": "Buy Now",
+        "cta_link": "https://shop-aiwo.myshopify.com/cart/42291169558710:1?channel=buy_button"
+      }
+    },
+    "177510445730616487": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "aiwo_evoo_v3_styles",
+    "aiwo_evoo_v3_breadcrumb",
+    "aiwo_evoo_v3_gallery_enhancements",
+    "aiwo_evoo_v3_qty_label",
+    "main",
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD",
+    "product-recommendations",
+    "aiwo_comparison_wVNYTt",
+    "section_evoo_v3_faq_rRJhLR",
+    "aiwo_two_column_grid_HF8RT8",
+    "177510445730616487"
+  ]
+}

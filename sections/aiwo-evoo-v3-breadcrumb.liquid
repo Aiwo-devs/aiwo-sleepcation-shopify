@@ -1,0 +1,102 @@
+{% comment %}
+  ============================================================
+  Section  : AIWO EVOO v3 — Custom Breadcrumb
+  Template : product.extra-virgin-olive-oil-v3 ONLY
+  ============================================================
+  Renders:  [SVG/image back arrow]  Shop All  /  Product Name
+  ============================================================
+{% endcomment %}
+
+<style>
+  .aiwo-evoo-v3-bc {
+    width: 100%;
+    padding: 14px 20px;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .aiwo-evoo-v3-bc__inner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .aiwo-evoo-v3-bc__arrow {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #0C0C0D;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .aiwo-evoo-v3-bc__link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #0C0C0D;
+    text-decoration: none;
+  }
+
+  .aiwo-evoo-v3-bc__sep {
+    font-size: 14px;
+    font-weight: 400;
+    color: #0C0C0D;
+    user-select: none;
+  }
+
+  .aiwo-evoo-v3-bc__current {
+    font-size: 14px;
+    font-weight: 400;
+    color: #0C0C0D;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
+
+<nav class="aiwo-evoo-v3-bc" role="navigation" aria-label="Breadcrumb">
+  <div class="aiwo-evoo-v3-bc__inner">
+
+    <a
+      href="{{ routes.all_products_collection_url }}"
+      class="aiwo-evoo-v3-bc__arrow"
+      aria-label="Back to Shop All"
+    >
+      {%- if section.settings.back_arrow_icon -%}
+        <img src="{{ section.settings.back_arrow_icon | image_url: width: 24 }}"
+          width="24" height="24" alt="Back">
+      {%- else -%}
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.92812 12.0018H20.4845" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8.55686 16.8585C8.55686 16.8585 4.23754 13.2107 4.23754 12.0017C4.23753 10.7927 8.5569 7.14499 8.5569 7.14499" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      {%- endif -%}
+    </a>
+
+    <a
+      href="{{ routes.all_products_collection_url }}"
+      class="aiwo-evoo-v3-bc__link"
+    >Shop All</a>
+
+    <span class="aiwo-evoo-v3-bc__sep" aria-hidden="true"> / </span>
+
+    <span class="aiwo-evoo-v3-bc__current" aria-current="page">
+      {{- product.title | escape -}}
+    </span>
+
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "EVOO v3 Breadcrumb",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "back_arrow_icon",
+      "label": "Back arrow icon"
+    }
+  ]
+}
+{% endschema %}

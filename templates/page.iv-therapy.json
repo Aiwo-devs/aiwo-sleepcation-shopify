@@ -1,0 +1,705 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_8rgwrj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_M6D93B": {
+          "type": "heading",
+          "settings": {
+            "heading": "Feel The Surge Of Wellness",
+            "highlight_type": "underline",
+            "heading_size": 140,
+            "heading_tag": "h2"
+          }
+        },
+        "media_UgedNL": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/portrait-view-of-the-charming-woman-in-white-bathr-2024-10-18-16-21-59-utc_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "media_size": 81
+          }
+        },
+        "heading_eUzMiy": {
+          "type": "heading",
+          "settings": {
+            "heading": "[Rejuvenate, Energize and Glow from Within]",
+            "highlight_type": "font_highlight",
+            "heading_size": 90,
+            "heading_tag": "h2"
+          }
+        },
+        "text_QxzJAy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Revitalise from within with our IV treatment, a powerful infusion of essential nutrients for enhanced vitality and overall well-being.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_8WLDqB": {
+          "type": "button",
+          "settings": {
+            "button_label": "BOOK A CONSULTATION",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_M6D93B",
+        "media_UgedNL",
+        "heading_eUzMiy",
+        "text_QxzJAy",
+        "button_8WLDqB"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "text_column_with_image_ddkEVn": {
+      "type": "text-column-with-image",
+      "blocks": {
+        "column_8wKEbG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/woman-engaged-in-fitness-2025-03-18-19-53-18-utc.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "sub_title": "",
+            "title": "Vitality Boost",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        },
+        "column_GJR4mj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/young-couple-practicing-yoga-in-a-white-room-of-st-2025-01-07-12-04-17-utc_1.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "sub_title": "",
+            "title": "Well-Being",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        },
+        "column_Y9mCzG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/adult-caucasian-male-relaxing-with-thoughtful-expr-2025-08-01-08-35-05-utc.jpg",
+            "image_link": "",
+            "open_new_window_image": false,
+            "sub_title": "",
+            "title": "Rejuvenation",
+            "highlight_type": "underline",
+            "heading_size": 100,
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "column_8wKEbG",
+        "column_GJR4mj",
+        "column_Y9mCzG"
+      ],
+      "name": "t:sections.text-column-image.name",
+      "settings": {
+        "title": "Optimal [for]",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "column",
+        "image_ratio": "75%",
+        "adapt_corners": true,
+        "rounded_corner_image": false,
+        "column_content_alignment": "center",
+        "background_color_light": "#ffffff",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "enable_desktop_slider": false,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": false,
+        "change_bar_every": 5,
+        "image_position_desktop": "top",
+        "column_layout_desktop": "lg:w-1/3",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "image_position_mobile": "top",
+        "column_layout_mobile": "w-1/2",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "multicolumn_r3YWLN": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_ck6Y6c": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/immune.png",
+            "custom_icon": "",
+            "title": "Immunity & Anti-ageing IV Therapy",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p><strong>Ingredients:</strong></p><p>RL(Ringer Lactate), Vitamin C, NAC, Glycine (Orally)</p>"
+          }
+        },
+        "column_riKmQN": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/motivated.png",
+            "custom_icon": "",
+            "title": "Energy Booster IV Therapy",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p><strong>Ingredients:</strong></p><p>RL (Ringer Lactate), Inj. B. Complex, Inj. Vit. B12, Inj. Vitamin C, NAC (Orally), BD Glycine (Orally)</p>"
+          }
+        },
+        "column_cRQjry": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/wash-face.png",
+            "custom_icon": "",
+            "title": "Mega Glow IV Therapy",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p><strong>Ingredients:</strong></p><p>RL(Ringer Lactate), Inj. Glutathione, Inj. NAC, Inj. Vitamin C, Glycine (Orally)</p>"
+          }
+        },
+        "column_kpCzEJ": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/metabolism_4716910d-62cf-44e9-868e-e14895d774fd.png",
+            "custom_icon": "",
+            "title": "Metabolizer",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 90,
+            "text": "<p><strong>Ingredients:</strong></p><p>RL(Ringer Lactate), Inj. L car, Inj. NAC, Inj. Vitamin B12, Glycine (Orally)</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_ck6Y6c",
+        "column_riKmQN",
+        "column_cRQjry",
+        "column_kpCzEJ"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "Our IV Therapy [Includes]",
+        "highlight_type": "font_highlight",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "column",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 100,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/4",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_99eWTY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cxfdpX": {
+          "type": "heading",
+          "settings": {
+            "heading": "IV Therapy At [AIWO]",
+            "highlight_type": "font_highlight",
+            "heading_size": 100,
+            "heading_tag": "h2"
+          }
+        },
+        "media_YyDzr3": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/attractive-dark-haired-woman-smiling-during-the-in-2025-03-10-02-47-49-utc_1.jpg",
+            "show_sound_control": false,
+            "video_url": "",
+            "enable_video_autoplay": true,
+            "video_alt_text": "",
+            "media_size": 91
+          }
+        },
+        "heading_pFtFUB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Enhanced Overall Well-being With Custom IV Therapy",
+            "highlight_type": "font_highlight",
+            "heading_size": 50,
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cxfdpX",
+        "media_YyDzr3",
+        "heading_pFtFUB"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 16,
+        "padding_bottom": 4,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 4
+      }
+    },
+    "multicolumn_HjfAEN": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_eH9EBW": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/muscles.png",
+            "custom_icon": "",
+            "title": "Boost Your Immunity",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_pTqJtw": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/red-blood-cells.png",
+            "custom_icon": "",
+            "title": "Rejuvenate Your Cells",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        },
+        "column_pDFmMx": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "another_icon": "",
+            "custom_image": "shopify://shop_images/glowing-skin.png",
+            "custom_icon": "",
+            "title": "Illuminate Your Inner Glow",
+            "highlight_type": "underline",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 100,
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_eH9EBW",
+        "column_pTqJtw",
+        "column_pDFmMx"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "title": "",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "secondary_background": "none",
+        "border_column": "line_vertical",
+        "column_content_alignment": "center",
+        "icon_position": "above",
+        "icon_size": 100,
+        "enable_desktop_slider": true,
+        "swiper_on_mobile": false,
+        "enable_arrow_mobile": false,
+        "auto_play": true,
+        "change_bar_every": 5,
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "line_border_light": "rgba(0,0,0,0)",
+        "color_icon_light": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "color_icon_dark": "rgba(0,0,0,0)",
+        "column_layout_desktop": "lg:w-1/3",
+        "section_height_desktop": "md:py-7",
+        "spacing_desktop": 28,
+        "full_width": false,
+        "padding_full_width": false,
+        "show_section_divider": false,
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "column_layout_mobile": "w-full",
+        "section_height_mobile": "py-5",
+        "spacing_mobile": 16,
+        "full_width_mobile": false,
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "image_with_text_jCfpqN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tKAbBY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "Essential Wellness Checkpoint",
+            "heading": "AIWO 100",
+            "highlight_type": "underline",
+            "heading_base_size": 110,
+            "heading_tag": "h1",
+            "text": "<p>A powerful, mid-range panel covering <strong>100+ parameters</strong> to detect common imbalances and red flags in your body.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less",
+            "heading_light": "rgba(0,0,0,0)",
+            "text_light": "rgba(0,0,0,0)",
+            "color_heading_highlight_light": "rgba(0,0,0,0)",
+            "heading_dark": "rgba(0,0,0,0)",
+            "text_dark": "rgba(0,0,0,0)",
+            "color_heading_highlight_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "columns_Wydx3a": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Complimentary doctor consultation included",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_8YfEBB": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "100+ health parameters analyzed",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "columns_cfEqVC": {
+          "type": "columns",
+          "settings": {
+            "icon": "none",
+            "another_icon": "",
+            "custom_icon": "",
+            "title": "Your complete wellness report card",
+            "title_link": "",
+            "open_new_window": false,
+            "heading_size": 80,
+            "text": "",
+            "wide_desktop": 4,
+            "wide_mobile": "2"
+          }
+        },
+        "button_dXfcRU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book Your Test Now",
+            "button_link": "",
+            "open_new_window": false,
+            "show_button_style": "primary",
+            "button_light": "#211e1e",
+            "button_text_light": "rgba(0,0,0,0)",
+            "button_hover_light": "#000000",
+            "button_text_hover_light": "rgba(0,0,0,0)",
+            "secondary_button_light": "rgba(0,0,0,0)",
+            "secondary_button_text_light": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)",
+            "button_dark": "#f7efef",
+            "button_text_dark": "#000000",
+            "button_hover_dark": "#ffffff",
+            "button_text_hover_dark": "rgba(0,0,0,0)",
+            "secondary_button_dark": "rgba(0,0,0,0)",
+            "secondary_button_text_dark": "rgba(0,0,0,0)",
+            "colors_text_link_dark": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tKAbBY",
+        "columns_Wydx3a",
+        "columns_8YfEBB",
+        "columns_cfEqVC",
+        "button_dXfcRU"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "show_hero": true,
+        "image": "shopify://shop_images/pexels-cristian-rojas-8460346_1.jpg",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "desktop_image_width": "medium",
+        "image_layout": "normal",
+        "adapt_radius": true,
+        "image_corner_radius": 0,
+        "show_sound_control": false,
+        "video_url": "",
+        "video_alt_text": "",
+        "enable_video_autoplay": false,
+        "content_layout": "no-overlap",
+        "spacing_image": false,
+        "text_position": "center",
+        "text_alignment": "start",
+        "background_color_light": "#ffffff",
+        "background_color_dark": "#211e1e",
+        "line_border": "dashed",
+        "icon_position": "col",
+        "icon_size": 45,
+        "alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "heading_color_light": "rgba(0,0,0,0)",
+        "text_color_light": "rgba(0,0,0,0)",
+        "line_border_light": "#a67a64",
+        "icon_color_light": "rgba(0,0,0,0)",
+        "heading_color_dark": "rgba(0,0,0,0)",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "line_border_dark": "rgba(0,0,0,0)",
+        "icon_color_dark": "rgba(0,0,0,0)",
+        "image_alignment": "left",
+        "full_width": false,
+        "padding_full_width": false,
+        "top_padding": 0,
+        "bottom_padding": 0,
+        "image_alignment_mobile": "left",
+        "full_width_mobile": false,
+        "top_padding_mobile": 0,
+        "bottom_padding_mobile": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": 170,
+        "heading_tag": "h1",
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_border": false,
+        "full_width_breadcrumb": true,
+        "desktop_content_alignment": "text-left",
+        "mobile_content_alignment": "text-left",
+        "background_color_light": "#f2f2f2",
+        "text_color_light": "rgba(0,0,0,0)",
+        "textlink_color_light": "rgba(0,0,0,0)",
+        "background_color_dark": "#313131",
+        "text_color_dark": "rgba(0,0,0,0)",
+        "textlink_color_dark": "rgba(0,0,0,0)",
+        "max_container_page_width": 100,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "rich_text_jUxE9U": {
+      "type": "rich-text",
+      "blocks": {
+        "button_DNQr4b": {
+          "type": "button",
+          "settings": {
+            "button_label": "Book Your Session Now",
+            "button_link": "shopify://pages/contact-aiwo-chennai",
+            "open_new_window_button": false,
+            "show_button_style_1": "primary",
+            "button_label_2": "",
+            "button_link_2": "",
+            "open_new_window_button_2": false,
+            "show_button_style_2": "primary",
+            "color_button": "rgba(0,0,0,0)",
+            "color_text_button": "rgba(0,0,0,0)",
+            "color_button_hover": "rgba(0,0,0,0)",
+            "color_text_button_hover": "rgba(0,0,0,0)",
+            "color_button_secondary": "rgba(0,0,0,0)",
+            "secondary_button_text": "rgba(0,0,0,0)",
+            "colors_text_link": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "button_DNQr4b"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "heading_light": "rgba(0,0,0,0)",
+        "color_heading_highlight_light": "rgba(0,0,0,0)",
+        "text_light": "rgba(0,0,0,0)",
+        "background_color_light": "rgba(0,0,0,0)",
+        "heading_dark": "rgba(0,0,0,0)",
+        "color_heading_highlight_dark": "rgba(0,0,0,0)",
+        "text_dark": "rgba(0,0,0,0)",
+        "background_color_dark": "rgba(0,0,0,0)",
+        "content_alignment": "center",
+        "show_section_divider": false,
+        "make_full_page_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "content_alignment_mobile": "center",
+        "show_section_divider_mobile": false,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28
+      }
+    }
+  },
+  "order": [
+    "rich_text_8rgwrj",
+    "text_column_with_image_ddkEVn",
+    "multicolumn_r3YWLN",
+    "rich_text_99eWTY",
+    "multicolumn_HjfAEN",
+    "image_with_text_jCfpqN",
+    "main",
+    "rich_text_jUxE9U"
+  ]
+}

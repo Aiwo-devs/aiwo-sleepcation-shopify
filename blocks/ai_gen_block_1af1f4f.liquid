@@ -1,0 +1,911 @@
+{% doc %}
+  @prompt
+    Create a benefits showcase section with light background:
+    Header (centered):
+    
+    Pill badge: light blue bg, "Proven Benefits" in ocean blue
+    Heading: "Complete Health" + "Support" (ocean gradient)
+    Subtitle: Gray text about omega-3 benefits
+    
+    Grid Layout:
+    
+    3 columns (2 on tablet, 1 on mobile)
+    24-32px gap between cards
+    
+    Card Design:
+    
+    White bg, 16px rounded corners, light border
+    32-40px padding
+    Hover: lift 4px + shadow increase
+    Scroll animation: fade-in, staggered 100ms
+    
+    Card Content:
+    
+    Colored icon container (10% opacity bg, rounded) [EDITABLE]
+    Colored badge pill with text [EDITABLE]
+    Bold title [EDITABLE]
+    Gray description text [EDITABLE]
+    
+    6 Default Benefits:
+    
+    ❤️ Cardiovascular Health (Red) - "Cardioprotective"
+    🧠 Brain Function (Ocean Blue) - "Cognitive Boost"
+    ⚡ Anti-Inflammatory (Gold) - "Joint Relief"
+    👁️ Eye Health (Light Blue) - "Vision Support"
+    🛡️ Immune System (Green) - "Immunity Boost"
+    🦴 Bone & Joint (Gold) - "Flexibility"
+    
+    Colors: Red #EF4444, Ocean #0EA5E9, Gold #F59E0B, Green #10B981
+    All text fields, icons, and colors editable via Shopify settings., icons are selected form media library
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-benefits-showcase-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.section_background }};
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-benefits-showcase-container-{{ ai_gen_id }} {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .ai-benefits-showcase-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-benefits-showcase-badge-{{ ai_gen_id }} {
+    display: inline-block;
+    background-color: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .ai-benefits-showcase-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .ai-benefits-showcase-heading-part1-{{ ai_gen_id }} {
+    background: linear-gradient(135deg, {{ block.settings.gradient_color_1 }} 0%, {{ block.settings.gradient_color_2 }} 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline;
+  }
+
+  .ai-benefits-showcase-heading-part2-{{ ai_gen_id }} {
+    background: linear-gradient(135deg, {{ block.settings.gradient_color_1 }} 0%, {{ block.settings.gradient_color_2 }} 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline;
+  }
+
+  .ai-benefits-showcase-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .ai-benefits-showcase-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    margin-top: {{ block.settings.grid_spacing }}px;
+  }
+
+  .ai-benefits-showcase-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    border: 1px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: {{ block.settings.card_padding }}px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .ai-benefits-showcase-card-{{ ai_gen_id }}.ai-benefits-visible-{{ ai_gen_id }} {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ai-benefits-showcase-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-benefits-showcase-icon-container-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .ai-benefits-showcase-icon-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 12px;
+  }
+
+  .ai-benefits-showcase-badge-pill-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+
+  .ai-benefits-showcase-card-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_title_size }}px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: {{ block.settings.card_title_color }};
+  }
+
+  .ai-benefits-showcase-card-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_description_size }}px;
+    color: {{ block.settings.card_description_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-benefits-showcase-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ai-benefits-showcase-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.8);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-benefits-showcase-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-benefits-showcase-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.7);
+    }
+
+    .ai-benefits-showcase-subtitle-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subtitle_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<benefits-showcase-{{ ai_gen_id }} class="ai-benefits-showcase-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-benefits-showcase-container-{{ ai_gen_id }}">
+    <div class="ai-benefits-showcase-header-{{ ai_gen_id }}">
+      {% if block.settings.badge_text != blank %}
+        <div class="ai-benefits-showcase-badge-{{ ai_gen_id }}">
+          {{ block.settings.badge_text }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.heading_part_1 != blank or block.settings.heading_part_2 != blank %}
+        <h2 class="ai-benefits-showcase-heading-{{ ai_gen_id }}">
+          {% if block.settings.heading_part_1 != blank %}
+            <span class="ai-benefits-showcase-heading-part1-{{ ai_gen_id }}">{{ block.settings.heading_part_1 }}</span>
+          {% endif %}
+          {% if block.settings.heading_part_2 != blank %}
+            <span class="ai-benefits-showcase-heading-part2-{{ ai_gen_id }}"> {{ block.settings.heading_part_2 }}</span>
+          {% endif %}
+        </h2>
+      {% endif %}
+
+      {% if block.settings.subtitle != blank %}
+        <div class="ai-benefits-showcase-subtitle-{{ ai_gen_id }}">
+          {{ block.settings.subtitle }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-benefits-showcase-grid-{{ ai_gen_id }}">
+      {% if block.settings.benefit_1_enabled %}
+        <div class="ai-benefits-showcase-card-{{ ai_gen_id }}" data-index="0">
+          {% if block.settings.benefit_1_icon %}
+            <div class="ai-benefits-showcase-icon-container-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_1_color }}1A;">
+              <img
+                src="{{ block.settings.benefit_1_icon | image_url: width: 120 }}"
+                alt="{{ block.settings.benefit_1_title }}"
+                class="ai-benefits-showcase-icon-{{ ai_gen_id }}"
+                loading="lazy"
+                width="120"
+                height="120"
+              >
+            </div>
+          {% endif %}
+          <div class="ai-benefits-showcase-badge-pill-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_1_color }};">
+            {{ block.settings.benefit_1_badge }}
+          </div>
+          <h3 class="ai-benefits-showcase-card-title-{{ ai_gen_id }}">
+            {{ block.settings.benefit_1_title }}
+          </h3>
+          <p class="ai-benefits-showcase-card-description-{{ ai_gen_id }}">
+            {{ block.settings.benefit_1_description }}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if block.settings.benefit_2_enabled %}
+        <div class="ai-benefits-showcase-card-{{ ai_gen_id }}" data-index="1">
+          {% if block.settings.benefit_2_icon %}
+            <div class="ai-benefits-showcase-icon-container-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_2_color }}1A;">
+              <img
+                src="{{ block.settings.benefit_2_icon | image_url: width: 120 }}"
+                alt="{{ block.settings.benefit_2_title }}"
+                class="ai-benefits-showcase-icon-{{ ai_gen_id }}"
+                loading="lazy"
+                width="120"
+                height="120"
+              >
+            </div>
+          {% endif %}
+          <div class="ai-benefits-showcase-badge-pill-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_2_color }};">
+            {{ block.settings.benefit_2_badge }}
+          </div>
+          <h3 class="ai-benefits-showcase-card-title-{{ ai_gen_id }}">
+            {{ block.settings.benefit_2_title }}
+          </h3>
+          <p class="ai-benefits-showcase-card-description-{{ ai_gen_id }}">
+            {{ block.settings.benefit_2_description }}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if block.settings.benefit_3_enabled %}
+        <div class="ai-benefits-showcase-card-{{ ai_gen_id }}" data-index="2">
+          {% if block.settings.benefit_3_icon %}
+            <div class="ai-benefits-showcase-icon-container-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_3_color }}1A;">
+              <img
+                src="{{ block.settings.benefit_3_icon | image_url: width: 120 }}"
+                alt="{{ block.settings.benefit_3_title }}"
+                class="ai-benefits-showcase-icon-{{ ai_gen_id }}"
+                loading="lazy"
+                width="120"
+                height="120"
+              >
+            </div>
+          {% endif %}
+          <div class="ai-benefits-showcase-badge-pill-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_3_color }};">
+            {{ block.settings.benefit_3_badge }}
+          </div>
+          <h3 class="ai-benefits-showcase-card-title-{{ ai_gen_id }}">
+            {{ block.settings.benefit_3_title }}
+          </h3>
+          <p class="ai-benefits-showcase-card-description-{{ ai_gen_id }}">
+            {{ block.settings.benefit_3_description }}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if block.settings.benefit_4_enabled %}
+        <div class="ai-benefits-showcase-card-{{ ai_gen_id }}" data-index="3">
+          {% if block.settings.benefit_4_icon %}
+            <div class="ai-benefits-showcase-icon-container-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_4_color }}1A;">
+              <img
+                src="{{ block.settings.benefit_4_icon | image_url: width: 120 }}"
+                alt="{{ block.settings.benefit_4_title }}"
+                class="ai-benefits-showcase-icon-{{ ai_gen_id }}"
+                loading="lazy"
+                width="120"
+                height="120"
+              >
+            </div>
+          {% endif %}
+          <div class="ai-benefits-showcase-badge-pill-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_4_color }};">
+            {{ block.settings.benefit_4_badge }}
+          </div>
+          <h3 class="ai-benefits-showcase-card-title-{{ ai_gen_id }}">
+            {{ block.settings.benefit_4_title }}
+          </h3>
+          <p class="ai-benefits-showcase-card-description-{{ ai_gen_id }}">
+            {{ block.settings.benefit_4_description }}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if block.settings.benefit_5_enabled %}
+        <div class="ai-benefits-showcase-card-{{ ai_gen_id }}" data-index="4">
+          {% if block.settings.benefit_5_icon %}
+            <div class="ai-benefits-showcase-icon-container-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_5_color }}1A;">
+              <img
+                src="{{ block.settings.benefit_5_icon | image_url: width: 120 }}"
+                alt="{{ block.settings.benefit_5_title }}"
+                class="ai-benefits-showcase-icon-{{ ai_gen_id }}"
+                loading="lazy"
+                width="120"
+                height="120"
+              >
+            </div>
+          {% endif %}
+          <div class="ai-benefits-showcase-badge-pill-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_5_color }};">
+            {{ block.settings.benefit_5_badge }}
+          </div>
+          <h3 class="ai-benefits-showcase-card-title-{{ ai_gen_id }}">
+            {{ block.settings.benefit_5_title }}
+          </h3>
+          <p class="ai-benefits-showcase-card-description-{{ ai_gen_id }}">
+            {{ block.settings.benefit_5_description }}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if block.settings.benefit_6_enabled %}
+        <div class="ai-benefits-showcase-card-{{ ai_gen_id }}" data-index="5">
+          {% if block.settings.benefit_6_icon %}
+            <div class="ai-benefits-showcase-icon-container-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_6_color }}1A;">
+              <img
+                src="{{ block.settings.benefit_6_icon | image_url: width: 120 }}"
+                alt="{{ block.settings.benefit_6_title }}"
+                class="ai-benefits-showcase-icon-{{ ai_gen_id }}"
+                loading="lazy"
+                width="120"
+                height="120"
+              >
+            </div>
+          {% endif %}
+          <div class="ai-benefits-showcase-badge-pill-{{ ai_gen_id }}" style="background-color: {{ block.settings.benefit_6_color }};">
+            {{ block.settings.benefit_6_badge }}
+          </div>
+          <h3 class="ai-benefits-showcase-card-title-{{ ai_gen_id }}">
+            {{ block.settings.benefit_6_title }}
+          </h3>
+          <p class="ai-benefits-showcase-card-description-{{ ai_gen_id }}">
+            {{ block.settings.benefit_6_description }}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</benefits-showcase-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BenefitsShowcase{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.cards = [];
+        this.observer = null;
+      }
+
+      connectedCallback() {
+        this.cards = this.querySelectorAll('.ai-benefits-showcase-card-{{ ai_gen_id }}');
+        this.setupScrollAnimation();
+      }
+
+      setupScrollAnimation() {
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+        };
+
+        this.observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const card = entry.target;
+              const index = parseInt(card.getAttribute('data-index'));
+              const delay = index * 100;
+
+              setTimeout(() => {
+                card.classList.add('ai-benefits-visible-{{ ai_gen_id }}');
+              }, delay);
+
+              this.observer.unobserve(card);
+            }
+          });
+        }, options);
+
+        this.cards.forEach((card) => {
+          this.observer.observe(card);
+        });
+      }
+
+      disconnectedCallback() {
+        if (this.observer) {
+          this.observer.disconnect();
+        }
+      }
+    }
+
+    customElements.define('benefits-showcase-{{ ai_gen_id }}', BenefitsShowcase{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Benefits showcase",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background",
+      "default": "#F8FAFC"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Text",
+      "default": "Proven Benefits"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Background",
+      "default": "#DBEAFE"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_part_1",
+      "label": "Part 1",
+      "default": "Complete Health"
+    },
+    {
+      "type": "text",
+      "id": "heading_part_2",
+      "label": "Part 2",
+      "default": "Support"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Size",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient start",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient end",
+      "default": "#0284C7"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Subtitle"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Text",
+      "default": "Discover the scientifically-proven benefits of omega-3 fatty acids for your overall health and wellness."
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Color",
+      "default": "#64748B"
+    },
+    {
+      "type": "header",
+      "content": "Grid"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "grid_spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Top spacing",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border",
+      "default": "#E2E8F0"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Title color",
+      "default": "#1E293B"
+    },
+    {
+      "type": "range",
+      "id": "card_description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "card_description_color",
+      "label": "Description color",
+      "default": "#64748B"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "benefit_1_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_1_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "color",
+      "id": "benefit_1_color",
+      "label": "Color",
+      "default": "#EF4444"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_badge",
+      "label": "Badge text",
+      "default": "Cardioprotective"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_title",
+      "label": "Title",
+      "default": "Cardiovascular Health"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_1_description",
+      "label": "Description",
+      "default": "Supports heart health and helps maintain healthy cholesterol levels."
+    },
+    {
+      "type": "header",
+      "content": "Benefit 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "benefit_2_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_2_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "color",
+      "id": "benefit_2_color",
+      "label": "Color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_badge",
+      "label": "Badge text",
+      "default": "Cognitive Boost"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_title",
+      "label": "Title",
+      "default": "Brain Function"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_2_description",
+      "label": "Description",
+      "default": "Enhances cognitive performance and supports mental clarity."
+    },
+    {
+      "type": "header",
+      "content": "Benefit 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "benefit_3_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_3_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "color",
+      "id": "benefit_3_color",
+      "label": "Color",
+      "default": "#F59E0B"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_badge",
+      "label": "Badge text",
+      "default": "Joint Relief"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_title",
+      "label": "Title",
+      "default": "Anti-Inflammatory"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_3_description",
+      "label": "Description",
+      "default": "Reduces inflammation and supports joint comfort and mobility."
+    },
+    {
+      "type": "header",
+      "content": "Benefit 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "benefit_4_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_4_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "color",
+      "id": "benefit_4_color",
+      "label": "Color",
+      "default": "#0EA5E9"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_badge",
+      "label": "Badge text",
+      "default": "Vision Support"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_title",
+      "label": "Title",
+      "default": "Eye Health"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_4_description",
+      "label": "Description",
+      "default": "Promotes healthy vision and protects against age-related eye conditions."
+    },
+    {
+      "type": "header",
+      "content": "Benefit 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "benefit_5_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_5_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "color",
+      "id": "benefit_5_color",
+      "label": "Color",
+      "default": "#10B981"
+    },
+    {
+      "type": "text",
+      "id": "benefit_5_badge",
+      "label": "Badge text",
+      "default": "Immunity Boost"
+    },
+    {
+      "type": "text",
+      "id": "benefit_5_title",
+      "label": "Title",
+      "default": "Immune System"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_5_description",
+      "label": "Description",
+      "default": "Strengthens immune response and supports overall wellness."
+    },
+    {
+      "type": "header",
+      "content": "Benefit 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "benefit_6_enabled",
+      "label": "Enable",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "benefit_6_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "color",
+      "id": "benefit_6_color",
+      "label": "Color",
+      "default": "#F59E0B"
+    },
+    {
+      "type": "text",
+      "id": "benefit_6_badge",
+      "label": "Badge text",
+      "default": "Flexibility"
+    },
+    {
+      "type": "text",
+      "id": "benefit_6_title",
+      "label": "Title",
+      "default": "Bone & Joint"
+    },
+    {
+      "type": "textarea",
+      "id": "benefit_6_description",
+      "label": "Description",
+      "default": "Supports bone density and maintains healthy joint function."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits showcase"
+    }
+  ]
+}
+{% endschema %}

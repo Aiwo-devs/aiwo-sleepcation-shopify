@@ -1,0 +1,573 @@
+{% doc %}
+  @prompt
+    Create a modern, elegant website content block titled “The Taste Profile” for a premium extra virgin olive oil brand.
+    
+    Layout:
+    
+    Two-column design with text on the left and an image on the right.
+    
+    Background in soft beige or cream, rounded corners, and subtle shadow.
+    
+    Clean, organic aesthetic matching luxury food brands.
+    
+    Left Section (Text):
+    
+    Heading: “The Taste Profile” in bold olive-green typography.
+    
+    Body text:
+    “Bright green-fruit notes with a clean mouthfeel and refined peppery finish—the signature of oleocanthal-rich, fresh EVOO that connoisseurs recognize instantly.
+    Elevates everything from simple salads and crudo to grilled vegetables, artisan cheeses, and light sautés. The kind of oil that transforms everyday dishes into memorable experiences.”
+    
+    Subheading: “Perfect For:” in the same olive-green tone.
+    
+    Bullet list (with yellow dot icons):
+    
+    Finishing grilled fish
+    
+    Fresh burrata
+    
+    Seasonal greens
+    
+    Heirloom tomatoes
+    
+    Citrus vinaigrettes
+    
+    Artisan breads
+    
+    A call-to-action button at the bottom: “Explore Pairing Guides”, olive-green gradient button with white text and rounded corners.
+    
+    Right Section (Image):
+    
+    High-resolution, warm-toned image showing extra virgin olive oil being poured over fresh burrata and sliced cherry tomatoes on a rustic wooden board.
+    
+    Depth-of-field focus on the pour, with soft blur on the background (olive branches and tomatoes visible).
+    
+    Lighting: natural and cozy, evoking Mediterranean authenticity., follow preset typography like font style and size
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-taste-profile-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .ai-taste-profile-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+  }
+
+  .ai-taste-profile-text-{{ ai_gen_id }} {
+    padding: {{ block.settings.text_padding }}px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ai-taste-profile-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-style: {{ block.settings.heading_font.style }};
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .ai-taste-profile-body-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-style: {{ block.settings.body_font.style }};
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.body_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-taste-profile-subheading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-style: {{ block.settings.heading_font.style }};
+    font-size: {{ block.settings.subheading_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 12px 0;
+  }
+
+  .ai-taste-profile-list-{{ ai_gen_id }} {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ai-taste-profile-list-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-style: {{ block.settings.body_font.style }};
+    font-size: {{ block.settings.list_size }}px;
+    color: {{ block.settings.body_color }};
+  }
+
+  .ai-taste-profile-bullet-{{ ai_gen_id }} {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: {{ block.settings.bullet_color }};
+    flex-shrink: 0;
+  }
+
+  .ai-taste-profile-cta-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 32px;
+    background: {{ block.settings.button_gradient_start }};
+    background: linear-gradient(135deg, {{ block.settings.button_gradient_start }} 0%, {{ block.settings.button_gradient_end }} 100%);
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-family: {{ block.settings.button_font.family }}, {{ block.settings.button_font.fallback_families }};
+    font-weight: {{ block.settings.button_font.weight }};
+    font-style: {{ block.settings.button_font.style }};
+    font-size: {{ block.settings.button_size }}px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .ai-taste-profile-cta-{{ ai_gen_id }}:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-taste-profile-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-taste-profile-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ai-taste-profile-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-taste-profile-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .ai-taste-profile-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-taste-profile-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-taste-profile-text-{{ ai_gen_id }} {
+      padding: {{ block.settings.text_padding | times: 0.7 }}px;
+      order: 2;
+    }
+
+    .ai-taste-profile-image-{{ ai_gen_id }} {
+      order: 1;
+      min-height: 300px;
+    }
+
+    .ai-taste-profile-image-placeholder-{{ ai_gen_id }} {
+      min-height: 300px;
+    }
+
+    .ai-taste-profile-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.8 }}px;
+    }
+
+    .ai-taste-profile-body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_size | times: 0.9 }}px;
+    }
+
+    .ai-taste-profile-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size | times: 0.9 }}px;
+    }
+
+    .ai-taste-profile-list-item-{{ ai_gen_id }} {
+      font-size: {{ block.settings.list_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-taste-profile-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-taste-profile-container-{{ ai_gen_id }}">
+    <div class="ai-taste-profile-text-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-taste-profile-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+
+      {% if block.settings.body_text != blank %}
+        <div class="ai-taste-profile-body-{{ ai_gen_id }}">
+          {{ block.settings.body_text }}
+        </div>
+      {% endif %}
+
+      <div>
+        {% if block.settings.subheading != blank %}
+          <h3 class="ai-taste-profile-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</h3>
+        {% endif %}
+
+        <ul class="ai-taste-profile-list-{{ ai_gen_id }}">
+          {% if block.settings.list_item_1 != blank %}
+            <li class="ai-taste-profile-list-item-{{ ai_gen_id }}">
+              <span class="ai-taste-profile-bullet-{{ ai_gen_id }}"></span>
+              <span>{{ block.settings.list_item_1 }}</span>
+            </li>
+          {% endif %}
+
+          {% if block.settings.list_item_2 != blank %}
+            <li class="ai-taste-profile-list-item-{{ ai_gen_id }}">
+              <span class="ai-taste-profile-bullet-{{ ai_gen_id }}"></span>
+              <span>{{ block.settings.list_item_2 }}</span>
+            </li>
+          {% endif %}
+
+          {% if block.settings.list_item_3 != blank %}
+            <li class="ai-taste-profile-list-item-{{ ai_gen_id }}">
+              <span class="ai-taste-profile-bullet-{{ ai_gen_id }}"></span>
+              <span>{{ block.settings.list_item_3 }}</span>
+            </li>
+          {% endif %}
+
+          {% if block.settings.list_item_4 != blank %}
+            <li class="ai-taste-profile-list-item-{{ ai_gen_id }}">
+              <span class="ai-taste-profile-bullet-{{ ai_gen_id }}"></span>
+              <span>{{ block.settings.list_item_4 }}</span>
+            </li>
+          {% endif %}
+
+          {% if block.settings.list_item_5 != blank %}
+            <li class="ai-taste-profile-list-item-{{ ai_gen_id }}">
+              <span class="ai-taste-profile-bullet-{{ ai_gen_id }}"></span>
+              <span>{{ block.settings.list_item_5 }}</span>
+            </li>
+          {% endif %}
+
+          {% if block.settings.list_item_6 != blank %}
+            <li class="ai-taste-profile-list-item-{{ ai_gen_id }}">
+              <span class="ai-taste-profile-bullet-{{ ai_gen_id }}"></span>
+              <span>{{ block.settings.list_item_6 }}</span>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      {% if block.settings.button_text != blank %}
+        <div>
+          <a href="{{ block.settings.button_link }}" class="ai-taste-profile-cta-{{ ai_gen_id }}">
+            {{ block.settings.button_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-taste-profile-image-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 1200 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+      {% else %}
+        <div class="ai-taste-profile-image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-taste-profile-empty-state-{{ ai_gen_id }}">
+            Next, add an image of your premium olive oil
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "The taste profile",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F5F1E8"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_padding",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Text section padding",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>The Taste Profile</p>"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#556B2F"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Body text"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "<p>Bright green-fruit notes with a clean mouthfeel and refined peppery finish—the signature of oleocanthal-rich, fresh EVOO that connoisseurs recognize instantly.</p><p>Elevates everything from simple salads and crudo to grilled vegetables, artisan cheeses, and light sautés. The kind of oil that transforms everyday dishes into memorable experiences.</p>"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body text color",
+      "default": "#4A4A4A"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Body text size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Perfect for section"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Perfect For:</p>"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "bullet_color",
+      "label": "Bullet color",
+      "default": "#F4C430"
+    },
+    {
+      "type": "range",
+      "id": "list_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "List text size",
+      "default": 15
+    },
+    {
+      "type": "inline_richtext",
+      "id": "list_item_1",
+      "label": "List item 1",
+      "default": "Finishing grilled fish"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "list_item_2",
+      "label": "List item 2",
+      "default": "Fresh burrata"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "list_item_3",
+      "label": "List item 3",
+      "default": "Seasonal greens"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "list_item_4",
+      "label": "List item 4",
+      "default": "Heirloom tomatoes"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "list_item_5",
+      "label": "List item 5",
+      "default": "Citrus vinaigrettes"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "list_item_6",
+      "label": "List item 6",
+      "default": "Artisan breads"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Explore Pairing Guides"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "font_picker",
+      "id": "button_font",
+      "label": "Button font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "color",
+      "id": "button_gradient_start",
+      "label": "Button gradient start",
+      "default": "#6B8E23"
+    },
+    {
+      "type": "color",
+      "id": "button_gradient_end",
+      "label": "Button gradient end",
+      "default": "#556B2F"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "The taste profile"
+    }
+  ]
+}
+{% endschema %}

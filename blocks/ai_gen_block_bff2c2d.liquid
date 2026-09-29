@@ -1,0 +1,846 @@
+{% doc %}
+  @prompt
+    Design a six-card information grid section for a premium olive oil brand (“AIWO Olive Aura”). The section should visually communicate scientific quality, freshness, and craftsmanship with credibility and warmth.
+    
+    Layout:
+    
+    3 cards per row (desktop) × 2 rows, stacking to 1 per row on mobile.
+    
+    Subtle cream background (#FAF8F3) with generous spacing.
+    
+    Each card has:
+    
+    Soft white background
+    
+    Rounded corners (16 px radius)
+    
+    Thin olive or gold left border/accent
+    
+    Slight shadow for depth
+    
+    Top emoji/icon (representing topic)
+    
+    Bold olive-green headline
+    
+    Descriptive paragraph in muted gray text
+    
+    A beige highlight box at bottom for “Result:” data point.
+    
+    Card Content Examples:
+    
+    ⏱️ Speed Matters More Than You Think
+    “Most olive oils sit for 6-24 hours before pressing, allowing oxidation to begin. We crush within 3 hours of harvest—before the olives even 'know' they’ve been picked.”
+    Result: Peroxide at 6 meq O₂/kg vs. typical 15–18
+    
+    🧪 True Cold Extraction
+    “We maintain temperatures below 27 °C throughout the process. Many ‘cold-pressed’ oils heat to 35–40 °C—destroying delicate polyphenols and that peppery finish.”
+    Result: PPP at 2.1 % (88 % fresher than benchmark)
+    ✅ Triple-Verified by Independent Labs
+    “Every lot tested by NABL-accredited labs. Not ‘trust us’—scan the QR code and see the actual Certificate of Analysis.”
+    Result: Heavy metals conforming to FSSAI, PAH-4 < 2 µg/kg
+    
+    🧴Protected Until You Pour
+    “Dark-tinted bottles, cool-chain storage, nitrogen flushing—every detail preserves what we spent months growing and minutes extracting.”
+    Result: OSI 24.3 hours—stays fresher, longer
+    No Blending, No Bulk
+    “Single-origin from our Australian groves. Not blended with cheaper imports or refined. Pure fruit expression—nothing hidden, nothing fixed.”
+    Result: ΔK < 0.01 (no refinement detected)
+    The Fat That Loves You Back
+    “68.5 % monounsaturated fat (MUFA)—the heart-healthy fat backed by decades of research. Low saturated fat. This isn’t oil; it’s liquid nutrition.”
+    Result: DAGs at at 71.5 %
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-info-grid-{{ ai_gen_id }} {
+    background-color: {{ block.settings.section_background }};
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-info-grid-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-info-grid-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-info-grid-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+
+  .ai-info-grid-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-info-grid-cards-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.card_gap }}px;
+  }
+
+  .ai-info-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: {{ block.settings.card_padding }}px;
+    box-shadow: {{ block.settings.card_shadow_x }}px {{ block.settings.card_shadow_y }}px {{ block.settings.card_shadow_blur }}px {{ block.settings.card_shadow_color }};
+    border-left: {{ block.settings.accent_border_width }}px solid {{ block.settings.accent_border_color }};
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-info-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: {{ block.settings.card_shadow_x }}px {{ block.settings.card_shadow_y | plus: 4 }}px {{ block.settings.card_shadow_blur | plus: 8 }}px {{ block.settings.card_shadow_color }};
+  }
+
+  .ai-info-card-icon-{{ ai_gen_id }} {
+    font-size: {{ block.settings.icon_size }}px;
+    margin-bottom: {{ block.settings.icon_spacing }}px;
+    display: block;
+  }
+
+  .ai-info-card-headline-{{ ai_gen_id }} {
+    font-size: {{ block.settings.headline_size }}px;
+    color: {{ block.settings.headline_color }};
+    margin: 0 0 {{ block.settings.headline_spacing }}px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .ai-info-card-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    line-height: 1.7;
+    margin: 0 0 {{ block.settings.description_spacing }}px;
+  }
+
+  .ai-info-card-result-{{ ai_gen_id }} {
+    background-color: {{ block.settings.result_background }};
+    padding: {{ block.settings.result_padding }}px;
+    border-radius: {{ block.settings.result_border_radius }}px;
+    font-size: {{ block.settings.result_size }}px;
+    color: {{ block.settings.result_color }};
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .ai-info-card-result-label-{{ ai_gen_id }} {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-info-grid-cards-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-info-grid-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.7 }}px 16px {{ block.settings.section_padding_bottom | times: 0.7 }}px;
+    }
+
+    .ai-info-grid-cards-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.card_gap | times: 0.8 }}px;
+    }
+
+    .ai-info-grid-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+
+    .ai-info-grid-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.9 }}px;
+    }
+
+    .ai-info-card-headline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.headline_size | times: 0.9 }}px;
+    }
+
+    .ai-info-card-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.95 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-info-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-info-grid-container-{{ ai_gen_id }}">
+    {% if block.settings.section_title != blank or block.settings.section_subtitle != blank %}
+      <div class="ai-info-grid-header-{{ ai_gen_id }}">
+        {% if block.settings.section_title != blank %}
+          <h2 class="ai-info-grid-title-{{ ai_gen_id }}">{{ block.settings.section_title }}</h2>
+        {% endif %}
+        {% if block.settings.section_subtitle != blank %}
+          <div class="ai-info-grid-subtitle-{{ ai_gen_id }}">{{ block.settings.section_subtitle }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-info-grid-cards-{{ ai_gen_id }}">
+      {% if block.settings.card_1_enabled %}
+        <div class="ai-info-card-{{ ai_gen_id }}">
+          {% if block.settings.card_1_icon != blank %}
+            <span class="ai-info-card-icon-{{ ai_gen_id }}">{{ block.settings.card_1_icon }}</span>
+          {% endif %}
+          {% if block.settings.card_1_headline != blank %}
+            <h3 class="ai-info-card-headline-{{ ai_gen_id }}">{{ block.settings.card_1_headline }}</h3>
+          {% endif %}
+          {% if block.settings.card_1_description != blank %}
+            <div class="ai-info-card-description-{{ ai_gen_id }}">{{ block.settings.card_1_description }}</div>
+          {% endif %}
+          {% if block.settings.card_1_result != blank %}
+            <div class="ai-info-card-result-{{ ai_gen_id }}">
+              <span class="ai-info-card-result-label-{{ ai_gen_id }}">{{ block.settings.result_label }}</span>
+              {{ block.settings.card_1_result }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_2_enabled %}
+        <div class="ai-info-card-{{ ai_gen_id }}">
+          {% if block.settings.card_2_icon != blank %}
+            <span class="ai-info-card-icon-{{ ai_gen_id }}">{{ block.settings.card_2_icon }}</span>
+          {% endif %}
+          {% if block.settings.card_2_headline != blank %}
+            <h3 class="ai-info-card-headline-{{ ai_gen_id }}">{{ block.settings.card_2_headline }}</h3>
+          {% endif %}
+          {% if block.settings.card_2_description != blank %}
+            <div class="ai-info-card-description-{{ ai_gen_id }}">{{ block.settings.card_2_description }}</div>
+          {% endif %}
+          {% if block.settings.card_2_result != blank %}
+            <div class="ai-info-card-result-{{ ai_gen_id }}">
+              <span class="ai-info-card-result-label-{{ ai_gen_id }}">{{ block.settings.result_label }}</span>
+              {{ block.settings.card_2_result }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_3_enabled %}
+        <div class="ai-info-card-{{ ai_gen_id }}">
+          {% if block.settings.card_3_icon != blank %}
+            <span class="ai-info-card-icon-{{ ai_gen_id }}">{{ block.settings.card_3_icon }}</span>
+          {% endif %}
+          {% if block.settings.card_3_headline != blank %}
+            <h3 class="ai-info-card-headline-{{ ai_gen_id }}">{{ block.settings.card_3_headline }}</h3>
+          {% endif %}
+          {% if block.settings.card_3_description != blank %}
+            <div class="ai-info-card-description-{{ ai_gen_id }}">{{ block.settings.card_3_description }}</div>
+          {% endif %}
+          {% if block.settings.card_3_result != blank %}
+            <div class="ai-info-card-result-{{ ai_gen_id }}">
+              <span class="ai-info-card-result-label-{{ ai_gen_id }}">{{ block.settings.result_label }}</span>
+              {{ block.settings.card_3_result }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_4_enabled %}
+        <div class="ai-info-card-{{ ai_gen_id }}">
+          {% if block.settings.card_4_icon != blank %}
+            <span class="ai-info-card-icon-{{ ai_gen_id }}">{{ block.settings.card_4_icon }}</span>
+          {% endif %}
+          {% if block.settings.card_4_headline != blank %}
+            <h3 class="ai-info-card-headline-{{ ai_gen_id }}">{{ block.settings.card_4_headline }}</h3>
+          {% endif %}
+          {% if block.settings.card_4_description != blank %}
+            <div class="ai-info-card-description-{{ ai_gen_id }}">{{ block.settings.card_4_description }}</div>
+          {% endif %}
+          {% if block.settings.card_4_result != blank %}
+            <div class="ai-info-card-result-{{ ai_gen_id }}">
+              <span class="ai-info-card-result-label-{{ ai_gen_id }}">{{ block.settings.result_label }}</span>
+              {{ block.settings.card_4_result }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_5_enabled %}
+        <div class="ai-info-card-{{ ai_gen_id }}">
+          {% if block.settings.card_5_icon != blank %}
+            <span class="ai-info-card-icon-{{ ai_gen_id }}">{{ block.settings.card_5_icon }}</span>
+          {% endif %}
+          {% if block.settings.card_5_headline != blank %}
+            <h3 class="ai-info-card-headline-{{ ai_gen_id }}">{{ block.settings.card_5_headline }}</h3>
+          {% endif %}
+          {% if block.settings.card_5_description != blank %}
+            <div class="ai-info-card-description-{{ ai_gen_id }}">{{ block.settings.card_5_description }}</div>
+          {% endif %}
+          {% if block.settings.card_5_result != blank %}
+            <div class="ai-info-card-result-{{ ai_gen_id }}">
+              <span class="ai-info-card-result-label-{{ ai_gen_id }}">{{ block.settings.result_label }}</span>
+              {{ block.settings.card_5_result }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if block.settings.card_6_enabled %}
+        <div class="ai-info-card-{{ ai_gen_id }}">
+          {% if block.settings.card_6_icon != blank %}
+            <span class="ai-info-card-icon-{{ ai_gen_id }}">{{ block.settings.card_6_icon }}</span>
+          {% endif %}
+          {% if block.settings.card_6_headline != blank %}
+            <h3 class="ai-info-card-headline-{{ ai_gen_id }}">{{ block.settings.card_6_headline }}</h3>
+          {% endif %}
+          {% if block.settings.card_6_description != blank %}
+            <div class="ai-info-card-description-{{ ai_gen_id }}">{{ block.settings.card_6_description }}</div>
+          {% endif %}
+          {% if block.settings.card_6_result != blank %}
+            <div class="ai-info-card-result-{{ ai_gen_id }}">
+              <span class="ai-info-card-result-label-{{ ai_gen_id }}">{{ block.settings.result_label }}</span>
+              {{ block.settings.card_6_result }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Premium info grid",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "AIWO Olive Aura"
+    },
+    {
+      "type": "textarea",
+      "id": "section_subtitle",
+      "label": "Subtitle",
+      "default": "Scientific quality, freshness, and craftsmanship you can trust"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#3D5A3C"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#6B7566"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Header spacing",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Section layout"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Background color",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "label": "Container width",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Card gap",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "accent_border_width",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "label": "Accent border width",
+      "default": 3
+    },
+    {
+      "type": "color",
+      "id": "accent_border_color",
+      "label": "Accent border color",
+      "default": "#C9A961"
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_x",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Shadow X offset",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_y",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Shadow Y offset",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "card_shadow_blur",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Shadow blur",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "card_shadow_color",
+      "label": "Shadow color",
+      "default": "rgba(0, 0, 0, 0.08)"
+    },
+    {
+      "type": "header",
+      "content": "Card content"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "icon_spacing",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon spacing",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "headline_size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Headline size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Headline color",
+      "default": "#3D5A3C"
+    },
+    {
+      "type": "range",
+      "id": "headline_spacing",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Headline spacing",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#6B7566"
+    },
+    {
+      "type": "range",
+      "id": "description_spacing",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Description spacing",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Result box"
+    },
+    {
+      "type": "text",
+      "id": "result_label",
+      "label": "Label",
+      "default": "Result:"
+    },
+    {
+      "type": "color",
+      "id": "result_background",
+      "label": "Background",
+      "default": "#F5EFE0"
+    },
+    {
+      "type": "range",
+      "id": "result_padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "result_border_radius",
+      "min": 0,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "result_size",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "result_color",
+      "label": "Text color",
+      "default": "#5A4A2F"
+    },
+    {
+      "type": "header",
+      "content": "Card 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_1_enabled",
+      "label": "Enable card 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_1_icon",
+      "label": "Icon",
+      "default": "⏱️"
+    },
+    {
+      "type": "text",
+      "id": "card_1_headline",
+      "label": "Headline",
+      "default": "Speed Matters More Than You Think"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_description",
+      "label": "Description",
+      "default": "Most olive oils sit for 6-24 hours before pressing, allowing oxidation to begin. We crush within 3 hours of harvest—before the olives even 'know' they've been picked."
+    },
+    {
+      "type": "text",
+      "id": "card_1_result",
+      "label": "Result",
+      "default": "Peroxide at 6 meq O₂/kg vs. typical 15–18"
+    },
+    {
+      "type": "header",
+      "content": "Card 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_2_enabled",
+      "label": "Enable card 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_2_icon",
+      "label": "Icon",
+      "default": "🧪"
+    },
+    {
+      "type": "text",
+      "id": "card_2_headline",
+      "label": "Headline",
+      "default": "True Cold Extraction"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_description",
+      "label": "Description",
+      "default": "We maintain temperatures below 27 °C throughout the process. Many 'cold-pressed' oils heat to 35–40 °C—destroying delicate polyphenols and that peppery finish."
+    },
+    {
+      "type": "text",
+      "id": "card_2_result",
+      "label": "Result",
+      "default": "PPP at 2.1 % (88 % fresher than benchmark)"
+    },
+    {
+      "type": "header",
+      "content": "Card 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_3_enabled",
+      "label": "Enable card 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_3_icon",
+      "label": "Icon",
+      "default": "✅"
+    },
+    {
+      "type": "text",
+      "id": "card_3_headline",
+      "label": "Headline",
+      "default": "Triple-Verified by Independent Labs"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_description",
+      "label": "Description",
+      "default": "Every lot tested by NABL-accredited labs. Not 'trust us'—scan the QR code and see the actual Certificate of Analysis."
+    },
+    {
+      "type": "text",
+      "id": "card_3_result",
+      "label": "Result",
+      "default": "Heavy metals conforming to FSSAI, PAH-4 < 2 µg/kg"
+    },
+    {
+      "type": "header",
+      "content": "Card 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_4_enabled",
+      "label": "Enable card 4",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_4_icon",
+      "label": "Icon",
+      "default": "🧴"
+    },
+    {
+      "type": "text",
+      "id": "card_4_headline",
+      "label": "Headline",
+      "default": "Protected Until You Pour"
+    },
+    {
+      "type": "textarea",
+      "id": "card_4_description",
+      "label": "Description",
+      "default": "Dark-tinted bottles, cool-chain storage, nitrogen flushing—every detail preserves what we spent months growing and minutes extracting."
+    },
+    {
+      "type": "text",
+      "id": "card_4_result",
+      "label": "Result",
+      "default": "OSI 24.3 hours—stays fresher, longer"
+    },
+    {
+      "type": "header",
+      "content": "Card 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_5_enabled",
+      "label": "Enable card 5",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_5_icon",
+      "label": "Icon",
+      "default": "🌿"
+    },
+    {
+      "type": "text",
+      "id": "card_5_headline",
+      "label": "Headline",
+      "default": "No Blending, No Bulk"
+    },
+    {
+      "type": "textarea",
+      "id": "card_5_description",
+      "label": "Description",
+      "default": "Single-origin from our Australian groves. Not blended with cheaper imports or refined. Pure fruit expression—nothing hidden, nothing fixed."
+    },
+    {
+      "type": "text",
+      "id": "card_5_result",
+      "label": "Result",
+      "default": "ΔK < 0.01 (no refinement detected)"
+    },
+    {
+      "type": "header",
+      "content": "Card 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_6_enabled",
+      "label": "Enable card 6",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_6_icon",
+      "label": "Icon",
+      "default": "❤️"
+    },
+    {
+      "type": "text",
+      "id": "card_6_headline",
+      "label": "Headline",
+      "default": "The Fat That Loves You Back"
+    },
+    {
+      "type": "textarea",
+      "id": "card_6_description",
+      "label": "Description",
+      "default": "68.5 % monounsaturated fat (MUFA)—the heart-healthy fat backed by decades of research. Low saturated fat. This isn't oil; it's liquid nutrition."
+    },
+    {
+      "type": "text",
+      "id": "card_6_result",
+      "label": "Result",
+      "default": "DAGs at 71.5 %"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium info grid"
+    }
+  ]
+}
+{% endschema %}

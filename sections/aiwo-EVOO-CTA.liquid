@@ -1,0 +1,348 @@
+{% comment %}
+  ============================================================
+  Section  : Experience the Difference CTA
+  Brand    : AIWO EVOO
+  Layout   : Left — Text | Right — Absolute Background Image
+  Updates  : Image right-aligns strictly to 1400px container.
+             Tablet (≤991px) adopts stacked mobile UI.
+             Support icon top-aligned and moved closer to text.
+  ============================================================
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================================
+   SECTION SHELL
+   ============================================================================ */
+#cta-{{ section.id }} {
+  background: linear-gradient(180deg, {{ section.settings.bg_color_start }} 0%, {{ section.settings.bg_color_end }} 100%);
+  position: relative;
+  overflow: hidden; 
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+/* ============================================================================
+   CONTAINER
+   Limits width to 1400px. Acts as the relative anchor for the absolute image.
+   ============================================================================ */
+#cta-{{ section.id }} .cta__container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  position: relative;
+  z-index: 2; 
+}
+
+/* ============================================================================
+   CONTENT COLUMN (LEFT)
+   Padding is applied here instead of the section wrapper so the container 
+   establishes the full height for the image to anchor to the bottom.
+   ============================================================================ */
+#cta-{{ section.id }} .cta__content {
+  max-width: 576px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+#cta-{{ section.id }} .cta__heading {
+  font-size: 48px;
+  font-weight: 700; 
+  color: #211E1E;
+  line-height: 120%;
+  margin: 0 0 24px 0;
+}
+
+#cta-{{ section.id }} .cta__heading span {
+  font-style: italic;
+  color: #919FA8;
+}
+
+#cta-{{ section.id }} .cta__desc {
+  font-size: 20px;
+  font-weight: 500; 
+  color: #545252;
+  line-height: 150%;
+  margin: 0 0 48px 0;
+}
+
+#cta-{{ section.id }} .cta__btn-wrapper {
+  margin-bottom: 12px;
+}
+
+#cta-{{ section.id }} .cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #211E1E;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 16px 32px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+#cta-{{ section.id }} .cta__btn:hover {
+  background-color: #000000;
+}
+
+#cta-{{ section.id }} .cta__btn svg {
+  margin-left: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Support Text & Icon ── */
+#cta-{{ section.id }} .cta__support {
+  display: flex;
+  align-items: flex-start; /* Top aligned */
+  gap: 4px; /* Closer to text */
+  font-size: 14px;
+  font-weight: 500; 
+  font-style: italic;
+  color: #545252;
+  line-height: 150%;
+}
+
+#cta-{{ section.id }} .cta__icon {
+  width: 20px; /* Scaled down slightly to fit text line-height nicely */
+  height: 20px;
+  margin-top: 1px; /* Optical tweak for true top alignment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#cta-{{ section.id }} .cta__icon img,
+#cta-{{ section.id }} .cta__icon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ============================================================================
+   IMAGE COLUMN (ABSOLUTE RIGHT)
+   Now contained within the 1400px cta__container boundary.
+   ============================================================================ */
+#cta-{{ section.id }} .cta__image-col {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+  pointer-events: none; 
+}
+
+#cta-{{ section.id }} .cta__image-col img,
+#cta-{{ section.id }} .cta__image-col svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom right;
+  pointer-events: auto;
+}
+
+/* ============================================================================
+   RESPONSIVE — TABLET (≤991px)
+   Forced into stacked Mobile UI to prevent content overlap.
+   ============================================================================ */
+@media screen and (max-width: 991px) {
+  #cta-{{ section.id }} .cta__container {
+    padding: 0 40px; 
+  }
+  #cta-{{ section.id }} .cta__content {
+    max-width: 100%;
+    padding-top: 48px;
+    padding-bottom: 0px; /* Removed so image sits right beneath text */
+  }
+  #cta-{{ section.id }} .cta__heading {
+    font-size: 40px;
+  }
+  #cta-{{ section.id }} .cta__desc {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+
+  /* Reset image to standard block flow */
+  #cta-{{ section.id }} .cta__image-col {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 32px;
+    display: block;
+  }
+  #cta-{{ section.id }} .cta__image-col img,
+  #cta-{{ section.id }} .cta__image-col svg {
+    position: relative;
+    max-height: 400px;
+    margin: 0 auto;
+    display: block;
+    object-position: bottom center;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE LANDSCAPE (≤767px)
+   ============================================================================ */
+@media screen and (max-width: 767px) {
+  #cta-{{ section.id }} .cta__container {
+    padding: 0 24px;
+  }
+  #cta-{{ section.id }} .cta__content {
+    padding-top: 40px;
+  }
+  #cta-{{ section.id }} .cta__heading {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  #cta-{{ section.id }} .cta__desc {
+    font-size: 16px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE — MOBILE PORTRAIT (≤479px)
+   ============================================================================ */
+@media screen and (max-width: 479px) {
+  #cta-{{ section.id }} .cta__container {
+    padding: 0 20px;
+  }
+  #cta-{{ section.id }} .cta__content {
+    padding-top: 32px;
+  }
+  #cta-{{ section.id }} .cta__heading {
+    font-size: 28px;
+  }
+}
+</style>
+
+<section id="cta-{{ section.id }}">
+  <div class="cta__container">
+    
+    <div class="cta__content">
+      <h2 class="cta__heading">
+        {{ section.settings.heading_start }} <span>{{ section.settings.heading_highlight }}</span>
+      </h2>
+      <p class="cta__desc">
+        {{ section.settings.description }}
+      </p>
+      <div class="cta__btn-wrapper">
+        <a href="{{ section.settings.button_link }}" class="cta__btn">
+          {{ section.settings.button_label }}
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="cta__support">
+        <span>{{ section.settings.support_text }}</span>
+        <span class="cta__icon">
+          {% if section.settings.checkmark_icon != blank %}
+            <img src="{{ section.settings.checkmark_icon | image_url: width: 48 }}" alt="Checkmark" width="24" height="24" loading="lazy">
+          {% else %}
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 6L9 17L4 12" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          {% endif %}
+        </span>
+      </div>
+    </div>
+
+    <div class="cta__image-col">
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | image_url: width: 1000 }}" alt="AIWO Experience" loading="lazy">
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Experience CTA",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color_start",
+      "label": "Background Gradient Start",
+      "default": "#F0F3F5"
+    },
+    {
+      "type": "color",
+      "id": "bg_color_end",
+      "label": "Background Gradient End",
+      "default": "#FEFEFE"
+    },
+    {
+      "type": "text",
+      "id": "heading_start",
+      "label": "Heading - Start Text",
+      "default": "Experience the"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "Heading - Italicized Text",
+      "default": "Difference"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Taste what happens when freshness is measured, purity is proven, and every step is designed to protect what matters."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop AIWO Olive Aura"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "support_text",
+      "label": "Support Text",
+      "default": "Every bottle backed by independent lab certification."
+    },
+    {
+      "type": "image_picker",
+      "id": "checkmark_icon",
+      "label": "Checkmark Icon (24x24px)",
+      "info": "Upload a 24x24px icon. A default checkmark will show if left blank."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image",
+      "info": "This image will be anchored to the bottom right of the section."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Experience CTA"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,675 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "aiwo_evoo_v3_styles": {
+      "type": "aiwo-evoo-v3-global-styles",
+      "settings": {
+        "heading_font_size": 24,
+        "heading_font_weight": "700",
+        "heading_line_height": "1.2",
+        "heading_color": "#0c0c0d",
+        "body_font_size": 16,
+        "body_font_weight": "400",
+        "body_line_height": "1.6",
+        "body_color": "#666666",
+        "button_font_size": 16,
+        "button_font_weight": "600"
+      }
+    },
+    "aiwo_evoo_v3_breadcrumb": {
+      "type": "aiwo-evoo-v3-breadcrumb",
+      "settings": {
+        "back_arrow_icon": "shopify://shop_images/arrow-up-right-01-round.svg"
+      }
+    },
+    "aiwo_evoo_v3_gallery_enhancements": {
+      "type": "aiwo-evoo-v3-gallery-enhancements",
+      "settings": {
+        "tagline_text": "LONGEVIS MATRIX · Pillar 3",
+        "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+        "tooltip_title": "What is LONGEVIS MATRIX?",
+        "tooltip_desc": "LONGEVIS MATRIX is AIWO's 11-pillar longevity framework. Each pillar targets a biological system that determines how fast you age.",
+        "tooltip_pillars_heading": "Pillars this product support",
+        "tooltip_active_pillars": "P3 · Nutrition and Metabolic Health",
+        "tooltip_stack_heading": "Complete your longevity stack",
+        "tooltip_inactive_pillars": "P1 · Sleep      \nP2 · Breathing\nP4 · Social       \nP5 · Exercise\nP6 · Stress       \nP7 · Circadian Rhythm\nP8 · Purpose      \nP9 · Environment\nP10 · Gut Health  \nP11 · Hydration"
+      }
+    },
+    "aiwo_evoo_v3_qty_label": {
+      "type": "aiwo-evoo-v3-quantity-label",
+      "settings": {
+        "mobile_quantity_label": "Add Quantity"
+      }
+    },
+    "main": {
+      "type": "aiwo-pdp-product-info",
+      "blocks": {
+        "product_tag_line_v1_zH8gVV": {
+          "type": "product_tag_line_v1",
+          "settings": {
+            "tag_text": "LONGEVIS MATRIX · Pillar 3"
+          }
+        },
+        "rating_AeRdFJ": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_name_xkPbAa": {
+          "type": "product_name",
+          "settings": {
+            "title_size": 100,
+            "heading_tag": "h1"
+          }
+        },
+        "purchase_stats_v1_CLkWVP": {
+          "type": "purchase_stats_v1",
+          "settings": {
+            "purchase_text": "What if the most abundant amino acid in your heart is the one you've never supplemented? Taurine does what your body can't replace fast enough.",
+            "weight_text": ""
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "text_size_price": 70
+          }
+        },
+        "text_j3mMyH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>MRP Incl. of all taxes</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_in_tab": false,
+            "open_by_default": true,
+            "heading": "Description",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "trust_badges_v1_eUg7qR": {
+          "type": "trust_badges_v1",
+          "settings": {
+            "badge_1_title": "FSSAI Licensed",
+            "badge_1_icon": "shopify://shop_images/Fssai_Logo.png",
+            "badge_2_title": "ISO Certified",
+            "badge_2_icon": "shopify://shop_images/aus.svg",
+            "badge_3_title": "Vegetarian",
+            "badge_3_icon": "shopify://shop_images/supports-l_1_3cef3104-eb8d-47f6-b156-c995ab26a387.svg",
+            "badge_4_title": "No Added Sugar",
+            "badge_4_icon": "shopify://shop_images/Capa_1_7b31bb01-ecf8-432a-8df3-2310d0294bfb.svg",
+            "badge_5_title": "100% Cold-Pressed",
+            "badge_5_icon": "shopify://shop_images/Frame_748e5c96-2eb5-4d99-ad6d-713df97a6338.svg",
+            "badge_6_title": ""
+          }
+        },
+        "benefits_grid_v1_KiKTqL": {
+          "type": "benefits_grid_v1",
+          "settings": {
+            "benefit_1_title": "Heart Ready",
+            "benefit_1_text": "Natural polyphenols and MUFA support healthy lipid balance",
+            "benefit_1_icon": "shopify://shop_images/Heart_Health_bb6f6292-f7e3-40c3-9dac-db11b1f28e2d.svg",
+            "benefit_2_title": "Antioxidant Rich",
+            "benefit_2_text": "Oleocanthal and hydroxytyrosol fight cellular oxidative stress",
+            "benefit_2_icon": "shopify://shop_images/Layer_1-2.svg",
+            "benefit_3_title": "Smooth and Zesty",
+            "benefit_3_text": "Velvety texture with a natural peppery finish  authentic EVOO character",
+            "benefit_3_icon": "shopify://shop_images/Frame_748e5c96-2eb5-4d99-ad6d-713df97a6338.svg",
+            "benefit_4_title": "Gut Friendly",
+            "benefit_4_text": "Polyphenols support beneficial gut bacteria and mucosal integrity",
+            "benefit_4_icon": "shopify://shop_images/Capa_1_7b31bb01-ecf8-432a-8df3-2310d0294bfb.svg"
+          }
+        },
+        "marquee_v1_iehzTE": {
+          "type": "marquee_v1",
+          "settings": {
+            "marquee_bg_color": "#2c2416",
+            "marquee_text_color": "#ffffff",
+            "marquee_text_1": "100% Cold Pressed",
+            "marquee_text_2": "Single Origin Australia",
+            "marquee_text_3": "Natural Polyphenols",
+            "marquee_text_4": "UV-Resistant Glass",
+            "marquee_text_5": "68.5% MUFA",
+            "marquee_text_6": "Zero Trans Fat"
+          }
+        },
+        "gift_wrapping_EK3NQn": {
+          "type": "gift_wrapping",
+          "settings": {
+            "text_gift": "",
+            "show_border": false,
+            "color_icon_light": "rgba(0,0,0,0)",
+            "border_color_light": "rgba(0,0,0,0)",
+            "color_icon_dark": "rgba(0,0,0,0)",
+            "border_color_dark": "rgba(0,0,0,0)"
+          }
+        },
+        "html_jpVgQ3": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "html": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_add_to_cart": true,
+            "show_atc_quantity": true,
+            "protocol_tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "protocol_tooltip_title": "What is Protocol?",
+            "protocol_tooltip_desc": "A protocol is a daily system of supplements each one targeting specific longevity pillars."
+          }
+        },
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d": {
+          "type": "estimate_delivery",
+          "disabled": true,
+          "settings": {}
+        },
+        "recommended_products_v1_6t3TaN": {
+          "type": "recommended_products_v1",
+          "settings": {
+            "recs_tag": "Complete the protocol",
+            "heading_text": "AIWO Olive Aura Works",
+            "heading_italic": "Better As A System",
+            "description_text": "Pair Natural Polyphenols With Complementary LONGEVIS MATRIX Nutrition For Heart, Gut and Metabolic Support",
+            "image_desktop": "shopify://shop_images/Protocol_-_Landing_Page_Olive_Oil_dd1ca5f2-19c9-4660-8a59-8c4e728565f4.jpg",
+            "image_mobile": "shopify://shop_images/07._Protocal_Olive_Oil_8366ea37-ee61-4c6f-ac23-fde8013ecbd3.jpg",
+            "show_desktop": true,
+            "show_mobile": true,
+            "bundle_mode": true,
+            "bundle_pillar": "Add on · Pillar 6",
+            "bundle_title": "Nutrition and Gut Health Stack",
+            "bundle_desc": "EVOO + Omega 3 + Prebiotik- D",
+            "bundle_best_pick_text": "Best Seller",
+            "bundle_custom_price": "",
+            "bundle_product_1": "omega-3-double-strength",
+            "bundle_product_2": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "bundle_product_3": "aiwo-extra-virgin-olive-oil",
+            "bundle_learn_more_product": "",
+            "product_1": "aiwo-prebiotik-d-prebiotic-oligofructose-with-inulin-fibres-250gm",
+            "pillar_1": "Add on · Pillar 1",
+            "custom_title_1": "",
+            "desc_1": "",
+            "best_pick_text_1": "",
+            "product_2": "omega-3-double-strength",
+            "pillar_2": "Add on · Pillar 3",
+            "custom_title_2": "",
+            "desc_2": "",
+            "best_pick_text_2": "",
+            "product_3": "",
+            "pillar_3": "",
+            "custom_title_3": "",
+            "desc_3": "",
+            "best_pick_text_3": ""
+          }
+        },
+        "proven_health_benefits_v1_NpKbtK": {
+          "type": "proven_health_benefits_v1",
+          "settings": {
+            "phb_tag": "",
+            "phb_title": "Proven Health Benefits of  Extra Virgin Olive Oil",
+            "phb_stat_1_num": "-9%",
+            "phb_stat_1_label": "Reduction in LDL Cholesterol",
+            "phb_stat_1_source": "Schwingshackl et al. Nutr Metab Cardiovasc Dis 2014",
+            "phb_stat_2_num": "-22%",
+            "phb_stat_2_label": "Reduction in Cardiovascular Events",
+            "phb_stat_2_source": "PREDIMED Study. N Engl J Med 2013",
+            "phb_stat_3_num": "",
+            "phb_stat_3_label": "",
+            "phb_stat_3_source": "",
+            "phb_stat_4_num": "",
+            "phb_stat_4_label": "",
+            "phb_stat_4_source": ""
+          }
+        },
+        "text_gzYkwz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>*Figures observed in meta-analyses and randomised controlled trials on EVOO and Mediterranean diet interventions. Individual results may vary. This is a food product. Not intended to diagnose, treat, cure, or prevent any disease.</p>",
+            "number_of_lines_shown": "none",
+            "read_more_label": "Read more",
+            "see_less_label": "See less"
+          }
+        },
+        "button_QVph7M": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Download Sample Report",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "button_8zEkHK": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore 181 Biomarkers",
+            "button_link": "shopify://pages/aiwo-181-blood-test"
+          }
+        },
+        "complementary_XCwmDV": {
+          "type": "complementary",
+          "settings": {
+            "heading": "Buy It With",
+            "show_tab": false,
+            "show_background": true,
+            "show_border": true,
+            "max_product_show": 4,
+            "enable_carousel_desktop": true,
+            "enable_swiper_mobile": true,
+            "number_product_per_page": 2,
+            "image_ratio": "square",
+            "show_vendor": false,
+            "show_product_rating": false,
+            "show_highlighted_features": false,
+            "add_as_bundle": false
+          }
+        },
+        "collapsible-row-0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "open_by_default": false,
+            "heading": "Giving Back",
+            "tab_content": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "social-sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky-atc": {
+          "type": "sticky_add_to_cart",
+          "settings": {
+            "desktop_display_type": "full_width",
+            "show_quantity_selector": true,
+            "link_to_atc_btn": false
+          }
+        }
+      },
+      "block_order": [
+        "product_tag_line_v1_zH8gVV",
+        "rating_AeRdFJ",
+        "product_name_xkPbAa",
+        "purchase_stats_v1_CLkWVP",
+        "price",
+        "text_j3mMyH",
+        "description",
+        "trust_badges_v1_eUg7qR",
+        "benefits_grid_v1_KiKTqL",
+        "marquee_v1_iehzTE",
+        "gift_wrapping_EK3NQn",
+        "html_jpVgQ3",
+        "buy_buttons",
+        "ffacb41b-c15e-41ee-864a-cfbf155d407d",
+        "recommended_products_v1_6t3TaN",
+        "proven_health_benefits_v1_NpKbtK",
+        "text_gzYkwz",
+        "button_QVph7M",
+        "button_8zEkHK",
+        "complementary_XCwmDV",
+        "collapsible-row-0",
+        "social-sharing",
+        "sticky-atc"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked",
+        "thumbnail_position": "vertical",
+        "enable_sticky_image": true,
+        "mobile_media_size": "full_width",
+        "show_arrow_button": false,
+        "show_thumnail_mobile": false,
+        "spacing_col": "small",
+        "full_width": true,
+        "transition_style": "fade",
+        "show_first_image_avaiable": true,
+        "enable_microdata": false,
+        "show_breadcrumbs": false,
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD": {
+      "type": "aiwo-evoo-v3-aiwo-difference",
+      "blocks": {
+        "stat_circle_336cQP": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "68%",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "MUFA Content",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Heart-Healthy Fat"
+          }
+        },
+        "stat_circle_meQiJa": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "98%",
+            "tooltip_icon": "shopify://shop_images/Start_the_protocol.svg",
+            "stat_sub": "Polyphenol",
+            "tooltip_title": "Polyphenol",
+            "tooltip_desc": "Polyphenols are plant compounds found naturally in olives. These compounds are present only in genuine extra virgin olive oil that has",
+            "bottom_label": "Polyphenol Content"
+          }
+        },
+        "stat_circle_V8MT9Y": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "< 0.3",
+            "stat_sub": "Acidity Level",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Freshness Indicator"
+          }
+        },
+        "tagline_sub_86PARc": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/Import_4a5f53de-7518-4a26-8b54-089202d11d2e.svg",
+            "text": "Premium Grade EVOO"
+          }
+        },
+        "card_bullet_jMmxRW": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "The word \"cold-pressed\" on most olive oil labels means very little."
+          }
+        },
+        "card_bullet_PQqYc3": {
+          "type": "card_bullet",
+          "settings": {
+            "bullet_text": "Genuine cold extraction keeps the oil below 27°C throughout the entire pressing process.\nAbove that temperature, heat begins to degrade the polyphenols  the oleocanthal,\nhydroxytyrosol, and oleuropein that make premium EVOO worth eating daily."
+          }
+        },
+        "stat_circle_Hhd9iw": {
+          "type": "stat_circle",
+          "settings": {
+            "circle_img": "shopify://shop_images/Layer_2.svg",
+            "stat_val": "3hr",
+            "stat_sub": "Harvest → Press",
+            "tooltip_title": "",
+            "tooltip_desc": "",
+            "bottom_label": "Maximum Nutrient Retention"
+          }
+        },
+        "tagline_sub_nR9nBX": {
+          "type": "tagline_sub",
+          "settings": {
+            "icon": "shopify://shop_images/extract_560d54f9-375a-45aa-981d-59ba7c8209d3.svg",
+            "text": "Australian Single Origin"
+          }
+        }
+      },
+      "block_order": [
+        "stat_circle_336cQP",
+        "stat_circle_meQiJa",
+        "stat_circle_V8MT9Y",
+        "tagline_sub_86PARc",
+        "card_bullet_jMmxRW",
+        "card_bullet_PQqYc3",
+        "stat_circle_Hhd9iw",
+        "tagline_sub_nR9nBX"
+      ],
+      "name": "AIWO Difference",
+      "settings": {
+        "bg_desktop": "shopify://shop_images/Desktop-BG.png",
+        "bg_mobile": "shopify://shop_images/Mobile-BG.png",
+        "heading": "Not All Olive Oil",
+        "heading_italic": "is the same.",
+        "main_tag": "Natural Polyphenols",
+        "card_heading_white": "DELIVERING",
+        "card_heading_gold": "MAX POTENCY",
+        "card_icon": "shopify://shop_images/Frame_d47b8e26-3f6e-4c61-b06d-0e22994683c3.svg",
+        "disclaimer": "*Storage: Store below 23°C, away from direct sunlight. Consume within recommended period after opening."
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You May Also Like...",
+        "highlight_type": "underline",
+        "heading_size": 100,
+        "heading_tag": "h2",
+        "heading_alignment": "center",
+        "products_to_show": 5,
+        "background_color_light": "",
+        "background_color_dark": "",
+        "show_vendor": false,
+        "show_rating": true,
+        "show_highlighted_features": true,
+        "show_highlighted_attributes": true,
+        "show_quickview": true,
+        "enable_carousel_desktop": false,
+        "enable_swiper_mobile": true,
+        "enable_arrow_mobile": false,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_section_divider": false,
+        "spacing": 28,
+        "padding_top": 56,
+        "padding_bottom": 88,
+        "columns_mobile": "1",
+        "show_section_divider_mobile": false,
+        "spacing_mobile": 16,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "aiwo_comparison_wVNYTt": {
+      "type": "aiwo-comparison",
+      "blocks": {
+        "comparison_row_mcaRP8": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "100% Cold Pressed",
+            "right_feature": "Heat extraction common"
+          }
+        },
+        "comparison_row_VaPp4F": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Single Origin Australia",
+            "right_feature": "Blended origins"
+          }
+        },
+        "comparison_row_YJRD3c": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "Natural Polyphenols Intact",
+            "right_feature": "Polyphenol content not declared"
+          }
+        },
+        "comparison_row_iBKFFz": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "UV-Resistant Glass Bottl",
+            "right_feature": "Clear plastic or glass"
+          }
+        },
+        "comparison_row_QTKPHg": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "No Added Preservatives",
+            "right_feature": "Additives vary by brand"
+          }
+        },
+        "comparison_row_RCAJmk": {
+          "type": "comparison_row",
+          "settings": {
+            "left_feature": "FSSAI Licensed",
+            "right_feature": "Certification varies"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_row_mcaRP8",
+        "comparison_row_VaPp4F",
+        "comparison_row_YJRD3c",
+        "comparison_row_iBKFFz",
+        "comparison_row_QTKPHg",
+        "comparison_row_RCAJmk"
+      ],
+      "name": "AIWO Comparison Table",
+      "settings": {
+        "tagline": "WHY AIWO",
+        "heading": "AIWO Extra Virgin Olive Oil vs.",
+        "heading_italic": "Others",
+        "left_image": "shopify://shop_images/Frame_2147224933_7772b456-55db-4a96-9492-0e7d5273a6fa.png",
+        "left_title": "",
+        "icon_check": "shopify://shop_images/Frame_12.svg",
+        "btn_text": "Buy Now",
+        "btn_link": "https://shop-aiwo.myshopify.com/cart/37735838122166:1?channel=buy_button",
+        "right_image": "shopify://shop_images/Frame_2147224934_fadab04f-0424-45ae-9a35-aa41c242fa64.png",
+        "right_title": "",
+        "icon_cross": "shopify://shop_images/Group_13.svg"
+      }
+    },
+    "section_evoo_v3_faq_rRJhLR": {
+      "type": "section-evoo-v3-faq",
+      "blocks": {
+        "faq_item_BFc6Am": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What makes Olive Aura different from any other \"extra virgin\" olive oil on the shelf?",
+            "answer": "<p>Most olive oils sit 6–24 hours before pressing enough time for oxidation to quietly begin. Olive Aura goes from harvest to cold-press in under 3 hours. That's not a marketing line; it's a process decision that preserves polyphenols, natural flavour, and low acidity that cheaper brands simply can't replicate. Every lot is also independently lab-tested scan the QR code and read the actual Certificate of Analysis yourself.</p>"
+          }
+        },
+        "faq_item_pgG9dR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "The label says \"cold-pressed.\" Isn't that standard? Why does it matter here?",
+            "answer": "<p>Cold-pressed\" is widely misused. Many brands heat the olives to 35–40 °C during extraction to improve yield  which destroys the delicate polyphenols responsible for that signature peppery finish and most of the antioxidant activity. Olive Aura maintains temperatures below 27 °C throughout the entire process true cold extraction, verified by independent labs under NATA accreditation and AOCS standards. True Cold Extraction · &lt;27 °C</p>"
+          }
+        },
+        "faq_item_zet6LP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I know the polyphenol content is actually high and not just a claim?",
+            "answer": "<p>You verify it. Olive Aura is triple-tested by NABL-accredited independent laboratories  not in-house quality checks. Every bottle carries a QR code linked to the actual Certificate of Analysis for that lot. Over 70% polyphenol content and more than 80% oleic acid these are measurable values, not estimates. Polyphenols are the compounds that help reduce oxidative stress and support healthy inflammatory responses in the body. NABL Lab-Verified · QR-Traceable</p>"
+          }
+        },
+        "faq_item_Q6TUxh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this oil blended with cheaper imports? How do I know it's 100% Australian?",
+            "answer": "<p>Olive Aura is single-origin sourced exclusively from Australian groves, never blended with cheaper bulk imports or refined oils. Blending is a common industry practice used to reduce costs, but it dilutes polyphenol levels and masks inferior quality. What's in the bottle is pure fruit expression: 100% cold-pressed Australian extra virgin olive oil nothing added, nothing corrected, nothing hidden.<br/>Single-Origin · No Blending</p>"
+          }
+        },
+        "faq_item_WyBt4K": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does the packaging actually protect the oil's quality, or is that just branding?",
+            "answer": "<p>Olive oil's three enemies are light, heat, and oxygen. Olive Aura's packaging counters all three: dark-tinted bottles block UV light, cool-chain storage maintains temperature integrity from grove to shelf, and nitrogen flushing replaces oxygen in the bottle before sealing preventing oxidation before you even open it. This level of post-extraction care is rare, and it's why Olive Aura retains its bright, clean, peppery flavour until the last drop. Nitrogen-Flushed · Dark-Glass · Cool-Chain</p>"
+          }
+        },
+        "faq_item_TGrNaL": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why should I use olive oil specifically for heart health isn't all cooking oil the same?",
+            "answer": "<p>Far from it. Olive Aura contains 68.5% monounsaturated fat (MUFA) the well-researched heart-healthy fat associated with supporting healthy cholesterol levels and reducing oxidative stress. Most refined cooking oils are high in omega-6 polyunsaturated fats that can contribute to inflammation when consumed in excess. Olive Aura is also low in saturated fat. Combined with its polyphenol content, it supports cardiovascular health, energy metabolism, and overall well-being making it liquid nutrition, not just a cooking medium. 68.5% MUFA · Heart-Healthy Fats Freshness you can measure. Purity you can trust.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_BFc6Am",
+        "faq_item_pgG9dR",
+        "faq_item_zet6LP",
+        "faq_item_Q6TUxh",
+        "faq_item_WyBt4K",
+        "faq_item_TGrNaL"
+      ],
+      "name": "EVOO v3 - FAQ",
+      "settings": {
+        "faq_tag": "QUESTIONS",
+        "heading": "Straight answers.",
+        "dropdown_svg": "shopify://shop_images/keyboard_arrow_up.svg"
+      }
+    },
+    "177510445730616487": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_009ce11_pnkBHH": {
+          "type": "ai_gen_block_009ce11",
+          "name": "V3- temporary",
+          "settings": {
+            "background_image": "shopify://shop_images/CTA_0a37e659-17d9-4ecb-9ae8-4b986cc5ebf5.png",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.3,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "padding_top_mobile": 60,
+            "padding_bottom_mobile": 60,
+            "content_max_width": 1000,
+            "spacing_between_elements": 20,
+            "heading": "Real olive oil. Every day.",
+            "heading_size": 48,
+            "heading_size_mobile": 32,
+            "heading_font_weight": "700",
+            "heading_color": "#ffffff",
+            "description": "Single-origin Australian EVOO. Cold pressed. Polyphenols intact. Every bottle.",
+            "description_size": 18,
+            "description_size_mobile": 16,
+            "description_font_weight": "400",
+            "description_color": "#ffffff",
+            "show_button": true,
+            "button_text": "Buy Now",
+            "button_font_size": 16,
+            "button_font_size_mobile": 14,
+            "button_font_weight": "600",
+            "button_padding_vertical": 16,
+            "button_padding_horizontal": 40,
+            "button_border_radius": 4,
+            "button_background_color": "#ffffff",
+            "button_text_color": "#000000",
+            "button_hover_background_color": "#0c0c0d",
+            "button_hover_text_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_009ce11_pnkBHH"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "aiwo_evoo_v3_styles",
+    "aiwo_evoo_v3_breadcrumb",
+    "aiwo_evoo_v3_gallery_enhancements",
+    "aiwo_evoo_v3_qty_label",
+    "main",
+    "aiwo_evoo_v3_aiwo_difference_VDk9xD",
+    "product-recommendations",
+    "aiwo_comparison_wVNYTt",
+    "section_evoo_v3_faq_rRJhLR",
+    "177510445730616487"
+  ]
+}

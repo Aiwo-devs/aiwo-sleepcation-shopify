@@ -1,0 +1,685 @@
+{%- comment -%}
+  Scoped duplicate — product header for product.epa-500mg-v3
+  Rendered only by: product.epa-500mg-v3
+  Do not make this section a dependency of any other template.
+{%- endcomment -%}
+{%- liquid
+  assign base_size_heading = settings.heading_base_size | times: 0.0225
+  assign font_size_heading = section.settings.title_size | default: 100 | times: 0.01 | times: base_size_heading
+  assign thumbnail_desktop = false
+  if section.settings.desktop_media_layout == 'thumbnail_slider'
+    assign thumbnail_desktop = true
+  endif
+  assign mobile_media_full = true
+  if section.settings.mobile_media_size == '75%'
+    assign mobile_media_full = false
+  endif
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- comment -%}
+  aiwo-pdp-product-info.css: deferred — removes it from critical render path.
+  aiwo-evoo-v3-gallery.css: removed — aiwo_evoo_v3_gallery_enhancements section
+  already loads it once; duplicate was adding 525ms to the network tree.
+  Google Fonts: preload pattern — eliminates 750ms render-blocking request.
+  Preconnect tags removed — theme <head> already has them.
+{%- endcomment -%}
+<link rel="stylesheet" media="print" onload="this.media='all'" href="{{ 'aiwo-pdp-product-info.css' | asset_url }}">
+<noscript>{{ 'aiwo-pdp-product-info.css' | asset_url | stylesheet_tag }}</noscript>
+
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap"></noscript>
+
+{%- comment -%}
+  aiwo-evoo-v3-gallery.js and aiwo-evoo-v3-swiper.js are loaded once by the
+  aiwo_evoo_v3_gallery_enhancements section already present in this template.
+  Do not load them here — double-loading corrupts Splide DOM on mobile.
+  The class stamp below allows those scripts' isEvooV3Page() guard to pass,
+  enabling initMobileDots() (dot overlay) and initThumbnailScrollSync().
+{%- endcomment -%}
+<script>
+  (function () {
+    var mc = document.getElementById('MainContent');
+    if (mc) mc.classList.add('theme-template-suffix-extra-virgin-olive-oil-v3');
+  })();
+</script>
+
+{%- style -%}
+  .content-{{ section.id }} { background: {{ settings.colors_background }}; }
+  .dark .content-{{ section.id }} { background: {{ settings.colors_dark_background }}; }
+  .title-size--{{ section.id }} { font-size: {{ font_size_heading | times: 0.60 }}rem; }
+  @media (min-width: 767px) { .title-size--{{ section.id }} { font-size: {{ font_size_heading }}rem; } }
+  @media (min-width: 768px) {
+    .main-product-{{ section.id }} .product-media-container #x-product-thumbnail-{{ section.id }} { display: block !important; width: 15%; min-width: 60px; max-width: 85px; position: sticky; top: calc(var(--height-header,60px) + 20px); align-self: flex-start; height: fit-content; max-height: 80vh; overflow-y: auto; margin-right: 10px; flex-shrink: 0; }
+    .main-product-{{ section.id }} .product-media-container .x-splide { display: none !important; }
+    .main-product-{{ section.id }} .product-media-container #x-product-thumbnail-{{ section.id }} > div { position: relative !important; }
+    .main-product-{{ section.id }} .product-media-container .splide-image { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; }
+    .main-product-{{ section.id }} #stacked-{{ section.id }} { display: flex !important; flex-direction: column !important; gap: 8px !important; flex: 1; flex-wrap: nowrap !important; }
+    .main-product-{{ section.id }} #stacked-{{ section.id }} .product-media-item { width: 100% !important; }
+  }
+{%- endstyle -%}
+
+<style>
+  /* thumbnail_slider: carousel is the main image — keep it visible; add sticky + thumbnail polish */
+  @media (min-width: 768px) {
+    .main-product-{{ section.id }} .product-info { position: sticky !important; top: calc(var(--height-header, 60px) + 20px) !important; align-self: flex-start !important; }
+    .main-product-{{ section.id }} .x-thumbnail { opacity: 0.4 !important; transition: opacity 0.2s; cursor: pointer; }
+    .main-product-{{ section.id }} .x-thumbnail.is-active { opacity: 1 !important; border: 1.5px solid #0C0C0D !important; border-radius: 0 !important; }
+  }
+  .main-product-{{ section.id }}, .main-product-{{ section.id }} * { font-family: 'Outfit', sans-serif; }
+  /* Mobile — hide arrows, show native Splide pagination dots */
+  @media (max-width: 767px) {
+    .main-product-{{ section.id }} .splide__arrows { display: none !important; }
+    .main-product-{{ section.id }} .evoo-v3-splide-wrap { flex: 1; }
+    .main-product-{{ section.id }} .splide__pagination { display: flex !important; justify-content: center; gap: 6px; padding: 12px 0 4px; list-style: none; margin: 0; }
+    .main-product-{{ section.id }} .splide__pagination__page { width: 8px; height: 8px; border-radius: 50%; background: #d1d1d1; border: none; padding: 0; cursor: pointer; transition: background 0.2s; }
+    .main-product-{{ section.id }} .splide__pagination__page.is-active { background: #1a1a1a; }
+  }
+  @keyframes cartShake {
+    0%,100% { transform: translateX(0); }
+    20%,60%  { transform: translateX(-4px); }
+    40%,80%  { transform: translateX(4px); }
+  }
+  .add_to_cart_button.shake-cart { animation: cartShake 0.5s ease-in-out; }
+
+  /* ── Tag line ── */
+  .aiwo-v1-tagline__label { display:inline-block; padding:5px 14px; border:1px solid #888; font-size:10px; letter-spacing:2px; text-transform:uppercase; font-weight:400; color:#555; }
+
+  /* ── Product title ── */
+  .main-product-{{ section.id }} .product-title { font-family:'Outfit',sans-serif!important; font-size:30px!important; font-weight:700!important; line-height:1.15!important; color:#1a1a1a!important; letter-spacing:-0.02em; }
+  @media (min-width:768px) { .main-product-{{ section.id }} .product-title { font-size:38px!important; } }
+
+  /* ── Price ── */
+  .main-product-{{ section.id }} #price-{{ section.id }} { font-size:1.3rem!important; font-weight:600!important; color:#1a1a1a; }
+
+  /* ── Purchase stats ── */
+  .aiwo-v1-stats__row { display:flex; justify-content:space-between; align-items:center; }
+  .aiwo-v1-stats__purchased { color:#666666; font-size:13px; font-weight:400; }
+  .aiwo-v1-stats__weight { font-size:14px; font-weight:500; color:#222; }
+
+  /* ── Marquee ── */
+  .aiwo-v1-marquee { overflow:hidden; white-space:nowrap; padding:10px 0; position:relative; }
+  .aiwo-v1-marquee::before, .aiwo-v1-marquee::after { content:''; position:absolute; top:0; bottom:0; width:60px; z-index:2; pointer-events:none; }
+  .aiwo-v1-marquee::before { left:0; background:linear-gradient(to right,var(--marquee-bg,#2c2416),transparent); }
+  .aiwo-v1-marquee::after  { right:0; background:linear-gradient(to left,var(--marquee-bg,#2c2416),transparent); }
+  .aiwo-v1-marquee__track  { display:inline-flex; animation:aiwo-marquee 20s linear infinite; }
+  .aiwo-v1-marquee__item   { display:inline-flex; align-items:center; gap:8px; padding:0 14px; font-size:13px; font-weight:500; letter-spacing:0.5px; }
+  .aiwo-v1-marquee__item img { width:16px; height:16px; object-fit:contain; }
+  .aiwo-v1-marquee__sep { font-size:8px; opacity:0.5; }
+  @keyframes aiwo-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* ── Benefits grid ── */
+  .aiwo-v1-benefits__grid { display:grid; grid-template-columns:1fr 1fr; gap:0; background:#F6F3EF; border-radius:8px; overflow:hidden; }
+  .aiwo-v1-benefits__item { display:flex; gap:10px; align-items:flex-start; padding:14px 16px; border-bottom:1px solid #eeece8; }
+  .aiwo-v1-benefits__item:nth-child(odd) { border-right:1px solid #eeece8; }
+  .aiwo-v1-benefits__item:nth-last-child(-n+2) { border-bottom:none; }
+  .aiwo-v1-benefits__icon-wrap { flex-shrink:0; width:35px; height:40px; display:flex; align-items:center; justify-content:center; }
+  .aiwo-v1-benefits__icon-wrap img { width:28px; height:28px; object-fit:contain; }
+  .aiwo-v1-benefits__emoji { font-size:22px; line-height:1; }
+  .aiwo-v1-benefits__title { font-size:16px; font-weight:600; margin:0 0 1px; color:#333333; }
+  .aiwo-v1-benefits__desc  { font-size:13px; color:#333333; margin:0; line-height:1.4; }
+
+  /* ── Badges ── */
+  .aiwo-v1-badges__grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; text-align:center; padding:8px 0; }
+  .aiwo-v1-badges__item { display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .aiwo-v1-badges__icon { width:36px; height:36px; object-fit:contain; }
+  .aiwo-v1-badges__svg  { width:36px; height:36px; }
+  .aiwo-v1-badges__label { font-size:10px; font-weight:500; color:#333; line-height:1.3; letter-spacing:0.01em; }
+  .aiwo-v1-badges__dots { display:none; }
+
+  /* ── Buy buttons ── */
+  .main-product-{{ section.id }} .x-block-buy-buttons .add_to_cart_button { background:#1a1a1a!important; color:#fff!important; border:1.5px solid #1a1a1a!important; font-weight:600!important; font-size:14px!important; border-radius:4px!important; padding:14px 20px!important; text-transform:none!important; letter-spacing:0!important; width:100%!important; margin-bottom:0!important; }
+
+  /* ── Qty box ── */
+  .x-evoo-v3-qty-box { display:flex; height:44.906px; align-items:center; border-radius:7.484px; border:1.247px solid #1A1A1A; background:transparent; width:fit-content; overflow:hidden; }
+  .x-evoo-v3-btn-minus,.x-evoo-v3-btn-plus { padding:0 15px; font-size:20px; border:none; cursor:pointer; height:100%; display:flex; align-items:center; justify-content:center; background:transparent; color:#1a1a1a; }
+  .x-evoo-v3-btn-minus { width:45px; border-right:1.247px solid #1A1A1A; border-radius:4.99px 0 0 4.99px; }
+  .x-evoo-v3-btn-plus  { width:47.4px; background:#1a1a1a; color:white; border-radius:0 4.99px 4.99px 0; }
+  .x-evoo-v3-input { width:40px; text-align:center; border:none; font-weight:600; font-size:16px; outline:none; padding:0; margin:0; background:transparent; -moz-appearance:textfield; }
+  .x-evoo-v3-input::-webkit-outer-spin-button,.x-evoo-v3-input::-webkit-inner-spin-button { -webkit-appearance:none; margin:0; }
+  .x-evoo-v3-atc-btn { background:#1a1a1a!important; color:white!important; border-radius:4px!important; font-weight:600!important; width:100%!important; border:none!important; cursor:pointer!important; font-size:16px!important; display:flex!important; align-items:center!important; justify-content:center!important; margin:0!important; transition:all 0.2s ease!important; }
+  .x-evoo-v3-atc-btn:not(:disabled):hover { background:#383838!important; transform:scale(1.01); }
+  .x-evoo-v3-atc-btn:disabled { opacity:0.6; cursor:not-allowed!important; }
+  .x-evoo-v3-desktop-layout { display:none!important; }
+  @media (max-width:767px) { .x-evoo-v3-mobile-layout { display:none!important; } }
+  @media (min-width:768px) {
+    .x-evoo-v3-desktop-layout { display:flex!important; flex-direction:row!important; gap:16px!important; width:100%!important; align-items:flex-end!important; }
+    .x-evoo-v3-qty-wrapper { flex-shrink:0; }
+    .x-evoo-v3-btn-wrapper { flex-grow:1; display:flex!important; flex-direction:column!important; width:100%!important; }
+    .x-evoo-v3-btn-wrapper form { width:100%!important; margin:0!important; display:flex!important; }
+    .x-evoo-v3-atc-btn { padding:0 48px!important; height:48px!important; }
+  }
+  @media (min-width:1024px) { .x-evoo-v3-atc-btn { padding:0 112px!important; } }
+
+  /* ── SealSubscription ── */
+  .sealsubs-target-element { width:100%; grid-column:1 / -1; }
+  .sealsubs-container { width:100%; }
+  .sealsubs-container .sls-option-container { width:100%; }
+  .sealsubs-container .seal-row label { font-weight:bold; font-size:16px; }
+  .sealsubs-container .sls-option-container.sls-active { border:2px solid black; border-radius:6px; }
+  .sls-option-container.seal-table { margin-top:10px; background:#F6F3EF; }
+  .main-product-price.price.leading-none { padding-top:25px; }
+
+  /* ── Mobile badges scroll ── */
+  @media (max-width:480px) {
+    .aiwo-v1-badges__grid { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; gap:0; scrollbar-width:none; padding:8px 0; }
+    .aiwo-v1-badges__grid::-webkit-scrollbar { display:none; }
+    .aiwo-v1-badges__item { flex:0 0 calc(100% / 3); scroll-snap-align:start; padding:0 8px; box-sizing:border-box; }
+    .aiwo-v1-badges__dots { display:flex; justify-content:center; gap:6px; padding:8px 0 0; }
+    .aiwo-v1-badges__dot { width:6px; height:6px; border-radius:50%; background:#ccc; border:none; padding:0; cursor:pointer; transition:background 0.3s; }
+    .aiwo-v1-badges__dot.active { background:#555; }
+  }
+</style>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var sectionId = '{{ section.id }}';
+
+    var thumbContainer   = document.getElementById('x-product-thumbnail-' + sectionId);
+    var stackedContainer = document.getElementById('stacked-' + sectionId);
+    if (!thumbContainer || !stackedContainer) return;
+
+    thumbContainer.querySelectorAll('.x-thumbnail').forEach(function (thumb) {
+      thumb.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.getElementById('postion-image-' + thumb.getAttribute('data-media-id'));
+        if (target) {
+          var headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--height-header')) || 60;
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - headerH - 30, behavior: 'smooth' });
+        }
+      });
+    });
+
+    var images = stackedContainer.querySelectorAll('.product-media-item');
+    var thumbs = thumbContainer.querySelectorAll('.x-thumbnail');
+    var ticking = false;
+    function updateActiveThumbnail() {
+      var activeId = null;
+      images.forEach(function (img) {
+        var r = img.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.5 && r.bottom > 100) activeId = img.getAttribute('data-media-id');
+      });
+      thumbs.forEach(function (t) { t.classList.toggle('is-active', t.getAttribute('data-media-id') === activeId); });
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(function () { updateActiveThumbnail(); ticking = false; }); ticking = true; }
+    });
+    updateActiveThumbnail();
+  });
+
+  function updateButtonTextAiwo() {
+    var checked = document.querySelector('input.sls-option:checked');
+    var btnText = document.querySelector('.x-atc-text');
+    if (!checked || !btnText) return;
+    btnText.textContent = checked.value === 'subscription' ? 'Start the Protocol' : 'Add to cart';
+  }
+  var sealCheck = setInterval(function () {
+    var radios = document.querySelectorAll('.sls-option');
+    if (radios.length) {
+      updateButtonTextAiwo();
+      radios.forEach(function (r) { r.addEventListener('change', updateButtonTextAiwo); });
+      clearInterval(sealCheck);
+    }
+  }, 300);
+
+  /* ── EPA tagline swap ──────────────────────────────────────────────────────
+     aiwo-evoo-v3-swiper.js guards on theme-template-suffix-extra-virgin-olive-oil-v3
+     and never fires on EPA. Mirror it here without that guard so the
+     aiwo-tagline-wrapper (with pulse-dot + info icon tooltip) replaces the
+     plain .aiwo-v1-tagline block rendered by product-template-evoo-v3.
+  ────────────────────────────────────────────────────────────────────────── */
+  (function () {
+    function applyEpaTagline() {
+      var tpl = document.getElementById('evoo-v3-tagline-tpl');
+      if (!tpl) return;
+      var newHTML = tpl.innerHTML.trim();
+      if (!newHTML) return;
+      var mc = document.getElementById('MainContent');
+      if (!mc) return;
+      var orig = mc.querySelector('.aiwo-v1-tagline.w-full');
+      if (!orig) return;
+      var tmp = document.createElement('div');
+      tmp.innerHTML = newHTML;
+      var newEl = tmp.firstElementChild;
+      if (!newEl) return;
+      orig.parentNode.replaceChild(newEl, orig);
+      if (window.Alpine) Alpine.initTree(newEl);
+    }
+    document.addEventListener('DOMContentLoaded', applyEpaTagline);
+    document.addEventListener('shopify:section:load', applyEpaTagline);
+  })();
+
+  /* Fix sticky ATC: product-template-evoo-v3 has a hardcoded EVOO section ID in its
+     IntersectionObserver — override here with the correct EPA price element ID. */
+  document.addEventListener('DOMContentLoaded', function () {
+    var priceEl = document.getElementById('price-{{ section.id }}');
+    if (!priceEl || !window.IntersectionObserver) return;
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var isMobile = window.innerWidth < 768;
+        var show = isMobile
+          ? (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight)
+          : (!entry.isIntersecting && entry.boundingClientRect.top < 0);
+        window.dispatchEvent(new CustomEvent(show ? 'evoo-sticky-reveal'    : 'evoo-sticky-hide'));
+        window.dispatchEvent(new CustomEvent(show ? 'eurus:sticky-atc:show' : 'eurus:sticky-atc:hide'));
+      });
+    }, { threshold: 0 }).observe(priceEl);
+  });
+</script>
+
+<div id="popup-fbt-{{ section.id }}"></div>
+<div class="product-page main-product main-product-{{ section.id }}">
+  <div id="breadcrumbs--{{ section.id }}">
+    {%- if settings.advanced_show_breadcrumbs and section.settings.show_breadcrumbs -%}
+      {%- render 'breadcrumbs', show_image_banner: false -%}
+    {%- endif -%}
+  </div>
+  {%- render 'product-template-evoo-v3',
+    product: product,
+    product_form_id: product_form_id,
+    is_product_page: true,
+    transition_style: 'fade',
+    enable_sticky_image: true,
+    media_layout: section.settings.desktop_media_layout,
+    show_thumbnail_desktop: thumbnail_desktop,
+    show_arrow_button: section.settings.show_arrow_button,
+    show_thumbnail_mobile: section.settings.show_thumnail_mobile,
+    mobile_media_full: mobile_media_full,
+    lazy_load: false,
+    spacing_col: section.settings.spacing_col,
+    full_width_main_page: section.settings.full_width,
+    show_first_image_avaiable: true,
+    enable_microdata: false
+  -%}
+</div>
+
+{%- comment -%}
+  product-recommendations.js, recently-viewed.js, preview-color-swatches.js
+  removed — theme loads all three globally. Duplicate script tags caused
+  Lighthouse "Remove large duplicate JS" warning and double execution.
+{%- endcomment -%}
+
+
+{% schema %}
+{
+  "name": "AIWO PDP — Product Info",
+  "tag": "section",
+  "class": "x-section section-product-info",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_media_layout",
+      "label": "Desktop gallery mode",
+      "default": "thumbnail_slider",
+      "options": [
+        { "value": "thumbnail_slider", "label": "Stacked + left thumbnails" },
+        { "value": "stacked",          "label": "Stacked only" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_position",
+      "label": "Thumbnail position",
+      "default": "vertical",
+      "options": [
+        { "value": "vertical",   "label": "Vertical (left strip)" },
+        { "value": "horizontal", "label": "Horizontal (bottom row)" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_image",
+      "label": "Sticky product info on desktop",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "mobile_media_size",
+      "label": "Mobile gallery width",
+      "default": "100%",
+      "options": [
+        { "value": "100%", "label": "Full width" },
+        { "value": "75%",  "label": "75%" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrow_button",
+      "label": "Show gallery arrows",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_thumnail_mobile",
+      "label": "Show thumbnails on mobile",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "spacing_col",
+      "label": "Column spacing",
+      "default": "normal",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "small",  "label": "Small" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "transition_style",
+      "label": "Image transition",
+      "default": "fade",
+      "options": [
+        { "value": "fade",  "label": "Fade" },
+        { "value": "slide", "label": "Slide" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_first_image_avaiable",
+      "label": "Show first available variant image",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_microdata",
+      "label": "Enable microdata",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Breadcrumb"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "label": "Padding top (desktop)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "label": "Padding bottom (desktop)",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    { "type": "@app" },
+    {
+      "type": "product_tag_line_v1",
+      "name": "Tagline pill",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "tag_text", "label": "Tag text", "default": "LONGEVIS MATRIX · Pillar 3" }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "Rating",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "product_name",
+      "name": "Product name",
+      "limit": 1,
+      "settings": [
+        { "type": "range", "id": "title_size", "min": 50, "max": 200, "step": 10, "unit": "%", "label": "Title size", "default": 100 },
+        { "type": "select", "id": "heading_tag", "label": "Heading tag", "default": "h1",
+          "options": [{ "value": "h1", "label": "H1" }, { "value": "h2", "label": "H2" }, { "value": "p", "label": "p" }] }
+      ]
+    },
+    {
+      "type": "purchase_stats_v1",
+      "name": "Purchase stats",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "purchase_text", "label": "Purchase descriptor" },
+        { "type": "text", "id": "weight_text",   "label": "Weight / size label" }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1,
+      "settings": [
+        { "type": "checkbox", "id": "show_tax_and_shipping", "label": "Show tax & shipping", "default": false },
+        { "type": "range", "id": "text_size_price", "min": 50, "max": 200, "step": 10, "unit": "%", "label": "Price size", "default": 70 }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text block",
+      "settings": [
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>MRP Incl. of all taxes</p>" },
+        { "type": "text", "id": "number_of_lines_shown", "label": "Lines shown", "default": "none" },
+        { "type": "text", "id": "read_more_label", "label": "Read more label", "default": "Read more" },
+        { "type": "text", "id": "see_less_label",  "label": "See less label",  "default": "See less" }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        { "type": "checkbox", "id": "show_in_tab",     "label": "Show in tab",      "default": false },
+        { "type": "checkbox", "id": "open_by_default", "label": "Open by default",  "default": true },
+        { "type": "text",     "id": "heading",          "label": "Tab heading",      "default": "Description" },
+        { "type": "text",     "id": "number_of_lines_shown", "label": "Lines shown", "default": "none" },
+        { "type": "text",     "id": "read_more_label", "label": "Read more label",  "default": "Read more" },
+        { "type": "text",     "id": "see_less_label",  "label": "See less label",   "default": "See less" }
+      ]
+    },
+    {
+      "type": "trust_badges_v1",
+      "name": "Trust badges",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "badge_1_title", "label": "Badge 1 title" }, { "type": "image_picker", "id": "badge_1_icon", "label": "Badge 1 icon" },
+        { "type": "text", "id": "badge_2_title", "label": "Badge 2 title" }, { "type": "image_picker", "id": "badge_2_icon", "label": "Badge 2 icon" },
+        { "type": "text", "id": "badge_3_title", "label": "Badge 3 title" }, { "type": "image_picker", "id": "badge_3_icon", "label": "Badge 3 icon" },
+        { "type": "text", "id": "badge_4_title", "label": "Badge 4 title" }, { "type": "image_picker", "id": "badge_4_icon", "label": "Badge 4 icon" },
+        { "type": "text", "id": "badge_5_title", "label": "Badge 5 title" }, { "type": "image_picker", "id": "badge_5_icon", "label": "Badge 5 icon" },
+        { "type": "text", "id": "badge_6_title", "label": "Badge 6 title" }, { "type": "image_picker", "id": "badge_6_icon", "label": "Badge 6 icon" }
+      ]
+    },
+    {
+      "type": "benefits_grid_v1",
+      "name": "Benefits grid",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "benefit_1_title", "label": "Benefit 1 title" }, { "type": "text", "id": "benefit_1_text", "label": "Benefit 1 desc" }, { "type": "image_picker", "id": "benefit_1_icon", "label": "Benefit 1 icon" },
+        { "type": "text", "id": "benefit_2_title", "label": "Benefit 2 title" }, { "type": "text", "id": "benefit_2_text", "label": "Benefit 2 desc" }, { "type": "image_picker", "id": "benefit_2_icon", "label": "Benefit 2 icon" },
+        { "type": "text", "id": "benefit_3_title", "label": "Benefit 3 title" }, { "type": "text", "id": "benefit_3_text", "label": "Benefit 3 desc" }, { "type": "image_picker", "id": "benefit_3_icon", "label": "Benefit 3 icon" },
+        { "type": "text", "id": "benefit_4_title", "label": "Benefit 4 title" }, { "type": "text", "id": "benefit_4_text", "label": "Benefit 4 desc" }, { "type": "image_picker", "id": "benefit_4_icon", "label": "Benefit 4 icon" }
+      ]
+    },
+    {
+      "type": "marquee_v1",
+      "name": "Marquee strip",
+      "limit": 1,
+      "settings": [
+        { "type": "color", "id": "marquee_bg_color",   "label": "Background colour", "default": "#2c2416" },
+        { "type": "color", "id": "marquee_text_color", "label": "Text colour",        "default": "#ffffff" },
+        { "type": "text", "id": "marquee_text_1", "label": "Item 1" }, { "type": "image_picker", "id": "marquee_icon_1", "label": "Icon 1" },
+        { "type": "text", "id": "marquee_text_2", "label": "Item 2" }, { "type": "image_picker", "id": "marquee_icon_2", "label": "Icon 2" },
+        { "type": "text", "id": "marquee_text_3", "label": "Item 3" }, { "type": "image_picker", "id": "marquee_icon_3", "label": "Icon 3" },
+        { "type": "text", "id": "marquee_text_4", "label": "Item 4" }, { "type": "image_picker", "id": "marquee_icon_4", "label": "Icon 4" },
+        { "type": "text", "id": "marquee_text_5", "label": "Item 5" }, { "type": "image_picker", "id": "marquee_icon_5", "label": "Icon 5" },
+        { "type": "text", "id": "marquee_text_6", "label": "Item 6" }, { "type": "image_picker", "id": "marquee_icon_6", "label": "Icon 6" }
+      ]
+    },
+    {
+      "type": "key_component_banner_v1",
+      "name": "Key component banner",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "percentage",     "label": "Percentage" },
+        { "type": "text", "id": "component_text", "label": "Component name" },
+        { "type": "text", "id": "sub_text",       "label": "Sub text" }
+      ]
+    },
+    {
+      "type": "gift_wrapping",
+      "name": "Gift wrapping",
+      "limit": 1,
+      "settings": [
+        { "type": "text",     "id": "text_gift",         "label": "Gift wrapping label" },
+        { "type": "checkbox", "id": "show_border",        "label": "Show border",         "default": false },
+        { "type": "color",    "id": "color_icon_light",   "label": "Icon colour (light)" },
+        { "type": "color",    "id": "border_color_light", "label": "Border colour (light)" },
+        { "type": "color",    "id": "color_icon_dark",    "label": "Icon colour (dark)" },
+        { "type": "color",    "id": "border_color_dark",  "label": "Border colour (dark)" }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": [
+        { "type": "checkbox",     "id": "show_dynamic_checkout",    "label": "Show dynamic checkout",     "default": true },
+        { "type": "checkbox",     "id": "show_add_to_cart",         "label": "Show add to cart",          "default": true },
+        { "type": "checkbox",     "id": "show_atc_quantity",        "label": "Show quantity selector",    "default": true },
+        { "type": "image_picker", "id": "protocol_tooltip_icon",    "label": "Protocol tooltip icon" },
+        { "type": "text",         "id": "protocol_tooltip_title",   "label": "Protocol tooltip title" },
+        { "type": "text",         "id": "protocol_tooltip_desc",    "label": "Protocol tooltip description" }
+      ]
+    },
+    {
+      "type": "estimate_delivery",
+      "name": "Estimate delivery",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "html",
+      "name": "Custom HTML",
+      "settings": [
+        { "type": "html", "id": "html", "label": "HTML" }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        { "type": "text", "id": "button_label", "label": "Button label" },
+        { "type": "url",  "id": "button_link",  "label": "Button link" }
+      ]
+    },
+    {
+      "type": "recommended_products_v1",
+      "name": "Recommended products",
+      "limit": 1,
+      "settings": [
+        { "type": "text",         "id": "recs_tag",         "label": "Tag text" },
+        { "type": "text",         "id": "heading_text",     "label": "Heading" },
+        { "type": "text",         "id": "heading_italic",   "label": "Heading italic" },
+        { "type": "text",         "id": "description_text", "label": "Description" },
+        { "type": "image_picker", "id": "image_desktop",    "label": "Banner (desktop)" },
+        { "type": "image_picker", "id": "image_mobile",     "label": "Banner (mobile)" },
+        { "type": "checkbox",     "id": "show_desktop",     "label": "Show on desktop", "default": true },
+        { "type": "checkbox",     "id": "show_mobile",      "label": "Show on mobile",  "default": true },
+        { "type": "checkbox",     "id": "bundle_mode",      "label": "Bundle row",      "default": false },
+        { "type": "text",         "id": "bundle_pillar",    "label": "Bundle pillar" },
+        { "type": "text",         "id": "bundle_title",     "label": "Bundle title" },
+        { "type": "text",         "id": "bundle_desc",      "label": "Bundle description" },
+        { "type": "text",         "id": "bundle_best_pick_text", "label": "Bundle badge" },
+        { "type": "text",         "id": "bundle_custom_price",   "label": "Bundle price override" },
+        { "type": "product",      "id": "bundle_product_1", "label": "Bundle product 1" },
+        { "type": "product",      "id": "bundle_product_2", "label": "Bundle product 2" },
+        { "type": "product",      "id": "bundle_product_3", "label": "Bundle product 3" },
+        { "type": "product",      "id": "bundle_learn_more_product", "label": "Learn more product" },
+        { "type": "product",      "id": "product_1",        "label": "Product 1" }, { "type": "text", "id": "pillar_1", "label": "Pillar 1" }, { "type": "text", "id": "custom_title_1", "label": "Custom title 1" }, { "type": "text", "id": "desc_1", "label": "Desc 1" }, { "type": "text", "id": "best_pick_text_1", "label": "Badge 1" },
+        { "type": "product",      "id": "product_2",        "label": "Product 2" }, { "type": "text", "id": "pillar_2", "label": "Pillar 2" }, { "type": "text", "id": "custom_title_2", "label": "Custom title 2" }, { "type": "text", "id": "desc_2", "label": "Desc 2" }, { "type": "text", "id": "best_pick_text_2", "label": "Badge 2" },
+        { "type": "product",      "id": "product_3",        "label": "Product 3" }, { "type": "text", "id": "pillar_3", "label": "Pillar 3" }, { "type": "text", "id": "custom_title_3", "label": "Custom title 3" }, { "type": "text", "id": "desc_3", "label": "Desc 3" }, { "type": "text", "id": "best_pick_text_3", "label": "Badge 3" }
+      ]
+    },
+    {
+      "type": "proven_health_benefits_v1",
+      "name": "Proven health benefits",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "phb_tag",          "label": "Tag" },
+        { "type": "text", "id": "phb_title",         "label": "Heading" },
+        { "type": "text", "id": "phb_stat_1_num",    "label": "Stat 1 number" }, { "type": "text", "id": "phb_stat_1_label",  "label": "Stat 1 label" }, { "type": "text", "id": "phb_stat_1_source", "label": "Stat 1 source" },
+        { "type": "text", "id": "phb_stat_2_num",    "label": "Stat 2 number" }, { "type": "text", "id": "phb_stat_2_label",  "label": "Stat 2 label" }, { "type": "text", "id": "phb_stat_2_source", "label": "Stat 2 source" },
+        { "type": "text", "id": "phb_stat_3_num",    "label": "Stat 3 number" }, { "type": "text", "id": "phb_stat_3_label",  "label": "Stat 3 label" }, { "type": "text", "id": "phb_stat_3_source", "label": "Stat 3 source" },
+        { "type": "text", "id": "phb_stat_4_num",    "label": "Stat 4 number" }, { "type": "text", "id": "phb_stat_4_label",  "label": "Stat 4 label" }, { "type": "text", "id": "phb_stat_4_source", "label": "Stat 4 source" }
+      ]
+    },
+    {
+      "type": "complementary",
+      "name": "Complementary products",
+      "limit": 1,
+      "settings": [
+        { "type": "text",     "id": "heading",               "label": "Heading",          "default": "Buy It With" },
+        { "type": "checkbox", "id": "show_tab",              "label": "Show as tab",      "default": false },
+        { "type": "checkbox", "id": "show_background",       "label": "Show background",  "default": true },
+        { "type": "checkbox", "id": "show_border",           "label": "Show border",      "default": true },
+        { "type": "range",    "id": "max_product_show",      "label": "Max products",     "min": 1, "max": 10, "step": 1, "default": 4 },
+        { "type": "checkbox", "id": "enable_carousel_desktop", "label": "Desktop carousel", "default": true },
+        { "type": "checkbox", "id": "enable_swiper_mobile",  "label": "Mobile swiper",   "default": true },
+        { "type": "range",    "id": "number_product_per_page", "label": "Per page",       "min": 1, "max": 5, "step": 1, "default": 2 },
+        { "type": "select",   "id": "image_ratio",           "label": "Image ratio",      "default": "square",
+          "options": [{ "value": "square", "label": "Square" }, { "value": "portrait", "label": "Portrait" }] },
+        { "type": "checkbox", "id": "show_vendor",           "label": "Show vendor",      "default": false },
+        { "type": "checkbox", "id": "show_product_rating",   "label": "Show rating",      "default": false },
+        { "type": "checkbox", "id": "show_highlighted_features", "label": "Show features","default": false },
+        { "type": "checkbox", "id": "add_as_bundle",         "label": "Add as bundle",    "default": false }
+      ]
+    },
+    {
+      "type": "collapsible_tab",
+      "name": "Collapsible tab",
+      "settings": [
+        { "type": "checkbox", "id": "open_by_default", "label": "Open by default", "default": false },
+        { "type": "text",     "id": "heading",          "label": "Heading",         "default": "Collapsible tab" },
+        { "type": "richtext", "id": "tab_content",      "label": "Content" }
+      ]
+    },
+    {
+      "type": "social_sharing",
+      "name": "Social sharing",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "sticky_add_to_cart",
+      "name": "Sticky add to cart",
+      "limit": 1,
+      "settings": [
+        { "type": "select", "id": "desktop_display_type", "label": "Desktop display", "default": "full_width",
+          "options": [{ "value": "full_width", "label": "Full width" }, { "value": "popup", "label": "Popup" }] },
+        { "type": "checkbox", "id": "show_quantity_selector", "label": "Show quantity selector", "default": true },
+        { "type": "checkbox", "id": "link_to_atc_btn",        "label": "Link to ATC button",     "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "AIWO PDP — Product Info" }
+  ]
+}
+{% endschema %}

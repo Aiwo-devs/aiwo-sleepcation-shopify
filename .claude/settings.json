@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(shopify theme push *)",
+      "Bash(shopify theme publish *)",
+      "Bash(shopify theme delete *)",
+      "Bash(shopify theme rename *)",
+      "Bash(shopify theme share *)",
+      "Bash(shopify theme dev *)",
+      "Bash(git push *)"
+    ]
+  }
+}

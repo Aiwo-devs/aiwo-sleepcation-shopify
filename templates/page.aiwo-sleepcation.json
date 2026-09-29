@@ -74,7 +74,44 @@
         "button_label": "Book now",
         "image_alt": "A guest rests in bed beneath a 90-day programme timeline, from a Night 1 sleep baseline through regular check-ins."
       }
+    },
+    "aiwo_sleepcation_marquee": {
+      "type": "aiwo-sleepcation-marquee",
+      "blocks": {
+        "item_markers": {
+          "type": "item",
+          "settings": {
+            "label": "181+ markers",
+            "icon": "markers"
+          }
+        },
+        "item_eeg": {
+          "type": "item",
+          "settings": {
+            "label": "1 night, EEG",
+            "icon": "eeg"
+          }
+        },
+        "item_appointments": {
+          "type": "item",
+          "settings": {
+            "label": "6 appointments",
+            "icon": "appointments"
+          }
+        },
+        "item_programme": {
+          "type": "item",
+          "settings": {
+            "label": "One Programme",
+            "icon": "programme"
+          }
+        }
+      },
+      "block_order": ["item_markers", "item_eeg", "item_appointments", "item_programme"],
+      "settings": {
+        "aria_label": "Programme highlights"
+      }
     }
   },
-  "order": ["aiwo_sleepcation_subnav", "aiwo_sleepcation_hero"]
+  "order": ["aiwo_sleepcation_subnav", "aiwo_sleepcation_hero", "aiwo_sleepcation_marquee"]
 }

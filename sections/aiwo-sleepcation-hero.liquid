@@ -35,30 +35,49 @@
       {%- endif -%}
     </div>
 
-    {%- if section.settings.image != blank -%}
-      {{
-        section.settings.image
-        | image_url: width: 1536
-        | image_tag:
-          class: 'aiwo-sleepcation-hero__image',
-          widths: '768, 1152, 1536',
-          sizes: image_sizes,
-          alt: section.settings.image_alt,
-          loading: 'eager',
-          fetchpriority: 'high'
-      }}
-    {%- else -%}
-      <img
-        class="aiwo-sleepcation-hero__image"
-        src="{{ 'aiwo-sleepcation-hero-sleep-timeline-1536.webp' | asset_url }}"
-        srcset="{{ 'aiwo-sleepcation-hero-sleep-timeline-768.webp' | asset_url }} 768w, {{ 'aiwo-sleepcation-hero-sleep-timeline-1536.webp' | asset_url }} 1536w"
-        sizes="{{ image_sizes }}"
-        width="1536"
-        height="1024"
-        alt="{{ section.settings.image_alt | escape }}"
-        fetchpriority="high"
-      >
-    {%- endif -%}
+    {%- comment -%}
+      Mobile (< 900px): image_mobile → image_desktop → bundled photo. Desktop: image_desktop → bundled photo.
+      The <source> is only emitted for image_mobile; otherwise the <img> srcset already covers mobile.
+    {%- endcomment -%}
+    {%- liquid
+      assign image_desktop = section.settings.image_desktop
+      assign image_mobile = section.settings.image_mobile
+    -%}
+    <picture>
+      {%- if image_mobile != blank -%}
+        <source
+          media="(max-width: 899px)"
+          srcset="{{ image_mobile | image_url: width: 768 }} 768w, {{ image_mobile | image_url: width: 1152 }} 1152w, {{ image_mobile | image_url: width: 1536 }} 1536w"
+          sizes="100vw"
+          width="{{ image_mobile.width }}"
+          height="{{ image_mobile.height }}"
+        >
+      {%- endif -%}
+      {%- if image_desktop != blank -%}
+        {{
+          image_desktop
+          | image_url: width: 1536
+          | image_tag:
+            class: 'aiwo-sleepcation-hero__image',
+            widths: '768, 1152, 1536',
+            sizes: image_sizes,
+            alt: section.settings.image_alt,
+            loading: 'eager',
+            fetchpriority: 'high'
+        }}
+      {%- else -%}
+        <img
+          class="aiwo-sleepcation-hero__image"
+          src="{{ 'aiwo-sleepcation-hero-sleep-timeline-1536.webp' | asset_url }}"
+          srcset="{{ 'aiwo-sleepcation-hero-sleep-timeline-768.webp' | asset_url }} 768w, {{ 'aiwo-sleepcation-hero-sleep-timeline-1536.webp' | asset_url }} 1536w"
+          sizes="{{ image_sizes }}"
+          width="1536"
+          height="1024"
+          alt="{{ section.settings.image_alt | escape }}"
+          fetchpriority="high"
+        >
+      {%- endif -%}
+    </picture>
   </div>
 </section>
 
@@ -73,7 +92,7 @@
     {
       "type": "text",
       "id": "eyebrow",
-      "label": "Eyebrow"
+      "label": "Eyebrow / tagline"
     },
     {
       "type": "text",
@@ -88,23 +107,29 @@
     {
       "type": "textarea",
       "id": "text",
-      "label": "Text"
+      "label": "Description"
     },
     {
       "type": "text",
       "id": "button_label",
-      "label": "Button label"
+      "label": "CTA label"
     },
     {
       "type": "url",
       "id": "button_link",
-      "label": "Button link"
+      "label": "CTA URL"
     },
     {
       "type": "image_picker",
-      "id": "image",
-      "label": "Image",
+      "id": "image_desktop",
+      "label": "Desktop hero image",
       "info": "Optional. Leave empty to use the built-in Sleepcation timeline photo."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile hero image",
+      "info": "Optional. Used below 900px; falls back to the desktop image."
     },
     {
       "type": "text",

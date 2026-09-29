@@ -1,0 +1,82 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign item_count = section.blocks.size
+  # aria-hidden copies = ceil(20 / items): keeps a 2560px viewport covered for the whole loop (needs viewport + one cycle).
+  assign hidden_copies = 20 | plus: item_count | minus: 1 | divided_by: item_count
+-%}
+
+{%- if item_count > 0 -%}
+  {%- comment -%} data-paused is reserved for a future pause control; the CSS already honours it. {%- endcomment -%}
+  <div class="aiwo-sleepcation-marquee" style="--aiwo-sleepcation-marquee-items: {{ item_count }}">
+    <div class="aiwo-sleepcation-marquee__track">
+      <ul class="aiwo-sleepcation-marquee__list" aria-label="{{ section.settings.aria_label | escape }}">
+        {%- for block in section.blocks -%}
+          {%- capture item_content -%}
+            {%- if block.settings.custom_icon != blank -%}
+              {{ block.settings.custom_icon | image_url: width: 64 | image_tag: class: 'aiwo-sleepcation-marquee__icon', width: 32, height: 32, alt: '' }}
+            {%- else -%}
+              <img class="aiwo-sleepcation-marquee__icon" src="{{ 'aiwo-sleepcation-icon-' | append: block.settings.icon | append: '.svg' | asset_url }}" width="32" height="32" alt="">
+            {%- endif -%}
+            <span class="aiwo-sleepcation-marquee__label">{{ block.settings.label | escape }}</span>
+          {%- endcapture -%}
+          <li class="aiwo-sleepcation-marquee__item" {{ block.shopify_attributes }}>{{ item_content }}</li>
+          {%- capture hidden_items -%}{{ hidden_items }}<li class="aiwo-sleepcation-marquee__item">{{ item_content }}</li>{%- endcapture -%}
+        {%- endfor -%}
+      </ul>
+      {%- for i in (1..hidden_copies) -%}
+        <ul class="aiwo-sleepcation-marquee__list" aria-hidden="true">{{ hidden_items }}</ul>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Sleepcation Marquee",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Accessible label",
+      "default": "Programme highlights"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "markers",
+          "options": [
+            { "value": "markers", "label": "DNA scan (markers)" },
+            { "value": "eeg", "label": "Sleep (night / EEG)" },
+            { "value": "appointments", "label": "Calendar (appointments)" },
+            { "value": "programme", "label": "One finger (programme)" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom icon (optional)",
+          "info": "Overrides the built-in icon. Shown at 32 × 32."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

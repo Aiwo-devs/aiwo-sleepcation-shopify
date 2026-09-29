@@ -291,3 +291,92 @@
     aspect-ratio: 3 / 2;
   }
 }
+
+/* Section 03 — Marquee (1440 × 55: 8px + 39px row + 8px) */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee {
+  /* ≈ 40px/s: one Figma item is ~213.5px of the 854px four-item cycle. Tune speed here only. */
+  --aiwo-sleepcation-marquee-item-duration: 5.34s;
+  overflow: hidden;
+  padding-block: 8px;
+  background: linear-gradient(180deg, #2f4251 0%, #374e61 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__track {
+  display: flex;
+  width: max-content;
+}
+
+/* Each list is one cycle; every copy shifts by its own width, so the loop joins seamlessly.
+   The trailing 24px padding keeps the gap identical across the seam. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__list {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 24px;
+  min-height: 39px;
+  margin: 0;
+  padding: 0 24px 0 0;
+  list-style: none;
+  animation: aiwo-sleepcation-marquee calc(var(--aiwo-sleepcation-marquee-items) * var(--aiwo-sleepcation-marquee-item-duration)) linear infinite;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee:hover .aiwo-sleepcation-marquee__list,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee:focus-within .aiwo-sleepcation-marquee__list,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee[data-paused] .aiwo-sleepcation-marquee__list {
+  animation-play-state: paused;
+}
+
+/* Figma spacing: 16px label padding + 8px row gap = 24px between icon and label, and between items. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__item {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 24px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__icon {
+  display: block;
+  flex-shrink: 0;
+  width: clamp(28px, 2.2223vw, 32px);
+  height: clamp(28px, 2.2223vw, 32px);
+  object-fit: contain;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__label {
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: clamp(18px, 1.389vw, 20px);
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+@keyframes aiwo-sleepcation-marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Reduced motion: no movement; the single semantic list becomes a swipeable row. */
+@media (prefers-reduced-motion: reduce) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__track {
+    width: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__list {
+    animation: none;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__list[aria-hidden='true'] {
+    display: none;
+  }
+}

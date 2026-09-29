@@ -1,0 +1,293 @@
+/* AIWO Sleepcation — page-scoped styles. Everything is namespaced to the page template suffix. */
+
+/* The page's single font load (Outfit is already global). Static opsz-14 instances, as set in Figma.
+   This file only loads on the Sleepcation template, so the request never reaches other pages. */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@14,300;14,400;14,500&family=Cormorant+Garamond:ital,wght@1,400&display=swap');
+
+/* Page tokens */
+.theme-template-suffix-aiwo-sleepcation {
+  --aiwo-sleepcation-container: 1216px;
+  --aiwo-sleepcation-hero-card: 1400px;
+  --aiwo-sleepcation-hero-content: 1176px;
+  /* 112px at 1440, centred 1216px container above, 16px minimum inset below. % resolves against the using element. */
+  --aiwo-sleepcation-page-padding: max(16px, calc((100% - var(--aiwo-sleepcation-container)) / 2));
+  --aiwo-sleepcation-color-text: #0c0c0d;
+  --aiwo-sleepcation-font: 'Outfit', sans-serif;
+  --aiwo-sleepcation-font-display: 'Bricolage Grotesque', sans-serif;
+  --aiwo-sleepcation-font-serif: 'Cormorant Garamond', serif;
+}
+
+/* Primary button (page component) — 195 × 50 at 1440: 1px border + 11/19 padding = Figma's inside stroke + 12/20. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 19px;
+  border: 1px solid rgba(29, 44, 56, 0.48);
+  border-radius: 14px;
+  background: #fefefe;
+  box-shadow: 0 4px 0 rgba(255, 255, 255, 0.32);
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: clamp(18px, 1.528vw, 22px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #232325;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-button > svg {
+  flex-shrink: 0;
+  fill: none; /* undoes the theme's global svg{fill:currentColor} */
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Section 01 — Subnav */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav {
+  padding: 10px var(--aiwo-sleepcation-page-padding);
+  background: #fff;
+  font-family: var(--aiwo-sleepcation-font);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__list {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__list::-webkit-scrollbar {
+  display: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__item {
+  flex-shrink: 0;
+}
+
+/* 8 + 20 + 9 + 2px border = 39px; the transparent border reserves the active underline so nothing shifts. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__link {
+  display: block;
+  padding: 8px 16px 9px;
+  border-bottom: 2px solid transparent;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #666;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__link:hover {
+  color: var(--aiwo-sleepcation-color-text);
+  text-decoration: none;
+}
+
+/* Negative offset keeps the ring inside the scroll container so it isn't clipped. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__link:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: -2px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__link--active {
+  border-bottom-color: #1d2c38;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(180deg, rgba(183, 216, 239, 0) 0%, #b7d8ef 138.46%);
+  font-weight: 500;
+  color: var(--aiwo-sleepcation-color-text);
+}
+
+/* Section 02 — Hero (1440 × 676: 1400 × 660 card + 16px outer inset) */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero {
+  padding: 0 16px 16px;
+  background: #4b5f68;
+  /* Grayscale smoothing: macOS subpixel rendering makes the light type on this dark card read heavier than Figma. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 586fr) minmax(0, 526fr);
+  align-items: center;
+  gap: 64px;
+  max-width: var(--aiwo-sleepcation-hero-card);
+  margin-inline: auto;
+  /* min() re-bases % on the card (not the wider section) so the inset is exactly 112px at 1400. */
+  padding: 64px max(20px, calc((min(100%, var(--aiwo-sleepcation-hero-card)) - var(--aiwo-sleepcation-hero-content)) / 2));
+  border-radius: 0 0 24px 24px;
+  overflow: hidden;
+  background: #4b5f68;
+}
+
+/* Decorative layers, bottom to top: masked dot grid, then the six Figma gradients. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::before,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 1.5px dots on a 23px grid, centred on the card (first row at y = 7px), faded by the Figma radial mask. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::before {
+  background: radial-gradient(circle, rgba(152, 162, 179, 0.24) 1px, rgba(152, 162, 179, 0) 2px) calc(50% + 11.5px) -4.5px / 23px 23px;
+  -webkit-mask: radial-gradient(751.588px 1440px at 50% 0, #000 0%, rgba(0, 0, 0, 0) 95.3125%) no-repeat;
+  mask: radial-gradient(751.588px 1440px at 50% 0, #000 0%, rgba(0, 0, 0, 0) 95.3125%) no-repeat;
+}
+
+/* Top-most Figma layer first. Positions are the Figma centres as % of 1400 × 660; radii are px. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::after {
+  background:
+    radial-gradient(198.688px 148.342px at 60% 60%, rgba(215, 226, 232, 0.1), rgba(215, 226, 232, 0)),
+    radial-gradient(252.46px 188.486px at 70% 90%, rgba(215, 226, 232, 0.2), rgba(215, 226, 232, 0)),
+    radial-gradient(298.04px 222.52px at 90% 90%, rgba(215, 226, 232, 0.3), rgba(215, 226, 232, 0)),
+    radial-gradient(372.55px 278.15px at 10% 10%, rgba(215, 226, 232, 0.3), rgba(215, 226, 232, 0)),
+    radial-gradient(350.925px 262px at 90% 30%, rgb(56, 73, 84), rgba(56, 73, 84, 0)),
+    radial-gradient(372.55px 278.15px at 10% 90%, rgb(56, 73, 84), rgba(56, 73, 84, 0));
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+  color: #fff;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+}
+
+/* Pill sized in em so it scales as one unit: 365 × 31 at 16px. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__eyebrow {
+  max-width: 100%;
+  margin: 0;
+  padding: 0.3125em 0.875em;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1));
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: clamp(13px, 3.5vw, 16px);
+  font-weight: 400;
+  line-height: 1.0625;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* The Figma disc bullet sits in a 24px start indent. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__eyebrow-label {
+  display: list-item;
+  list-style: disc outside;
+  margin-inline-start: 1.5em;
+}
+
+/* Figma's bullet is 3 × 3px; the UA disc at full size is 5px. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__eyebrow-label::marker {
+  font-size: 0.6em;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-weight: 300;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Line boxes of 80px and 91px with Figma's −8px overlap, expressed in em so they scale. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__title-line {
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: clamp(32px, 4.654vw, 67.018px);
+  font-weight: 300;
+  line-height: 1.1937;
+  letter-spacing: -0.02em;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__title-accent {
+  margin-top: -0.1061em;
+  font-family: var(--aiwo-sleepcation-font-serif);
+  font-size: clamp(36px, 5.236vw, 75.395px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.207;
+  letter-spacing: -0.02em;
+}
+
+/* The exported SVG is 24.4px tall and Figma crops it to a 23px slot. fill:none undoes the theme's global
+   svg{fill:currentColor}, which would otherwise fill the stroke-only paths. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__heading > svg {
+  fill: none;
+  max-width: 100%;
+  height: auto;
+  margin-block: -0.7px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__text {
+  margin: 0;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: clamp(18px, 1.528vw, 22px);
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 526 × 532 at 1440, left-anchored crop. Inset outline = Figma's inside stroke drawn over the photo. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 526 / 532;
+  object-fit: cover;
+  object-position: 0 50%;
+  border-radius: 16px;
+  outline: 1px solid rgba(255, 255, 255, 0.12);
+  outline-offset: -1px;
+}
+
+/* Stacked: text first, image second at its native 3:2 so the full timeline shows. */
+@media (max-width: 899px) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-block: 40px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__content {
+    justify-self: center;
+    max-width: 586px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__title {
+    white-space: normal;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__image {
+    aspect-ratio: 3 / 2;
+  }
+}

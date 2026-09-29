@@ -1,0 +1,116 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign image_sizes = '(min-width: 1440px) 798px, (min-width: 900px) 56vw, 100vw'
+  assign svg_attrs = '<svg aria-hidden="true" focusable="false" '
+-%}
+
+<section class="aiwo-sleepcation-hero">
+  <div class="aiwo-sleepcation-hero__card">
+    <div class="aiwo-sleepcation-hero__content">
+      <div class="aiwo-sleepcation-hero__intro">
+        <div class="aiwo-sleepcation-hero__heading">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="aiwo-sleepcation-hero__eyebrow">
+              <span class="aiwo-sleepcation-hero__eyebrow-label">{{ section.settings.eyebrow | escape }}</span>
+            </p>
+          {%- endif -%}
+          <h1 class="aiwo-sleepcation-hero__title">
+            <span class="aiwo-sleepcation-hero__title-line">{{ section.settings.heading_line_1 | escape }}</span>
+            <span class="aiwo-sleepcation-hero__title-accent">{{ section.settings.heading_line_2 | strip | escape }}</span>
+          </h1>
+          {{ 'aiwo-sleepcation-hero-divider.svg' | inline_asset_content | replace: '<svg ', svg_attrs }}
+        </div>
+        {%- if section.settings.text != blank -%}
+          <p class="aiwo-sleepcation-hero__text">{{ section.settings.text | escape }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.button_label != blank -%}
+        {%- comment -%} No URL yet: render a placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
+        <a class="aiwo-sleepcation-button"{% if section.settings.button_link != blank %} href="{{ section.settings.button_link }}"{% endif %}>
+          {{- section.settings.button_label | escape -}}
+          {{- 'aiwo-sleepcation-icon-arrow-up-right.svg' | inline_asset_content | replace: '<svg ', svg_attrs -}}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.image != blank -%}
+      {{
+        section.settings.image
+        | image_url: width: 1536
+        | image_tag:
+          class: 'aiwo-sleepcation-hero__image',
+          widths: '768, 1152, 1536',
+          sizes: image_sizes,
+          alt: section.settings.image_alt,
+          loading: 'eager',
+          fetchpriority: 'high'
+      }}
+    {%- else -%}
+      <img
+        class="aiwo-sleepcation-hero__image"
+        src="{{ 'aiwo-sleepcation-hero-sleep-timeline-1536.webp' | asset_url }}"
+        srcset="{{ 'aiwo-sleepcation-hero-sleep-timeline-768.webp' | asset_url }} 768w, {{ 'aiwo-sleepcation-hero-sleep-timeline-1536.webp' | asset_url }} 1536w"
+        sizes="{{ image_sizes }}"
+        width="1536"
+        height="1024"
+        alt="{{ section.settings.image_alt | escape }}"
+        fetchpriority="high"
+      >
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AIWO Sleepcation – Hero",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2 (italic)"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Optional. Leave empty to use the built-in Sleepcation timeline photo."
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text"
+    }
+  ]
+}
+{% endschema %}

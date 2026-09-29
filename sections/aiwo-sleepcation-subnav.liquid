@@ -1,0 +1,64 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'aiwo-sleepcation.js' | asset_url }}" defer></script>
+
+<nav id="aiwo-sleepcation-top" class="aiwo-sleepcation-subnav" aria-label="{{ section.settings.aria_label | escape }}">
+  <ul class="aiwo-sleepcation-subnav__list">
+    {%- for block in section.blocks -%}
+      <li class="aiwo-sleepcation-subnav__item" {{ block.shopify_attributes }}>
+        <a
+          class="aiwo-sleepcation-subnav__link{% if block.settings.is_active %} aiwo-sleepcation-subnav__link--active{% endif %}"
+          href="#{{ block.settings.anchor_id | escape }}"
+          {% if block.settings.is_active %}
+            aria-current="location"
+          {% endif %}
+        >
+          {{- block.settings.label | escape -}}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>
+
+{% schema %}
+{
+  "name": "AIWO Sleepcation – Subnav",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Navigation accessible label",
+      "default": "Sleepcation"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "text",
+          "id": "anchor_id",
+          "label": "Target section ID",
+          "info": "Without the #, e.g. aiwo-sleepcation-overview"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_active",
+          "label": "Current page tab",
+          "default": false
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

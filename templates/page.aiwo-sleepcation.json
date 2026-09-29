@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "aiwo_sleepcation_subnav": {
+      "type": "aiwo-sleepcation-subnav",
+      "blocks": {
+        "tab_sleepcation": {
+          "type": "tab",
+          "settings": {
+            "label": "Sleepcation",
+            "anchor_id": "aiwo-sleepcation-top",
+            "is_active": true
+          }
+        },
+        "tab_overview": {
+          "type": "tab",
+          "settings": {
+            "label": "Overview",
+            "anchor_id": "aiwo-sleepcation-overview",
+            "is_active": false
+          }
+        },
+        "tab_for_you": {
+          "type": "tab",
+          "settings": {
+            "label": "For you",
+            "anchor_id": "aiwo-sleepcation-for-you",
+            "is_active": false
+          }
+        },
+        "tab_whats_included": {
+          "type": "tab",
+          "settings": {
+            "label": "What’s included",
+            "anchor_id": "aiwo-sleepcation-whats-included",
+            "is_active": false
+          }
+        },
+        "tab_compare": {
+          "type": "tab",
+          "settings": {
+            "label": "Compare this",
+            "anchor_id": "aiwo-sleepcation-compare",
+            "is_active": false
+          }
+        },
+        "tab_team_venue": {
+          "type": "tab",
+          "settings": {
+            "label": "Team & venue",
+            "anchor_id": "aiwo-sleepcation-team-venue",
+            "is_active": false
+          }
+        }
+      },
+      "block_order": [
+        "tab_sleepcation",
+        "tab_overview",
+        "tab_for_you",
+        "tab_whats_included",
+        "tab_compare",
+        "tab_team_venue"
+      ],
+      "settings": {
+        "aria_label": "Sleepcation"
+      }
+    },
+    "aiwo_sleepcation_hero": {
+      "type": "aiwo-sleepcation-hero",
+      "settings": {
+        "eyebrow": "A 90-day clinical sleep programme",
+        "heading_line_1": "Measure the Cause.",
+        "heading_line_2": "Mend the Sleep.",
+        "text": "A three-day, five-star testing stay to find the exact cause of your disturbed sleep, Ninety days later, we repeat the tests to show the difference in numbers.",
+        "button_label": "Book now",
+        "image_alt": "A guest rests in bed beneath a 90-day programme timeline, from a Night 1 sleep baseline through regular check-ins."
+      }
+    }
+  },
+  "order": ["aiwo_sleepcation_subnav", "aiwo_sleepcation_hero"]
+}

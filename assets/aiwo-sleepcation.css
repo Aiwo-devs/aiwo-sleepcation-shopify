@@ -2,7 +2,7 @@
 
 /* The page's single font load (Outfit is already global). Static opsz-14 instances, as set in Figma.
    This file only loads on the Sleepcation template, so the request never reaches other pages. */
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@14,300;14,400;14,500&family=Cormorant+Garamond:ital,wght@1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@14,300;14,400;14,500;14,600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap');
 
 /* Page tokens */
 .theme-template-suffix-aiwo-sleepcation {
@@ -128,11 +128,13 @@
   border-radius: 0 0 24px 24px;
   overflow: hidden;
   background: #4b5f68;
+  --aiwo-sleepcation-dot-opacity: 0.24;
 }
 
 /* Decorative layers, bottom to top: masked dot grid, then the six Figma gradients. */
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::before,
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::after {
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::after,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -140,9 +142,11 @@
   pointer-events: none;
 }
 
-/* 1.5px dots on a 23px grid, centred on the card (first row at y = 7px), faded by the Figma radial mask. */
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::before {
-  background: radial-gradient(circle, rgba(152, 162, 179, 0.24) 1px, rgba(152, 162, 179, 0) 2px) calc(50% + 11.5px) -4.5px / 23px 23px;
+/* Shared page dot grid: 1.5px dots on a 23px grid centred on the page (first row at y = 7px), faded by the
+   Figma radial mask. Sections set only --aiwo-sleepcation-dot-opacity. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::before,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you::before {
+  background: radial-gradient(circle, rgba(152, 162, 179, var(--aiwo-sleepcation-dot-opacity)) 1px, rgba(152, 162, 179, 0) 2px) calc(50% + 11.5px) -4.5px / 23px 23px;
   -webkit-mask: radial-gradient(751.588px 1440px at 50% 0, #000 0%, rgba(0, 0, 0, 0) 95.3125%) no-repeat;
   mask: radial-gradient(751.588px 1440px at 50% 0, #000 0%, rgba(0, 0, 0, 0) 95.3125%) no-repeat;
 }
@@ -378,5 +382,365 @@
 
   .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-marquee__list[aria-hidden='true'] {
     display: none;
+  }
+}
+
+/* Section 04 — For you (1440 × 1300: 64px + 1172px content + 64px; columns 579 + 58 + 579).
+   Fluid type reaches its Figma size at 1248px, where the 1216px container stops shrinking. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you {
+  /* Follows the theme's on-scroll-up header (its own --height-header); tune the 24px here only. */
+  --aiwo-sleepcation-for-you-sticky-top: calc(var(--height-header, 0px) + 24px);
+  --aiwo-sleepcation-dot-opacity: 0.4;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 58px;
+  padding: 64px var(--aiwo-sleepcation-page-padding);
+  background: #f8fdff;
+}
+
+/* Left: one sticky unit (made sticky in the two-column media query below). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 100%;
+}
+
+/* 154 × 28 at 14px: 1px border + 5/11/4 padding = Figma's inside stroke + 6/12/5. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__eyebrow {
+  margin: 0;
+  padding: 5px 11px 4px;
+  border: 1px solid #232325;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(0, 44, 89, 0.06), rgba(0, 39, 78, 0.12));
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #232325;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__eyebrow-label {
+  display: list-item;
+  list-style: disc outside;
+  margin-inline-start: 1.5em;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__eyebrow-label::marker {
+  font-size: 0.6em;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  font-weight: 500;
+  color: var(--aiwo-sleepcation-color-text);
+  text-transform: capitalize;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__title-line {
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: clamp(27px, 3.045vw, 38px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Figma sets this line in a fixed 46px box, so its 1.2 line box overhangs by 11.6px (−0.2417em). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__title-accent {
+  margin-bottom: -0.2417em;
+  font-family: var(--aiwo-sleepcation-font-serif);
+  font-size: clamp(34px, 3.8462vw, 48px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* fill:none undoes the theme's global svg{fill:currentColor} on the stroke-only divider. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__title-group > svg {
+  fill: none;
+  max-width: 100%;
+  height: auto;
+  margin-block: -0.7px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__description {
+  max-width: 467px;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__description p {
+  margin: 0;
+}
+
+/* Figma separates the paragraphs with one empty 27px line. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__description p + p {
+  margin-top: 1.5em;
+}
+
+/* 579 × 173, radius 16. The overlay draws Figma's 12% gradient and inside stroke over the photo. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__media {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(112.36deg, rgba(57, 74, 84, 0.12) 0%, rgba(79, 95, 104, 0.12) 47.291%, rgba(174, 179, 181, 0.12) 99.388%);
+  box-shadow: inset 0 0 0 1px #d0d5dd;
+  pointer-events: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 579 / 173;
+  object-fit: cover;
+  object-position: 50% 49.32%;
+}
+
+/* Right: the bar's sticky range is this column, so it releases after the last item. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__bar {
+  position: sticky;
+  top: var(--aiwo-sleepcation-for-you-sticky-top);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #1d2c38 0%, #6a7c83 49.038%, #527c9e 100%);
+  box-shadow: 4px 4px 0 #21303c;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__bar-icon {
+  display: block;
+  flex-shrink: 0;
+  width: clamp(36px, 3.8462vw, 48px);
+  height: clamp(36px, 3.8462vw, 48px);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__bar-label {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: clamp(13px, 1.2019vw, 15px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* 113 × 37: 1px border + 7/11 padding = Figma's inside stroke + 8/12. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__bar-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  background: #fff;
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: capitalize;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #1d2c38;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__bar-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__item {
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  text-align: start;
+}
+
+/* The row carries the item padding (15px + 1px border = Figma's 16px) so the whole row is the tap target. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__checkbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  background: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__checkbox:checked {
+  border-color: #0c0c0d;
+  background: #dcdcdc url('aiwo-sleepcation-icon-checkbox-tick.svg') center / 20px 20px no-repeat border-box;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__checkbox:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: 2px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__statement {
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: clamp(18px, 1.6026vw, 20px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000;
+}
+
+/* Checked = open. Details sit under the statement (15 + 20 + 8 = 43px inset), 24px below it. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__details {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 15px 15px 43px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__item:has(.aiwo-sleepcation-for-you__checkbox:checked) .aiwo-sleepcation-for-you__row {
+  align-items: flex-start;
+  padding-bottom: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__item:has(.aiwo-sleepcation-for-you__checkbox:checked) .aiwo-sleepcation-for-you__details {
+  display: flex;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #efefef;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__panel--test {
+  gap: 6px;
+  background: #e6eef5;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__panel-heading {
+  margin: 0;
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  color: #000;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__panel-body {
+  margin: 0;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: clamp(16px, 1.4424vw, 18px);
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__panel-body strong {
+  font-weight: 600;
+}
+
+/* Two columns with enough height: the left column is one sticky unit, bounded by the section grid. */
+@media (min-width: 900px) and (min-height: 720px) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__intro {
+    position: sticky;
+    top: var(--aiwo-sleepcation-for-you-sticky-top);
+  }
+}
+
+@media (min-width: 900px) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__title-line {
+    white-space: nowrap;
+  }
+}
+
+/* Stacked: eyebrow + headings + divider → image → description → sticky bar → checklist.
+   One DOM; the image moves between the heading group and the description via order. */
+@media (max-width: 899px) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    padding-block: 40px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__media {
+    order: 1;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__description {
+    order: 2;
   }
 }

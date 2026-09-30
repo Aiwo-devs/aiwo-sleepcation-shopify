@@ -1,0 +1,187 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign image_sizes = '(min-width: 900px) 579px, 100vw'
+  assign svg_attrs = '<svg aria-hidden="true" focusable="false" '
+-%}
+
+<section id="aiwo-sleepcation-for-you" class="aiwo-sleepcation-for-you">
+  <div class="aiwo-sleepcation-for-you__intro">
+    <div class="aiwo-sleepcation-for-you__heading">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="aiwo-sleepcation-for-you__eyebrow">
+          <span class="aiwo-sleepcation-for-you__eyebrow-label">{{ section.settings.eyebrow | escape }}</span>
+        </p>
+      {%- endif -%}
+      <div class="aiwo-sleepcation-for-you__title-group">
+        <h2 class="aiwo-sleepcation-for-you__title">
+          <span class="aiwo-sleepcation-for-you__title-line">{{ section.settings.heading_line_1 | strip | escape }}</span>
+          <span class="aiwo-sleepcation-for-you__title-accent">{{ section.settings.heading_line_2 | strip | escape }}</span>
+        </h2>
+        {{ 'aiwo-sleepcation-for-you-divider.svg' | inline_asset_content | replace: '<svg ', svg_attrs }}
+      </div>
+    </div>
+
+    {%- if section.settings.description != blank -%}
+      <div class="aiwo-sleepcation-for-you__description">{{ section.settings.description }}</div>
+    {%- endif -%}
+
+    <div class="aiwo-sleepcation-for-you__media">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1600
+          | image_tag:
+            class: 'aiwo-sleepcation-for-you__image',
+            widths: '800, 1200, 1600',
+            sizes: image_sizes,
+            alt: section.settings.image_alt,
+            loading: 'lazy'
+        }}
+      {%- else -%}
+        <img
+          class="aiwo-sleepcation-for-you__image"
+          src="{{ 'aiwo-sleepcation-for-you-image-1600.webp' | asset_url }}"
+          srcset="{{ 'aiwo-sleepcation-for-you-image-800.webp' | asset_url }} 800w, {{ 'aiwo-sleepcation-for-you-image-1600.webp' | asset_url }} 1600w"
+          sizes="{{ image_sizes }}"
+          width="1600"
+          height="764"
+          alt="{{ section.settings.image_alt | escape }}"
+          loading="lazy"
+        >
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="aiwo-sleepcation-for-you__checklist">
+    <div class="aiwo-sleepcation-for-you__bar">
+      <img class="aiwo-sleepcation-for-you__bar-icon" src="{{ 'aiwo-sleepcation-icon-check-badge.svg' | asset_url }}" width="48" height="48" alt="">
+      <p class="aiwo-sleepcation-for-you__bar-label">{{ section.settings.instruction_label | escape }}</p>
+      {%- if section.settings.cta_label != blank -%}
+        {%- comment -%} No URL yet: placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
+        <a class="aiwo-sleepcation-for-you__bar-button"{% if section.settings.cta_link != blank %} href="{{ section.settings.cta_link }}"{% endif %}>
+          {{- section.settings.cta_label | escape -}}
+          <img src="{{ 'aiwo-sleepcation-icon-arrow-up-right-small.svg' | asset_url }}" width="14" height="14" alt="">
+        </a>
+      {%- endif -%}
+    </div>
+
+    <ul class="aiwo-sleepcation-for-you__items">
+      {%- for block in section.blocks -%}
+        {%- assign checkbox_id = 'aiwo-sleepcation-for-you-' | append: block.id -%}
+        <li class="aiwo-sleepcation-for-you__item" {{ block.shopify_attributes }}>
+          {%- comment -%} The whole row is the label; checking the box is what opens the details. {%- endcomment -%}
+          <label class="aiwo-sleepcation-for-you__row" for="{{ checkbox_id }}">
+            <input class="aiwo-sleepcation-for-you__checkbox" type="checkbox" id="{{ checkbox_id }}" aria-controls="{{ checkbox_id }}-details">
+            <span class="aiwo-sleepcation-for-you__statement">{{ block.settings.label | escape }}</span>
+          </label>
+          <div class="aiwo-sleepcation-for-you__details" id="{{ checkbox_id }}-details">
+            <div class="aiwo-sleepcation-for-you__panel">
+              <h3 class="aiwo-sleepcation-for-you__panel-heading">{{ block.settings.detail_1_heading | escape }}</h3>
+              <p class="aiwo-sleepcation-for-you__panel-body">{{ block.settings.detail_1_body }}</p>
+            </div>
+            <div class="aiwo-sleepcation-for-you__panel aiwo-sleepcation-for-you__panel--test">
+              <h3 class="aiwo-sleepcation-for-you__panel-heading">{{ block.settings.detail_2_heading | escape }}</h3>
+              <p class="aiwo-sleepcation-for-you__panel-body">{{ block.settings.detail_2_body }}</p>
+            </div>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sleepcation For You",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "max_blocks": 16,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow / tagline"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2 (italic)"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Optional. Leave empty to use the built-in Sleepcation photo."
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text"
+    },
+    {
+      "type": "text",
+      "id": "instruction_label",
+      "label": "Sticky bar instruction",
+      "default": "Tick the ones that sound like you"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Checklist item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Statement"
+        },
+        {
+          "type": "text",
+          "id": "detail_1_heading",
+          "label": "Detail 1 heading",
+          "default": "What this often points to"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "detail_1_body",
+          "label": "Detail 1 text"
+        },
+        {
+          "type": "text",
+          "id": "detail_2_heading",
+          "label": "Detail 2 heading",
+          "default": "How we test it"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "detail_2_body",
+          "label": "Detail 2 text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

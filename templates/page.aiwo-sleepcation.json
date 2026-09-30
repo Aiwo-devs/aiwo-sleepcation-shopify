@@ -11,14 +11,6 @@
             "is_active": true
           }
         },
-        "tab_overview": {
-          "type": "tab",
-          "settings": {
-            "label": "Overview",
-            "anchor_id": "aiwo-sleepcation-overview",
-            "is_active": false
-          }
-        },
         "tab_for_you": {
           "type": "tab",
           "settings": {
@@ -54,7 +46,6 @@
       },
       "block_order": [
         "tab_sleepcation",
-        "tab_overview",
         "tab_for_you",
         "tab_whats_included",
         "tab_compare",
@@ -107,11 +98,147 @@
           }
         }
       },
-      "block_order": ["item_markers", "item_eeg", "item_appointments", "item_programme"],
+      "block_order": [
+        "item_markers",
+        "item_eeg",
+        "item_appointments",
+        "item_programme"
+      ],
       "settings": {
         "aria_label": "Programme highlights"
       }
+    },
+    "aiwo_sleepcation_for_you": {
+      "type": "aiwo-sleepcation-for-you",
+      "blocks": {
+        "item_01": {
+          "type": "item",
+          "settings": {
+            "label": "I sleep seven or eight hours and still wake up tired.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "Non-restorative sleep. The duration is fine; the architecture isn’t. In Chennai — the Indian city with the best bedtime discipline — 61.9% of people still report waking unrested.",
+            "detail_2_heading": "How we test it",
+            "detail_2_body": "A <strong>Level 2 sleep study with EEG channels,</strong> which records how much deep and <strong>REM sleep</strong> you actually got, rather than estimating it."
+          }
+        },
+        "item_02": {
+          "type": "item",
+          "settings": {
+            "label": "I’m shattered all evening, then wide awake the second I lie down.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "Your body is tired and your nervous system isn’t. Sleep loss shifts the balance towards alert — which is why it feels like a switch flipping at the bedroom door.",
+            "detail_2_heading": "How we test it",
+            "detail_2_body": "A psychological assessment, plus DBAS-16 before you arrive. Then two sessions of cognitive behavioural therapy for insomnia during the stay."
+          }
+        },
+        "item_03": {
+          "type": "item",
+          "settings": {
+            "label": "I wake at 2 or 3am and my head starts going.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "Maintenance insomnia. The 3am wake is one of the most useful signals in sleep medicine, and one of the most frequently dismissed as stress.",
+            "detail_2_heading": "How we test it",
+            "detail_2_body": "Sleep fragmentation on the overnight study, read alongside the AIWO 181 blood panel to see whether something biochemical is driving it."
+          }
+        },
+        "item_04": {
+          "type": "item",
+          "settings": {
+            "label": "I’ve been told it’s my hormones, and given nothing else.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "Being told it is menopause is not the same as being examined. 22.3% of Indian women aged 50 and over report sleep problems, and Indian women report sleep disorders at higher rates than men. Hormonal change is often part of it. It is very rarely all of it — and sleep-disordered breathing in women is significantly under-diagnosed.",
+            "detail_2_heading": "How we test it",
+            "detail_2_body": "We screen breathing, biochemistry, mood and sleep-related beliefs before assuming any of them. The overnight study, the 181-marker panel, the psychological assessment and PHQ-9 and GAD-7 all run before anyone offers you an explanation."
+          }
+        },
+        "item_05": {
+          "type": "item",
+          "settings": {
+            "label": "Someone has told me I snore. Or that I stop breathing.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "Worth ruling out first. Sleep apnoea affects around 13% of Indian men and 5% of women, and habitual snoring runs at 18–26% of adults. Most of it is never tested.",
+            "detail_2_heading": "How we test it",
+            "detail_2_body": "A Level 2 sleep apnoea study in your own hotel room, a pulmonary function test with a pulmonologist, and an ENT consultation where it’s needed."
+          }
+        },
+        "item_06": {
+          "type": "item",
+          "settings": {
+            "label": "My annual health check came back normal.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "It would. A standard check looks at your blood while you’re awake. It doesn’t look at your breathing while you’re asleep, your sleep stages, or your recovery capacity.",
+            "detail_2_heading": "How we test it",
+            "detail_2_body": "All three, in the first forty-eight hours — plus a DEXA scan, VO2 max and biological age assessment."
+          }
+        },
+        "item_07": {
+          "type": "item",
+          "settings": {
+            "label": "My ring or watch says my sleep is bad. It doesn’t tell me why.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "Consumer wearables estimate sleep stages from movement and heart rate. They can flag a problem; they can’t diagnose one.",
+            "detail_2_heading": "How we test it",
+            "detail_2_body": "A Level 2 study records sleep stages from EEG, and your Lead Physician reads it against your bloodwork rather than in isolation. You still wear a ring — an Oura Ring is fitted on arrival to track the ninety days — but the diagnosis comes from the study, not from the ring."
+          }
+        },
+        "item_08": {
+          "type": "item",
+          "settings": {
+            "label": "I’m training as hard as ever and going backwards.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "Most tissue repair happens in deep sleep. One night of total sleep deprivation has been shown to cut muscle protein synthesis by around 18%. You may not be under-training. You may be under-repairing.",
+            "detail_2_heading": "How we test it",
+            "detail_2_body": "DEXA for body composition, VO2 max for cardiorespiratory fitness, and a physical assessment with posture screening."
+          }
+        },
+        "item_09": {
+          "type": "item",
+          "settings": {
+            "label": "This isn’t about me. My partner stops breathing in their sleep and won’t get it checked.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "You are almost certainly right to be worried. And you are almost certainly the reason they will eventually go. Sleep apnoea affects around 13% of Indian men, and most of it has never been tested. The person who notices the breathing is very rarely the person who has it.",
+            "detail_2_heading": "Why they usually say yes to this one",
+            "detail_2_body": "Because the study runs while they sleep in a hotel room, not a hospital ward. No admission, no strangers, no wires running to a machine down the corridor. That single difference is what changes most people’s minds after years of refusing."
+          }
+        },
+        "item_10": {
+          "type": "item",
+          "settings": {
+            "label": "I’ve stopped believing anything will fix it.",
+            "detail_1_heading": "What this often points to",
+            "detail_1_body": "After years of bad nights, the beliefs you’ve formed about your own sleep start keeping you awake independently of whatever started it. There is a validated questionnaire for exactly this.",
+            "detail_2_heading": "How we test it",
+            "detail_2_body": "DBAS-16 before arrival, then psychological assessment and CBT-I on site. 77% of adults have already tried to fix their sleep — you are not unusual, and you are not the problem."
+          }
+        }
+      },
+      "block_order": [
+        "item_01",
+        "item_02",
+        "item_03",
+        "item_04",
+        "item_05",
+        "item_06",
+        "item_07",
+        "item_08",
+        "item_09",
+        "item_10"
+      ],
+      "settings": {
+        "eyebrow": "Is this for me",
+        "heading_line_1": "You’ve been given advice.",
+        "heading_line_2": "Nobody has tested you.",
+        "description": "<p>Routines, supplements, apps, and mattresses—most solutions are chosen without ever measuring what happens inside your body at night.</p><p>There are five common causes of disturbed sleep, and four of them are entirely invisible from the outside.</p>",
+        "image_alt": "Two hands reaching towards each other against a blue sky.",
+        "instruction_label": "Tick the ones that sound like you",
+        "cta_label": "Book Now"
+      }
     }
   },
-  "order": ["aiwo_sleepcation_subnav", "aiwo_sleepcation_hero", "aiwo_sleepcation_marquee"]
+  "order": [
+    "aiwo_sleepcation_subnav",
+    "aiwo_sleepcation_hero",
+    "aiwo_sleepcation_marquee",
+    "aiwo_sleepcation_for_you"
+  ]
 }

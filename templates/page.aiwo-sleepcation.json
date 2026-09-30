@@ -903,6 +903,90 @@
         "heading_line_2": "programme covers.",
         "description": "A complete diagnostic protocol featuring 12 tests, 17 treatments, 6 consults, and take-home equipment."
       }
+    },
+    "aiwo_sleepcation_schedule": {
+      "type": "aiwo-sleepcation-schedule",
+      "blocks": {
+        "step_before_arrival": {
+          "type": "step",
+          "settings": {
+            "phase_label": "BEFORE ARRIVAL",
+            "icon": "before-arrival",
+            "title": "A call, and three questionnaires you fill in at home",
+            "description": "Three clinical questionnaires you complete at home, then a twenty-minute video call with the team. By the time you land, we already know what we are looking for.",
+            "builtin_image": "before-arrival",
+            "image_alt": "A woman on a video call with the Sleepcation team from home"
+          }
+        },
+        "step_day_1": {
+          "type": "step",
+          "settings": {
+            "phase_label": "DAY 1",
+            "icon": "day-1",
+            "title": "A car, a room, and your Oura Ring goes on before dinner",
+            "description": "A car collects you from the airport. You meet your Lead Physician and your Oura Ring is fitted. Then you go to bed as normal, and the overnight sleep study records your first night.",
+            "builtin_image": "none",
+            "image_alt": ""
+          }
+        },
+        "step_day_2": {
+          "type": "step",
+          "settings": {
+            "phase_label": "DAY 2",
+            "icon": "day-2",
+            "title": "The long day, spaced out rather than stacked",
+            "description": "Ten minutes under a 10,000 lux light before you are properly awake, to reset your body clock. Then bloodwork, the DEXA scan, VO2 max, lung function and the psychological assessment — spaced across the day rather than stacked. Your first CBT-I session sits in between. So do the sauna, a massage and the oxygen chamber.",
+            "builtin_image": "none",
+            "image_alt": ""
+          }
+        },
+        "step_day_3": {
+          "type": "step",
+          "settings": {
+            "phase_label": "DAY 3",
+            "icon": "day-3",
+            "title": "Somebody finally tells you what is going on",
+            "description": "Your physician has everything in front of them at once — the sleep study, the 181 markers, the scans, the questionnaires — and tells you what is causing your disturbed sleep. For most people this is the first time anyone has answered that question. You leave with a thirty-day plan written down.",
+            "builtin_image": "none",
+            "image_alt": ""
+          }
+        },
+        "step_days_15_60": {
+          "type": "step",
+          "settings": {
+            "phase_label": "DAYS 15–60",
+            "icon": "days-15-60",
+            "title": "Four calls, already in your calendar",
+            "description": "Four video calls, already booked before you leave. Days 15 and 45 with your sleep coach, days 30 and 60 with your physician. They are part of the programme, not something you have to ask for.",
+            "builtin_image": "none",
+            "image_alt": ""
+          }
+        },
+        "step_day_90": {
+          "type": "step",
+          "settings": {
+            "phase_label": "DAY 90",
+            "icon": "day-90",
+            "title": "The same tests again, so you can see the difference",
+            "description": "We run the same tests you had on day one. By this point you will already know whether things have changed — the panel puts numbers against it. Day one and day ninety, side by side.",
+            "builtin_image": "none",
+            "image_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_before_arrival",
+        "step_day_1",
+        "step_day_2",
+        "step_day_3",
+        "step_days_15_60",
+        "step_day_90"
+      ],
+      "settings": {
+        "eyebrow": "Schedule",
+        "heading_line_1": "Three days,",
+        "heading_line_2": "arranged around you."
+      }
     }
   },
   "order": [
@@ -911,6 +995,7 @@
     "aiwo_sleepcation_marquee",
     "aiwo_sleepcation_for_you",
     "aiwo_sleepcation_how_it_works",
-    "aiwo_sleepcation_whats_included"
+    "aiwo_sleepcation_whats_included",
+    "aiwo_sleepcation_schedule"
   ]
 }

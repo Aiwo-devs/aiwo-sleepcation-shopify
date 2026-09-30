@@ -280,3 +280,103 @@
     init();
   }
 })();
+
+/* AIWO Sleepcation — Schedule timeline: one IntersectionObserver per section picks the step nearest the viewport
+   centre (10% focus band). Only index changes touch the DOM: is-active + aria-current, then the rail. */
+(function () {
+  if (document.documentElement.hasAttribute('data-aiwo-sleepcation-schedule-js')) return;
+  document.documentElement.setAttribute('data-aiwo-sleepcation-schedule-js', '');
+
+  var NODE_GAP = 8; // Figma: 8px of empty rail above and below every node
+  var FADE = 24; // progress runs 24px into the next step and fades out
+
+  function setupTimeline(section) {
+    if (section.hasAttribute('data-ready')) return;
+    section.setAttribute('data-ready', '');
+
+    var timeline = section.querySelector('[data-aiwo-sleepcation-schedule-timeline]');
+    var steps = Array.prototype.slice.call(timeline.children);
+    if (!steps.length) return;
+    var active = 0;
+    var visible = new Set();
+
+    function updateRail() {
+      var height = timeline.offsetHeight;
+      var row = steps[active];
+      var progress = Math.min(height, row.offsetTop + row.offsetHeight + FADE);
+      timeline.style.setProperty('--aiwo-sleepcation-timeline-progress', progress + 'px');
+
+      // Mask out the node gaps so both rails stop 8px short of each node, as in Figma.
+      var stops = ['#000 0'];
+      steps.forEach(function (step) {
+        var node = step.firstElementChild; // offsetParent is the positioned timeline, like the rows
+        var top = node.offsetTop - NODE_GAP;
+        var bottom = node.offsetTop + node.offsetHeight + NODE_GAP;
+        stops.push('#000 ' + top + 'px', 'transparent ' + top + 'px', 'transparent ' + bottom + 'px', '#000 ' + bottom + 'px');
+      });
+      stops.push('#000 100%');
+      timeline.style.setProperty('--aiwo-sleepcation-timeline-mask', 'linear-gradient(180deg, ' + stops.join(', ') + ')');
+    }
+
+    function setActive(index) {
+      if (index === active) return;
+      steps[active].classList.remove('is-active');
+      steps[active].removeAttribute('aria-current');
+      active = index;
+      steps[active].classList.add('is-active');
+      steps[active].setAttribute('aria-current', 'step');
+      updateRail();
+    }
+
+    function pick() {
+      var centre = window.innerHeight / 2;
+      if (visible.size) {
+        var best = null;
+        var bestDistance = Infinity;
+        visible.forEach(function (step) {
+          var rect = step.getBoundingClientRect();
+          var distance = Math.abs(rect.top + rect.height / 2 - centre);
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            best = step;
+          }
+        });
+        setActive(steps.indexOf(best));
+        return;
+      }
+      // Nothing in the band: before the timeline keep the first step, after it keep the last.
+      if (steps[0].getBoundingClientRect().top > centre) setActive(0);
+      else if (steps[steps.length - 1].getBoundingClientRect().bottom < centre) setActive(steps.length - 1);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) visible.add(entry.target);
+          else visible.delete(entry.target);
+        });
+        pick();
+      }, { rootMargin: '-45% 0px -45% 0px' });
+      steps.forEach(function (step) { observer.observe(step); });
+    }
+
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(updateRail).observe(timeline);
+    }
+    updateRail();
+  }
+
+  function init() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-aiwo-sleepcation-schedule]'), setupTimeline);
+  }
+
+  if (window.Shopify && window.Shopify.designMode) {
+    document.addEventListener('shopify:section:load', init);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

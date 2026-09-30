@@ -1,0 +1,165 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'aiwo-sleepcation.js' | asset_url }}" defer></script>
+
+{%- assign svg_attrs = '<svg aria-hidden="true" focusable="false" ' -%}
+
+<section id="aiwo-sleepcation-schedule" class="aiwo-sleepcation-dark-section aiwo-sleepcation-schedule" data-aiwo-sleepcation-schedule>
+  <header class="aiwo-sleepcation-dark-header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="aiwo-sleepcation-eyebrow">
+        <span class="aiwo-sleepcation-eyebrow__label">{{ section.settings.eyebrow | escape }}</span>
+      </p>
+    {%- endif -%}
+    <h2 class="aiwo-sleepcation-dark-title">
+      <span class="aiwo-sleepcation-dark-title__line">{{ section.settings.heading_line_1 | strip | escape }}</span>
+      <span class="aiwo-sleepcation-dark-title__accent">{{ section.settings.heading_line_2 | strip | escape }}</span>
+    </h2>
+    {{ 'aiwo-sleepcation-steps-divider.svg' | inline_asset_content | replace: '<svg ', svg_attrs }}
+  </header>
+
+  {%- comment -%}
+    Chronological list. Odd steps sit right of the rail and even steps left (derived from order on desktop).
+    The first step is active server-side so the timeline reads correctly without JS.
+  {%- endcomment -%}
+  <ol class="aiwo-sleepcation-schedule__timeline" data-aiwo-sleepcation-schedule-timeline>
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign builtin = block.settings.builtin_image
+        assign has_image = false
+        if block.settings.image != blank or builtin != 'none'
+          assign has_image = true
+        endif
+      -%}
+      <li class="aiwo-sleepcation-schedule__step{% if forloop.first %} is-active{% endif %}"{% if forloop.first %} aria-current="step"{% endif %} {{ block.shopify_attributes }}>
+        <span class="aiwo-sleepcation-schedule__node" aria-hidden="true"></span>
+        <article class="aiwo-sleepcation-schedule__card">
+          <div class="aiwo-sleepcation-schedule__inner{% if has_image %} aiwo-sleepcation-schedule__inner--image{% endif %}">
+            {%- if has_image -%}
+              <div class="aiwo-sleepcation-schedule__media">
+                {%- if block.settings.image != blank -%}
+                  {%- capture focal -%}object-position: {{ block.settings.image.presentation.focal_point }};{%- endcapture -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 1024
+                    | image_tag:
+                      widths: '512, 768, 1024',
+                      sizes: '(min-width: 900px) 512px, calc(100vw - 96px)',
+                      alt: block.settings.image_alt,
+                      loading: 'lazy',
+                      style: focal
+                  }}
+                {%- else -%}
+                  <img
+                    src="{{ 'aiwo-sleepcation-timeline-' | append: builtin | append: '.webp' | asset_url }}"
+                    width="1024"
+                    height="1366"
+                    alt="{{ block.settings.image_alt | escape }}"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            <p class="aiwo-sleepcation-schedule__badge">
+              {%- if block.settings.icon != 'none' -%}
+                <img src="{{ 'aiwo-sleepcation-icon-phase-' | append: block.settings.icon | append: '.svg' | asset_url }}" width="24" height="24" alt="">
+              {%- endif -%}
+              <span>{{ block.settings.phase_label | escape }}</span>
+            </p>
+            <div class="aiwo-sleepcation-schedule__text">
+              <h3 class="aiwo-sleepcation-schedule__title">{{ block.settings.title | escape }}</h3>
+              <p class="aiwo-sleepcation-schedule__description">{{ block.settings.description | escape }}</p>
+            </div>
+          </div>
+          <span class="aiwo-sleepcation-schedule__edge" aria-hidden="true"></span>
+        </article>
+      </li>
+    {%- endfor -%}
+  </ol>
+</section>
+
+{% schema %}
+{
+  "name": "Sleepcation Schedule",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow / tagline"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2 (italic)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Timeline step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "phase_label",
+          "label": "Phase / day"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Phase icon",
+          "default": "none",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "before-arrival", "label": "Before arrival" },
+            { "value": "day-1", "label": "Day 1" },
+            { "value": "day-2", "label": "Day 2" },
+            { "value": "day-3", "label": "Day 3" },
+            { "value": "days-15-60", "label": "Days 15–60" },
+            { "value": "day-90", "label": "Day 90" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Overrides the built-in image. Without either, the card uses the plain dark background."
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        },
+        {
+          "type": "select",
+          "id": "builtin_image",
+          "label": "Built-in image",
+          "default": "none",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "before-arrival", "label": "Before arrival" }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -2,16 +2,16 @@
 
 {%- assign svg_attrs = '<svg aria-hidden="true" focusable="false" ' -%}
 
-<section id="aiwo-sleepcation-how-it-works" class="aiwo-sleepcation-steps">
-  <header class="aiwo-sleepcation-steps__header">
+<section id="aiwo-sleepcation-how-it-works" class="aiwo-sleepcation-dark-section aiwo-sleepcation-steps">
+  <header class="aiwo-sleepcation-dark-header">
     {%- if section.settings.eyebrow != blank -%}
       <p class="aiwo-sleepcation-eyebrow">
         <span class="aiwo-sleepcation-eyebrow__label">{{ section.settings.eyebrow | escape }}</span>
       </p>
     {%- endif -%}
-    <h2 class="aiwo-sleepcation-steps__title">
-      <span class="aiwo-sleepcation-steps__title-line">{{ section.settings.heading_line_1 | strip | escape }}</span>
-      <span class="aiwo-sleepcation-steps__title-accent">{{ section.settings.heading_line_2 | strip | escape }}</span>
+    <h2 class="aiwo-sleepcation-dark-title">
+      <span class="aiwo-sleepcation-dark-title__line">{{ section.settings.heading_line_1 | strip | escape }}</span>
+      <span class="aiwo-sleepcation-dark-title__accent">{{ section.settings.heading_line_2 | strip | escape }}</span>
     </h2>
     {{ 'aiwo-sleepcation-steps-divider.svg' | inline_asset_content | replace: '<svg ', svg_attrs }}
   </header>

@@ -1124,6 +1124,39 @@
         "cta_label": "Book Now",
         "cta_url": ""
       }
+    },
+    "aiwo_sleepcation_venues": {
+      "type": "aiwo-sleepcation-venues",
+      "blocks": {
+        "venue_1": {
+          "type": "venue",
+          "settings": {
+            "venue_name": "Fairmont Mumbai",
+            "image_alt": "Guest room at Fairmont Mumbai",
+            "builtin_image": "fairmont-mumbai",
+            "days_label": "3 days,",
+            "nights_label": "2 nights."
+          }
+        },
+        "venue_2": {
+          "type": "venue",
+          "settings": {
+            "venue_name": "The Leela Chennai",
+            "image_alt": "Guest room at The Leela Chennai",
+            "builtin_image": "leela-chennai",
+            "days_label": "3 days,",
+            "nights_label": "2 nights."
+          }
+        }
+      },
+      "block_order": [
+        "venue_1",
+        "venue_2"
+      ],
+      "settings": {
+        "eyebrow": "Venues",
+        "intro": "The programme runs at two venues — Fairmont Mumbai and The Leela Chennai — and the clinical content is identical at both. Most clients fly in from elsewhere in India for it."
+      }
     }
   },
   "order": [
@@ -1134,6 +1167,7 @@
     "aiwo_sleepcation_how_it_works",
     "aiwo_sleepcation_whats_included",
     "aiwo_sleepcation_schedule",
-    "aiwo_sleepcation_compare"
+    "aiwo_sleepcation_compare",
+    "aiwo_sleepcation_venues"
   ]
 }

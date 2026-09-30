@@ -1,0 +1,146 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+
+<section id="aiwo-sleepcation-team-venue" class="aiwo-sleepcation-dark-section aiwo-sleepcation-venues">
+  <header class="aiwo-sleepcation-dark-header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="aiwo-sleepcation-eyebrow">
+        <span class="aiwo-sleepcation-eyebrow__label">{{ section.settings.eyebrow | escape }}</span>
+      </p>
+    {%- endif -%}
+    {%- if section.settings.intro != blank -%}
+      <p class="aiwo-sleepcation-venues__intro">{{ section.settings.intro | escape }}</p>
+    {%- endif -%}
+  </header>
+
+  <ul class="aiwo-sleepcation-venues__list">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign builtin = block.settings.builtin_image
+        case builtin
+          when 'fairmont-mumbai'
+            assign image_width = 1024
+            assign image_height = 768
+          when 'leela-chennai'
+            assign image_width = 1600
+            assign image_height = 792
+        endcase
+      -%}
+      <li class="aiwo-sleepcation-venues__item" {{ block.shopify_attributes }}>
+        <article class="aiwo-sleepcation-venues__card">
+          <div class="aiwo-sleepcation-venues__inner">
+            {%- if block.settings.image != blank or builtin != 'none' -%}
+              <div class="aiwo-sleepcation-venues__media">
+                {%- if block.settings.image != blank -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 1600
+                    | image_tag:
+                      widths: '600, 800, 1100, 1600',
+                      sizes: '(min-width: 1248px) 552px, (min-width: 880px) calc(50vw - 72px), min(552px, calc(100vw - 64px))',
+                      alt: block.settings.image_alt,
+                      loading: 'lazy'
+                  }}
+                {%- else -%}
+                  <img
+                    src="{{ 'aiwo-sleepcation-venue-' | append: builtin | append: '.webp' | asset_url }}"
+                    width="{{ image_width }}"
+                    height="{{ image_height }}"
+                    alt="{{ block.settings.image_alt | escape }}"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            <div class="aiwo-sleepcation-venues__content">
+              <h3 class="aiwo-sleepcation-venues__name">
+                <img src="{{ 'aiwo-sleepcation-icon-location.svg' | asset_url }}" width="32" height="32" alt="" aria-hidden="true">
+                <span>{{ block.settings.venue_name | escape }}</span>
+              </h3>
+              {%- if block.settings.days_label != blank or block.settings.nights_label != blank -%}
+                <p class="aiwo-sleepcation-venues__stay">
+                  {%- if block.settings.days_label != blank -%}
+                    <img src="{{ 'aiwo-sleepcation-icon-day.svg' | asset_url }}" width="24" height="24" alt="" aria-hidden="true">
+                    <span>{{ block.settings.days_label | escape }}</span>
+                  {%- endif -%}
+                  {%- if block.settings.nights_label != blank -%}
+                    <img src="{{ 'aiwo-sleepcation-icon-night.svg' | asset_url }}" width="24" height="24" alt="" aria-hidden="true">
+                    <span>{{ block.settings.nights_label | escape }}</span>
+                  {%- endif -%}
+                </p>
+              {%- endif -%}
+            </div>
+          </div>
+          <span class="aiwo-sleepcation-venues__edge" aria-hidden="true"></span>
+        </article>
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "Sleepcation Venues",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow / tagline"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "venue",
+      "name": "Venue",
+      "settings": [
+        {
+          "type": "text",
+          "id": "venue_name",
+          "label": "Venue name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Overrides the built-in image. Without either, the card uses the plain dark background."
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        },
+        {
+          "type": "select",
+          "id": "builtin_image",
+          "label": "Built-in image",
+          "default": "none",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "fairmont-mumbai", "label": "Fairmont Mumbai" },
+            { "value": "leela-chennai", "label": "The Leela Chennai" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "days_label",
+          "label": "Days label"
+        },
+        {
+          "type": "text",
+          "id": "nights_label",
+          "label": "Nights label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

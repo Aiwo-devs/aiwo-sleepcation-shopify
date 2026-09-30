@@ -380,3 +380,62 @@
     init();
   }
 })();
+
+/* AIWO Sleepcation — Compare tooltips: open on hover or focus, tap/click toggles, Escape closes. One open at a time. */
+(function () {
+  if (document.documentElement.hasAttribute('data-aiwo-sleepcation-compare-js')) return;
+  document.documentElement.setAttribute('data-aiwo-sleepcation-compare-js', '');
+
+  var openTip = null;
+
+  function setOpen(tip, open) {
+    var button = tip.querySelector('button');
+    var text = document.getElementById(button.getAttribute('aria-describedby'));
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    text.hidden = !open;
+    if (open) {
+      if (openTip && openTip !== tip) setOpen(openTip, false);
+      openTip = tip;
+    } else if (openTip === tip) {
+      openTip = null;
+    }
+  }
+
+  function setupTip(tip) {
+    if (tip.hasAttribute('data-ready')) return;
+    tip.setAttribute('data-ready', '');
+    var button = tip.querySelector('button');
+    var pinned = false; // opened by tap/click: stays open until toggled, Escape or an outside tap
+
+    tip.addEventListener('mouseenter', function () { setOpen(tip, true); });
+    tip.addEventListener('mouseleave', function () { if (!pinned) setOpen(tip, false); });
+    button.addEventListener('focus', function () { setOpen(tip, true); });
+    button.addEventListener('blur', function () { pinned = false; setOpen(tip, false); });
+    button.addEventListener('click', function () {
+      pinned = !(pinned && button.getAttribute('aria-expanded') === 'true');
+      setOpen(tip, pinned);
+    });
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && openTip) setOpen(openTip, false);
+  });
+
+  document.addEventListener('pointerdown', function (event) {
+    if (openTip && !openTip.contains(event.target)) setOpen(openTip, false);
+  });
+
+  function init() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-aiwo-sleepcation-tip]'), setupTip);
+  }
+
+  if (window.Shopify && window.Shopify.designMode) {
+    document.addEventListener('shopify:section:load', init);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

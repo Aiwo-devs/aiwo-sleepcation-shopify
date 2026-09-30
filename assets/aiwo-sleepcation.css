@@ -176,7 +176,8 @@
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::after,
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you::before,
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-dark-section::before,
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included::before {
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included::before,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -189,7 +190,8 @@
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::before,
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you::before,
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-dark-section::before,
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included::before {
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included::before,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare::before {
   background: radial-gradient(circle, rgba(152, 162, 179, var(--aiwo-sleepcation-dot-opacity)) 1px, rgba(152, 162, 179, 0) 2px) calc(50% + 11.5px) -4.5px / 23px 23px;
   -webkit-mask: radial-gradient(751.588px 1440px at 50% 0, #000 0%, rgba(0, 0, 0, 0) 95.3125%) no-repeat;
   mask: radial-gradient(751.588px 1440px at 50% 0, #000 0%, rgba(0, 0, 0, 0) 95.3125%) no-repeat;
@@ -1765,5 +1767,415 @@
 
   .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__description {
     font-size: 16px;
+  }
+}
+
+/* Section 08 — Compare (1440 × 1071: 64px + 200px header + 40px + 703px table + 64px). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare {
+  --aiwo-sleepcation-dot-opacity: 0.4;
+  --aiwo-sleepcation-compare-criterion: 360px;
+  --aiwo-sleepcation-compare-value: 214px;
+  --aiwo-sleepcation-compare-bg: #f8fdff;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 64px var(--aiwo-sleepcation-page-padding);
+  overflow: hidden;
+  background: var(--aiwo-sleepcation-compare-bg);
+  color: #1d2c38;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  color: var(--aiwo-sleepcation-color-text);
+  text-transform: capitalize;
+  text-wrap: balance;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__title-line {
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__title-accent {
+  font-family: var(--aiwo-sleepcation-font-serif);
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* fill:none undoes the theme's global svg{fill:currentColor} on the stroke-only divider. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__heading > svg {
+  fill: none;
+  max-width: 100%;
+  height: auto;
+  margin-block: -0.7px;
+}
+
+/* Scrolls horizontally only when the 1216px table no longer fits; the criterion column then stays sticky. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__scroller {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-left: var(--aiwo-sleepcation-compare-criterion);
+  /* Room for the AIWO column shadow inside the scroll box. */
+  padding-bottom: 48px;
+  margin-bottom: -48px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__scroller:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: 4px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table {
+  width: calc(var(--aiwo-sleepcation-compare-criterion) + 4 * var(--aiwo-sleepcation-compare-value));
+  margin: 0;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 0;
+  position: relative;
+  z-index: 0; /* own stacking context: the AIWO card layer sits above the section, below the cells */
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 16px;
+  line-height: 24px;
+  color: #1d2c38;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__col-criterion {
+  width: var(--aiwo-sleepcation-compare-criterion);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__col-value {
+  width: var(--aiwo-sleepcation-compare-value);
+}
+
+/* Resets the theme's table cell styles; every row is 72px (16/24 padding + 1px rule, content 24/31px). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table :is(th, td) {
+  padding: 24px 24px 23px;
+  border: 0;
+  border-bottom: 1px solid #eaecf0;
+  background: none;
+  font: inherit;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table img {
+  display: inline-block;
+  max-width: none;
+  vertical-align: top;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table tfoot :is(th, td) {
+  padding-block: 17.5px;
+  border-bottom: 0;
+}
+
+/* Figma drops the rule under the last row everywhere except the AIWO column, where it separates the CTA. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table tbody tr:last-child > :not(.aiwo-sleepcation-compare__aiwo) {
+  padding-bottom: 24px;
+  border-bottom: 0;
+}
+
+/* Header row: 140px = 24 + 56px mark + 12 + 24px label + 24. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table thead :is(th, td) {
+  padding: 24px 24px 23px;
+  vertical-align: top;
+  font-weight: 500;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__mark--other + span {
+  display: block;
+  white-space: nowrap;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  background: linear-gradient(139.59deg, #5d7180 0.42%, #6a7c83 48.94%, #527c9e 100.23%);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__mark--other {
+  padding-top: 0.9px;
+  background: none;
+}
+
+/* 64.5 × 12.9 wordmark, 1px, then 17px "Sleepcation" in a 24px row. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  height: 24px;
+  font-size: 17px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Figma centres the label in a 100.5px box beside the wordmark; longer labels simply grow it. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__brand > span {
+  min-width: 100.5px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table .aiwo-sleepcation-compare__logo {
+  width: 64.5px;
+  height: 12.9px;
+}
+
+/* Criterion column. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table tbody th {
+  font-weight: 400;
+  text-align: left;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__criterion {
+  display: inline;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__tip {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 6px;
+  vertical-align: -4px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__tip-button {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__tip-button::before {
+  content: '';
+  position: absolute;
+  inset: -12px; /* 44px touch target */
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__tip-button:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: 2px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__tip-button img {
+  display: block;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__tip-text {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  z-index: 3;
+  width: max-content;
+  max-width: min(280px, 70vw);
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #1d2c38;
+  box-shadow: 0 8px 16px -4px rgba(16, 24, 40, 0.16);
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff;
+  text-align: left;
+  white-space: normal;
+  transform: translateX(-50%);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__tip-text[hidden] {
+  display: none;
+}
+
+/* Competitor text is Outfit Light; AIWO text stays Bricolage. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__value:not(.aiwo-sleepcation-compare__aiwo) {
+  font-family: var(--aiwo-sleepcation-font);
+  font-weight: 300;
+}
+
+/* 27px pill held to the 24px line so the row stays 72px. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-sizing: border-box;
+  height: 27px; /* fixed: 1× screens round the 0.5px border up to 1px */
+  margin-block: -1.5px;
+  padding: 0 9.5px 0.5px;
+  border: 0.5px dashed rgba(29, 44, 56, 0.48);
+  border-radius: 6px;
+  background: linear-gradient(180deg, #e7eef3, rgba(231, 238, 243, 0.12));
+  line-height: 1.2;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__pill--star {
+  gap: 6.947px;
+}
+
+/* AIWO column card: one decorative layer behind the column (a single shadow, so no seams between rows).
+   Anchored to the table, so it spans header to CTA and scrolls with the columns. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table thead .aiwo-sleepcation-compare__aiwo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--aiwo-sleepcation-compare-criterion);
+  z-index: -1;
+  width: var(--aiwo-sleepcation-compare-value);
+  border: 1px solid #bcd1e6;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 20px 24px -4px rgba(16, 24, 40, 0.08), 0 8px 8px -4px rgba(16, 24, 40, 0.03);
+  pointer-events: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  border: 1px solid rgba(29, 44, 56, 0.48);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #1d2c38 0.13%, #527c9e 46.5%, #9fb9cf 99.87%);
+  box-shadow: 0 4px 0 rgba(29, 44, 56, 0.32);
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__cta:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__cta:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: 3px;
+}
+
+/* Below 1248px the table scrolls; the criterion column sticks on the section background. */
+@media (max-width: 1247px) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table tr > :first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--aiwo-sleepcation-compare-bg);
+  }
+
+  /* Extends the sticky column's background over the shadow room below the table, hiding the passing AIWO shadow. */
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table tfoot tr > :first-child {
+    box-shadow: 0 48px 0 var(--aiwo-sleepcation-compare-bg);
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table thead :is(th, td):not(:first-child) {
+    scroll-snap-align: start;
+  }
+}
+
+/* Mobile: 16px left inset, table bleeds to the right edge; 160px sticky criterion + 176px columns (~38px peek). */
+@media (max-width: 899px) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare {
+    --aiwo-sleepcation-compare-criterion: 160px;
+    --aiwo-sleepcation-compare-value: 176px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__title-line {
+    font-size: 32px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__title-accent {
+    font-size: 36px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__scroller {
+    margin-right: calc(-1 * var(--aiwo-sleepcation-page-padding));
+    padding-right: var(--aiwo-sleepcation-page-padding);
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table tbody th {
+    padding-inline: 0 12px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table thead .aiwo-sleepcation-compare__corner {
+    padding: 0;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__table :is(th, td):not(:first-child) {
+    padding-inline: 12px;
+  }
+
+  /* The sticky criterion cell becomes the tooltip's containing block, so the tip opens left-aligned above the row. */
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__tip {
+    position: static;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-compare__tip-text {
+    bottom: calc(100% - 12px);
+    left: 0;
+    max-width: min(280px, calc(100vw - 48px));
+    transform: none;
   }
 }

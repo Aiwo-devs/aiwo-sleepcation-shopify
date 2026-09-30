@@ -987,6 +987,143 @@
         "heading_line_1": "Three days,",
         "heading_line_2": "arranged around you."
       }
+    },
+    "aiwo_sleepcation_compare": {
+      "type": "aiwo-sleepcation-compare",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "criterion": "Sleep study with EEG",
+            "tooltip": "A Level 2 sleep study with EEG channels, in your own room — it records real sleep stages, not estimates.",
+            "aiwo_pill_icon": "none",
+            "aiwo_type": "check",
+            "aiwo_text": "",
+            "col_1_type": "minus",
+            "col_1_text": "",
+            "col_2_type": "minus",
+            "col_2_text": "",
+            "col_3_type": "text",
+            "col_3_text": "Yes"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "criterion": "Full blood panel",
+            "tooltip": "",
+            "aiwo_pill_icon": "markers",
+            "aiwo_type": "text",
+            "aiwo_text": "181 markers",
+            "col_1_type": "check",
+            "col_1_text": "",
+            "col_2_type": "minus",
+            "col_2_text": "",
+            "col_3_type": "minus",
+            "col_3_text": ""
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "criterion": "Behavioural treatment (CBT-I)",
+            "tooltip": "Cognitive behavioural therapy for insomnia, with a psychologist.",
+            "aiwo_pill_icon": "none",
+            "aiwo_type": "text",
+            "aiwo_text": "2 sessions",
+            "col_1_type": "minus",
+            "col_1_text": "",
+            "col_2_type": "minus",
+            "col_2_text": "",
+            "col_3_type": "text",
+            "col_3_text": "Rarely"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "criterion": "One physician reading all of it",
+            "tooltip": "Your Lead Physician reads the sleep study, bloodwork, scans and questionnaires together.",
+            "aiwo_pill_icon": "none",
+            "aiwo_type": "check",
+            "aiwo_text": "",
+            "col_1_type": "text",
+            "col_1_text": "Partly",
+            "col_2_type": "minus",
+            "col_2_text": "",
+            "col_3_type": "minus",
+            "col_3_text": ""
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "criterion": "Supervised for 90 days",
+            "tooltip": "",
+            "aiwo_pill_icon": "none",
+            "aiwo_type": "text",
+            "aiwo_text": "4 reviews",
+            "col_1_type": "text",
+            "col_1_text": "Partly",
+            "col_2_type": "minus",
+            "col_2_text": "",
+            "col_3_type": "minus",
+            "col_3_text": ""
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "criterion": "Tested again at the end",
+            "tooltip": "",
+            "aiwo_pill_icon": "calendar",
+            "aiwo_type": "text",
+            "aiwo_text": "Day 90",
+            "col_1_type": "minus",
+            "col_1_text": "",
+            "col_2_type": "minus",
+            "col_2_text": "",
+            "col_3_type": "minus",
+            "col_3_text": ""
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "criterion": "You sleep somewhere you’d choose to",
+            "tooltip": "",
+            "aiwo_pill_icon": "star",
+            "aiwo_type": "text",
+            "aiwo_text": "5-star",
+            "col_1_type": "minus",
+            "col_1_text": "",
+            "col_2_type": "check",
+            "col_2_text": "",
+            "col_3_type": "minus",
+            "col_3_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7"
+      ],
+      "settings": {
+        "eyebrow": "Why this",
+        "heading_line_1": "A sleep lab, a retreat, a longevity clinic.",
+        "heading_line_2": "Each one leaves something out.",
+        "aiwo_label": "Sleepcation",
+        "col_1_label": "Longevity clinic",
+        "col_2_label": "Wellness retreat",
+        "col_3_label": "Hospital sleep lab",
+        "cta_label": "Book Now",
+        "cta_url": ""
+      }
     }
   },
   "order": [
@@ -996,6 +1133,7 @@
     "aiwo_sleepcation_for_you",
     "aiwo_sleepcation_how_it_works",
     "aiwo_sleepcation_whats_included",
-    "aiwo_sleepcation_schedule"
+    "aiwo_sleepcation_schedule",
+    "aiwo_sleepcation_compare"
   ]
 }

@@ -1,0 +1,194 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'aiwo-sleepcation.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign svg_attrs = '<svg aria-hidden="true" focusable="false" '
+  assign columns = 'aiwo,col_1,col_2,col_3' | split: ','
+  assign pill_icons = 'markers:aiwo-sleepcation-icon-compare-markers.svg,calendar:aiwo-sleepcation-icon-phase-days-15-60.svg,star:aiwo-sleepcation-icon-compare-star.svg' | split: ','
+-%}
+
+<section id="aiwo-sleepcation-compare" class="aiwo-sleepcation-compare">
+  <header class="aiwo-sleepcation-compare__header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="aiwo-sleepcation-eyebrow aiwo-sleepcation-eyebrow--light">
+        <span class="aiwo-sleepcation-eyebrow__label">{{ section.settings.eyebrow | escape }}</span>
+      </p>
+    {%- endif -%}
+    <div class="aiwo-sleepcation-compare__heading">
+      <h2 class="aiwo-sleepcation-compare__title" id="aiwo-sleepcation-compare-title">
+        <span class="aiwo-sleepcation-compare__title-line">{{ section.settings.heading_line_1 | strip | escape }}</span>
+        <span class="aiwo-sleepcation-compare__title-accent">{{ section.settings.heading_line_2 | strip | escape }}</span>
+      </h2>
+      {{ 'aiwo-sleepcation-for-you-divider.svg' | inline_asset_content | replace: '<svg ', svg_attrs }}
+    </div>
+  </header>
+
+  {%- comment -%} Horizontal scroll container: below the full table width the criterion column stays sticky. {%- endcomment -%}
+  <div class="aiwo-sleepcation-compare__scroller" role="region" aria-labelledby="aiwo-sleepcation-compare-title" tabindex="0">
+    <table class="aiwo-sleepcation-compare__table">
+      <caption class="aiwo-sleepcation-visually-hidden">
+        {{ section.settings.aiwo_label | escape }} compared with {{ section.settings.col_1_label | escape }}, {{ section.settings.col_2_label | escape }} and {{ section.settings.col_3_label | escape }}
+      </caption>
+      <colgroup>
+        <col class="aiwo-sleepcation-compare__col-criterion">
+        <col span="4" class="aiwo-sleepcation-compare__col-value">
+      </colgroup>
+      <thead>
+        <tr>
+          <td class="aiwo-sleepcation-compare__corner"></td>
+          <th scope="col" class="aiwo-sleepcation-compare__aiwo aiwo-sleepcation-compare__head">
+            <span class="aiwo-sleepcation-compare__mark">
+              <img src="{{ 'aiwo-sleepcation-compare-aiwo-illustration.svg' | asset_url }}" width="40" height="40" alt="">
+            </span>
+            <span class="aiwo-sleepcation-compare__brand">
+              <img class="aiwo-sleepcation-compare__logo" src="{{ 'aiwo-sleepcation-compare-aiwo-logo.webp' | asset_url }}" width="65" height="13" alt="AIWO">
+              <span>{{ section.settings.aiwo_label | escape }}</span>
+            </span>
+          </th>
+          {%- for n in (1..3) -%}
+            {%- assign label_key = 'col_' | append: n | append: '_label' -%}
+            <th scope="col" class="aiwo-sleepcation-compare__head">
+              <span class="aiwo-sleepcation-compare__mark aiwo-sleepcation-compare__mark--other">
+                <img src="{{ 'aiwo-sleepcation-icon-compare-x.svg' | asset_url }}" width="24" height="24" alt="">
+              </span>
+              <span>{{ section.settings[label_key] | escape }}</span>
+            </th>
+          {%- endfor -%}
+        </tr>
+      </thead>
+      <tbody>
+        {%- for block in section.blocks -%}
+          <tr {{ block.shopify_attributes }}>
+            <th scope="row">
+              <span class="aiwo-sleepcation-compare__criterion">
+                {{- block.settings.criterion | escape -}}
+                {%- if block.settings.tooltip != blank -%}
+                  {%- assign tip_id = 'aiwo-sleepcation-compare-tip-' | append: block.id -%}
+                  <span class="aiwo-sleepcation-compare__tip" data-aiwo-sleepcation-tip>
+                    <button class="aiwo-sleepcation-compare__tip-button" type="button" aria-label="About {{ block.settings.criterion | escape }}" aria-expanded="false" aria-describedby="{{ tip_id }}">
+                      <img src="{{ 'aiwo-sleepcation-icon-info.svg' | asset_url }}" width="20" height="20" alt="">
+                    </button>
+                    <span class="aiwo-sleepcation-compare__tip-text" id="{{ tip_id }}" role="tooltip" hidden>{{ block.settings.tooltip | escape }}</span>
+                  </span>
+                {%- endif -%}
+              </span>
+            </th>
+            {%- for col in columns -%}
+              {%- liquid
+                assign type_key = col | append: '_type'
+                assign text_key = col | append: '_text'
+                assign value_type = block.settings[type_key]
+                assign value_text = block.settings[text_key]
+                assign pill_file = ''
+                if col == 'aiwo' and block.settings.aiwo_pill_icon != 'none'
+                  for pair in pill_icons
+                    assign parts = pair | split: ':'
+                    if parts[0] == block.settings.aiwo_pill_icon
+                      assign pill_file = parts[1]
+                    endif
+                  endfor
+                endif
+              -%}
+              <td class="aiwo-sleepcation-compare__value{% if col == 'aiwo' %} aiwo-sleepcation-compare__aiwo{% endif %}">
+                {%- case value_type -%}
+                  {%- when 'check' -%}
+                    <img src="{{ 'aiwo-sleepcation-icon-compare-check.svg' | asset_url }}" width="24" height="24" alt="" aria-hidden="true">
+                    <span class="aiwo-sleepcation-visually-hidden">Included</span>
+                  {%- when 'minus' -%}
+                    <img src="{{ 'aiwo-sleepcation-icon-compare-minus.svg' | asset_url }}" width="24" height="24" alt="" aria-hidden="true">
+                    <span class="aiwo-sleepcation-visually-hidden">Not typically included</span>
+                  {%- else -%}
+                    {%- if pill_file != '' -%}
+                      <span class="aiwo-sleepcation-compare__pill aiwo-sleepcation-compare__pill--{{ block.settings.aiwo_pill_icon }}">
+                        <img src="{{ pill_file | asset_url }}" width="20" height="20" alt="" aria-hidden="true">
+                        {{- value_text | escape -}}
+                      </span>
+                    {%- else -%}
+                      {{ value_text | escape }}
+                    {%- endif -%}
+                {%- endcase -%}
+              </td>
+            {%- endfor -%}
+          </tr>
+        {%- endfor -%}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="aiwo-sleepcation-compare__corner"></td>
+          <td class="aiwo-sleepcation-compare__aiwo aiwo-sleepcation-compare__foot">
+            {%- if section.settings.cta_label != blank -%}
+              {%- comment -%} No URL yet: placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
+              <a class="aiwo-sleepcation-compare__cta"{% if section.settings.cta_url != blank %} href="{{ section.settings.cta_url }}"{% endif %}>
+                {{- section.settings.cta_label | escape -}}
+                <img src="{{ 'aiwo-sleepcation-icon-arrow-up-right-white.svg' | asset_url }}" width="18" height="18" alt="">
+              </a>
+            {%- endif -%}
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sleepcation Compare",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow / tagline" },
+    { "type": "text", "id": "heading_line_1", "label": "Heading line 1" },
+    { "type": "text", "id": "heading_line_2", "label": "Heading line 2 (italic)" },
+    { "type": "text", "id": "aiwo_label", "label": "AIWO column label", "default": "Sleepcation" },
+    { "type": "text", "id": "col_1_label", "label": "Column 2 label", "default": "Longevity clinic" },
+    { "type": "text", "id": "col_2_label", "label": "Column 3 label", "default": "Wellness retreat" },
+    { "type": "text", "id": "col_3_label", "label": "Column 4 label", "default": "Hospital sleep lab" },
+    { "type": "text", "id": "cta_label", "label": "CTA label" },
+    { "type": "url", "id": "cta_url", "label": "CTA URL" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Comparison row",
+      "settings": [
+        { "type": "text", "id": "criterion", "label": "Criterion" },
+        { "type": "textarea", "id": "tooltip", "label": "Tooltip (optional)", "info": "Adds an info button next to the criterion." },
+        { "type": "header", "content": "AIWO Sleepcation" },
+        {
+          "type": "select", "id": "aiwo_type", "label": "Value", "default": "check",
+          "options": [{ "value": "check", "label": "Check" }, { "value": "minus", "label": "Minus" }, { "value": "text", "label": "Text" }]
+        },
+        { "type": "text", "id": "aiwo_text", "label": "Text" },
+        {
+          "type": "select", "id": "aiwo_pill_icon", "label": "Text pill icon", "default": "none",
+          "options": [{ "value": "none", "label": "None (plain text)" }, { "value": "markers", "label": "Markers" }, { "value": "calendar", "label": "Calendar" }, { "value": "star", "label": "Star" }]
+        },
+        { "type": "header", "content": "Column 2" },
+        {
+          "type": "select", "id": "col_1_type", "label": "Value", "default": "minus",
+          "options": [{ "value": "check", "label": "Check" }, { "value": "minus", "label": "Minus" }, { "value": "text", "label": "Text" }]
+        },
+        { "type": "text", "id": "col_1_text", "label": "Text" },
+        { "type": "header", "content": "Column 3" },
+        {
+          "type": "select", "id": "col_2_type", "label": "Value", "default": "minus",
+          "options": [{ "value": "check", "label": "Check" }, { "value": "minus", "label": "Minus" }, { "value": "text", "label": "Text" }]
+        },
+        { "type": "text", "id": "col_2_text", "label": "Text" },
+        { "type": "header", "content": "Column 4" },
+        {
+          "type": "select", "id": "col_3_type", "label": "Value", "default": "minus",
+          "options": [{ "value": "check", "label": "Check" }, { "value": "minus", "label": "Minus" }, { "value": "text", "label": "Text" }]
+        },
+        { "type": "text", "id": "col_3_text", "label": "Text" }
+      ]
+    }
+  ]
+}
+{% endschema %}

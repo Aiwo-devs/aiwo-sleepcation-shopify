@@ -1,0 +1,274 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'aiwo-sleepcation.js' | asset_url }}" defer></script>
+
+{%- comment -%}
+  Current block-backed implementation supports the 50 approved cards.
+  Adding card 51+ requires migrating card content to a scalable store data source such as category metaobject lists.
+  The card markup below only reads normalised values (category, badge, icon, text, image), so a future data source
+  can feed the same markup, CSS and JS without redesigning them.
+{%- endcomment -%}
+
+{%- liquid
+  assign categories = 'tests,treatment,yours,stay,after' | split: ','
+  assign labels = 'Tests & scans|Treatment on site|Yours to keep|Your stay|After you leave' | split: '|'
+  assign svg_attrs = '<svg aria-hidden="true" focusable="false" '
+  assign card_sizes = '(min-width: 600px) 342px, 300px'
+
+  assign active_category = ''
+  for category in categories
+    for block in section.blocks
+      if block.settings.category == category
+        assign active_category = category
+        break
+      endif
+    endfor
+    if active_category != ''
+      break
+    endif
+  endfor
+-%}
+
+<section id="aiwo-sleepcation-whats-included" class="aiwo-sleepcation-included" data-aiwo-sleepcation-included>
+  <header class="aiwo-sleepcation-included__header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="aiwo-sleepcation-eyebrow aiwo-sleepcation-eyebrow--light">
+        <span class="aiwo-sleepcation-eyebrow__label">{{ section.settings.eyebrow | escape }}</span>
+      </p>
+    {%- endif -%}
+    <h2 class="aiwo-sleepcation-included__title">
+      <span class="aiwo-sleepcation-included__title-line">{{ section.settings.heading_line_1 | strip | escape }}</span>
+      <span class="aiwo-sleepcation-included__title-accent">{{ section.settings.heading_line_2 | strip | escape }}</span>
+    </h2>
+    <div class="aiwo-sleepcation-included__intro">
+      {%- if section.settings.description != blank -%}
+        <p class="aiwo-sleepcation-included__description">{{ section.settings.description | escape }}</p>
+      {%- endif -%}
+      {{ 'aiwo-sleepcation-for-you-divider.svg' | inline_asset_content | replace: '<svg ', svg_attrs }}
+    </div>
+  </header>
+
+  <div class="aiwo-sleepcation-included__tablist" role="tablist" aria-label="{{ section.settings.eyebrow | default: 'What’s included' | escape }}">
+    {%- for category in categories -%}
+      {%- liquid
+        assign count = 0
+        for block in section.blocks
+          if block.settings.category == category
+            assign count = count | plus: 1
+          endif
+        endfor
+      -%}
+      {%- if count > 0 -%}
+        {%- assign is_active = false -%}
+        {%- if category == active_category -%}{%- assign is_active = true -%}{%- endif -%}
+        <button
+          class="aiwo-sleepcation-included__tab"
+          type="button"
+          role="tab"
+          id="aiwo-sleepcation-included-tab-{{ category }}"
+          aria-controls="aiwo-sleepcation-included-panel-{{ category }}"
+          aria-selected="{{ is_active }}"
+          tabindex="{% if is_active %}0{% else %}-1{% endif %}"
+        >
+          {{- 'aiwo-sleepcation-icon-tab-' | append: category | append: '.svg' | inline_asset_content | replace: '<svg ', svg_attrs -}}
+          <span>{{ labels[forloop.index0] }}</span>
+        </button>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  {%- for category in categories -%}
+    {%- liquid
+      assign count = 0
+      for block in section.blocks
+        if block.settings.category == category
+          assign count = count | plus: 1
+        endif
+      endfor
+    -%}
+    {%- if count > 0 -%}
+      <div
+        class="aiwo-sleepcation-included__panel"
+        role="tabpanel"
+        id="aiwo-sleepcation-included-panel-{{ category }}"
+        aria-labelledby="aiwo-sleepcation-included-tab-{{ category }}"
+        data-aiwo-sleepcation-included-panel
+        {% unless category == active_category %}
+          hidden
+        {% endunless %}
+      >
+        <ul class="aiwo-sleepcation-included__track" aria-label="{{ labels[forloop.index0] }}" tabindex="0" data-aiwo-sleepcation-included-track>
+          {%- for block in section.blocks -%}
+            {%- if block.settings.category == category -%}
+              {%- assign builtin = block.settings.builtin_image -%}
+              <li class="aiwo-sleepcation-included__slide" {{ block.shopify_attributes }}>
+                <article class="aiwo-sleepcation-included__card">
+                  {%- comment -%} Media priority: merchant image → bundled Figma image → CSS placeholder. {%- endcomment -%}
+                  <div class="aiwo-sleepcation-included__media{% if block.settings.image == blank and builtin == 'none' %} aiwo-sleepcation-included__media--placeholder{% elsif block.settings.image == blank %} aiwo-sleepcation-included__media--{{ builtin }}{% endif %}">
+                    {%- if block.settings.image != blank -%}
+                      {%- capture focal -%}object-position: {{ block.settings.image.presentation.focal_point }};{%- endcapture -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 1200
+                        | image_tag:
+                          widths: '400, 700, 1200',
+                          sizes: card_sizes,
+                          alt: block.settings.image_alt,
+                          loading: 'lazy',
+                          style: focal
+                      }}
+                    {%- elsif builtin != 'none' -%}
+                      {%- liquid
+                        case builtin
+                          when 'sleep-study'
+                            assign image_width = 1536
+                            assign image_height = 1024
+                          when 'oura-ring'
+                            assign image_width = 700
+                            assign image_height = 1288
+                          else
+                            assign image_width = 700
+                            assign image_height = 1244
+                        endcase
+                      -%}
+                      <img
+                        src="{{ 'aiwo-sleepcation-included-' | append: builtin | append: '.webp' | asset_url }}"
+                        width="{{ image_width }}"
+                        height="{{ image_height }}"
+                        alt="{{ block.settings.image_alt | escape }}"
+                        loading="lazy"
+                      >
+                    {%- endif -%}
+                  </div>
+                  <h3 class="aiwo-sleepcation-included__badge">
+                    {%- if block.settings.badge_icon != 'none' -%}
+                      <img src="{{ 'aiwo-sleepcation-icon-badge-' | append: block.settings.badge_icon | append: '.svg' | asset_url }}" width="24" height="24" alt="">
+                    {%- endif -%}
+                    <span>{{ block.settings.badge | escape }}</span>
+                  </h3>
+                  <p class="aiwo-sleepcation-included__text">{{ block.settings.description | escape }}</p>
+                </article>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        <div class="aiwo-sleepcation-included__controls">
+          <div class="aiwo-sleepcation-included__pagination" aria-hidden="true" data-aiwo-sleepcation-included-pagination></div>
+          <p class="aiwo-sleepcation-included__status" aria-live="polite" data-aiwo-sleepcation-included-status></p>
+          <div class="aiwo-sleepcation-included__arrows">
+            <button class="aiwo-sleepcation-included__arrow aiwo-sleepcation-included__arrow--prev" type="button" aria-label="Previous cards" aria-controls="aiwo-sleepcation-included-panel-{{ category }}" data-aiwo-sleepcation-included-prev disabled>
+              <img src="{{ 'aiwo-sleepcation-icon-arrow-left.svg' | asset_url }}" width="24" height="24" alt="">
+            </button>
+            <button class="aiwo-sleepcation-included__arrow aiwo-sleepcation-included__arrow--next" type="button" aria-label="Next cards" aria-controls="aiwo-sleepcation-included-panel-{{ category }}" data-aiwo-sleepcation-included-next>
+              <img src="{{ 'aiwo-sleepcation-icon-arrow-left.svg' | asset_url }}" width="24" height="24" alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</section>
+
+{% schema %}
+{
+  "name": "Sleepcation Included",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow / tagline"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2 (italic)"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "paragraph",
+      "content": "Current block-backed implementation supports the 50 approved cards. Adding card 51+ requires migrating card content to a scalable store data source such as category metaobject lists."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "category",
+          "label": "Tab",
+          "default": "tests",
+          "options": [
+            { "value": "tests", "label": "Tests & scans" },
+            { "value": "treatment", "label": "Treatment on site" },
+            { "value": "yours", "label": "Yours to keep" },
+            { "value": "stay", "label": "Your stay" },
+            { "value": "after", "label": "After you leave" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Overrides the built-in image. Without either, a neutral placeholder is shown."
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text"
+        },
+        {
+          "type": "select",
+          "id": "builtin_image",
+          "label": "Built-in image",
+          "default": "none",
+          "options": [
+            { "value": "none", "label": "None (placeholder)" },
+            { "value": "aiwo-181", "label": "AIWO 181" },
+            { "value": "oura-ring", "label": "Oura Ring" },
+            { "value": "dexa", "label": "DEXA scan" },
+            { "value": "sleep-study", "label": "Level 2 sleep study" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge"
+        },
+        {
+          "type": "select",
+          "id": "badge_icon",
+          "label": "Badge icon",
+          "default": "none",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "aiwo-181", "label": "AIWO 181" },
+            { "value": "wearable", "label": "Wearable" },
+            { "value": "dexa", "label": "DEXA scan" },
+            { "value": "sleep-study", "label": "Level 2 sleep study" }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -70,6 +70,18 @@
   font-size: 0.6em;
 }
 
+/* Light-section variant (for you, what's included): 28px tall at 14px.
+   1px border + 5/11/4 padding = Figma's inside stroke + 6/12/5. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-eyebrow--light {
+  padding: 5px 11px 4px;
+  border: 1px solid #232325;
+  background: linear-gradient(90deg, rgba(0, 44, 89, 0.06), rgba(0, 39, 78, 0.12));
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #232325;
+}
+
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-button:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 3px;
@@ -163,7 +175,8 @@
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::before,
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::after,
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you::before,
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-steps::before {
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-steps::before,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -175,7 +188,8 @@
    Figma radial mask. Sections set only --aiwo-sleepcation-dot-opacity. */
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__card::before,
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you::before,
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-steps::before {
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-steps::before,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included::before {
   background: radial-gradient(circle, rgba(152, 162, 179, var(--aiwo-sleepcation-dot-opacity)) 1px, rgba(152, 162, 179, 0) 2px) calc(50% + 11.5px) -4.5px / 23px 23px;
   -webkit-mask: radial-gradient(751.588px 1440px at 50% 0, #000 0%, rgba(0, 0, 0, 0) 95.3125%) no-repeat;
   mask: radial-gradient(751.588px 1440px at 50% 0, #000 0%, rgba(0, 0, 0, 0) 95.3125%) no-repeat;
@@ -423,32 +437,6 @@
   align-items: center;
   gap: 24px;
   max-width: 100%;
-}
-
-/* 154 × 28 at 14px: 1px border + 5/11/4 padding = Figma's inside stroke + 6/12/5. */
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__eyebrow {
-  margin: 0;
-  padding: 5px 11px 4px;
-  border: 1px solid #232325;
-  border-radius: 10px;
-  background: linear-gradient(90deg, rgba(0, 44, 89, 0.06), rgba(0, 39, 78, 0.12));
-  font-family: var(--aiwo-sleepcation-font-display);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #232325;
-}
-
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__eyebrow-label {
-  display: list-item;
-  list-style: disc outside;
-  margin-inline-start: 1.5em;
-}
-
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__eyebrow-label::marker {
-  font-size: 0.6em;
 }
 
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you__title-group {
@@ -1022,5 +1010,434 @@
     width: 358.652px;
     margin-block: -0.59px;
     transform: scaleY(-1);
+  }
+}
+
+/* Section 06 — What's included (1440 × 1096: 64px + header 220.6 + 48 + tabs 47 + 48 + cards 527 + 32 + controls 45.3 + 64).
+   Section has no side padding: header, tabs and controls take the page inset themselves so the card track can
+   start at the 1216 container edge and bleed to the right edge of the viewport (Figma: 3 cards + 248px at 1440). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included {
+  --aiwo-sleepcation-dot-opacity: 0.4;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-block: 64px;
+  background: #f8fdff;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-inline: var(--aiwo-sleepcation-page-padding);
+  text-align: center;
+}
+
+/* Eyebrow → title is 24px; title → description is 8px. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__header > .aiwo-sleepcation-eyebrow {
+  margin-bottom: 16px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 4px;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--aiwo-sleepcation-color-text);
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__title-line {
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 44px;
+  font-weight: 400;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__title-accent {
+  font-family: var(--aiwo-sleepcation-font-serif);
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 445px;
+  max-width: 100%;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__description {
+  width: 446px;
+  max-width: 100%;
+  margin: 0;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Shared For You divider (445.78 × 26.01 in a 24.6px slot). fill:none undoes the theme's global svg fill. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__intro > svg {
+  fill: none;
+  max-width: 100%;
+  height: auto;
+  margin-block: -0.7px;
+}
+
+/* Tabs: centred while they fit; below that the row scrolls sideways (auto margins keep the start visible). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__tablist {
+  display: flex;
+  padding-inline: var(--aiwo-sleepcation-page-padding);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__tablist::-webkit-scrollbar {
+  display: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__tab:first-child {
+  margin-inline-start: auto;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__tab:last-child {
+  margin-inline-end: auto;
+}
+
+/* Inactive: 47px = 12 + 24 + 9 + 2px bottom border (Figma 12/11 with the stroke inside). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__tab {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 18px 9px;
+  border: 0;
+  border-bottom: 2px solid #1d2c38;
+  border-radius: 16px 16px 0 0;
+  background: none;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+  color: #667085;
+  cursor: pointer;
+}
+
+/* Active: 47px = 2px top border + 10 + 24 + 11, no bottom border. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__tab[aria-selected='true'] {
+  padding: 10px 20px 11px;
+  border: 2px solid #1d2c38;
+  border-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(180deg, #fff 0.835%, #b7d8ef 123.18%);
+  font-weight: 600;
+  color: #1d2c38;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__tab:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: -4px;
+}
+
+/* Figma exports each tab icon once; currentColor gives the active (#1D2C38) and inactive (#667085) strokes. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__tab > svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  fill: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__tab > svg path {
+  stroke: currentColor;
+}
+
+/* Card track: starts at the container edge (left clip) and runs to the viewport edge; the end padding lets the
+   last card finish on the container's right edge. % in the page-padding token resolves against the full-width panel. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__track {
+  --aiwo-sleepcation-included-card: 342px;
+  --aiwo-sleepcation-included-gap: 18px;
+  display: flex;
+  gap: var(--aiwo-sleepcation-included-gap);
+  margin: 0 0 0 var(--aiwo-sleepcation-page-padding);
+  padding: 0 var(--aiwo-sleepcation-page-padding) 0 0;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__track::-webkit-scrollbar {
+  display: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__track:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: 4px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__slide {
+  flex: 0 0 var(--aiwo-sleepcation-included-card);
+  scroll-snap-align: start;
+}
+
+/* 342 × 527: badge on top, description panel at the bottom; the panel grows upward with longer copy. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  aspect-ratio: 342 / 527;
+  padding: 24px 20px;
+  overflow: hidden;
+  border-radius: 24px;
+  color: #fff;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Figma's landscape crop for the sleep-study photo (−15.47% of a 231% wide image). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__media--sleep-study img {
+  object-position: 11.8% 50%;
+}
+
+/* Temporary placeholder until a card has its own photo. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__media--placeholder {
+  background: linear-gradient(180deg, #1d2c38 0%, #4b5f68 100%);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.64) 0%, rgba(0, 0, 0, 0) 34.128%, rgba(0, 0, 0, 0.48) 70.283%);
+}
+
+/* "Liquid glass" badge: blurred backdrop (::before), #1A1A1A plus-lighter tint (::after), then Figma's edge
+   highlights as inset shadows on the pill itself. 41px tall; long text wraps inside the pill.
+   Figma's 5th effect (inset 0 0 34.125px rgba(242,242,242,.5)) is omitted: Figma renders it near-invisibly on this
+   pill, while browsers draw it at full strength (+40 levels). Without it the glass matches the Figma render. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  max-width: 100%;
+  margin: 0;
+  padding: 9px 16px 8px;
+  border-radius: 50px;
+  box-shadow:
+    inset 4.653px 4.653px 0.776px -5.429px rgba(255, 255, 255, 0.5),
+    inset 3.102px 3.102px 1.551px -3.102px #b3b3b3,
+    inset -3.102px -3.102px 1.551px -3.102px #b3b3b3,
+    inset 0 0 0 1.551px #999;
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__badge::before,
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__badge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__badge::before {
+  -webkit-backdrop-filter: blur(9.307px);
+  backdrop-filter: blur(9.307px);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__badge::after {
+  background: #1a1a1a;
+  mix-blend-mode: plus-lighter;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__badge > img {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+/* Description panel: 108px for Figma's 3-line copy; grows with longer text, never clipped. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 108px;
+  margin: 0;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.12);
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 32px;
+  padding-inline: var(--aiwo-sleepcation-page-padding);
+}
+
+/* Segmented progress: one segment per logical scroll stop (built by JS). Inactive segments compress to fit. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__pagination {
+  display: flex;
+  flex: 1 1 auto;
+  gap: 3px;
+  min-width: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__pagination > span {
+  flex: 0 1 24px;
+  min-width: 4px;
+  height: 8px;
+  border-radius: 4px;
+  background: #eaecf0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__pagination > .is-active {
+  flex: 0 0 68px;
+  background: #1d2c38;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__arrows {
+  display: flex;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+/* 45.33px: 1px border + 9.667 padding + 24px icon. States change colour only, so nothing shifts. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__arrow {
+  display: grid;
+  place-items: center;
+  width: 45.333px;
+  height: 45.333px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #d0d5dd;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+  cursor: pointer;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__arrow:hover:not(:disabled) {
+  background: #f9fafb;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__arrow:active:not(:disabled) {
+  background: #f2f4f7;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__arrow:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: 2px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__arrow > img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/* The Figma arrow points left; the next button mirrors it. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__arrow--next > img {
+  transform: scaleX(-1);
+}
+
+/* Mobile: one readable card with the next one peeking in (~300px card, 12px gap, ~20% peek at 390). */
+@media (max-width: 599px) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included {
+    padding-block: 48px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__title-line {
+    font-size: 32px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__title-accent {
+    font-size: 36px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__description {
+    font-size: 16px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__track {
+    /* 300px down to 375 (16px inset + 12px gap + ≥ 46px peek); narrower phones shrink the card, not the type. */
+    --aiwo-sleepcation-included-card: min(300px, calc(100vw - 74px));
+    --aiwo-sleepcation-included-gap: 12px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__badge {
+    font-size: 16px;
+  }
+
+  /* Same panel footprint on every mobile card: 3 lines × 27px + 16px padding/border = 97px (a minimum, never a cap). */
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-included__text {
+    min-height: 97px;
+    font-size: 18px;
   }
 }

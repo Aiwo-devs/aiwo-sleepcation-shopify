@@ -290,6 +290,619 @@
         "heading_line_1": "5 steps.",
         "heading_line_2": "Ninety days."
       }
+    },
+    "aiwo_sleepcation_whats_included": {
+      "type": "aiwo-sleepcation-whats-included",
+      "blocks": {
+        "card_tests_01": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "AIWO 181",
+            "description": "181-marker blood panel. Run on day one and again on day ninety.",
+            "builtin_image": "aiwo-181",
+            "badge_icon": "aiwo-181",
+            "image_alt": "Blood being drawn from a patient’s arm for the AIWO 181 panel"
+          }
+        },
+        "card_tests_02": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "Wearable",
+            "description": "Records from your first night. Loaned for the stay; we advise buying your own after.",
+            "builtin_image": "oura-ring",
+            "badge_icon": "wearable",
+            "image_alt": "A hand resting on a blanket, wearing an Oura Ring"
+          }
+        },
+        "card_tests_03": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "DEXA Scan",
+            "description": "Body composition, measured rather than estimated.",
+            "builtin_image": "dexa",
+            "badge_icon": "dexa",
+            "image_alt": "A person lying on a DEXA body composition scanner"
+          }
+        },
+        "card_tests_04": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "Level 2 sleep study",
+            "description": "With EEG channels, in your own room. Records real sleep stages, not estimates.",
+            "builtin_image": "sleep-study",
+            "badge_icon": "sleep-study",
+            "image_alt": "A man asleep in a hotel bed wearing sleep-study sensors"
+          }
+        },
+        "card_tests_05": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "VO2 max test",
+            "description": "Cardiorespiratory fitness and recovery capacity.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_tests_06": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "Pulmonary function test",
+            "description": "With a pulmonologist consultation.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_tests_07": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "ENT consultation",
+            "description": "Where clinically required, for upper-airway factors.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_tests_08": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "Psychological assessment",
+            "description": "With counselling, conducted on site.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_tests_09": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "DBAS-16 · PHQ-9 · GAD-7",
+            "description": "Three validated questionnaires, completed before you travel.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_tests_10": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "Biological age",
+            "description": "Your markers placed against chronological age.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_tests_11": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "Vital check",
+            "description": "Baseline physiological measurements on arrival.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_tests_12": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "Physical assessment",
+            "description": "Functional movement, reviewed by the physiotherapy team.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_tests_13": {
+          "type": "card",
+          "settings": {
+            "category": "tests",
+            "badge": "Posture screening",
+            "description": "Postural factors contributing to discomfort at night.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_01": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Lead Physician ×2",
+            "description": "One to set direction, one to hand over your findings and plan.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_02": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "CBT-I ×2 sessions",
+            "description": "Cognitive behavioural therapy for insomnia, with a psychologist.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_03": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Sleep coaching",
+            "description": "Builds your thirty-day protocol and leads two of the four follow-ups.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_04": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "10,000 lux light protocol",
+            "description": "On waking, days two and three, to reset circadian timing.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_05": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Breathing therapy",
+            "description": "Protocol taught on site, continued at home with your kit.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_06": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Diet counselling",
+            "description": "Built from your own results, not a template.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_07": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Stress coaching",
+            "description": "Targeted at the arousal keeping you awake.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_08": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Hyperbaric oxygen",
+            "description": "Part of the recovery programme during the stay.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_09": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Red light therapy ×2",
+            "description": "Two sessions across the three days.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_10": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Massage & foot reflexology",
+            "description": "Scheduled around the diagnostic programme.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_11": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Myofascial release",
+            "description": "With the physiotherapy team.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_12": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Cold adaptation",
+            "description": "Structured exposure as part of recovery.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_13": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "IV therapy",
+            "description": "Administered under clinical supervision.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_14": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "NSDR & Yoga Nidra",
+            "description": "Non-sleep deep rest protocols you can repeat at home.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_15": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "PMR & tibialis raise",
+            "description": "Progressive muscle relaxation and targeted exercise.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_16": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Yoga session",
+            "description": "One session during the stay.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_17": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Physio & daily exercise",
+            "description": "Led by a physiotherapist each day.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_treatment_18": {
+          "type": "card",
+          "settings": {
+            "category": "treatment",
+            "badge": "Mashing therapy",
+            "description": "With music, as part of the on-site schedule. Your coordinator explains it first.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_yours_01": {
+          "type": "card",
+          "settings": {
+            "category": "yours",
+            "badge": "AIWO head pillow",
+            "description": "Part of the AIWO pillow pair. Yours to keep",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_yours_02": {
+          "type": "card",
+          "settings": {
+            "category": "yours",
+            "badge": "AIWO leg pillow",
+            "description": "Part of the AIWO pillow pair. Yours to keep",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_yours_03": {
+          "type": "card",
+          "settings": {
+            "category": "yours",
+            "badge": "One month of sleep supplements",
+            "description": "Ashwagandha, melatonin, L-theanine, magnesium L-threonate and glycine.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_yours_04": {
+          "type": "card",
+          "settings": {
+            "category": "yours",
+            "badge": "AIWO Sleep Tea — 30 days",
+            "description": "One chamomile serving daily for a month.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_yours_05": {
+          "type": "card",
+          "settings": {
+            "category": "yours",
+            "badge": "Breathing therapy kit",
+            "description": "Home kit for the breathing protocol. Separate one-time purchase; cost confirmed at booking.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_yours_06": {
+          "type": "card",
+          "settings": {
+            "category": "yours",
+            "badge": "LifeOS — one year",
+            "description": "Full access, included by default. You can opt out if you would rather not use it.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_yours_07": {
+          "type": "card",
+          "settings": {
+            "category": "yours",
+            "badge": "Your thirty-day protocol",
+            "description": "In writing, built from your own test results.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_stay_01": {
+          "type": "card",
+          "settings": {
+            "category": "stay",
+            "badge": "Three days, two nights",
+            "description": "Five-star accommodation at the venue you choose.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_stay_02": {
+          "type": "card",
+          "settings": {
+            "category": "stay",
+            "badge": "Breakfast included",
+            "description": "Alongside sleep-supportive meals throughout the programme.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_stay_03": {
+          "type": "card",
+          "settings": {
+            "category": "stay",
+            "badge": "Sleep-enhancing food",
+            "description": "Menu built around the programme, not ordered off a card.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_stay_04": {
+          "type": "card",
+          "settings": {
+            "category": "stay",
+            "badge": "Sauna access",
+            "description": "Available throughout your stay.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_stay_05": {
+          "type": "card",
+          "settings": {
+            "category": "stay",
+            "badge": "Airport pickup and drop",
+            "description": "Both directions, arranged for you.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_stay_06": {
+          "type": "card",
+          "settings": {
+            "category": "stay",
+            "badge": "Two venues",
+            "description": "Fairmont Mumbai or The Leela Chennai, with an identical programme at both.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_after_01": {
+          "type": "card",
+          "settings": {
+            "category": "after",
+            "badge": "Day 15 · sleep coach",
+            "description": "Virtual. First check on the protocol in real conditions.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_after_02": {
+          "type": "card",
+          "settings": {
+            "category": "after",
+            "badge": "Day 30 · physician",
+            "description": "Virtual. Clinical review at the close of the first month.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_after_03": {
+          "type": "card",
+          "settings": {
+            "category": "after",
+            "badge": "Day 45 · sleep coach",
+            "description": "Virtual. Mid-programme behavioural review.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_after_04": {
+          "type": "card",
+          "settings": {
+            "category": "after",
+            "badge": "Day 60 · physician",
+            "description": "Virtual. Clinical review ahead of the final assessment.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_after_05": {
+          "type": "card",
+          "settings": {
+            "category": "after",
+            "badge": "Day 90 · AIWO 100",
+            "description": "In person or at a partner lab, repeating the panel to compare with day one.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        },
+        "card_after_06": {
+          "type": "card",
+          "settings": {
+            "category": "after",
+            "badge": "LifeOS throughout",
+            "description": "Your data and protocol in one place for a full year.",
+            "builtin_image": "none",
+            "badge_icon": "none",
+            "image_alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_tests_01",
+        "card_tests_02",
+        "card_tests_03",
+        "card_tests_04",
+        "card_tests_05",
+        "card_tests_06",
+        "card_tests_07",
+        "card_tests_08",
+        "card_tests_09",
+        "card_tests_10",
+        "card_tests_11",
+        "card_tests_12",
+        "card_tests_13",
+        "card_treatment_01",
+        "card_treatment_02",
+        "card_treatment_03",
+        "card_treatment_04",
+        "card_treatment_05",
+        "card_treatment_06",
+        "card_treatment_07",
+        "card_treatment_08",
+        "card_treatment_09",
+        "card_treatment_10",
+        "card_treatment_11",
+        "card_treatment_12",
+        "card_treatment_13",
+        "card_treatment_14",
+        "card_treatment_15",
+        "card_treatment_16",
+        "card_treatment_17",
+        "card_treatment_18",
+        "card_yours_01",
+        "card_yours_02",
+        "card_yours_03",
+        "card_yours_04",
+        "card_yours_05",
+        "card_yours_06",
+        "card_yours_07",
+        "card_stay_01",
+        "card_stay_02",
+        "card_stay_03",
+        "card_stay_04",
+        "card_stay_05",
+        "card_stay_06",
+        "card_after_01",
+        "card_after_02",
+        "card_after_03",
+        "card_after_04",
+        "card_after_05",
+        "card_after_06"
+      ],
+      "settings": {
+        "eyebrow": "What’s included",
+        "heading_line_1": "What the",
+        "heading_line_2": "programme covers.",
+        "description": "A complete diagnostic protocol featuring 12 tests, 17 treatments, 6 consults, and take-home equipment."
+      }
     }
   },
   "order": [
@@ -297,6 +910,7 @@
     "aiwo_sleepcation_hero",
     "aiwo_sleepcation_marquee",
     "aiwo_sleepcation_for_you",
-    "aiwo_sleepcation_how_it_works"
+    "aiwo_sleepcation_how_it_works",
+    "aiwo_sleepcation_whats_included"
   ]
 }

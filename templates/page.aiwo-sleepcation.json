@@ -233,12 +233,70 @@
         "instruction_label": "Tick the ones that sound like you",
         "cta_label": "Book Now"
       }
+    },
+    "aiwo_sleepcation_how_it_works": {
+      "type": "aiwo-sleepcation-how-it-works",
+      "blocks": {
+        "step_measure": {
+          "type": "step",
+          "settings": {
+            "title": "Measure",
+            "description": "Sleep, breathing, bloodwork, body and mind — in the first forty-eight hours.",
+            "illustration": "measure"
+          }
+        },
+        "step_understand": {
+          "type": "step",
+          "settings": {
+            "title": "Understand",
+            "description": "One physician reads every result together and tells you what’s actually going on.",
+            "illustration": "understand"
+          }
+        },
+        "step_treat": {
+          "type": "step",
+          "settings": {
+            "title": "Treat",
+            "description": "Treatment starts on site, then continues at home on a written thirty-day plan.",
+            "illustration": "treat"
+          }
+        },
+        "step_follow": {
+          "type": "step",
+          "settings": {
+            "title": "Follow",
+            "description": "Four scheduled reviews with your physician and sleep coach. Booked, not offered.",
+            "illustration": "follow"
+          }
+        },
+        "step_measure_again": {
+          "type": "step",
+          "settings": {
+            "title": "Measure again",
+            "description": "The same tests on day ninety, so you see what changed instead of guessing.",
+            "illustration": "measure-again"
+          }
+        }
+      },
+      "block_order": [
+        "step_measure",
+        "step_understand",
+        "step_treat",
+        "step_follow",
+        "step_measure_again"
+      ],
+      "settings": {
+        "eyebrow": "How it works",
+        "heading_line_1": "5 steps.",
+        "heading_line_2": "Ninety days."
+      }
     }
   },
   "order": [
     "aiwo_sleepcation_subnav",
     "aiwo_sleepcation_hero",
     "aiwo_sleepcation_marquee",
-    "aiwo_sleepcation_for_you"
+    "aiwo_sleepcation_for_you",
+    "aiwo_sleepcation_how_it_works"
   ]
 }

@@ -1,0 +1,133 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+
+{%- assign svg_attrs = '<svg aria-hidden="true" focusable="false" ' -%}
+
+<section id="aiwo-sleepcation-how-it-works" class="aiwo-sleepcation-steps">
+  <header class="aiwo-sleepcation-steps__header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="aiwo-sleepcation-eyebrow">
+        <span class="aiwo-sleepcation-eyebrow__label">{{ section.settings.eyebrow | escape }}</span>
+      </p>
+    {%- endif -%}
+    <h2 class="aiwo-sleepcation-steps__title">
+      <span class="aiwo-sleepcation-steps__title-line">{{ section.settings.heading_line_1 | strip | escape }}</span>
+      <span class="aiwo-sleepcation-steps__title-accent">{{ section.settings.heading_line_2 | strip | escape }}</span>
+    </h2>
+    {{ 'aiwo-sleepcation-steps-divider.svg' | inline_asset_content | replace: '<svg ', svg_attrs }}
+  </header>
+
+  <ol class="aiwo-sleepcation-steps__list">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign profile = block.settings.illustration
+        case profile
+          when 'understand'
+            assign image_width = 920
+            assign image_height = 439
+          when 'treat', 'follow'
+            assign image_width = 400
+            assign image_height = 500
+          when 'measure-again'
+            assign image_width = 480
+            assign image_height = 273
+          else
+            assign image_width = 400
+            assign image_height = 400
+        endcase
+      -%}
+      {%- comment -%} The profile modifier locks the illustration's measured desktop and mobile placement. {%- endcomment -%}
+      <li class="aiwo-sleepcation-steps__card aiwo-sleepcation-steps__card--{{ profile }}" {{ block.shopify_attributes }}>
+        <span class="aiwo-sleepcation-steps__number" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <h3 class="aiwo-sleepcation-steps__card-title">{{ block.settings.title | escape }}</h3>
+        <p class="aiwo-sleepcation-steps__card-text">{{ block.settings.description | escape }}</p>
+        {%- if block.settings.custom_image != blank -%}
+          {{
+            block.settings.custom_image
+            | image_url: width: 920
+            | image_tag:
+              class: 'aiwo-sleepcation-steps__image',
+              widths: '400, 920',
+              sizes: '460px',
+              alt: '',
+              loading: 'lazy'
+          }}
+        {%- else -%}
+          <img
+            class="aiwo-sleepcation-steps__image"
+            src="{{ 'aiwo-sleepcation-step-' | append: profile | append: '.webp' | asset_url }}"
+            width="{{ image_width }}"
+            height="{{ image_height }}"
+            alt=""
+            loading="lazy"
+          >
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ol>
+</section>
+
+{% schema %}
+{
+  "name": "Sleepcation Steps",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow / tagline"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2 (italic)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "illustration",
+          "label": "Illustration profile",
+          "info": "Sets the illustration and its placement. A custom image keeps this placement.",
+          "default": "measure",
+          "options": [
+            { "value": "measure", "label": "Measure (gloved hand)" },
+            { "value": "understand", "label": "Understand (hands)" },
+            { "value": "treat", "label": "Treat (face)" },
+            { "value": "follow", "label": "Follow (stretch)" },
+            { "value": "measure-again", "label": "Measure again (ring & band)" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom image (optional)",
+          "info": "Transparent PNG/WebP recommended. Replaces the illustration and keeps its placement."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1260,7 +1260,95 @@
         "eyebrow": "Pricing",
         "heading_line_1": "Two ways to book",
         "heading_line_2": "the same programme.",
-        "intro": "The clinical content is identical in both — all forty-three services, the full ninety days, both assessments. What changes is the room you sleep in for the two nights."
+        "intro": "The clinical content is identical in both — all forty-three services, the full ninety days, both assessments. What changes is the room you sleep in for the two nights.",
+        "note": "Prices are per room on double occupancy, with the Sleepcation programme for one guest. Exclusive of applicable taxes. Dining outlets shown are Fairmont Mumbai; the team confirms the equivalent at The Leela Chennai."
+      }
+    },
+    "aiwo_sleepcation_faq": {
+      "type": "aiwo-sleepcation-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Can three days really fix my sleep?",
+            "answer": "No. Three days is how we find the cause and start treating it. The ninety days after is where sleep actually changes. That’s what the plan, the supplements and the four reviews are for."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "I can get a sleep study at a hospital for far less.",
+            "answer": "You can. If all you want is the number, you should. A sleep study gives you one number. It doesn’t give you bloodwork, a psychologist, a physician reading all of it together, a written plan, or anyone measuring you again in ninety days."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "I can’t take three days off.",
+            "answer": "Three days is the whole in-person commitment. The four reviews are virtual. One long weekend, ninety days of supervision."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What if you find something serious?",
+            "answer": "That’s part of why it exists. A pulmonologist consultation is included, an ENT consultation where it’s clinically required, and your Lead Physician manages whatever follows."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "If it turns out to be sleep apnoea, will I end up on a CPAP machine?",
+            "answer": "Not necessarily. Apnoea has a range of severities and a range of responses. CPAP is one of several. That is exactly why it needs measuring rather than guessing at. We find out what’s happening and your Lead Physician talks you through what follows. This isn’t a CPAP service; where ongoing management is needed, you’re referred for it."
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "Will it work?",
+            "answer": "Nobody can promise how your body will respond. Anyone who does is telling you something they can’t know. What we can promise is that you’ll know, because we run the same tests again on day ninety."
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "I live outside India. Does the programme still work?",
+            "answer": "Yes, and a lot of people do it that way. The three days are on site in Mumbai or Chennai. The four reviews on days 15, 30, 45 and 60 are video calls, so they work from anywhere. The day-90 test is done in person or at a partner laboratory — tell the team where you are based and they will confirm the arrangement before you book."
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "What do I actually walk away with?",
+            "answer": "Your results, explained to you by your physician rather than emailed as a PDF you cannot read. A thirty-day protocol written down and built from your own findings. Your supplements, sleep tea, pillows and breathing kit. Four appointments already in the calendar. And on day ninety, the same panel run again so your two sets of numbers sit side by side."
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "Is there a version for couples?",
+            "answer": "Speak to the team. The programme is currently documented for individual participants."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9"
+      ],
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "Before you decide.",
+        "support_text": "Have other questions? Get in touch with our",
+        "support_link_label": "Support Team",
+        "support_link_url": "",
+        "mobile_initial_count": 5
       }
     }
   },
@@ -1275,6 +1363,7 @@
     "aiwo_sleepcation_compare",
     "aiwo_sleepcation_venues",
     "aiwo_sleepcation_closing_cta",
-    "aiwo_sleepcation_pricing"
+    "aiwo_sleepcation_pricing",
+    "aiwo_sleepcation_faq"
   ]
 }

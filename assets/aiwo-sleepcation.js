@@ -439,3 +439,67 @@
     init();
   }
 })();
+
+/* AIWO Sleepcation — FAQ mobile "Show all / Show fewer". The accordion itself is native details (no JS).
+   Without this script every FAQ stays visible; with it, mobile starts collapsed to the configured count. */
+(function () {
+  if (document.documentElement.hasAttribute('data-aiwo-sleepcation-faq-js')) return;
+  document.documentElement.setAttribute('data-aiwo-sleepcation-faq-js', '');
+
+  var mobile = window.matchMedia('(max-width: 699px)');
+
+  function setupFaq(section) {
+    if (section.hasAttribute('data-ready')) return;
+    section.setAttribute('data-ready', '');
+
+    var toggle = section.querySelector('[data-aiwo-sleepcation-faq-toggle]');
+    if (!toggle) return; // nothing beyond the mobile count
+    var peek = section.querySelector('.aiwo-sleepcation-faq__item--peek');
+    var expanded = true;
+
+    // The peek is decorative only while collapsed on mobile; on desktop it is an ordinary FAQ.
+    function syncPeek() {
+      if (!peek) return;
+      var decorative = !expanded && mobile.matches;
+      peek.inert = decorative;
+      if (decorative) peek.setAttribute('aria-hidden', 'true');
+      else peek.removeAttribute('aria-hidden');
+    }
+
+    function setExpanded(state) {
+      expanded = state;
+      section.classList.toggle('is-collapsed', !state);
+      toggle.setAttribute('aria-expanded', state ? 'true' : 'false');
+      toggle.textContent = state ? toggle.getAttribute('data-label-less') : toggle.getAttribute('data-label-more');
+      syncPeek();
+    }
+
+    toggle.hidden = false;
+    setExpanded(false);
+
+    toggle.addEventListener('click', function () {
+      setExpanded(!expanded);
+      // After "Show fewer" the list shrinks above the control: keep the control itself in view, nothing more.
+      if (!expanded) {
+        var rect = toggle.getBoundingClientRect();
+        if (rect.top < 0 || rect.bottom > window.innerHeight) toggle.scrollIntoView({ block: 'nearest' });
+      }
+    });
+
+    if (mobile.addEventListener) mobile.addEventListener('change', syncPeek);
+  }
+
+  function init() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-aiwo-sleepcation-faq]'), setupFaq);
+  }
+
+  if (window.Shopify && window.Shopify.designMode) {
+    document.addEventListener('shopify:section:load', init);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

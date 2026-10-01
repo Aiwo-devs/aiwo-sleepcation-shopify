@@ -1,0 +1,128 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'aiwo-sleepcation.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign svg_attrs = '<svg aria-hidden="true" focusable="false" '
+  assign faq_count = 0
+  for block in section.blocks
+    if block.settings.question != blank
+      assign faq_count = faq_count | plus: 1
+    endif
+  endfor
+  assign split = faq_count | plus: 1 | divided_by: 2
+  assign initial = section.settings.mobile_initial_count
+  assign second_start = split | plus: 1
+  assign peek_index = initial | plus: 1
+  assign list_id = 'aiwo-sleepcation-faq-list-' | append: section.id
+-%}
+
+{%- comment -%}
+  Two independent columns (1…ceil(n/2), then the rest) in chronological DOM order; each FAQ is a native details element.
+  Mobile: one column; JS collapses the list to the first N items with a faded peek of the next (no JS → everything shows).
+{%- endcomment -%}
+<section id="aiwo-sleepcation-faq" class="aiwo-sleepcation-dark-section aiwo-sleepcation-faq" data-aiwo-sleepcation-faq>
+  <header class="aiwo-sleepcation-dark-header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="aiwo-sleepcation-eyebrow">
+        <span class="aiwo-sleepcation-eyebrow__label">{{ section.settings.eyebrow | escape }}</span>
+      </p>
+    {%- endif -%}
+    <div class="aiwo-sleepcation-faq__heading">
+      <h2 class="aiwo-sleepcation-dark-title">
+        <span class="aiwo-sleepcation-dark-title__line">{{ section.settings.heading | strip | escape }}</span>
+      </h2>
+      {%- if section.settings.support_text != blank or section.settings.support_link_label != blank -%}
+        <p class="aiwo-sleepcation-faq__support">
+          {{- section.settings.support_text | escape -}}
+          {%- if section.settings.support_link_label != blank -%}
+            {%- comment -%} No URL yet: placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
+            {{ ' ' }}<a class="aiwo-sleepcation-faq__support-link"{% if section.settings.support_link_url != blank %} href="{{ section.settings.support_link_url }}"{% endif %}>{{ section.settings.support_link_label | escape }}</a>
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+    </div>
+    {{ 'aiwo-sleepcation-steps-divider.svg' | inline_asset_content | replace: '<svg ', svg_attrs }}
+  </header>
+
+  <div class="aiwo-sleepcation-faq__body">
+    <div class="aiwo-sleepcation-faq__columns" id="{{ list_id }}">
+      {%- assign index = 0 -%}
+      <ol class="aiwo-sleepcation-faq__column">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.question == blank -%}{%- continue -%}{%- endif -%}
+          {%- assign index = index | plus: 1 -%}
+          {%- if index == second_start -%}
+            </ol>
+            <ol class="aiwo-sleepcation-faq__column" start="{{ index }}" style="counter-reset: aiwo-sleepcation-faq {{ index | minus: 1 }};">
+          {%- endif -%}
+          <li class="aiwo-sleepcation-faq__item{% if index > initial %} aiwo-sleepcation-faq__item--extra{% endif %}{% if index == peek_index %} aiwo-sleepcation-faq__item--peek{% endif %}" {{ block.shopify_attributes }}>
+            <details class="aiwo-sleepcation-faq__card">
+              <summary class="aiwo-sleepcation-faq__question">
+                <span class="aiwo-sleepcation-faq__question-text">{{ block.settings.question | escape }}</span>
+                <img class="aiwo-sleepcation-faq__chevron" src="{{ 'aiwo-sleepcation-icon-chevron.svg' | asset_url }}" width="32" height="32" alt="" aria-hidden="true">
+              </summary>
+              {%- comment -%} No panel without approved answer copy (an empty details simply toggles the chevron). {%- endcomment -%}
+              {%- if block.settings.answer != blank -%}
+                <div class="aiwo-sleepcation-faq__answer">
+                  <p>{{ block.settings.answer | escape | newline_to_br }}</p>
+                </div>
+              {%- endif -%}
+            </details>
+          </li>
+        {%- endfor -%}
+      </ol>
+    </div>
+
+    {%- if faq_count > initial -%}
+      <button
+        class="aiwo-sleepcation-faq__toggle"
+        type="button"
+        aria-expanded="true"
+        aria-controls="{{ list_id }}"
+        data-aiwo-sleepcation-faq-toggle
+        data-label-more="Show all FAQs"
+        data-label-less="Show fewer FAQs"
+        hidden
+      >
+        Show fewer FAQs
+      </button>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sleepcation FAQ",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "max_blocks": 20,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow / tagline" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "support_text", "label": "Support line" },
+    { "type": "text", "id": "support_link_label", "label": "Support link label" },
+    { "type": "url", "id": "support_link_url", "label": "Support link" },
+    {
+      "type": "range",
+      "id": "mobile_initial_count",
+      "label": "Questions shown on mobile before \"Show all\"",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ]
+}
+{% endschema %}

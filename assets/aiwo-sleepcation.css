@@ -2600,6 +2600,23 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
+/* Plans + the small-print note 8px below them (Figma 286:3542). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-pricing__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-pricing__note {
+  max-width: 792px;
+  margin: 0;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
+}
+
 /* Plans: 2 columns × 4 subgrid rows (header 96, pricing 145, actions 148, inclusions 290 with Figma content). */
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-pricing__plans {
   display: grid;
@@ -2996,4 +3013,248 @@
     font-size: 16px;
   }
 
+}
+
+/* Section 12 — FAQ (closed reference 1440 × 671: 40px + 151px header + 40px + 392px columns + 48px). Shared dark
+   section/header; two independent columns of native details cards (left 1…⌈n/2⌉, right the rest). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq {
+  background: linear-gradient(110.2deg, #1d2c38 0.747%, #374e61 100%);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__support {
+  max-width: 676px;
+  margin: 0;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__support-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__support-link:hover {
+  color: #fff;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__support-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Title group → divider is 12px in Figma (header gap 8 + 4). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq .aiwo-sleepcation-dark-header > svg {
+  margin-top: 3.3px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__column {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: aiwo-sleepcation-faq;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__item {
+  margin: 0;
+  counter-increment: aiwo-sleepcation-faq;
+}
+
+/* Card 601 × 64 closed: 1px border + 15px padding = Figma's inside stroke + 16. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__card {
+  padding: 15px;
+  overflow: hidden;
+  border: 1px solid #d0d5dd;
+  border-radius: 16px;
+  background: #f8f8f8;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__question {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000;
+  list-style: none;
+  cursor: pointer;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__question:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Figma's ordered-list number: a hanging 30px marker on the first line; wrapped lines align with the text. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__question-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-left: 30px;
+  text-indent: -30px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__question-text::before {
+  content: counter(aiwo-sleepcation-faq) '.';
+  display: inline-block;
+  width: 30px;
+  padding-right: 0.5em; /* right-aligned like a native list marker */
+  text-align: right;
+  text-indent: 0;
+}
+
+/* One Figma chevron (points up): rotated down while closed, up when open. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__chevron {
+  display: block;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  transform: rotate(180deg);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__card[open] .aiwo-sleepcation-faq__chevron {
+  transform: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__answer {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #efefef;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__answer p {
+  max-width: 768px;
+  margin: 0;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* Mobile-only control (JS un-hides it); styled on the page's glass button surface. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__toggle {
+  display: none;
+}
+
+/* Below 700px (measured: the longest question stays within 3 lines at 20px down to ~700): one chronological column. */
+@media (max-width: 699px) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq .aiwo-sleepcation-dark-title {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq .aiwo-sleepcation-dark-title__line {
+    font-size: 32px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__columns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__column {
+    gap: 10px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__card {
+    padding: 13px; /* + 1px border = 14 */
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__question {
+    min-height: 24px;
+    font-size: 18px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__chevron {
+    width: 24px;
+    height: 24px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__answer {
+    padding: 10px 12px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__answer p {
+    font-size: 16px;
+  }
+
+  /* Collapsed (JS only): items after the mobile count are removed; the first of them stays as a 44px decorative
+     peek (inert, aria-hidden via JS) faded out with a mask, so no colour has to match the gradient behind it. */
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq.is-collapsed .aiwo-sleepcation-faq__item--extra:not(.aiwo-sleepcation-faq__item--peek),
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq.is-collapsed .aiwo-sleepcation-faq__column:not(:has(> .aiwo-sleepcation-faq__item:not(.aiwo-sleepcation-faq__item--extra), > .aiwo-sleepcation-faq__item--peek)) {
+    display: none;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq.is-collapsed .aiwo-sleepcation-faq__item--peek {
+    height: 44px;
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent);
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent);
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__toggle:not([hidden]) {
+    position: relative;
+    display: flex;
+    margin: 16px auto 0;
+    padding: 8px 14px;
+    border: 2px solid rgba(255, 255, 255, 0.64);
+    border-radius: 12px;
+    background: rgba(254, 254, 254, 0.12);
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 0.32);
+    font-family: var(--aiwo-sleepcation-font-display);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* While collapsed the control sits over the faded peek. */
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq.is-collapsed .aiwo-sleepcation-faq__toggle:not([hidden]) {
+    margin-top: -18px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-faq__toggle:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
 }

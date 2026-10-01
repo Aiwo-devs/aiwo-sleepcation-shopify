@@ -29,74 +29,79 @@
   </header>
 
   {%- comment -%} One ordered list of inclusion blocks; each plan shows the ones that apply to it ("both" or its style). {%- endcomment -%}
-  <ul class="aiwo-sleepcation-pricing__plans">
-    {%- for plan in section.blocks -%}
-      {%- if plan.type != 'plan' -%}{%- continue -%}{%- endif -%}
-      {%- assign style = plan.settings.plan_style -%}
-      <li class="aiwo-sleepcation-pricing__item" {{ plan.shopify_attributes }}>
-        <article class="aiwo-sleepcation-pricing__plan aiwo-sleepcation-pricing__plan--{{ style }}">
-          <div class="aiwo-sleepcation-pricing__plan-header">
-            <div class="aiwo-sleepcation-pricing__plan-titles">
-              <h3 class="aiwo-sleepcation-pricing__plan-name">{{ plan.settings.plan_name | escape }}</h3>
-              <p class="aiwo-sleepcation-pricing__room">{{ plan.settings.room_label | escape }}</p>
+  <div class="aiwo-sleepcation-pricing__body">
+    <ul class="aiwo-sleepcation-pricing__plans">
+      {%- for plan in section.blocks -%}
+        {%- if plan.type != 'plan' -%}{%- continue -%}{%- endif -%}
+        {%- assign style = plan.settings.plan_style -%}
+        <li class="aiwo-sleepcation-pricing__item" {{ plan.shopify_attributes }}>
+          <article class="aiwo-sleepcation-pricing__plan aiwo-sleepcation-pricing__plan--{{ style }}">
+            <div class="aiwo-sleepcation-pricing__plan-header">
+              <div class="aiwo-sleepcation-pricing__plan-titles">
+                <h3 class="aiwo-sleepcation-pricing__plan-name">{{ plan.settings.plan_name | escape }}</h3>
+                <p class="aiwo-sleepcation-pricing__room">{{ plan.settings.room_label | escape }}</p>
+              </div>
+              <span class="aiwo-sleepcation-pricing__badge" aria-hidden="true">
+                <img src="{{ 'aiwo-sleepcation-pricing-' | append: style | append: '-badge.svg' | asset_url }}" width="44" height="38" alt="">
+              </span>
             </div>
-            <span class="aiwo-sleepcation-pricing__badge" aria-hidden="true">
-              <img src="{{ 'aiwo-sleepcation-pricing-' | append: style | append: '-badge.svg' | asset_url }}" width="44" height="38" alt="">
-            </span>
-          </div>
 
-          <div class="aiwo-sleepcation-pricing__pricing">
-            {%- if plan.settings.days_label != blank or plan.settings.nights_label != blank -%}
-              <p class="aiwo-sleepcation-pricing__stay">
-                {%- if plan.settings.days_label != blank -%}
-                  {{ icon_day }}<span>{{ plan.settings.days_label | escape }}</span>
-                {%- endif -%}
-                {%- if plan.settings.nights_label != blank -%}
-                  {{ icon_night_pill }}<span>{{ plan.settings.nights_label | escape }}</span>
-                {%- endif -%}
-              </p>
-            {%- endif -%}
-            <p class="aiwo-sleepcation-pricing__price">{{ plan.settings.price | escape }}</p>
-          </div>
-
-          <div class="aiwo-sleepcation-pricing__actions">
-            {%- if plan.settings.extended_label != blank or plan.settings.extended_price != blank -%}
-              <p class="aiwo-sleepcation-pricing__extended">
-                <span class="aiwo-sleepcation-pricing__extended-label">
-                  {{- icon_night_extended -}}
-                  <span>{{ plan.settings.extended_label | escape }}</span>
-                </span>
-                <span class="aiwo-sleepcation-pricing__extended-price">{{ plan.settings.extended_price | escape }}</span>
-              </p>
-            {%- endif -%}
-            {%- if plan.settings.cta_label != blank -%}
-              {%- comment -%} No URL yet: placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
-              <a class="aiwo-sleepcation-pricing__cta"{% if plan.settings.cta_url != blank %} href="{{ plan.settings.cta_url }}"{% endif %}>
-                {{- plan.settings.cta_label | escape -}}
-                {%- if style == 'gold' -%}
-                  {{- icon_arrow | replace: '#1D2C38', 'white' -}}
-                {%- else -%}
-                  {{- icon_arrow -}}
-                {%- endif -%}
-              </a>
-            {%- endif -%}
-          </div>
-
-          <ul class="aiwo-sleepcation-pricing__inclusions">
-            {%- for inclusion in section.blocks -%}
-              {%- if inclusion.type != 'inclusion' or inclusion.settings.text == blank -%}{%- continue -%}{%- endif -%}
-              {%- if inclusion.settings.applies_to == 'both' or inclusion.settings.applies_to == style -%}
-                <li {{ inclusion.shopify_attributes }}>
-                  <img src="{{ 'aiwo-sleepcation-icon-check.svg' | asset_url }}" width="24" height="24" alt="" aria-hidden="true">
-                  <span>{{ inclusion.settings.text | escape }}</span>
-                </li>
+            <div class="aiwo-sleepcation-pricing__pricing">
+              {%- if plan.settings.days_label != blank or plan.settings.nights_label != blank -%}
+                <p class="aiwo-sleepcation-pricing__stay">
+                  {%- if plan.settings.days_label != blank -%}
+                    {{ icon_day }}<span>{{ plan.settings.days_label | escape }}</span>
+                  {%- endif -%}
+                  {%- if plan.settings.nights_label != blank -%}
+                    {{ icon_night_pill }}<span>{{ plan.settings.nights_label | escape }}</span>
+                  {%- endif -%}
+                </p>
               {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        </article>
-      </li>
-    {%- endfor -%}
-  </ul>
+              <p class="aiwo-sleepcation-pricing__price">{{ plan.settings.price | escape }}</p>
+            </div>
+
+            <div class="aiwo-sleepcation-pricing__actions">
+              {%- if plan.settings.extended_label != blank or plan.settings.extended_price != blank -%}
+                <p class="aiwo-sleepcation-pricing__extended">
+                  <span class="aiwo-sleepcation-pricing__extended-label">
+                    {{- icon_night_extended -}}
+                    <span>{{ plan.settings.extended_label | escape }}</span>
+                  </span>
+                  <span class="aiwo-sleepcation-pricing__extended-price">{{ plan.settings.extended_price | escape }}</span>
+                </p>
+              {%- endif -%}
+              {%- if plan.settings.cta_label != blank -%}
+                {%- comment -%} No URL yet: placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
+                <a class="aiwo-sleepcation-pricing__cta"{% if plan.settings.cta_url != blank %} href="{{ plan.settings.cta_url }}"{% endif %}>
+                  {{- plan.settings.cta_label | escape -}}
+                  {%- if style == 'gold' -%}
+                    {{- icon_arrow | replace: '#1D2C38', 'white' -}}
+                  {%- else -%}
+                    {{- icon_arrow -}}
+                  {%- endif -%}
+                </a>
+              {%- endif -%}
+            </div>
+
+            <ul class="aiwo-sleepcation-pricing__inclusions">
+              {%- for inclusion in section.blocks -%}
+                {%- if inclusion.type != 'inclusion' or inclusion.settings.text == blank -%}{%- continue -%}{%- endif -%}
+                {%- if inclusion.settings.applies_to == 'both' or inclusion.settings.applies_to == style -%}
+                  <li {{ inclusion.shopify_attributes }}>
+                    <img src="{{ 'aiwo-sleepcation-icon-check.svg' | asset_url }}" width="24" height="24" alt="" aria-hidden="true">
+                    <span>{{ inclusion.settings.text | escape }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </article>
+        </li>
+      {%- endfor -%}
+    </ul>
+    {%- if section.settings.note != blank -%}
+      <p class="aiwo-sleepcation-pricing__note">{{ section.settings.note | escape }}</p>
+    {%- endif -%}
+  </div>
 </section>
 
 {% schema %}
@@ -111,7 +116,8 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow / tagline" },
     { "type": "text", "id": "heading_line_1", "label": "Heading line 1" },
     { "type": "text", "id": "heading_line_2", "label": "Heading line 2 (italic)" },
-    { "type": "textarea", "id": "intro", "label": "Intro" }
+    { "type": "textarea", "id": "intro", "label": "Intro" },
+    { "type": "textarea", "id": "note", "label": "Pricing note", "info": "Small print below the plans." }
   ],
   "blocks": [
     {

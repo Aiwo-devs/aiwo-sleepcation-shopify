@@ -42,6 +42,14 @@
             "anchor_id": "aiwo-sleepcation-team-venue",
             "is_active": false
           }
+        },
+        "tab_pricing": {
+          "type": "tab",
+          "settings": {
+            "label": "Pricing",
+            "anchor_id": "aiwo-sleepcation-pricing",
+            "is_active": false
+          }
         }
       },
       "block_order": [
@@ -49,7 +57,8 @@
         "tab_for_you",
         "tab_whats_included",
         "tab_compare",
-        "tab_team_venue"
+        "tab_team_venue",
+        "tab_pricing"
       ],
       "settings": {
         "aria_label": "Sleepcation"
@@ -1168,6 +1177,91 @@
         "book_cta_label": "Book Now",
         "book_cta_url": ""
       }
+    },
+    "aiwo_sleepcation_pricing": {
+      "type": "aiwo-sleepcation-pricing",
+      "blocks": {
+        "plan_silver": {
+          "type": "plan",
+          "settings": {
+            "plan_style": "silver",
+            "plan_name": "Silver",
+            "room_label": "Deluxe room",
+            "days_label": "3 days,",
+            "nights_label": "2 nights.",
+            "price": "₹1,99,000",
+            "extended_label": "Extended stay · 3 nights",
+            "extended_price": "₹2,30,000",
+            "cta_label": "Book Silver stay",
+            "cta_url": ""
+          }
+        },
+        "plan_gold": {
+          "type": "plan",
+          "settings": {
+            "plan_style": "gold",
+            "plan_name": "Gold",
+            "room_label": "Premium room",
+            "days_label": "3 days,",
+            "nights_label": "2 nights.",
+            "price": "₹3,75,000",
+            "extended_label": "Extended stay · 3 nights",
+            "extended_price": "₹4,15,000",
+            "cta_label": "Book Gold stay",
+            "cta_url": ""
+          }
+        },
+        "inclusion_protocol": {
+          "type": "inclusion",
+          "settings": {
+            "text": "The complete 43-inclusion Sleepcation protocol",
+            "applies_to": "both"
+          }
+        },
+        "inclusion_room": {
+          "type": "inclusion",
+          "settings": {
+            "text": "An elevated room category for your two nights",
+            "applies_to": "gold"
+          }
+        },
+        "inclusion_meals": {
+          "type": "inclusion",
+          "settings": {
+            "text": "Breakfast at The Merchants, lunch at ORYN or Fi’lia, dinner at The Merchants",
+            "applies_to": "both"
+          }
+        },
+        "inclusion_transfers": {
+          "type": "inclusion",
+          "settings": {
+            "text": "Airport transfers, soft minibar once per stay, laundry — four pieces a day",
+            "applies_to": "both"
+          }
+        },
+        "inclusion_follow_through": {
+          "type": "inclusion",
+          "settings": {
+            "text": "90-day follow-through and the day-ninety assessment",
+            "applies_to": "silver"
+          }
+        }
+      },
+      "block_order": [
+        "plan_silver",
+        "plan_gold",
+        "inclusion_protocol",
+        "inclusion_room",
+        "inclusion_meals",
+        "inclusion_transfers",
+        "inclusion_follow_through"
+      ],
+      "settings": {
+        "eyebrow": "Pricing",
+        "heading_line_1": "Two ways to book",
+        "heading_line_2": "the same programme.",
+        "intro": "The clinical content is identical in both — all forty-three services, the full ninety days, both assessments. What changes is the room you sleep in for the two nights."
+      }
     }
   },
   "order": [
@@ -1180,6 +1274,7 @@
     "aiwo_sleepcation_schedule",
     "aiwo_sleepcation_compare",
     "aiwo_sleepcation_venues",
-    "aiwo_sleepcation_closing_cta"
+    "aiwo_sleepcation_closing_cta",
+    "aiwo_sleepcation_pricing"
   ]
 }

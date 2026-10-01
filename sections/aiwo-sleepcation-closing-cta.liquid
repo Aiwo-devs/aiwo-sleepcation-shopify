@@ -1,0 +1,107 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+
+{%- assign svg_attrs = '<svg aria-hidden="true" focusable="false" ' -%}
+
+{%- comment -%}
+  Relative section, absolute media (photo + overlay), content in normal flow, shared dot grid above the content
+  (Figma's layer order). The top corners overlap the previous section by 43px and reveal it.
+{%- endcomment -%}
+<section id="aiwo-sleepcation-closing-cta" class="aiwo-sleepcation-closing-cta">
+  {%- if section.settings.background_image != blank or section.settings.builtin_background != 'none' -%}
+    <div class="aiwo-sleepcation-closing-cta__media" aria-hidden="true">
+      {%- if section.settings.background_image != blank -%}
+        {{
+          section.settings.background_image
+          | image_url: width: 2000
+          | image_tag:
+            widths: '750, 1100, 1500, 2000',
+            sizes: '100vw',
+            alt: '',
+            loading: 'lazy'
+        }}
+      {%- else -%}
+        <img
+          src="{{ 'aiwo-sleepcation-closing-cta.webp' | asset_url }}"
+          width="1672"
+          height="941"
+          alt=""
+          loading="lazy"
+        >
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="aiwo-sleepcation-dark-header">
+    <h2 class="aiwo-sleepcation-closing-cta__title">{{ section.settings.heading | strip | escape }}</h2>
+    {{ 'aiwo-sleepcation-steps-divider.svg' | inline_asset_content | replace: '<svg ', svg_attrs }}
+  </div>
+
+  <div class="aiwo-sleepcation-closing-cta__actions">
+    {%- comment -%} No URL yet: placeholder links (no href) — visually identical, not dead links. {%- endcomment -%}
+    {%- if section.settings.talk_cta_label != blank -%}
+      <a class="aiwo-sleepcation-button"{% if section.settings.talk_cta_url != blank %} href="{{ section.settings.talk_cta_url }}"{% endif %}>
+        {{- section.settings.talk_cta_label | escape -}}
+        {{- 'aiwo-sleepcation-icon-headset.svg' | inline_asset_content | replace: '<svg ', svg_attrs -}}
+      </a>
+    {%- endif -%}
+    {%- if section.settings.book_cta_label != blank -%}
+      <a class="aiwo-sleepcation-button aiwo-sleepcation-closing-cta__book"{% if section.settings.book_cta_url != blank %} href="{{ section.settings.book_cta_url }}"{% endif %}>
+        {{- section.settings.book_cta_label | escape -}}
+        {{- 'aiwo-sleepcation-icon-arrow-up-right.svg' | inline_asset_content | replace: '<svg ', svg_attrs | replace: '#1D2C38', 'white' -}}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sleepcation Closing CTA",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image",
+      "info": "Decorative. Overrides the built-in image; without either, the section uses the plain dark background."
+    },
+    {
+      "type": "select",
+      "id": "builtin_background",
+      "label": "Built-in background",
+      "default": "sleep-mask",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "sleep-mask", "label": "Sleep mask" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "talk_cta_label",
+      "label": "Talk button label"
+    },
+    {
+      "type": "url",
+      "id": "talk_cta_url",
+      "label": "Talk button link"
+    },
+    {
+      "type": "text",
+      "id": "book_cta_label",
+      "label": "Book button label"
+    },
+    {
+      "type": "url",
+      "id": "book_cta_url",
+      "label": "Book button link"
+    }
+  ]
+}
+{% endschema %}

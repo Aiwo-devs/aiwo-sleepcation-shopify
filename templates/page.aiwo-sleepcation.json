@@ -1157,6 +1157,17 @@
         "eyebrow": "Venues",
         "intro": "The programme runs at two venues — Fairmont Mumbai and The Leela Chennai — and the clinical content is identical at both. Most clients fly in from elsewhere in India for it."
       }
+    },
+    "aiwo_sleepcation_closing_cta": {
+      "type": "aiwo-sleepcation-closing-cta",
+      "settings": {
+        "heading": "Not sure whether it’s the right programme for you?",
+        "builtin_background": "sleep-mask",
+        "talk_cta_label": "Speak to the team",
+        "talk_cta_url": "",
+        "book_cta_label": "Book Now",
+        "book_cta_url": ""
+      }
     }
   },
   "order": [
@@ -1168,6 +1179,7 @@
     "aiwo_sleepcation_whats_included",
     "aiwo_sleepcation_schedule",
     "aiwo_sleepcation_compare",
-    "aiwo_sleepcation_venues"
+    "aiwo_sleepcation_venues",
+    "aiwo_sleepcation_closing_cta"
   ]
 }

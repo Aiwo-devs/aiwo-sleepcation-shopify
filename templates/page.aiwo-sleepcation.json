@@ -61,7 +61,9 @@
         "tab_pricing"
       ],
       "settings": {
-        "aria_label": "Sleepcation"
+        "aria_label": "Sleepcation",
+        "book_cta_label": "Book Now",
+        "book_cta_url": ""
       }
     },
     "aiwo_sleepcation_hero": {

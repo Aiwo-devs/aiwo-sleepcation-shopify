@@ -14,6 +14,21 @@
   var observer = null;
   var clickedLink = null;
   var clickTimer = null;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var EDGE_FADE = 24; // matches the tab track's right-edge mask
+
+  // Mobile tab track: if the active tab is clipped, scroll only the track (never the page) just enough to show it.
+  function revealTab(link) {
+    var track = link.closest('.aiwo-sleepcation-subnav__list');
+    if (!track || track.scrollWidth <= track.clientWidth) return;
+    var trackRect = track.getBoundingClientRect();
+    var linkRect = link.getBoundingClientRect();
+    var delta = 0;
+    if (linkRect.left < trackRect.left) delta = linkRect.left - trackRect.left;
+    else if (linkRect.right > trackRect.right - EDGE_FADE) delta = linkRect.right - (trackRect.right - EDGE_FADE);
+    if (Math.abs(delta) < 1) return;
+    track.scrollTo({ left: track.scrollLeft + delta, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+  }
 
   function updateActiveTab(hash) {
     var target = linksByHash[hash] || (hash ? null : defaultLink);
@@ -28,6 +43,7 @@
         link.removeAttribute('aria-current');
       }
     });
+    revealTab(target);
   }
 
   function onClick(event) {
@@ -491,6 +507,115 @@
 
   function init() {
     Array.prototype.forEach.call(document.querySelectorAll('[data-aiwo-sleepcation-faq]'), setupFaq);
+  }
+
+  if (window.Shopify && window.Shopify.designMode) {
+    document.addEventListener('shopify:section:load', init);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+/* AIWO Sleepcation — restrained viewport reveals: one IntersectionObserver, each unit reveals once.
+   Targets are existing section classes (no Liquid hooks). Units already on screen at init are shown immediately and
+   only then is html.aiwo-sleepcation-motion-ready added, so nothing flashes; reduced motion skips the module entirely. */
+(function () {
+  if (document.documentElement.hasAttribute('data-aiwo-sleepcation-reveal-js')) return;
+  document.documentElement.setAttribute('data-aiwo-sleepcation-reveal-js', '');
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // kind: text (fade + 10px), card (fade + 14px), glass (14px rise only). group: members reveal together.
+  var UNITS = [
+    { selector: '.aiwo-sleepcation-for-you__heading', kind: 'text' },
+    { selector: '.aiwo-sleepcation-for-you__items', kind: 'card' },
+    { selector: '.aiwo-sleepcation-steps .aiwo-sleepcation-dark-header', kind: 'text' },
+    { selector: '.aiwo-sleepcation-steps__list > li', kind: 'card', stagger: 60 },
+    { selector: '.aiwo-sleepcation-included__header', kind: 'text' },
+    { group: ['.aiwo-sleepcation-included__tablist', '.aiwo-sleepcation-included__panel'], scope: '.aiwo-sleepcation-included', kind: 'glass' },
+    { selector: '.aiwo-sleepcation-compare__header', kind: 'text' },
+    { selector: '.aiwo-sleepcation-compare__scroller', kind: 'card' },
+    { selector: '.aiwo-sleepcation-venues .aiwo-sleepcation-dark-header', kind: 'text' },
+    { selector: '.aiwo-sleepcation-venues__list > li', kind: 'glass', stagger: 70 },
+    { group: ['.aiwo-sleepcation-dark-header', '.aiwo-sleepcation-closing-cta__actions'], scope: '.aiwo-sleepcation-closing-cta', kind: 'text' },
+    { selector: '.aiwo-sleepcation-pricing__header', kind: 'text' },
+    { selector: '.aiwo-sleepcation-pricing__body', kind: 'card' },
+    { selector: '.aiwo-sleepcation-faq .aiwo-sleepcation-dark-header', kind: 'text' },
+    { selector: '.aiwo-sleepcation-faq__columns', kind: 'card' }
+  ];
+  var MAX_STAGGER = 300;
+  var membersByTrigger = new Map();
+  var observer = new IntersectionObserver(onIntersect, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+  function show(members, delay) {
+    members.forEach(function (el) {
+      if (delay) el.style.setProperty('--aiwo-reveal-delay', delay + 'ms');
+      el.classList.add('is-visible');
+    });
+  }
+
+  function onIntersect(entries) {
+    // Units that enter together (e.g. a row of step cards) stagger in DOM order; a unit alone never waits.
+    var batch = {};
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      var unit = membersByTrigger.get(entry.target);
+      membersByTrigger.delete(entry.target);
+      if (!unit) return;
+      if (!unit.stagger) return show(unit.members, 0);
+      (batch[unit.key] = batch[unit.key] || []).push(unit);
+    });
+    Object.keys(batch).forEach(function (key) {
+      batch[key].forEach(function (unit, i) {
+        show(unit.members, Math.min(i * unit.stagger, MAX_STAGGER));
+      });
+    });
+  }
+
+  function collect(root) {
+    var units = [];
+    UNITS.forEach(function (def, index) {
+      if (def.group) {
+        Array.prototype.forEach.call(root.querySelectorAll(def.scope), function (scope) {
+          var members = [];
+          def.group.forEach(function (sel) {
+            Array.prototype.push.apply(members, scope.querySelectorAll(sel));
+          });
+          if (members.length) units.push({ members: members, kind: def.kind, key: 'u' + index });
+        });
+      } else {
+        Array.prototype.forEach.call(root.querySelectorAll(def.selector), function (el) {
+          units.push({ members: [el], kind: def.kind, stagger: def.stagger, key: 'u' + index });
+        });
+      }
+    });
+    return units.filter(function (unit) {
+      return !unit.members[0].hasAttribute('data-aiwo-reveal');
+    });
+  }
+
+  function init() {
+    var root = document.querySelector('.theme-template-suffix-aiwo-sleepcation');
+    if (!root) return;
+    var fold = window.innerHeight * 0.9;
+    collect(root).forEach(function (unit) {
+      unit.members.forEach(function (el) {
+        el.setAttribute('data-aiwo-reveal', unit.kind);
+      });
+      // Already on screen (or above it, e.g. after a hash jump): visible now, no animation.
+      if (unit.members[0].getBoundingClientRect().top < fold) {
+        show(unit.members, 0);
+      } else {
+        membersByTrigger.set(unit.members[0], unit);
+        observer.observe(unit.members[0]);
+      }
+    });
+    document.documentElement.classList.add('aiwo-sleepcation-motion-ready');
   }
 
   if (window.Shopify && window.Shopify.designMode) {

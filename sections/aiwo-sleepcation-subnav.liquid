@@ -1,7 +1,15 @@
 {{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'aiwo-sleepcation.js' | asset_url }}" defer></script>
 
-<nav id="aiwo-sleepcation-top" class="aiwo-sleepcation-subnav" aria-label="{{ section.settings.aria_label | escape }}">
+{%- comment -%}
+  The section wrapper (schema "class") is the sticky element. "Sleepcation" targets the hero (#aiwo-sleepcation-top), since a
+  stuck element can't be scrolled to. Book Now sits outside the scrolling tab track; with no URL it goes to Pricing.
+{%- endcomment -%}
+{%- liquid
+  assign book_url = section.settings.book_cta_url | default: '#aiwo-sleepcation-pricing'
+  assign book_label = section.settings.book_cta_label | default: 'Book Now'
+-%}
+<nav class="aiwo-sleepcation-subnav" aria-label="{{ section.settings.aria_label | escape }}">
   <ul class="aiwo-sleepcation-subnav__list">
     {%- for block in section.blocks -%}
       <li class="aiwo-sleepcation-subnav__item" {{ block.shopify_attributes }}>
@@ -17,12 +25,17 @@
       </li>
     {%- endfor -%}
   </ul>
+  <a class="aiwo-sleepcation-subnav__cta" href="{{ book_url }}">
+    {{- book_label | escape -}}
+    {{- 'aiwo-sleepcation-icon-arrow-up-right.svg' | inline_asset_content | replace: '<svg ', '<svg aria-hidden="true" focusable="false" ' | replace: ' style="display: block;"', '' | replace: '#1D2C38', 'white' -}}
+  </a>
 </nav>
 
 {% schema %}
 {
   "name": "AIWO Sleepcation – Subnav",
   "tag": "div",
+  "class": "aiwo-sleepcation-subnav-section",
   "enabled_on": {
     "templates": ["page"]
   },
@@ -33,6 +46,18 @@
       "id": "aria_label",
       "label": "Navigation accessible label",
       "default": "Sleepcation"
+    },
+    {
+      "type": "text",
+      "id": "book_cta_label",
+      "label": "Book button label",
+      "default": "Book Now"
+    },
+    {
+      "type": "url",
+      "id": "book_cta_url",
+      "label": "Book button link",
+      "info": "Leave empty to link to the Pricing section."
     }
   ],
   "blocks": [

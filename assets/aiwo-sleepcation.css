@@ -15,6 +15,13 @@
   --aiwo-sleepcation-font: 'Outfit', sans-serif;
   --aiwo-sleepcation-font-display: 'Bricolage Grotesque', sans-serif;
   --aiwo-sleepcation-font-serif: 'Cormorant Garamond', serif;
+  --aiwo-sleepcation-subnav-height: 59px;
+  --aiwo-sleepcation-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Anchored sections land below the site header + sticky subnav (+12px), with no JS offsets. */
+.theme-template-suffix-aiwo-sleepcation section[id^="aiwo-sleepcation-"] {
+  scroll-margin-top: calc(var(--height-header, 0px) + var(--aiwo-sleepcation-subnav-height) + 12px);
 }
 
 /* Primary button (page component) — 195 × 50 at 1440: 1px border + 11/19 padding = Figma's inside stroke + 12/20. */
@@ -87,23 +94,103 @@
   outline-offset: 3px;
 }
 
-/* Section 01 — Subnav */
+/* Section 01 — Subnav. The Shopify section wrapper (schema "class") sticks under the site header and slides with it
+   (the theme's on-scroll-up header sets --height-header and animates over 0.4s ease-in-out). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav-section {
+  position: sticky;
+  top: var(--height-header, 0px);
+  z-index: 10; /* above page content, below the site header (50) and theme overlays */
+  /* Kept under reduced motion too: it only keeps the bar attached to the theme header, which always animates 0.4s. */
+  transition: top 0.4s ease-in-out;
+}
+
+/* One 59px row: scrolling tab track + fixed Book Now. */
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
   padding: 10px var(--aiwo-sleepcation-page-padding);
   background: #fff;
   font-family: var(--aiwo-sleepcation-font);
 }
 
+/* The 24px end padding lets the last tab scroll clear of the 24px edge fade. */
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__list {
   display: flex;
+  flex: 1 1 auto;
   gap: 8px;
+  min-width: 0;
   margin: 0;
-  padding: 0;
+  padding: 0 24px 0 0;
   list-style: none;
   overflow-x: auto;
+  overscroll-behavior-inline: contain;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 24px), transparent);
+  mask-image: linear-gradient(90deg, #000 calc(100% - 24px), transparent);
 }
+
+/* Book Now: the Gold pricing button's surface at nav scale (≈128 × 37 desktop, ≈106 × 37 mobile without the arrow). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__cta {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 2px solid rgba(55, 78, 97, 0.48);
+  border-radius: 10px;
+  background: #232325;
+  box-shadow: 0 3px 0 rgba(55, 78, 97, 0.32);
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 37px visual, 45px tap target. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__cta::before {
+  content: '';
+  position: absolute;
+  inset: -4px -2px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__cta:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__cta:focus-visible {
+  outline: 2px solid #1d2c38;
+  outline-offset: 2px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__cta > svg {
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  fill: none;
+}
+
+@media (max-width: 699px) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav {
+    gap: 8px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__cta > svg {
+    display: none;
+  }
+}
+
 
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-subnav__list::-webkit-scrollbar {
   display: none;
@@ -416,7 +503,7 @@
    Fluid type reaches its Figma size at 1248px, where the 1216px container stops shrinking. */
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-for-you {
   /* Follows the theme's on-scroll-up header (its own --height-header); tune the 24px here only. */
-  --aiwo-sleepcation-for-you-sticky-top: calc(var(--height-header, 0px) + 24px);
+  --aiwo-sleepcation-for-you-sticky-top: calc(var(--height-header, 0px) + var(--aiwo-sleepcation-subnav-height) + 24px);
   --aiwo-sleepcation-dot-opacity: 0.4;
   position: relative;
   isolation: isolate;
@@ -3257,4 +3344,32 @@
     outline: 2px solid #fff;
     outline-offset: 3px;
   }
+}
+
+/* Viewport reveals (JS adds html.aiwo-sleepcation-motion-ready only after marking what is already on screen, and
+   never under reduced motion — so without JS or motion everything is simply visible). Opacity + a small rise;
+   glass groups (Venues cards, What's included panels) rise only, since a fading parent breaks backdrop-filter. */
+.aiwo-sleepcation-motion-ready .theme-template-suffix-aiwo-sleepcation [data-aiwo-reveal] {
+  transition:
+    opacity 600ms var(--aiwo-sleepcation-ease) var(--aiwo-reveal-delay, 0ms),
+    transform 600ms var(--aiwo-sleepcation-ease) var(--aiwo-reveal-delay, 0ms);
+}
+
+.aiwo-sleepcation-motion-ready .theme-template-suffix-aiwo-sleepcation [data-aiwo-reveal='card'],
+.aiwo-sleepcation-motion-ready .theme-template-suffix-aiwo-sleepcation [data-aiwo-reveal='glass'] {
+  transition-duration: 650ms;
+}
+
+.aiwo-sleepcation-motion-ready .theme-template-suffix-aiwo-sleepcation [data-aiwo-reveal]:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.aiwo-sleepcation-motion-ready .theme-template-suffix-aiwo-sleepcation [data-aiwo-reveal='card']:not(.is-visible) {
+  transform: translateY(14px);
+}
+
+.aiwo-sleepcation-motion-ready .theme-template-suffix-aiwo-sleepcation [data-aiwo-reveal='glass']:not(.is-visible) {
+  opacity: 1;
+  transform: translateY(14px);
 }

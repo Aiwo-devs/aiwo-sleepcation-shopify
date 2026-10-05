@@ -71,15 +71,23 @@
                 </p>
               {%- endif -%}
               {%- if plan.settings.cta_label != blank -%}
-                {%- comment -%} No URL yet: placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
-                <a class="aiwo-sleepcation-pricing__cta"{% if plan.settings.cta_url != blank %} href="{{ plan.settings.cta_url }}"{% endif %}>
+                {%- capture cta_content -%}
                   {{- plan.settings.cta_label | escape -}}
                   {%- if style == 'gold' -%}
                     {{- icon_arrow | replace: '#1D2C38', 'white' -}}
                   {%- else -%}
                     {{- icon_arrow -}}
                   {%- endif -%}
-                </a>
+                {%- endcapture -%}
+                {%- comment -%}
+                  Default: opens the Sleepcation contact modal with this plan (stable key, not the label). A configured
+                  link (e.g. a future checkout) takes over instead.
+                {%- endcomment -%}
+                {%- if plan.settings.cta_url != blank -%}
+                  <a class="aiwo-sleepcation-pricing__cta" href="{{ plan.settings.cta_url }}">{{ cta_content }}</a>
+                {%- else -%}
+                  <button class="aiwo-sleepcation-pricing__cta" type="button" aria-haspopup="dialog" data-aiwo-contact-open data-aiwo-plan="{{ style }}">{{ cta_content }}</button>
+                {%- endif -%}
               {%- endif -%}
             </div>
 
@@ -102,6 +110,28 @@
       <p class="aiwo-sleepcation-pricing__note">{{ section.settings.note | escape }}</p>
     {%- endif -%}
   </div>
+
+  {%- comment -%} Package metadata for the contact modal (single source; no personal data). {%- endcomment -%}
+  <script type="application/json" data-aiwo-sleepcation-plans>
+    [
+      {%- assign first_plan = true -%}
+      {%- for plan in section.blocks -%}
+        {%- if plan.type != 'plan' -%}{%- continue -%}{%- endif -%}
+        {%- unless first_plan -%},{%- endunless -%}
+        {%- assign first_plan = false -%}
+        {
+          "key": {{ plan.settings.plan_style | json }},
+          "name": {{ plan.settings.plan_name | json }},
+          "style": {{ plan.settings.plan_style | json }},
+          "standard_price": {{ plan.settings.price | json }},
+          "extended_price": {{ plan.settings.extended_price | json }},
+          "standard_nights_label": {{ plan.settings.nights_label | json }},
+          "extended_nights_label": {{ plan.settings.extended_nights_label | json }},
+          "badge": {{ 'aiwo-sleepcation-pricing-' | append: plan.settings.plan_style | append: '-badge.svg' | asset_url | json }}
+        }
+      {%- endfor -%}
+    ]
+  </script>
 </section>
 
 {% schema %}
@@ -143,6 +173,7 @@
         { "type": "text", "id": "price", "label": "Price", "info": "Shown exactly as entered, e.g. ₹1,99,000." },
         { "type": "text", "id": "extended_label", "label": "Extended stay label" },
         { "type": "text", "id": "extended_price", "label": "Extended stay price" },
+        { "type": "text", "id": "extended_nights_label", "label": "Extended stay nights", "default": "3 nights.", "info": "Shown in the contact modal when the extended stay is chosen." },
         { "type": "text", "id": "cta_label", "label": "Button label" },
         { "type": "url", "id": "cta_url", "label": "Button link" }
       ]

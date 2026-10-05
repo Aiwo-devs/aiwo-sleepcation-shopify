@@ -1,0 +1,154 @@
+{{ 'aiwo-sleepcation.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'aiwo-sleepcation.js' | asset_url }}" defer></script>
+
+{%- comment -%}
+  One contact modal for the page, opened by Pricing buttons ([data-aiwo-contact-open][data-aiwo-plan]). Plan and venue data come
+  from the Pricing / Venues JSON blocks; everything typed stays in memory only. "Request a call back" validates and shows the
+  review step; "Confirm request" stays disabled until a real API is connected (no request is made, no success is faked).
+{%- endcomment -%}
+{%- liquid
+  assign svg_attrs = '<svg aria-hidden="true" focusable="false" '
+  assign night = 'aiwo-sleepcation-icon-night.svg' | inline_asset_content | replace: '<svg ', svg_attrs | replace: ' style="display: block;"', ''
+  assign pin = 'aiwo-sleepcation-icon-location.svg' | inline_asset_content | replace: '<svg ', svg_attrs | replace: ' style="display: block;"', ''
+  assign windows = section.settings.call_window_options | newline_to_br | split: '<br />'
+-%}
+
+<div class="aiwo-sleepcation-contact" data-aiwo-sleepcation-contact>
+  <dialog class="aiwo-sleepcation-contact__dialog" aria-labelledby="aiwo-sleepcation-contact-title" data-aiwo-contact-dialog>
+    <button class="aiwo-sleepcation-contact__close" type="button" aria-label="Close" data-aiwo-contact-close>
+      <img src="{{ 'aiwo-sleepcation-icon-close.svg' | asset_url }}" width="32" height="32" alt="">
+    </button>
+
+    {%- comment -%} Form view (Figma frames 300:313 … 305:10547) {%- endcomment -%}
+    <div class="aiwo-sleepcation-contact__view" data-aiwo-contact-view="form">
+      <header class="aiwo-sleepcation-contact__header">
+        <h2 class="aiwo-sleepcation-contact__title" id="aiwo-sleepcation-contact-title" tabindex="-1">{{ section.settings.heading | escape }}</h2>
+        {%- if section.settings.intro != blank -%}
+          <p class="aiwo-sleepcation-contact__intro">{{ section.settings.intro | escape }}</p>
+        {%- endif -%}
+      </header>
+
+      <div class="aiwo-sleepcation-contact__plan" data-aiwo-contact-plan>
+        <div class="aiwo-sleepcation-contact__card" data-aiwo-contact-card>
+          <button class="aiwo-sleepcation-contact__card-toggle" type="button" aria-expanded="false" aria-controls="aiwo-sleepcation-contact-editor" data-aiwo-contact-edit-plan data-label-closed="change" data-label-open="Done">change</button>
+        </div>
+        <div class="aiwo-sleepcation-contact__editor" id="aiwo-sleepcation-contact-editor" hidden>
+          <div class="aiwo-sleepcation-contact__choice" data-aiwo-contact-choice="plan">
+            <span class="aiwo-sleepcation-contact__choice-label" id="aiwo-sleepcation-contact-plan-label">Plan</span>
+          </div>
+          <div class="aiwo-sleepcation-contact__choice-row">
+            <div class="aiwo-sleepcation-contact__choice" data-aiwo-contact-choice="stay">
+              <span class="aiwo-sleepcation-contact__choice-label" id="aiwo-sleepcation-contact-stay-label">Stay</span>
+            </div>
+            <div class="aiwo-sleepcation-contact__choice" data-aiwo-contact-choice="venue">
+              <span class="aiwo-sleepcation-contact__choice-label" id="aiwo-sleepcation-contact-venue-label">Venue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="aiwo-sleepcation-contact__form" novalidate data-aiwo-contact-form>
+        <div class="aiwo-sleepcation-contact__fields">
+          <div class="aiwo-sleepcation-contact__field" data-aiwo-contact-field="name">
+            <input class="aiwo-sleepcation-contact__input" id="aiwo-sleepcation-contact-name" name="name" type="text" autocomplete="name" required aria-describedby="aiwo-sleepcation-contact-name-error">
+            <label class="aiwo-sleepcation-contact__label" for="aiwo-sleepcation-contact-name">Name</label>
+            <p class="aiwo-sleepcation-contact__error" id="aiwo-sleepcation-contact-name-error" data-message="Enter your name" hidden></p>
+          </div>
+          <div class="aiwo-sleepcation-contact__field" data-aiwo-contact-field="city">
+            <input class="aiwo-sleepcation-contact__input" id="aiwo-sleepcation-contact-city" name="city" type="text" autocomplete="address-level2" required aria-describedby="aiwo-sleepcation-contact-city-error">
+            <label class="aiwo-sleepcation-contact__label" for="aiwo-sleepcation-contact-city">City</label>
+            <p class="aiwo-sleepcation-contact__error" id="aiwo-sleepcation-contact-city-error" data-message="Enter your city" hidden></p>
+          </div>
+          <div class="aiwo-sleepcation-contact__field" data-aiwo-contact-field="phone">
+            <input class="aiwo-sleepcation-contact__input" id="aiwo-sleepcation-contact-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="aiwo-sleepcation-contact-phone-error">
+            <label class="aiwo-sleepcation-contact__label" for="aiwo-sleepcation-contact-phone">Phone</label>
+            <p class="aiwo-sleepcation-contact__error" id="aiwo-sleepcation-contact-phone-error" data-message="Enter a Valid Phone Number" hidden></p>
+          </div>
+          <div class="aiwo-sleepcation-contact__field" data-aiwo-contact-field="email">
+            <input class="aiwo-sleepcation-contact__input" id="aiwo-sleepcation-contact-email" name="email" type="email" autocomplete="email" required aria-describedby="aiwo-sleepcation-contact-email-error">
+            <label class="aiwo-sleepcation-contact__label" for="aiwo-sleepcation-contact-email">Email</label>
+            <p class="aiwo-sleepcation-contact__error" id="aiwo-sleepcation-contact-email-error" data-message="Enter a valid email address" hidden></p>
+          </div>
+          <div class="aiwo-sleepcation-contact__field aiwo-sleepcation-contact__field--wide" data-aiwo-contact-field="call_window">
+            <select class="aiwo-sleepcation-contact__input aiwo-sleepcation-contact__select" id="aiwo-sleepcation-contact-call-window" name="call_window" required aria-describedby="aiwo-sleepcation-contact-call_window-error">
+              <option value="" selected disabled>Choose a window</option>
+              {%- for window in windows -%}
+                {%- assign option = window | strip -%}
+                {%- if option != blank -%}
+                  <option value="{{ option | escape }}">{{ option | escape }}</option>
+                {%- endif -%}
+              {%- endfor -%}
+            </select>
+            <label class="aiwo-sleepcation-contact__label" for="aiwo-sleepcation-contact-call-window">Best time to call you</label>
+            <p class="aiwo-sleepcation-contact__error" id="aiwo-sleepcation-contact-call_window-error" data-message="Choose a time" hidden></p>
+          </div>
+        </div>
+
+        <div class="aiwo-sleepcation-contact__actions">
+          <button class="aiwo-sleepcation-contact__submit" type="submit">{{ section.settings.submit_label | escape }}</button>
+          {%- if section.settings.privacy_note != blank -%}
+            <p class="aiwo-sleepcation-contact__note">{{ section.settings.privacy_note | escape }}</p>
+          {%- endif -%}
+        </div>
+      </form>
+    </div>
+
+    {%- comment -%} Review view — system-derived (Figma has no review frame). {%- endcomment -%}
+    <div class="aiwo-sleepcation-contact__view" data-aiwo-contact-view="review" hidden>
+      <header class="aiwo-sleepcation-contact__header">
+        <h2 class="aiwo-sleepcation-contact__title" id="aiwo-sleepcation-contact-review-title" tabindex="-1">{{ section.settings.review_heading | escape }}</h2>
+      </header>
+      <div class="aiwo-sleepcation-contact__plan">
+        <div class="aiwo-sleepcation-contact__card" data-aiwo-contact-review-card></div>
+      </div>
+      <dl class="aiwo-sleepcation-contact__summary">
+        <div><dt>Name</dt><dd data-aiwo-contact-review="name"></dd></div>
+        <div><dt>City</dt><dd data-aiwo-contact-review="city"></dd></div>
+        <div><dt>Phone</dt><dd data-aiwo-contact-review="phone"></dd></div>
+        <div><dt>Email</dt><dd data-aiwo-contact-review="email"></dd></div>
+        <div class="aiwo-sleepcation-contact__summary-wide"><dt>Best time to call you</dt><dd data-aiwo-contact-review="call_window"></dd></div>
+      </dl>
+      <div class="aiwo-sleepcation-contact__actions">
+        <button class="aiwo-sleepcation-contact__submit" type="button" aria-disabled="true" data-aiwo-contact-confirm>{{ section.settings.confirm_label | escape }}</button>
+        <button class="aiwo-sleepcation-contact__link" type="button" data-aiwo-contact-edit>{{ section.settings.edit_label | escape }}</button>
+        {%- if section.settings.privacy_note != blank -%}
+          <p class="aiwo-sleepcation-contact__note">{{ section.settings.privacy_note | escape }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </dialog>
+
+  {%- comment -%} Decorative icons the script clones into the plan card and menus (existing assets, recoloured). {%- endcomment -%}
+  <template data-aiwo-contact-icon="night-card">{{ night | replace: '#86A5BF', '#000080' }}</template>
+  <template data-aiwo-contact-icon="pin-card">{{ pin | replace: 'stroke="white"', 'stroke="#0076F0"' | replace: ' stroke-opacity="0.85"', '' }}</template>
+  <template data-aiwo-contact-icon="night-menu">{{ night | replace: 'stroke="#86A5BF"', 'stroke="black" stroke-opacity="0.75"' }}</template>
+  <template data-aiwo-contact-icon="pin-menu">{{ pin | replace: 'stroke="white"', 'stroke="black"' | replace: 'stroke-opacity="0.85"', 'stroke-opacity="0.75"' }}</template>
+  <template data-aiwo-contact-icon="chevron"><img src="{{ 'aiwo-sleepcation-icon-chevron.svg' | asset_url }}" width="32" height="32" alt=""></template>
+  <template data-aiwo-contact-icon="check"><img src="{{ 'aiwo-sleepcation-icon-menu-check.svg' | asset_url }}" width="20" height="20" alt=""></template>
+</div>
+
+{% schema %}
+{
+  "name": "Sleepcation Contact Modal",
+  "tag": "div",
+  "enabled_on": {
+    "templates": ["page"]
+  },
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "intro", "label": "Intro" },
+    {
+      "type": "textarea",
+      "id": "call_window_options",
+      "label": "Best time to call options",
+      "info": "One option per line.",
+      "default": "Morning\nAfternoon\nEvening\nNo preference"
+    },
+    { "type": "text", "id": "submit_label", "label": "Form button label", "default": "Request a call back" },
+    { "type": "textarea", "id": "privacy_note", "label": "Small print" },
+    { "type": "text", "id": "review_heading", "label": "Review heading", "default": "Review your details" },
+    { "type": "text", "id": "edit_label", "label": "Edit link label", "default": "Edit details" },
+    { "type": "text", "id": "confirm_label", "label": "Confirm button label", "default": "Confirm request" }
+  ]
+}
+{% endschema %}

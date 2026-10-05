@@ -17,11 +17,13 @@
   --aiwo-sleepcation-font-serif: 'Cormorant Garamond', serif;
   --aiwo-sleepcation-subnav-height: 59px;
   --aiwo-sleepcation-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --aiwo-sleepcation-ui-duration: 170ms;
 }
 
-/* Anchored sections land below the site header + sticky subnav (+12px), with no JS offsets. */
+/* Anchored sections land below the site header + sticky subnav (+12px). The header height is the one it will have on
+   arrival (--aiwo-sleepcation-anchor-header, set by the anchor click script); without it, the live theme value. */
 .theme-template-suffix-aiwo-sleepcation section[id^="aiwo-sleepcation-"] {
-  scroll-margin-top: calc(var(--height-header, 0px) + var(--aiwo-sleepcation-subnav-height) + 12px);
+  scroll-margin-top: calc(var(--aiwo-sleepcation-anchor-header, var(--height-header, 0px)) + var(--aiwo-sleepcation-subnav-height) + 12px);
 }
 
 /* Primary button (page component) — 195 × 50 at 1440: 1px border + 11/19 padding = Figma's inside stroke + 12/20. */
@@ -2895,8 +2897,12 @@
   white-space: nowrap;
 }
 
-/* Full-width plan button, 50px: 2px border + 10/18 = Figma's inside stroke + 12/20. */
+/* Full-width plan button, 50px: 2px border + 10/18 = Figma's inside stroke + 12/20. Rendered as <button> when it opens the
+   contact modal, so width/margin/cursor are set explicitly. */
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-pricing__cta {
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3372,4 +3378,760 @@
 .aiwo-sleepcation-motion-ready .theme-template-suffix-aiwo-sleepcation [data-aiwo-reveal='glass']:not(.is-visible) {
   opacity: 1;
   transform: translateY(14px);
+}
+
+/* Contact modal (Figma 305:10704). One native <dialog>, 564px, content-driven height, internal scroll when needed. */
+html.aiwo-sleepcation-modal-open {
+  overflow: hidden; /* the page behind the dialog doesn't scroll; position is untouched, so nothing jumps */
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__dialog {
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+  max-width: 564px;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 24px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.1), 0 2px 4px -2px rgba(16, 24, 40, 0.06);
+  color: var(--aiwo-sleepcation-color-text);
+  font-family: var(--aiwo-sleepcation-font);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__dialog::backdrop {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__view {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__view[hidden] {
+  display: none;
+}
+
+/* 32px ✕, 8px from the corner (Figma), 44px hit area. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__close {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__close::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__close img {
+  display: block;
+}
+
+/* Buttons get a ring; fields use Figma's focus state (blue border + label) instead. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact button:focus-visible {
+  outline: 2px solid #007bf1;
+  outline-offset: 2px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__title {
+  margin: 0;
+  padding-right: 24px; /* clear of the close button */
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: capitalize;
+  color: var(--aiwo-sleepcation-color-text);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__title:focus {
+  outline: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__intro {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Selected-plan card, 76px: 1px border + 11/15 padding = Figma's inside stroke + 12/16. Gold from Figma; Silver derived
+   from the Pricing Silver surface. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__plan {
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 15px;
+  border: 1px solid #d0d5dd;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__card--gold {
+  background: linear-gradient(180deg, #fff, #b7d8ef);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__plan.is-editing .aiwo-sleepcation-contact__card {
+  border-radius: 14px 14px 0 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__card-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__badge {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10.5px;
+  background: #efefef;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__card--gold .aiwo-sleepcation-contact__badge {
+  background: #fff1dd;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__badge img {
+  display: block;
+  width: 32.89px;
+  height: 28.52px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__card-title {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--aiwo-sleepcation-color-text);
+}
+
+/* Figma's list bullet: a 24px indent before the price with the dot in it. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__card-price {
+  position: relative;
+  padding-left: 24px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__card-price::before {
+  content: '\2022';
+  position: absolute;
+  left: 9px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__pill {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  margin: 0;
+  padding: 3px 7px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__pill > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact :is(.aiwo-sleepcation-contact__pill, .aiwo-sleepcation-contact__option) svg {
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  fill: none;
+}
+
+/* "change" / "Done" (Figma), and the review's "Edit details": underlined text buttons. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact :is(.aiwo-sleepcation-contact__card-toggle, .aiwo-sleepcation-contact__link) {
+  position: relative;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  cursor: pointer;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact :is(.aiwo-sleepcation-contact__card-toggle, .aiwo-sleepcation-contact__link)::before {
+  content: '';
+  position: absolute;
+  inset: -9px -8px;
+}
+
+/* Plan editor (Figma 303:501): Plan full width, Stay + Venue side by side. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__editor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 15px 11px;
+  border: 1px solid #d0d5dd;
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__editor[hidden] {
+  display: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__choice-row {
+  display: flex;
+  gap: 12px;
+}
+
+/* Local stacking: the theme gives every [type="button"] z-index 10, so each selector is its own small stacking context
+   (z 1) and the open one rises above the following rows (z 30) with its menu on top (z 40). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__choice {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__choice.is-open {
+  z-index: 30;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__choice-label {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* 40px trigger: 1px border + 3/11 padding = Figma's 4/12; 32px chevron points down closed, up open. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 3px 11px;
+  border: 1px solid #d0d5dd;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(16, 24, 40, 0.05);
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__trigger img {
+  display: block;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  transform: rotate(180deg);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__trigger[aria-expanded='true'] img {
+  transform: none;
+}
+
+/* Figma's "2 Nights" / "3 Nights": capitalised from the Pricing nights labels ("2 nights."). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact :is(.aiwo-sleepcation-contact__trigger, .aiwo-sleepcation-contact__option) > span {
+  text-transform: capitalize;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__trigger > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Menus (Figma 305:9455 / 305:10497 / 305:10676): float 4px under the trigger, trigger width. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 40;
+  margin: 0;
+  padding: 2px 0;
+  list-style: none;
+  border: 1px solid #eaecf0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__menu[hidden] {
+  display: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__menu:focus {
+  outline: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  margin: 2px 6px;
+  padding: 6px 10px 6px 8px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__option[aria-selected='true'] {
+  background: #f9fafb;
+}
+
+/* The active row (pointer hover via mousemove, or arrow keys) gets one neutral (Gray/100); the selected row keeps
+   Figma's #f9fafb + green check, and keyboard focus adds the inset ring on top of either. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__option.is-active:not([aria-selected='true']) {
+  background: #f2f4f7;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__menu:focus-visible .aiwo-sleepcation-contact__option.is-active {
+  box-shadow: inset 0 0 0 2px #007bf1;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__option-badge {
+  display: block;
+  flex-shrink: 0;
+  width: 14.6px;
+  height: 12.67px;
+  margin: 0 0.7px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__option-check {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: -2px 0 -2px auto;
+  visibility: hidden;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__option[aria-selected='true'] .aiwo-sleepcation-contact__option-check {
+  visibility: visible;
+}
+
+/* Fields: 2 × 248 + 20, rows 24 apart; floating label notch on the border (Figma 300:318). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 20px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__field--wide {
+  grid-column: 1 / -1;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  margin: 0;
+  padding: 11px;
+  border: 1px solid #d0d5dd;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(16, 24, 40, 0.05);
+  font-family: var(--aiwo-sleepcation-font);
+  font-size: 16px; /* ≥16px: no iOS zoom */
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__input:focus {
+  border-color: #007bf1;
+  outline: none;
+}
+
+/* Native select styled as the Figma 56px field with the shared chevron. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__select {
+  height: 56px;
+  padding-right: 52px;
+  line-height: 1.2;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* The shared chevron asset points up; rotated to point down like Figma's closed select. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__field--wide::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  background: url('aiwo-sleepcation-icon-chevron.svg') no-repeat center / 32px 32px;
+  transform: rotate(180deg);
+  pointer-events: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__label {
+  position: absolute;
+  top: -8px;
+  left: 14px;
+  padding: 1px 4px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__field--wide .aiwo-sleepcation-contact__label {
+  left: 12px;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__field:focus-within .aiwo-sleepcation-contact__label {
+  color: #007bf1;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__field.is-invalid .aiwo-sleepcation-contact__input {
+  border-color: #ed050e;
+  color: #ed050e;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__field.is-invalid .aiwo-sleepcation-contact__label {
+  color: #ed050e;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__error {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ed050e;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__error[hidden] {
+  display: none;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* The Gold button surface, sentence case (Figma). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__submit {
+  width: 100%;
+  margin: 0;
+  padding: 10px 18px;
+  border: 2px solid rgba(55, 78, 97, 0.48);
+  border-radius: 12px;
+  background: #232325;
+  box-shadow: 0 3px 0 rgba(55, 78, 97, 0.32);
+  font-family: var(--aiwo-sleepcation-font-display);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Confirm request until the API exists: visibly unavailable, still focusable and announced. display is restated because the
+   theme hides every button[aria-disabled="true"] globally. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__submit[aria-disabled='true'] {
+  display: block;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__link {
+  align-self: center;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__note {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Review (system-derived): the form's label/value language, two columns. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+  margin: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__summary-wide {
+  grid-column: 1 / -1;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__summary dt {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__summary dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* Mobile (no Figma): one column, stacked Stay/Venue, ≥44px targets, card content wraps. */
+@media (max-width: 599px) {
+  .theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-contact__fields, .aiwo-sleepcation-contact__summary) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__choice-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__trigger {
+    height: 44px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__card {
+    align-items: flex-start;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__option {
+    min-height: 40px;
+  }
+}
+
+/* Interaction states — one quiet system: 170ms on the page ease; hover only for fine pointers (no sticky hover on touch);
+   raised buttons settle down into their depth shadow's space on hover and press; no colour changes. */
+.theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-button, .aiwo-sleepcation-subnav__cta, .aiwo-sleepcation-compare__cta, .aiwo-sleepcation-pricing__cta, .aiwo-sleepcation-contact__submit) {
+  transition:
+    transform var(--aiwo-sleepcation-ui-duration) var(--aiwo-sleepcation-ease),
+    box-shadow var(--aiwo-sleepcation-ui-duration) var(--aiwo-sleepcation-ease);
+}
+
+/* The hit area reaches 4px above the button, so a settled button stays under the pointer (Book Now's tap target already does). */
+.theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-button, .aiwo-sleepcation-compare__cta, .aiwo-sleepcation-pricing__cta, .aiwo-sleepcation-contact__submit) {
+  position: relative;
+}
+
+.theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-button, .aiwo-sleepcation-compare__cta, .aiwo-sleepcation-pricing__cta, .aiwo-sleepcation-contact__submit)::after {
+  content: '';
+  position: absolute;
+  inset: -6px -2px -2px;
+}
+
+/* Same reach on the 1px-border buttons. */
+.theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-button:not(.aiwo-sleepcation-closing-cta__book), .aiwo-sleepcation-compare__cta)::after {
+  inset: -5px -1px -1px;
+}
+
+/* Raised CTAs (hero, sticky Book Now, Compare, Closing CTA pair, Silver and Gold plan buttons, modal "Request a call back"):
+   the shadow goes while hovered or pressed. */
+@media (hover: hover) and (pointer: fine) {
+  .theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-button, .aiwo-sleepcation-subnav__cta, .aiwo-sleepcation-compare__cta, .aiwo-sleepcation-pricing__cta, .aiwo-sleepcation-contact__submit:not([aria-disabled='true'])):hover {
+    box-shadow: none;
+  }
+}
+
+.theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-button, .aiwo-sleepcation-subnav__cta, .aiwo-sleepcation-compare__cta, .aiwo-sleepcation-pricing__cta, .aiwo-sleepcation-contact__submit:not([aria-disabled='true'])):active {
+  box-shadow: none;
+}
+
+/* Movement only when the visitor hasn't asked for reduced motion: 3px down on hover, 4px while pressed. */
+@media (prefers-reduced-motion: no-preference) {
+  @media (hover: hover) and (pointer: fine) {
+    .theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-button, .aiwo-sleepcation-subnav__cta, .aiwo-sleepcation-compare__cta, .aiwo-sleepcation-pricing__cta, .aiwo-sleepcation-contact__submit:not([aria-disabled='true'])):hover {
+      transform: translateY(3px);
+    }
+  }
+
+  .theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-button, .aiwo-sleepcation-subnav__cta, .aiwo-sleepcation-compare__cta, .aiwo-sleepcation-pricing__cta, .aiwo-sleepcation-contact__submit:not([aria-disabled='true'])):active {
+    transform: translateY(4px);
+  }
+}
+
+/* Unavailable Confirm request: no motion, no pressed state. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__submit[aria-disabled='true'] {
+  transition: none;
+}
+
+/* Selector triggers: neutral border on hover, Figma blue when open or keyboard-focused; chevron turns in 160ms. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__trigger {
+  transition: border-color var(--aiwo-sleepcation-ui-duration) var(--aiwo-sleepcation-ease), box-shadow var(--aiwo-sleepcation-ui-duration) var(--aiwo-sleepcation-ease);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__trigger img {
+  transition: transform 160ms var(--aiwo-sleepcation-ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__trigger:hover {
+    border-color: #98a2b3;
+  }
+
+  /* Text fields: a tiny neutral emphasis only (focus and error states keep priority). */
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__field:not(.is-invalid) .aiwo-sleepcation-contact__input:not(:focus):hover {
+    border-color: #98a2b3;
+  }
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact .aiwo-sleepcation-contact__trigger[aria-expanded='true'],
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact .aiwo-sleepcation-contact__trigger:focus-visible {
+  outline: none;
+  border-color: #007bf1;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__choice.is-open .aiwo-sleepcation-contact__choice-label {
+  color: #007bf1;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__input {
+  transition: border-color var(--aiwo-sleepcation-ui-duration) var(--aiwo-sleepcation-ease);
+}
+
+/* Text actions (change / Done / Edit details): colour + underline weight only, no movement. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact :is(.aiwo-sleepcation-contact__card-toggle, .aiwo-sleepcation-contact__link) {
+  transition: color var(--aiwo-sleepcation-ui-duration) var(--aiwo-sleepcation-ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact :is(.aiwo-sleepcation-contact__card-toggle, .aiwo-sleepcation-contact__link):hover {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration-thickness: 2px;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__close:hover {
+    background: rgba(16, 24, 40, 0.06);
+  }
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact :is(.aiwo-sleepcation-contact__card-toggle, .aiwo-sleepcation-contact__link):active {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* Close: the exact Figma ✕ on a faint rounded surface; never rotates or scales. */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__close {
+  border-radius: 8px;
+  transition: background-color var(--aiwo-sleepcation-ui-duration) var(--aiwo-sleepcation-ease);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__close:active {
+  background: rgba(16, 24, 40, 0.1);
+}
+
+/* Reduced motion: states still change, instantly (movement is already limited to no-preference above (the sticky-nav header sync is separate). */
+@media (prefers-reduced-motion: reduce) {
+  .theme-template-suffix-aiwo-sleepcation :is(.aiwo-sleepcation-button, .aiwo-sleepcation-subnav__cta, .aiwo-sleepcation-compare__cta, .aiwo-sleepcation-pricing__cta, .aiwo-sleepcation-contact__submit, .aiwo-sleepcation-contact__trigger, .aiwo-sleepcation-contact__trigger img, .aiwo-sleepcation-contact__input, .aiwo-sleepcation-contact__close) {
+    transition: none;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact :is(.aiwo-sleepcation-contact__card-toggle, .aiwo-sleepcation-contact__link) {
+    transition: none;
+  }
 }

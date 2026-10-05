@@ -50,6 +50,14 @@
             "anchor_id": "aiwo-sleepcation-pricing",
             "is_active": false
           }
+        },
+        "tab_faq": {
+          "type": "tab",
+          "settings": {
+            "label": "FAQ",
+            "anchor_id": "aiwo-sleepcation-faq",
+            "is_active": false
+          }
         }
       },
       "block_order": [
@@ -58,7 +66,8 @@
         "tab_whats_included",
         "tab_compare",
         "tab_team_venue",
-        "tab_pricing"
+        "tab_pricing",
+        "tab_faq"
       ],
       "settings": {
         "aria_label": "Sleepcation",
@@ -1146,7 +1155,8 @@
             "image_alt": "Guest room at Fairmont Mumbai",
             "builtin_image": "fairmont-mumbai",
             "days_label": "3 days,",
-            "nights_label": "2 nights."
+            "nights_label": "2 nights.",
+            "short_name": "Mumbai"
           }
         },
         "venue_2": {
@@ -1156,7 +1166,8 @@
             "image_alt": "Guest room at The Leela Chennai",
             "builtin_image": "leela-chennai",
             "days_label": "3 days,",
-            "nights_label": "2 nights."
+            "nights_label": "2 nights.",
+            "short_name": "Chennai"
           }
         }
       },
@@ -1194,8 +1205,9 @@
             "price": "₹1,99,000",
             "extended_label": "Extended stay · 3 nights",
             "extended_price": "₹2,30,000",
-            "cta_label": "Book Silver stay",
-            "cta_url": ""
+            "cta_label": "Continue with Silver",
+            "cta_url": "",
+            "extended_nights_label": "3 nights."
           }
         },
         "plan_gold": {
@@ -1209,8 +1221,9 @@
             "price": "₹3,75,000",
             "extended_label": "Extended stay · 3 nights",
             "extended_price": "₹4,15,000",
-            "cta_label": "Book Gold stay",
-            "cta_url": ""
+            "cta_label": "Continue with Gold",
+            "cta_url": "",
+            "extended_nights_label": "3 nights."
           }
         },
         "inclusion_protocol": {
@@ -1352,6 +1365,19 @@
         "support_link_url": "",
         "mobile_initial_count": 5
       }
+    },
+    "aiwo_sleepcation_contact_modal": {
+      "type": "aiwo-sleepcation-contact-modal",
+      "settings": {
+        "heading": "A call before you book.",
+        "intro": "Tell us what your sleep has been doing — or what someone else’s has. We’ll tell you whether this is the right programme for you.",
+        "call_window_options": "Morning\nAfternoon\nEvening\nNo preference",
+        "submit_label": "Request a call back",
+        "privacy_note": "No card, no payment now. We use these details only to call you about Sleepcation.",
+        "review_heading": "Review your details",
+        "edit_label": "Edit details",
+        "confirm_label": "Confirm request"
+      }
     }
   },
   "order": [
@@ -1366,6 +1392,7 @@
     "aiwo_sleepcation_venues",
     "aiwo_sleepcation_closing_cta",
     "aiwo_sleepcation_pricing",
-    "aiwo_sleepcation_faq"
+    "aiwo_sleepcation_faq",
+    "aiwo_sleepcation_contact_modal"
   ]
 }

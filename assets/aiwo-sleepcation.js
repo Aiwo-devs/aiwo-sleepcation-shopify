@@ -124,6 +124,32 @@
     updateActiveTab(window.location.hash);
   });
 
+  // Anchor landing. The theme's on-scroll-up header shows after any upward scroll and hides after any downward one
+  // (over 10px), so an anchor jump changes --height-header only after the browser has used it. Before the browser
+  // navigates, hand the shared scroll-margin the height the header will have on arrival (same sums as the theme).
+  var ANCHOR_TOKEN = '--aiwo-sleepcation-anchor-header';
+  var HEADER_TOGGLE_PX = 10;
+
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a[href^="#aiwo-sleepcation-"]');
+    var root = document.querySelector('.theme-template-suffix-aiwo-sleepcation');
+    var section = link && document.getElementById(link.hash.slice(1));
+    if (!root || !section) return;
+
+    var store = window.Alpine && window.Alpine.store && window.Alpine.store('xHeaderMenu');
+    var header = document.getElementById('sticky-header');
+    if (!header || !store || store.stickyType !== 'on-scroll-up') {
+      root.style.removeProperty(ANCHOR_TOKEN); // any other header mode: the live value is already right
+      return;
+    }
+
+    var stickyBar = document.querySelector('#x-announcement[data-is-sticky="true"]') && document.querySelector('.section-announcement');
+    var hidden = stickyBar ? stickyBar.offsetHeight : 0;
+    var nav = document.querySelector('.aiwo-sleepcation-subnav-section');
+    var goingDown = section.getBoundingClientRect().top - (hidden + (nav ? nav.offsetHeight : 0) + 12) > HEADER_TOGGLE_PX;
+    root.style.setProperty(ANCHOR_TOKEN, (goingDown ? hidden : hidden + header.offsetHeight) + 'px');
+  });
+
   if (window.Shopify && window.Shopify.designMode) {
     document.addEventListener('shopify:section:load', init);
   }
@@ -616,6 +642,494 @@
       }
     });
     document.documentElement.classList.add('aiwo-sleepcation-motion-ready');
+  }
+
+  if (window.Shopify && window.Shopify.designMode) {
+    document.addEventListener('shopify:section:load', init);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+/* AIWO Sleepcation — contact modal. One native <dialog>; plan/venue data from the Pricing and Venues JSON blocks; one state
+   object kept in memory only (no storage, cookies, URLs or logging). "Request a call back" validates and shows the review;
+   "Confirm request" calls submitContactRequest(), which is a stub until a real API exists — it makes no request. */
+(function () {
+  if (document.documentElement.hasAttribute('data-aiwo-sleepcation-contact-js')) return;
+  document.documentElement.setAttribute('data-aiwo-sleepcation-contact-js', '');
+
+  var OPEN_CLASS = 'aiwo-sleepcation-modal-open';
+  var FIELDS = ['name', 'city', 'phone', 'email', 'call_window'];
+  var root, dialog, form, plans, venues, opener;
+  var openMenu = null; // the one open listbox, if any
+  var state = { plan: null, stay: 'standard', venue: null, name: '', city: '', phone: '', email: '', call_window: '' };
+  var failed = {}; // fields that have failed once re-validate live
+
+  function readJSON(selector) {
+    var el = document.querySelector(selector);
+    if (!el) return [];
+    try {
+      return JSON.parse(el.textContent) || [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function byKey(list, key) {
+    for (var i = 0; i < list.length; i++) if (list[i].key === key) return list[i];
+    return null;
+  }
+
+  function icon(name) {
+    var template = root.querySelector('[data-aiwo-contact-icon="' + name + '"]');
+    return template ? template.content.cloneNode(true) : document.createDocumentFragment();
+  }
+
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text != null) node.textContent = text;
+    return node;
+  }
+
+  function nightsLabel(plan, stay) {
+    return stay === 'extended' ? plan.extended_nights_label : plan.standard_nights_label;
+  }
+
+  // Menu label for a stay: the Pricing nights label without its closing full stop ("2 nights." → "2 nights").
+  function stayOptionLabel(plan, stay) {
+    return (nightsLabel(plan, stay) || '').replace(/[.\s]+$/, '');
+  }
+
+  /* ---------- rendering ---------- */
+
+  function renderCard(card, withToggle) {
+    var plan = byKey(plans, state.plan);
+    var venue = byKey(venues, state.venue);
+    if (!plan) return;
+    var toggle = card.querySelector('[data-aiwo-contact-edit-plan]');
+    card.textContent = '';
+    card.classList.toggle('aiwo-sleepcation-contact__card--gold', plan.style === 'gold');
+
+    var main = el('div', 'aiwo-sleepcation-contact__card-main');
+    var badge = el('span', 'aiwo-sleepcation-contact__badge');
+    var badgeImg = el('img');
+    badgeImg.src = plan.badge;
+    badgeImg.alt = '';
+    badgeImg.width = 33;
+    badgeImg.height = 29;
+    badge.appendChild(badgeImg);
+    main.appendChild(badge);
+
+    var text = el('div', 'aiwo-sleepcation-contact__card-text');
+    var title = el('p', 'aiwo-sleepcation-contact__card-title');
+    title.appendChild(el('span', null, plan.name));
+    title.appendChild(el('span', 'aiwo-sleepcation-contact__card-price', state.stay === 'extended' ? plan.extended_price : plan.standard_price));
+    text.appendChild(title);
+
+    var pill = el('p', 'aiwo-sleepcation-contact__pill');
+    var nights = el('span');
+    nights.appendChild(icon('night-card'));
+    nights.appendChild(document.createTextNode(nightsLabel(plan, state.stay)));
+    pill.appendChild(nights);
+    if (venue) {
+      var place = el('span');
+      place.appendChild(icon('pin-card'));
+      place.appendChild(document.createTextNode(venue.venue_name));
+      pill.appendChild(place);
+    }
+    text.appendChild(pill);
+    main.appendChild(text);
+    card.appendChild(main);
+    if (withToggle && toggle) card.appendChild(toggle);
+  }
+
+  function renderTriggers() {
+    var plan = byKey(plans, state.plan);
+    var venue = byKey(venues, state.venue);
+    setTriggerValue('plan', plan ? plan.name : '');
+    setTriggerValue('stay', plan ? stayOptionLabel(plan, state.stay) : '');
+    setTriggerValue('venue', venue ? venue.short_name : '');
+  }
+
+  function setTriggerValue(name, value) {
+    var trigger = root.querySelector('[data-aiwo-contact-trigger="' + name + '"]');
+    if (trigger) trigger.querySelector('span').textContent = value;
+  }
+
+  function render() {
+    renderCard(root.querySelector('[data-aiwo-contact-card]'), true);
+    renderTriggers();
+  }
+
+  /* ---------- custom listboxes (plan / stay / venue) ---------- */
+
+  function optionsFor(name) {
+    var plan = byKey(plans, state.plan);
+    if (name === 'plan') {
+      return plans.map(function (p) { return { value: p.key, label: p.name, badge: p.badge }; });
+    }
+    if (name === 'stay') {
+      return ['standard', 'extended'].map(function (s) { return { value: s, label: plan ? stayOptionLabel(plan, s) : s, icon: 'night-menu' }; });
+    }
+    return venues.map(function (v) { return { value: v.key, label: v.short_name, icon: 'pin-menu' }; });
+  }
+
+  function buildChoice(name) {
+    var wrap = root.querySelector('[data-aiwo-contact-choice="' + name + '"]');
+    var labelId = 'aiwo-sleepcation-contact-' + name + '-label';
+    var listId = 'aiwo-sleepcation-contact-' + name + '-list';
+    var trigger = el('button', 'aiwo-sleepcation-contact__trigger');
+    trigger.type = 'button';
+    trigger.id = 'aiwo-sleepcation-contact-' + name + '-trigger';
+    trigger.setAttribute('data-aiwo-contact-trigger', name);
+    trigger.setAttribute('aria-haspopup', 'listbox');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-controls', listId);
+    trigger.setAttribute('aria-labelledby', labelId + ' ' + trigger.id);
+    trigger.appendChild(el('span'));
+    trigger.appendChild(icon('chevron'));
+    var list = el('ul', 'aiwo-sleepcation-contact__menu');
+    list.id = listId;
+    list.setAttribute('role', 'listbox');
+    list.setAttribute('aria-labelledby', labelId);
+    list.tabIndex = -1;
+    list.hidden = true;
+    wrap.appendChild(trigger);
+    wrap.appendChild(list);
+
+    trigger.addEventListener('click', function () {
+      if (openMenu && openMenu.name === name) closeMenu(true);
+      else openListbox(name);
+    });
+    trigger.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        openListbox(name);
+      }
+    });
+    list.addEventListener('keydown', function (event) { onListKey(event, name); });
+    list.addEventListener('click', function (event) {
+      var option = event.target.closest('[role="option"]');
+      if (option) choose(name, option.getAttribute('data-value'));
+    });
+    list.addEventListener('mousemove', function (event) {
+      var option = event.target.closest('[role="option"]');
+      if (option) setActive(list, option);
+    });
+  }
+
+  function openListbox(name) {
+    closeMenu(false);
+    var trigger = root.querySelector('[data-aiwo-contact-trigger="' + name + '"]');
+    var list = document.getElementById(trigger.getAttribute('aria-controls'));
+    var current = name === 'plan' ? state.plan : name === 'stay' ? state.stay : state.venue;
+    list.textContent = '';
+    optionsFor(name).forEach(function (opt, i) {
+      var li = el('li', 'aiwo-sleepcation-contact__option');
+      li.id = list.id + '-' + i;
+      li.setAttribute('role', 'option');
+      li.setAttribute('data-value', opt.value);
+      li.setAttribute('aria-selected', opt.value === current ? 'true' : 'false');
+      if (opt.badge) {
+        var img = el('img', 'aiwo-sleepcation-contact__option-badge');
+        img.src = opt.badge;
+        img.alt = '';
+        li.appendChild(img);
+      } else {
+        li.appendChild(icon(opt.icon));
+      }
+      li.appendChild(el('span', null, opt.label));
+      var check = icon('check').firstElementChild;
+      if (check) {
+        check.classList.add('aiwo-sleepcation-contact__option-check');
+        li.appendChild(check);
+      }
+      list.appendChild(li);
+    });
+    list.hidden = false;
+    trigger.setAttribute('aria-expanded', 'true');
+    trigger.parentElement.classList.add('is-open'); // lifts this selector above the following rows
+    openMenu = { name: name, trigger: trigger, list: list, typed: '', typedAt: 0 };
+    setActive(list, list.querySelector('[aria-selected="true"]') || list.firstElementChild);
+    list.focus();
+  }
+
+  function setActive(list, option) {
+    if (!option) return;
+    Array.prototype.forEach.call(list.children, function (li) { li.classList.toggle('is-active', li === option); });
+    list.setAttribute('aria-activedescendant', option.id);
+    option.scrollIntoView({ block: 'nearest' });
+  }
+
+  function closeMenu(returnFocus) {
+    if (!openMenu) return;
+    var menu = openMenu;
+    openMenu = null;
+    menu.list.hidden = true;
+    menu.list.removeAttribute('aria-activedescendant');
+    menu.trigger.setAttribute('aria-expanded', 'false');
+    menu.trigger.parentElement.classList.remove('is-open');
+    if (returnFocus) menu.trigger.focus();
+  }
+
+  function onListKey(event, name) {
+    var list = openMenu && openMenu.list;
+    if (!list) return;
+    var options = Array.prototype.slice.call(list.children);
+    var index = options.indexOf(list.querySelector('.is-active'));
+    var key = event.key;
+    if (key === 'ArrowDown' || key === 'ArrowUp' || key === 'Home' || key === 'End') {
+      event.preventDefault();
+      if (key === 'ArrowDown') index = Math.min(options.length - 1, index + 1);
+      else if (key === 'ArrowUp') index = Math.max(0, index - 1);
+      else if (key === 'Home') index = 0;
+      else index = options.length - 1;
+      setActive(list, options[index]);
+    } else if (key === 'Enter' || key === ' ') {
+      event.preventDefault();
+      if (options[index]) choose(name, options[index].getAttribute('data-value'));
+    } else if (key === 'Escape') {
+      event.preventDefault();
+      event.stopPropagation();
+      closeMenu(true);
+    } else if (key === 'Tab') {
+      closeMenu(false);
+    } else if (key.length === 1 && /\S/.test(key)) {
+      // Type-ahead: jump to the next option starting with the typed letters.
+      var now = Date.now();
+      openMenu.typed = (now - openMenu.typedAt > 600 ? '' : openMenu.typed) + key.toLowerCase();
+      openMenu.typedAt = now;
+      for (var i = 0; i < options.length; i++) {
+        if (options[i].textContent.trim().toLowerCase().indexOf(openMenu.typed) === 0) {
+          setActive(list, options[i]);
+          break;
+        }
+      }
+    }
+  }
+
+  function choose(name, value) {
+    if (name === 'plan') state.plan = value;
+    else if (name === 'stay') state.stay = value;
+    else state.venue = value;
+    closeMenu(true);
+    render();
+  }
+
+  /* ---------- validation + payload ---------- */
+
+  function readForm() {
+    FIELDS.forEach(function (key) { state[key] = form.elements[key].value; });
+  }
+
+  function writeForm() {
+    FIELDS.forEach(function (key) { form.elements[key].value = state[key]; });
+  }
+
+  function phoneDigits(value) {
+    return value.replace(/[\s\-()]/g, '');
+  }
+
+  function validateField(key) {
+    var value = (state[key] || '').trim();
+    if (key === 'phone') return /^\+?\d{7,15}$/.test(phoneDigits(value));
+    if (key === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+    return value !== '';
+  }
+
+  function validatePayload() {
+    var invalid = [];
+    FIELDS.forEach(function (key) { if (!validateField(key)) invalid.push(key); });
+    if (!byKey(plans, state.plan) || !byKey(venues, state.venue)) invalid.push('plan');
+    return invalid;
+  }
+
+  function showError(key, isInvalid) {
+    var field = form.querySelector('[data-aiwo-contact-field="' + key + '"]');
+    if (!field) return;
+    var input = form.elements[key];
+    var message = field.querySelector('.aiwo-sleepcation-contact__error');
+    field.classList.toggle('is-invalid', isInvalid);
+    if (isInvalid) input.setAttribute('aria-invalid', 'true');
+    else input.removeAttribute('aria-invalid');
+    message.textContent = isInvalid ? message.getAttribute('data-message') : '';
+    message.hidden = !isInvalid;
+  }
+
+  // The future API payload: derived values (price, normalised phone) are computed here, never stored.
+  function collectPayload() {
+    var plan = byKey(plans, state.plan);
+    var venue = byKey(venues, state.venue);
+    return {
+      plan: state.plan,
+      stay: state.stay,
+      stay_label: plan ? nightsLabel(plan, state.stay) : '',
+      price: plan ? (state.stay === 'extended' ? plan.extended_price : plan.standard_price) : '',
+      venue: venue ? venue.venue_name : '',
+      name: state.name.trim(),
+      city: state.city.trim(),
+      phone: phoneDigits(state.phone.trim()),
+      email: state.email.trim(),
+      call_window: state.call_window
+    };
+  }
+
+  // API boundary — intentionally not connected. Replace the body with the real request once an API contract exists.
+  function submitContactRequest(payload) { // eslint-disable-line no-unused-vars
+    return Promise.reject(new Error('Contact API not connected'));
+  }
+
+  /* ---------- views ---------- */
+
+  function setView(name) {
+    root.querySelectorAll('[data-aiwo-contact-view]').forEach(function (view) {
+      view.hidden = view.getAttribute('data-aiwo-contact-view') !== name;
+    });
+    dialog.setAttribute('aria-labelledby', name === 'review' ? 'aiwo-sleepcation-contact-review-title' : 'aiwo-sleepcation-contact-title');
+    dialog.scrollTop = 0;
+  }
+
+  function renderReview() {
+    renderCard(root.querySelector('[data-aiwo-contact-review-card]'), false);
+    FIELDS.forEach(function (key) {
+      var dd = root.querySelector('[data-aiwo-contact-review="' + key + '"]');
+      if (dd) dd.textContent = state[key].trim();
+    });
+    setView('review');
+    document.getElementById('aiwo-sleepcation-contact-review-title').focus();
+  }
+
+  function setEditing(open) {
+    var plan = root.querySelector('[data-aiwo-contact-plan]');
+    var toggle = root.querySelector('[data-aiwo-contact-edit-plan]');
+    var editor = document.getElementById(toggle.getAttribute('aria-controls'));
+    if (!open) closeMenu(false);
+    plan.classList.toggle('is-editing', open);
+    editor.hidden = !open;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.textContent = toggle.getAttribute(open ? 'data-label-open' : 'data-label-closed');
+  }
+
+  /* ---------- open / close ---------- */
+
+  function open(planKey, trigger) {
+    if (!byKey(plans, planKey)) return;
+    state.plan = planKey;
+    if (!byKey(venues, state.venue) && venues.length) state.venue = venues[0].key;
+    opener = trigger;
+    setEditing(false);
+    writeForm();
+    render();
+    setView('form');
+    document.documentElement.classList.add(OPEN_CLASS);
+    dialog.showModal();
+    form.elements.name.focus();
+  }
+
+  function setup(container) {
+    if (container.hasAttribute('data-ready')) return;
+    container.setAttribute('data-ready', '');
+    root = container;
+    dialog = root.querySelector('[data-aiwo-contact-dialog]');
+    form = root.querySelector('[data-aiwo-contact-form]');
+    plans = readJSON('[data-aiwo-sleepcation-plans]');
+    venues = readJSON('[data-aiwo-sleepcation-venues]');
+    ['plan', 'stay', 'venue'].forEach(buildChoice);
+
+    root.querySelector('[data-aiwo-contact-close]').addEventListener('click', function () { dialog.close(); });
+    root.querySelector('[data-aiwo-contact-edit-plan]').addEventListener('click', function () {
+      setEditing(this.getAttribute('aria-expanded') !== 'true');
+    });
+
+    // Backdrop click: the dialog element itself is the only target outside its content box. Both the press and the
+    // release must land on the backdrop, so a press inside (e.g. selecting text) released outside never closes it.
+    var onBackdrop = function (event) {
+      var rect = dialog.getBoundingClientRect();
+      return event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom);
+    };
+    var pressedBackdrop = false;
+    dialog.addEventListener('pointerdown', function (event) { pressedBackdrop = onBackdrop(event); });
+    dialog.addEventListener('click', function (event) {
+      if (openMenu && !openMenu.list.contains(event.target) && !openMenu.trigger.contains(event.target)) closeMenu(false);
+      if (pressedBackdrop && onBackdrop(event)) dialog.close();
+      pressedBackdrop = false;
+    });
+
+    // Escape closes an open menu first, then the dialog (native).
+    dialog.addEventListener('cancel', function (event) {
+      if (openMenu) {
+        event.preventDefault();
+        closeMenu(true);
+      }
+    });
+
+    dialog.addEventListener('close', function () {
+      readForm();
+      closeMenu(false);
+      document.documentElement.classList.remove(OPEN_CLASS);
+      if (opener && document.contains(opener)) opener.focus();
+    });
+
+    form.addEventListener('input', function (event) {
+      var key = event.target.name;
+      if (FIELDS.indexOf(key) === -1) return;
+      state[key] = event.target.value;
+      if (failed[key]) showError(key, !validateField(key));
+    });
+    form.addEventListener('change', function (event) {
+      var key = event.target.name;
+      if (FIELDS.indexOf(key) === -1) return;
+      state[key] = event.target.value;
+      if (failed[key]) showError(key, !validateField(key));
+    });
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      readForm();
+      var invalid = validatePayload();
+      FIELDS.forEach(function (key) {
+        var bad = invalid.indexOf(key) !== -1;
+        if (bad) failed[key] = true;
+        showError(key, bad);
+      });
+      var first = FIELDS.filter(function (key) { return invalid.indexOf(key) !== -1; })[0];
+      if (first) {
+        form.elements[first].focus();
+        return;
+      }
+      renderReview();
+    });
+
+    root.querySelector('[data-aiwo-contact-edit]').addEventListener('click', function () {
+      setView('form');
+      form.elements.name.focus();
+    });
+
+    root.querySelector('[data-aiwo-contact-confirm]').addEventListener('click', function (event) {
+      // Disabled until the API exists: no request, no success state.
+      if (this.getAttribute('aria-disabled') === 'true') {
+        event.preventDefault();
+        return;
+      }
+      submitContactRequest(collectPayload());
+    });
+  }
+
+  document.addEventListener('click', function (event) {
+    var trigger = event.target.closest('[data-aiwo-contact-open]');
+    if (!trigger || !dialog) return;
+    event.preventDefault();
+    open(trigger.getAttribute('data-aiwo-plan'), trigger);
+  });
+
+  function init() {
+    var container = document.querySelector('[data-aiwo-sleepcation-contact]');
+    if (container) setup(container);
   }
 
   if (window.Shopify && window.Shopify.designMode) {

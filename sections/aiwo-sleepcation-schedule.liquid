@@ -35,7 +35,8 @@
         <article class="aiwo-sleepcation-schedule__card">
           <div class="aiwo-sleepcation-schedule__inner{% if has_image %} aiwo-sleepcation-schedule__inner--image{% endif %}">
             {%- if has_image -%}
-              <div class="aiwo-sleepcation-schedule__media">
+              {%- comment -%} Built-in photos carry a per-phase modifier for their focal point; merchant images use their own. {%- endcomment -%}
+              <div class="aiwo-sleepcation-schedule__media{% if block.settings.image == blank %} aiwo-sleepcation-schedule__media--{{ builtin }}{% endif %}">
                 {%- if block.settings.image != blank -%}
                   {%- capture focal -%}object-position: {{ block.settings.image.presentation.focal_point }};{%- endcapture -%}
                   {{
@@ -49,10 +50,20 @@
                       style: focal
                   }}
                 {%- else -%}
+                  {%- liquid
+                    case builtin
+                      when 'day-3', 'day-90'
+                        assign image_width = 941
+                        assign image_height = 1672
+                      else
+                        assign image_width = 1254
+                        assign image_height = 1254
+                    endcase
+                  -%}
                   <img
                     src="{{ 'aiwo-sleepcation-timeline-' | append: builtin | append: '.webp' | asset_url }}"
-                    width="1024"
-                    height="1366"
+                    width="{{ image_width }}"
+                    height="{{ image_height }}"
                     alt="{{ block.settings.image_alt | escape }}"
                     loading="lazy"
                   >
@@ -155,7 +166,12 @@
           "default": "none",
           "options": [
             { "value": "none", "label": "None" },
-            { "value": "before-arrival", "label": "Before arrival" }
+            { "value": "before-arrival", "label": "Before arrival" },
+            { "value": "day-1", "label": "Day 1" },
+            { "value": "day-2", "label": "Day 2" },
+            { "value": "day-3", "label": "Day 3" },
+            { "value": "days-15-60", "label": "Days 15–60" },
+            { "value": "day-90", "label": "Day 90" }
           ]
         }
       ]

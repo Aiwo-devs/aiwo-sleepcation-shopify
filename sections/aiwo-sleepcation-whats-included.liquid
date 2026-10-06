@@ -125,9 +125,21 @@
                           when 'oura-ring'
                             assign image_width = 700
                             assign image_height = 1288
-                          else
+                          when 'aiwo-181', 'dexa'
                             assign image_width = 700
                             assign image_height = 1244
+                          when 'head-pillow'
+                            assign image_width = 584
+                            assign image_height = 900
+                          when 'lifeos'
+                            assign image_width = 393
+                            assign image_height = 606
+                          when 'three-days-two-nights'
+                            assign image_width = 616
+                            assign image_height = 950
+                          else
+                            assign image_width = 700
+                            assign image_height = 1079
                         endcase
                       -%}
                       <img
@@ -241,7 +253,51 @@
             { "value": "aiwo-181", "label": "AIWO 181" },
             { "value": "oura-ring", "label": "Oura Ring" },
             { "value": "dexa", "label": "DEXA scan" },
-            { "value": "sleep-study", "label": "Level 2 sleep study" }
+            { "value": "sleep-study", "label": "Level 2 sleep study" },
+            { "value": "vo2-max", "label": "VO2 max test" },
+            { "value": "pulmonary-function", "label": "Pulmonary function test" },
+            { "value": "ent-consultation", "label": "ENT consultation" },
+            { "value": "psychological-assessment", "label": "Psychological assessment" },
+            { "value": "questionnaires", "label": "Questionnaires" },
+            { "value": "biological-age", "label": "Biological age" },
+            { "value": "vital-check", "label": "Vital check" },
+            { "value": "physical-assessment", "label": "Physical assessment" },
+            { "value": "posture-screening", "label": "Posture screening" },
+            { "value": "lead-physician", "label": "Lead physician" },
+            { "value": "cbt-i", "label": "CBT-I" },
+            { "value": "sleep-coaching", "label": "Sleep coaching" },
+            { "value": "light-protocol", "label": "Light protocol" },
+            { "value": "breathing-therapy", "label": "Breathing therapy" },
+            { "value": "diet-counselling", "label": "Diet counselling" },
+            { "value": "stress-coaching", "label": "Stress coaching" },
+            { "value": "hyperbaric-oxygen", "label": "Hyperbaric oxygen" },
+            { "value": "red-light-therapy", "label": "Red light therapy" },
+            { "value": "massage-reflexology", "label": "Massage & foot reflexology" },
+            { "value": "myofascial-release", "label": "Myofascial release" },
+            { "value": "cold-adaptation", "label": "Cold adaptation" },
+            { "value": "iv-therapy", "label": "IV therapy" },
+            { "value": "nsdr-yoga-nidra", "label": "NSDR & Yoga Nidra" },
+            { "value": "pmr-tibialis-raise", "label": "PMR & tibialis raise" },
+            { "value": "yoga-session", "label": "Yoga session" },
+            { "value": "physiotherapy", "label": "Physiotherapy" },
+            { "value": "head-pillow", "label": "AIWO head pillow" },
+            { "value": "leg-pillow", "label": "AIWO leg pillow" },
+            { "value": "supplements", "label": "Sleep supplements" },
+            { "value": "sleep-tea", "label": "AIWO Sleep Tea" },
+            { "value": "breathing-kit", "label": "Breathing therapy kit" },
+            { "value": "lifeos", "label": "LifeOS" },
+            { "value": "protocol", "label": "30-day protocol" },
+            { "value": "three-days-two-nights", "label": "Three days, two nights" },
+            { "value": "breakfast", "label": "Breakfast" },
+            { "value": "sleep-food", "label": "Sleep-enhancing food" },
+            { "value": "sauna", "label": "Sauna" },
+            { "value": "airport-transfer", "label": "Airport pickup and drop" },
+            { "value": "two-venues", "label": "Two venues" },
+            { "value": "day-15-sleep-coach", "label": "Day 15 sleep coach" },
+            { "value": "day-30-physician", "label": "Day 30 physician" },
+            { "value": "day-45-sleep-coach", "label": "Day 45 sleep coach" },
+            { "value": "day-60-physician", "label": "Day 60 physician" },
+            { "value": "day-90-aiwo-100", "label": "Day 90 AIWO 100" }
           ]
         },
         {
@@ -259,7 +315,45 @@
             { "value": "aiwo-181", "label": "AIWO 181" },
             { "value": "wearable", "label": "Wearable" },
             { "value": "dexa", "label": "DEXA scan" },
-            { "value": "sleep-study", "label": "Level 2 sleep study" }
+            { "value": "sleep-study", "label": "Level 2 sleep study" },
+            { "value": "vo2-max", "label": "VO2 max test" },
+            { "value": "pulmonary-function", "label": "Pulmonary function test" },
+            { "value": "ent-consultation", "label": "ENT consultation" },
+            { "value": "psychological-assessment", "label": "Psychological assessment" },
+            { "value": "questionnaires", "label": "Questionnaires" },
+            { "value": "biological-age", "label": "Biological age" },
+            { "value": "vital-check", "label": "Vital check" },
+            { "value": "physical-assessment", "label": "Physical assessment" },
+            { "value": "posture-screening", "label": "Posture screening" },
+            { "value": "lead-physician", "label": "Lead physician" },
+            { "value": "cbt-i", "label": "CBT-I" },
+            { "value": "sleep-coaching", "label": "Sleep coaching" },
+            { "value": "light-protocol", "label": "Light protocol" },
+            { "value": "breathing-therapy", "label": "Breathing therapy" },
+            { "value": "diet-counselling", "label": "Diet counselling" },
+            { "value": "stress-coaching", "label": "Stress coaching" },
+            { "value": "hyperbaric-oxygen", "label": "Hyperbaric oxygen / Breathing kit" },
+            { "value": "red-light-therapy", "label": "Red light therapy" },
+            { "value": "massage-reflexology", "label": "Massage & foot reflexology" },
+            { "value": "myofascial-release", "label": "Myofascial release" },
+            { "value": "cold-adaptation", "label": "Cold adaptation" },
+            { "value": "iv-therapy", "label": "IV therapy" },
+            { "value": "nsdr-yoga-nidra", "label": "NSDR & Yoga Nidra" },
+            { "value": "pmr-tibialis-raise", "label": "PMR & tibialis raise" },
+            { "value": "yoga-session", "label": "Yoga session" },
+            { "value": "physiotherapy", "label": "Physiotherapy" },
+            { "value": "mashing-therapy", "label": "Mashing therapy" },
+            { "value": "pillow", "label": "AIWO pillow" },
+            { "value": "supplements", "label": "Sleep supplements" },
+            { "value": "sleep-tea", "label": "AIWO Sleep Tea" },
+            { "value": "lifeos", "label": "LifeOS" },
+            { "value": "protocol", "label": "30-day protocol" },
+            { "value": "three-days-two-nights", "label": "Calendar (stay / follow-up day)" },
+            { "value": "breakfast", "label": "Breakfast" },
+            { "value": "sleep-food", "label": "Sleep-enhancing food" },
+            { "value": "sauna", "label": "Sauna" },
+            { "value": "airport-transfer", "label": "Airport pickup and drop" },
+            { "value": "two-venues", "label": "Two venues" }
           ]
         },
         {

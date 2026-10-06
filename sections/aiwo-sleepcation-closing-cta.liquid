@@ -37,7 +37,7 @@
   </div>
 
   <div class="aiwo-sleepcation-closing-cta__actions">
-    {%- comment -%} No URL yet: placeholder links (no href) — visually identical, not dead links. {%- endcomment -%}
+    {%- comment -%} Speak: placeholder link (no href) until it has a URL. Book: with no URL it goes to Pricing. {%- endcomment -%}
     {%- if section.settings.talk_cta_label != blank -%}
       <a class="aiwo-sleepcation-button"{% if section.settings.talk_cta_url != blank %} href="{{ section.settings.talk_cta_url }}"{% endif %}>
         {{- section.settings.talk_cta_label | escape -}}
@@ -45,7 +45,7 @@
       </a>
     {%- endif -%}
     {%- if section.settings.book_cta_label != blank -%}
-      <a class="aiwo-sleepcation-button aiwo-sleepcation-closing-cta__book"{% if section.settings.book_cta_url != blank %} href="{{ section.settings.book_cta_url }}"{% endif %}>
+      <a class="aiwo-sleepcation-button aiwo-sleepcation-closing-cta__book" href="{{ section.settings.book_cta_url | default: '#aiwo-sleepcation-pricing' }}">
         {{- section.settings.book_cta_label | escape -}}
         {{- 'aiwo-sleepcation-icon-arrow-up-right.svg' | inline_asset_content | replace: '<svg ', svg_attrs | replace: '#1D2C38', 'white' -}}
       </a>

@@ -117,8 +117,8 @@
           <td class="aiwo-sleepcation-compare__corner"></td>
           <td class="aiwo-sleepcation-compare__aiwo aiwo-sleepcation-compare__foot">
             {%- if section.settings.cta_label != blank -%}
-              {%- comment -%} No URL yet: placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
-              <a class="aiwo-sleepcation-compare__cta"{% if section.settings.cta_url != blank %} href="{{ section.settings.cta_url }}"{% endif %}>
+              {%- comment -%} With no URL it goes to Pricing. {%- endcomment -%}
+              <a class="aiwo-sleepcation-compare__cta" href="{{ section.settings.cta_url | default: '#aiwo-sleepcation-pricing' }}">
                 {{- section.settings.cta_label | escape -}}
                 <img src="{{ 'aiwo-sleepcation-icon-arrow-up-right-white.svg' | asset_url }}" width="18" height="18" alt="">
               </a>

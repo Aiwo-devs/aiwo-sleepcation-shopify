@@ -38,7 +38,7 @@
         "tab_team_venue": {
           "type": "tab",
           "settings": {
-            "label": "Team & venue",
+            "label": "Venues",
             "anchor_id": "aiwo-sleepcation-team-venue",
             "is_active": false
           }
@@ -81,7 +81,7 @@
         "eyebrow": "A 90-day clinical sleep programme",
         "heading_line_1": "Measure the Cause.",
         "heading_line_2": "Mend the Sleep.",
-        "text": "A three-day, five-star testing stay to find the exact cause of your disturbed sleep, Ninety days later, we repeat the tests to show the difference in numbers.",
+        "text": "A three-day, five-star testing stay to find the exact cause of your disturbed sleep. Ninety days later, we repeat the tests to show the difference in numbers.",
         "button_label": "Book now",
         "image_alt": "A guest rests in bed beneath a 90-day programme timeline, from a Night 1 sleep baseline through regular check-ins."
       }
@@ -92,7 +92,7 @@
         "item_markers": {
           "type": "item",
           "settings": {
-            "label": "181+ markers",
+            "label": "181 markers",
             "icon": "markers"
           }
         },
@@ -106,7 +106,7 @@
         "item_appointments": {
           "type": "item",
           "settings": {
-            "label": "6 appointments",
+            "label": "Scheduled reviews",
             "icon": "appointments"
           }
         },
@@ -136,7 +136,7 @@
           "settings": {
             "label": "I sleep seven or eight hours and still wake up tired.",
             "detail_1_heading": "What this often points to",
-            "detail_1_body": "Non-restorative sleep. The duration is fine; the architecture isn’t. In Chennai — the Indian city with the best bedtime discipline — 61.9% of people still report waking unrested.",
+            "detail_1_body": "Non-restorative sleep. The duration is fine; the architecture isn’t.",
             "detail_2_heading": "How we test it",
             "detail_2_body": "A <strong>Level 2 sleep study with EEG channels,</strong> which records how much deep and <strong>REM sleep</strong> you actually got, rather than estimating it."
           }
@@ -188,7 +188,7 @@
             "detail_1_heading": "What this often points to",
             "detail_1_body": "It would. A standard check looks at your blood while you’re awake. It doesn’t look at your breathing while you’re asleep, your sleep stages, or your recovery capacity.",
             "detail_2_heading": "How we test it",
-            "detail_2_body": "All three, in the first forty-eight hours — plus a DEXA scan, VO2 max and biological age assessment."
+            "detail_2_body": "All three, in the first 48 hours — plus a DEXA scan, VO2 max and biological age assessment."
           }
         },
         "item_07": {
@@ -198,7 +198,7 @@
             "detail_1_heading": "What this often points to",
             "detail_1_body": "Consumer wearables estimate sleep stages from movement and heart rate. They can flag a problem; they can’t diagnose one.",
             "detail_2_heading": "How we test it",
-            "detail_2_body": "A Level 2 study records sleep stages from EEG, and your Lead Physician reads it against your bloodwork rather than in isolation. You still wear a ring — an Oura Ring is fitted on arrival to track the ninety days — but the diagnosis comes from the study, not from the ring."
+            "detail_2_body": "A Level 2 study records sleep stages from EEG, and your Lead Physician reads it against your bloodwork rather than in isolation. You still wear a ring — an Oura Ring is fitted on arrival to track the 90 days — but the diagnosis comes from the study, not from the ring."
           }
         },
         "item_08": {
@@ -261,7 +261,7 @@
           "type": "step",
           "settings": {
             "title": "Measure",
-            "description": "Sleep, breathing, bloodwork, body and mind — in the first forty-eight hours.",
+            "description": "Sleep, breathing, bloodwork, body and mind — in the first 48 hours.",
             "illustration": "measure"
           }
         },
@@ -277,7 +277,7 @@
           "type": "step",
           "settings": {
             "title": "Treat",
-            "description": "Treatment starts on site, then continues at home on a written thirty-day plan.",
+            "description": "Treatment starts on site, then continues at home on a written 30-day plan.",
             "illustration": "treat"
           }
         },
@@ -293,7 +293,7 @@
           "type": "step",
           "settings": {
             "title": "Measure again",
-            "description": "The same tests on day ninety, so you see what changed instead of guessing.",
+            "description": "The same tests on Day 90, so you see what changed instead of guessing.",
             "illustration": "measure-again"
           }
         }
@@ -319,7 +319,7 @@
           "settings": {
             "category": "tests",
             "badge": "AIWO 181",
-            "description": "181-marker blood panel. Run on day one and again on day ninety.",
+            "description": "181-marker blood panel. Run on Day 1 and again on Day 90.",
             "builtin_image": "aiwo-181",
             "badge_icon": "aiwo-181",
             "image_alt": "Blood being drawn from a patient’s arm for the AIWO 181 panel"
@@ -364,9 +364,9 @@
             "category": "tests",
             "badge": "VO2 max test",
             "description": "Cardiorespiratory fitness and recovery capacity.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "vo2-max",
+            "badge_icon": "vo2-max",
+            "image_alt": "A man on a treadmill wearing a breathing mask and monitoring harness for a VO2 max test"
           }
         },
         "card_tests_06": {
@@ -375,9 +375,9 @@
             "category": "tests",
             "badge": "Pulmonary function test",
             "description": "With a pulmonologist consultation.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "pulmonary-function",
+            "badge_icon": "pulmonary-function",
+            "image_alt": "A man breathing into a pulmonary function testing device"
           }
         },
         "card_tests_07": {
@@ -386,9 +386,9 @@
             "category": "tests",
             "badge": "ENT consultation",
             "description": "Where clinically required, for upper-airway factors.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "ent-consultation",
+            "badge_icon": "ent-consultation",
+            "image_alt": "An ENT specialist examining a patient’s ear"
           }
         },
         "card_tests_08": {
@@ -397,9 +397,9 @@
             "category": "tests",
             "badge": "Psychological assessment",
             "description": "With counselling, conducted on site.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "psychological-assessment",
+            "badge_icon": "psychological-assessment",
+            "image_alt": "A psychologist seated in an armchair, listening during a session"
           }
         },
         "card_tests_09": {
@@ -408,9 +408,9 @@
             "category": "tests",
             "badge": "DBAS-16 · PHQ-9 · GAD-7",
             "description": "Three validated questionnaires, completed before you travel.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "questionnaires",
+            "badge_icon": "questionnaires",
+            "image_alt": "A printed sleep questionnaire with numbered rating scales"
           }
         },
         "card_tests_10": {
@@ -419,9 +419,9 @@
             "category": "tests",
             "badge": "Biological age",
             "description": "Your markers placed against chronological age.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "biological-age",
+            "badge_icon": "biological-age",
+            "image_alt": "A man holding a photograph of an older pair of eyes across his face"
           }
         },
         "card_tests_11": {
@@ -430,9 +430,9 @@
             "category": "tests",
             "badge": "Vital check",
             "description": "Baseline physiological measurements on arrival.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "vital-check",
+            "badge_icon": "vital-check",
+            "image_alt": "A clinician taking a patient’s blood pressure"
           }
         },
         "card_tests_12": {
@@ -441,9 +441,9 @@
             "category": "tests",
             "badge": "Physical assessment",
             "description": "Functional movement, reviewed by the physiotherapy team.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "physical-assessment",
+            "badge_icon": "physical-assessment",
+            "image_alt": "A physiotherapist assessing a patient’s leg on a treatment table"
           }
         },
         "card_tests_13": {
@@ -452,9 +452,9 @@
             "category": "tests",
             "badge": "Posture screening",
             "description": "Postural factors contributing to discomfort at night.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "posture-screening",
+            "badge_icon": "posture-screening",
+            "image_alt": "A woman standing in profile with a hand on her lower back"
           }
         },
         "card_treatment_01": {
@@ -463,9 +463,9 @@
             "category": "treatment",
             "badge": "Lead Physician ×2",
             "description": "One to set direction, one to hand over your findings and plan.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "lead-physician",
+            "badge_icon": "lead-physician",
+            "image_alt": "Two physicians, one in scrubs with a stethoscope and one in a white coat, standing together and smiling"
           }
         },
         "card_treatment_02": {
@@ -474,9 +474,9 @@
             "category": "treatment",
             "badge": "CBT-I ×2 sessions",
             "description": "Cognitive behavioural therapy for insomnia, with a psychologist.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "cbt-i",
+            "badge_icon": "cbt-i",
+            "image_alt": "A woman with her eyes closed, running a hand through her hair"
           }
         },
         "card_treatment_03": {
@@ -484,10 +484,10 @@
           "settings": {
             "category": "treatment",
             "badge": "Sleep coaching",
-            "description": "Builds your thirty-day protocol and leads two of the four follow-ups.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "description": "Builds your 30-day protocol and leads two of the four follow-ups.",
+            "builtin_image": "sleep-coaching",
+            "badge_icon": "sleep-coaching",
+            "image_alt": "Close-up of an eye with annotated sleep markers"
           }
         },
         "card_treatment_04": {
@@ -496,9 +496,9 @@
             "category": "treatment",
             "badge": "10,000 lux light protocol",
             "description": "On waking, days two and three, to reset circadian timing.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "light-protocol",
+            "badge_icon": "light-protocol",
+            "image_alt": "A beam of warm light falling across a dark room"
           }
         },
         "card_treatment_05": {
@@ -507,9 +507,9 @@
             "category": "treatment",
             "badge": "Breathing therapy",
             "description": "Protocol taught on site, continued at home with your kit.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "breathing-therapy",
+            "badge_icon": "breathing-therapy",
+            "image_alt": "A woman practising alternate-nostril breathing"
           }
         },
         "card_treatment_06": {
@@ -518,9 +518,9 @@
             "category": "treatment",
             "badge": "Diet counselling",
             "description": "Built from your own results, not a template.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "diet-counselling",
+            "badge_icon": "diet-counselling",
+            "image_alt": "A man preparing fresh fruit and green juice at a kitchen counter"
           }
         },
         "card_treatment_07": {
@@ -529,9 +529,9 @@
             "category": "treatment",
             "badge": "Stress coaching",
             "description": "Targeted at the arousal keeping you awake.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "stress-coaching",
+            "badge_icon": "stress-coaching",
+            "image_alt": "A man holding his head, blurred in motion"
           }
         },
         "card_treatment_08": {
@@ -540,9 +540,9 @@
             "category": "treatment",
             "badge": "Hyperbaric oxygen",
             "description": "Part of the recovery programme during the stay.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "hyperbaric-oxygen",
+            "badge_icon": "hyperbaric-oxygen",
+            "image_alt": "A person lying inside a hyperbaric oxygen chamber"
           }
         },
         "card_treatment_09": {
@@ -551,9 +551,9 @@
             "category": "treatment",
             "badge": "Red light therapy ×2",
             "description": "Two sessions across the three days.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "red-light-therapy",
+            "badge_icon": "red-light-therapy",
+            "image_alt": "A woman’s face in profile under red light"
           }
         },
         "card_treatment_10": {
@@ -562,9 +562,9 @@
             "category": "treatment",
             "badge": "Massage & foot reflexology",
             "description": "Scheduled around the diagnostic programme.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "massage-reflexology",
+            "badge_icon": "massage-reflexology",
+            "image_alt": "Hands giving a foot reflexology massage"
           }
         },
         "card_treatment_11": {
@@ -573,9 +573,9 @@
             "category": "treatment",
             "badge": "Myofascial release",
             "description": "With the physiotherapy team.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "myofascial-release",
+            "badge_icon": "myofascial-release",
+            "image_alt": "A therapist’s hands working on a person’s shoulder"
           }
         },
         "card_treatment_12": {
@@ -584,9 +584,9 @@
             "category": "treatment",
             "badge": "Cold adaptation",
             "description": "Structured exposure as part of recovery.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "cold-adaptation",
+            "badge_icon": "cold-adaptation",
+            "image_alt": "Close-up of a man’s face with eyes tightly shut"
           }
         },
         "card_treatment_13": {
@@ -595,9 +595,9 @@
             "category": "treatment",
             "badge": "IV therapy",
             "description": "Administered under clinical supervision.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "iv-therapy",
+            "badge_icon": "iv-therapy",
+            "image_alt": "A woman resting on a sofa while receiving an IV drip"
           }
         },
         "card_treatment_14": {
@@ -606,9 +606,9 @@
             "category": "treatment",
             "badge": "NSDR & Yoga Nidra",
             "description": "Non-sleep deep rest protocols you can repeat at home.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "nsdr-yoga-nidra",
+            "badge_icon": "nsdr-yoga-nidra",
+            "image_alt": "A woman seated cross-legged on a lawn practising a breathing exercise"
           }
         },
         "card_treatment_15": {
@@ -617,9 +617,9 @@
             "category": "treatment",
             "badge": "PMR & tibialis raise",
             "description": "Progressive muscle relaxation and targeted exercise.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "pmr-tibialis-raise",
+            "badge_icon": "pmr-tibialis-raise",
+            "image_alt": "A person’s lower legs mid-exercise on a garden path"
           }
         },
         "card_treatment_16": {
@@ -628,9 +628,9 @@
             "category": "treatment",
             "badge": "Yoga session",
             "description": "One session during the stay.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "yoga-session",
+            "badge_icon": "yoga-session",
+            "image_alt": "A hand resting on a knee in a meditation pose on a yoga mat"
           }
         },
         "card_treatment_17": {
@@ -639,9 +639,9 @@
             "category": "treatment",
             "badge": "Physio & daily exercise",
             "description": "Led by a physiotherapist each day.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "physiotherapy",
+            "badge_icon": "physiotherapy",
+            "image_alt": "A physiotherapist treating a patient lying on a treatment table"
           }
         },
         "card_treatment_18": {
@@ -650,9 +650,9 @@
             "category": "treatment",
             "badge": "Mashing therapy",
             "description": "With music, as part of the on-site schedule. Your coordinator explains it first.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "myofascial-release",
+            "badge_icon": "mashing-therapy",
+            "image_alt": "A therapist’s hands working on a person’s shoulder"
           }
         },
         "card_yours_01": {
@@ -661,9 +661,9 @@
             "category": "yours",
             "badge": "AIWO head pillow",
             "description": "Part of the AIWO pillow pair. Yours to keep",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "head-pillow",
+            "badge_icon": "pillow",
+            "image_alt": "An AIWO contoured head pillow on a quilted blue surface"
           }
         },
         "card_yours_02": {
@@ -672,9 +672,9 @@
             "category": "yours",
             "badge": "AIWO leg pillow",
             "description": "Part of the AIWO pillow pair. Yours to keep",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "leg-pillow",
+            "badge_icon": "pillow",
+            "image_alt": "An AIWO leg pillow set on a bed in a hotel room"
           }
         },
         "card_yours_03": {
@@ -683,9 +683,9 @@
             "category": "yours",
             "badge": "One month of sleep supplements",
             "description": "Ashwagandha, melatonin, L-theanine, magnesium L-threonate and glycine.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "supplements",
+            "badge_icon": "supplements",
+            "image_alt": "A smiling woman holding a supplement capsule"
           }
         },
         "card_yours_04": {
@@ -694,9 +694,9 @@
             "category": "yours",
             "badge": "AIWO Sleep Tea — 30 days",
             "description": "One chamomile serving daily for a month.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "sleep-tea",
+            "badge_icon": "sleep-tea",
+            "image_alt": "A hand holding a glass cup of chamomile tea beside a bath"
           }
         },
         "card_yours_05": {
@@ -705,9 +705,9 @@
             "category": "yours",
             "badge": "Breathing therapy kit",
             "description": "Home kit for the breathing protocol. Separate one-time purchase; cost confirmed at booking.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "breathing-kit",
+            "badge_icon": "hyperbaric-oxygen",
+            "image_alt": "An AIWO Breathe Easy breathing device box on a marble counter"
           }
         },
         "card_yours_06": {
@@ -716,20 +716,20 @@
             "category": "yours",
             "badge": "LifeOS — one year",
             "description": "Full access, included by default. You can opt out if you would rather not use it.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "lifeos",
+            "badge_icon": "lifeos",
+            "image_alt": "The LifeOS app on a phone, showing a health radar chart"
           }
         },
         "card_yours_07": {
           "type": "card",
           "settings": {
             "category": "yours",
-            "badge": "Your thirty-day protocol",
+            "badge": "Your 30-day protocol",
             "description": "In writing, built from your own test results.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "protocol",
+            "badge_icon": "protocol",
+            "image_alt": "A hand holding a printed AIWO protocol booklet"
           }
         },
         "card_stay_01": {
@@ -738,9 +738,9 @@
             "category": "stay",
             "badge": "Three days, two nights",
             "description": "Five-star accommodation at the venue you choose.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "three-days-two-nights",
+            "badge_icon": "three-days-two-nights",
+            "image_alt": "A hotel bed with gold cushions beside a lit bedside lamp"
           }
         },
         "card_stay_02": {
@@ -749,9 +749,9 @@
             "category": "stay",
             "badge": "Breakfast included",
             "description": "Alongside sleep-supportive meals throughout the programme.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "breakfast",
+            "badge_icon": "breakfast",
+            "image_alt": "A breakfast table with eggs, bacon, toast, pastries and coffee"
           }
         },
         "card_stay_03": {
@@ -760,9 +760,9 @@
             "category": "stay",
             "badge": "Sleep-enhancing food",
             "description": "Menu built around the programme, not ordered off a card.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "sleep-food",
+            "badge_icon": "sleep-food",
+            "image_alt": "A table of fruit, porridge, yoghurt, nuts and herbal tea"
           }
         },
         "card_stay_04": {
@@ -771,9 +771,9 @@
             "category": "stay",
             "badge": "Sauna access",
             "description": "Available throughout your stay.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "sauna",
+            "badge_icon": "sauna",
+            "image_alt": "Towels laid on a bench inside a wooden sauna"
           }
         },
         "card_stay_05": {
@@ -782,9 +782,9 @@
             "category": "stay",
             "badge": "Airport pickup and drop",
             "description": "Both directions, arranged for you.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "airport-transfer",
+            "badge_icon": "airport-transfer",
+            "image_alt": "A chauffeur loading luggage into a black SUV outside an airport terminal"
           }
         },
         "card_stay_06": {
@@ -793,9 +793,9 @@
             "category": "stay",
             "badge": "Two venues",
             "description": "Fairmont Mumbai or The Leela Chennai, with an identical programme at both.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "two-venues",
+            "badge_icon": "two-venues",
+            "image_alt": "The Leela Palace Chennai and Fairmont Mumbai hotel exteriors"
           }
         },
         "card_after_01": {
@@ -804,9 +804,9 @@
             "category": "after",
             "badge": "Day 15 · sleep coach",
             "description": "Virtual. First check on the protocol in real conditions.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "day-15-sleep-coach",
+            "badge_icon": "three-days-two-nights",
+            "image_alt": "A sleep coach taking notes during a video call on a tablet"
           }
         },
         "card_after_02": {
@@ -815,9 +815,9 @@
             "category": "after",
             "badge": "Day 30 · physician",
             "description": "Virtual. Clinical review at the close of the first month.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "day-30-physician",
+            "badge_icon": "three-days-two-nights",
+            "image_alt": "A physician in a white coat writing notes during a video consultation"
           }
         },
         "card_after_03": {
@@ -826,9 +826,9 @@
             "category": "after",
             "badge": "Day 45 · sleep coach",
             "description": "Virtual. Mid-programme behavioural review.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "day-45-sleep-coach",
+            "badge_icon": "three-days-two-nights",
+            "image_alt": "A sleep coach talking through a point on a video call"
           }
         },
         "card_after_04": {
@@ -837,9 +837,9 @@
             "category": "after",
             "badge": "Day 60 · physician",
             "description": "Virtual. Clinical review ahead of the final assessment.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "day-60-physician",
+            "badge_icon": "three-days-two-nights",
+            "image_alt": "A physician explaining results during a video consultation"
           }
         },
         "card_after_05": {
@@ -847,10 +847,10 @@
           "settings": {
             "category": "after",
             "badge": "Day 90 · AIWO 100",
-            "description": "In person or at a partner lab, repeating the panel to compare with day one.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "description": "Repeating the panel to compare with Day 1.",
+            "builtin_image": "day-90-aiwo-100",
+            "badge_icon": "three-days-two-nights",
+            "image_alt": "Blood being drawn from a patient’s arm for the AIWO 100 panel"
           }
         },
         "card_after_06": {
@@ -859,9 +859,9 @@
             "category": "after",
             "badge": "LifeOS throughout",
             "description": "Your data and protocol in one place for a full year.",
-            "builtin_image": "none",
-            "badge_icon": "none",
-            "image_alt": ""
+            "builtin_image": "lifeos",
+            "badge_icon": "lifeos",
+            "image_alt": "The LifeOS app on a phone, showing a health radar chart"
           }
         }
       },
@@ -921,7 +921,7 @@
         "eyebrow": "What’s included",
         "heading_line_1": "What the",
         "heading_line_2": "programme covers.",
-        "description": "A complete diagnostic protocol featuring 12 tests, 17 treatments, 6 consults, and take-home equipment."
+        "description": "A complete diagnostic protocol featuring tests, treatments, consultations, and take-home equipment."
       }
     },
     "aiwo_sleepcation_schedule": {
@@ -933,9 +933,9 @@
             "phase_label": "BEFORE ARRIVAL",
             "icon": "before-arrival",
             "title": "A call, and three questionnaires you fill in at home",
-            "description": "Three clinical questionnaires you complete at home, then a twenty-minute video call with the team. By the time you land, we already know what we are looking for.",
+            "description": "Three clinical questionnaires you complete at home, then a twenty-minute video call with the team. By the time you arrive, we already know what we are looking for.",
             "builtin_image": "before-arrival",
-            "image_alt": "A woman on a video call with the Sleepcation team from home"
+            "image_alt": "A laptop showing a video call with a member of the Sleepcation team"
           }
         },
         "step_day_1": {
@@ -944,9 +944,9 @@
             "phase_label": "DAY 1",
             "icon": "day-1",
             "title": "A car, a room, and your Oura Ring goes on before dinner",
-            "description": "A car collects you from the airport. You meet your Lead Physician and your Oura Ring is fitted. Then you go to bed as normal, and the overnight sleep study records your first night.",
-            "builtin_image": "none",
-            "image_alt": ""
+            "description": "A car collects you from the airport or your home. You meet your Lead Physician and your Oura Ring is fitted. Then you go to bed as normal, and the overnight sleep study records your first night.",
+            "builtin_image": "day-1",
+            "image_alt": "A hand holding an Oura Ring 4 box over white bed linen"
           }
         },
         "step_day_2": {
@@ -956,8 +956,8 @@
             "icon": "day-2",
             "title": "The long day, spaced out rather than stacked",
             "description": "Ten minutes under a 10,000 lux light before you are properly awake, to reset your body clock. Then bloodwork, the DEXA scan, VO2 max, lung function and the psychological assessment — spaced across the day rather than stacked. Your first CBT-I session sits in between. So do the sauna, a massage and the oxygen chamber.",
-            "builtin_image": "none",
-            "image_alt": ""
+            "builtin_image": "day-2",
+            "image_alt": "A man asleep on his side in a dim room"
           }
         },
         "step_day_3": {
@@ -966,9 +966,9 @@
             "phase_label": "DAY 3",
             "icon": "day-3",
             "title": "Somebody finally tells you what is going on",
-            "description": "Your physician has everything in front of them at once — the sleep study, the 181 markers, the scans, the questionnaires — and tells you what is causing your disturbed sleep. For most people this is the first time anyone has answered that question. You leave with a thirty-day plan written down.",
-            "builtin_image": "none",
-            "image_alt": ""
+            "description": "Your physician has everything in front of them at once — the sleep study, the 181 markers, the scans, the questionnaires — and tells you what is causing your disturbed sleep. For most people this is the first time anyone has answered that question. You leave with a 30-day plan written down.",
+            "builtin_image": "day-3",
+            "image_alt": "A physician in dark scrubs explaining results at his desk"
           }
         },
         "step_days_15_60": {
@@ -978,8 +978,8 @@
             "icon": "days-15-60",
             "title": "Four calls, already in your calendar",
             "description": "Four video calls, already booked before you leave. Days 15 and 45 with your sleep coach, days 30 and 60 with your physician. They are part of the programme, not something you have to ask for.",
-            "builtin_image": "none",
-            "image_alt": ""
+            "builtin_image": "days-15-60",
+            "image_alt": "A woman exercising at home beside four scheduled video-call reminders for days 15, 30, 45 and 60"
           }
         },
         "step_day_90": {
@@ -988,9 +988,9 @@
             "phase_label": "DAY 90",
             "icon": "day-90",
             "title": "The same tests again, so you can see the difference",
-            "description": "We run the same tests you had on day one. By this point you will already know whether things have changed — the panel puts numbers against it. Day one and day ninety, side by side.",
-            "builtin_image": "none",
-            "image_alt": ""
+            "description": "We run the same tests you had on Day 1. By this point you will already know whether things have changed — the panel puts numbers against it. Day 1 and Day 90, side by side.",
+            "builtin_image": "day-90",
+            "image_alt": "Blood being drawn from a patient’s arm"
           }
         }
       },
@@ -1004,7 +1004,7 @@
       ],
       "settings": {
         "eyebrow": "Schedule",
-        "heading_line_1": "Three days,",
+        "heading_line_1": "Ninety days,",
         "heading_line_2": "arranged around you."
       }
     },
@@ -1155,7 +1155,7 @@
             "image_alt": "Guest room at Fairmont Mumbai",
             "builtin_image": "fairmont-mumbai",
             "days_label": "3 days,",
-            "nights_label": "2 nights.",
+            "nights_label": "2 nights",
             "short_name": "Mumbai"
           }
         },
@@ -1166,7 +1166,7 @@
             "image_alt": "Guest room at The Leela Chennai",
             "builtin_image": "leela-chennai",
             "days_label": "3 days,",
-            "nights_label": "2 nights.",
+            "nights_label": "2 nights",
             "short_name": "Chennai"
           }
         }
@@ -1177,7 +1177,7 @@
       ],
       "settings": {
         "eyebrow": "Venues",
-        "intro": "The programme runs at two venues — Fairmont Mumbai and The Leela Chennai — and the clinical content is identical at both. Most clients fly in from elsewhere in India for it."
+        "intro": "The programme runs at two venues — Fairmont Mumbai and The Leela Chennai — and the clinical content is identical at both."
       }
     },
     "aiwo_sleepcation_closing_cta": {
@@ -1201,13 +1201,13 @@
             "plan_name": "Silver",
             "room_label": "Deluxe room",
             "days_label": "3 days,",
-            "nights_label": "2 nights.",
+            "nights_label": "2 nights",
             "price": "₹1,99,000",
             "extended_label": "Extended stay · 3 nights",
             "extended_price": "₹2,30,000",
             "cta_label": "Continue with Silver",
             "cta_url": "",
-            "extended_nights_label": "3 nights."
+            "extended_nights_label": "3 nights"
           }
         },
         "plan_gold": {
@@ -1217,13 +1217,13 @@
             "plan_name": "Gold",
             "room_label": "Premium room",
             "days_label": "3 days,",
-            "nights_label": "2 nights.",
+            "nights_label": "2 nights",
             "price": "₹3,75,000",
             "extended_label": "Extended stay · 3 nights",
             "extended_price": "₹4,15,000",
             "cta_label": "Continue with Gold",
             "cta_url": "",
-            "extended_nights_label": "3 nights."
+            "extended_nights_label": "3 nights"
           }
         },
         "inclusion_protocol": {
@@ -1257,7 +1257,7 @@
         "inclusion_follow_through": {
           "type": "inclusion",
           "settings": {
-            "text": "90-day follow-through and the day-ninety assessment",
+            "text": "90-day follow-through and the Day 90 assessment",
             "applies_to": "silver"
           }
         }
@@ -1275,7 +1275,7 @@
         "eyebrow": "Pricing",
         "heading_line_1": "Two ways to book",
         "heading_line_2": "the same programme.",
-        "intro": "The clinical content is identical in both — all forty-three services, the full ninety days, both assessments. What changes is the room you sleep in for the two nights.",
+        "intro": "The clinical content is identical in both — all forty-three services, the full 90 days, both assessments. What changes is the room you sleep in for the two nights.",
         "note": "Prices are per room on double occupancy, with the Sleepcation programme for one guest. Exclusive of applicable taxes. Dining outlets shown are Fairmont Mumbai; the team confirms the equivalent at The Leela Chennai."
       }
     },
@@ -1286,21 +1286,21 @@
           "type": "faq",
           "settings": {
             "question": "Can three days really fix my sleep?",
-            "answer": "No. Three days is how we find the cause and start treating it. The ninety days after is where sleep actually changes. That’s what the plan, the supplements and the four reviews are for."
+            "answer": "No. Three days is how we find the cause and start treating it. The 90 days after is where sleep actually changes. That’s what the plan, the supplements and the four reviews are for."
           }
         },
         "faq_2": {
           "type": "faq",
           "settings": {
             "question": "I can get a sleep study at a hospital for far less.",
-            "answer": "You can. If all you want is the number, you should. A sleep study gives you one number. It doesn’t give you bloodwork, a psychologist, a physician reading all of it together, a written plan, or anyone measuring you again in ninety days."
+            "answer": "You can. If all you want is a diagnosis, you should. A sleep study gives you a diagnosis. It doesn’t give you bloodwork, a psychologist, a physician reading all of it together, a written plan, or anyone measuring you again in 90 days."
           }
         },
         "faq_3": {
           "type": "faq",
           "settings": {
             "question": "I can’t take three days off.",
-            "answer": "Three days is the whole in-person commitment. The four reviews are virtual. One long weekend, ninety days of supervision."
+            "answer": "Three days is the whole in-person commitment. The four reviews are virtual. One long weekend, 90 days of supervision."
           }
         },
         "faq_4": {
@@ -1321,28 +1321,28 @@
           "type": "faq",
           "settings": {
             "question": "Will it work?",
-            "answer": "Nobody can promise how your body will respond. Anyone who does is telling you something they can’t know. What we can promise is that you’ll know, because we run the same tests again on day ninety."
+            "answer": "Nobody can promise how your body will respond. Anyone who does is telling you something they can’t know. What we can promise is that you’ll know, because we run the same tests again on Day 90."
           }
         },
         "faq_7": {
           "type": "faq",
           "settings": {
             "question": "I live outside India. Does the programme still work?",
-            "answer": "Yes, and a lot of people do it that way. The three days are on site in Mumbai or Chennai. The four reviews on days 15, 30, 45 and 60 are video calls, so they work from anywhere. The day-90 test is done in person or at a partner laboratory — tell the team where you are based and they will confirm the arrangement before you book."
+            "answer": "Yes. The three days are on site in Mumbai or Chennai. The four reviews on days 15, 30, 45 and 60 are video calls, so they work from anywhere. The Day 90 test is done in person — tell the team where you are based and they will confirm the arrangement before you book."
           }
         },
         "faq_8": {
           "type": "faq",
           "settings": {
             "question": "What do I actually walk away with?",
-            "answer": "Your results, explained to you by your physician rather than emailed as a PDF you cannot read. A thirty-day protocol written down and built from your own findings. Your supplements, sleep tea, pillows and breathing kit. Four appointments already in the calendar. And on day ninety, the same panel run again so your two sets of numbers sit side by side."
+            "answer": "Your results, explained to you by your physician rather than emailed as a PDF you cannot read. A 30-day protocol written down and built from your own findings. Your supplements, sleep tea, pillows and breathing kit. Four reviews already in the calendar. And on Day 90, the same panel run again so your two sets of numbers sit side by side."
           }
         },
         "faq_9": {
           "type": "faq",
           "settings": {
             "question": "Is there a version for couples?",
-            "answer": "Speak to the team. The programme is currently documented for individual participants."
+            "answer": "Speak to the team. The programme is currently designed for one person at a time, but we can talk through options for couples."
           }
         }
       },

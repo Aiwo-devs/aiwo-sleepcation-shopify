@@ -377,14 +377,15 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* 526 × 532 at 1440, left-anchored crop. Inset outline = Figma's inside stroke drawn over the photo. */
+/* 526 × 532 at 1440; Figma (286:1878) crops the 798px-wide photo 28px in from its left edge. Inset outline = Figma's
+   inside stroke drawn over the photo. */
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-hero__image {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 526 / 532;
   object-fit: cover;
-  object-position: 0 50%;
+  object-position: 10.3% 50%;
   border-radius: 16px;
   outline: 1px solid rgba(255, 255, 255, 0.12);
   outline-offset: -1px;
@@ -1724,6 +1725,28 @@
   object-fit: cover;
 }
 
+/* Built-in photos: per-phase focal points. x applies when a slot crops the sides, y when it crops top and bottom
+   (the 512 × 544 desktop slot keeps Figma's crop). */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__media--before-arrival img {
+  object-position: 50% 35%;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__media--day-1 img {
+  object-position: 50% 30%;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__media--day-2 img {
+  object-position: 50% 20%;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__media--day-3 img {
+  object-position: 50% 37.7%;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__media--days-15-60 img {
+  object-position: 50% 35%;
+}
+
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__media::after {
   content: '';
   position: absolute;
@@ -1852,6 +1875,19 @@
 
   .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__inner--image {
     min-height: 400px;
+  }
+
+  /* Wide and narrow slots: keep the faces and the blood draw in frame. */
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__media--day-2 img {
+    object-position: 40% 20%;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__media--day-3 img {
+    object-position: 50% 17%;
+  }
+
+  .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__media--day-90 img {
+    object-position: 50% 45%;
   }
 
   .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-schedule__title {

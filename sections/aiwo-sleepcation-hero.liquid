@@ -27,8 +27,8 @@
       </div>
 
       {%- if section.settings.button_label != blank -%}
-        {%- comment -%} No URL yet: render a placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
-        <a class="aiwo-sleepcation-button"{% if section.settings.button_link != blank %} href="{{ section.settings.button_link }}"{% endif %}>
+        {%- comment -%} With no URL it goes to Pricing. {%- endcomment -%}
+        <a class="aiwo-sleepcation-button" href="{{ section.settings.button_link | default: '#aiwo-sleepcation-pricing' }}">
           {{- section.settings.button_label | escape -}}
           {{- 'aiwo-sleepcation-icon-arrow-up-right.svg' | inline_asset_content | replace: '<svg ', svg_attrs -}}
         </a>

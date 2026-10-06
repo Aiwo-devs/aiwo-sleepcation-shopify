@@ -58,8 +58,8 @@
       <img class="aiwo-sleepcation-for-you__bar-icon" src="{{ 'aiwo-sleepcation-icon-check-badge.svg' | asset_url }}" width="48" height="48" alt="">
       <p class="aiwo-sleepcation-for-you__bar-label">{{ section.settings.instruction_label | escape }}</p>
       {%- if section.settings.cta_label != blank -%}
-        {%- comment -%} No URL yet: placeholder link (no href) — visually identical, not a dead link. {%- endcomment -%}
-        <a class="aiwo-sleepcation-for-you__bar-button"{% if section.settings.cta_link != blank %} href="{{ section.settings.cta_link }}"{% endif %}>
+        {%- comment -%} With no URL it goes to Pricing. {%- endcomment -%}
+        <a class="aiwo-sleepcation-for-you__bar-button" href="{{ section.settings.cta_link | default: '#aiwo-sleepcation-pricing' }}">
           {{- section.settings.cta_label | escape -}}
           <img src="{{ 'aiwo-sleepcation-icon-arrow-up-right-small.svg' | asset_url }}" width="14" height="14" alt="">
         </a>

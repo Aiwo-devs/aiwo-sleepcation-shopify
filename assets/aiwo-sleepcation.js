@@ -961,7 +961,7 @@
     message.hidden = !isInvalid;
   }
 
-  // The API payload matching https://healthcationdevapi.aiwodev.dpdns.org/user/callback-requests
+  // The API payload matching https://healthcationapi.aiwohealth.com/user/callback-requests
   function collectPayload() {
     var plan = byKey(plans, state.plan);
     var venue = byKey(venues, state.venue);
@@ -1010,12 +1010,12 @@
   function isLocalEnvironment() {
     var host = window.location.hostname || '';
     return host === 'localhost' ||
-           host === '127.0.0.1' ||
-           host === '0.0.0.0' ||
-           host.endsWith('.local') ||
-           /^192\.168\./.test(host) ||
-           /^10\./.test(host) ||
-           /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host);
+      host === '127.0.0.1' ||
+      host === '0.0.0.0' ||
+      host.endsWith('.local') ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host);
   }
 
   function getApiBaseUrl() {

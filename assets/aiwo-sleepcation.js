@@ -961,27 +961,151 @@
     message.hidden = !isInvalid;
   }
 
-  // The future API payload: derived values (price, normalised phone) are computed here, never stored.
+  // The API payload matching https://healthcationdevapi.aiwodev.dpdns.org/user/callback-requests
   function collectPayload() {
     var plan = byKey(plans, state.plan);
     var venue = byKey(venues, state.venue);
+
+    var stayNights = 2;
+    if (state.stay === 'extended') {
+      stayNights = 3;
+    } else if (plan) {
+      var match = (nightsLabel(plan, state.stay) || '').match(/\d+/);
+      if (match) stayNights = parseInt(match[0], 10);
+    }
+
+    var rawPrice = plan ? (state.stay === 'extended' ? plan.extended_price : plan.standard_price) : '';
+    var amount = rawPrice ? rawPrice.replace(/^[^\d]+/, '').trim() : '';
+    var planCode = (plan && plan.style ? plan.style : (state.plan || 'SILVER')).toUpperCase();
+
+    var venueShort = venue ? (venue.short_name || venue.venue_name || '') : '';
+    var venueCode = venueShort.toUpperCase();
+    if (venueCode.indexOf('CHENNAI') !== -1) venueCode = 'CHENNAI';
+    else if (venueCode.indexOf('BENGALURU') !== -1 || venueCode.indexOf('BANGALORE') !== -1) venueCode = 'BENGALURU';
+    else if (venueCode.indexOf('MUMBAI') !== -1) venueCode = 'MUMBAI';
+
+    var rawWindow = (state.call_window || '').trim();
+    var upperWindow = rawWindow.toUpperCase();
+    if (upperWindow.indexOf('NO') !== -1 || upperWindow.indexOf('PREF') !== -1) {
+      upperWindow = 'ANYTIME';
+    }
+
     return {
-      plan: state.plan,
-      stay: state.stay,
-      stay_label: plan ? nightsLabel(plan, state.stay) : '',
-      price: plan ? (state.stay === 'extended' ? plan.extended_price : plan.standard_price) : '',
-      venue: venue ? venue.venue_name : '',
       name: state.name.trim(),
-      city: state.city.trim(),
-      phone: phoneDigits(state.phone.trim()),
+      phone: state.phone.trim(),
       email: state.email.trim(),
-      call_window: state.call_window
+      city: state.city.trim(),
+      plan_code: planCode,
+      stay_nights: stayNights,
+      venue_code: venueCode,
+      call_window: upperWindow,
+      amount: amount
     };
   }
 
-  // API boundary — intentionally not connected. Replace the body with the real request once an API contract exists.
-  function submitContactRequest(payload) { // eslint-disable-line no-unused-vars
-    return Promise.reject(new Error('Contact API not connected'));
+  var DEV_BASE_URL = 'https://healthcationdevapi.aiwodev.dpdns.org';
+  var PROD_BASE_URL = 'https://healthcationapi.aiwohealth.com';
+  var CALLBACK_PATH = '/user/callback-requests';
+
+  function isLocalEnvironment() {
+    var host = window.location.hostname || '';
+    return host === 'localhost' ||
+           host === '127.0.0.1' ||
+           host === '0.0.0.0' ||
+           host.endsWith('.local') ||
+           /^192\.168\./.test(host) ||
+           /^10\./.test(host) ||
+           /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host);
+  }
+
+  function getApiBaseUrl() {
+    var override = root && root.getAttribute('data-api-base-url');
+    if (override && override.trim()) {
+      return override.trim().replace(/\/+$/, '');
+    }
+    return isLocalEnvironment() ? DEV_BASE_URL : PROD_BASE_URL;
+  }
+
+  function submitContactRequest(payload) {
+    var confirmBtn = root.querySelector('[data-aiwo-contact-confirm]');
+    var errorEl = root.querySelector('[data-aiwo-contact-api-error]');
+    if (errorEl) {
+      errorEl.hidden = true;
+      errorEl.textContent = '';
+    }
+
+    if (confirmBtn) {
+      confirmBtn.setAttribute('aria-disabled', 'true');
+      confirmBtn.setAttribute('data-loading', 'true');
+      confirmBtn.textContent = 'Submitting...';
+    }
+
+    var isLocal = isLocalEnvironment();
+    var primaryUrl = getApiBaseUrl() + CALLBACK_PATH;
+
+    function send(url, body) {
+      return fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(body)
+      }).then(function (res) {
+        return res.json().then(function (data) {
+          if (!res.ok) {
+            if (data.errors && data.errors.some(function (e) { return e.indexOf('venue_code') !== -1; }) && body.venue_code) {
+              var fallbackBody = Object.assign({}, body);
+              delete fallbackBody.venue_code;
+              return send(url, fallbackBody);
+            }
+            throw new Error((data.errors && data.errors.join(', ')) || data.message || 'Validation failed');
+          }
+          return data;
+        });
+      });
+    }
+
+    var request = send(primaryUrl, payload);
+    if (isLocal) {
+      request = request.catch(function (err) {
+        if (err.name === 'TypeError' || err.message === 'Failed to fetch' || err.message.indexOf('NetworkError') !== -1) {
+          return send('/user/callback-requests', payload);
+        }
+        throw err;
+      });
+    }
+
+    return request
+      .then(function (data) {
+        if (confirmBtn) {
+          confirmBtn.removeAttribute('aria-disabled');
+          confirmBtn.removeAttribute('data-loading');
+          confirmBtn.textContent = confirmBtn.getAttribute('data-original-label') || 'Confirm request';
+        }
+        showSuccess(data.message || 'Thanks — our team will call you shortly.');
+      })
+      .catch(function (err) {
+        if (confirmBtn) {
+          confirmBtn.removeAttribute('aria-disabled');
+          confirmBtn.removeAttribute('data-loading');
+          confirmBtn.textContent = confirmBtn.getAttribute('data-original-label') || 'Confirm request';
+        }
+        if (errorEl) {
+          errorEl.textContent = err.message || 'Failed to submit. Please check your connection and try again.';
+          errorEl.hidden = false;
+        } else {
+          alert(err.message || 'Failed to submit request.');
+        }
+      });
+  }
+
+  function showSuccess(msg) {
+    var msgEl = root.querySelector('[data-aiwo-contact-success-message]');
+    if (msgEl && msg) msgEl.textContent = msg;
+    setView('success');
+    var successTitle = document.getElementById('aiwo-sleepcation-contact-success-title');
+    if (successTitle) successTitle.focus();
   }
 
   /* ---------- views ---------- */
@@ -1000,6 +1124,12 @@
       var dd = root.querySelector('[data-aiwo-contact-review="' + key + '"]');
       if (dd) dd.textContent = state[key].trim();
     });
+    var confirmBtn = root.querySelector('[data-aiwo-contact-confirm]');
+    if (confirmBtn) {
+      confirmBtn.removeAttribute('aria-disabled');
+      confirmBtn.removeAttribute('data-loading');
+      confirmBtn.disabled = false;
+    }
     setView('review');
     document.getElementById('aiwo-sleepcation-contact-review-title').focus();
   }
@@ -1110,14 +1240,24 @@
       form.elements.name.focus();
     });
 
-    root.querySelector('[data-aiwo-contact-confirm]').addEventListener('click', function (event) {
-      // Disabled until the API exists: no request, no success state.
-      if (this.getAttribute('aria-disabled') === 'true') {
-        event.preventDefault();
-        return;
-      }
-      submitContactRequest(collectPayload());
-    });
+    var doneBtn = root.querySelector('[data-aiwo-contact-done]');
+    if (doneBtn) {
+      doneBtn.addEventListener('click', function () {
+        dialog.close();
+      });
+    }
+
+    var confirmBtn = root.querySelector('[data-aiwo-contact-confirm]');
+    if (confirmBtn) {
+      confirmBtn.setAttribute('data-original-label', confirmBtn.textContent.trim());
+      confirmBtn.addEventListener('click', function (event) {
+        if (this.getAttribute('data-loading') === 'true') {
+          event.preventDefault();
+          return;
+        }
+        submitContactRequest(collectPayload());
+      });
+    }
   }
 
   document.addEventListener('click', function (event) {

@@ -3963,12 +3963,11 @@ html.aiwo-sleepcation-modal-open {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Confirm request until the API exists: visibly unavailable, still focusable and announced. display is restated because the
-   theme hides every button[aria-disabled="true"] globally. */
-.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__submit[aria-disabled='true'] {
+/* Confirm request loading state during API call */
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__submit[data-loading='true'] {
   display: block;
-  opacity: 0.5;
-  cursor: not-allowed;
+  opacity: 0.7;
+  cursor: wait;
 }
 
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__link {
@@ -3981,6 +3980,26 @@ html.aiwo-sleepcation-modal-open {
   font-weight: 400;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__header--success {
+  text-align: center;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__success-icon > svg {
+  fill: none; /* undoes the theme's global svg{fill:currentColor}, which filled the tick in */
 }
 
 /* Review (system-derived): the form's label/value language, two columns. */

@@ -13,7 +13,7 @@
   assign windows = section.settings.call_window_options | newline_to_br | split: '<br />'
 -%}
 
-<div class="aiwo-sleepcation-contact" data-aiwo-sleepcation-contact>
+<div class="aiwo-sleepcation-contact" data-aiwo-sleepcation-contact{% if section.settings.api_base_url != blank %} data-api-base-url="{{ section.settings.api_base_url | escape }}"{% endif %}>
   <dialog class="aiwo-sleepcation-contact__dialog" aria-labelledby="aiwo-sleepcation-contact-title" data-aiwo-contact-dialog>
     <button class="aiwo-sleepcation-contact__close" type="button" aria-label="Close" data-aiwo-contact-close>
       <img src="{{ 'aiwo-sleepcation-icon-close.svg' | asset_url }}" width="32" height="32" alt="">
@@ -109,11 +109,28 @@
         <div class="aiwo-sleepcation-contact__summary-wide"><dt>Best time to call you</dt><dd data-aiwo-contact-review="call_window"></dd></div>
       </dl>
       <div class="aiwo-sleepcation-contact__actions">
-        <button class="aiwo-sleepcation-contact__submit" type="button" aria-disabled="true" data-aiwo-contact-confirm>{{ section.settings.confirm_label | escape }}</button>
+        <button class="aiwo-sleepcation-contact__submit" type="button" data-aiwo-contact-confirm>{{ section.settings.confirm_label | escape }}</button>
         <button class="aiwo-sleepcation-contact__link" type="button" data-aiwo-contact-edit>{{ section.settings.edit_label | escape }}</button>
+        <p class="aiwo-sleepcation-contact__error" data-aiwo-contact-api-error hidden></p>
         {%- if section.settings.privacy_note != blank -%}
           <p class="aiwo-sleepcation-contact__note">{{ section.settings.privacy_note | escape }}</p>
         {%- endif -%}
+      </div>
+    </div>
+
+    {%- comment -%} Success view {%- endcomment -%}
+    <div class="aiwo-sleepcation-contact__view" data-aiwo-contact-view="success" hidden>
+      <header class="aiwo-sleepcation-contact__header aiwo-sleepcation-contact__header--success">
+        <div class="aiwo-sleepcation-contact__success-icon">
+          <svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h2 class="aiwo-sleepcation-contact__title" id="aiwo-sleepcation-contact-success-title" tabindex="-1">Request confirmed</h2>
+        <p class="aiwo-sleepcation-contact__intro">Thanks — our team will call you shortly.</p>
+      </header>
+      <div class="aiwo-sleepcation-contact__actions">
+        <button class="aiwo-sleepcation-contact__submit" type="button" data-aiwo-contact-done>Done</button>
       </div>
     </div>
   </dialog>
@@ -148,7 +165,13 @@
     { "type": "textarea", "id": "privacy_note", "label": "Small print" },
     { "type": "text", "id": "review_heading", "label": "Review heading", "default": "Review your details" },
     { "type": "text", "id": "edit_label", "label": "Edit link label", "default": "Edit details" },
-    { "type": "text", "id": "confirm_label", "label": "Confirm button label", "default": "Confirm request" }
+    { "type": "text", "id": "confirm_label", "label": "Confirm button label", "default": "Confirm request" },
+    {
+      "type": "text",
+      "id": "api_base_url",
+      "label": "API Base URL override",
+      "info": "Optional. Without it: the dev API on local (127.0.0.1/localhost) and on Shopify theme previews, and the prod API (healthcationapi.aiwohealth.com) on the live theme."
+    }
   ]
 }
 {% endschema %}

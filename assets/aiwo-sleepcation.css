@@ -3982,6 +3982,10 @@ html.aiwo-sleepcation-modal-open {
   color: rgba(0, 0, 0, 0.7);
 }
 
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__header--success {
+  text-align: center;
+}
+
 .theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__success-icon {
   display: flex;
   align-items: center;
@@ -3992,6 +3996,10 @@ html.aiwo-sleepcation-modal-open {
   border-radius: 50%;
   background: #ecfdf3;
   color: #027a48;
+}
+
+.theme-template-suffix-aiwo-sleepcation .aiwo-sleepcation-contact__success-icon > svg {
+  fill: none; /* undoes the theme's global svg{fill:currentColor}, which filled the tick in */
 }
 
 /* Review (system-derived): the form's label/value language, two columns. */

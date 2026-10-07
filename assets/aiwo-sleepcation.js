@@ -657,7 +657,7 @@
 
 /* AIWO Sleepcation — contact modal. One native <dialog>; plan/venue data from the Pricing and Venues JSON blocks; one state
    object kept in memory only (no storage, cookies, URLs or logging). "Request a call back" validates and shows the review;
-   "Confirm request" calls submitContactRequest(), which is a stub until a real API exists — it makes no request. */
+   "Confirm request" calls submitContactRequest(), which posts the request once and shows the success or error state. */
 (function () {
   if (document.documentElement.hasAttribute('data-aiwo-sleepcation-contact-js')) return;
   document.documentElement.setAttribute('data-aiwo-sleepcation-contact-js', '');
@@ -961,7 +961,17 @@
     message.hidden = !isInvalid;
   }
 
-  // The API payload matching https://healthcationapi.aiwohealth.com/user/callback-requests
+  // Backend codes. Explicit lookups only: a value that is not listed here is never guessed from its display text.
+  var PLAN_CODES = { silver: 'SILVER', gold: 'GOLD' };
+  var VENUE_CODES = { 'fairmont mumbai': 'MUMBAI', 'the leela chennai': 'CHENNAI' };
+  var CALL_WINDOW_CODES = { morning: 'MORNING', afternoon: 'AFTERNOON', evening: 'EVENING', 'no preference': 'ANYTIME' };
+
+  function codeFor(map, value) {
+    var key = String(value || '').trim().toLowerCase();
+    return Object.prototype.hasOwnProperty.call(map, key) ? map[key] : null;
+  }
+
+  // The API payload for POST /user/callback-requests. Returns null when a selection has no backend code.
   function collectPayload() {
     var plan = byKey(plans, state.plan);
     var venue = byKey(venues, state.venue);
@@ -976,19 +986,11 @@
 
     var rawPrice = plan ? (state.stay === 'extended' ? plan.extended_price : plan.standard_price) : '';
     var amount = rawPrice ? rawPrice.replace(/^[^\d]+/, '').trim() : '';
-    var planCode = (plan && plan.style ? plan.style : (state.plan || 'SILVER')).toUpperCase();
 
-    var venueShort = venue ? (venue.short_name || venue.venue_name || '') : '';
-    var venueCode = venueShort.toUpperCase();
-    if (venueCode.indexOf('CHENNAI') !== -1) venueCode = 'CHENNAI';
-    else if (venueCode.indexOf('BENGALURU') !== -1 || venueCode.indexOf('BANGALORE') !== -1) venueCode = 'BENGALURU';
-    else if (venueCode.indexOf('MUMBAI') !== -1) venueCode = 'MUMBAI';
-
-    var rawWindow = (state.call_window || '').trim();
-    var upperWindow = rawWindow.toUpperCase();
-    if (upperWindow.indexOf('NO') !== -1 || upperWindow.indexOf('PREF') !== -1) {
-      upperWindow = 'ANYTIME';
-    }
+    var planCode = codeFor(PLAN_CODES, plan && plan.key);
+    var venueCode = codeFor(VENUE_CODES, venue && venue.venue_name);
+    var callWindow = codeFor(CALL_WINDOW_CODES, state.call_window);
+    if (!planCode || !venueCode || !callWindow) return null;
 
     return {
       name: state.name.trim(),
@@ -998,7 +1000,7 @@
       plan_code: planCode,
       stay_nights: stayNights,
       venue_code: venueCode,
-      call_window: upperWindow,
+      call_window: callWindow,
       amount: amount
     };
   }
@@ -1006,6 +1008,9 @@
   var DEV_BASE_URL = 'https://healthcationdevapi.aiwodev.dpdns.org';
   var PROD_BASE_URL = 'https://healthcationapi.aiwohealth.com';
   var CALLBACK_PATH = '/user/callback-requests';
+  var REQUEST_TIMEOUT_MS = 30000;
+  var ERROR_MESSAGE = 'Something went wrong. Please try again.';
+  var SUBMITTING_LABEL = 'Submitting...';
 
   function isLocalEnvironment() {
     var host = window.location.hostname || '';
@@ -1018,91 +1023,117 @@
       /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host);
   }
 
+  // A Shopify preview of an unpublished theme: the preview link carries preview_theme_id, and Shopify reports the
+  // theme's role on every page of the preview (the link parameter is gone after the first navigation).
+  function isThemePreview() {
+    if (/[?&]preview_theme_id=/.test(window.location.search || '')) return true;
+    var theme = window.Shopify && window.Shopify.theme;
+    return !!(theme && theme.role && theme.role !== 'main');
+  }
+
+  // Override setting first; then the dev API for local and preview pages; the production API only on the live theme.
   function getApiBaseUrl() {
     var override = root && root.getAttribute('data-api-base-url');
     if (override && override.trim()) {
       return override.trim().replace(/\/+$/, '');
     }
-    return isLocalEnvironment() ? DEV_BASE_URL : PROD_BASE_URL;
+    return isLocalEnvironment() || isThemePreview() ? DEV_BASE_URL : PROD_BASE_URL;
   }
 
-  function submitContactRequest(payload) {
-    var confirmBtn = root.querySelector('[data-aiwo-contact-confirm]');
-    var errorEl = root.querySelector('[data-aiwo-contact-api-error]');
-    if (errorEl) {
-      errorEl.hidden = true;
-      errorEl.textContent = '';
+  // One request per submission. The lock belongs to the request, not to the dialog: closing or reopening the modal
+  // while a request is pending never starts a second one.
+  var pending = false;
+  var successWhileClosed = false;
+
+  function syncConfirm() {
+    var button = root.querySelector('[data-aiwo-contact-confirm]');
+    if (!button) return;
+    if (pending) {
+      button.setAttribute('aria-disabled', 'true');
+      button.setAttribute('data-loading', 'true');
+      button.textContent = SUBMITTING_LABEL;
+    } else {
+      button.removeAttribute('aria-disabled');
+      button.removeAttribute('data-loading');
+      button.textContent = button.getAttribute('data-original-label') || 'Confirm request';
     }
-
-    if (confirmBtn) {
-      confirmBtn.setAttribute('aria-disabled', 'true');
-      confirmBtn.setAttribute('data-loading', 'true');
-      confirmBtn.textContent = 'Submitting...';
-    }
-
-    var isLocal = isLocalEnvironment();
-    var primaryUrl = getApiBaseUrl() + CALLBACK_PATH;
-
-    function send(url, body) {
-      return fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(body)
-      }).then(function (res) {
-        return res.json().then(function (data) {
-          if (!res.ok) {
-            if (data.errors && data.errors.some(function (e) { return e.indexOf('venue_code') !== -1; }) && body.venue_code) {
-              var fallbackBody = Object.assign({}, body);
-              delete fallbackBody.venue_code;
-              return send(url, fallbackBody);
-            }
-            throw new Error((data.errors && data.errors.join(', ')) || data.message || 'Validation failed');
-          }
-          return data;
-        });
-      });
-    }
-
-    var request = send(primaryUrl, payload);
-    if (isLocal) {
-      request = request.catch(function (err) {
-        if (err.name === 'TypeError' || err.message === 'Failed to fetch' || err.message.indexOf('NetworkError') !== -1) {
-          return send('/user/callback-requests', payload);
-        }
-        throw err;
-      });
-    }
-
-    return request
-      .then(function (data) {
-        if (confirmBtn) {
-          confirmBtn.removeAttribute('aria-disabled');
-          confirmBtn.removeAttribute('data-loading');
-          confirmBtn.textContent = confirmBtn.getAttribute('data-original-label') || 'Confirm request';
-        }
-        showSuccess(data.message || 'Thanks — our team will call you shortly.');
-      })
-      .catch(function (err) {
-        if (confirmBtn) {
-          confirmBtn.removeAttribute('aria-disabled');
-          confirmBtn.removeAttribute('data-loading');
-          confirmBtn.textContent = confirmBtn.getAttribute('data-original-label') || 'Confirm request';
-        }
-        if (errorEl) {
-          errorEl.textContent = err.message || 'Failed to submit. Please check your connection and try again.';
-          errorEl.hidden = false;
-        } else {
-          alert(err.message || 'Failed to submit request.');
-        }
-      });
   }
 
-  function showSuccess(msg) {
-    var msgEl = root.querySelector('[data-aiwo-contact-success-message]');
-    if (msgEl && msg) msgEl.textContent = msg;
+  function showApiError(isShown) {
+    var message = root.querySelector('[data-aiwo-contact-api-error]');
+    if (!message) return;
+    message.textContent = isShown ? ERROR_MESSAGE : '';
+    message.hidden = !isShown;
+  }
+
+  // Resolves only on a 2xx response (with or without a body); every other outcome rejects.
+  function postCallbackRequest(body, allowVenueRetry) {
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = controller ? setTimeout(function () { controller.abort(); }, REQUEST_TIMEOUT_MS) : null;
+    return fetch(getApiBaseUrl() + CALLBACK_PATH, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(body),
+      signal: controller ? controller.signal : undefined
+    }).then(function (response) {
+      clearTimeout(timer);
+      if (response.ok) return;
+      return response.json().catch(function () { return null; }).then(function (data) {
+        // Existing contract: when the API rejects venue_code, the request is sent once more without it.
+        var errors = data && Array.isArray(data.errors) ? data.errors : [];
+        var venueRejected = errors.some(function (item) { return typeof item === 'string' && item.indexOf('venue_code') !== -1; });
+        if (allowVenueRetry && venueRejected && body.venue_code) {
+          var retryBody = Object.assign({}, body);
+          delete retryBody.venue_code;
+          return postCallbackRequest(retryBody, false);
+        }
+        throw new Error('Request rejected');
+      });
+    }, function (error) {
+      clearTimeout(timer);
+      throw error;
+    });
+  }
+
+  function submitContactRequest() {
+    if (pending) return;
+    var payload = collectPayload();
+    showApiError(false);
+    if (!payload) {
+      showApiError(true);
+      return;
+    }
+
+    pending = true;
+    syncConfirm();
+    postCallbackRequest(payload, true).then(function () {
+      pending = false;
+      syncConfirm();
+      resetAfterSuccess();
+      if (dialog.open) showSuccess();
+      else successWhileClosed = true;
+    }, function () {
+      pending = false;
+      syncConfirm();
+      showApiError(true);
+    });
+  }
+
+  // A completed request is not kept: the next open starts from an empty form.
+  function resetAfterSuccess() {
+    FIELDS.forEach(function (key) {
+      state[key] = '';
+      showError(key, false);
+    });
+    state.stay = 'standard';
+    failed = {};
+    writeForm();
+  }
+
+  function showSuccess() {
     setView('success');
     var successTitle = document.getElementById('aiwo-sleepcation-contact-success-title');
     if (successTitle) successTitle.focus();
@@ -1114,7 +1145,8 @@
     root.querySelectorAll('[data-aiwo-contact-view]').forEach(function (view) {
       view.hidden = view.getAttribute('data-aiwo-contact-view') !== name;
     });
-    dialog.setAttribute('aria-labelledby', name === 'review' ? 'aiwo-sleepcation-contact-review-title' : 'aiwo-sleepcation-contact-title');
+    var titles = { review: 'aiwo-sleepcation-contact-review-title', success: 'aiwo-sleepcation-contact-success-title' };
+    dialog.setAttribute('aria-labelledby', titles[name] || 'aiwo-sleepcation-contact-title');
     dialog.scrollTop = 0;
   }
 
@@ -1124,12 +1156,8 @@
       var dd = root.querySelector('[data-aiwo-contact-review="' + key + '"]');
       if (dd) dd.textContent = state[key].trim();
     });
-    var confirmBtn = root.querySelector('[data-aiwo-contact-confirm]');
-    if (confirmBtn) {
-      confirmBtn.removeAttribute('aria-disabled');
-      confirmBtn.removeAttribute('data-loading');
-      confirmBtn.disabled = false;
-    }
+    syncConfirm();
+    if (!pending) showApiError(false);
     setView('review');
     document.getElementById('aiwo-sleepcation-contact-review-title').focus();
   }
@@ -1158,6 +1186,12 @@
     setView('form');
     document.documentElement.classList.add(OPEN_CLASS);
     dialog.showModal();
+    // A request that succeeded after the modal was closed: confirm it now, once.
+    if (successWhileClosed) {
+      successWhileClosed = false;
+      showSuccess();
+      return;
+    }
     form.elements.name.focus();
   }
 
@@ -1250,12 +1284,8 @@
     var confirmBtn = root.querySelector('[data-aiwo-contact-confirm]');
     if (confirmBtn) {
       confirmBtn.setAttribute('data-original-label', confirmBtn.textContent.trim());
-      confirmBtn.addEventListener('click', function (event) {
-        if (this.getAttribute('data-loading') === 'true') {
-          event.preventDefault();
-          return;
-        }
-        submitContactRequest(collectPayload());
+      confirmBtn.addEventListener('click', function () {
+        submitContactRequest();
       });
     }
   }
